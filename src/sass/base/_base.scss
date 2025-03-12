@@ -1,0 +1,27 @@
+body {
+    background: darkgoldenrod;
+}
+
+/* RESET */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+/* HTML */
+html {
+    font-size: 62.5%;
+}
+
+/* BODY */
+body {
+    box-sizing: border-box;
+}
+
+/* MAIN CONTENT */
+main {
+    padding: 3rem;
+}
