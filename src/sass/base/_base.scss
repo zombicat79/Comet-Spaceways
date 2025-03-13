@@ -1,14 +1,17 @@
-body {
-    background: darkgoldenrod;
-}
-
-/* RESET */
+/* GENERAL RESET */
 *,
 *::before,
 *::after {
     padding: 0;
     margin: 0;
+    border: 0;
+    outline: 0;
     box-sizing: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    vertical-align: baseline;
 }
 
 /* HTML */
@@ -19,9 +22,23 @@ html {
 /* BODY */
 body {
     box-sizing: border-box;
+    background: $color-environmental-pitch;
 }
 
 /* MAIN CONTENT */
 main {
     padding: 3rem;
 }
+
+/* OTHER MINOR ELEMENTS */
+a {
+	text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+li, dd, blockquote {  
+    margin-left: 0;  
+}  
