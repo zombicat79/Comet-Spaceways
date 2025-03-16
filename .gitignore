@@ -27,4 +27,3 @@ dist-ssr
 # Temporary
 **/abstracts/_extends.scss
 **/abstracts/_functions.scss
-**/abstracts/_mixins.scss

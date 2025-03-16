@@ -34,12 +34,21 @@ $gradient-linear-left-nebula-sunset: linear-gradient(to right, #FF4500, #4B0082)
 /* --- SIZES --- */
 
 $size-mini: .4rem;
-$size-small: .8rem;
-$size-basic: 1rem;
-$size-regular: 1.2rem;
+$size-smallest: .8rem;
+$size-smaller: 1rem;
+$size-small: 1.2rem;
 $size-medium: 1.4rem;
-$size-large: 1.6rem;
+$size-regular: 1.6rem;
 $size-big: 1.8rem;
 $size-extrabig: 2rem;
 $size-huge: 2.4rem;
 $size-gigantic: 2.8rem;
+
+/* --- BREAKPOINTS --- */
+
+$breakpoint-phone-small: 360px;
+$breakpoint-phone: 600px;
+$breakpoint-tablet-portrait: 768px;
+$breakpoint-tablet-landscape: 1000px;
+$breakpoint-desktop: 1280px;
+$brakpoint-bigscreen: 2000px;

@@ -1,0 +1,47 @@
+// MEDIA QUERY MANAGER
+/* --- Desktop-first approach - Regular styles automatically applied between 1280px and 2000px --- */
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone-small {
+        @media screen and (max-width: $breakpoint-phone-small) { @content };
+    }
+    @if $breakpoint == phone {
+        @media screen and (max-width: $breakpoint-phone) { @content };
+    }
+    @if $breakpoint == tablet-portrait {
+        @media screen and (max-width: $breakpoint-tablet-portrait) { @content };
+    }
+    @if $breakpoint == tablet-landscape {
+        @media screen and (max-width: $breakpoint-tablet-landscape) { @content };
+    }
+    @if $breakpoint == desktop {
+        @media screen and (min-width: $breakpoint-desktop) { @content };
+    }
+    @if $breakpoint == big-screen {
+        @media screen and (min-width: $brakpoint-bigscreen) { @content };
+    }
+}
+
+// DECLARATION
+
+/*
+
+@mixin random-name($param1, paramN) {
+    Set of CSS Declarations to be reutilized multiple times
+
+    padding: $param1;
+}
+
+*/
+
+// CONSUMPTION
+
+/* 
+
+.random-selector {
+    Regular CSS declarations
+    
+    @include randon-name(10px);
+}
+
+*/

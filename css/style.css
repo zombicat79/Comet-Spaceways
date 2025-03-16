@@ -1,25 +1,87 @@
-body {
-  background: darkgoldenrod; }
+/* --- COLOR VARIABLES --- */
+/* --- COLOR GRADIENTS --- */
+/* --- SIZES --- */
+/* --- BREAKPOINTS --- */
+/* --- Desktop-first approach - Regular styles automatically applied between 1280px and 2000px --- */
+/*
 
-/* RESET */
+@mixin random-name($param1, paramN) {
+    Set of CSS Declarations to be reutilized multiple times
+
+    padding: $param1;
+}
+
+*/
+/* 
+
+.random-selector {
+    Regular CSS declarations
+    
+    @include randon-name(10px);
+}
+
+*/
+/*
+
+@function random-name($param1, $param2, $paramN) {
+    @return $param1 * $param2
+}
+
+*/
+/* 
+
+.random-selector {
+    Regular CSS declarations
+    
+    padding: randon-name(10, 2) * 1px;
+}
+
+*/
+/* GENERAL RESET */
 *,
 *::before,
 *::after {
   padding: 0;
   margin: 0;
-  box-sizing: inherit; }
+  border: 0;
+  outline: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  vertical-align: baseline; }
 
 /* HTML */
 html {
   font-size: 62.5%; }
+  @media screen and (max-width: 600px) {
+    html {
+      font-size: 50%; } }
+  @media screen and (min-width: 2000px) {
+    html {
+      font-size: 87.5%; } }
 
 /* BODY */
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  background: #121212;
+  color: #F5F5F5;
+  font-size: 1.4rem; }
 
 /* MAIN CONTENT */
 main {
   padding: 3rem; }
+
+/* OTHER MINOR ELEMENTS */
+a {
+  text-decoration: none; }
+
+ul, ol {
+  list-style: none; }
+
+li, dd, blockquote {
+  margin-left: 0; }
 
 body {
   /* font-family:
