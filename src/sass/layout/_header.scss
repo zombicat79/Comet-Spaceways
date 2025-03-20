@@ -1,0 +1,7 @@
+.header {
+   color: red;
+   
+   &__main {
+        @include flex-row(space-evenly);
+   }
+}

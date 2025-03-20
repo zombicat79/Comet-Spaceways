@@ -88,3 +88,27 @@ body {
     font-weight:
     line-height:
     color: */ }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .navbar__list {
+    color: yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .navbar__list--horizontal {
+      flex-direction: row; }
+    .navbar__list--vertical {
+      flex-direction: column; }
+
+.navlink {
+  text-transform: uppercase; }
+
+.header {
+  color: red; }
+  .header__main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }

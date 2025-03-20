@@ -1,10 +1,10 @@
+import Home from './pages/Home';
+
 // import viteLogo from '/vite.svg'
 
 function App() {
   return (
-    <div>
-      Comet Spaceways
-    </div>
+    <Home />
   )
 }
 

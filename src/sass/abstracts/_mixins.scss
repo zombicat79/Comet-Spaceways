@@ -1,3 +1,16 @@
+@mixin flex-row($justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+
+@mixin flex-column($justify) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $justify;
+    align-items: center;
+}
+
 // MEDIA QUERY MANAGER
 /* --- Desktop-first approach - Regular styles automatically applied between 1280px and 2000px --- */
 
