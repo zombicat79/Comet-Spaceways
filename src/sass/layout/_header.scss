@@ -1,7 +1,13 @@
 .header {
-   color: red;
+   background: $color-environmental-light;
+   padding: 1rem 0;
+   box-shadow: 0 2.5px 100px 5px $color-environmental-accent;
    
    &__main {
         @include flex-row(space-evenly);
+   }
+
+   &__logo {
+      max-width: 25rem;
    }
 }

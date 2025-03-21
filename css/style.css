@@ -83,32 +83,111 @@ ul, ol {
 li, dd, blockquote {
   margin-left: 0; }
 
+img {
+  width: 100%; }
+
+@font-face {
+  font-family: roboto-extralight;
+  src: url("./assets/fonts/roboto/Roboto-ExtraLight.ttf"); }
+
+@font-face {
+  font-family: roboto-light;
+  src: url("./assets/fonts/roboto/Roboto-Light.ttf"); }
+
+@font-face {
+  font-family: roboto-regular;
+  src: url("./assets/fonts/roboto/Roboto-Regular.ttf"); }
+
+@font-face {
+  font-family: roboto-medium;
+  src: url("./assets/fonts/roboto/Roboto-Medium.ttf"); }
+
+@font-face {
+  font-family: roboto-semibold;
+  src: url("./assets/fonts/roboto/Roboto-SemiBold.ttf"); }
+
+@font-face {
+  font-family: roboto-bold;
+  src: url("./assets/fonts/roboto/Roboto-Bold.ttf"); }
+
+@font-face {
+  font-family: roboto-extrabold;
+  src: url("./assets/fonts/roboto/Roboto-ExtraBold.ttf"); }
+
+@font-face {
+  font-family: bai-extralight;
+  src: url("./assets/fonts/bai-jamjuree/BaiJamjuree-ExtraLight.ttf"); }
+
+@font-face {
+  font-family: bai-light;
+  src: url("./assets/fonts/bai-jamjuree/BaiJamjuree-Light.ttf"); }
+
+@font-face {
+  font-family: bai-regular;
+  src: url("./assets/fonts/bai-jamjuree/BaiJamjuree-Regular.ttf"); }
+
+@font-face {
+  font-family: bai-medium;
+  src: url("./assets/fonts/bai-jamjuree/BaiJamjuree-Medium.ttf"); }
+
+@font-face {
+  font-family: bai-semibold;
+  src: url("./assets/fonts/bai-jamjuree/BaiJamjuree-SemiBold.ttf"); }
+
+@font-face {
+  font-family: bai-bold;
+  src: url("./assets/fonts/bai-jamjuree/BaiJamjuree-Bold.ttf"); }
+
 body {
-  /* font-family:
-    font-weight:
-    line-height:
-    color: */ }
+  font-family: 'roboto-light';
+  font-size: 1.4rem;
+  color: #F5F5F5;
+  letter-spacing: 2px;
+  line-height: 2.25rem; }
 
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  font-family: 'bai-medium'; }
   .navbar__list {
-    color: yellow;
+    color: black;
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    gap: 3rem; }
     .navbar__list--horizontal {
       flex-direction: row; }
     .navbar__list--vertical {
       flex-direction: column; }
 
 .navlink {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  transition: transform 1s; }
+  .navlink:hover {
+    cursor: pointer;
+    font-family: 'bai-bold';
+    transform: scale(1.2);
+    text-shadow: 0 0.5rem 1.5rem #121212; }
 
 .header {
-  color: red; }
+  background: #ffffff;
+  padding: 1rem 0;
+  box-shadow: 0 2.5px 100px 5px #4B0082; }
   .header__main {
     display: flex;
     justify-content: space-evenly;
     align-items: center; }
+  .header__logo {
+    max-width: 25rem; }
+
+main {
+  min-height: 500px;
+  position: relative; }
+
+main div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.8rem; }

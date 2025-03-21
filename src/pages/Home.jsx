@@ -7,7 +7,7 @@ function Home() {
             <Header />
             <main>
                 <div>
-                    Comet Spaceways
+                    Go conquer the Universe
                 </div>
             </main>
             <Footer />

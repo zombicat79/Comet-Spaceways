@@ -1,11 +1,11 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-row(space-between);
+    font-family: 'bai-medium';
 
     &__list {
-        color: yellow;
+        color: black;
         @include flex-row(space-between);
+        gap: 3rem;
 
         &--horizontal {
             flex-direction: row;

@@ -1,6 +1,63 @@
+//ROBOTO
+@font-face {
+    font-family: roboto-extralight;
+    src: url('./assets/fonts/roboto/Roboto-ExtraLight.ttf');
+}
+@font-face {
+    font-family: roboto-light;
+    src: url('./assets/fonts/roboto/Roboto-Light.ttf');
+}
+@font-face {
+    font-family: roboto-regular;
+    src: url('./assets/fonts/roboto/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family: roboto-medium;
+    src: url('./assets/fonts/roboto/Roboto-Medium.ttf');
+}
+@font-face {
+    font-family: roboto-semibold;
+    src: url('./assets/fonts/roboto/Roboto-SemiBold.ttf');
+}
+@font-face {
+    font-family: roboto-bold;
+    src: url('./assets/fonts/roboto/Roboto-Bold.ttf');
+}
+@font-face {
+    font-family: roboto-extrabold;
+    src: url('./assets/fonts/roboto/Roboto-ExtraBold.ttf');
+}
+
+//BAI-JAMJUREE
+@font-face {
+    font-family: bai-extralight;
+    src: url('./assets/fonts/bai-jamjuree/BaiJamjuree-ExtraLight.ttf');
+}
+@font-face {
+    font-family: bai-light;
+    src: url('./assets/fonts/bai-jamjuree/BaiJamjuree-Light.ttf');
+}
+@font-face {
+    font-family: bai-regular;
+    src: url('./assets/fonts/bai-jamjuree/BaiJamjuree-Regular.ttf');
+}
+@font-face {
+    font-family: bai-medium;
+    src: url('./assets/fonts/bai-jamjuree/BaiJamjuree-Medium.ttf');
+}
+@font-face {
+    font-family: bai-semibold;
+    src: url('./assets/fonts/bai-jamjuree/BaiJamjuree-SemiBold.ttf');
+}
+@font-face {
+    font-family: bai-bold;
+    src: url('./assets/fonts/bai-jamjuree/BaiJamjuree-Bold.ttf');
+}
+
 body {
-    /* font-family:
-    font-weight:
-    line-height:
-    color: */
+    font-family: 'roboto-light';
+    font-size: $size-medium;
+    color: $color-text-light;
+    letter-spacing: 2px;
+    line-height: 2.25rem;
 }
