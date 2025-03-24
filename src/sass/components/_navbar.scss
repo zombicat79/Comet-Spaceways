@@ -3,7 +3,6 @@
     font-family: 'bai-medium';
 
     &__list {
-        color: black;
         @include flex-row(space-between);
         gap: 3rem;
 

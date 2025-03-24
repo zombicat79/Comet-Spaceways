@@ -1,11 +1,9 @@
 .navlink {
-    text-transform: uppercase;
     transition: transform 1s;
 
     &:hover {
         cursor: pointer;
         font-family: 'bai-bold';
-        transform: scale(1.2);
-        text-shadow: 0 .5rem 1.5rem $color-environmental-pitch;
+        transform: scale(1.1);
     }
 }

@@ -1,6 +1,6 @@
-function NavLink({ link }) {
+function NavLink({ link, resizeTool }) {
     return (
-        <li className="navlink">
+        <li className="navlink" onClick={() => resizeTool()}>
             {link.text}
         </li>
     );

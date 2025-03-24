@@ -1,7 +1,35 @@
 .header {
-   background: $color-environmental-light;
+   position: fixed;
+   width: 100%;
    padding: 1rem 0;
-   box-shadow: 0 2.5px 100px 5px $color-environmental-accent;
+   transition: all 1s;
+   z-index: 100;
+   
+   &[data-transparency="true"] {
+      background: transparent;
+      box-shadow: none;
+
+      & .navlink {
+         color: $color-text-light;
+
+         &:hover {
+            text-shadow: 0 .5rem 1.5rem $color-environmental-light;
+         }
+      }
+   }
+
+   &[data-transparency="false"] {
+      background: $color-environmental-light;
+      box-shadow: 0 2.5px 100px 5px $color-environmental-accent;
+
+      & .navlink {
+         color: $color-text-dark;
+
+         &:hover {
+            text-shadow: 0 .5rem 1.5rem $color-environmental-pitch;
+         }
+      }
+   }
    
    &__main {
         @include flex-row(space-evenly);
@@ -9,5 +37,26 @@
 
    &__logo {
       max-width: 25rem;
+   }
+
+   &__expand {
+      overflow: hidden;
+
+      &[data-expansion="true"] {
+         max-height: 200px;
+      }
+
+      &[data-expansion="false"] {
+         max-height: 0;
+      }
+   }
+
+   .navbar {
+      flex: 1;
+      justify-content: center;
+   }
+
+   .navlink {
+      text-transform: uppercase;
    }
 }
