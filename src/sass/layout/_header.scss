@@ -6,8 +6,10 @@
    z-index: 100;
    
    &[data-transparency="true"] {
-      background: transparent;
-      box-shadow: none;
+      animation-name: header-fadeout;
+      animation-timing-function: linear;
+      animation-duration: .75s;
+      animation-fill-mode: forwards;
 
       & .navlink {
          color: $color-text-light;
@@ -19,8 +21,10 @@
    }
 
    &[data-transparency="false"] {
-      background: $color-environmental-light;
-      box-shadow: 0 2.5px 100px 5px $color-environmental-accent;
+      animation-name: header-fadein;
+      animation-timing-function: linear;
+      animation-duration: .75s;
+      animation-fill-mode: forwards;
 
       & .navlink {
          color: $color-text-dark;
@@ -32,7 +36,20 @@
    }
    
    &__main {
-        @include flex-row(space-evenly);
+      @include flex-row(space-evenly);
+
+      .navbar {
+         flex: 1;
+         justify-content: center;
+
+         &__list {
+            gap: 3rem;
+         }
+      }
+
+      .navlink {
+         text-transform: uppercase;
+      }
    }
 
    &__logo {
@@ -40,23 +57,25 @@
    }
 
    &__expand {
+      transition: max-height 1.5s;
       overflow: hidden;
 
       &[data-expansion="true"] {
-         max-height: 200px;
+         max-height: 20rem;
       }
 
       &[data-expansion="false"] {
          max-height: 0;
       }
    }
+}
 
-   .navbar {
-      flex: 1;
-      justify-content: center;
-   }
+@keyframes header-fadeout {
+   from { background-color: $color-environmental-light; box-shadow: 0 2.5px 100px 5px $color-environmental-accent; }
+   to { background-color: transparent; box-shadow: none;}
+}
 
-   .navlink {
-      text-transform: uppercase;
-   }
+@keyframes header-fadein {
+   from { background-color: transparent; box-shadow: none;}
+   to { background-color: $color-environmental-light; box-shadow: 0 2.5px 100px 5px $color-environmental-accent; }
 }
