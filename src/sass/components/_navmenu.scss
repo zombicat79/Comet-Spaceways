@@ -1,3 +1,15 @@
 .navmenu {
-    @include flex-row(center);
+    padding: 2rem;
+
+    &__title {
+        color: inherit;
+        font-family: 'bai-bold';
+        margin-bottom: 1.5rem;
+    }
+
+    &__column {
+        @include flex-row(space-between);
+        align-items: flex-start;
+        gap: 3rem;
+    }
 }

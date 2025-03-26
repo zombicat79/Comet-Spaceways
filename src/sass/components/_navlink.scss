@@ -1,9 +1,25 @@
 .navlink {
-    transition: transform 1s;
+    transition: transform .5s;
 
     &:hover {
         cursor: pointer;
         font-family: 'bai-bold';
-        transform: scale(1.1);
+    }
+
+    &--primary {
+        @include primary-appearance;
+
+        &:hover {
+            @include primary-response;
+        }
+    }
+
+    &--underline {
+        text-underline-offset: .5rem;
+
+        &:hover {
+            text-decoration: underline;
+            transform: translateX(.5rem);
+        }
     }
 }

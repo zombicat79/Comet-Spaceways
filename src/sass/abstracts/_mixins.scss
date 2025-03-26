@@ -11,6 +11,21 @@
     align-items: center;
 }
 
+@mixin primary-appearance() {
+    background: $color-highlight-light;
+    color: $color-environmental-pitch;
+    border: none;
+    padding: $size-small $size-huge;
+    font-size: $size-regular;
+    border-radius: $size-smallest;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+@mixin primary-response() {
+    box-shadow: 0 0 15px $color-highlight-light;
+    transform: scale(1.05);
+}
+
 // MEDIA QUERY MANAGER
 /* --- Desktop-first approach - Regular styles automatically applied between 1280px and 2000px --- */
 
