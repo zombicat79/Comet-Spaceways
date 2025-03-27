@@ -70,12 +70,12 @@ body {
   font-size: 1.4rem; }
 
 /* MAIN CONTENT */
-main {
-  padding: 3rem; }
-
 /* OTHER MINOR ELEMENTS */
 a {
   text-decoration: none; }
+
+button {
+  background-color: transparent; }
 
 ul, ol {
   list-style: none; }
@@ -157,7 +157,9 @@ body {
   letter-spacing: 2px;
   line-height: 2.25rem; }
 
-.link:hover, .link--container {
+.link:hover,
+.link--container,
+.element--clickable {
   cursor: pointer; }
 
 .link--container {
@@ -172,7 +174,7 @@ body {
     font-family: 'bai-bold'; }
   .navlink--primary {
     background: #00FFFF;
-    color: #121212;
+    color: #272643;
     border: none;
     padding: 1.2rem 2.4rem;
     font-size: 1.6rem;
@@ -214,12 +216,28 @@ body {
     justify-content: space-between;
     align-items: center;
     align-items: flex-start;
-    gap: 3rem; }
+    gap: 3rem;
+    margin-left: 1.5rem; }
+
+.banner {
+  height: 95vh;
+  background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./assets/images/space-tourism_banner.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: top; }
+  .banner__heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    font-family: 'bai-bold';
+    color: #F5F5F5; }
 
 .header {
   position: fixed;
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem 2rem;
   transition: all 1s;
   z-index: 100; }
   .header[data-transparency="true"] {
@@ -229,8 +247,13 @@ body {
     animation-fill-mode: forwards; }
     .header[data-transparency="true"] .header__main .navlink {
       color: #F5F5F5; }
+      .header[data-transparency="true"] .header__main .navlink--primary {
+        color: #272643; }
       .header[data-transparency="true"] .header__main .navlink:hover {
         text-shadow: 0 0.5rem 1.5rem #ffffff; }
+    .header[data-transparency="true"] .header__main .header__icon svg path {
+      stroke: #F5F5F5;
+      stroke-width: 1; }
   .header[data-transparency="false"] {
     animation-name: header-fadein;
     animation-timing-function: linear;
@@ -238,65 +261,93 @@ body {
     animation-fill-mode: forwards; }
     .header[data-transparency="false"] .header__main .navlink {
       color: #272643; }
-      .header[data-transparency="false"] .header__main .navlink:hover {
+      .header[data-transparency="false"] .header__main .navlink:not(.navlink--primary):hover {
         text-shadow: 0 0.5rem 1.5rem #121212; }
+    .header[data-transparency="false"] .header__main .header__icon svg path {
+      stroke: #272643;
+      stroke-width: 1.5; }
+    .header[data-transparency="false"] .header__main .header__icon:first-child svg path {
+      stroke: #272643;
+      stroke-width: 2.5; }
+  .header__icon {
+    width: 5rem;
+    height: 5rem; }
+    @media screen and (min-width: 1280px) {
+      .header__icon {
+        display: none; } }
   .header__main {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center; }
     .header__main .navbar {
-      flex: 1;
-      justify-content: center; }
-      .header__main .navbar__list {
-        gap: 3rem; }
-    .header__main .navlink {
-      text-transform: uppercase; }
-      .header__main .navlink:hover {
-        transform: scale(1.1); }
+      display: none; }
+    @media screen and (min-width: 1280px) {
+      .header__main {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center; }
+        .header__main .navbar {
+          display: flex;
+          flex: 1;
+          justify-content: center; }
+          .header__main .navbar__list {
+            gap: 3rem; }
+        .header__main .navlink {
+          text-transform: uppercase; }
+          .header__main .navlink:hover {
+            transform: scale(1.1); } }
+    @media screen and (min-width: 2000px) {
+      .header__main {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .header__main .navbar {
+          flex: initial; }
+        .header__main .link--container {
+          margin: 0 3vw; } }
   .header__logo {
     max-width: 25rem; }
   .header__expand {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    align-items: flex-start;
-    transition: max-height 1.5s;
-    overflow: hidden; }
-    .header__expand[data-expansion="true"] {
-      max-height: 20rem; }
-    .header__expand[data-expansion="false"] {
-      max-height: 0; }
-    .header__expand .navmenu {
-      color: #272643;
-      padding: 2rem; }
-      .header__expand .navmenu__column {
-        gap: 10rem; }
-    .header__expand .navlink {
-      color: #272643; }
+    display: none; }
+    @media screen and (min-width: 1280px) {
+      .header__expand {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        align-items: flex-start;
+        transition: max-height 1.5s;
+        overflow: hidden; }
+        .header__expand[data-expansion="true"] {
+          max-height: 20rem; }
+        .header__expand[data-expansion="false"] {
+          max-height: 0; }
+        .header__expand .navmenu {
+          color: #272643;
+          padding: 2rem; }
+          .header__expand .navmenu__column {
+            gap: 10rem; }
+        .header__expand .navlink {
+          color: #272643; } }
+    @media screen and (min-width: 2000px) {
+      .header__expand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-items: flex-start;
+        gap: 9vw; } }
 
 @keyframes header-fadeout {
   from {
     background-color: #ffffff;
     box-shadow: 0 2.5px 100px 5px #4B0082; }
   to {
-    background-color: transparent;
+    background-color: #121212;
     box-shadow: none; } }
 
 @keyframes header-fadein {
   from {
-    background-color: transparent;
+    background-color: #121212;
     box-shadow: none; }
   to {
     background-color: #ffffff;
     box-shadow: 0 2.5px 100px 5px #4B0082; } }
-
-main {
-  min-height: 500px;
-  position: relative; }
-
-main div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2.8rem; }

@@ -1,7 +1,7 @@
 .header {
    position: fixed;
    width: 100%;
-   padding: 1rem 0;
+   padding: 1rem 2rem;
    transition: all 1s;
    z-index: 100;
    
@@ -14,10 +14,19 @@
       .header__main {
          & .navlink {
             color: $color-text-light;
+
+            &--primary {
+               color: $color-text-dark;
+            }
    
             &:hover {
                text-shadow: 0 .5rem 1.5rem $color-environmental-light;
             }
+         }
+
+         .header__icon svg path {
+            stroke: $color-text-light;
+            stroke-width: 1;
          }
       }
    }
@@ -32,31 +41,71 @@
          & .navlink {
             color: $color-text-dark;
    
-            &:hover {
+            &:not(.navlink--primary):hover {
                text-shadow: 0 .5rem 1.5rem $color-environmental-pitch;
             }
          }
+
+         .header__icon svg path {
+            stroke: $color-text-dark;
+            stroke-width: 1.5;
+         }
+
+         .header__icon:first-child svg path {
+            stroke: $color-text-dark;
+            stroke-width: 2.5;
+         }
+      }
+   }
+
+   &__icon {
+      width: 5rem;
+      height: 5rem;
+
+      @include respond(desktop) {
+         display: none;
       }
    }
    
    &__main {
-      @include flex-row(space-evenly);
+      @include flex-row(space-between);
 
       .navbar {
-         flex: 1;
-         justify-content: center;
-
-         &__list {
-            gap: 3rem;
-         }
+         display: none;
       }
 
-      .navlink {
-         text-transform: uppercase;
-
-         &:hover {
-            transform: scale(1.1);
+      @include respond(desktop) {
+         .navbar {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+   
+            &__list {
+               gap: 3rem;
+            }
          }
+   
+         .navlink {
+            text-transform: uppercase;
+   
+            &:hover {
+               transform: scale(1.1);
+            }
+         }
+
+         @include flex-row(space-evenly);
+      }
+
+      @include respond(big-screen) {
+         .navbar {
+            flex: initial;
+         }
+
+         .link--container {
+            margin: 0 3vw;
+         }
+
+         @include flex-row(center);
       }
    }
 
@@ -65,40 +114,50 @@
    }
 
    &__expand {
-      @include flex-row(space-around);
-      align-items: flex-start;
-      transition: max-height 1.5s;
-      overflow: hidden;
+      display: none;
 
-      &[data-expansion="true"] {
-         max-height: 20rem;
-      }
+      @include respond(desktop) {
+         @include flex-row(space-around);
+         align-items: flex-start;
+         transition: max-height 1.5s;
+         overflow: hidden;
 
-      &[data-expansion="false"] {
-         max-height: 0;
-      }
+         &[data-expansion="true"] {
+            max-height: 20rem;
+         }
 
-      .navmenu {
-         color: $color-text-dark;
-         padding: 2rem;
+         &[data-expansion="false"] {
+            max-height: 0;
+         }
 
-         &__column {
-            gap: 10rem;
+         .navmenu {
+            color: $color-text-dark;
+            padding: 2rem;
+
+            &__column {
+               gap: 10rem;
+            }
+         }
+
+         .navlink {
+            color: $color-text-dark;
          }
       }
 
-      .navlink {
-         color: $color-text-dark;
+      @include respond(big-screen) {
+         @include flex-row(center);
+         align-items: flex-start;
+         gap: 9vw;
       }
    }
 }
 
 @keyframes header-fadeout {
    from { background-color: $color-environmental-light; box-shadow: 0 2.5px 100px 5px $color-environmental-accent; }
-   to { background-color: transparent; box-shadow: none;}
+   to { background-color: $color-environmental-pitch; box-shadow: none;}
 }
 
 @keyframes header-fadein {
-   from { background-color: transparent; box-shadow: none;}
+   from { background-color: $color-environmental-pitch; box-shadow: none;}
    to { background-color: $color-environmental-light; box-shadow: 0 2.5px 100px 5px $color-environmental-accent; }
 }

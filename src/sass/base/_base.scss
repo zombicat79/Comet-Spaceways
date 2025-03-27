@@ -36,13 +36,15 @@ body {
 }
 
 /* MAIN CONTENT */
-main {
-    padding: 3rem;
-}
+main {}
+    
 
 /* OTHER MINOR ELEMENTS */
 a {
 	text-decoration: none;
+}
+button {
+    background-color: transparent;
 }
 
 ul, ol {

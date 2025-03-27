@@ -1,14 +1,18 @@
 import Header from './../layout/Header';
 import Footer from './../layout/Footer';
 
+import Banner from './../components/Banner';
+
 function Home() {
     return (
         <>
             <Header />
             <main>
-                <div>
-                    Go conquer the Universe
-                </div>
+                <Banner
+                    heading="Go conquer the universe"
+                    background={1}
+                    height="full"
+                />
             </main>
             <Footer />
         </>
