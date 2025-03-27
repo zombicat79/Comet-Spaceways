@@ -54,10 +54,17 @@
     src: url('./assets/fonts/bai-jamjuree/BaiJamjuree-Bold.ttf');
 }
 
+//MICHROMA
+@font-face {
+    font-family: michroma;
+    src: url('./assets/fonts/michroma/Michroma-Regular.ttf');
+}
+
 body {
     font-family: 'roboto-light';
     font-size: $size-medium;
     color: $color-text-light;
     letter-spacing: 2px;
     line-height: 2.25rem;
+    text-align: center;
 }

@@ -11,6 +11,13 @@
     align-items: center;
 }
 
+@mixin absolute-center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 @mixin primary-appearance() {
     background: $color-highlight-light;
     color: $color-text-dark;

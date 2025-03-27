@@ -9,9 +9,12 @@ function Home() {
             <Header />
             <main>
                 <Banner
-                    heading="Go conquer the universe"
-                    background={1}
-                    height="full"
+                    textStyle={{ color: 'default', align: 'default' }}
+                    textContent={{
+                        heading: 'Go conquer the universe',
+                        body: ''
+                    }}
+                    background={{ img: 'space-tourism', height: 'full' }}
                 />
             </main>
             <Footer />
