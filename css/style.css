@@ -70,6 +70,9 @@ body {
   font-size: 1.4rem; }
 
 /* MAIN CONTENT */
+main section {
+  padding: 8rem 5rem; }
+
 /* OTHER MINOR ELEMENTS */
 a {
   text-decoration: none; }
@@ -154,6 +157,14 @@ img {
   font-family: michroma;
   src: url("./assets/fonts/michroma/Michroma-Regular.ttf"); }
 
+@font-face {
+  font-family: poppins-bold;
+  src: url("./assets/fonts/poppins/Poppins-Bold.ttf"); }
+
+@font-face {
+  font-family: poppins-extrabold;
+  src: url("./assets/fonts/poppins/Poppins-ExtraBold.ttf"); }
+
 body {
   font-family: 'roboto-light';
   font-size: 1.4rem;
@@ -234,11 +245,16 @@ body {
     .banner--full .banner__heading {
       font-size: 4.5rem; }
   .banner--half {
-    height: 60vh; }
+    height: 60vh;
+    background-position: center; }
     .banner--half .banner__heading {
       font-size: 3rem; }
   .banner--1 {
-    background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./assets/images/space-tourism_banner.webp"); }
+    background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./assets/images/space-beer_banner.webp"); }
+  .banner--2 {
+    background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./assets/images/space-sunrise_banner.webp"); }
+  .banner--3 {
+    background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./assets/images/earth-moon_banner.webp"); }
   .banner__msg {
     width: 90%;
     position: absolute;
@@ -254,6 +270,63 @@ body {
       text-align: right; }
   .banner__heading {
     line-height: 5rem; }
+
+.pricetag__prefix {
+  color: #2c698d; }
+
+.pricetag__amount {
+  font-family: 'poppins-extrabold';
+  font-size: 2rem;
+  text-transform: uppercase; }
+
+.pricetag__prompt {
+  font-size: 4rem;
+  border: 1px solid #272643;
+  border-radius: 50%;
+  padding: .25rem .5rem;
+  margin-left: auto; }
+
+.card {
+  background-color: #e3f6f5;
+  height: 30rem;
+  border-radius: 1.5rem;
+  min-width: 20rem;
+  max-width: 30rem;
+  transition: all 1s; }
+  .card:hover {
+    box-shadow: 0 0 15px #00FFFF;
+    transform: scale(1.05); }
+  .card__img {
+    height: 45%;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    background-size: cover;
+    background-repeat: no-repeat; }
+    .card__img--celestia {
+      background-image: url("./assets/images/celestia.webp"); }
+    .card__img--moon {
+      background-image: url("./assets/images/moon.webp"); }
+    .card__img--venus {
+      background-image: url("./assets/images/venus.webp"); }
+    .card__img--mars {
+      background-image: url("./assets/images/mars.webp"); }
+  .card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 55%;
+    color: #272643;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 2rem; }
+  .card__heading {
+    font-family: 'poppins-extrabold';
+    font-size: 2rem;
+    text-transform: uppercase; }
+  .card__body {
+    font-family: 'roboto-regular';
+    font-size: 1.4rem; }
 
 .header {
   position: fixed;
@@ -372,3 +445,10 @@ body {
   to {
     background-color: #ffffff;
     box-shadow: 0 2.5px 100px 5px #4B0082; } }
+
+.homepage__offers {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+  .homepage__offers .card {
+    width: 20%; }

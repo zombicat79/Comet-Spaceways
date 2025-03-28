@@ -1,0 +1,10 @@
+.homepage {
+
+    &__offers {
+        @include flex-row(space-evenly);
+
+        .card {
+            width: 20%
+        }
+    }
+}

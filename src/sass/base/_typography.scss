@@ -60,6 +60,16 @@
     src: url('./assets/fonts/michroma/Michroma-Regular.ttf');
 }
 
+//POPPINS
+@font-face {
+    font-family: poppins-bold;
+    src: url('./assets/fonts/poppins/Poppins-Bold.ttf');
+}
+@font-face {
+    font-family: poppins-extrabold;
+    src: url('./assets/fonts/poppins/Poppins-ExtraBold.ttf');
+}
+
 body {
     font-family: 'roboto-light';
     font-size: $size-medium;

@@ -1,0 +1,57 @@
+.card {
+    background-color: $color-body-light;
+    height: 30rem;
+    border-radius: 1.5rem;
+    min-width: 20rem;
+    max-width: 30rem;
+    transition: all 1s;
+
+    &:hover {
+        @include primary-response;
+    }
+
+    &__img {
+        height: 45%;
+
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &--celestia {
+            background-image: url('./assets/images/celestia.webp');
+        }
+
+        &--moon {
+            background-image: url('./assets/images/moon.webp');
+        }
+
+        &--venus {
+            background-image: url('./assets/images/venus.webp');
+        }
+
+        &--mars {
+            background-image: url('./assets/images/mars.webp');
+        }
+    }
+
+    &__content {
+        @include flex-column(space-around);
+        height: 55%;
+        color: $color-text-dark;
+        align-items: flex-start;
+        text-align: left;
+        padding: 0 2rem;
+    }
+
+    &__heading {
+        font-family: 'poppins-extrabold';
+        font-size: $size-extrabig;
+        text-transform: uppercase;
+    }
+
+    &__body {
+        font-family: 'roboto-regular';
+        font-size: $size-medium;
+    }
+}

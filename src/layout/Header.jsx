@@ -22,7 +22,7 @@ const headerLinks = {
         { id: 8, text: 'Help centre', action: 'navigate', path: '', decoration: 'underline' },
         { id: 9, text: 'Fares', action: 'navigate', path: '', decoration: 'underline' },
         { id: 10, text: 'Cargo', action: 'navigate', path: '', decoration: 'underline' },
-        { id: 11, text: 'Accomodation', action: 'navigate', path: '', decoration: 'underline' },
+        { id: 11, text: 'Seats & cabins', action: 'navigate', path: '', decoration: 'underline' },
         { id: 12, text: 'Onboard experience', action: 'navigate', path: '', decoration: 'underline' },
         { id: 13, text: 'Destinations', action: 'navigate', path: '', decoration: 'underline' }
     ],
@@ -32,8 +32,8 @@ const headerLinks = {
         { id: 16, text: 'Travel docs', action: 'navigate', path: '', decoration: 'underline' },
         { id: 17, text: 'Additional services', action: 'navigate', path: '', decoration: 'underline' },
         { id: 18, text: 'Flexibility services', action: 'navigate', path: '', decoration: 'underline' },
-        { id: 19, text: 'Traveling with children', action: 'navigate', path: '', decoration: 'underline' },
-        { id: 20, text: 'Parking and transfers', action: 'navigate', path: '', decoration: 'underline' },
+        { id: 19, text: 'Traveling with NHEs', action: 'navigate', path: '', decoration: 'underline' },
+        { id: 20, text: 'Spaceport transfer', action: 'navigate', path: '', decoration: 'underline' },
         { id: 21, text: 'Sustainability', action: 'navigate', path: '', decoration: 'underline' },
     ]
 }

@@ -2,11 +2,17 @@ function Banner({ background, textStyle, textContent }) {
     
     let backgroundOption = 0;
     switch(background.img) {
-        case 'space-tourism':
+        case 'space-beer':
             backgroundOption = 1;
             break;
+        case 'space-sunrise':
+            backgroundOption = 2;
+            break;
+        case 'earth-moon':
+            backgroundOption = 3;
+            break;
         default:
-            return;
+            backgroundOption = 1;
     }
 
     return (

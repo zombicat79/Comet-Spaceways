@@ -14,6 +14,7 @@
 
     &--half {
       height: 60vh;
+      background-position: center;
 
       .banner__heading {
         font-size: 3rem;
@@ -23,7 +24,17 @@
     // BANNER CHOICE
     &--1 {
       background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3),
-      rgba(18, 18, 18, 0.55)), url('./assets/images/space-tourism_banner.webp');
+      rgba(18, 18, 18, 0.55)), url('./assets/images/space-beer_banner.webp');
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3),
+      rgba(18, 18, 18, 0.55)), url('./assets/images/space-sunrise_banner.webp');
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3),
+      rgba(18, 18, 18, 0.55)), url('./assets/images/earth-moon_banner.webp');
     }
 
     // BANNER TEXT
