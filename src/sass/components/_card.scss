@@ -8,6 +8,10 @@
 
     &:hover {
         @include primary-response;
+
+        .pricetag__prompt {
+            @include primary-response;
+        }
     }
 
     &__img {
@@ -45,13 +49,19 @@
     }
 
     &__heading {
+        width: 100%;
         font-family: 'poppins-extrabold';
         font-size: $size-extrabig;
         text-transform: uppercase;
     }
 
     &__body {
+        width: 100%;
         font-family: 'roboto-regular';
         font-size: $size-medium;
+
+        .pricetag {
+            width: 100%;
+        }
     }
 }

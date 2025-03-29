@@ -39,8 +39,12 @@ body {
 main {
     section {
         padding: 8rem 5rem;
+
+        &:nth-child(odd):not(:first-child) {
+            background-color: $color-body-deep;
+        }
     }
-}   
+}
 
 /* OTHER MINOR ELEMENTS */
 a {

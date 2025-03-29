@@ -33,6 +33,10 @@
     transform: scale(1.05);
 }
 
+@mixin text-shadow($color) {
+    text-shadow: 0 .5rem 1.5rem $color;
+}
+
 // MEDIA QUERY MANAGER
 /* --- Desktop-first approach - Regular styles automatically applied between 1280px and 2000px --- */
 

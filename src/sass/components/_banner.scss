@@ -5,7 +5,7 @@
 
     // BANNER SIZE
     &--full {
-      height: 95vh;
+      height: 100vh;
 
       .banner__heading {
         font-size: 4.5rem;
@@ -42,11 +42,13 @@
       width: 90%;
       @include absolute-center;
       top: 55%;
-      font-family: 'michroma';
-      color: $color-text-light;
 
       &--left {
         text-align: left;
+      }
+
+      &--center {
+        text-align: center;
       }
 
       &--right {

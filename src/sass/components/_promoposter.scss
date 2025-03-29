@@ -1,0 +1,46 @@
+.promoposter {
+    @include flex-row(space-around);
+
+    &__side {
+        flex: 1;
+    }
+
+    &__catch {
+        width: 50%;
+        margin: 0 auto;
+        font-size: $size-gigantic;
+        line-height: 3.5rem;
+    }
+
+    &__heading {
+        font-size: 4.5rem;
+        text-transform: uppercase;
+        transform: rotate(-10deg);
+        padding: 8rem 0;
+        @include text-shadow($color-body-shallow);
+    }
+
+    &__body {
+        width: 50%;
+        margin: 0 auto;
+        color: $color-body-shallow;
+        
+        p {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__alert {
+        font-size: $size-extrabig;
+        text-transform: uppercase;
+        animation-name: pulsate;
+        animation-timing-function: linear;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+    }
+    
+    &__img {
+        max-width: 40rem;
+        border-radius: 2rem;
+    }
+}

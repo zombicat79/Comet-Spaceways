@@ -154,10 +154,10 @@
 
 @keyframes header-fadeout {
    from { background-color: $color-environmental-light; box-shadow: 0 2.5px 100px 5px $color-environmental-accent; }
-   to { background-color: $color-environmental-pitch; box-shadow: none;}
+   to { background-color: transparent; box-shadow: none;}
 }
 
 @keyframes header-fadein {
-   from { background-color: $color-environmental-pitch; box-shadow: none;}
+   from { background-color: transparent; box-shadow: none;}
    to { background-color: $color-environmental-light; box-shadow: 0 2.5px 100px 5px $color-environmental-accent; }
 }

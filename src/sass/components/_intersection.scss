@@ -1,0 +1,27 @@
+.intersection {
+
+    &--cosmic {
+        position: relative;
+        background-image: linear-gradient(177deg, $color-environmental-pitch 30%, $color-body-deep, $color-body-shallow, $color-body-deep, $color-environmental-pitch 70%);
+
+        &__ellipse {
+            @include absolute-center;
+            top: 35%;
+            left: 40%;
+            background-image: radial-gradient(yellow, $color-body-shallow 60%);
+            width: 450px;
+            height: 40px;
+            transform: rotate(177deg);
+            border-radius: 50%;
+        }
+
+        &__star {
+            @include absolute-center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 1px 15px 40px white, 1px -15px 40px white, 40px 10px 40px white, -40px 10px 40px white ;
+        }
+    }
+}

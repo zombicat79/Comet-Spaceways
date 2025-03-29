@@ -4,6 +4,8 @@ import Footer from './../layout/Footer';
 import Banner from './../components/Banner';
 import Card from './../components/Card';
 import PriceTag from './../components/PriceTag';
+import Intersection from '../components/Intersection';
+import PromoPoster from '../components/PromoPoster';
 
 const offers = [
     {
@@ -46,7 +48,7 @@ function Home() {
             <Header />
             <main className="homepage">
                 <Banner
-                    textStyle={{ color: 'default', align: 'default' }}
+                    textStyle={{ color: 'default', align: 'center' }}
                     textContent={{
                         heading: 'Go conquer the universe',
                         body: ''
@@ -54,7 +56,9 @@ function Home() {
                     background={{ img: 'space-beer', height: 'full' }}
                 />
                 <section className="">
-                    <h3>OFFERS FROM</h3>
+                    <div>
+                        <h3>OFFERS FROM PLANET EARTH</h3>
+                    </div>
                     <div className="homepage__offers">
                     {offers.map((el) => {
                         return (
@@ -73,6 +77,20 @@ function Home() {
                         )
                     })}
                     </div>
+                </section>
+                <Intersection type="cosmic" />
+                <section className="homepage__promos">
+                    <PromoPoster
+                        promoCatch="Thinking of moving some other star? 🤔"
+                        heading="trappist-1e"
+                        body={[
+                            "Join humankind's colonization effort, and embark on a life-changing journey that will take you and your family to a new home on a brave new world.",
+                            "New generational spaceship set to depart on early 2127."
+                        ]}
+                        promoImg="trappist"
+                        alert="do not miss your spot!"
+                        cta="book now"
+                    />
                 </section>
             </main>
             <Footer />

@@ -1,7 +1,10 @@
 .homepage {
 
     &__offers {
-        @include flex-row(space-evenly);
+        @include flex-row(center);
+        gap: 5rem;
+
+        margin-top: 3rem;
 
         .card {
             width: 20%

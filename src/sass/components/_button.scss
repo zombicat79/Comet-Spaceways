@@ -1,0 +1,26 @@
+.btn {
+    background-color: $color-highlight-light;
+    color: $color-text-dark;
+    border: none;
+    padding: $size-small $size-huge;
+    font-size: $size-regular;
+    text-transform: uppercase;
+    border-radius: $size-smallest;
+    margin: 2rem 0;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    &--secondary {
+        color: $color-text-light;
+        background-color: $color-environmental-accent;
+        border: 1px solid $color-highlight-light;
+
+        &:hover {
+            filter: brightness(1.2);
+            @include primary-response;
+        }
+    }
+}

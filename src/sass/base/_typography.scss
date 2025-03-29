@@ -78,3 +78,20 @@ body {
     line-height: 2.25rem;
     text-align: center;
 }
+
+h1, h2, h3 {
+    font-family: 'michroma';
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 4.5rem;
+}
+
+h2 {
+    font-size: $size-gigantic;
+}
+
+h3 {
+    font-size: $size-extrabig;
+}
