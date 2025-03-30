@@ -34,7 +34,7 @@ const headerLinks = {
         { id: 18, text: 'Flexibility services', action: 'navigate', path: '', decoration: 'underline' },
         { id: 19, text: 'Traveling with NHEs', action: 'navigate', path: '', decoration: 'underline' },
         { id: 20, text: 'Spaceport transfer', action: 'navigate', path: '', decoration: 'underline' },
-        { id: 21, text: 'Sustainability', action: 'navigate', path: '', decoration: 'underline' },
+        { id: 21, text: 'Security', action: 'navigate', path: '', decoration: 'underline' },
     ]
 }
 

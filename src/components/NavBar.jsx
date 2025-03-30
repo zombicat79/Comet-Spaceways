@@ -1,8 +1,6 @@
 import NavLink from "./NavLink";
 
 function NavBar({ direction, links, decoration, tooling }) {
-    console.log(tooling)
-
     return (
         <nav className='navbar'>
             <ul className={`navbar__list navbar__list--${direction}`}>

@@ -564,6 +564,43 @@ h3 {
     background-color: #ffffff;
     box-shadow: 0 2.5px 100px 5px #4B0082; } }
 
+.footer {
+  background-color: #ffffff;
+  padding: 3rem 2rem;
+  box-shadow: 0 -2.5px 100px 5px #4B0082; }
+  .footer__section--top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    .footer__section--top .badge__container,
+    .footer__section--top .navmenu {
+      flex: 1; }
+    .footer__section--top .badge__img {
+      max-width: 25rem; }
+  .footer__section--bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .footer__section--bottom .navbar {
+      margin: 2rem 0; }
+      .footer__section--bottom .navbar__list {
+        gap: 0; }
+    .footer__section--bottom .navlink:not(.navlink:last-child)::after {
+      content: "|";
+      margin: 0 .5rem; }
+  .footer .navmenu {
+    color: #272643; }
+    .footer .navmenu__column {
+      gap: 10rem; }
+  .footer .navlink {
+    color: #272643; }
+  .footer .copyright {
+    color: #272643;
+    font-family: 'bai-medium'; }
+    .footer .copyright::after {
+      content: "|";
+      margin: 0 .5rem; }
+
 .homepage__offers {
   display: flex;
   justify-content: center;

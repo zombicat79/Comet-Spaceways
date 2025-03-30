@@ -1,0 +1,57 @@
+.footer {
+    background-color: $color-environmental-light;
+    padding: 3rem 2rem;
+    box-shadow: 0 -2.5px 100px 5px $color-environmental-accent;
+
+    &__section--top {
+        @include flex-row(space-around);
+
+        .badge__container,
+        .navmenu {
+            flex: 1;
+        }
+
+        .badge__img {
+            max-width: 25rem;
+        }
+    }
+
+    &__section--bottom {
+        @include flex-row(center);
+
+        .navbar {
+            margin: 2rem 0;
+
+            &__list {
+                gap: 0;
+            }
+        }
+
+        .navlink:not(.navlink:last-child)::after {
+            content: "|";
+            margin: 0 .5rem;
+        }
+    }
+
+    .navmenu {
+        color: $color-text-dark;
+
+        &__column {
+           gap: 10rem;
+        }
+     }
+
+     .navlink {
+        color: $color-text-dark;
+     }
+
+     .copyright {
+        color: $color-text-dark;
+        font-family: 'bai-medium';
+
+        &::after {
+            content: "|";
+            margin: 0 .5rem;
+        }
+     }
+}
