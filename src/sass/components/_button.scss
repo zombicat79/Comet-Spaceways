@@ -3,10 +3,10 @@
     color: $color-text-dark;
     border: none;
     padding: $size-small $size-huge;
+    font-family: 'titillium-semibold';
     font-size: $size-regular;
     text-transform: uppercase;
     border-radius: $size-smallest;
-    margin: 2rem 0;
     transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
 
     &:hover{

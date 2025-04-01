@@ -1,0 +1,26 @@
+.selector {
+    background-color: transparent;
+    color: $color-body-deep;
+    font-family: 'titillium-regular';
+    text-align: left;
+    line-height: 1.75rem;
+    padding: 1rem;
+    border: 1px solid $color-body-deep;
+    border-radius: 4px;
+
+    &__id {
+        color: inherit;
+        font-size: $size-smaller;
+    }
+
+    &__value {
+        color: $color-text-dark;
+        font-family: 'titillium-bold';
+        font-size: $size-regular;
+        text-transform: uppercase;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}

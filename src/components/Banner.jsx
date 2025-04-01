@@ -1,4 +1,4 @@
-function Banner({ background, textStyle, textContent }) {
+function Banner({ background, textStyle, textContent, children }) {
     
     let backgroundOption = 0;
     switch(background.img) {
@@ -17,6 +17,8 @@ function Banner({ background, textStyle, textContent }) {
 
     return (
         <section className={`banner banner--${backgroundOption} banner--${background.height}`}>
+            {children}
+            
             <div className={textStyle.align ? `banner__msg banner__msg--${textStyle.align}`: 'banner__msg'}>
                 <h1 className="banner__heading">{textContent.heading}</h1>
                 <p className="banner__text">{textContent.body}</p>

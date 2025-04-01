@@ -144,6 +144,26 @@ img {
   src: url("./assets/fonts/roboto/Roboto-ExtraBold.ttf"); }
 
 @font-face {
+  font-family: titillium-extralight;
+  src: url("./assets/fonts/titillium/TitilliumWeb-ExtraLight.ttf"); }
+
+@font-face {
+  font-family: titillium-light;
+  src: url("./assets/fonts/titillium/TitilliumWeb-Light.ttf"); }
+
+@font-face {
+  font-family: titillium-regular;
+  src: url("./assets/fonts/titillium/TitilliumWeb-Regular.ttf"); }
+
+@font-face {
+  font-family: titillium-semibold;
+  src: url("./assets/fonts/titillium/TitilliumWeb-SemiBold.ttf"); }
+
+@font-face {
+  font-family: titillium-bold;
+  src: url("./assets/fonts/titillium/TitilliumWeb-Bold.ttf"); }
+
+@font-face {
   font-family: bai-extralight;
   src: url("./assets/fonts/bai-jamjuree/BaiJamjuree-ExtraLight.ttf"); }
 
@@ -215,10 +235,10 @@ h3 {
   color: #272643;
   border: none;
   padding: 1.2rem 2.4rem;
+  font-family: 'titillium-semibold';
   font-size: 1.6rem;
   text-transform: uppercase;
   border-radius: 0.8rem;
-  margin: 2rem 0;
   transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out; }
   .btn:hover {
     cursor: pointer; }
@@ -283,6 +303,26 @@ h3 {
     align-items: flex-start;
     gap: 3rem;
     margin-left: 1.5rem; }
+
+.selector {
+  background-color: transparent;
+  color: #2c698d;
+  font-family: 'titillium-regular';
+  text-align: left;
+  line-height: 1.75rem;
+  padding: 1rem;
+  border: 1px solid #2c698d;
+  border-radius: 4px; }
+  .selector__id {
+    color: inherit;
+    font-size: 1rem; }
+  .selector__value {
+    color: #272643;
+    font-family: 'titillium-bold';
+    font-size: 1.6rem;
+    text-transform: uppercase; }
+  .selector:hover {
+    cursor: pointer; }
 
 .banner {
   position: relative;
@@ -442,9 +482,23 @@ h3 {
     animation-timing-function: linear;
     animation-duration: 2.5s;
     animation-iteration-count: infinite; }
+  .promoposter .btn {
+    margin: 2rem 0; }
   .promoposter__img {
     max-width: 40rem;
     border-radius: 2rem; }
+
+.flightsearch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e3f6f5;
+  max-width: 80vw;
+  border-radius: 1.5rem;
+  padding: 1.5rem 3rem;
+  box-shadow: 0 0 4.5rem #00FFFF; }
+  .flightsearch__input {
+    border: 1px solid #121212; }
 
 .header {
   position: fixed;
@@ -609,3 +663,15 @@ h3 {
   margin-top: 3rem; }
   .homepage__offers .card {
     width: 20%; }
+
+.homepage .flightsearch {
+  opacity: 0;
+  position: relative;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-name: fadein;
+  animation-timing-function: 'linear';
+  animation-delay: 1.5s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards; }

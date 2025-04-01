@@ -2,6 +2,7 @@ import Header from './../layout/Header';
 import Footer from './../layout/Footer';
 
 import Banner from './../components/Banner';
+import FlightSearch from './../components/FlightSearch';
 import Card from './../components/Card';
 import PriceTag from './../components/PriceTag';
 import Intersection from '../components/Intersection';
@@ -54,7 +55,9 @@ function Home() {
                         body: ''
                     }}
                     background={{ img: 'space-beer', height: 'full' }}
-                />
+                >
+                    <FlightSearch />
+                </Banner>
                 <section className="">
                     <div>
                         <h3>OFFERS FROM PLANET EARTH</h3>

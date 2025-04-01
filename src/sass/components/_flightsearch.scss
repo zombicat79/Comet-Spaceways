@@ -1,0 +1,13 @@
+.flightsearch {
+    @include flex-row(space-between);
+
+    background-color: $color-body-light;
+    max-width: 80vw;
+    border-radius: 1.5rem;
+    padding: 1.5rem 3rem;
+    box-shadow: 0 0 4.5rem $color-highlight-light;
+
+    &__input {
+        border: 1px solid $color-environmental-pitch;
+    }
+}

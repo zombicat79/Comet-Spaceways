@@ -1,4 +1,4 @@
-//ROBOTO
+// ROBOTO
 @font-face {
     font-family: roboto-extralight;
     src: url('./assets/fonts/roboto/Roboto-ExtraLight.ttf');
@@ -28,7 +28,29 @@
     src: url('./assets/fonts/roboto/Roboto-ExtraBold.ttf');
 }
 
-//BAI-JAMJUREE
+// TITILLIUM-WEB
+@font-face {
+    font-family: titillium-extralight;
+    src: url('./assets/fonts/titillium/TitilliumWeb-ExtraLight.ttf');
+}
+@font-face {
+    font-family: titillium-light;
+    src: url('./assets/fonts/titillium/TitilliumWeb-Light.ttf');
+}
+@font-face {
+    font-family: titillium-regular;
+    src: url('./assets/fonts/titillium/TitilliumWeb-Regular.ttf');
+}
+@font-face {
+    font-family: titillium-semibold;
+    src: url('./assets/fonts/titillium/TitilliumWeb-SemiBold.ttf');
+}
+@font-face {
+    font-family: titillium-bold;
+    src: url('./assets/fonts/titillium/TitilliumWeb-Bold.ttf');
+}
+
+// BAI-JAMJUREE
 @font-face {
     font-family: bai-extralight;
     src: url('./assets/fonts/bai-jamjuree/BaiJamjuree-ExtraLight.ttf');
@@ -54,13 +76,13 @@
     src: url('./assets/fonts/bai-jamjuree/BaiJamjuree-Bold.ttf');
 }
 
-//MICHROMA
+// MICHROMA
 @font-face {
     font-family: michroma;
     src: url('./assets/fonts/michroma/Michroma-Regular.ttf');
 }
 
-//POPPINS
+// POPPINS
 @font-face {
     font-family: poppins-bold;
     src: url('./assets/fonts/poppins/Poppins-Bold.ttf');
