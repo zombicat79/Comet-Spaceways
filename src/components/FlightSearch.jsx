@@ -1,20 +1,46 @@
 import Selector from "./Selector";
 import Button from "./Button";
 
+const destinations = ['Earth - America', 'Earth - Europe', 'Earth - Asia', 
+    'Celestia station', 'Moon', 'Mars', 'Venus', 'Ceres', 'Titan']
+
 function FlightSearch() {
     return (
         <form className="flightsearch">
-            <div className="flightsearch__input">Round trip</div>
-            <Selector 
+            <Selector
+                type=""
+                identifier="Voyage Type"
+                initialValue="➡️ Round trip"
+                choiceOptions={['🔄 round trip', '➡️ one-way']}
+            />
+            <Selector
+                type="regular"
                 identifier="Origin"
-                currentValue="Earth" 
+                initialValue={destinations[1]}
+                choiceOptions={destinations} 
+            />
+            <Selector
+                type="regular"
+                identifier="Destination"
+                initialValue={destinations[5]}
+                choiceOptions={destinations} 
             />
             <Selector 
-                identifier="Destination"
-                currentValue="Mars" 
+                type="date"
+                identifier="Departure Date"
+                initialValue="29/05/2125" 
             />
-            <div className="flightsearch__input">Departure Date</div>
-            <div className="flightsearch__input">Return Date</div>
+            <Selector
+                type="date"
+                identifier="Return Date"
+                initialValue="31/05/2125" 
+            />
+            <Selector
+                type="quantity"
+                identifier="Passengers"
+                initialValue="1 being" 
+            />
+            
             <Button type="secondary" text="search" />
         </form>
     )

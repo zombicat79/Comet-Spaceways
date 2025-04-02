@@ -305,24 +305,65 @@ h3 {
     margin-left: 1.5rem; }
 
 .selector {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  position: relative;
   background-color: transparent;
   color: #2c698d;
   font-family: 'titillium-regular';
-  text-align: left;
   line-height: 1.75rem;
+  text-align: left;
   padding: 1rem;
   border: 1px solid #2c698d;
   border-radius: 4px; }
+  .selector:hover {
+    cursor: pointer; }
   .selector__id {
     color: inherit;
     font-size: 1rem; }
   .selector__value {
     color: #272643;
     font-family: 'titillium-bold';
-    font-size: 1.6rem;
     text-transform: uppercase; }
-  .selector:hover {
-    cursor: pointer; }
+    .selector__value--smaller {
+      font-size: 1rem; }
+    .selector__value--small {
+      font-size: 1.2rem; }
+    .selector__value--medium {
+      font-size: 1.4rem; }
+    .selector__value--regular {
+      font-size: 1.6rem; }
+  .selector__choice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    bottom: -6rem;
+    left: 0;
+    background-color: #e3f6f5;
+    padding: 1rem;
+    border: 1px solid #2c698d;
+    animation-name: fadein;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-fill-mode: both; }
+  .selector__option {
+    display: inline-block;
+    width: 100%;
+    padding: .5rem;
+    text-transform: capitalize;
+    z-index: 1; }
+    .selector__option:not(:last-child) {
+      margin-bottom: .5rem; }
+    .selector__option:hover {
+      background-color: #bae8e8; }
 
 .banner {
   position: relative;
@@ -497,7 +538,11 @@ h3 {
   border-radius: 1.5rem;
   padding: 1.5rem 3rem;
   box-shadow: 0 0 4.5rem #00FFFF; }
-  .flightsearch__input {
+  .flightsearch .selector {
+    flex: 1;
+    min-width: 1rem;
+    max-width: 15rem;
+    height: 6rem;
     border: 1px solid #121212; }
 
 .header {

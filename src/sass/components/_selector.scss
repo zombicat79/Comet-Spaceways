@@ -1,12 +1,20 @@
 .selector {
+    @include flex-column(center);
+    align-items: flex-start;
+    position: relative;
+
     background-color: transparent;
     color: $color-body-deep;
     font-family: 'titillium-regular';
-    text-align: left;
     line-height: 1.75rem;
+    text-align: left;
     padding: 1rem;
     border: 1px solid $color-body-deep;
     border-radius: 4px;
+
+    &:hover {
+        cursor: pointer;
+    }
 
     &__id {
         color: inherit;
@@ -16,11 +24,56 @@
     &__value {
         color: $color-text-dark;
         font-family: 'titillium-bold';
-        font-size: $size-regular;
         text-transform: uppercase;
+
+        &--smaller {
+            font-size: $size-smaller;
+        }
+
+        &--small {
+            font-size: $size-small;
+        }
+
+        &--medium {
+            font-size: $size-medium;
+        }
+
+        &--regular {
+            font-size: $size-regular;
+        }
     }
 
-    &:hover {
-        cursor: pointer;
+    &__choice {
+        @include flex-column(center);
+        align-items: flex-start;
+        width: 100%;
+        z-index: 1;
+
+        position: absolute;
+        bottom: -6rem;
+        left: 0;
+        background-color: $color-body-light;
+        padding: 1rem;
+        border: 1px solid $color-body-deep;
+        animation-name: fadein;
+        animation-timing-function: linear;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+
+    &__option {
+        display: inline-block;
+        width: 100%;
+        padding: .5rem;
+        text-transform: capitalize;
+        z-index: 1;
+
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+
+        &:hover {
+            background-color: $color-body-shallow;
+        }
     }
 }
