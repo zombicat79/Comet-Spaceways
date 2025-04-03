@@ -11,10 +11,23 @@
     padding: 1rem;
     border: 1px solid $color-body-deep;
     border-radius: 4px;
+    transition: filter 1s;
+
+    // STATES
 
     &:hover {
         cursor: pointer;
     }
+
+    &--disabled {
+        filter: opacity(0.3) grayscale(1);
+
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+
+    // SUB-ELEMENTS
 
     &__id {
         color: inherit;
@@ -50,7 +63,7 @@
         z-index: 1;
 
         position: absolute;
-        bottom: -6rem;
+        top: 6rem;
         left: 0;
         background-color: $color-body-light;
         padding: 1rem;

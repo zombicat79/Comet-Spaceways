@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Selector({ type, identifier, initialValue, choiceOptions }) {
+function Selector({ type, identifier, initialValue, choiceOptions, tooling, cssModifier }) {
     const [isFolded, setIsFolded] = useState(true);
     const [selectionValue, setSelectionValue] = useState(initialValue);
 
@@ -28,18 +28,39 @@ function Selector({ type, identifier, initialValue, choiceOptions }) {
     }
 
     function handleFolding() {
-        setIsFolded((curr) => !curr);
+        if (cssModifier !== 'disabled') {
+            setIsFolded((curr) => !curr);
+        }
     }
 
     function handleSelection(newSelection) {
-        setSelectionValue(newSelection);
+        switch(true) {
+            case newSelection.innerText.toLowerCase() === 'round trip':
+                setSelectionValue(`🔄 ${newSelection.innerText}`);
+                break;
+            case newSelection.innerText.toLowerCase() === 'one-way':
+                setSelectionValue(`➡️ ${newSelection.innerText}`);
+                break;
+            default:
+                setSelectionValue(newSelection.innerText);
+        }
+
+        if (tooling) {
+            tooling(newSelection.id);
+        }
     }
 
     return (
-        <div className="selector" onClick={handleFolding}>
+        <div 
+            className={cssModifier ? `selector selector--${cssModifier}` : `selector`} 
+            onClick={handleFolding}
+        >
             <p className="selector__id">{identifier}</p>
             <p className={`selector__value selector__value--${textSizeCorrection}`}>
-                {outputValueText}
+                {cssModifier === 'disabled' 
+                    ? "N/A"
+                    : outputValueText
+                }
             </p>
 
             {!isFolded &&
@@ -47,9 +68,10 @@ function Selector({ type, identifier, initialValue, choiceOptions }) {
                     {choiceOptions?.map((el, index) => {
                         return (
                             <span 
-                                key={el + index} 
+                                key={el + index}
+                                id={el} 
                                 className="selector__option"
-                                onClick={(e) => handleSelection(e.target.innerText)} >
+                                onClick={(e) => handleSelection(e.target)} >
                                     {el}
                             </span>
                         )

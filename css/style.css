@@ -318,9 +318,14 @@ h3 {
   text-align: left;
   padding: 1rem;
   border: 1px solid #2c698d;
-  border-radius: 4px; }
+  border-radius: 4px;
+  transition: filter 1s; }
   .selector:hover {
     cursor: pointer; }
+  .selector--disabled {
+    filter: opacity(0.3) grayscale(1); }
+    .selector--disabled:hover {
+      cursor: not-allowed; }
   .selector__id {
     color: inherit;
     font-size: 1rem; }
@@ -345,7 +350,7 @@ h3 {
     width: 100%;
     z-index: 1;
     position: absolute;
-    bottom: -6rem;
+    top: 6rem;
     left: 0;
     background-color: #e3f6f5;
     padding: 1rem;
@@ -537,10 +542,11 @@ h3 {
   max-width: 80vw;
   border-radius: 1.5rem;
   padding: 1.5rem 3rem;
-  box-shadow: 0 0 4.5rem #00FFFF; }
+  box-shadow: 0 0 4.5rem #00FFFF;
+  z-index: 1; }
   .flightsearch .selector {
     flex: 1;
-    min-width: 1rem;
+    min-width: 10rem;
     max-width: 15rem;
     height: 6rem;
     border: 1px solid #121212; }

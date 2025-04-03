@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Selector from "./Selector";
 import Button from "./Button";
 
@@ -5,13 +7,20 @@ const destinations = ['Earth - America', 'Earth - Europe', 'Earth - Asia',
     'Celestia station', 'Moon', 'Mars', 'Venus', 'Ceres', 'Titan']
 
 function FlightSearch() {
+    const [searchScope, setSearchScope] = useState('round trip');
+
+    function handleSearchScoping(newScope) {
+        setSearchScope(newScope);
+    }
+
     return (
         <form className="flightsearch">
             <Selector
                 type=""
                 identifier="Voyage Type"
-                initialValue="➡️ Round trip"
-                choiceOptions={['🔄 round trip', '➡️ one-way']}
+                initialValue="🔄 Round trip"
+                choiceOptions={['round trip', 'one-way']}
+                tooling={handleSearchScoping}
             />
             <Selector
                 type="regular"
@@ -33,7 +42,8 @@ function FlightSearch() {
             <Selector
                 type="date"
                 identifier="Return Date"
-                initialValue="31/05/2125" 
+                initialValue="?"
+                cssModifier={searchScope === 'one-way' ? 'disabled': null}
             />
             <Selector
                 type="quantity"
