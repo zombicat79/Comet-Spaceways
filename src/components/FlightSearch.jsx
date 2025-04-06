@@ -16,7 +16,7 @@ function FlightSearch() {
     return (
         <form className="flightsearch">
             <Selector
-                type=""
+                type="regular"
                 identifier="Voyage Type"
                 initialValue="🔄 Round trip"
                 choiceOptions={['round trip', 'one-way']}
@@ -48,9 +48,14 @@ function FlightSearch() {
             <Selector
                 type="quantity"
                 identifier="Passengers"
-                initialValue="1 being" 
+                initialValue="1 humanoid"
+                choiceOptions={[
+                    {category: 'humanoids', description: 'Humans, cyborgs or androids'},
+                    {category: 'NHEs', description: 'Non-antropomorphic robots & AIs'},
+                    {category: 'Pets', description: 'Organic or synthetic pets'}
+                ]} 
             />
-            
+
             <Button type="secondary" text="search" />
         </form>
     )

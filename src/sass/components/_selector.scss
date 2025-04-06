@@ -72,6 +72,12 @@
         animation-timing-function: linear;
         animation-duration: 1s;
         animation-fill-mode: both;
+
+        // TYPES
+
+        &--quantity {
+            width: max-content;
+        }
     }
 
     &__option {

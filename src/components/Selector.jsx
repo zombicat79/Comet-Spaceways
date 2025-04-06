@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import Quantifier from './Quantifier';
+
 function Selector({ type, identifier, initialValue, choiceOptions, tooling, cssModifier }) {
     const [isFolded, setIsFolded] = useState(true);
     const [selectionValue, setSelectionValue] = useState(initialValue);
@@ -27,7 +29,8 @@ function Selector({ type, identifier, initialValue, choiceOptions, tooling, cssM
         return selectionValue.slice(0, 12) + '...'; 
     }
 
-    function handleFolding() {
+    function handleFolding(clickedElement) {
+        if (clickedElement.classList.contains('quantifier__operator')) return;
         if (cssModifier !== 'disabled') {
             setIsFolded((curr) => !curr);
         }
@@ -53,7 +56,7 @@ function Selector({ type, identifier, initialValue, choiceOptions, tooling, cssM
     return (
         <div 
             className={cssModifier ? `selector selector--${cssModifier}` : `selector`} 
-            onClick={handleFolding}
+            onClick={(e) => handleFolding(e.target)}
         >
             <p className="selector__id">{identifier}</p>
             <p className={`selector__value selector__value--${textSizeCorrection}`}>
@@ -63,7 +66,7 @@ function Selector({ type, identifier, initialValue, choiceOptions, tooling, cssM
                 }
             </p>
 
-            {!isFolded &&
+            {!isFolded && type === 'regular' &&
                 <div className="selector__choice">
                     {choiceOptions?.map((el, index) => {
                         return (
@@ -74,6 +77,19 @@ function Selector({ type, identifier, initialValue, choiceOptions, tooling, cssM
                                 onClick={(e) => handleSelection(e.target)} >
                                     {el}
                             </span>
+                        )
+                    })}
+                </div>
+            }
+
+            {!isFolded && type === 'quantity' &&
+                <div className={`selector__choice selector__choice--${type}`}>
+                    {choiceOptions?.map((el, index) => {
+                        return (
+                            <Quantifier 
+                                key={el.category + index}
+                                countableItem={el} 
+                            />
                         )
                     })}
                 </div>
