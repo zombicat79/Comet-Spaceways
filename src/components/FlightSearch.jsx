@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+
+import { FlightSearchContext } from '../contexts/FlightSearchContext';
 
 import Selector from "./Selector";
 import Button from "./Button";
@@ -7,11 +9,7 @@ const destinations = ['Earth - America', 'Earth - Europe', 'Earth - Asia',
     'Celestia station', 'Moon', 'Mars', 'Venus', 'Ceres', 'Titan']
 
 function FlightSearch() {
-    const [searchScope, setSearchScope] = useState('round trip');
-
-    function handleSearchScoping(newScope) {
-        setSearchScope(newScope);
-    }
+    const { searchScope, handleSearchScoping } = useContext(FlightSearchContext);
 
     return (
         <form className="flightsearch">

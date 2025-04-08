@@ -1,6 +1,11 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+
+import { FlightSearchContext } from '../contexts/FlightSearchContext';
 
 function Quantifier({ countableItem }) {
+    const testVar = useContext(FlightSearchContext);
+    console.log(testVar);
+
     const [count, setCount] = useState(0);
 
     function handleIncrement() {

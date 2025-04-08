@@ -1,3 +1,5 @@
+import { FlightSearchProvider } from '../contexts/FlightSearchContext';
+
 import Header from './../layout/Header';
 import Footer from './../layout/Footer';
 
@@ -56,7 +58,9 @@ function Home() {
                     }}
                     background={{ img: 'space-beer', height: 'full' }}
                 >
-                    <FlightSearch />
+                    <FlightSearchProvider>
+                        <FlightSearch />
+                    </FlightSearchProvider>
                 </Banner>
                 <section className="">
                     <div>
