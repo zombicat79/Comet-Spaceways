@@ -1,47 +1,49 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 
 import { FlightSearchContext } from '../contexts/FlightSearchContext';
 
 import Selector from "./Selector";
 import Button from "./Button";
 
-const destinations = ['Earth - America', 'Earth - Europe', 'Earth - Asia', 
-    'Celestia station', 'Moon', 'Mars', 'Venus', 'Ceres', 'Titan']
-
 function FlightSearch() {
-    const { searchScope, handleSearchScoping } = useContext(FlightSearchContext);
+    const { flightSearchState } = useContext(FlightSearchContext);
 
     return (
         <form className="flightsearch">
+            <input id="origin" type="hidden" value={flightSearchState.origin.toLowerCase()} />
+            <input id="destination" type="hidden" value={flightSearchState.destination.toLowerCase()} />
+            <input id="departure-date" type="hidden" value="TBA" />
+            <input id="return-date" type="hidden" value="TBA" />
+            <input id="passengers" type="hidden" value="TBA" />
+
             <Selector
                 type="regular"
                 identifier="Voyage Type"
-                initialValue="🔄 Round trip"
+                initialValue={flightSearchState.searchScope}
                 choiceOptions={['round trip', 'one-way']}
-                tooling={handleSearchScoping}
             />
             <Selector
                 type="regular"
                 identifier="Origin"
-                initialValue={destinations[1]}
-                choiceOptions={destinations} 
+                initialValue={flightSearchState.origin}
+                choiceOptions={flightSearchState.destinationOffer} 
             />
             <Selector
                 type="regular"
                 identifier="Destination"
-                initialValue={destinations[5]}
-                choiceOptions={destinations} 
+                initialValue={flightSearchState.destination}
+                choiceOptions={flightSearchState.destinationOffer} 
             />
             <Selector 
                 type="date"
                 identifier="Departure Date"
-                initialValue="29/05/2125" 
+                initialValue={flightSearchState.departureDate}
             />
             <Selector
                 type="date"
                 identifier="Return Date"
-                initialValue="?"
-                cssModifier={searchScope === 'one-way' ? 'disabled': null}
+                initialValue={flightSearchState.returnDate}
+                cssModifier={flightSearchState.searchScope === 'one-way' ? 'disabled': null}
             />
             <Selector
                 type="quantity"
@@ -54,7 +56,7 @@ function FlightSearch() {
                 ]} 
             />
 
-            <Button type="secondary" text="search" />
+            <Button type="secondary" text="search" onClick="TBA" />
         </form>
     )
 }

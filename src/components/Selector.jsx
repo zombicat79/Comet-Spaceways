@@ -1,8 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
+
+import { FlightSearchContext } from './../contexts/FlightSearchContext';
 
 import Quantifier from './Quantifier';
 
 function Selector({ type, identifier, initialValue, choiceOptions, tooling, cssModifier }) {
+    const { flightSearchState, changeFlightSearchState } = useContext(FlightSearchContext);
+    console.log(flightSearchState)
+
     const [isFolded, setIsFolded] = useState(true);
     const [selectionValue, setSelectionValue] = useState(initialValue);
 
@@ -42,16 +47,32 @@ function Selector({ type, identifier, initialValue, choiceOptions, tooling, cssM
                 setSelectionValue(`🔄 ${newSelection.innerText}`);
                 break;
             case newSelection.innerText.toLowerCase() === 'one-way':
-                setSelectionValue(`➡️ ${newSelection.innerText}`);
+                setSelectionValue(`🔄 ${newSelection.innerText}`);
                 break;
             default:
                 setSelectionValue(newSelection.innerText);
         }
 
-        if (tooling) {
+        /* if (tooling) {
             tooling(newSelection.id);
-        }
+        } */
     }
+
+    useEffect(() => {
+        if (changeFlightSearchState) {
+            switch(identifier) {
+                case 'Voyage Type':
+                    changeFlightSearchState({ type: 'scope-change', payload: selectionValue });
+                    break;
+                case 'Origin':
+                    changeFlightSearchState({ type: 'origin-change', payload: selectionValue });
+                    break;
+                case 'Destination':
+                    changeFlightSearchState({ type: 'destination-change', payload: selectionValue });
+                    break;
+            }
+        }
+    }, [selectionValue])
 
     return (
         <div 

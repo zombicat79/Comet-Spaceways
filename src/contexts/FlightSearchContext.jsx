@@ -1,23 +1,54 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 const FlightSearchContext = createContext();
 
-function FlightSearchProvider({ children }) {
-    const [searchScope, setSearchScope] = useState('round trip');
-    const [origin, setOrigin] = useState('');
-    const [destination, setDestination] = useState('');
-    const [departureDate, setDepartureDate] = useState('');
-    const [returnDate, setReturnDate] = useState('');
-    const [passengers, setPassengers] = useState('');
- 
-    function handleSearchScoping(newScope) {
-        setSearchScope(newScope);
+const initialState = {
+    destinationOffer: [],
+    searchScope: '🔄 Round trip',
+    origin: 'Earth - Europe',
+    destination: 'Mars',
+    departureDate: '',
+    returnDate: '',
+    passengers: {
+        humanoids: 0,
+        nhes: 0,
     }
+}
+
+function fligtSearchReducer(state, action) {
+    switch(action.type) {
+        case 'offer-change':
+            return { ...state, destinationOffer: action.payload };
+        case 'scope-change':
+            return { ...state, searchScope: action.payload };
+        case 'origin-change':
+            return { ...state, origin: action.payload };
+        case 'destination-change':
+            return { ...state, destination: action.payload };
+        case 'departure-change':
+        case 'return-change':
+        case 'passenger-change':
+        default:
+            throw new Error('Unknown action');
+    }
+}
+
+function FlightSearchProvider({ children }) {
+    const [state, dispatch] = useReducer(fligtSearchReducer, initialState);
+
+    useEffect(() => {
+        // TEMPORARY HARD-CODED DESTINATIONS (To be fetched from server)
+        const destinationOffer = ['Earth - America', 'Earth - Europe', 'Earth - Asia', 
+        'Celestia station', 'Moon', 'Mars', 'Venus', 'Ceres', 'Titan']
+        // END OF ALERT
+
+        dispatch({ type: 'offer-change', payload: destinationOffer})
+    }, [])
 
     return (
         <FlightSearchContext.Provider value={{
-            searchScope,
-            handleSearchScoping
+            flightSearchState: state,
+            changeFlightSearchState: dispatch
         }}>
             {children}
         </FlightSearchContext.Provider>
