@@ -43,7 +43,7 @@ function FlightSearch() {
                 type="date"
                 identifier="Return Date"
                 initialValue={flightSearchState.returnDate}
-                cssModifier={flightSearchState.searchScope === 'one-way' ? 'disabled': null}
+                cssModifier={flightSearchState.searchScope === '➡️ One-Way' ? 'disabled' : null}
             />
             <Selector
                 type="quantity"

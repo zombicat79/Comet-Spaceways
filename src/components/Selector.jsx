@@ -1,65 +1,22 @@
-import { useState, useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
+import useSelectorTool from '../hooks/useSelectorTool';
+import useTextResize from '../hooks/useTextResize';
 
 import { FlightSearchContext } from './../contexts/FlightSearchContext';
 
 import Quantifier from './Quantifier';
 
-function Selector({ type, identifier, initialValue, choiceOptions, tooling, cssModifier }) {
-    const { flightSearchState, changeFlightSearchState } = useContext(FlightSearchContext);
-    console.log(flightSearchState)
+function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }) {
+    const { isFolded, selectionValue, handleFolding, handleSelection } = useSelectorTool(initialValue);
+    const { outputValueText, textSizeCorrection } = useTextResize(initialValue, cssModifier);
+    console.log(initialValue)
 
-    const [isFolded, setIsFolded] = useState(true);
-    const [selectionValue, setSelectionValue] = useState(initialValue);
-
-    let outputValueText = selectionValue;
-    let textSizeCorrection;
-
-    switch(true) {
-        case selectionValue.length > 15:
-            textSizeCorrection = 'small';
-            outputValueText = handleTextOversize();
-            break;
-        case selectionValue.length >= 14 && selectionValue.length <= 15:
-            textSizeCorrection = 'small';
-            break;
-        case selectionValue.length > 11 && selectionValue.length < 14:
-            textSizeCorrection = 'medium';
-            break;
-        case selectionValue.length <= 11:
-            textSizeCorrection = 'regular';
-            break; 
-    }
-
-    function handleTextOversize() {
-        return selectionValue.slice(0, 12) + '...'; 
-    }
-
-    function handleFolding(clickedElement) {
-        if (clickedElement.classList.contains('quantifier__operator')) return;
-        if (cssModifier !== 'disabled') {
-            setIsFolded((curr) => !curr);
-        }
-    }
-
-    function handleSelection(newSelection) {
-        switch(true) {
-            case newSelection.innerText.toLowerCase() === 'round trip':
-                setSelectionValue(`🔄 ${newSelection.innerText}`);
-                break;
-            case newSelection.innerText.toLowerCase() === 'one-way':
-                setSelectionValue(`🔄 ${newSelection.innerText}`);
-                break;
-            default:
-                setSelectionValue(newSelection.innerText);
-        }
-
-        /* if (tooling) {
-            tooling(newSelection.id);
-        } */
-    }
+    const hasContext = useContext(FlightSearchContext);
 
     useEffect(() => {
-        if (changeFlightSearchState) {
+        if (hasContext && hasContext.changeFlightSearchState) {
+            const { changeFlightSearchState } = hasContext;
+
             switch(identifier) {
                 case 'Voyage Type':
                     changeFlightSearchState({ type: 'scope-change', payload: selectionValue });

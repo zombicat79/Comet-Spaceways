@@ -1,25 +1,13 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
+import useCounter from '../hooks/useCounter';
 
 import { FlightSearchContext } from '../contexts/FlightSearchContext';
 
 function Quantifier({ countableItem }) {
-    const testVar = useContext(FlightSearchContext);
-    console.log(testVar);
+    const { count, handleIncrement, handleDecrement } = useCounter();
 
-    const [count, setCount] = useState(0);
-
-    function handleIncrement() {
-        if (count < 9) {
-            setCount((curr) => curr + 1);
-        }
-    }
-
-    function handleDecrement() {
-        if (count > 0) {
-            setCount((curr) => curr - 1);
-        }
-    }
-
+    const hasContext = useContext(FlightSearchContext);
+    
     return (
         <div className="quantifier">
             <div className="quantifier__concept">
