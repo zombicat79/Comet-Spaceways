@@ -5,12 +5,12 @@ import useTextResize from '../hooks/useTextResize';
 import { FlightSearchContext } from './../contexts/FlightSearchContext';
 
 import Quantifier from './Quantifier';
+import DatePicker from 'react-datepicker';
 
 function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }) {
-    const { isFolded, selectionValue, handleFolding, handleSelection } = useSelectorTool(initialValue);
-    const { outputValueText, textSizeCorrection } = useTextResize(initialValue, cssModifier);
-    console.log(initialValue)
-
+    const { isFolded, selectionValue, handleFolding, handleSelection } = useSelectorTool(initialValue, cssModifier);
+    const { outputValueText, textSizeCorrection } = useTextResize(initialValue);
+    
     const hasContext = useContext(FlightSearchContext);
 
     useEffect(() => {
@@ -27,6 +27,12 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
                 case 'Destination':
                     changeFlightSearchState({ type: 'destination-change', payload: selectionValue });
                     break;
+                case 'Departure Date':
+                    changeFlightSearchState({ type: 'departure-change', payload: selectionValue });
+                    break;
+                case 'Return Date':
+                    changeFlightSearchState({ type: 'return-change', payload: selectionValue });
+                    break;
             }
         }
     }, [selectionValue])
@@ -37,12 +43,18 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
             onClick={(e) => handleFolding(e.target)}
         >
             <p className="selector__id">{identifier}</p>
-            <p className={`selector__value selector__value--${textSizeCorrection}`}>
-                {cssModifier === 'disabled' 
-                    ? "N/A"
-                    : outputValueText
-                }
-            </p>
+            { type === 'date'
+                ? <DatePicker
+                    selected={initialValue}
+                    onChange={(date) => handleSelection(date)}
+                />
+                : <p className={`selector__value selector__value--${textSizeCorrection}`}>
+                    {cssModifier === 'disabled' 
+                        ? "N/A"
+                        : outputValueText
+                    }
+                </p>
+            }
 
             {!isFolded && type === 'regular' &&
                 <div className="selector__choice">

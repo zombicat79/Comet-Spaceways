@@ -9,7 +9,7 @@ const initialState = {
     origin: 'Earth - Europe',
     destination: 'Mars',
     departureDate: '',
-    returnDate: '?',
+    returnDate: '',
     passengers: {
         humanoids: 0,
         nhes: 0,
@@ -29,6 +29,7 @@ function fligtSearchReducer(state, action) {
         case 'departure-change':
             return { ...state, departureDate: action.payload };
         case 'return-change':
+            return { ...state, returnDate: action.payload };
         case 'passenger-change':
         default:
             throw new Error('Unknown action');
@@ -37,7 +38,7 @@ function fligtSearchReducer(state, action) {
 
 function FlightSearchProvider({ children }) {
     const [state, dispatch] = useReducer(fligtSearchReducer, initialState);
-    const futurizedDate = useFutureDate();
+    const { futurizedDate, dateComponents } = useFutureDate();
 
     console.log(state)
 
@@ -49,6 +50,7 @@ function FlightSearchProvider({ children }) {
 
         dispatch({ type: 'offer-change', payload: destinationOffer });
         dispatch({ type: 'departure-change', payload: futurizedDate });
+        dispatch({ type: 'return-change', payload: new Date(`${dateComponents.day}-${dateComponents.month + 2}-${dateComponents.year + 100}`) });
     }, [])
 
     return (

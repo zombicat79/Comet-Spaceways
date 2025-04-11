@@ -6,13 +6,19 @@ function useSelectorTool(initialValue = '', cssModifier = '') {
 
     function handleFolding(clickedElement) {
         if (clickedElement.classList.contains('quantifier__operator')) return;
+        if (clickedElement.closest('.react-datepicker__tab-loop')) return;
         if (cssModifier !== 'disabled') {
             setIsFolded((curr) => !curr);
         }
     }
 
     function handleSelection(newSelection) {
+        console.log(newSelection)
         switch(true) {
+            case newSelection.toString().includes('GMT'):
+                console.log('hello')
+                setSelectionValue(new Date(newSelection));
+                break;
             case newSelection.innerText.toLowerCase() === 'round trip':
                 setSelectionValue(`🔄 ${newSelection.innerText}`);
                 break;
