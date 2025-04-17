@@ -4,6 +4,14 @@ import useFutureDate from "../hooks/useFutureDate";
 const FlightSearchContext = createContext();
 
 const initialState = {
+    dropdownState: new Map([
+        ['Voyage-Type', false],
+        ['Origin', false],
+        ['Destination', false],
+        ['Departure-Date', false],
+        ['Return-Date', false],
+        ['Passengers', false]
+    ]),
     destinationOffer: [],
     searchScope: '🔄 Round trip',
     origin: 'Earth - Europe',
@@ -18,6 +26,13 @@ const initialState = {
 
 function fligtSearchReducer(state, action) {
     switch(action.type) {
+        case 'dropdown-change':
+            const prevDropdownState = new Map(state.dropdownState);
+            prevDropdownState.forEach((value, key) => {
+                if (key === action.payload) prevDropdownState.set(key, !value);
+                if (key !== action.payload) prevDropdownState.set(key, false);
+            });
+            return { ...state, dropdownState: prevDropdownState}
         case 'offer-change':
             return { ...state, destinationOffer: action.payload };
         case 'scope-change':
@@ -50,7 +65,7 @@ function FlightSearchProvider({ children }) {
 
         dispatch({ type: 'offer-change', payload: destinationOffer });
         dispatch({ type: 'departure-change', payload: futurizedDate });
-        dispatch({ type: 'return-change', payload: new Date(`${dateComponents.day}-${dateComponents.month + 2}-${dateComponents.year + 100}`) });
+        dispatch({ type: 'return-change', payload: new Date(`${dateComponents.month + 2}-${dateComponents.day}-${dateComponents.year + 100}`) });
     }, [])
 
     return (

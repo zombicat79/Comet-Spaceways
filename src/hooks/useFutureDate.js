@@ -6,7 +6,7 @@ function useFutureDate() {
         year: presentDate.getFullYear(),
     }
 
-    const futurizedDate = new Date(`${dateComponents.day}-${dateComponents.month + 1}-${dateComponents.year + 100}`);
+    const futurizedDate = new Date(`${dateComponents.month + 1}-${dateComponents.day}-${dateComponents.year + 100}`);
 
     return { futurizedDate, dateComponents };
 }

@@ -8,7 +8,7 @@ import Quantifier from './Quantifier';
 import DatePicker from 'react-datepicker';
 
 function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }) {
-    const { isFolded, selectionValue, handleFolding, handleSelection } = useSelectorTool(initialValue, cssModifier);
+    const { selectionValue, handleFolding, handleSelection } = useSelectorTool(initialValue, cssModifier);
     const { outputValueText, textSizeCorrection } = useTextResize(initialValue);
     
     const hasContext = useContext(FlightSearchContext);
@@ -18,7 +18,7 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
             const { changeFlightSearchState } = hasContext;
 
             switch(identifier) {
-                case 'Voyage Type':
+                case 'Voyage-Type':
                     changeFlightSearchState({ type: 'scope-change', payload: selectionValue });
                     break;
                 case 'Origin':
@@ -27,10 +27,10 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
                 case 'Destination':
                     changeFlightSearchState({ type: 'destination-change', payload: selectionValue });
                     break;
-                case 'Departure Date':
+                case 'Departure-Date':
                     changeFlightSearchState({ type: 'departure-change', payload: selectionValue });
                     break;
-                case 'Return Date':
+                case 'Return-Date':
                     changeFlightSearchState({ type: 'return-change', payload: selectionValue });
                     break;
             }
@@ -39,6 +39,7 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
 
     return (
         <div 
+            id={identifier}
             className={cssModifier ? `selector selector--${cssModifier}` : `selector`} 
             onClick={(e) => handleFolding(e.target)}
         >
@@ -56,7 +57,7 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
                 </p>
             }
 
-            {!isFolded && type === 'regular' &&
+            {hasContext.flightSearchState.dropdownState.get(identifier) && type === 'regular' &&
                 <div className="selector__choice">
                     {choiceOptions?.map((el, index) => {
                         return (
@@ -72,7 +73,7 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
                 </div>
             }
 
-            {!isFolded && type === 'quantity' &&
+            {hasContext.flightSearchState.dropdownState.get(identifier) && type === 'quantity' &&
                 <div className={`selector__choice selector__choice--${type}`}>
                     {choiceOptions?.map((el, index) => {
                         return (

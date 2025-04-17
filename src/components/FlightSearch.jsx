@@ -18,7 +18,7 @@ function FlightSearch() {
 
             <Selector
                 type="regular"
-                identifier="Voyage Type"
+                identifier="Voyage-Type"
                 initialValue={flightSearchState.searchScope}
                 choiceOptions={['round trip', 'one-way']}
             />
@@ -36,12 +36,12 @@ function FlightSearch() {
             />
             <Selector 
                 type="date"
-                identifier="Departure Date"
+                identifier="Departure-Date"
                 initialValue={flightSearchState.departureDate}
             />
             <Selector
                 type="date"
-                identifier="Return Date"
+                identifier="Return-Date"
                 initialValue={flightSearchState.returnDate}
                 cssModifier={flightSearchState.searchScope === '➡️ One-Way' ? 'disabled' : null}
             />
@@ -50,9 +50,10 @@ function FlightSearch() {
                 identifier="Passengers"
                 initialValue="1 humanoid"
                 choiceOptions={[
-                    {category: 'humanoids', description: 'Humans, cyborgs or androids'},
+                    {category: 'humanoids', description: 'Adult humans, cyborgs or androids'},
                     {category: 'NHEs', description: 'Non-antropomorphic robots & AIs'},
-                    {category: 'Pets', description: 'Organic or synthetic pets'}
+                    {category: 'minors', description: 'Organic or synthetic children'},
+                    {category: 'pets', description: 'Organic or synthetic animals'}
                 ]} 
             />
 
