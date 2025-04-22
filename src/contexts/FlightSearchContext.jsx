@@ -38,9 +38,17 @@ function fligtSearchReducer(state, action) {
         case 'scope-change':
             return { ...state, searchScope: action.payload };
         case 'origin-change':
-            return { ...state, origin: action.payload };
+            if (action.payload !== state.destination) {
+                return { ...state, origin: action.payload };
+            } else {
+                return state;
+            }
         case 'destination-change':
-            return { ...state, destination: action.payload };
+            if (action.payload !== state.origin) {
+                return { ...state, destination: action.payload };
+            } else {
+                return state;
+            }
         case 'departure-change':
             return { ...state, departureDate: action.payload };
         case 'return-change':
@@ -60,7 +68,7 @@ function FlightSearchProvider({ children }) {
     useEffect(() => {
         // TEMPORARY HARD-CODED DESTINATIONS (To be fetched from server)
         const destinationOffer = ['Earth - America', 'Earth - Europe', 'Earth - Asia', 
-        'Celestia station', 'Moon', 'Mars', 'Venus', 'Ceres', 'Titan']
+        'Celestia Station', 'Moon', 'Mars', 'Venus', 'Ceres', 'Titan']
         // END OF ALERT
 
         dispatch({ type: 'offer-change', payload: destinationOffer });

@@ -94,5 +94,14 @@
         &:hover {
             background-color: $color-body-shallow;
         }
+
+        &--disabled {
+            filter: opacity(0.3) grayscale(1);
+
+            &:hover {
+                background-color: transparent;
+                cursor: not-allowed;
+            }
+        }
     }
 }

@@ -60,15 +60,27 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
             {hasContext.flightSearchState.dropdownState.get(identifier) && type === 'regular' &&
                 <div className="selector__choice">
                     {choiceOptions?.map((el, index) => {
-                        return (
-                            <span 
-                                key={el + index}
-                                id={el} 
-                                className="selector__option"
-                                onClick={(e) => handleSelection(e.target)} >
-                                    {el}
-                            </span>
-                        )
+                        if ((identifier === 'Destination' && el === hasContext.flightSearchState.origin) || (identifier === 'Origin' && el === hasContext.flightSearchState.destination)) {
+                            return (
+                                <span 
+                                    key={el + index}
+                                    id={el} 
+                                    className="selector__option selector__option--disabled"
+                                    onClick={(e) => handleSelection(e.target)} >
+                                        {el}
+                                </span>
+                            )
+                        } else {
+                            return (
+                                <span 
+                                    key={el + index}
+                                    id={el} 
+                                    className="selector__option"
+                                    onClick={(e) => handleSelection(e.target)} >
+                                        {el}
+                                </span>
+                            )
+                        }
                     })}
                 </div>
             }

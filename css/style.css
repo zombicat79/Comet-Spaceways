@@ -399,6 +399,11 @@ h3 {
       margin-bottom: .5rem; }
     .selector__option:hover {
       background-color: #bae8e8; }
+    .selector__option--disabled {
+      filter: opacity(0.3) grayscale(1); }
+      .selector__option--disabled:hover {
+        background-color: transparent;
+        cursor: not-allowed; }
 
 .banner {
   position: relative;

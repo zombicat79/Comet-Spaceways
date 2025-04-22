@@ -8,7 +8,6 @@ function useSelectorTool(initialValue = '', cssModifier = '') {
     const { changeFlightSearchState } = useContext(FlightSearchContext)
 
     function handleFolding(clickedElement) {
-        console.log(clickedElement)
         if (clickedElement.classList.contains('quantifier__operator')) return;
         if (clickedElement.closest('.react-datepicker__tab-loop')) return;
         if (cssModifier !== 'disabled') {
