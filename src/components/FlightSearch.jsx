@@ -6,7 +6,17 @@ import Selector from "./Selector";
 import Button from "./Button";
 
 function FlightSearch() {
-    const { flightSearchState } = useContext(FlightSearchContext);
+    const { flightSearchState, changeFlightSearchState } = useContext(FlightSearchContext);
+
+    function handleReverseChoice() {
+        changeFlightSearchState({ 
+            type: 'route-reverse', 
+            payload: {
+                reversedOrigin: flightSearchState.destination, 
+                reversedDestination: flightSearchState.origin
+            }
+        });
+    }
 
     return (
         <form className="flightsearch">
@@ -22,18 +32,28 @@ function FlightSearch() {
                 initialValue={flightSearchState.searchScope}
                 choiceOptions={['round trip', 'one-way']}
             />
-            <Selector
-                type="regular"
-                identifier="Origin"
-                initialValue={flightSearchState.origin}
-                choiceOptions={flightSearchState.destinationOffer} 
-            />
-            <Selector
-                type="regular"
-                identifier="Destination"
-                initialValue={flightSearchState.destination}
-                choiceOptions={flightSearchState.destinationOffer} 
-            />
+            <div className="flightsearch__grouping">
+                <Selector
+                    type="regular"
+                    identifier="Origin"
+                    initialValue={flightSearchState.origin}
+                    choiceOptions={flightSearchState.destinationOffer}
+                />
+                <svg onClick={handleReverseChoice} className="flightsearch__icon flightsearch__icon--reversal" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path fill="#494c4e" d="M17.6,4.2l-4-3a1,1,0,0,0-1.05-.09A.977.977,0,0,0,12,2V4H1A1,1,0,0,0,1,6H12V8a.988.988,0,0,0,.55.89A.99.99,0,0,0,13.6,8.8l4-3a1,1,0,0,0,0-1.6Z"></path>
+                        <path fill="#494c4e" d="M.4,12.2l4-3a1,1,0,0,1,1.05-.09A.977.977,0,0,1,6,10v2H17a1,1,0,0,1,0,2H6v2a.988.988,0,0,1-.55.89A.99.99,0,0,1,4.4,16.8l-4-3a1,1,0,0,1,0-1.6Z"></path>
+                    </g>
+                </svg>
+                <Selector
+                    type="regular"
+                    identifier="Destination"
+                    initialValue={flightSearchState.destination}
+                    choiceOptions={flightSearchState.destinationOffer} 
+                />
+            </div>
             <Selector 
                 type="date"
                 identifier="Departure-Date"

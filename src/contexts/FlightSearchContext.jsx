@@ -49,6 +49,8 @@ function fligtSearchReducer(state, action) {
             } else {
                 return state;
             }
+        case 'route-reverse':
+            return { ...state, origin: action.payload.reversedOrigin, destination: action.payload.reversedDestination }
         case 'departure-change':
             return { ...state, departureDate: action.payload };
         case 'return-change':

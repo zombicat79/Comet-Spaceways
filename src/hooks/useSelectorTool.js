@@ -3,9 +3,8 @@ import { useState, useContext } from 'react';
 import { FlightSearchContext } from '../contexts/FlightSearchContext';
 
 function useSelectorTool(initialValue = '', cssModifier = '') {
-    const [isFolded, setIsFolded] = useState(true);
     const [selectionValue, setSelectionValue] = useState(initialValue);
-    const { changeFlightSearchState } = useContext(FlightSearchContext)
+    const { flightSearchState, changeFlightSearchState } = useContext(FlightSearchContext)
 
     function handleFolding(clickedElement) {
         if (clickedElement.classList.contains('quantifier__operator')) return;
@@ -16,10 +15,10 @@ function useSelectorTool(initialValue = '', cssModifier = '') {
         }
     }
 
-    function handleSelection(newSelection) {
-        console.log(newSelection)
+    function handleSelection(newSelection, selector) {
         switch(true) {
             case newSelection.toString().includes('GMT'):
+                if (selector === 'Return-Date' && (newSelection <= flightSearchState.departureDate)) return;
                 setSelectionValue(new Date(newSelection));
                 break;
             case newSelection.innerText.toLowerCase() === 'round trip':

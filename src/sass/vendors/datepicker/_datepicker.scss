@@ -1,3 +1,7 @@
+.selector--disabled .react-datepicker-wrapper {
+    pointer-events: none;
+}
+
 .react-datepicker-wrapper, 
 .react-datepicker__input-container,
 .react-datepicker__input-container input {
@@ -14,6 +18,11 @@
 
 .react-datepicker-popper {
     top: 1rem;
+
+    .react-datepicker__triangle path:nth-child(2) {
+        fill: $color-text-dark;
+        stroke: $color-text-dark;
+    }
 }
 
 .react-datepicker {

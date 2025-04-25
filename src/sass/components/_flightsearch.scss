@@ -8,6 +8,38 @@
     box-shadow: 0 0 4.5rem $color-highlight-light;
     z-index: 1;
 
+    &__grouping {
+        flex: 1;
+        position: relative;
+        max-width: 30rem;
+        gap: 1.5rem;
+        @include flex-row(center);
+    }
+
+    &__icon {
+        height: 3rem;
+        width: 3rem;
+
+        &--reversal {
+            position: absolute;
+            left: 50%;
+            padding: 5px;
+            z-index: 1;
+            border-radius: 50%;
+            border: 1px solid $color-text-dark;
+            background-color: $color-text-light;
+            transform: translateX(-50%);
+
+            path {
+                fill: $color-body-deep;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
     .selector {
         flex: 1;
         min-width: 10rem;

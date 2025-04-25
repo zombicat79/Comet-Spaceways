@@ -43,11 +43,11 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
             className={cssModifier ? `selector selector--${cssModifier}` : `selector`} 
             onClick={(e) => handleFolding(e.target)}
         >
-            <p className="selector__id">{identifier}</p>
+            <p className="selector__id">{identifier.replace('-', ' ')}</p>
             { type === 'date'
                 ? <DatePicker
                     selected={initialValue}
-                    onChange={(date) => handleSelection(date)}
+                    onChange={(date) => handleSelection(date, identifier)}
                 />
                 : <p className={`selector__value selector__value--${textSizeCorrection}`}>
                     {cssModifier === 'disabled' 
@@ -66,7 +66,7 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
                                     key={el + index}
                                     id={el} 
                                     className="selector__option selector__option--disabled"
-                                    onClick={(e) => handleSelection(e.target)} >
+                                    onClick={(e) => handleSelection(e.target, identifier)} >
                                         {el}
                                 </span>
                             )
@@ -76,7 +76,7 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
                                     key={el + index}
                                     id={el} 
                                     className="selector__option"
-                                    onClick={(e) => handleSelection(e.target)} >
+                                    onClick={(e) => handleSelection(e.target, identifier)} >
                                         {el}
                                 </span>
                             )
