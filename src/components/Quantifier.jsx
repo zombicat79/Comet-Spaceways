@@ -1,12 +1,18 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import useCounter from '../hooks/useCounter';
 
 import { FlightSearchContext } from '../contexts/FlightSearchContext';
 
 function Quantifier({ countableItem }) {
-    const { count, handleIncrement, handleDecrement } = useCounter();
-
     const hasContext = useContext(FlightSearchContext);
+    const { count, handleIncrement, handleDecrement } = useCounter(hasContext.flightSearchState.passengers[countableItem.category.toLowerCase()]);
+
+    useEffect(() => {
+        if (hasContext && hasContext.changeFlightSearchState) {
+            const { changeFlightSearchState } = hasContext;
+            changeFlightSearchState({ type: 'passenger-change', payload: {category: countableItem.category.toLowerCase(), amount: count} });
+        }
+    }, [count])
     
     return (
         <div className="quantifier">

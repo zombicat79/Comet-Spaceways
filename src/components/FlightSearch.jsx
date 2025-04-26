@@ -7,6 +7,7 @@ import Button from "./Button";
 
 function FlightSearch() {
     const { flightSearchState, changeFlightSearchState } = useContext(FlightSearchContext);
+    const { humanoids, nhes, minors, pets } = flightSearchState.passengers;
 
     function handleReverseChoice() {
         changeFlightSearchState({ 
@@ -16,6 +17,21 @@ function FlightSearch() {
                 reversedDestination: flightSearchState.origin
             }
         });
+    }
+
+    function buildPassengerSelectionString() {
+        let string = '';
+
+        if (!humanoids && !nhes && !minors && !pets) {
+            string = 'none selected';
+        } else {
+            humanoids ? string = string + humanoids + ' humanoids, ' : string = string;
+            nhes ? string = string + nhes + ' NHEs, ' : string = string;
+            minors ? string = string + minors + ' minors, ' : string = string;
+            pets ? string = string + pets + ' pets, ' : string = string;
+        }
+
+        return string.replace(/,\s$/g, '');
     }
 
     return (
@@ -68,13 +84,14 @@ function FlightSearch() {
             <Selector
                 type="quantity"
                 identifier="Passengers"
-                initialValue="1 humanoid"
+                initialValue={buildPassengerSelectionString()}
                 choiceOptions={[
                     {category: 'humanoids', description: 'Adult humans, cyborgs or androids'},
                     {category: 'NHEs', description: 'Non-antropomorphic robots & AIs'},
                     {category: 'minors', description: 'Organic or synthetic children'},
                     {category: 'pets', description: 'Organic or synthetic animals'}
-                ]} 
+                ]}
+                cssModifier={(!humanoids && !nhes && !minors && !pets) ? 'error' : null}
             />
 
             <Button type="secondary" text="search" onClick="TBA" />

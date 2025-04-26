@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-function useCounter() {
-    const [count, setCount] = useState(0);
+function useCounter(initialCount) {
+    const [count, setCount] = useState(initialCount);
 
     function handleIncrement() {
         if (count < 9) {

@@ -354,6 +354,11 @@ h3 {
     filter: opacity(0.3) grayscale(1); }
     .selector--disabled:hover {
       cursor: not-allowed; }
+  .selector--error {
+    border: 1px solid #FF4500 !important;
+    color: #FF4500; }
+    .selector--error .selector__value {
+      filter: opacity(0.3); }
   .selector__id {
     color: inherit;
     font-size: 1rem; }

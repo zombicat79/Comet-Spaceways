@@ -19,8 +19,10 @@ const initialState = {
     departureDate: '',
     returnDate: '',
     passengers: {
-        humanoids: 0,
+        humanoids: 1,
         nhes: 0,
+        minors: 0,
+        pets: 0
     }
 }
 
@@ -56,6 +58,7 @@ function fligtSearchReducer(state, action) {
         case 'return-change':
             return { ...state, returnDate: action.payload };
         case 'passenger-change':
+            return { ...state, passengers: {...state.passengers, [action.payload.category]: action.payload.amount} }
         default:
             throw new Error('Unknown action');
     }
