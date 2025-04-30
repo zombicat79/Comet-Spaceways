@@ -13,7 +13,7 @@ const initialState = {
         ['Passengers', false]
     ]),
     destinationOffer: [],
-    searchScope: '🔄 Round trip',
+    searchScope: '🔄 Round Trip',
     origin: 'Earth - Europe',
     destination: 'Mars',
     departureDate: '',

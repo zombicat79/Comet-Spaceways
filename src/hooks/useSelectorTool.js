@@ -10,7 +10,6 @@ function useSelectorTool(initialValue = '', cssModifier = '') {
         if (clickedElement.classList.contains('quantifier__operator')) return;
         if (clickedElement.closest('.react-datepicker__tab-loop')) return;
         if (cssModifier !== 'disabled') {
-            //setIsFolded((curr) => !curr);
             changeFlightSearchState({ type: 'dropdown-change', payload: clickedElement.closest('.selector').id })
         }
     }
@@ -18,7 +17,7 @@ function useSelectorTool(initialValue = '', cssModifier = '') {
     function handleSelection(newSelection, selector) {
         switch(true) {
             case newSelection.toString().includes('GMT'):
-                if (selector === 'Return-Date' && (newSelection <= flightSearchState.departureDate)) return;
+                if (selector === 'Return-Date' && (newSelection < flightSearchState.departureDate)) return;
                 setSelectionValue(new Date(newSelection));
                 break;
             case newSelection.innerText.toLowerCase() === 'round trip':

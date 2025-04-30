@@ -82,6 +82,20 @@
     color: $color-body-deep;
 }
 
+.react-datepicker__day--selected {
+    background-color: $color-environmental-accent !important;
+}
+
+.react-datepicker__day--disabled {
+    filter: opacity(0.3);
+    cursor: not-allowed;
+}
+
+.react-datepicker__navigation--previous--disabled .react-datepicker__navigation-icon--previous::before, 
+.react-datepicker__navigation--next--disabled .react-datepicker__navigation-icon--next::before {
+   display: none;
+}
+
 .react-datepicker__day--selected, 
 .react-datepicker__day--in-selecting-range, 
 .react-datepicker__day--in-range, 

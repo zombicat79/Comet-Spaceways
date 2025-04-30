@@ -1,6 +1,8 @@
 import { useEffect, useContext } from 'react';
 import useSelectorTool from '../hooks/useSelectorTool';
 import useTextResize from '../hooks/useTextResize';
+import useFutureDate from "../hooks/useFutureDate";
+import useDatePicker from '../hooks/useDatePicker';
 
 import { FlightSearchContext } from './../contexts/FlightSearchContext';
 
@@ -12,6 +14,16 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
     const { outputValueText, textSizeCorrection } = useTextResize(initialValue);
     
     const hasContext = useContext(FlightSearchContext);
+
+    const { futurizedDate, dateComponents } = useFutureDate();
+    const { minDate, maxDate, rangeStartDate, rangeEndDate } = useDatePicker(
+        identifier,
+        futurizedDate,
+        dateComponents,
+        hasContext.flightSearchState.searchScope, 
+        hasContext.flightSearchState.departureDate, 
+        hasContext.flightSearchState.returnDate
+    );
 
     useEffect(() => {
         if (hasContext && hasContext.changeFlightSearchState) {
@@ -28,6 +40,9 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
                     changeFlightSearchState({ type: 'destination-change', payload: selectionValue });
                     break;
                 case 'Departure-Date':
+                    if (hasContext.flightSearchState.returnDate < selectionValue) {
+                        changeFlightSearchState({ type: 'return-change', payload: selectionValue });
+                    } 
                     changeFlightSearchState({ type: 'departure-change', payload: selectionValue });
                     break;
                 case 'Return-Date':
@@ -48,6 +63,11 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
                 ? <DatePicker
                     selected={initialValue}
                     onChange={(date) => handleSelection(date, identifier)}
+                    minDate={minDate}
+                    maxDate={maxDate}
+                    startDate={rangeStartDate}
+                    endDate={rangeEndDate}
+                    showDisabledMonthNavigation
                 />
                 : <p className={`selector__value selector__value--${textSizeCorrection}`}>
                     {cssModifier === 'disabled' 
