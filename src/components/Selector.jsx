@@ -68,6 +68,7 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
                     startDate={rangeStartDate}
                     endDate={rangeEndDate}
                     showDisabledMonthNavigation
+                    dateFormat="dd/MM/yyyy"
                 />
                 : <p className={`selector__value selector__value--${textSizeCorrection}`}>
                     {cssModifier === 'disabled' 

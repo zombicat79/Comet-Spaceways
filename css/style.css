@@ -689,6 +689,9 @@ h3 {
 .react-datepicker__day--selected {
   background-color: #4B0082 !important; }
 
+.react-datepicker__day--keyboard-selected {
+  background-color: transparent; }
+
 .react-datepicker__day--disabled {
   filter: opacity(0.3);
   cursor: not-allowed; }
@@ -712,6 +715,9 @@ h3 {
   border-radius: 0.3rem;
   background-color: #2c698d;
   color: #e3f6f5; }
+
+.react-datepicker__day:not([aria-disabled=true]):hover {
+  background-color: #32CD32; }
 
 .header {
   position: fixed;

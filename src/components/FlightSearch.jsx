@@ -25,10 +25,10 @@ function FlightSearch() {
         if (!humanoids && !nhes && !minors && !pets) {
             string = 'none selected';
         } else {
-            humanoids ? string = string + humanoids + ' humanoids, ' : string = string;
-            nhes ? string = string + nhes + ' NHEs, ' : string = string;
-            minors ? string = string + minors + ' minors, ' : string = string;
-            pets ? string = string + pets + ' pets, ' : string = string;
+            humanoids > 1 ? string = string + humanoids + ' humanoids, ' : humanoids === 1 ? string = string + humanoids + ' humanoid, ' : string = string;
+            nhes > 1 ? string = string + nhes + ' NHEs, ' : nhes === 1 ? string = string + nhes + ' NHE, ' : string = string;
+            minors > 1 ? string = string + minors + ' minors, ' : minors === 1 ? string = string + minors + ' minor, ' : string = string;
+            pets > 1 ? string = string + pets + ' pets, ' : pets === 1 ? string = string + pets + ' pet, ' : string = string;
         }
 
         return string.replace(/,\s$/g, '');
