@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { LayoutContext } from '../contexts/LayoutContext';
 
 import NavBar from './../components/NavBar';
 import NavMenu from './../components/NavMenu';
@@ -41,6 +42,7 @@ const headerLinks = {
 function Header() {
     const [transparency, setTransparency] = useState(true);
     const [expansion, setExpansion] = useState(false);
+    const { dispatch } = useContext(LayoutContext);
 
     function handleResizing() {
         if (transparency) {
@@ -51,7 +53,8 @@ function Header() {
     }
 
     function handlePopupLaunch() {
-        console.log('popup launched!')
+        dispatch({ type: 'toggle/scroll' });
+        dispatch({ type: 'toggle/modal' });
     }
 
     return (

@@ -230,6 +230,9 @@ h3 {
   justify-content: center;
   align-items: center; }
 
+.scrollblock {
+  overflow: hidden; }
+
 .btn {
   background-color: #00FFFF;
   color: #272643;
@@ -873,6 +876,31 @@ h3 {
     .footer .copyright::after {
       content: "|";
       margin: 0 .5rem; }
+
+.scrollblocker {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  filter: opacity(0.8);
+  transition: all 1s; }
+  .scrollblocker--on {
+    background-color: #121212;
+    filter: opacity(0.8);
+    z-index: 1000; }
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  height: 40rem;
+  background-color: #4B0082;
+  border: 1px solid #FF4500;
+  color: #e3f6f5; }
 
 .homepage__offers {
   display: flex;

@@ -7,3 +7,7 @@
 .link--container {
     @include flex-row(center);
 }
+
+.scrollblock {
+    overflow: hidden;
+}

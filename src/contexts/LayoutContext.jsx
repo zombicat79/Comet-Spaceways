@@ -1,7 +1,19 @@
-function LayoutContext() {
+import { createContext } from 'react';
+import useLayout from '../hooks/useLayout';
+
+const LayoutContext = createContext();
+
+function LayoutProvider({ children }) {
+    const { layoutState, dispatch } = useLayout();
+
     return (
-        <div></div>
+        <LayoutContext.Provider value={{
+            layoutState,
+            dispatch
+        }}>
+            {children}
+        </LayoutContext.Provider>
     )
 }
 
-export default LayoutContext;
+export { LayoutContext, LayoutProvider };
