@@ -2,10 +2,38 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 40rem;
     height: 40rem;
     background-color: $color-environmental-accent;
-    border: 1px solid $color-highlight-extreme;
+    border: 2px solid $color-highlight-extreme;
+    border-radius: 1rem;
     color: $color-body-light;
+
+    &--appearing {
+        transform: translate(-50%, 150%);
+        animation-name: appear-bottom;
+        animation-timing-function: ease-out;
+        animation-duration: 0.75s;
+        animation-fill-mode: forwards;
+    }
+
+    &--disappearing {
+        transform: translate(-50%, -50%);
+        animation-name: disappear-bottom;
+        animation-timing-function: ease-in;
+        animation-duration: 0.75s;
+        animation-fill-mode: forwards;
+    }
+
+    /* &--shine-in {
+        animation-name: shine-in;
+        animation-delay: 0.75s;
+        animation-timing-function: linear;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    } */
+
+    &--shine-out {
+
+    }
 }

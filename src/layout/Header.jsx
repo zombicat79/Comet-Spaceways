@@ -54,7 +54,9 @@ function Header() {
 
     function handlePopupLaunch() {
         dispatch({ type: 'toggle/scroll' });
-        dispatch({ type: 'toggle/modal' });
+        setTimeout(() => {
+            dispatch({ type: 'toggle/modal' });
+        }, 1000);
     }
 
     return (

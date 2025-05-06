@@ -4,13 +4,15 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: transparent;
-    filter: opacity(0.8);
-    transition: all 1s;
+    transition: all 0.75s;
 
     &--on {
-        background-color: $color-environmental-pitch;
-        filter: opacity(0.8);
+        background-color: rgba(18, 18, 18, 0.8);
         z-index: 1000;
+    }
+
+    &-off {
+        background-color: transparent;
+        z-index: 1;
     }
 }

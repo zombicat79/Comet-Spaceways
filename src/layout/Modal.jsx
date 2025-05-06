@@ -1,6 +1,6 @@
-function Modal() {
+function Modal({ modalShown }) {
     return (
-        <div className="modal">
+        <div className={modalShown ? 'modal modal--appearing modal--shine-in' : 'modal modal--disappearing'}>
             Hello
         </div>
     )

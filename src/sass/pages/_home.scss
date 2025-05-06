@@ -1,4 +1,6 @@
 .homepage {
+    position: relative;
+    z-index: 2;
 
     &__offers {
         @include flex-row(center);

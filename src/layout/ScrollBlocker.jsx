@@ -13,18 +13,22 @@ function ScrollBlocker() {
         } else {
             appBody.classList.add('scrollblock');
         }
-    }, [layoutState])
+    }, [layoutState.scroll])
 
     return (
         <div 
-            className={layoutState.scroll ? 'scrollblocker': 'scrollblocker scrollblocker--on'}
+            className={layoutState.scroll ? 'scrollblocker scrollblocker-off': 'scrollblocker scrollblocker--on'}
             onClick={(e) => {
                 if (e.target.classList.contains('modal')) return;
-                dispatch({ type: 'toggle/modal' });
-                dispatch({ type: 'toggle/scroll' });
+                if (e.target.classList.contains('scrollblocker--on')) {
+                    dispatch({ type: 'toggle/modal' });
+                    setTimeout(() => {
+                        dispatch({ type: 'toggle/scroll' });
+                    }, 1000);
+                }
             }}
         >
-            {layoutState.modal && <Modal />}
+            <Modal modalShown={layoutState.modal} />
         </div>
     )
 }

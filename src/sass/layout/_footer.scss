@@ -1,4 +1,6 @@
 .footer {
+    position: relative;
+    z-index: 2;
     background-color: $color-environmental-light;
     padding: 3rem 2rem;
     box-shadow: 0 -2.5px 100px 5px $color-environmental-accent;
