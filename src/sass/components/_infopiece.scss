@@ -1,0 +1,14 @@
+.infopiece {
+
+    &__icon {
+        width: 35%;
+    }
+
+    &__content {
+        margin-top: 3rem;
+    }
+
+    &__text:not(.infopiece__text:last-child) {
+        margin-bottom: 1.5rem;
+    }
+}

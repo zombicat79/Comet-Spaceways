@@ -28,7 +28,7 @@ function ScrollBlocker() {
                 }
             }}
         >
-            <Modal modalShown={layoutState.modal} />
+            <Modal modalShown={layoutState.modal} content={layoutState.modalContent} />
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import NavBar from './NavBar';
 
-function NavMenu({ title, columns, rows, links, decoration }) {
+function NavMenu({ title, columns, rows, links, decoration, tooling }) {
     let navbarColumns = [];
     for (let i = 0; i < columns; i++) {
         navbarColumns.push(true);
@@ -30,6 +30,7 @@ function NavMenu({ title, columns, rows, links, decoration }) {
                         direction='vertical'
                         links={distributedLinks[index]}
                         decoration={decoration}
+                        tooling={tooling}
                     />
                 })
                 }

@@ -2,15 +2,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 40rem;
-    height: 40rem;
-    background-color: $color-environmental-accent;
-    border: 2px solid $color-highlight-extreme;
-    border-radius: 1rem;
-    color: $color-body-light;
+    transform: translate(-50%, 120vh);
 
     &--appearing {
-        transform: translate(-50%, 150%);
         animation-name: appear-bottom;
         animation-timing-function: ease-out;
         animation-duration: 0.75s;
@@ -18,22 +12,46 @@
     }
 
     &--disappearing {
-        transform: translate(-50%, -50%);
         animation-name: disappear-bottom;
         animation-timing-function: ease-in;
         animation-duration: 0.75s;
         animation-fill-mode: forwards;
     }
 
-    /* &--shine-in {
-        animation-name: shine-in;
-        animation-delay: 0.75s;
-        animation-timing-function: linear;
-        animation-duration: 1s;
-        animation-fill-mode: forwards;
-    } */
+    &__content {
+        overflow: auto;
+        
+        scrollbar-color: $color-text-dark transparent;
+        scrollbar-gutter: stable both-edges;
+        width: 40rem;
+        height: 40rem;
+        padding: 3rem;
+        background-color: $color-environmental-accent;
+        border: 2px solid $color-highlight-extreme;
+        border-radius: 1rem;
+        color: $color-body-light;
 
-    &--shine-out {
+        &::-webkit-scrollbar-track {
+            color: red;
+        }
 
+        &--shine-in {
+            animation-name: shine-in;
+            animation-delay: 0.75s;
+            animation-timing-function: linear;
+            animation-duration: 0.75s;
+            animation-fill-mode: forwards;
+        }
+
+        &--shine-out {
+            animation-name: shine-out;
+            animation-timing-function: linear;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        .infopiece__text {
+            font-family: poppins-regular;
+        }
     }
 }
