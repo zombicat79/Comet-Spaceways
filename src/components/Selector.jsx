@@ -31,6 +31,15 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
 
             switch(identifier) {
                 case 'Voyage-Type':
+                    if (selectionValue === '➡️ One-Way') {
+                        changeFlightSearchState({ type: 'return-change', payload: '' });
+                    }
+                    if (selectionValue === '🔄 Round Trip') {
+                        changeFlightSearchState({ 
+                            type: 'return-change', 
+                            payload: new Date(`${dateComponents.month + 2}-${dateComponents.day}-${dateComponents.year + 100}`) 
+                        });
+                    }
                     changeFlightSearchState({ type: 'scope-change', payload: selectionValue });
                     break;
                 case 'Origin':

@@ -1,6 +1,12 @@
+import { useContext } from 'react';
+import { LayoutContext } from './../contexts/LayoutContext';
+
 import Button from './../components/Button';
+import WorkInProgress from './infopieces/WorkInProgress';
 
 function PromoPoster({ promoCatch, heading, body, alert, cta, promoImg }) {
+    const { handlePopupLaunch } = useContext(LayoutContext);
+
     return (
         <div className="promoposter">
             <div className="promoposter__side promoposter__side--left">
@@ -13,7 +19,7 @@ function PromoPoster({ promoCatch, heading, body, alert, cta, promoImg }) {
                 </div>
                 <p className="promoposter__alert">{alert}</p>
                 
-                <Button type="secondary" action={() => {}} text="book now" />
+                <Button type="secondary" action={() => handlePopupLaunch({ modalClass: 'generic', content: <WorkInProgress />, width: 'regular', height: 'regular' })} text="book now" />
             </div>
             <div className="promoposter__side promoposter__side--right">
                 <img className="promoposter__img" src={`./assets/images/${promoImg}_promotion.webp`} alt={`${promoImg} poster`} />

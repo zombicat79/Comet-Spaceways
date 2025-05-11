@@ -3,7 +3,12 @@ import { useReducer } from 'react';
 const initialState = {
     scroll: true,
     modal: null,
-    modalContent: null
+    modalClass: 'generic',
+    modalContent: null,
+    modalDimensions: {
+        width: 'regular',
+        height: 'regular'
+    }
 }
 
 function reducer(state, action) {
@@ -14,6 +19,10 @@ function reducer(state, action) {
             return { ...state, modal: !state.modal };
         case 'fill/modal':
             return { ...state, modalContent: action.payload };
+        case 'transform/modal':
+            return { ...state, modalClass: action.payload };
+        case 'resize/modal':
+            return { ...state, modalDimensions: {...state.modalDimensions, width: action.payload.width, height: action.payload.height } };
         default:
             return state;
     }

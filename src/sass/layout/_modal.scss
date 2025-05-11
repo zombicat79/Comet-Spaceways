@@ -23,13 +23,36 @@
         
         scrollbar-color: $color-text-dark transparent;
         scrollbar-gutter: stable both-edges;
-        width: 40rem;
-        height: 40rem;
         padding: 3rem;
-        background-color: $color-environmental-accent;
-        border: 2px solid $color-highlight-extreme;
         border-radius: 1rem;
-        color: $color-body-light;
+
+        &--default {
+            background-color: $color-environmental-accent;
+            border: 2px solid $color-highlight-extreme;
+            color: $color-body-light;
+        }
+
+        &--flight-preview {
+            background-color: $color-environmental-light;
+            border: none;
+            color: $color-text-dark;
+        }
+
+        &--regular-width {
+            width: 40rem;
+        }
+
+        &--large-width {
+            width: 80rem;
+        }
+
+        &--regular-height {
+            height: 40rem;
+        }
+
+        &--large-height {
+            height: 60rem;
+        }
 
         &::-webkit-scrollbar-track {
             color: red;

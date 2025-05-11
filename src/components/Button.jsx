@@ -1,4 +1,5 @@
 function Button({ type, action, text }) {
+
     return (
         <button 
             className={`btn btn--${type}`}

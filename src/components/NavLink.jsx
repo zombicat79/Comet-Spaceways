@@ -1,14 +1,11 @@
 function NavLink({ link, decoration, tooling }) {
-
-    console.log(link.id, tooling)
-
     function handleTooling() {
         switch(link.action) {
             case 'expand':
                 tooling.handleResizing();
                 break;
             case 'popup':
-                tooling.handlePopupLaunch(link.payload);
+                tooling.handlePopupLaunch({ modalClass: 'generic', content: link.payload, width: 'regular', height: 'regular' });
                 break;
             default:
                 return;

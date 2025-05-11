@@ -652,6 +652,9 @@ h3 {
     height: 6rem;
     border: 1px solid #121212; }
 
+.flight-preview__routing {
+  font-size: 7.5rem; }
+
 .infopiece__icon {
   width: 35%; }
 
@@ -955,13 +958,24 @@ h3 {
     overflow: auto;
     scrollbar-color: #272643 transparent;
     scrollbar-gutter: stable both-edges;
-    width: 40rem;
-    height: 40rem;
     padding: 3rem;
-    background-color: #4B0082;
-    border: 2px solid #FF4500;
-    border-radius: 1rem;
-    color: #e3f6f5; }
+    border-radius: 1rem; }
+    .modal__content--default {
+      background-color: #4B0082;
+      border: 2px solid #FF4500;
+      color: #e3f6f5; }
+    .modal__content--flight-preview {
+      background-color: #ffffff;
+      border: none;
+      color: #272643; }
+    .modal__content--regular-width {
+      width: 40rem; }
+    .modal__content--large-width {
+      width: 80rem; }
+    .modal__content--regular-height {
+      height: 40rem; }
+    .modal__content--large-height {
+      height: 60rem; }
     .modal__content::-webkit-scrollbar-track {
       color: red; }
     .modal__content--shine-in {

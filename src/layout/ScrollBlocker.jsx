@@ -2,6 +2,7 @@ import { useEffect, useContext } from 'react';
 import { LayoutContext } from './../contexts/LayoutContext';
 
 import Modal from './Modal';
+import FlightTicket from "../components/FlightPreview";
 
 function ScrollBlocker() {
     const { layoutState, dispatch } = useContext(LayoutContext);
@@ -28,7 +29,13 @@ function ScrollBlocker() {
                 }
             }}
         >
-            <Modal modalShown={layoutState.modal} content={layoutState.modalContent} />
+            <Modal 
+                modalShown={layoutState.modal}
+                modalClass={layoutState.modalClass}
+                content={layoutState.modalContent} 
+                width={layoutState.modalDimensions.width} 
+                height={layoutState.modalDimensions.height} 
+            />
         </div>
     )
 }

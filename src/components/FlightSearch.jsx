@@ -1,12 +1,15 @@
 import { useContext } from 'react';
 
 import { FlightSearchContext } from '../contexts/FlightSearchContext';
+import { LayoutContext } from '../contexts/LayoutContext';
 
 import Selector from "./Selector";
 import Button from "./Button";
+import FlightPreview from './FlightPreview';
 
 function FlightSearch() {
     const { flightSearchState, changeFlightSearchState } = useContext(FlightSearchContext);
+    const { handlePopupLaunch } = useContext(LayoutContext);
     const { humanoids, nhes, minors, pets } = flightSearchState.passengers;
 
     function handleReverseChoice() {
@@ -34,8 +37,18 @@ function FlightSearch() {
         return string.replace(/,\s$/g, '');
     }
 
+    function handleOnSubmit(e) {
+        e.preventDefault();
+        handlePopupLaunch({
+            modalClass: 'flight-preview',
+            content: <FlightPreview state={flightSearchState} />,
+            width: 'large',
+            height: 'regular'
+        })
+    }
+
     return (
-        <form className="flightsearch">
+        <form className="flightsearch" onSubmit={(e) => handleOnSubmit(e)}>
             <input id="origin" type="hidden" value={flightSearchState.origin.toLowerCase()} />
             <input id="destination" type="hidden" value={flightSearchState.destination.toLowerCase()} />
             <input id="departure-date" type="hidden" value="TBA" />
@@ -94,7 +107,7 @@ function FlightSearch() {
                 cssModifier={(!humanoids && !nhes && !minors && !pets) ? 'error' : null}
             />
 
-            <Button type="secondary" text="search" onClick="TBA" />
+            <Button type="secondary" text="search" />
         </form>
     )
 }
