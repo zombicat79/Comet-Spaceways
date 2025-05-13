@@ -264,6 +264,11 @@ h3 {
   justify-content: center;
   align-items: center; }
 
+.container--between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
 .scrollblock {
   overflow: hidden; }
 
@@ -652,8 +657,65 @@ h3 {
     height: 6rem;
     border: 1px solid #121212; }
 
-.flight-preview__routing {
-  font-size: 7.5rem; }
+.flight-preview {
+  height: 100%;
+  position: relative; }
+  .flight-preview__header {
+    height: 10%;
+    text-align: left; }
+  .flight-preview__body {
+    height: 90%;
+    position: relative;
+    border: 1px dashed black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; }
+  .flight-preview__badge {
+    width: 100%;
+    max-width: 30rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: opacity(0.1);
+    z-index: 0; }
+  .flight-preview__routing {
+    position: relative;
+    font-family: poppins-extrabold;
+    font-size: 7.5rem;
+    line-height: 7.5rem;
+    z-index: 1; }
+    .flight-preview__routing--detail {
+      font-family: poppins-regular; }
+    .flight-preview__routing-container .container--between p:first-child {
+      padding-left: 3px; }
+    .flight-preview__routing-container .container--between p:last-child {
+      padding-right: 3px; }
+  .flight-preview__date {
+    text-align: left; }
+    .flight-preview__date-container {
+      align-self: flex-start;
+      padding: 0 3rem; }
+    .flight-preview__date span {
+      font-family: poppins-bold;
+      text-transform: uppercase; }
+  .flight-preview__payload {
+    text-align: left; }
+    .flight-preview__payload-container {
+      align-self: flex-start;
+      padding: 0 3rem; }
+    .flight-preview__payload span:first-child {
+      font-family: poppins-bold;
+      text-transform: uppercase; }
+  .flight-preview__motto {
+    font-style: italic;
+    position: absolute;
+    bottom: .5rem;
+    right: 1rem;
+    filter: opacity(0.3);
+    z-index: 0; }
 
 .infopiece__icon {
   width: 35%; }
@@ -663,6 +725,15 @@ h3 {
 
 .infopiece__text:not(.infopiece__text:last-child) {
   margin-bottom: 1.5rem; }
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .loader__spinner {
+    width: 100%;
+    max-width: 10rem; }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
@@ -967,7 +1038,7 @@ h3 {
     .modal__content--flight-preview {
       background-color: #ffffff;
       border: none;
-      color: #272643; }
+      color: #121212; }
     .modal__content--regular-width {
       width: 40rem; }
     .modal__content--large-width {

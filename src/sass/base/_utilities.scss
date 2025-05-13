@@ -8,6 +8,10 @@
     @include flex-row(center);
 }
 
+.container--between {
+    @include flex-row(space-between);
+}
+
 .scrollblock {
     overflow: hidden;
 }

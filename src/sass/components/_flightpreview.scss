@@ -1,6 +1,90 @@
 .flight-preview {
+    height: 100%;
+    position: relative;
+
+    &__header {
+        height: 10%;
+        text-align: left;
+
+        .flight-preview__title {
+            
+        }
+    }
+
+    &__body {
+        height: 90%;
+        position: relative;
+        border: 1px dashed black;
+        border-radius: 8px;
+        @include flex-column(space-evenly);
+    }
+
+    &__badge {
+        width: 100%;
+        max-width: 30rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        filter: opacity(0.1);
+        z-index: 0;
+    }
 
     &__routing {
+        position: relative;
+        font-family: poppins-extrabold;
         font-size: 7.5rem;
+        line-height: 7.5rem;
+        z-index: 1;
+        
+        &--detail {
+            font-family: poppins-regular;
+        }
+
+        &-container {
+            .container--between p:first-child {
+                padding-left: 3px;
+            }
+            .container--between p:last-child {
+                padding-right: 3px;
+            }
+        }
+    }
+
+    &__date {
+        text-align: left;
+
+        &-container {
+            align-self: flex-start;
+            padding: 0 3rem;
+        }
+
+        span {
+            font-family: poppins-bold;
+            text-transform: uppercase;
+        }
+    }
+
+    &__payload {
+        text-align: left;
+
+        &-container {
+            align-self: flex-start;
+            padding: 0 3rem;
+        }
+
+        span:first-child {
+            font-family: poppins-bold;
+            text-transform: uppercase;
+        }
+    }
+
+    &__motto {
+        font-style: italic;
+        position: absolute;
+        bottom: .5rem;
+        right: 1rem;
+        filter: opacity(0.3);
+        z-index: 0;
     }
 }

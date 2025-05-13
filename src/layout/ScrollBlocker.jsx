@@ -25,6 +25,7 @@ function ScrollBlocker() {
                     dispatch({ type: 'toggle/modal' });
                     setTimeout(() => {
                         dispatch({ type: 'toggle/scroll' });
+                        dispatch({ type: 'fill/modal', payload: null })
                     }, 1000);
                 }
             }}
