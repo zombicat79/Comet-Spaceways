@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useRef } from 'react';
 import { LayoutContext } from '../contexts/LayoutContext';
 
 import NavBar from './../components/NavBar';
@@ -7,6 +7,8 @@ import WorkInProgress from '../components/infopieces/WorkInProgress';
 
 import LogoLight from '/logos/ctsw-logo_light_horizontal.png';
 import LogoDark from '/logos/ctsw-logo_dark_horizontal.png';
+import LogoMinLight from '/logos/ctsw-logo_light_badge.png';
+import LogoMinDark from '/logos/ctsw-logo_dark_badge.png';
 
 const headerLinks = {
     topLeft: [
@@ -63,6 +65,8 @@ function Header() {
     const [transparency, setTransparency] = useState(true);
     const [expansion, setExpansion] = useState(false);
     const { handlePopupLaunch } = useContext(LayoutContext);
+    const headerRef = useRef()
+    console.log(headerRef.current)
 
     function handleResizing() {
         if (transparency) {
@@ -73,7 +77,7 @@ function Header() {
     }
 
     return (
-        <header className="header" data-transparency={transparency}>
+        <header className="header" data-transparency={transparency} ref={headerRef}>
             <section className="header__main">
                 <button className="header__icon element--clickable">
                     <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -43,6 +43,10 @@ main {
         &:nth-child(odd):not(:first-child) {
             background-color: $color-body-deep;
         }
+
+        @include respond(tablet-landscape) {
+            padding: 5rem;
+        }
     }
 }
 
