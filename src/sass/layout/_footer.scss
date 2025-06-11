@@ -13,6 +13,12 @@
             flex: 1;
         }
 
+        @include respond(tablet-portrait) {
+            .badge__container {
+                display: none;
+            }
+        }
+
         .badge__img {
             max-width: 25rem;
         }
@@ -20,6 +26,9 @@
 
     &__section--bottom {
         @include flex-row(center);
+        @include respond(tablet-portrait) {
+            flex-direction: column
+        }
 
         .navbar {
             margin: 2rem 0;
@@ -54,6 +63,17 @@
         &::after {
             content: "|";
             margin: 0 .5rem;
+
+            @include respond(tablet-portrait) {
+                content: '';
+                display: inline-block;
+                width: 8rem;
+                height: 8rem;
+                background-image: url('./logos/ctsw-logo_dark_badge.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                vertical-align: middle;
+            }
         }
      }
 }

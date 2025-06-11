@@ -57,7 +57,13 @@
         @media screen and (min-width: $breakpoint-desktop) { @content };
     }
     @if $breakpoint == big-screen {
-        @media screen and (min-width: $brakpoint-bigscreen) { @content };
+        @media screen and (min-width: $breakpoint-bigscreen) { @content };
+    }
+    @if $breakpoint == huge-screen {
+        @media screen and (min-width: $breakpoint-hugescreen) { @content };
+    }
+    @if $breakpoint == giant-screen {
+        @media screen and (min-width: $breakpoint-giantscreen) { @content };
     }
 }
 

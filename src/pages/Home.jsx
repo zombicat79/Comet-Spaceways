@@ -88,7 +88,7 @@ function Home() {
                 <Intersection type="cosmic" />
                 <section className="homepage__promos">
                     <PromoPoster
-                        promoCatch="Thinking of moving some other star? 🤔"
+                        promoCatch="Thinking of moving to some other star? 🤔"
                         heading="trappist-1e"
                         body={[
                             "Join humankind's colonization effort, and embark on a life-changing journey that will take you and your family to a new home on a brave new world.",

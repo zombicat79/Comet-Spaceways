@@ -3,9 +3,19 @@
     @include respond(tablet-landscape) {
         flex-direction: column;
     }
+    @include respond(huge-screen) {
+        justify-content: center;
+    }
 
     &__side {
         flex: 1;
+
+        @include respond(huge-screen) {
+            flex: 0.3;
+        }
+        @include respond(giant-screen) {
+            flex: 0.2;
+        }
     }
 
     &__catch {

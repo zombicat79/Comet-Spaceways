@@ -58,6 +58,9 @@ html {
   @media screen and (max-width: 600px) {
     html {
       font-size: 50%; } }
+  @media screen and (max-width: 360px) {
+    html {
+      font-size: 40%; } }
   @media screen and (min-width: 2000px) {
     html {
       font-size: 87.5%; } }
@@ -590,8 +593,17 @@ h3 {
   @media screen and (max-width: 1000px) {
     .promoposter {
       flex-direction: column; } }
+  @media screen and (min-width: 2800px) {
+    .promoposter {
+      justify-content: center; } }
   .promoposter__side {
     flex: 1; }
+    @media screen and (min-width: 2800px) {
+      .promoposter__side {
+        flex: 0.3; } }
+    @media screen and (min-width: 3500px) {
+      .promoposter__side {
+        flex: 0.2; } }
   .promoposter__catch {
     width: 50%;
     margin: 0 auto 2rem;
@@ -1010,12 +1022,18 @@ h3 {
     .footer__section--top .badge__container,
     .footer__section--top .navmenu {
       flex: 1; }
+    @media screen and (max-width: 768px) {
+      .footer__section--top .badge__container {
+        display: none; } }
     .footer__section--top .badge__img {
       max-width: 25rem; }
   .footer__section--bottom {
     display: flex;
     justify-content: center;
     align-items: center; }
+    @media screen and (max-width: 768px) {
+      .footer__section--bottom {
+        flex-direction: column; } }
     .footer__section--bottom .navbar {
       margin: 2rem 0; }
       .footer__section--bottom .navbar__list {
@@ -1035,6 +1053,16 @@ h3 {
     .footer .copyright::after {
       content: "|";
       margin: 0 .5rem; }
+      @media screen and (max-width: 768px) {
+        .footer .copyright::after {
+          content: '';
+          display: inline-block;
+          width: 8rem;
+          height: 8rem;
+          background-image: url("./logos/ctsw-logo_dark_badge.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          vertical-align: middle; } }
 
 .scrollblocker {
   height: 100vh;
