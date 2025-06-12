@@ -14,8 +14,24 @@
         }
 
         @include respond(tablet-portrait) {
+            justify-content: space-evenly;
+            
             .badge__container {
                 display: none;
+            }
+            .navmenu {
+                flex: initial;
+            }
+            .navmenu__title {
+                display: none;
+            }
+            .navmenu__column {
+                margin-left: 0;
+            }
+        }
+        @include respond(phone) {
+            .navbar {
+                font-family: 'bai-bold';
             }
         }
 
@@ -32,15 +48,26 @@
 
         .navbar {
             margin: 2rem 0;
+            @include respond(phone) {
+                font-family: 'bai-bold';
+            }
 
             &__list {
                 gap: 0;
+
+                @include respond(phone) {
+                    flex-direction: column;
+                }
             }
         }
 
         .navlink:not(.navlink:last-child)::after {
             content: "|";
             margin: 0 .5rem;
+
+            @include respond(phone) {
+                content: "";
+            }
         }
     }
 
@@ -59,6 +86,12 @@
      .copyright {
         color: $color-text-dark;
         font-family: 'bai-medium';
+        @include respond(tablet-portrait) {
+            text-transform: uppercase;
+        }
+        @include respond(phone) {
+            font-family: 'bai-bold';
+        }
 
         &::after {
             content: "|";

@@ -9,6 +9,10 @@
 
       .banner__heading {
         font-size: 4.5rem;
+
+        @include respond(tablet-portrait) {
+          font-size: 3rem;
+        }
       }
     }
 
@@ -42,6 +46,15 @@
       width: 90%;
       @include absolute-center;
       top: 55%;
+
+      @include respond(tablet-landscape) {
+        top: initial;
+        bottom: 3rem;
+      }
+      @include respond(phone) {
+        display: none;
+      }
+
 
       &--left {
         text-align: left;

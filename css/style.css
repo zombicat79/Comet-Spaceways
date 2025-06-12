@@ -466,6 +466,9 @@ h3 {
     height: 100vh; }
     .banner--full .banner__heading {
       font-size: 4.5rem; }
+      @media screen and (max-width: 768px) {
+        .banner--full .banner__heading {
+          font-size: 3rem; } }
   .banner--half {
     height: 60vh;
     background-position: center; }
@@ -484,6 +487,13 @@ h3 {
     left: 50%;
     transform: translate(-50%, -50%);
     top: 55%; }
+    @media screen and (max-width: 1000px) {
+      .banner__msg {
+        top: initial;
+        bottom: 3rem; } }
+    @media screen and (max-width: 600px) {
+      .banner__msg {
+        display: none; } }
     .banner__msg--left {
       text-align: left; }
     .banner__msg--center {
@@ -1023,8 +1033,19 @@ h3 {
     .footer__section--top .navmenu {
       flex: 1; }
     @media screen and (max-width: 768px) {
-      .footer__section--top .badge__container {
-        display: none; } }
+      .footer__section--top {
+        justify-content: space-evenly; }
+        .footer__section--top .badge__container {
+          display: none; }
+        .footer__section--top .navmenu {
+          flex: initial; }
+        .footer__section--top .navmenu__title {
+          display: none; }
+        .footer__section--top .navmenu__column {
+          margin-left: 0; } }
+    @media screen and (max-width: 600px) {
+      .footer__section--top .navbar {
+        font-family: 'bai-bold'; } }
     .footer__section--top .badge__img {
       max-width: 25rem; }
   .footer__section--bottom {
@@ -1036,11 +1057,20 @@ h3 {
         flex-direction: column; } }
     .footer__section--bottom .navbar {
       margin: 2rem 0; }
+      @media screen and (max-width: 600px) {
+        .footer__section--bottom .navbar {
+          font-family: 'bai-bold'; } }
       .footer__section--bottom .navbar__list {
         gap: 0; }
+        @media screen and (max-width: 600px) {
+          .footer__section--bottom .navbar__list {
+            flex-direction: column; } }
     .footer__section--bottom .navlink:not(.navlink:last-child)::after {
       content: "|";
       margin: 0 .5rem; }
+      @media screen and (max-width: 600px) {
+        .footer__section--bottom .navlink:not(.navlink:last-child)::after {
+          content: ""; } }
   .footer .navmenu {
     color: #272643; }
     .footer .navmenu__column {
@@ -1050,6 +1080,12 @@ h3 {
   .footer .copyright {
     color: #272643;
     font-family: 'bai-medium'; }
+    @media screen and (max-width: 768px) {
+      .footer .copyright {
+        text-transform: uppercase; } }
+    @media screen and (max-width: 600px) {
+      .footer .copyright {
+        font-family: 'bai-bold'; } }
     .footer .copyright::after {
       content: "|";
       margin: 0 .5rem; }
