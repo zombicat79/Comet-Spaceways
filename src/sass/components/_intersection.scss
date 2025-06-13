@@ -3,6 +3,12 @@
     &--cosmic {
         position: relative;
         background-image: linear-gradient(177deg, $color-environmental-pitch 30%, $color-body-deep, $color-body-shallow, $color-body-deep, $color-environmental-pitch 70%);
+        @include respond(big-screen) {
+            height: 400px;
+        }
+        @include respond(huge-screen) {
+            height: 600px;
+        }
 
         &__ellipse {
             @include absolute-center;
@@ -13,6 +19,43 @@
             height: 40px;
             transform: rotate(177deg);
             border-radius: 50%;
+
+            @include respond(tablet-landscape) {
+                top: 35%;
+                left: 18%;
+            }
+            @include respond(tablet-portrait) {
+                top: 30%;
+            }
+            @include respond(phone) {
+                width: 250px;
+                top: 25%;
+                left: 22%;
+            }
+            @include respond(phone-small) {
+                width: 180px;
+                height: 25px;
+                top: 31%;
+                left: 18%;
+            }
+
+            @include respond(big-screen) {
+                width: 600px;
+                height: 55px;
+                top: 42%;
+            }
+            @include respond(huge-screen) {
+                width: 1200px;
+                height: 95px;
+                top: 42%;
+                left: 30%;
+            }
+            @include respond(giant-screen) {
+                width: 1400px;
+                height: 110px;
+                left: 35%;
+                top: 41%;
+            }
         }
 
         &__star {
@@ -21,7 +64,25 @@
             height: 60px;
             border-radius: 50%;
             background-color: white;
-            box-shadow: 1px 15px 40px white, 1px -15px 40px white, 40px 10px 40px white, -40px 10px 40px white ;
+            box-shadow: 1px 15px 40px white, 1px -15px 40px white, 40px 10px 40px white, -40px 10px 40px white;
+
+            @include respond(phone-small) {
+                width: 35px;
+                height: 35px;
+            }
+
+            @include respond(big-screen) {
+                width: 80px;
+                height: 80px;
+            }
+            @include respond(huge-screen) {
+                width: 120px;
+                height: 120px;
+            }
+            @include respond(giant-screen) {
+                width: 140px;
+                height: 140px;
+            }
         }
     }
 }
