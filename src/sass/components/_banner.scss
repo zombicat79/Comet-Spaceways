@@ -13,6 +13,9 @@
         @include respond(tablet-portrait) {
           font-size: 3rem;
         }
+        @include respond(phone) {
+          font-size: 2rem;
+        }
       }
     }
 
@@ -29,6 +32,10 @@
     &--1 {
       background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3),
       rgba(18, 18, 18, 0.55)), url('./assets/images/space-beer_banner.webp');
+
+      @include respond(tablet-portrait) {
+        background-image: url('./assets/images/space-sunrise_banner.webp');
+      }
     }
 
     &--2 {
@@ -51,7 +58,7 @@
         top: initial;
         bottom: 3rem;
       }
-      @include respond(phone) {
+      @include respond(phone-small) {
         display: none;
       }
 
@@ -71,5 +78,16 @@
 
     &__heading {
       line-height: 5rem;
+    }
+
+    // BANNER SMALL SCREEN LOGO
+    @include respond(phone-small) {
+      &__logo {
+        max-width: 34rem;
+        position: absolute;
+        bottom: 15rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
 }

@@ -469,6 +469,9 @@ h3 {
       @media screen and (max-width: 768px) {
         .banner--full .banner__heading {
           font-size: 3rem; } }
+      @media screen and (max-width: 600px) {
+        .banner--full .banner__heading {
+          font-size: 2rem; } }
   .banner--half {
     height: 60vh;
     background-position: center; }
@@ -476,6 +479,9 @@ h3 {
       font-size: 3rem; }
   .banner--1 {
     background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./assets/images/space-beer_banner.webp"); }
+    @media screen and (max-width: 768px) {
+      .banner--1 {
+        background-image: url("./assets/images/space-sunrise_banner.webp"); } }
   .banner--2 {
     background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./assets/images/space-sunrise_banner.webp"); }
   .banner--3 {
@@ -491,7 +497,7 @@ h3 {
       .banner__msg {
         top: initial;
         bottom: 3rem; } }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 360px) {
       .banner__msg {
         display: none; } }
     .banner__msg--left {
@@ -502,6 +508,13 @@ h3 {
       text-align: right; }
   .banner__heading {
     line-height: 5rem; }
+  @media screen and (max-width: 360px) {
+    .banner__logo {
+      max-width: 34rem;
+      position: absolute;
+      bottom: 15rem;
+      left: 50%;
+      transform: translateX(-50%); } }
 
 .pricetag {
   position: relative; }

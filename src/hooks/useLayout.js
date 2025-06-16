@@ -1,6 +1,7 @@
 import { useReducer } from 'react';
 
 const initialState = {
+    viewportWidth: null,
     scroll: true,
     modal: null,
     modalClass: 'generic',
@@ -13,6 +14,8 @@ const initialState = {
 
 function reducer(state, action) {
     switch(action.type) {
+        case 'set/viewportWidth':
+            return { ...state, viewportWidth: action.payload };
         case 'toggle/scroll':
             return { ...state, scroll: !state.scroll };
         case 'toggle/modal':

@@ -1,4 +1,4 @@
-import { useState, useContext, useRef } from 'react';
+import { useState, useContext } from 'react';
 import { LayoutContext } from '../contexts/LayoutContext';
 
 import NavBar from './../components/NavBar';
@@ -64,9 +64,7 @@ const headerLinks = {
 function Header() {
     const [transparency, setTransparency] = useState(true);
     const [expansion, setExpansion] = useState(false);
-    const { handlePopupLaunch } = useContext(LayoutContext);
-    const headerRef = useRef()
-    console.log(headerRef.current)
+    const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
 
     function handleResizing() {
         if (transparency) {
@@ -77,7 +75,7 @@ function Header() {
     }
 
     return (
-        <header className="header" data-transparency={transparency} ref={headerRef}>
+        <header className="header" data-transparency={transparency} >
             <section className="header__main">
                 <button className="header__icon element--clickable">
                     <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,12 +87,12 @@ function Header() {
                     links={headerLinks.topLeft}
                     tooling={{handleResizing, handlePopupLaunch}}
                 />
-                <a className="link--container">
+                {(layoutState.viewportWidth > 360) && <a className="link--container">
                     <img 
                         className="header__logo" 
                         src={transparency ? LogoLight : LogoDark} 
                     />
-                </a>
+                </a>}
                 <NavBar 
                     direction='horizontal'
                     links={headerLinks.topRight}
