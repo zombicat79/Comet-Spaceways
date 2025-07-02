@@ -4,6 +4,14 @@
     left: 50%;
     transform: translate(-50%, 120vh);
 
+    &--small-width {
+        width: 100%;
+    }
+
+    &--small-height {
+        height: 100%;
+    }
+
     &--appearing {
         animation-name: appear-bottom;
         animation-timing-function: ease-out;
@@ -38,12 +46,24 @@
             color: $color-environmental-pitch;
         }
 
+        &--small-width {
+            width: 100%;
+        }
+
         &--regular-width {
             width: 40rem;
         }
 
+        &--medium-width {
+            width: 60rem;
+        }
+
         &--large-width {
             width: 80rem;
+        }
+
+        &--small-height {
+            height: 100%;
         }
 
         &--regular-height {

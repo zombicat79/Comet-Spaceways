@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
 
 const initialState = {
-    viewportWidth: null,
+    viewportWidth: window.innerWidth,
     scroll: true,
     modal: null,
     modalClass: 'generic',

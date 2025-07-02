@@ -11,7 +11,7 @@ function Modal({ modalShown, modalClass, content, width, height }) {
     }
     
     return (
-        <div className={modalShown ? `modal modal--appearing` : modalShown === null ? `modal` : `modal modal--disappearing `}>
+        <div className={modalShown ? `modal modal--${width}-width modal--${width}-height modal--appearing` : modalShown === null ? `modal` : `modal modal--disappearing `}>
             <div className={modalClass === 'generic' ? deployGenericClasses() : deployFlightPreviewClasses()}>
                 {content}
             </div>

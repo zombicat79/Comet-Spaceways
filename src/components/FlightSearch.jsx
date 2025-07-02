@@ -9,7 +9,7 @@ import FlightPreview from './FlightPreview';
 
 function FlightSearch() {
     const { flightSearchState, changeFlightSearchState } = useContext(FlightSearchContext);
-    const { handlePopupLaunch } = useContext(LayoutContext);
+    const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
     const { humanoids, nhes, minors, pets } = flightSearchState.passengers;
 
     function handleReverseChoice() {
@@ -39,11 +39,26 @@ function FlightSearch() {
 
     function handleOnSubmit(e) {
         e.preventDefault();
+
+        let modalWidth = '';
+        let modalHeigth = 'regular';
+        switch(true) {
+            case layoutState.viewportWidth > 1000:
+                modalWidth = 'large';
+                break;
+            case layoutState.viewportWidth <= 600:
+                modalWidth = 'small';
+                modalHeigth = 'small';
+                break;
+            default:
+                modalWidth = 'medium';
+        }
+
         handlePopupLaunch({
             modalClass: 'flight-preview',
             content: <FlightPreview state={flightSearchState} />,
-            width: 'large',
-            height: 'regular'
+            width: modalWidth,
+            height: modalHeigth
         })
     }
 

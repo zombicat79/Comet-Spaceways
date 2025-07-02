@@ -1193,6 +1193,10 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 120vh); }
+  .modal--small-width {
+    width: 100%; }
+  .modal--small-height {
+    height: 100%; }
   .modal--appearing {
     animation-name: appear-bottom;
     animation-timing-function: ease-out;
@@ -1217,10 +1221,16 @@ h3 {
       background-color: #ffffff;
       border: none;
       color: #121212; }
+    .modal__content--small-width {
+      width: 100%; }
     .modal__content--regular-width {
       width: 40rem; }
+    .modal__content--medium-width {
+      width: 60rem; }
     .modal__content--large-width {
       width: 80rem; }
+    .modal__content--small-height {
+      height: 100%; }
     .modal__content--regular-height {
       height: 40rem; }
     .modal__content--large-height {

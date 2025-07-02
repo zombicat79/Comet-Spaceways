@@ -1,9 +1,8 @@
-import { useRef, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { LayoutContext } from '../contexts/LayoutContext';
 
 function Banner({ background, textStyle, textContent, children }) {
-    const bannerSection = useRef(null);
-    const { layoutState, dispatch } = useContext(LayoutContext);
+    const { layoutState } = useContext(LayoutContext);
     
     let backgroundOption = 0;
     switch(background.img) {
@@ -20,12 +19,8 @@ function Banner({ background, textStyle, textContent, children }) {
             backgroundOption = 1;
     }
 
-    useEffect(() => {
-        dispatch({ type: 'set/viewportWidth', payload: bannerSection.current.offsetWidth });
-    }, [bannerSection]);
-
     return (
-        <section className={`banner banner--${backgroundOption} banner--${background.height}`} ref={bannerSection}>
+        <section className={`banner banner--${backgroundOption} banner--${background.height}`} >
             {children}
             
             <div className={textStyle.align ? `banner__msg banner__msg--${textStyle.align}`: 'banner__msg'}>
