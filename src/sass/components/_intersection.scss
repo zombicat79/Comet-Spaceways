@@ -9,6 +9,9 @@
         @include respond(huge-screen) {
             height: 600px;
         }
+        @include respond(tablet-landscape) {
+            margin: 4rem 0;
+        }
 
         &__ellipse {
             @include absolute-center;

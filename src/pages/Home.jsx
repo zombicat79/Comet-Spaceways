@@ -62,11 +62,9 @@ function Home() {
                         <FlightSearch />
                     </FlightSearchProvider>
                 </Banner>
-                <section className="">
-                    <div>
-                        <h3>OFFERS FROM PLANET EARTH</h3>
-                    </div>
-                    <div className="homepage__offers">
+                <section className="homepage__offers">
+                    <h3 className="homepage__offers-heading">OFFERS FROM PLANET EARTH</h3>
+                    <div className="homepage__offers-list">
                     {offers.map((el) => {
                         return (
                             <Card key={el.id} bgImg={el.bgImg}>

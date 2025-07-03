@@ -2,7 +2,7 @@
     position: relative;
     z-index: 2;
 
-    &__offers {
+    &__offers-list {
         @include flex-row(center);
         gap: 5rem;
         margin-top: 3rem;

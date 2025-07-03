@@ -64,6 +64,12 @@ html {
   @media screen and (min-width: 2000px) {
     html {
       font-size: 87.5%; } }
+  @media screen and (min-width: 2800px) {
+    html {
+      font-size: 100%; } }
+  @media screen and (min-width: 3500px) {
+    html {
+      font-size: 150%; } }
 
 /* BODY */
 body {
@@ -464,6 +470,9 @@ h3 {
   background-repeat: no-repeat; }
   .banner--full {
     height: 100vh; }
+    @media screen and (min-width: 2800px) {
+      .banner--full {
+        height: 60vh; } }
     .banner--full .banner__heading {
       font-size: 4.5rem; }
       @media screen and (max-width: 768px) {
@@ -479,6 +488,9 @@ h3 {
       font-size: 3rem; }
   .banner--1 {
     background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./assets/images/space-beer_banner.webp"); }
+    @media screen and (min-width: 2800px) {
+      .banner--1 {
+        background-image: url("./assets/images/earth-moon_banner.webp"); } }
     @media screen and (max-width: 768px) {
       .banner--1 {
         background-image: url("./assets/images/space-sunrise_banner.webp"); } }
@@ -500,6 +512,9 @@ h3 {
     @media screen and (max-width: 360px) {
       .banner__msg {
         display: none; } }
+    @media screen and (min-width: 2800px) {
+      .banner__msg {
+        top: 60%; } }
     .banner__msg--left {
       text-align: left; }
     .banner__msg--center {
@@ -592,6 +607,9 @@ h3 {
   @media screen and (min-width: 2800px) {
     .intersection--cosmic {
       height: 600px; } }
+  @media screen and (max-width: 1000px) {
+    .intersection--cosmic {
+      margin: 4rem 0; } }
   .intersection--cosmic__ellipse {
     position: absolute;
     top: 50%;
@@ -676,14 +694,14 @@ h3 {
   @media screen and (min-width: 2800px) {
     .promoposter {
       justify-content: center; } }
+  @media screen and (min-width: 3500px) {
+    .promoposter {
+      gap: 10rem; } }
   .promoposter__side {
     flex: 1; }
-    @media screen and (min-width: 2800px) {
-      .promoposter__side {
-        flex: 0.3; } }
     @media screen and (min-width: 3500px) {
       .promoposter__side {
-        flex: 0.2; } }
+        flex: 0.3; } }
   .promoposter__catch {
     width: 50%;
     margin: 0 auto 2rem;
@@ -1254,14 +1272,14 @@ h3 {
 .homepage {
   position: relative;
   z-index: 2; }
-  .homepage__offers {
+  .homepage__offers-list {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5rem;
     margin-top: 3rem; }
     @media screen and (max-width: 1000px) {
-      .homepage__offers {
+      .homepage__offers-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
@@ -1269,9 +1287,9 @@ h3 {
         gap: 0;
         row-gap: 5rem; } }
     @media screen and (max-width: 768px) {
-      .homepage__offers {
+      .homepage__offers-list {
         grid-template-columns: 1fr; } }
-    .homepage__offers .card {
+    .homepage__offers-list .card {
       width: 100%; }
   .homepage .flightsearch {
     opacity: 0;

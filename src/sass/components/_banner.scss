@@ -6,6 +6,9 @@
     // BANNER SIZE
     &--full {
       height: 100vh;
+      @include respond(huge-screen) {
+        height: 60vh;
+      }
 
       .banner__heading {
         font-size: 4.5rem;
@@ -32,6 +35,10 @@
     &--1 {
       background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3),
       rgba(18, 18, 18, 0.55)), url('./assets/images/space-beer_banner.webp');
+
+      @include respond(huge-screen) {
+        background-image: url('./assets/images/earth-moon_banner.webp');
+      }
 
       @include respond(tablet-portrait) {
         background-image: url('./assets/images/space-sunrise_banner.webp');
@@ -60,6 +67,10 @@
       }
       @include respond(phone-small) {
         display: none;
+      }
+
+      @include respond(huge-screen) {
+        top: 60%;
       }
 
 

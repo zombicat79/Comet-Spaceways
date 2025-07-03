@@ -28,6 +28,12 @@ html {
     @include respond(big-screen) {
         font-size: 87.5%;
     }
+    @include respond(huge-screen) {
+        font-size: 100%;
+    }
+    @include respond(giant-screen) {
+        font-size: 150%;
+    }
 }
 
 /* BODY */

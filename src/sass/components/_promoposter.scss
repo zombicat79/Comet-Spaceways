@@ -6,15 +6,15 @@
     @include respond(huge-screen) {
         justify-content: center;
     }
+    @include respond(giant-screen) {
+        gap: 10rem;
+    }
 
     &__side {
         flex: 1;
 
-        @include respond(huge-screen) {
-            flex: 0.3;
-        }
         @include respond(giant-screen) {
-            flex: 0.2;
+            flex: 0.3;
         }
     }
 
