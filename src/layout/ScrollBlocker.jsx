@@ -18,7 +18,7 @@ function ScrollBlocker() {
 
     return (
         <div 
-            className={layoutState.scroll ? 'scrollblocker scrollblocker-off': 'scrollblocker scrollblocker--on'}
+            className={layoutState.scroll ? 'scrollblocker scrollblocker-off' : 'scrollblocker scrollblocker--on'}
             onClick={(e) => {
                 if (e.target.classList.contains('modal')) return;
                 if (e.target.classList.contains('scrollblocker--on')) {

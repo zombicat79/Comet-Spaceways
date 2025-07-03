@@ -5,7 +5,7 @@ function NavLink({ link, decoration, tooling }) {
                 tooling.handleResizing();
                 break;
             case 'popup':
-                tooling.handlePopupLaunch({ modalClass: 'generic', content: link.payload, width: 'regular', height: 'regular' });
+                tooling.handlePopupLaunch({ modalClass: 'generic', content: link.payload });
                 break;
             default:
                 return;

@@ -16,7 +16,13 @@
         position: relative;
         border: 1px dashed black;
         border-radius: 8px;
+        padding: 0 2rem;
         @include flex-column(space-evenly);
+
+        .flight-preview__title {
+            font-size: 2.75rem;
+            line-height: 4rem;
+        }
     }
 
     &__badge {
@@ -36,6 +42,9 @@
         font-size: 7.5rem;
         line-height: 7.5rem;
         z-index: 1;
+        @include respond(phone) {
+            font-size: 5.5rem;
+        }
         
         &--detail {
             font-family: poppins-regular;
@@ -53,10 +62,16 @@
 
     &__date {
         text-align: left;
+        @include respond(phone) {
+            text-align: center;
+        }
 
         &-container {
             align-self: flex-start;
             padding: 0 3rem;
+            @include respond(phone) {
+                align-self: center;
+            }
         }
 
         span {
@@ -67,10 +82,16 @@
 
     &__payload {
         text-align: left;
+        @include respond(phone) {
+            text-align: center;
+        }
 
         &-container {
             align-self: flex-start;
             padding: 0 3rem;
+            @include respond(phone) {
+                align-self: center;
+            }
         }
 
         span:first-child {

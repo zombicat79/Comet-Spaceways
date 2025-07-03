@@ -818,10 +818,14 @@ h3 {
     position: relative;
     border: 1px dashed black;
     border-radius: 8px;
+    padding: 0 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center; }
+    .flight-preview__body .flight-preview__title {
+      font-size: 2.75rem;
+      line-height: 4rem; }
   .flight-preview__badge {
     width: 100%;
     max-width: 30rem;
@@ -837,6 +841,9 @@ h3 {
     font-size: 7.5rem;
     line-height: 7.5rem;
     z-index: 1; }
+    @media screen and (max-width: 600px) {
+      .flight-preview__routing {
+        font-size: 5.5rem; } }
     .flight-preview__routing--detail {
       font-family: poppins-regular; }
     .flight-preview__routing-container .container--between p:first-child {
@@ -845,17 +852,29 @@ h3 {
       padding-right: 3px; }
   .flight-preview__date {
     text-align: left; }
+    @media screen and (max-width: 600px) {
+      .flight-preview__date {
+        text-align: center; } }
     .flight-preview__date-container {
       align-self: flex-start;
       padding: 0 3rem; }
+      @media screen and (max-width: 600px) {
+        .flight-preview__date-container {
+          align-self: center; } }
     .flight-preview__date span {
       font-family: poppins-bold;
       text-transform: uppercase; }
   .flight-preview__payload {
     text-align: left; }
+    @media screen and (max-width: 600px) {
+      .flight-preview__payload {
+        text-align: center; } }
     .flight-preview__payload-container {
       align-self: flex-start;
       padding: 0 3rem; }
+      @media screen and (max-width: 600px) {
+        .flight-preview__payload-container {
+          align-self: center; } }
     .flight-preview__payload span:first-child {
       font-family: poppins-bold;
       text-transform: uppercase; }
@@ -1266,6 +1285,14 @@ h3 {
       animation-timing-function: linear;
       animation-duration: 1s;
       animation-fill-mode: forwards; }
+    .modal__content .modal__header {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; }
+    .modal__content .modal__closer {
+      width: 5rem;
+      height: 5rem; }
     .modal__content .infopiece__text {
       font-family: poppins-regular; }
 

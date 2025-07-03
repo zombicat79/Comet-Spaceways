@@ -93,6 +93,16 @@
             animation-fill-mode: forwards;
         }
 
+        .modal__header {
+            margin-bottom: 2rem;
+            @include flex-row(flex-end);
+        }
+
+        .modal__closer {
+            width: 5rem;
+            height: 5rem;
+        }
+
         .infopiece__text {
             font-family: poppins-regular;
         }
