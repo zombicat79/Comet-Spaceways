@@ -6,10 +6,7 @@
    z-index: 100;
    
    &[data-transparency="true"] {
-      animation-name: header-fadeout;
-      animation-timing-function: linear;
-      animation-duration: .75s;
-      animation-fill-mode: forwards;
+      @include animation-standard(header-fadeout);
       
       .header__main {
          & .navlink {
@@ -32,10 +29,7 @@
    }
 
    &[data-transparency="false"] {
-      animation-name: header-fadein;
-      animation-timing-function: linear;
-      animation-duration: .75s;
-      animation-fill-mode: forwards;
+      @include animation-standard(header-fadein);
 
       .header__main {
          & .navlink {

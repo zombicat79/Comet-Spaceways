@@ -1,7 +1,8 @@
 import { useContext, useEffect } from 'react';
 import { LayoutContext } from './contexts/LayoutContext';
 
-import Home from './pages/Home';
+import AppLayout from './layout/AppLayout';
+import ScrollBlocker from './layout/ScrollBlocker';
 
 function App() {
   const { layoutState, dispatch } = useContext(LayoutContext);
@@ -31,7 +32,7 @@ function App() {
   })
 
   function handleScroll() {
-    console.log(window.scrollY)
+    dispatch({ type: 'set/scrollHeight', payload: window.scrollY });
   }
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -42,7 +43,10 @@ function App() {
   })
 
   return (
-    <Home />
+    <>
+      <ScrollBlocker />
+      <AppLayout />
+    </>
   )
 }
 

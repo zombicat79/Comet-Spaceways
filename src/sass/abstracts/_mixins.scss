@@ -37,6 +37,13 @@
     text-shadow: 0 .5rem 1.5rem $color;
 }
 
+@mixin animation-standard($name) {
+    animation-name: $name;
+    animation-timing-function: linear;
+    animation-duration: .75s;
+    animation-fill-mode: forwards;
+}
+
 // MEDIA QUERY MANAGER
 /* --- Desktop-first approach - Regular styles automatically applied between 1280px and 2000px --- */
 

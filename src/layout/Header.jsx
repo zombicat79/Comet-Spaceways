@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { LayoutContext } from '../contexts/LayoutContext';
 
 import NavBar from './../components/NavBar';
@@ -64,7 +64,7 @@ const headerLinks = {
 function Header() {
     const [transparency, setTransparency] = useState(true);
     const [expansion, setExpansion] = useState(false);
-    const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
+    const { layoutState, handlePopupLaunch, dispatch } = useContext(LayoutContext);
 
     function handleResizing() {
         if (transparency) {
@@ -74,10 +74,30 @@ function Header() {
         if (!transparency) setExpansion((current) => !current);
     }
 
+    function openAside() {
+        dispatch({ type: 'toggle/aside', payload: {
+            side: 'left',
+            shown: true,
+            content: 'Hello'
+        }})
+    }
+
+    useEffect(() => {
+        if (layoutState.scrollHeight === 0 && !expansion) {
+            setTransparency(true);
+            return;
+        }
+
+        if (layoutState.scrollHeight > 30) {
+            setTransparency(false);
+            return;
+        }
+    }, [layoutState.scrollHeight, expansion])
+
     return (
         <header className="header" data-transparency={transparency} >
             <section className="header__main">
-                <button className="header__icon element--clickable">
+                <button className="header__icon element--clickable" onClick={openAside}>
                     <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>

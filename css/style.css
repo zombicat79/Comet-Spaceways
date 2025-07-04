@@ -1296,6 +1296,64 @@ h3 {
     .modal__content .infopiece__text {
       font-family: poppins-regular; }
 
+.aside {
+  height: 100vh;
+  background-color: #F5F5F5;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 40rem;
+  z-index: 100;
+  box-shadow: 0 2.5px 100px 5px #4B0082; }
+  .aside--left {
+    left: -100%; }
+    .aside--left--on {
+      animation-name: aside-left-in;
+      animation-timing-function: linear;
+      animation-duration: .75s;
+      animation-fill-mode: forwards; }
+    .aside--left--off {
+      animation-name: aside-left-out;
+      animation-timing-function: linear;
+      animation-duration: .75s;
+      animation-fill-mode: forwards; }
+  .aside--right {
+    right: -100%; }
+    .aside--right--on {
+      animation-name: aside-right-in;
+      animation-timing-function: linear;
+      animation-duration: .75s;
+      animation-fill-mode: forwards; }
+    .aside--right--off {
+      animation-name: aside-right-out;
+      animation-timing-function: linear;
+      animation-duration: .75s;
+      animation-fill-mode: forwards; }
+
+@keyframes aside-left-in {
+  from {
+    left: -100%; }
+  to {
+    left: 0; } }
+
+@keyframes aside-left-out {
+  from {
+    left: 0; }
+  to {
+    left: -100%; } }
+
+@keyframes aside-right-in {
+  from {
+    right: -100%; }
+  to {
+    right: 0; } }
+
+@keyframes aside-right-out {
+  from {
+    right: 0; }
+  to {
+    right: -100%; } }
+
 .homepage {
   position: relative;
   z-index: 2; }

@@ -1,0 +1,54 @@
+.aside {
+    height: 100vh;
+    background-color: $color-text-light;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 40rem;
+    z-index: 100;
+    box-shadow: 0 2.5px 100px 5px $color-environmental-accent;
+
+    &--left {
+        left: -100%;
+        
+        &--on {
+            @include animation-standard(aside-left-in);
+        }
+
+        &--off {
+            @include animation-standard(aside-left-out);
+        }
+    }
+
+    &--right {
+        right: -100%;
+
+        &--on {
+            @include animation-standard(aside-right-in);
+        }
+
+        &--off {
+            @include animation-standard(aside-right-out);
+        }
+    }
+}
+
+@keyframes aside-left-in {
+    from { left: -100%; }
+    to { left: 0; }
+}
+ 
+@keyframes aside-left-out {
+    from { left: 0;}
+    to { left: -100%; }
+}
+
+@keyframes aside-right-in {
+    from { right: -100%; }
+    to { right: 0; }
+}
+ 
+@keyframes aside-right-out {
+    from { right: 0;}
+    to { right: -100%; }
+}

@@ -6,12 +6,10 @@ import './../css/style.css'
 import { LayoutProvider } from './contexts/LayoutContext';
 
 import App from './App.jsx'
-import ScrollBlocker from './layout/ScrollBlocker';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <LayoutProvider>
-      <ScrollBlocker />
       <App />
     </LayoutProvider>
   </StrictMode>,
