@@ -22,11 +22,29 @@ function ScrollBlocker() {
             onClick={(e) => {
                 if (e.target.classList.contains('modal')) return;
                 if (e.target.classList.contains('scrollblocker--on')) {
-                    dispatch({ type: 'toggle/modal' });
-                    setTimeout(() => {
+                    if (layoutState.modal) {
+                        dispatch({ type: 'toggle/modal' });
+                        setTimeout(() => {
+                            dispatch({ type: 'toggle/scroll' });
+                            dispatch({ type: 'fill/modal', payload: null })
+                        }, 1000);
+                    }
+                    if (layoutState.asideleft.shown) {
+                        dispatch({ type: 'toggle/aside', payload: {
+                            side: 'left',
+                            shown: false,
+                            content: null
+                        }});
                         dispatch({ type: 'toggle/scroll' });
-                        dispatch({ type: 'fill/modal', payload: null })
-                    }, 1000);
+                    }
+                    if (layoutState.asideright.shown) {
+                        dispatch({ type: 'toggle/aside', payload: {
+                            side: 'right',
+                            shown: false,
+                            content: null
+                        }});
+                        dispatch({ type: 'toggle/scroll' });
+                    }
                 }
             }}
         >

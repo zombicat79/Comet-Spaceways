@@ -7,7 +7,7 @@ function AppLayout() {
     return (
         <>
             <Header />
-            <Aside side="right" />
+            <Aside side="left" />
             <Home />
             <Footer />
         </>

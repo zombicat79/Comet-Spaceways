@@ -12,11 +12,11 @@ const initialState = {
         height: 'regular'
     },
     asideleft: {
-        shown: false,
+        shown: null,
         content: null
     },
     asideright: {
-        shown: false,
+        shown: null,
         content: null
     }
 }
