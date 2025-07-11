@@ -364,6 +364,14 @@ h3 {
   align-items: center;
   width: 100%;
   gap: 5rem; }
+  @media screen and (max-width: 480px) {
+    .quantifier {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      align-items: flex-start;
+      gap: 1rem; } }
   .quantifier__concept {
     margin-bottom: 1rem; }
   .quantifier__category {
@@ -448,6 +456,15 @@ h3 {
     animation-fill-mode: both; }
     .selector__choice--quantity {
       width: max-content; }
+      @media screen and (max-width: 600px) {
+        .selector__choice--quantity {
+          width: 100%; } }
+      @media screen and (max-width: 480px) {
+        .selector__choice--quantity {
+          left: 50%;
+          transform: translateX(-50%);
+          width: max-content;
+          gap: 2rem; } }
   .selector__option {
     display: inline-block;
     width: 100%;
@@ -504,17 +521,18 @@ h3 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 55%; }
-    @media screen and (max-width: 1000px) {
-      .banner__msg {
-        top: initial;
-        bottom: 3rem; } }
+    top: initial;
+    bottom: 3rem; }
     @media screen and (max-width: 360px) {
       .banner__msg {
         display: none; } }
     @media screen and (min-width: 2800px) {
       .banner__msg {
         top: 60%; } }
+    @media screen and (min-width: 1280px) {
+      .banner__msg {
+        top: 55%;
+        bottom: initial; } }
     .banner__msg--left {
       text-align: left; }
     .banner__msg--center {
@@ -749,38 +767,39 @@ h3 {
         margin-top: 3rem; } }
 
 .flightsearch {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
   background-color: #e3f6f5;
-  max-width: 80vw;
+  max-width: 90vw;
   border-radius: 1.5rem;
   padding: 1.5rem 3rem;
   box-shadow: 0 0 4.5rem #00FFFF;
   z-index: 1; }
-  @media screen and (max-width: 1000px) {
-    .flightsearch {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
-      gap: 1rem; } }
   @media screen and (max-width: 768px) {
     .flightsearch {
       grid-template-columns: repeat(2, 1fr); } }
   @media screen and (max-width: 600px) {
     .flightsearch {
       grid-template-columns: 1fr; } }
+  @media screen and (min-width: 1280px) {
+    .flightsearch {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: fit-content; } }
   .flightsearch__grouping {
     flex: 1;
     position: relative;
-    max-width: 30rem;
+    max-width: none;
     gap: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center; }
-    @media screen and (max-width: 600px) {
+    @media screen and (min-width: 1280px) {
       .flightsearch__grouping {
-        max-width: none; } }
+        max-width: 30rem; } }
   .flightsearch__icon {
     height: 3rem;
     width: 3rem; }
@@ -800,12 +819,12 @@ h3 {
   .flightsearch .selector {
     flex: 1;
     min-width: 10rem;
-    max-width: 15rem;
+    max-width: none;
     height: 6rem;
     border: 1px solid #121212; }
-    @media screen and (max-width: 1000px) {
+    @media screen and (min-width: 1280px) {
       .flightsearch .selector {
-        max-width: none; } }
+        max-width: 15rem; } }
 
 .flight-preview {
   height: 100%;
@@ -967,6 +986,12 @@ h3 {
   width: 6rem;
   line-height: 4rem;
   margin: 0.166rem; }
+  @media screen and (max-width: 1000px) {
+    .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name {
+      width: 4rem; } }
+  @media screen and (max-width: 600px) {
+    .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name {
+      width: 5rem; } }
 
 .react-datepicker__day-name {
   color: #272643; }
@@ -1310,7 +1335,7 @@ h3 {
     .aside {
       max-width: initial; } }
   .aside--left {
-    left: -110%; }
+    left: -150%; }
     .aside--left--on {
       animation-name: aside-left-in;
       animation-timing-function: linear;
@@ -1322,7 +1347,7 @@ h3 {
       animation-duration: .75s;
       animation-fill-mode: forwards; }
   .aside--right {
-    right: -110%; }
+    right: -150%; }
     .aside--right--on {
       animation-name: aside-right-in;
       animation-timing-function: linear;
@@ -1406,7 +1431,7 @@ h3 {
 
 @keyframes aside-left-in {
   from {
-    left: -110%; }
+    left: -150%; }
   to {
     left: 0; } }
 
@@ -1414,11 +1439,11 @@ h3 {
   from {
     left: 0; }
   to {
-    left: -110%; } }
+    left: -150%; } }
 
 @keyframes aside-right-in {
   from {
-    right: -110%; }
+    right: -150%; }
   to {
     right: 0; } }
 
@@ -1426,7 +1451,7 @@ h3 {
   from {
     right: 0; }
   to {
-    right: -110%; } }
+    right: -150%; } }
 
 .homepage {
   position: relative;

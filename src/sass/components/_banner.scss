@@ -59,18 +59,20 @@
     &__msg {
       width: 90%;
       @include absolute-center;
-      top: 55%;
+      top: initial;
+      bottom: 3rem;
 
-      @include respond(tablet-landscape) {
-        top: initial;
-        bottom: 3rem;
-      }
       @include respond(phone-small) {
         display: none;
       }
 
       @include respond(huge-screen) {
         top: 60%;
+      }
+
+      @include respond(desktop) {
+        top: 55%;
+        bottom: initial;
       }
 
 

@@ -51,6 +51,9 @@
     @if $breakpoint == phone-small {
         @media screen and (max-width: $breakpoint-phone-small) { @content };
     }
+    @if $breakpoint == phone-medium {
+        @media screen and (max-width: $breakpoint-phone-medium) { @content };
+    }
     @if $breakpoint == phone {
         @media screen and (max-width: $breakpoint-phone) { @content };
     }

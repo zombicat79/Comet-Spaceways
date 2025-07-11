@@ -71,6 +71,13 @@
     width: 6rem;
     line-height: 4rem;
     margin: 0.166rem;
+
+    @include respond(tablet-landscape) {
+        width: 4rem;
+    }
+    @include respond(phone) {
+        width: 5rem;
+    }
 }
 
 .react-datepicker__day-name {

@@ -13,7 +13,7 @@
     }
 
     &--left {
-        left: -110%;
+        left: -150%;
         
         &--on {
             @include animation-standard(aside-left-in);
@@ -25,7 +25,7 @@
     }
 
     &--right {
-        right: -110%;
+        right: -150%;
 
         &--on {
             @include animation-standard(aside-right-in);
@@ -128,21 +128,21 @@
 }
 
 @keyframes aside-left-in {
-    from { left: -110%; }
+    from { left: -150%; }
     to { left: 0; }
 }
  
 @keyframes aside-left-out {
     from { left: 0;}
-    to { left: -110%; }
+    to { left: -150%; }
 }
 
 @keyframes aside-right-in {
-    from { right: -110%; }
+    from { right: -150%; }
     to { right: 0; }
 }
  
 @keyframes aside-right-out {
     from { right: 0;}
-    to { right: -110%; }
+    to { right: -150%; }
 }

@@ -2,6 +2,11 @@
     @include flex-row(space-between);
     width: 100%;
     gap: 5rem;
+    @include respond(phone-medium) {
+        @include flex-column(space-between);
+        align-items: flex-start;
+        gap: 1rem;
+    }
 
     &__concept {
         margin-bottom: 1rem;

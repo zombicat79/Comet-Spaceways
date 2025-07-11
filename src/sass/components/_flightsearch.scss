@@ -1,19 +1,15 @@
 .flightsearch {
-    @include flex-row(space-between);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
 
     background-color: $color-body-light;
-    max-width: 80vw;
+    max-width: 90vw;
     border-radius: 1.5rem;
     padding: 1.5rem 3rem;
     box-shadow: 0 0 4.5rem $color-highlight-light;
     z-index: 1;
-
-    @include respond(tablet-landscape) {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
-        gap: 1rem;
-    }
 
     @include respond(tablet-portrait) {
         grid-template-columns: repeat(2, 1fr);
@@ -23,15 +19,20 @@
         grid-template-columns: 1fr;
     }
 
+    @include respond(desktop) {
+        @include flex-row(center);
+        max-width: fit-content;
+    }
+
     &__grouping {
         flex: 1;
         position: relative;
-        max-width: 30rem;
+        max-width: none;
         gap: 1.5rem;
         @include flex-row(center);
 
-        @include respond(phone) {
-            max-width: none;
+        @include respond(desktop) {
+            max-width: 30rem;
         }
     }
 
@@ -62,12 +63,12 @@
     .selector {
         flex: 1;
         min-width: 10rem;
-        max-width: 15rem;
+        max-width: none;
         height: 6rem;
         border: 1px solid $color-environmental-pitch;
 
-        @include respond(tablet-landscape) {
-            max-width: none;
+        @include respond(desktop) {
+            max-width: 15rem;
         }
     }
 }
