@@ -25,6 +25,26 @@
         }
     }
 
+    .banner {
+        &__msg {
+            top: initial;
+            bottom: 3rem;
+
+            @include respond(phone-small) {
+              display: none;
+            }
+      
+            @include respond(huge-screen) {
+              top: 60%;
+            }
+      
+            @include respond(desktop) {
+              top: 55%;
+              bottom: initial;
+            }
+        }
+    }
+
     .flightsearch {
         opacity: 0;
         position: relative;

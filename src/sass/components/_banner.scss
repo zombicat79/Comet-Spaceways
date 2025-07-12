@@ -55,26 +55,15 @@
       rgba(18, 18, 18, 0.55)), url('./assets/images/earth-moon_banner.webp');
     }
 
+    &--4 {
+      background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3),
+      rgba(18, 18, 18, 0.55)), url('./assets/images/black-hole_banner.webp');
+    }
+
     // BANNER TEXT
     &__msg {
       width: 90%;
       @include absolute-center;
-      top: initial;
-      bottom: 3rem;
-
-      @include respond(phone-small) {
-        display: none;
-      }
-
-      @include respond(huge-screen) {
-        top: 60%;
-      }
-
-      @include respond(desktop) {
-        top: 55%;
-        bottom: initial;
-      }
-
 
       &--left {
         text-align: left;
@@ -91,6 +80,17 @@
 
     &__heading {
       line-height: 5rem;
+    }
+
+    &__text {
+      @include respond(tablet-landscape) {
+        max-width: 50rem;
+        margin: 0 auto;
+      }
+
+      .btn {
+        margin-top: 3rem;
+      }
     }
 
     // BANNER SMALL SCREEN LOGO

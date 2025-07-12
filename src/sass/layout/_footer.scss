@@ -74,6 +74,22 @@
                 content: "";
             }
         }
+
+        &::after {
+            content: "|";
+            margin: 0 .5rem;
+    
+            @include respond(tablet-portrait) {
+                content: '';
+                display: inline-block;
+                width: 8rem;
+                height: 8rem;
+                background-image: url('./logos/ctsw-logo_dark_badge.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                vertical-align: middle;
+            }
+        }
     }
 
     .navmenu {
@@ -86,32 +102,5 @@
 
      .navlink {
         color: $color-text-dark;
-     }
-
-     .copyright {
-        color: $color-text-dark;
-        font-family: 'bai-medium';
-        @include respond(tablet-portrait) {
-            text-transform: uppercase;
-        }
-        @include respond(phone) {
-            font-family: 'bai-bold';
-        }
-
-        &::after {
-            content: "|";
-            margin: 0 .5rem;
-
-            @include respond(tablet-portrait) {
-                content: '';
-                display: inline-block;
-                width: 8rem;
-                height: 8rem;
-                background-image: url('./logos/ctsw-logo_dark_badge.png');
-                background-size: contain;
-                background-repeat: no-repeat;
-                vertical-align: middle;
-            }
-        }
      }
 }

@@ -1,4 +1,5 @@
 .navlink {
+    position: relative;
     transition: transform .5s;
 
     &:hover {
@@ -15,11 +16,32 @@
     }
 
     &--underline {
-        text-underline-offset: .5rem;
+        .navlink__text {
+            text-underline-offset: .5rem;
 
-        &:hover {
-            text-decoration: underline;
-            transform: translateX(.5rem);
+            &:hover {
+                text-decoration: underline;
+                display: inline-block;
+                transform: translateX(.5rem);
+            }
+        }
+    }
+
+    &__infospan {
+        position: absolute;
+        width: 100%;
+        font-size: 1rem;
+        color: $color-environmental-accent;
+        margin-left: 1rem;
+        text-transform: initial;
+        vertical-align: text-top;
+
+        &:after {
+            content: 'Available soon!';
+
+            @include respond(phone-small) {
+                content: 'Soon!';
+            }
         }
     }
 }

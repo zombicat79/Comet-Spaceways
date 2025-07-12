@@ -96,6 +96,12 @@
     src: url('./assets/fonts/poppins/Poppins-ExtraBold.ttf');
 }
 
+// RUSSO ONE
+@font-face {
+    font-family: russo-one;
+    src: url('./assets/fonts/russo_one/RussoOne-Regular.ttf');
+}
+
 body {
     font-family: 'roboto-light';
     font-size: $size-medium;

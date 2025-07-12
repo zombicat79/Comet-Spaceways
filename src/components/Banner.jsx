@@ -15,6 +15,9 @@ function Banner({ background, textStyle, textContent, children }) {
         case 'earth-moon':
             backgroundOption = 3;
             break;
+        case 'black-hole':
+            backgroundOption = 4;
+            break;
         default:
             backgroundOption = 1;
     }
@@ -25,7 +28,7 @@ function Banner({ background, textStyle, textContent, children }) {
             
             <div className={textStyle.align ? `banner__msg banner__msg--${textStyle.align}`: 'banner__msg'}>
                 <h1 className="banner__heading">{textContent.heading}</h1>
-                <p className="banner__text">{textContent.body}</p>
+                <div className="banner__text">{textContent.body}</div>
             </div>
 
             {layoutState.viewportWidth <= 360 && <img className="banner__logo" src="/logos/ctsw-logo_light_compact.png" alt="CS logo" />}

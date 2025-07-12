@@ -1,0 +1,35 @@
+.subfooter {
+    position: relative;
+    z-index: 2;
+    background-color: $color-environmental-pitch;
+    padding: 2rem 2rem;
+    font-family: inherit;
+    font-size: 1.2rem;
+    color: $color-text-light;
+    text-align: center;
+
+    &__link:hover {
+        cursor: pointer;
+    }
+
+    &__link:link,
+    &__link:active,
+    &__link:visited,
+    &__link:hover {
+        color: $color-text-light;
+    }
+
+    &__maker {
+        font-family: "russo-one";
+        font-size: 2rem;
+        margin-left: 1rem;
+        margin-right: .5rem;
+    }
+
+    &__makerLogo {
+        width: 100%;
+        max-width: 3rem;
+        position: relative;
+        bottom: -8px;
+    }
+}

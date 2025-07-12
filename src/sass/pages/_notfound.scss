@@ -1,0 +1,22 @@
+.notfound {
+    position: relative;
+    z-index: 2;
+
+    @include respond(phone) {
+        .banner {
+            background-position-x: -30rem;
+
+            &--4 {
+                background-image: url('./assets/images/black-hole_banner.webp');
+            }
+        }
+    }
+
+    @include respond(huge-screen) {
+        .banner {
+            &--full {
+                height: 100vh;
+            }
+        }
+    }
+}

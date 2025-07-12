@@ -4,7 +4,6 @@ import { LayoutContext } from '../contexts/LayoutContext';
 import NavMenu from './../components/NavMenu';
 import NavBar from './../components/NavBar';
 import Badge from './../components/Badge';
-import Copyright from './../components/Copyright';
 import WorkInProgress from '../components/infopieces/WorkInProgress';
 
 const footerLinks = {
@@ -59,7 +58,6 @@ function Footer() {
                 />
             </section>
             <section className="footer__section footer__section--bottom">
-                <Copyright />
                 <NavBar 
                     direction='horizontal'
                     links={footerLinks.bottom}

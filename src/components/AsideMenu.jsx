@@ -1,27 +1,38 @@
+import { useMemo } from 'react';
+
 import NavBar from "./NavBar";
-import NavMenu from "./NavMenu";
 
 function AsideMenu({ links }) {
+    const asideAdaptedLinks = useMemo(() => {
+        const linksCopy = JSON.parse(JSON.stringify(links));
+        for (let key in linksCopy) {
+            linksCopy[key].forEach((el) => {
+                el.action = 'hint';
+            });
+        }
+        return linksCopy;
+    }, [links]);
+
     return (
         <div className="aside__body">
             <div className="aside__main">
                 <NavBar 
                     direction='vertical'
-                    links={links.topLeft}
+                    links={asideAdaptedLinks.topLeft}
                 />
                 <NavBar 
                     direction='vertical'
-                    links={links.topRight.slice(0, 2)}
+                    links={asideAdaptedLinks.topRight.slice(0, 2)}
                 />
             </div>
             <div className="aside__lesser">
                 <NavBar 
                     direction='vertical'
-                    links={links.bottomLeft}
+                    links={asideAdaptedLinks.bottomLeft}
                 />
                 <NavBar 
                     direction='vertical'
-                    links={links.bottomRight}
+                    links={asideAdaptedLinks.bottomRight}
                 />
             </div>
 
