@@ -69,18 +69,21 @@
         @include flex-column(center);
         align-items: flex-start;
         width: 100%;
-        z-index: 1;
+        z-index: 2;
 
         position: absolute;
         top: 6rem;
         left: 0;
-        background-color: $color-body-light;
+        background-color: $color-text-light;
         padding: 1rem;
         border: 1px solid $color-body-deep;
         animation-name: fadein;
         animation-timing-function: linear;
         animation-duration: 1s;
         animation-fill-mode: both;
+        @include respond(desktop) {
+            background-color: $color-body-light;
+        }
 
         // TYPES
 
@@ -90,12 +93,13 @@
             @include respond(phone) {
                 width: 100%;
             }
-            @include respond(phone-medium) {
-                left: 50%;
-                transform: translateX(-50%);
-                width: max-content;
-                gap: 2rem;
-            }
+        }
+    }
+    
+    &#Voyage-Type .selector__choice {
+        padding: 1rem 1rem 4rem 1rem;
+        @include respond(desktop) {
+            padding: 1rem;
         }
     }
 
