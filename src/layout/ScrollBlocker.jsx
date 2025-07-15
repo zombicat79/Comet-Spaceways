@@ -2,7 +2,6 @@ import { useEffect, useContext } from 'react';
 import { LayoutContext } from './../contexts/LayoutContext';
 
 import Modal from './Modal';
-import FlightTicket from "../components/FlightPreview";
 
 function ScrollBlocker() {
     const { layoutState, dispatch } = useContext(LayoutContext);

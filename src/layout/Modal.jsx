@@ -25,8 +25,9 @@ function Modal({ modalShown, modalClass, content, width, height }) {
     return (
       <div
         className={
-          modalShown
-            ? `modal modal--${width}-width modal--${width}-height modal--appearing`
+          modalShown === null
+            ? 'modal--not-rendered' :
+          modalShown ? `modal modal--${width}-width modal--${width}-height modal--appearing`
             : `modal modal--${width}-width modal--${width}-height modal--disappearing`
         }
       >

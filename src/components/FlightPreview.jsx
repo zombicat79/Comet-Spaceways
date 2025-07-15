@@ -16,7 +16,7 @@ function FlightPreview({ state }) {
         }
 
         setTimeout(() => setIsLoading(!isLoading), randomDelay);
-    }, [])
+    }, [isLoading])
 
     return (
         <div className="flight-preview">
@@ -61,7 +61,7 @@ function FlightPreview({ state }) {
                         </p>
                     </div>
 
-                    <img className='flight-preview__badge' src="./../../public/logos/ctsw-logo_dark_badge.png" alt='Comet Spaceways badge' />
+                    <img className='flight-preview__badge' src="/logos/ctsw-logo_dark_badge.png" alt='Comet Spaceways badge' />
                     <blockquote className="flight-preview__motto">Go conquer the universe</blockquote>
                 </article>
             </>

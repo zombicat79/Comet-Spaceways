@@ -12,6 +12,10 @@
         height: 100%;
     }
 
+    &--not-rendered {
+        display: none;
+    }
+
     &--appearing {
         animation-name: appear-bottom;
         animation-timing-function: ease-out;

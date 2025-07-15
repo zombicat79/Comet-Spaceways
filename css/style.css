@@ -1295,6 +1295,8 @@ h3 {
     width: 100%; }
   .modal--small-height {
     height: 100%; }
+  .modal--not-rendered {
+    display: none; }
   .modal--appearing {
     animation-name: appear-bottom;
     animation-timing-function: ease-out;

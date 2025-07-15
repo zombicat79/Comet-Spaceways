@@ -36,7 +36,7 @@ function AsideMenu({ links }) {
                 />
             </div>
 
-            <img className='aside__badge' src="./../../public/logos/ctsw-logo_dark_badge.png" alt='Comet Spaceways badge' />
+            <img className='aside__badge' src="/logos/ctsw-logo_dark_badge.png" alt='Comet Spaceways badge' />
             <blockquote className="aside__motto">Go conquer the universe</blockquote>
         </div>
     )

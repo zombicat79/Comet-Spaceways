@@ -4,7 +4,7 @@ const initialState = {
     viewportWidth: window.innerWidth,
     scroll: true,
     scrollHeight: 0,
-    modal: false,
+    modal: null,
     modalClass: 'generic',
     modalContent: null,
     modalDimensions: {
