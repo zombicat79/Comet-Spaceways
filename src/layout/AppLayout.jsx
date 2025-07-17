@@ -1,16 +1,25 @@
+import { useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router';
+
+import ScrollBlocker from './ScrollBlocker';
 import Header from './Header';
 import Footer from './Footer';
 import Subfooter from './Subfooter';
 import Aside from './Aside';
-import Home from './../pages/Home';
-import NotFound from '../pages/NotFound';
 
 function AppLayout() {
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth'});
+    }, [location]);
+
     return (
         <>
+            <ScrollBlocker />
             <Header />
             <Aside side="left" />
-            <Home />
+            <Outlet />
             <Footer />
             <Subfooter />
         </>

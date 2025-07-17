@@ -11,25 +11,25 @@ const footerLinks = {
         /* { id: 1, text: 'About us', action: 'navigate', path: '', decoration: 'underline' },
         { id: 2, text: 'Comet Global', action: 'navigate', path: '', decoration: 'underline' },
         { id: 3, text: 'Work with us', action: 'navigate', path: '', decoration: 'underline' } */
-        { id: 1, text: 'About us', action: 'popup', payload: <WorkInProgress />, decoration: 'underline' },
-        { id: 2, text: 'Comet Global', action: 'popup', payload: <WorkInProgress />, decoration: 'underline' },
-        { id: 3, text: 'Work with us', action: 'popup', payload: <WorkInProgress />, decoration: 'underline' }
+        { id: 1, text: 'About us', action: 'link', payload: <WorkInProgress />, decoration: 'underline' },
+        { id: 2, text: 'Comet Global', action: 'link', payload: <WorkInProgress />, decoration: 'underline' },
+        { id: 3, text: 'Work with us', action: 'link', payload: <WorkInProgress />, decoration: 'underline' }
     ],
     top2: [
         /* { id: 4, text: 'Help', action: 'navigate', path: '', decoration: 'underline' },
         { id: 5, text: 'FAQs & info', action: 'navigate', path: '', decoration: 'underline' },
         { id: 6, text: 'Contact', action: 'expand', path: null, decoration: 'underline' } */
-        { id: 4, text: 'Help', action: 'popup', payload: <WorkInProgress />, decoration: 'underline' },
-        { id: 5, text: 'FAQs & info', action: 'popup', payload: <WorkInProgress />, decoration: 'underline' },
-        { id: 6, text: 'Contact', action: 'popup', payload: <WorkInProgress />, decoration: 'underline' }
+        { id: 4, text: 'Help', action: 'link', payload: <WorkInProgress />, decoration: 'underline' },
+        { id: 5, text: 'FAQs & info', action: 'link', payload: <WorkInProgress />, decoration: 'underline' },
+        { id: 6, text: 'Contact', action: 'link', payload: <WorkInProgress />, decoration: 'underline' }
     ],
     bottom: [
         /* { id: 14, text: 'Website terms of use', action: 'navigate', path: '', decoration: null },
         { id: 15, text: 'Cookie policy', action: 'navigate', path: '', decoration: null },
         { id: 16, text: 'Privacy policy', action: 'navigate', path: '', decoration: null } */
-        { id: 14, text: 'Website terms of use', action: 'popup', payload: <WorkInProgress />, decoration: null },
-        { id: 15, text: 'Cookie policy', action: 'popup', payload: <WorkInProgress />, decoration: null },
-        { id: 16, text: 'Privacy policy', action: 'popup', payload: <WorkInProgress />, decoration: null }
+        { id: 14, text: 'Website terms of use', action: 'link', payload: <WorkInProgress />, decoration: null },
+        { id: 15, text: 'Cookie policy', action: 'link', payload: <WorkInProgress />, decoration: null },
+        { id: 16, text: 'Privacy policy', action: 'link', payload: <WorkInProgress />, decoration: null }
     ]
 }
 

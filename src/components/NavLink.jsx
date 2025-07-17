@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router';
 
 function NavLink({ link, decoration, tooling }) {
     const [hint, setHint] = useState(false)
@@ -18,6 +19,16 @@ function NavLink({ link, decoration, tooling }) {
             default:
                 return;
         }
+    }
+
+    if (link.action === 'link') {
+        return (
+            <li 
+                className={link.decoration ? `navlink navlink--${link.decoration}` : 'navlink'} 
+            >
+                <Link to="/not-found" className="navlink__text">{link.text}</Link>
+            </li>
+        );
     }
     
     return (

@@ -1,8 +1,7 @@
 import { useContext, useEffect } from 'react';
+import { RouterProvider } from 'react-router';
+import router from './router';
 import { LayoutContext } from './contexts/LayoutContext';
-
-import AppLayout from './layout/AppLayout';
-import ScrollBlocker from './layout/ScrollBlocker';
 
 function App() {
   const { layoutState, dispatch } = useContext(LayoutContext);
@@ -43,10 +42,7 @@ function App() {
   })
 
   return (
-    <>
-      <ScrollBlocker />
-      <AppLayout />
-    </>
+    <RouterProvider router={router} />
   )
 }
 

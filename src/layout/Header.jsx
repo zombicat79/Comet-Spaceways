@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router';
 import { LayoutContext } from '../contexts/LayoutContext';
 
 import NavBar from './../components/NavBar';
@@ -58,12 +59,13 @@ function Header() {
                     links={menuLinks.topLeft}
                     tooling={{handleResizing, handlePopupLaunch}}
                 />
-                {(layoutState.viewportWidth > 360) && <a className="link--container">
+                {(layoutState.viewportWidth > 360) && <Link to="/" className="link--container">
                     <img 
                         className="header__logo" 
-                        src={transparency ? LogoLight : LogoDark} 
+                        src={transparency ? LogoLight : LogoDark}
+                        alt="Comet Spaceways"
                     />
-                </a>}
+                </Link>}
                 <NavBar 
                     direction='horizontal'
                     links={menuLinks.topRight}

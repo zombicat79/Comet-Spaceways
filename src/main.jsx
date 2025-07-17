@@ -5,7 +5,7 @@ import './../css/style.css'
 
 import { LayoutProvider } from './contexts/LayoutContext';
 
-import App from './App.jsx'
+import App from './App';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
