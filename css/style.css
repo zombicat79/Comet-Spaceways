@@ -945,6 +945,37 @@ h3 {
     width: 100%;
     max-width: 10rem; }
 
+.stepbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 80vw;
+  padding: 2rem;
+  border: 1px solid white;
+  border-radius: 1rem;
+  margin: 2rem auto; }
+  .stepbar__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: .5rem; }
+  .stepbar__icon {
+    width: 2.5rem;
+    height: 2.5rem; }
+    .stepbar__icon--flights {
+      width: 3rem;
+      height: 3rem;
+      transform: rotate(45deg);
+      position: relative;
+      left: 3px;
+      bottom: 1px; }
+  .stepbar__name {
+    text-transform: uppercase; }
+  .stepbar__arrow {
+    font-size: 4rem;
+    margin-left: 1.5rem; }
+
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
 

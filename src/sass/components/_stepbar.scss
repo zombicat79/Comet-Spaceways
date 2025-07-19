@@ -1,0 +1,39 @@
+.stepbar {
+    @include flex-row(space-evenly);
+    max-width: 80vw;
+    padding: 2rem;
+    border: 1px solid white;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    // $color-text-dark
+    // $color-text-light
+
+    &__item {
+        @include flex-row(center);
+        flex: 1;
+        gap: .5rem;
+    }
+
+    &__icon {
+        width: 2.5rem;
+        height: 2.5rem;
+
+        &--flights {
+            width: 3rem;
+            height: 3rem;
+            transform: rotate(45deg);
+            position: relative;
+            left: 3px;
+            bottom: 1px;
+        }
+    }
+
+    &__name {
+        text-transform: uppercase;
+    }
+
+    &__arrow {
+        font-size: 4rem;
+        margin-left: 1.5rem;
+    }
+}
