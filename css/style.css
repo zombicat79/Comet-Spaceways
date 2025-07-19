@@ -949,9 +949,10 @@ h3 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  color: inherit;
   max-width: 80vw;
   padding: 2rem;
-  border: 1px solid white;
+  border: 1px solid currentcolor;
   border-radius: 1rem;
   margin: 2rem auto; }
   .stepbar__item {
@@ -1106,6 +1107,8 @@ h3 {
     .header[data-transparency="true"] .header__main .header__icon svg path {
       stroke: #F5F5F5;
       stroke-width: 1; }
+    .header[data-transparency="true"] .header__secondary {
+      color: #F5F5F5; }
   .header[data-transparency="false"] {
     animation-name: header-fadein;
     animation-timing-function: linear;
@@ -1121,6 +1124,8 @@ h3 {
     .header[data-transparency="false"] .header__main .header__icon:first-child svg path {
       stroke: #272643;
       stroke-width: 2.5; }
+    .header[data-transparency="false"] .header__secondary {
+      color: #272643; }
   .header__icon {
     width: 5rem;
     height: 5rem; }

@@ -26,6 +26,10 @@
             stroke-width: 1;
          }
       }
+
+      .header__secondary {
+         color: $color-text-light;
+      }
    }
 
    &[data-transparency="false"] {
@@ -49,6 +53,10 @@
             stroke: $color-text-dark;
             stroke-width: 2.5;
          }
+      }
+
+      .header__secondary {
+         color: $color-text-dark;
       }
    }
 

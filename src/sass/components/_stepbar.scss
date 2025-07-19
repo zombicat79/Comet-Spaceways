@@ -1,12 +1,11 @@
 .stepbar {
     @include flex-row(space-evenly);
+    color: inherit;
     max-width: 80vw;
     padding: 2rem;
-    border: 1px solid white;
+    border: 1px solid currentcolor;
     border-radius: 1rem;
     margin: 2rem auto;
-    // $color-text-dark
-    // $color-text-light
 
     &__item {
         @include flex-row(center);

@@ -43,7 +43,7 @@ function PurchaseHeader() {
                     </svg>
                 </button>
             </section>
-            <section>
+            <section className="header__secondary">
                 <StepBar steps={stepBarDetails} />
             </section>
         </header>
