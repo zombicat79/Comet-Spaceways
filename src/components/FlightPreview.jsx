@@ -16,7 +16,7 @@ function FlightPreview({ state }) {
         }
 
         setTimeout(() => setIsLoading(!isLoading), randomDelay);
-    }, [isLoading])
+    }, [])
 
     return (
         <div className="flight-preview">

@@ -1,5 +1,6 @@
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { LayoutContext } from '../../contexts/LayoutContext';
+import useHeader from './../../hooks/useHeader';
 import { Link } from 'react-router';
 
 import LogoLight from '/logos/ctsw-logo_light_horizontal.png';
@@ -7,19 +8,7 @@ import LogoDark from '/logos/ctsw-logo_dark_horizontal.png';
 
 function PurchaseHeader() {
     const { layoutState } = useContext(LayoutContext);
-    const [transparency, setTransparency] = useState(true);
-
-    useEffect(() => {
-        if (layoutState.scrollHeight === 0) {
-            setTransparency(true);
-            return;
-        }
-
-        if (layoutState.scrollHeight > 30) {
-            setTransparency(false);
-            return;
-        }
-    }, [layoutState.scrollHeight])
+    const { transparency } = useHeader(layoutState);
 
     return (
         <header className="header" data-transparency={transparency} >

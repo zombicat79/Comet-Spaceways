@@ -1,6 +1,7 @@
-import { useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router';
+import { useContext } from 'react';
 import { LayoutContext } from '../../contexts/LayoutContext';
+import useHeader from './../../hooks/useHeader';
+import { Link } from 'react-router';
 
 import NavBar from '../../components/NavBar';
 import NavMenu from '../../components/NavMenu';
@@ -13,17 +14,8 @@ import LogoLight from '/logos/ctsw-logo_light_horizontal.png';
 import LogoDark from '/logos/ctsw-logo_dark_horizontal.png';
 
 function Header() {
-    const [transparency, setTransparency] = useState(true);
-    const [expansion, setExpansion] = useState(false);
     const { layoutState, handlePopupLaunch, dispatch } = useContext(LayoutContext);
-
-    function handleResizing() {
-        if (transparency) {
-            setTransparency((current) => !current);
-            setExpansion((current) => !current);
-        }
-        if (!transparency) setExpansion((current) => !current);
-    }
+    const { transparency, expansion, handleResizing } = useHeader(layoutState);
 
     function openAside() {
         dispatch({ type: 'toggle/scroll' });
@@ -33,18 +25,6 @@ function Header() {
             content: <AsideMenu links={menuLinks} /> 
         }})
     }
-
-    useEffect(() => {
-        if (layoutState.scrollHeight === 0 && !expansion) {
-            setTransparency(true);
-            return;
-        }
-
-        if (layoutState.scrollHeight > 30) {
-            setTransparency(false);
-            return;
-        }
-    }, [layoutState.scrollHeight, expansion])
 
     return (
         <header className="header" data-transparency={transparency} >
