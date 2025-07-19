@@ -61,7 +61,7 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
                     return;
             }
         }
-    }, [identifier, selectionValue, dateComponents.day, dateComponents.month, dateComponents.year, hasContext])
+    }, [identifier, selectionValue, dateComponents.day, dateComponents.month, dateComponents.year]);
 
     return (
         <div 

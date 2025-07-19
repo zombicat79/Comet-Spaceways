@@ -79,7 +79,7 @@ function FlightSearchProvider({ children }) {
         dispatch({ type: 'offer-change', payload: destinationOffer });
         dispatch({ type: 'departure-change', payload: futurizedDate });
         dispatch({ type: 'return-change', payload: new Date(`${dateComponents.month + 2}-${dateComponents.day}-${dateComponents.year + 100}`) });
-    }, [futurizedDate, dateComponents.day, dateComponents.month, dateComponents.year])
+    }, [dateComponents.day, dateComponents.month, dateComponents.year])
 
     return (
         <FlightSearchContext.Provider value={{

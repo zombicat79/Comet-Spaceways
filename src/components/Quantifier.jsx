@@ -14,7 +14,7 @@ function Quantifier({ countableItem }) {
             const { changeFlightSearchState } = hasContext;
             changeFlightSearchState({ type: 'passenger-change', payload: {category: countableItem.category.toLowerCase(), amount: count} });
         }
-    }, [hasContext, count, countableItem.category])
+    }, [count, countableItem.category])
     
     return (
         <div className="quantifier">
