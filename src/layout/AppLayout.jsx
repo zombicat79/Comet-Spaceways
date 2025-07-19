@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router';
 
 import ScrollBlocker from './ScrollBlocker';
 import Header from './Header';
+import PurchaseHeader from './PurchaseHeader';
 import Footer from './Footer';
 import Subfooter from './Subfooter';
 import Aside from './Aside';
@@ -17,7 +18,10 @@ function AppLayout() {
     return (
         <>
             <ScrollBlocker />
-            <Header />
+            {location.pathname.includes('purchase')
+            ? <PurchaseHeader />
+            : <Header />
+            }
             <Aside side="left" />
             <Outlet />
             <Footer />

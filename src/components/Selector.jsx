@@ -57,9 +57,11 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
                 case 'Return-Date':
                     changeFlightSearchState({ type: 'return-change', payload: selectionValue });
                     break;
+                default:
+                    return;
             }
         }
-    }, [selectionValue])
+    }, [identifier, selectionValue, dateComponents.day, dateComponents.month, dateComponents.year, hasContext])
 
     return (
         <div 
