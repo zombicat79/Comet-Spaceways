@@ -22,7 +22,7 @@ function PromoPoster({ promoCatch, heading, body, alert, cta, promoImg }) {
                 <Button type="secondary" action={() => handlePopupLaunch({ modalClass: 'generic', content: <WorkInProgress /> })} text="book now" />
             </div>
             <div className="promoposter__side promoposter__side--right">
-                <img className="promoposter__img" src={`./assets/images/${promoImg}_promotion.webp`} alt={`${promoImg} poster`} />
+                <img className="promoposter__img" src={`./../assets/images/${promoImg}_promotion.webp`} alt={`${promoImg} poster`} />
             </div>
         </div>
     )

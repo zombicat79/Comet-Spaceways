@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router';
 import { LayoutContext } from '../contexts/LayoutContext';
 
 function Banner({ background, textStyle, textContent, children }) {
@@ -31,7 +32,11 @@ function Banner({ background, textStyle, textContent, children }) {
                 <div className="banner__text">{textContent.body}</div>
             </div>
 
-            {layoutState.viewportWidth <= 360 && <img className="banner__logo" src="/logos/ctsw-logo_light_compact.png" alt="CS logo" />}
+            {layoutState.viewportWidth <= 360 && 
+                <Link to="/">
+                    <img className="banner__logo" src="/logos/ctsw-logo_light_compact.png" alt="CS logo" />
+                </Link>
+            }
         </section>
     )
 }

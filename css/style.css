@@ -530,19 +530,19 @@ h3 {
     .banner--half .banner__heading {
       font-size: 3rem; }
   .banner--1 {
-    background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./assets/images/space-beer_banner.webp"); }
+    background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./../assets/images/space-beer_banner.webp"); }
     @media screen and (min-width: 2800px) {
       .banner--1 {
-        background-image: url("./assets/images/earth-moon_banner.webp"); } }
+        background-image: url("./../assets/images/earth-moon_banner.webp"); } }
     @media screen and (max-width: 768px) {
       .banner--1 {
-        background-image: url("./assets/images/space-sunrise_banner.webp"); } }
+        background-image: url("./../assets/images/space-sunrise_banner.webp"); } }
   .banner--2 {
-    background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./assets/images/space-sunrise_banner.webp"); }
+    background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./../assets/images/space-sunrise_banner.webp"); }
   .banner--3 {
-    background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./assets/images/earth-moon_banner.webp"); }
+    background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./../assets/images/earth-moon_banner.webp"); }
   .banner--4 {
-    background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./assets/images/black-hole_banner.webp"); }
+    background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./../assets/images/black-hole_banner.webp"); }
   .banner__msg {
     width: 90%;
     position: absolute;
@@ -609,13 +609,13 @@ h3 {
     background-size: cover;
     background-repeat: no-repeat; }
     .card__img--celestia {
-      background-image: url("./assets/images/celestia.webp"); }
+      background-image: url("./../assets/images/celestia.webp"); }
     .card__img--moon {
-      background-image: url("./assets/images/moon.webp"); }
+      background-image: url("./../assets/images/moon.webp"); }
     .card__img--venus {
-      background-image: url("./assets/images/venus.webp"); }
+      background-image: url("./../assets/images/venus.webp"); }
     .card__img--mars {
-      background-image: url("./assets/images/mars.webp"); }
+      background-image: url("./../assets/images/mars.webp"); }
   .card__content {
     display: flex;
     flex-direction: column;
@@ -1156,6 +1156,8 @@ h3 {
         align-items: center;
         align-items: flex-start;
         gap: 9vw; } }
+  .header--minimal .header__main {
+    justify-content: center; }
 
 @keyframes header-fadeout {
   from {
@@ -1542,6 +1544,11 @@ h3 {
     animation-delay: 1.5s;
     animation-duration: 3s;
     animation-fill-mode: forwards; }
+
+.ticketspage {
+  position: relative;
+  z-index: 2;
+  height: 100vh; }
 
 .notfound {
   position: relative;

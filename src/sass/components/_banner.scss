@@ -34,30 +34,30 @@
     // BANNER CHOICE
     &--1 {
       background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3),
-      rgba(18, 18, 18, 0.55)), url('./assets/images/space-beer_banner.webp');
+      rgba(18, 18, 18, 0.55)), url('./../assets/images/space-beer_banner.webp');
 
       @include respond(huge-screen) {
-        background-image: url('./assets/images/earth-moon_banner.webp');
+        background-image: url('./../assets/images/earth-moon_banner.webp');
       }
 
       @include respond(tablet-portrait) {
-        background-image: url('./assets/images/space-sunrise_banner.webp');
+        background-image: url('./../assets/images/space-sunrise_banner.webp');
       }
     }
 
     &--2 {
       background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3),
-      rgba(18, 18, 18, 0.55)), url('./assets/images/space-sunrise_banner.webp');
+      rgba(18, 18, 18, 0.55)), url('./../assets/images/space-sunrise_banner.webp');
     }
 
     &--3 {
       background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3),
-      rgba(18, 18, 18, 0.55)), url('./assets/images/earth-moon_banner.webp');
+      rgba(18, 18, 18, 0.55)), url('./../assets/images/earth-moon_banner.webp');
     }
 
     &--4 {
       background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3),
-      rgba(18, 18, 18, 0.55)), url('./assets/images/black-hole_banner.webp');
+      rgba(18, 18, 18, 0.55)), url('./../assets/images/black-hole_banner.webp');
     }
 
     // BANNER TEXT

@@ -1,5 +1,8 @@
 import { createBrowserRouter, redirect } from "react-router";
+
 import AppLayout from "./layout/AppLayout";
+import MinAppLayout from "./layout/MinAppLayout";
+
 import Home from './pages/Home';
 import Tickets from './pages/Tickets';
 import NotFound from "./pages/NotFound";
@@ -22,7 +25,12 @@ const router = createBrowserRouter([
             }
         ]
     },
-    { path: '*', Component: NotFound }
+    {
+        Component: MinAppLayout,
+        children: [
+            { path: '*', Component: NotFound }
+        ]
+    }
 ]);
 
 export default router;

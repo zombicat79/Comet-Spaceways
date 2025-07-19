@@ -1,7 +1,15 @@
+import { useNavigate } from 'react-router';
+
 import Banner from './../components/Banner';
 import Button from '../components/Button';
 
 function NotFound() {
+    const navigate = useNavigate();
+
+    function goBook() {
+        navigate('/');
+    }
+
     return (
         <main className="notfound">
             <Banner
@@ -15,7 +23,7 @@ function NotFound() {
                                 <br />
                                 <span>{'Hop on one of our spaceships and get back on track on your voyage to the stars!'}</span>
                             </p>
-                            <Button type="secondary" action={() => {}} text="Search Flight" />
+                            <Button type="secondary" action={goBook} text="Search Flight" />
                         </>
                 }}
                 background={{ img: 'black-hole', height: 'full' }}

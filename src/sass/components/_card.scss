@@ -23,19 +23,19 @@
         background-repeat: no-repeat;
 
         &--celestia {
-            background-image: url('./assets/images/celestia.webp');
+            background-image: url('./../assets/images/celestia.webp');
         }
 
         &--moon {
-            background-image: url('./assets/images/moon.webp');
+            background-image: url('./../assets/images/moon.webp');
         }
 
         &--venus {
-            background-image: url('./assets/images/venus.webp');
+            background-image: url('./../assets/images/venus.webp');
         }
 
         &--mars {
-            background-image: url('./assets/images/mars.webp');
+            background-image: url('./../assets/images/mars.webp');
         }
     }
 

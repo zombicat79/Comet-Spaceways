@@ -144,6 +144,13 @@
          gap: 9vw;
       }
    }
+
+   // MINIMAL HEADER SPECIFIC NUANCES
+   &--minimal {
+      .header__main {
+         justify-content: center;
+     }
+   }
 }
 
 @keyframes header-fadeout {

@@ -1,6 +1,6 @@
 function Tickets() {
     return (
-        <div>Hello Tickets</div>
+        <div className="ticketspage">Hello Tickets</div>
     )
 }
 

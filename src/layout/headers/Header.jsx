@@ -1,13 +1,13 @@
 import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router';
-import { LayoutContext } from '../contexts/LayoutContext';
+import { LayoutContext } from '../../contexts/LayoutContext';
 
-import NavBar from './../components/NavBar';
-import NavMenu from './../components/NavMenu';
-import AsideMenu from './../components/AsideMenu';
-import WorkInProgress from '../components/infopieces/WorkInProgress';
+import NavBar from '../../components/NavBar';
+import NavMenu from '../../components/NavMenu';
+import AsideMenu from '../../components/AsideMenu';
+import WorkInProgress from '../../components/infopieces/WorkInProgress';
 
-import { menuLinks } from './../data/menu-links';
+import { menuLinks } from '../../data/menu-links';
 
 import LogoLight from '/logos/ctsw-logo_light_horizontal.png';
 import LogoDark from '/logos/ctsw-logo_dark_horizontal.png';
