@@ -39,7 +39,7 @@ function Footer() {
     return (
         <footer className="footer">
             <section className="footer__section footer__section--top">
-                <Badge imgSrc="./logos/ctsw-logo_dark_badge.png" />
+                <Badge imgSrc="./../logos/ctsw-logo_dark_badge.png" />
                 <NavMenu 
                     title="Who we are"
                     columns={1}
