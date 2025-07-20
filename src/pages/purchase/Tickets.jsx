@@ -1,6 +1,6 @@
 function Tickets() {
     return (
-        <div className="ticketspage"></div>
+        <div className="tickets"></div>
     )
 }
 

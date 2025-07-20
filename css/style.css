@@ -158,6 +158,16 @@ img {
   100% {
     transform: translate(-50%, 120vh); } }
 
+@keyframes dot-progress {
+  0% {
+    content: ''; }
+  33% {
+    content: '.'; }
+  66% {
+    content: '..'; }
+  100% {
+    content: '...'; } }
+
 @font-face {
   font-family: roboto-extralight;
   src: url("./../assets/fonts/roboto/Roboto-ExtraLight.ttf"); }
@@ -950,32 +960,79 @@ h3 {
   justify-content: space-evenly;
   align-items: center;
   color: inherit;
-  max-width: 80vw;
-  padding: 2rem;
-  border: 1px solid currentcolor;
+  font-size: 1rem;
+  max-width: 95vw;
+  padding: 1rem 2rem;
+  border: 2px solid currentcolor;
   border-radius: 1rem;
   margin: 2rem auto; }
+  @media screen and (max-width: 1000px) {
+    .stepbar {
+      max-width: 70vw; } }
+  @media screen and (max-width: 768px) {
+    .stepbar {
+      max-width: 85vw; } }
+  @media screen and (max-width: 600px) {
+    .stepbar {
+      font-size: 2rem;
+      padding: 0; } }
+  @media screen and (min-width: 1280px) {
+    .stepbar {
+      font-size: 1.4rem;
+      max-width: 1100px; } }
+  @media screen and (min-width: 2000px) {
+    .stepbar {
+      max-width: 70vw; } }
+  @media screen and (min-width: 2800px) {
+    .stepbar {
+      max-width: 60vw; } }
   .stepbar__item {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
-    gap: .5rem; }
-  .stepbar__icon {
-    width: 2.5rem;
-    height: 2.5rem; }
-    .stepbar__icon--flights {
-      width: 3rem;
-      height: 3rem;
-      transform: rotate(45deg);
-      position: relative;
-      left: 3px;
-      bottom: 1px; }
+    min-height: 5rem;
+    border-radius: 1rem;
+    padding: .75rem; }
+    @media screen and (max-width: 600px) {
+      .stepbar__item {
+        width: 100%; } }
+    @media screen and (min-width: 1280px) {
+      .stepbar__item {
+        padding: 1rem; } }
+    .stepbar__item--checked {
+      background-color: rgba(44, 105, 141, 0.5);
+      border-bottom: 3px solid #4B0082; }
   .stepbar__name {
-    text-transform: uppercase; }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    gap: 1rem; }
+    .stepbar__name .stepbar__icon {
+      display: inline-block;
+      width: 2.5rem;
+      height: 2.5rem; }
+      @media screen and (max-width: 1000px) {
+        .stepbar__name .stepbar__icon {
+          display: none; } }
+      @media screen and (max-width: 600px) {
+        .stepbar__name .stepbar__icon {
+          display: inline-block; } }
+      .stepbar__name .stepbar__icon--flights {
+        width: 3rem;
+        height: 3rem;
+        transform: rotate(45deg);
+        position: relative;
+        left: 3px;
+        bottom: 1px; }
   .stepbar__arrow {
-    font-size: 4rem;
-    margin-left: 1.5rem; }
+    font-size: 4rem; }
+    @media screen and (max-width: 1000px) {
+      .stepbar__arrow {
+        display: none; } }
+    @media screen and (max-width: 600px) {
+      .stepbar__arrow {
+        display: inline-block; } }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
@@ -1192,8 +1249,20 @@ h3 {
         align-items: center;
         align-items: flex-start;
         gap: 9vw; } }
-  .header--minimal .header__main {
+  .header--minimal .header__main, .header--purchase .header__main {
     justify-content: center; }
+  .header__msg {
+    margin-bottom: 1rem; }
+    @media screen and (min-width: 2800px) {
+      .header__msg {
+        font-size: 2rem; } }
+    .header__msg::after {
+      content: '';
+      position: absolute;
+      animation-name: dot-progress;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-duration: 2s; }
 
 @keyframes header-fadeout {
   from {
@@ -1276,7 +1345,7 @@ h3 {
           display: inline-block;
           width: 8rem;
           height: 8rem;
-          background-image: url("./logos/ctsw-logo_dark_badge.png");
+          background-image: url("./../logos/ctsw-logo_dark_badge.png");
           background-size: contain;
           background-repeat: no-repeat;
           vertical-align: middle; } }
@@ -1581,10 +1650,23 @@ h3 {
     animation-duration: 3s;
     animation-fill-mode: forwards; }
 
-.ticketspage {
+.tickets {
   position: relative;
   z-index: 2;
-  height: 100vh; }
+  height: 100vh;
+  background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.details {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
 
 .notfound {
   position: relative;

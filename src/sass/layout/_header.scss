@@ -153,11 +153,28 @@
       }
    }
 
-   // MINIMAL HEADER SPECIFIC NUANCES
-   &--minimal {
+   // MINIMAL & PURCHASE HEADER SPECIFIC NUANCES
+   &--minimal,
+   &--purchase {
       .header__main {
          justify-content: center;
      }
+   }
+
+   &__msg {
+      margin-bottom: 1rem;
+      @include respond(huge-screen) {
+         font-size: 2rem;
+      }
+      
+      &::after {
+         content: '';
+         position: absolute;
+         animation-name: dot-progress;
+         animation-timing-function: linear;
+         animation-iteration-count: infinite;
+         animation-duration: 2s;
+      }
    }
 }
 
