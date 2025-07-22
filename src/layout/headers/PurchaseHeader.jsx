@@ -47,6 +47,7 @@ function PurchaseHeader() {
     return (
         <header className="header header--purchase" data-transparency={transparency} >
             <section className="header__main">
+                {layoutState.scrollHeight <= 30 && 
                 <Link to="/" className="link--container">
                     <img 
                         className="header__logo" 
@@ -54,10 +55,12 @@ function PurchaseHeader() {
                         alt="Comet Spaceways"
                     />
                 </Link>
+                }
             </section>
             <section className="header__secondary">
+                {layoutState.scrollHeight <= 30 &&<p className="header__info header__info--progress">Interplanetary travel purchase in progress</p>}
+                {layoutState.viewportWidth <= 600 && <p className="header__info header__info--count">STEP {purchaseProgress+1}/6</p>}
                 <StepBar steps={stepBarDetails} progress={purchaseProgress} />
-                <p className="header__msg">Interplanetary travel purchase in progress</p>
             </section>
         </header>
     )

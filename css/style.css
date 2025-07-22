@@ -1034,6 +1034,32 @@ h3 {
       .stepbar__arrow {
         display: inline-block; } }
 
+.segment {
+  font-family: 'titillium-regular'; }
+  .segment__header {
+    font-family: 'titillium-bold';
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-items: flex-start;
+    gap: 1rem; }
+  .segment__type {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem; }
+    .segment__type p {
+      font-size: 1.75rem;
+      font-style: italic; }
+    .segment__type svg {
+      width: 3rem;
+      height: 3rem;
+      transform: rotate(90deg); }
+  .segment__route {
+    text-align: left;
+    font-size: 3rem; }
+
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
 
@@ -1251,12 +1277,14 @@ h3 {
         gap: 9vw; } }
   .header--minimal .header__main, .header--purchase .header__main {
     justify-content: center; }
-  .header__msg {
+  .header--minimal .header__secondary, .header--purchase .header__secondary {
+    font-family: 'roboto-regular'; }
+  .header__info {
     margin-bottom: 1rem; }
     @media screen and (min-width: 2800px) {
-      .header__msg {
+      .header__info {
         font-size: 2rem; } }
-    .header__msg::after {
+    .header__info--progress::after {
       content: '';
       position: absolute;
       animation-name: dot-progress;
@@ -1603,6 +1631,18 @@ h3 {
   to {
     right: -150%; } }
 
+.content-section {
+  min-height: 30rem; }
+  .content-section__body {
+    min-height: 30rem;
+    color: #272643;
+    background-color: #e3f6f5;
+    max-width: 90vw;
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    padding: 3rem;
+    box-shadow: 0 0 4.5rem #00FFFF; }
+
 .homepage {
   position: relative;
   z-index: 2; }
@@ -1653,11 +1693,12 @@ h3 {
 .tickets {
   position: relative;
   z-index: 2;
-  height: 100vh;
   background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
+  .tickets .content-section:first-child {
+    padding-top: 27rem; }
 
 .details {
   position: relative;
@@ -1675,7 +1716,7 @@ h3 {
     .notfound .banner {
       background-position-x: -30rem; }
       .notfound .banner--4 {
-        background-image: url("./assets/images/black-hole_banner.webp"); } }
+        background-image: url("./../assets/images/black-hole_banner.webp"); } }
   @media screen and (min-width: 2800px) {
     .notfound .banner--full {
       height: 100vh; } }

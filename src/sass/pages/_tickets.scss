@@ -1,11 +1,14 @@
 .tickets {
     position: relative;
     z-index: 2;
-    height: 100vh;
     background-image:
         linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)), 
         url('./../assets/images/starscape_wallpaper.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    .content-section:first-child {
+        padding-top: 27rem;
+    }
 }

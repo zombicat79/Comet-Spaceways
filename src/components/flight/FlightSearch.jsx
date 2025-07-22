@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 
-import { FlightSearchContext } from '../contexts/FlightSearchContext';
-import { LayoutContext } from '../contexts/LayoutContext';
+import { FlightSearchContext } from '../../contexts/FlightSearchContext';
+import { LayoutContext } from '../../contexts/LayoutContext';
 
-import Selector from "./Selector";
-import Button from "./Button";
+import Selector from "../Selector";
+import Button from "../Button";
 import FlightPreview from './FlightPreview';
 
 function FlightSearch() {

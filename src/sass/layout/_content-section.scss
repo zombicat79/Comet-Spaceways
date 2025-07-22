@@ -1,0 +1,14 @@
+.content-section {
+    min-height: 30rem;
+
+    &__body {
+        min-height: 30rem;
+        color: $color-text-dark;
+        background-color: rgba($color-body-light, 1);
+        max-width: 90vw;
+        margin: 0 auto;
+        border-radius: 1.5rem;
+        padding: 3rem;
+        box-shadow: 0 0 4.5rem $color-highlight-light;
+    }
+}

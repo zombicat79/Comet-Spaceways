@@ -2,7 +2,7 @@ import Copyright from './../components/Copyright';
 
 function Subfooter() {
     return (
-        <div className="subfooter">
+        <footer className="subfooter">
             <Copyright />
             <p className="subfooter__text">
                 This site has been designed and developed by 
@@ -11,7 +11,7 @@ function Subfooter() {
                     <img className="subfooter__makerLogo" src="./../logos/zombiecat-trans-logo.png" alt="ZombieCat logo" />
                 </a>
             </p>
-        </div>
+        </footer>
     )
 }
 

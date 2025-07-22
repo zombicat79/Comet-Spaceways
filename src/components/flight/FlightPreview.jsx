@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from 'react';
-import { LayoutContext } from '../contexts/LayoutContext';
-import { minimizeDestinations } from "../utilities/utils";
+import { LayoutContext } from '../../contexts/LayoutContext';
+import { minimizeDestinations } from "../../utilities/utils";
 
-import Loader from './Loader';
+import Loader from '../Loader';
 
 function FlightPreview({ state }) {
     const { layoutState } = useContext(LayoutContext);

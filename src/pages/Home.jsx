@@ -1,7 +1,7 @@
 import { FlightSearchProvider } from '../contexts/FlightSearchContext';
 
 import Banner from './../components/Banner';
-import FlightSearch from './../components/FlightSearch';
+import FlightSearch from './../components/flight/FlightSearch';
 import Card from './../components/Card';
 import PriceTag from './../components/PriceTag';
 import Intersection from '../components/Intersection';

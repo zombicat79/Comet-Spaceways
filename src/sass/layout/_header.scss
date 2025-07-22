@@ -159,15 +159,18 @@
       .header__main {
          justify-content: center;
      }
+     .header__secondary {
+         font-family: 'roboto-regular';
+     }
    }
 
-   &__msg {
+   &__info {
       margin-bottom: 1rem;
       @include respond(huge-screen) {
          font-size: 2rem;
       }
       
-      &::after {
+      &--progress::after {
          content: '';
          position: absolute;
          animation-name: dot-progress;
