@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import { FlightSearchContext } from '../../contexts/FlightSearchContext';
 
 import ContentSection from "../../layout/ContentSection";
+import ItemList from '../ItemList';
+import FlightDetails from './FlightDetails';
 import SvgIcon from "../SvgIcon";
 
 function FlightSegment({ type }) {
@@ -11,7 +13,7 @@ function FlightSegment({ type }) {
         <ContentSection>
             <div className="segment">
                 <header className="segment__header">
-                    <div className="segment__type">
+                    <div className={`segment__type segment__type--${type}`}>
                         <SvgIcon design="starship" />
                         <p>{type.toUpperCase()}</p>
                     </div>
@@ -22,7 +24,9 @@ function FlightSegment({ type }) {
                         }
                     </p>
                 </header>
-                <main className="segment__body"></main>
+                <main className="segment__body">
+                    <ItemList data={[1, 2]} ItemComponent={FlightDetails} separation={2}  />
+                </main>
             </div>
         </ContentSection>
     )

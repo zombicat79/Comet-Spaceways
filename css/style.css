@@ -1034,6 +1034,16 @@ h3 {
       .stepbar__arrow {
         display: inline-block; } }
 
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; }
+  .list--space2 {
+    gap: 2rem; }
+  .list__item {
+    width: 100%; }
+
 .segment {
   font-family: 'titillium-regular'; }
   .segment__header {
@@ -1043,7 +1053,8 @@ h3 {
     justify-content: space-between;
     align-items: center;
     align-items: flex-start;
-    gap: 1rem; }
+    gap: 1rem;
+    margin-bottom: 2rem; }
   .segment__type {
     display: flex;
     justify-content: flex-start;
@@ -1054,11 +1065,81 @@ h3 {
       font-style: italic; }
     .segment__type svg {
       width: 3rem;
-      height: 3rem;
-      transform: rotate(90deg); }
+      height: 3rem; }
+    .segment__type--outbound svg {
+      transform: rotate(45deg); }
+    .segment__type--inbound svg {
+      transform: rotate(-135deg); }
   .segment__route {
     text-align: left;
     font-size: 3rem; }
+
+.flight-details {
+  background-color: #ffffff;
+  padding: 2rem 3rem;
+  border: 2px solid #272643;
+  border-radius: 1.5rem;
+  transition: transform .5s; }
+  .flight-details:hover {
+    box-shadow: 0 5px 10px 3px #272643;
+    transform: translateY(-0.5rem);
+    cursor: pointer; }
+  .flight-details .routing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
+    .flight-details .routing__schema {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+    .flight-details .routing__coords {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; }
+    .flight-details .routing__date {
+      font-size: 3rem; }
+    .flight-details .routing__time {
+      font-size: 1.5rem; }
+    .flight-details .routing__port {
+      font-size: 2rem; }
+    .flight-details .routing__figure {
+      flex: 3; }
+      .flight-details .routing__figure .routing__flight,
+      .flight-details .routing__figure .routing__duration {
+        display: inline-block; }
+      .flight-details .routing__figure .routing__flight {
+        padding-bottom: 2rem; }
+      .flight-details .routing__figure .routing__duration {
+        padding-top: 2rem; }
+    .flight-details .routing__diagram {
+      position: relative; }
+      .flight-details .routing__diagram .routing__endpoint {
+        position: absolute;
+        top: -4px;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: #4B0082; }
+        .flight-details .routing__diagram .routing__endpoint--left {
+          left: 0; }
+        .flight-details .routing__diagram .routing__endpoint--right {
+          right: 0; }
+      .flight-details .routing__diagram .routing__line {
+        height: 2px;
+        background-color: #4B0082; }
+      .flight-details .routing__diagram .routing__arrow {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 3rem;
+        height: 3rem;
+        transform: translate(-50%, -50%); }
+        .flight-details .routing__diagram .routing__arrow svg {
+          transform: rotate(90deg); }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
@@ -1631,17 +1712,14 @@ h3 {
   to {
     right: -150%; } }
 
-.content-section {
-  min-height: 30rem; }
-  .content-section__body {
-    min-height: 30rem;
-    color: #272643;
-    background-color: #e3f6f5;
-    max-width: 90vw;
-    margin: 0 auto;
-    border-radius: 1.5rem;
-    padding: 3rem;
-    box-shadow: 0 0 4.5rem #00FFFF; }
+.content-section__body {
+  color: #272643;
+  background-color: #e3f6f5;
+  max-width: 90vw;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 0 4.5rem #00FFFF; }
 
 .homepage {
   position: relative;

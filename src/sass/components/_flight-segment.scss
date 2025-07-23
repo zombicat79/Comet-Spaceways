@@ -1,11 +1,13 @@
 .segment {
     font-family: 'titillium-regular';
+    
 
     &__header {
         font-family: 'titillium-bold';
         @include flex-column(space-between);
         align-items: flex-start;
         gap: 1rem;
+        margin-bottom: 2rem;
     }
 
     &__type {
@@ -20,7 +22,13 @@
         svg {
             width: 3rem;
             height: 3rem;
-            transform: rotate(90deg);
+        }
+
+        &--outbound svg {
+            transform: rotate(45deg);
+        }
+        &--inbound svg {
+            transform: rotate(-135deg);
         }
     }
 
