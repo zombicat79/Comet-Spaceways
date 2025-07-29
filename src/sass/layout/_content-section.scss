@@ -1,7 +1,7 @@
 .content-section {
     &__body {
         color: $color-text-dark;
-        background-color: rgba($color-body-light, 1);
+        background-color: $color-body-light;
         max-width: 90vw;
         margin: 0 auto;
         border-radius: 1.5rem;

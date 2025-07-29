@@ -25,7 +25,7 @@ function FlightSegment({ type }) {
                     </p>
                 </header>
                 <main className="segment__body">
-                    <ItemList data={[1, 2]} ItemComponent={FlightDetails} separation={2}  />
+                    <ItemList data={[1, 2]} ItemComponent={FlightDetails} separation={3}  />
                 </main>
             </div>
         </ContentSection>

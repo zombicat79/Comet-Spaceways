@@ -1,17 +1,55 @@
 .flight-details {
+    position: relative;
     background-color: $color-environmental-light;
-    padding: 2rem 3rem;
+    padding: 3rem;
     border: 2px solid $color-text-dark;
     border-radius: 1.5rem;
     transition: transform .5s;
+    @include flex-row(space-evenly);
 
     &:hover {
-        box-shadow: 0 5px 10px 3px $color-text-dark;
-        transform: translateY(-.5rem);
         cursor: pointer;
+
+        &:not(.flight-details--selected) {
+            box-shadow: 0 5px 10px 3px $color-text-dark;
+            transform: translateY(-.5rem);
+        }
+    }
+
+    &--selected {
+        background-color: rgba($color-highlight-accent, 0.2);
+        border: 2px solid $color-highlight-accent;
+        box-shadow: 0 5px 10px 3px $color-highlight-accent;
+
+        &:before {
+            content: '\2713';
+            width: 3rem;
+            height: 3rem;
+            border-radius: 4px;
+            position: absolute;
+            left: -1.5rem;
+            padding-left: .5rem;
+            font-family: 'titillium-bold';
+            color: $color-text-light;
+            font-size: 2rem;
+            background-color: $color-highlight-accent;
+            border: 1px solid $color-text-dark;
+            @include flex-row(center);
+        }
+    }
+
+    &__operator {
+        border-right: 1px solid $color-environmental-accent;
+        padding-right: 3rem;
+
+        img {
+            width: 100%;
+            max-width: 10rem;
+        }
     }
 
     .routing {
+        flex-grow: 1;
         @include flex-column(space-between);
 
         &__schema {
@@ -22,9 +60,12 @@
         &__coords {
             flex: 1;
             @include flex-column(space-between);
+            gap: .5rem;
         }
 
         &__date {
+            font-family: 'titillium-bold';
+            color: $color-environmental-accent;
             font-size: 3rem;
         }
 
@@ -33,11 +74,14 @@
         }
 
         &__port {
+            font-family: 'titillium-bold';
+            color: $color-environmental-deep;
             font-size: 2rem;
+            margin-top: 1rem;
         }
 
         &__figure {
-            flex: 3;
+            flex: 1.5;
 
             .routing__flight,
             .routing__duration {
@@ -45,6 +89,7 @@
             }
 
             .routing__flight {
+                font-family: 'titillium-semibold';
                 padding-bottom: 2rem;
             }
 
@@ -90,6 +135,20 @@
                     transform: rotate(90deg);
                 }
             }
+        }
+    }
+
+    &__selector {
+        align-self: stretch;
+        border-left: 1px solid $color-environmental-accent;
+        padding-left: 3rem;
+        @include flex-column(center);
+        gap: 2rem;
+
+        .flight-details__price {
+            font-family: 'titillium-bold';
+            color: $color-environmental-deep;
+            font-size: 2.5rem;
         }
     }
 }

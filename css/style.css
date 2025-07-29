@@ -1041,6 +1041,8 @@ h3 {
   align-items: center; }
   .list--space2 {
     gap: 2rem; }
+  .list--space3 {
+    gap: 3rem; }
   .list__item {
     width: 100%; }
 
@@ -1075,16 +1077,48 @@ h3 {
     font-size: 3rem; }
 
 .flight-details {
+  position: relative;
   background-color: #ffffff;
-  padding: 2rem 3rem;
+  padding: 3rem;
   border: 2px solid #272643;
   border-radius: 1.5rem;
-  transition: transform .5s; }
+  transition: transform .5s;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
   .flight-details:hover {
-    box-shadow: 0 5px 10px 3px #272643;
-    transform: translateY(-0.5rem);
     cursor: pointer; }
+    .flight-details:hover:not(.flight-details--selected) {
+      box-shadow: 0 5px 10px 3px #272643;
+      transform: translateY(-0.5rem); }
+  .flight-details--selected {
+    background-color: rgba(50, 205, 50, 0.2);
+    border: 2px solid #32CD32;
+    box-shadow: 0 5px 10px 3px #32CD32; }
+    .flight-details--selected:before {
+      content: '\2713';
+      width: 3rem;
+      height: 3rem;
+      border-radius: 4px;
+      position: absolute;
+      left: -1.5rem;
+      padding-left: .5rem;
+      font-family: 'titillium-bold';
+      color: #F5F5F5;
+      font-size: 2rem;
+      background-color: #32CD32;
+      border: 1px solid #272643;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+  .flight-details__operator {
+    border-right: 1px solid #4B0082;
+    padding-right: 3rem; }
+    .flight-details__operator img {
+      width: 100%;
+      max-width: 10rem; }
   .flight-details .routing {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1099,19 +1133,26 @@ h3 {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: center; }
+      align-items: center;
+      gap: .5rem; }
     .flight-details .routing__date {
+      font-family: 'titillium-bold';
+      color: #4B0082;
       font-size: 3rem; }
     .flight-details .routing__time {
       font-size: 1.5rem; }
     .flight-details .routing__port {
-      font-size: 2rem; }
+      font-family: 'titillium-bold';
+      color: #0B3D91;
+      font-size: 2rem;
+      margin-top: 1rem; }
     .flight-details .routing__figure {
-      flex: 3; }
+      flex: 1.5; }
       .flight-details .routing__figure .routing__flight,
       .flight-details .routing__figure .routing__duration {
         display: inline-block; }
       .flight-details .routing__figure .routing__flight {
+        font-family: 'titillium-semibold';
         padding-bottom: 2rem; }
       .flight-details .routing__figure .routing__duration {
         padding-top: 2rem; }
@@ -1140,6 +1181,19 @@ h3 {
         transform: translate(-50%, -50%); }
         .flight-details .routing__diagram .routing__arrow svg {
           transform: rotate(90deg); }
+  .flight-details__selector {
+    align-self: stretch;
+    border-left: 1px solid #4B0082;
+    padding-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; }
+    .flight-details__selector .flight-details__price {
+      font-family: 'titillium-bold';
+      color: #0B3D91;
+      font-size: 2.5rem; }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }

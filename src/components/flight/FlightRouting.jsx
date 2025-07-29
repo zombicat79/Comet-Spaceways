@@ -6,7 +6,7 @@ function FlightRouting() {
             <div className="routing__schema">
                 <div className="routing__coords">
                     <span className="routing__date">23/08/2125</span>
-                    <span className="routing__time">08:35</span>
+                    <span className="routing__time">08:35h</span>
                     <span className="routing__port">Moon</span>
                 </div>
                 <div className="routing__figure">
@@ -23,7 +23,7 @@ function FlightRouting() {
                 </div>
                 <div className="routing__coords">
                     <span className="routing__date">23/09/2125</span>
-                    <span className="routing__time">14:56</span>
+                    <span className="routing__time">14:56h</span>
                     <span className="routing__port">Mars</span>
                 </div>
             </div>
