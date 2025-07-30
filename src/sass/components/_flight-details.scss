@@ -6,10 +6,14 @@
     border-radius: 1.5rem;
     transition: transform .5s;
     @include flex-row(space-evenly);
+    @include respond(tablet-landscape) {
+        padding: 3rem 1.5rem;
+    }
+    @include respond(phone) {
+        flex-direction: column;
+    }
 
     &:hover {
-        cursor: pointer;
-
         &:not(.flight-details--selected) {
             box-shadow: 0 5px 10px 3px $color-text-dark;
             transform: translateY(-.5rem);
@@ -39,34 +43,60 @@
     }
 
     &__operator {
+        align-self: stretch;
+        @include flex-column(center);
         border-right: 1px solid $color-environmental-accent;
-        padding-right: 3rem;
+        padding-right: 2rem;
+        @include respond(desktop) {
+            padding-right: 3rem;
+        }
 
         img {
             width: 100%;
-            max-width: 10rem;
+            max-width: 7.5rem;
+            @include respond(desktop) {
+                max-width: 10rem;
+            }
         }
     }
 
     .routing {
         flex-grow: 1;
         @include flex-column(space-between);
+        @include respond(phone) {
+            width: 100%;
+        }
 
         &__schema {
             width: 100%;
             @include flex-row(space-between);
+            @include respond(tablet-landscape) {
+                gap: 1rem;
+            }
+            @include respond(tablet-portrait) {
+                flex-direction: column;
+            }
         }
 
         &__coords {
             flex: 1;
             @include flex-column(space-between);
             gap: .5rem;
+            @include respond(tablet-portrait) {
+                flex-direction: row;
+            }
         }
 
         &__date {
             font-family: 'titillium-bold';
             color: $color-environmental-accent;
-            font-size: 3rem;
+            font-size: 2rem;
+            @include respond(tablet-landscape) {
+                font-size: 1.75rem;
+            }
+            @include respond(desktop) {
+                font-size: 3rem;
+            }
         }
 
         &__time {
@@ -76,12 +106,18 @@
         &__port {
             font-family: 'titillium-bold';
             color: $color-environmental-deep;
-            font-size: 2rem;
+            font-size: 1.75rem;
             margin-top: 1rem;
+            @include respond(tablet-portrait) {
+                margin-top: 0;
+            }
         }
 
         &__figure {
             flex: 1.5;
+            @include respond(tablet-portrait) {
+                width: 80%;
+            }
 
             .routing__flight,
             .routing__duration {
@@ -108,6 +144,9 @@
                 height: 1rem;
                 border-radius: 50%;
                 background-color: $color-environmental-accent;
+                @include respond(phone) {
+                    top: -3px;
+                }
 
                 &--left {
                     left: 0;
@@ -136,14 +175,40 @@
                 }
             }
         }
+
+        &__mode {
+            @include respond(tablet-portrait) {
+                margin-top: 2rem;
+            }
+
+            &--underline {
+                text-decoration: underline;
+                text-underline-offset: .5rem;
+
+                &:hover {
+                    cursor: pointer;
+                    font-family: 'titillium-bold';
+                }
+            }
+        }
     }
 
     &__selector {
         align-self: stretch;
         border-left: 1px solid $color-environmental-accent;
-        padding-left: 3rem;
+        padding-left: 2rem;
         @include flex-column(center);
         gap: 2rem;
+        @include respond(tablet-landscape) {
+            border-left: none;
+        }
+        @include respond(phone) {
+            margin-top: 2rem;
+            padding-left: 0;
+        }
+        @include respond(desktop) {
+            padding-left: 3rem;
+        }
 
         .flight-details__price {
             font-family: 'titillium-bold';

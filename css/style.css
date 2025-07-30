@@ -1086,11 +1086,15 @@ h3 {
   display: flex;
   justify-content: space-evenly;
   align-items: center; }
-  .flight-details:hover {
-    cursor: pointer; }
-    .flight-details:hover:not(.flight-details--selected) {
-      box-shadow: 0 5px 10px 3px #272643;
-      transform: translateY(-0.5rem); }
+  @media screen and (max-width: 1000px) {
+    .flight-details {
+      padding: 3rem 1.5rem; } }
+  @media screen and (max-width: 600px) {
+    .flight-details {
+      flex-direction: column; } }
+  .flight-details:hover:not(.flight-details--selected) {
+    box-shadow: 0 5px 10px 3px #272643;
+    transform: translateY(-0.5rem); }
   .flight-details--selected {
     background-color: rgba(50, 205, 50, 0.2);
     border: 2px solid #32CD32;
@@ -1112,22 +1116,42 @@ h3 {
       justify-content: center;
       align-items: center; }
   .flight-details__operator {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-right: 1px solid #4B0082;
-    padding-right: 3rem; }
+    padding-right: 2rem; }
+    @media screen and (min-width: 1280px) {
+      .flight-details__operator {
+        padding-right: 3rem; } }
     .flight-details__operator img {
       width: 100%;
-      max-width: 10rem; }
+      max-width: 7.5rem; }
+      @media screen and (min-width: 1280px) {
+        .flight-details__operator img {
+          max-width: 10rem; } }
   .flight-details .routing {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center; }
+    @media screen and (max-width: 600px) {
+      .flight-details .routing {
+        width: 100%; } }
     .flight-details .routing__schema {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center; }
+      @media screen and (max-width: 1000px) {
+        .flight-details .routing__schema {
+          gap: 1rem; } }
+      @media screen and (max-width: 768px) {
+        .flight-details .routing__schema {
+          flex-direction: column; } }
     .flight-details .routing__coords {
       flex: 1;
       display: flex;
@@ -1135,19 +1159,34 @@ h3 {
       justify-content: space-between;
       align-items: center;
       gap: .5rem; }
+      @media screen and (max-width: 768px) {
+        .flight-details .routing__coords {
+          flex-direction: row; } }
     .flight-details .routing__date {
       font-family: 'titillium-bold';
       color: #4B0082;
-      font-size: 3rem; }
+      font-size: 2rem; }
+      @media screen and (max-width: 1000px) {
+        .flight-details .routing__date {
+          font-size: 1.75rem; } }
+      @media screen and (min-width: 1280px) {
+        .flight-details .routing__date {
+          font-size: 3rem; } }
     .flight-details .routing__time {
       font-size: 1.5rem; }
     .flight-details .routing__port {
       font-family: 'titillium-bold';
       color: #0B3D91;
-      font-size: 2rem;
+      font-size: 1.75rem;
       margin-top: 1rem; }
+      @media screen and (max-width: 768px) {
+        .flight-details .routing__port {
+          margin-top: 0; } }
     .flight-details .routing__figure {
       flex: 1.5; }
+      @media screen and (max-width: 768px) {
+        .flight-details .routing__figure {
+          width: 80%; } }
       .flight-details .routing__figure .routing__flight,
       .flight-details .routing__figure .routing__duration {
         display: inline-block; }
@@ -1165,6 +1204,9 @@ h3 {
         height: 1rem;
         border-radius: 50%;
         background-color: #4B0082; }
+        @media screen and (max-width: 600px) {
+          .flight-details .routing__diagram .routing__endpoint {
+            top: -3px; } }
         .flight-details .routing__diagram .routing__endpoint--left {
           left: 0; }
         .flight-details .routing__diagram .routing__endpoint--right {
@@ -1181,15 +1223,34 @@ h3 {
         transform: translate(-50%, -50%); }
         .flight-details .routing__diagram .routing__arrow svg {
           transform: rotate(90deg); }
+    @media screen and (max-width: 768px) {
+      .flight-details .routing__mode {
+        margin-top: 2rem; } }
+    .flight-details .routing__mode--underline {
+      text-decoration: underline;
+      text-underline-offset: .5rem; }
+      .flight-details .routing__mode--underline:hover {
+        cursor: pointer;
+        font-family: 'titillium-bold'; }
   .flight-details__selector {
     align-self: stretch;
     border-left: 1px solid #4B0082;
-    padding-left: 3rem;
+    padding-left: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem; }
+    @media screen and (max-width: 1000px) {
+      .flight-details__selector {
+        border-left: none; } }
+    @media screen and (max-width: 600px) {
+      .flight-details__selector {
+        margin-top: 2rem;
+        padding-left: 0; } }
+    @media screen and (min-width: 1280px) {
+      .flight-details__selector {
+        padding-left: 3rem; } }
     .flight-details__selector .flight-details__price {
       font-family: 'titillium-bold';
       color: #0B3D91;
@@ -1766,14 +1827,20 @@ h3 {
   to {
     right: -150%; } }
 
-.content-section__body {
-  color: #272643;
-  background-color: #e3f6f5;
-  max-width: 90vw;
-  margin: 0 auto;
-  border-radius: 1.5rem;
-  padding: 3rem;
-  box-shadow: 0 0 4.5rem #00FFFF; }
+.content-section {
+  padding: 5rem; }
+  .content-section:first-child {
+    padding-top: 8rem; }
+  .content-section:last-child {
+    padding-bottom: 8rem; }
+  .content-section__body {
+    color: #272643;
+    background-color: #e3f6f5;
+    max-width: 90vw;
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    padding: 3rem;
+    box-shadow: 0 0 4.5rem #00FFFF; }
 
 .homepage {
   position: relative;

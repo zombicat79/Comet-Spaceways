@@ -1,13 +1,21 @@
-import SvgIcon from "../SvgIcon";
+import { useContext } from 'react';
+import { LayoutContext } from './../../contexts/LayoutContext';
 
-function FlightRouting() {
+import SvgIcon from "../SvgIcon";
+import StopoverDetails from '../infopieces/StopoverDetails';
+
+function FlightRouting({ routingDetails }) {
+    const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
+
     return (
         <div className="routing">
             <div className="routing__schema">
                 <div className="routing__coords">
                     <span className="routing__date">23/08/2125</span>
-                    <span className="routing__time">08:35h</span>
-                    <span className="routing__port">Moon</span>
+                    {layoutState.viewportWidth > 360 && <span className="routing__time">08:35h</span>}
+                    {layoutState.viewportWidth <= 768 && <span>|</span>}
+                    {layoutState.viewportWidth <= 768 && <span className="routing__port">LUN</span>}
+                    {layoutState.viewportWidth > 768 && <span className="routing__port">Moon</span>}
                 </div>
                 <div className="routing__figure">
                     <span className="routing__flight">CS4552</span>
@@ -23,11 +31,21 @@ function FlightRouting() {
                 </div>
                 <div className="routing__coords">
                     <span className="routing__date">23/09/2125</span>
-                    <span className="routing__time">14:56h</span>
-                    <span className="routing__port">Mars</span>
+                    {layoutState.viewportWidth > 360 && <span className="routing__time">14:56h</span>}
+                    {layoutState.viewportWidth <= 768 && <span>|</span>}
+                    {layoutState.viewportWidth <= 768 && <span className="routing__port">MRS</span>}
+                    {layoutState.viewportWidth > 768 && <span className="routing__port">Mars</span>}
                 </div>
             </div>
-            <span className="routing__mode">Direct</span>
+            {routingDetails.mode === 'direct' && <span className="routing__mode">Direct</span>}
+            {routingDetails.mode === 'stopover' && 
+            <span 
+                className="routing__mode routing__mode--underline" 
+                onClick={() => handlePopupLaunch({ modalClass: 'generic', content: <StopoverDetails routingDetails={routingDetails} /> })}
+            >
+            1 stopover
+            </span>
+            }
         </div>
     )
 }
