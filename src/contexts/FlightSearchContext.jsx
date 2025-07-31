@@ -14,7 +14,7 @@ const initialState = {
     ]),
     destinationOffer: [],
     searchScope: '🔄 Round Trip',
-    origin: 'Earth - Europe',
+    origin: 'Earth (Europe)',
     destination: 'Mars',
     departureDate: '',
     returnDate: '',
@@ -72,7 +72,7 @@ function FlightSearchProvider({ children }) {
 
     useEffect(() => {
         // TEMPORARY HARD-CODED DESTINATIONS (To be fetched from server)
-        const destinationOffer = ['Earth - America', 'Earth - Europe', 'Earth - Asia', 
+        const destinationOffer = ['Earth (America)', 'Earth (Europe)', 'Earth (Asia)', 
         'Celestia Station', 'Moon', 'Mars', 'Venus', 'Ceres', 'Titan']
         // END OF ALERT
 

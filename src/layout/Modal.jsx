@@ -39,7 +39,7 @@ function Modal({ modalShown, modalClass, content, width, height }) {
           }
         >
           {layoutState.viewportWidth <= 600 && (
-            <div className="modal__header">
+            <header className="modal__header">
               <svg
                 className="modal__closer"
                 onClick={closeModal}
@@ -62,7 +62,7 @@ function Modal({ modalShown, modalClass, content, width, height }) {
                   ></path>
                 </g>
               </svg>
-            </div>
+            </header>
           )}
           {content}
         </div>

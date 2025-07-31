@@ -19,7 +19,7 @@ function FlightPreview({ state }) {
     }, [])
 
     return (
-        <div className="flight-preview">
+        <article className="flight-preview">
             {isLoading 
             ? <Loader />
             : 
@@ -29,7 +29,7 @@ function FlightPreview({ state }) {
                     <h3 className="flight-preview__title"> 🛸🪐 Your space travel preview:</h3>
                 </header>
                 }
-                <article className="flight-preview__body">
+                <main className="flight-preview__body">
                     {layoutState.viewportWidth <= 600 && <h3 className="flight-preview__title"> 🛸🪐<br/>Your space travel preview:</h3>}
                     <div className='flight-preview__routing-container'>
                         {returnDate
@@ -63,10 +63,10 @@ function FlightPreview({ state }) {
 
                     <img className='flight-preview__badge' src="/logos/ctsw-logo_dark_badge.png" alt='Comet Spaceways badge' />
                     <blockquote className="flight-preview__motto">Go conquer the universe</blockquote>
-                </article>
+                </main>
             </>
             }
-        </div>
+        </article>
     )
 }
 

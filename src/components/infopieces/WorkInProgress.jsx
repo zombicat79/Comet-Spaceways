@@ -1,6 +1,6 @@
 function WorkInProgress() {
     return (
-      <div className="infopiece">
+      <main className="infopiece">
         <svg
           className="infopiece__icon"
           viewBox="0 0 128 128"
@@ -89,12 +89,12 @@ function WorkInProgress() {
           </g>
         </svg>
 
-        <div className="infopiece__content">
+        <article className="infopiece__content">
             <h3 className="infopiece__heading">Work in Progress</h3>
             <p className="infopiece__text">Just as the Universe is constantly expanding, so is our website...</p>
             <p className="infopiece__text">This section is still under construction. We'll make it available to you very soon! 😉</p>
-        </div>
-      </div>
+        </article>
+      </main>
     );
 }
 

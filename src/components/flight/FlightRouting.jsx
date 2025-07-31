@@ -2,7 +2,9 @@ import { useContext } from 'react';
 import { LayoutContext } from './../../contexts/LayoutContext';
 
 import SvgIcon from "../SvgIcon";
-import StopoverDetails from '../infopieces/StopoverDetails';
+import ConnectionDetails from '../infopieces/ConnectionDetails';
+
+import { minimizeDestinations } from '../../utilities/utils';
 
 function FlightRouting({ routingDetails }) {
     const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
@@ -14,8 +16,8 @@ function FlightRouting({ routingDetails }) {
                     <span className="routing__date">23/08/2125</span>
                     {layoutState.viewportWidth > 360 && <span className="routing__time">08:35h</span>}
                     {layoutState.viewportWidth <= 768 && <span>|</span>}
-                    {layoutState.viewportWidth <= 768 && <span className="routing__port">LUN</span>}
-                    {layoutState.viewportWidth > 768 && <span className="routing__port">Moon</span>}
+                    {layoutState.viewportWidth <= 768 && <span className="routing__port">{minimizeDestinations('Earth (Europe)')}</span>}
+                    {layoutState.viewportWidth > 768 && <span className="routing__port">Earth (Europe)</span>}
                 </div>
                 <div className="routing__figure">
                     <span className="routing__flight">CS4552</span>
@@ -33,7 +35,7 @@ function FlightRouting({ routingDetails }) {
                     <span className="routing__date">23/09/2125</span>
                     {layoutState.viewportWidth > 360 && <span className="routing__time">14:56h</span>}
                     {layoutState.viewportWidth <= 768 && <span>|</span>}
-                    {layoutState.viewportWidth <= 768 && <span className="routing__port">MRS</span>}
+                    {layoutState.viewportWidth <= 768 && <span className="routing__port">{minimizeDestinations('Mars')}</span>}
                     {layoutState.viewportWidth > 768 && <span className="routing__port">Mars</span>}
                 </div>
             </div>
@@ -41,7 +43,7 @@ function FlightRouting({ routingDetails }) {
             {routingDetails.mode === 'stopover' && 
             <span 
                 className="routing__mode routing__mode--underline" 
-                onClick={() => handlePopupLaunch({ modalClass: 'generic', content: <StopoverDetails routingDetails={routingDetails} /> })}
+                onClick={() => handlePopupLaunch({ modalClass: 'generic', content: <ConnectionDetails routingDetails={routingDetails} /> })}
             >
             1 stopover
             </span>

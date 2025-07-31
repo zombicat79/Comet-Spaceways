@@ -1,0 +1,52 @@
+.connection {
+    font-size: 1rem;
+
+    // CONNECTION FLIGHT SCHEMA HEADER
+    &__header {
+        @include flex-row('flex-start');
+        font-size: 1.4em;
+    }
+
+    &__operator {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    &__flight {
+        text-transform: uppercase;
+    }
+
+    // CONNECTION FLIGHT SCHEMA BODY
+    &__body {
+        @include flex-column('space-between');
+        position: relative;
+        align-items: flex-start;
+        margin: 1rem 2rem 1rem 2.5rem;
+        border-left: 1px solid $color-text-light;
+        padding-left: 2rem;
+    }
+
+    &__bullet {
+        position: absolute;
+        left: -4.5px;
+        width: .75rem;
+        height: .75rem;
+        border-radius: 50%;
+        background-color: $color-text-light;
+
+        &--top {
+            top: 0;
+        }
+
+        &--bottom {
+            bottom: 0;
+        }
+    }
+
+    // CONNECTION FLIGHT SCHEMA INTERLUDE
+    &__interlude {
+        background-color: $color-body-deep;
+        padding: 1rem;
+        border-radius: 4px;
+    }
+}
