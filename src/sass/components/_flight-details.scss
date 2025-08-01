@@ -45,9 +45,9 @@
     &__operator {
         align-self: stretch;
         @include flex-column(center);
-        border-right: 1px solid $color-environmental-accent;
         padding-right: 2rem;
         @include respond(desktop) {
+            border-right: 1px solid $color-environmental-accent;
             padding-right: 3rem;
         }
 
@@ -147,6 +147,12 @@
                 @include respond(phone) {
                     top: -3px;
                 }
+                @include respond(big-screen) {
+                    top: -5px;
+                }
+                @include respond(huge-screen) {
+                    top: -7px;
+                }
 
                 &--left {
                     left: 0;
@@ -177,6 +183,8 @@
         }
 
         &__mode {
+            text-transform: uppercase;
+
             @include respond(tablet-portrait) {
                 margin-top: 2rem;
             }

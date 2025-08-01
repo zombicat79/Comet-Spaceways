@@ -17,5 +17,8 @@
         border-radius: 1.5rem;
         padding: 3rem;
         box-shadow: 0 0 4.5rem $color-highlight-light;
+        @include respond(huge-screen) {
+            max-width: 75vw;
+        }
     }
 }

@@ -1,11 +1,21 @@
 .infopiece {
-
+    height: 100%;
+    
     &__icon {
         width: 35%;
     }
 
     &__content {
         margin-top: 3rem;
+    }
+
+    &__routing {
+        height: 100%;
+        @include flex-column(center);
+        @include respond(phone) {
+            justify-content: flex-start;
+        }
+        margin-top: 0;
     }
 
     &__text:not(.infopiece__text:last-child) {

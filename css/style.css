@@ -142,6 +142,23 @@ img {
   100% {
     box-shadow: none; } }
 
+@keyframes shining-pulse-green {
+  0% {
+    transform: scale(0.97);
+    box-shadow: 0 0 0.5rem #32CD32; }
+  25% {
+    transform: scale(1);
+    box-shadow: 0 0 1.5rem #32CD32; }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 4rem #32CD32; }
+  75% {
+    transform: scale(1);
+    box-shadow: 0 0 1.5rem #32CD32; }
+  100% {
+    transform: scale(0.97);
+    box-shadow: 0 0 0.5rem #32CD32; } }
+
 @keyframes appear-bottom {
   0% {
     transform: translate(-50%, 120vh); }
@@ -937,14 +954,24 @@ h3 {
     filter: opacity(0.3);
     z-index: 0; }
 
-.infopiece__icon {
-  width: 35%; }
-
-.infopiece__content {
-  margin-top: 3rem; }
-
-.infopiece__text:not(.infopiece__text:last-child) {
-  margin-bottom: 1.5rem; }
+.infopiece {
+  height: 100%; }
+  .infopiece__icon {
+    width: 35%; }
+  .infopiece__content {
+    margin-top: 3rem; }
+  .infopiece__routing {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0; }
+    @media screen and (max-width: 600px) {
+      .infopiece__routing {
+        justify-content: flex-start; } }
+  .infopiece__text:not(.infopiece__text:last-child) {
+    margin-bottom: 1.5rem; }
 
 .loader {
   position: absolute;
@@ -1074,7 +1101,8 @@ h3 {
       transform: rotate(-135deg); }
   .segment__route {
     text-align: left;
-    font-size: 3rem; }
+    font-size: 3rem;
+    line-height: 3.5rem; }
 
 .flight-details {
   position: relative;
@@ -1121,10 +1149,10 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid #4B0082;
     padding-right: 2rem; }
     @media screen and (min-width: 1280px) {
       .flight-details__operator {
+        border-right: 1px solid #4B0082;
         padding-right: 3rem; } }
     .flight-details__operator img {
       width: 100%;
@@ -1207,6 +1235,12 @@ h3 {
         @media screen and (max-width: 600px) {
           .flight-details .routing__diagram .routing__endpoint {
             top: -3px; } }
+        @media screen and (min-width: 2000px) {
+          .flight-details .routing__diagram .routing__endpoint {
+            top: -5px; } }
+        @media screen and (min-width: 2800px) {
+          .flight-details .routing__diagram .routing__endpoint {
+            top: -7px; } }
         .flight-details .routing__diagram .routing__endpoint--left {
           left: 0; }
         .flight-details .routing__diagram .routing__endpoint--right {
@@ -1223,15 +1257,17 @@ h3 {
         transform: translate(-50%, -50%); }
         .flight-details .routing__diagram .routing__arrow svg {
           transform: rotate(90deg); }
-    @media screen and (max-width: 768px) {
-      .flight-details .routing__mode {
-        margin-top: 2rem; } }
-    .flight-details .routing__mode--underline {
-      text-decoration: underline;
-      text-underline-offset: .5rem; }
-      .flight-details .routing__mode--underline:hover {
-        cursor: pointer;
-        font-family: 'titillium-bold'; }
+    .flight-details .routing__mode {
+      text-transform: uppercase; }
+      @media screen and (max-width: 768px) {
+        .flight-details .routing__mode {
+          margin-top: 2rem; } }
+      .flight-details .routing__mode--underline {
+        text-decoration: underline;
+        text-underline-offset: .5rem; }
+        .flight-details .routing__mode--underline:hover {
+          cursor: pointer;
+          font-family: 'titillium-bold'; }
   .flight-details__selector {
     align-self: stretch;
     border-left: 1px solid #4B0082;
@@ -1257,42 +1293,113 @@ h3 {
       font-size: 2.5rem; }
 
 .connection {
-  font-size: 1rem; }
+  font-size: 1rem;
+  width: 100%; }
   .connection__header {
     display: flex;
-    justify-content: "flex-start";
+    justify-content: flex-start;
     align-items: center;
     font-size: 1.4em; }
+    @media screen and (max-width: 600px) {
+      .connection__header {
+        font-size: 1.8em; } }
   .connection__operator {
-    width: 5rem;
-    height: 5rem; }
+    width: 4rem;
+    height: 4rem; }
+    @media screen and (max-width: 600px) {
+      .connection__operator {
+        width: 6rem;
+        height: 6rem; } }
   .connection__flight {
     text-transform: uppercase; }
   .connection__body {
     display: flex;
     flex-direction: column;
-    justify-content: "space-between";
+    justify-content: space-between;
     align-items: center;
     position: relative;
     align-items: flex-start;
-    margin: 1rem 2rem 1rem 2.5rem;
+    text-align: left;
+    word-break: break-word;
+    margin-top: .5rem;
+    margin-left: 2rem;
     border-left: 1px solid #F5F5F5;
-    padding-left: 2rem; }
+    padding-left: 2rem;
+    gap: .5rem; }
+    @media screen and (max-width: 600px) {
+      .connection__body {
+        margin-left: 3rem;
+        font-size: 1.4em;
+        gap: 1.5rem; } }
+    .connection__body svg {
+      width: 2rem;
+      height: 2rem; }
+      @media screen and (max-width: 600px) {
+        .connection__body svg {
+          width: 2.5rem;
+          height: 2.5rem; } }
+  .connection__endpoint {
+    text-align: left; }
+  .connection__date {
+    font-size: 1.2em; }
+  .connection__time {
+    margin: 0 1rem 0 .5rem; }
+  .connection__figure {
+    display: flex;
+    justify-content: "flex-start";
+    align-items: center;
+    gap: 1rem; }
+    @media screen and (max-width: 600px) {
+      .connection__figure {
+        gap: 1.5rem; } }
   .connection__bullet {
     position: absolute;
-    left: -4.5px;
+    left: -1.5%;
     width: .75rem;
     height: .75rem;
     border-radius: 50%;
     background-color: #F5F5F5; }
+    @media screen and (max-width: 600px) {
+      .connection__bullet {
+        width: 1rem;
+        height: 1rem;
+        left: -3.75px; } }
+    @media screen and (min-width: 2800px) {
+      .connection__bullet {
+        left: -1.65%; } }
     .connection__bullet--top {
       top: 0; }
     .connection__bullet--bottom {
       bottom: 0; }
   .connection__interlude {
+    width: 100%;
+    font-size: .8em;
+    font-family: 'poppins-bold';
     background-color: #2c698d;
     padding: 1rem;
+    margin: 2.5rem 0 2rem;
     border-radius: 4px; }
+    @media screen and (max-width: 600px) {
+      .connection__interlude {
+        font-size: 1.2em;
+        margin: 4.5rem 0 4rem; } }
+  .connection__summary {
+    width: 100%;
+    font-size: .8em;
+    font-family: 'poppins-bold';
+    color: #272643;
+    margin-top: 2rem;
+    background-color: rgba(50, 205, 50, 0.8);
+    padding: 1rem;
+    border-radius: 4px;
+    animation-name: shining-pulse-green;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 3s; }
+    @media screen and (max-width: 600px) {
+      .connection__summary {
+        font-size: 1.2em;
+        margin-top: 4rem; } }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
@@ -1727,7 +1834,7 @@ h3 {
       width: 5rem;
       height: 5rem; }
     .modal__content .infopiece__text {
-      font-family: poppins-regular; }
+      font-family: 'poppins-regular'; }
 
 .aside {
   height: 100vh;
@@ -1879,6 +1986,9 @@ h3 {
     border-radius: 1.5rem;
     padding: 3rem;
     box-shadow: 0 0 4.5rem #00FFFF; }
+    @media screen and (min-width: 2800px) {
+      .content-section__body {
+        max-width: 75vw; } }
 
 .homepage {
   position: relative;

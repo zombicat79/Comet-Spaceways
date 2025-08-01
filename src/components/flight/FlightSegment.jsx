@@ -14,7 +14,7 @@ function FlightSegment({ type }) {
             <div className="segment">
                 <header className="segment__header">
                     <div className={`segment__type segment__type--${type}`}>
-                        <SvgIcon design="starship" />
+                        <SvgIcon design="starship" color="#272643" />
                         <p>{type.toUpperCase()}</p>
                     </div>
                     <p className="segment__route">
