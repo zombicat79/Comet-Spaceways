@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router';
 
 import { FlightSearchContext } from '../../contexts/FlightSearchContext';
 import { LayoutContext } from '../../contexts/LayoutContext';
@@ -11,6 +12,7 @@ function FlightSearch() {
     const { flightSearchState, changeFlightSearchState } = useContext(FlightSearchContext);
     const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
     const { humanoids, nhes, minors, pets } = flightSearchState.passengers;
+    const navigate = useNavigate();
 
     function handleReverseChoice() {
         changeFlightSearchState({ 
@@ -40,7 +42,7 @@ function FlightSearch() {
     function handleOnSubmit(e) {
         e.preventDefault();
 
-        let modalWidth = '';
+        /* let modalWidth = '';
         let modalHeigth = 'regular';
         switch(true) {
             case layoutState.viewportWidth > 1000:
@@ -59,7 +61,8 @@ function FlightSearch() {
             content: <FlightPreview state={flightSearchState} />,
             width: modalWidth,
             height: modalHeigth
-        })
+        }) */
+        navigate('/purchase/tickets/')
     }
 
     return (

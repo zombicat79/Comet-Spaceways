@@ -7,7 +7,7 @@ function ItemList({ data, ItemComponent, separation }) {
         <ul className={`list list--space${separation}`}>
         {data.map((el) => {
             return (
-                <li className={`list__item`}>
+                <li key={el.id} className={`list__item`}>
                     {el.id === selected?.id 
                     ? <ItemComponent itemDetails={el} onSelect={setSelected} selected={true} />
                     : <ItemComponent itemDetails={el} onSelect={setSelected} />

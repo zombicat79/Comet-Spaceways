@@ -4,6 +4,8 @@ import { LayoutContext } from './../../contexts/LayoutContext';
 import FlightRouting from "./FlightRouting";
 import Button from './../Button';
 
+import darkBadge from '/logos/ctsw-logo_dark_badge.png';
+
 function FlightDetails({ itemDetails, onSelect, selected }) {
     const { layoutState } = useContext(LayoutContext);
 
@@ -16,7 +18,7 @@ function FlightDetails({ itemDetails, onSelect, selected }) {
         <div className={detailClasses}>
             {layoutState.viewportWidth > 1000 &&
             <figure className="flight-details__operator">
-                <img src="./../logos/ctsw-logo_dark_badge.png" alt="Comet Spaceways badge" />
+                <img src={darkBadge} alt="Comet Spaceways badge" />
             </figure>
             }   
             <FlightRouting routingDetails={itemDetails}  />

@@ -10,7 +10,7 @@ function StepBar({ steps, progress }) {
         {steps.map((step, index) => {
             const stepItemClasses = index <= progress ? 'stepbar__item stepbar__item--checked' : 'stepbar__item';
 
-            if (layoutState.viewportWidth <= 600 && index !== progress) return;
+            if (layoutState.viewportWidth <= 600 && index !== progress) return null;
 
             return (
                 <div key={step.id} className={stepItemClasses}>
