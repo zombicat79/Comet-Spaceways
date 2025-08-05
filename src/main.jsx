@@ -4,13 +4,16 @@ import "react-datepicker/dist/react-datepicker.css";
 import './../css/style.css'
 
 import { LayoutProvider } from './contexts/LayoutContext';
+import { FlightSearchProvider } from './contexts/FlightSearchContext';
 
 import App from './App';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <LayoutProvider>
-      <App />
+      <FlightSearchProvider>
+        <App />
+      </FlightSearchProvider>
     </LayoutProvider>
   </StrictMode>,
 )

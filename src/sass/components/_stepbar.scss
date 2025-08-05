@@ -1,0 +1,85 @@
+.stepbar {
+    @include flex-row(space-evenly);
+    color: inherit;
+    font-size: 1rem;
+    max-width: 95vw;
+    padding: 1rem 2rem;
+    border: 2px solid currentcolor;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    @include respond(tablet-landscape) {
+        max-width: 70vw;
+    }
+    @include respond(tablet-portrait) {
+        max-width: 85vw;
+    }
+    @include respond(phone) {
+        font-size: 2rem;
+        padding: 0;
+    }
+    @include respond(desktop) {
+        font-size: 1.4rem;
+        max-width: 1100px;
+    }
+    @include respond(big-screen) {
+        max-width: 70vw;
+    }
+    @include respond(huge-screen) {
+        max-width: 60vw;
+    }
+
+    &__item {
+        @include flex-row(center);
+        min-height: 5rem;
+        border-radius: 1rem;
+        padding: .75rem;
+        @include respond(phone) {
+            width: 100%;
+        }
+        @include respond(desktop) {
+            padding: 1rem;
+        }
+
+        &--checked {
+            background-color: rgba($color-body-deep, 0.5);
+            border-bottom: 3px solid $color-environmental-accent;
+        } 
+    }
+
+    &__name {
+        @include flex-row(center);
+        text-transform: uppercase;
+        gap: 1rem;
+
+        .stepbar__icon {
+            display: inline-block;
+            width: 2.5rem;
+            height: 2.5rem;
+            @include respond(tablet-landscape) {
+                display: none;
+            }
+            @include respond(phone) {
+                display: inline-block;
+            }
+    
+            &--flights {
+                width: 3rem;
+                height: 3rem;
+                transform: rotate(45deg);
+                position: relative;
+                left: 3px;
+                bottom: 1px;
+            }
+        }
+    }
+
+    &__arrow {
+        font-size: 4rem;
+        @include respond(tablet-landscape) {
+            display: none;
+        }
+        @include respond(phone) {
+            display: inline-block;
+        }
+    }
+}

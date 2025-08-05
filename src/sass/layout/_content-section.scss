@@ -1,0 +1,24 @@
+.content-section {
+    padding: 5rem;
+
+    &:first-child {
+        padding-top: 8rem;
+    }
+
+    &:last-child {
+        padding-bottom: 8rem;
+    }
+
+    &__body {
+        color: $color-text-dark;
+        background-color: $color-body-light;
+        max-width: 90vw;
+        margin: 0 auto;
+        border-radius: 1.5rem;
+        padding: 3rem;
+        box-shadow: 0 0 4.5rem $color-highlight-light;
+        @include respond(huge-screen) {
+            max-width: 75vw;
+        }
+    }
+}

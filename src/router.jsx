@@ -4,7 +4,8 @@ import AppLayout from "./layout/AppLayout";
 import MinAppLayout from "./layout/MinAppLayout";
 
 import Home from './pages/Home';
-import Tickets from './pages/Tickets';
+import Tickets from './pages/purchase/Tickets';
+import PassengerDetails from "./pages/purchase/Details";
 import NotFound from "./pages/NotFound";
 
 function purchaseRedirection() {
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
                 path: 'purchase', 
                 children: [
                     { index: true, loader: purchaseRedirection },
-                    { path: 'tickets', Component: Tickets }
+                    { path: 'tickets', Component: Tickets },
+                    { path: 'details', Component: PassengerDetails }
                 ]
             }
         ]

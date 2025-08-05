@@ -1,0 +1,227 @@
+.flight-details {
+    position: relative;
+    background-color: $color-environmental-light;
+    padding: 3rem;
+    border: 2px solid $color-text-dark;
+    border-radius: 1.5rem;
+    transition: transform .5s;
+    @include flex-row(space-evenly);
+    @include respond(tablet-landscape) {
+        padding: 3rem 1.5rem;
+    }
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    &:hover {
+        &:not(.flight-details--selected) {
+            box-shadow: 0 5px 10px 3px $color-text-dark;
+            transform: translateY(-.5rem);
+        }
+    }
+
+    &--selected {
+        background-color: rgba($color-highlight-accent, 0.2);
+        border: 2px solid $color-highlight-accent;
+        box-shadow: 0 5px 10px 3px $color-highlight-accent;
+
+        &:before {
+            content: '\2713';
+            width: 3rem;
+            height: 3rem;
+            border-radius: 4px;
+            position: absolute;
+            left: -1.5rem;
+            padding-left: .5rem;
+            font-family: 'titillium-bold';
+            color: $color-text-light;
+            font-size: 2rem;
+            background-color: $color-highlight-accent;
+            border: 1px solid $color-text-dark;
+            @include flex-row(center);
+        }
+    }
+
+    &__operator {
+        align-self: stretch;
+        @include flex-column(center);
+        padding-right: 2rem;
+        @include respond(desktop) {
+            border-right: 1px solid $color-environmental-accent;
+            padding-right: 3rem;
+        }
+
+        img {
+            width: 100%;
+            max-width: 7.5rem;
+            @include respond(desktop) {
+                max-width: 10rem;
+            }
+        }
+    }
+
+    .routing {
+        flex-grow: 1;
+        @include flex-column(space-between);
+        @include respond(phone) {
+            width: 100%;
+        }
+
+        &__schema {
+            width: 100%;
+            @include flex-row(space-between);
+            @include respond(tablet-landscape) {
+                gap: 1rem;
+            }
+            @include respond(tablet-portrait) {
+                flex-direction: column;
+            }
+        }
+
+        &__coords {
+            flex: 1;
+            @include flex-column(space-between);
+            gap: .5rem;
+            @include respond(tablet-portrait) {
+                flex-direction: row;
+            }
+        }
+
+        &__date {
+            font-family: 'titillium-bold';
+            color: $color-environmental-accent;
+            font-size: 2rem;
+            @include respond(tablet-landscape) {
+                font-size: 1.75rem;
+            }
+            @include respond(desktop) {
+                font-size: 3rem;
+            }
+        }
+
+        &__time {
+            font-size: 1.5rem;
+        }
+
+        &__port {
+            font-family: 'titillium-bold';
+            color: $color-environmental-deep;
+            font-size: 1.75rem;
+            margin-top: 1rem;
+            @include respond(tablet-portrait) {
+                margin-top: 0;
+            }
+        }
+
+        &__figure {
+            flex: 1.5;
+            @include respond(tablet-portrait) {
+                width: 80%;
+            }
+
+            .routing__flight,
+            .routing__duration {
+                display: inline-block;
+            }
+
+            .routing__flight {
+                font-family: 'titillium-semibold';
+                padding-bottom: 2rem;
+            }
+
+            .routing__duration {
+                padding-top: 2rem;
+            }
+        }
+
+        &__diagram {
+            position: relative;
+
+            .routing__endpoint {
+                position: absolute;
+                top: -4px;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+                background-color: $color-environmental-accent;
+                @include respond(phone) {
+                    top: -3px;
+                }
+                @include respond(big-screen) {
+                    top: -5px;
+                }
+                @include respond(huge-screen) {
+                    top: -7px;
+                }
+
+                &--left {
+                    left: 0;
+                }
+
+                &--right {
+                    right: 0;
+                }
+            }
+
+            .routing__line {
+                height: 2px;
+                background-color: $color-environmental-accent;
+            }
+
+            .routing__arrow {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 3rem;
+                height: 3rem;
+                transform: translate(-50%, -50%);
+        
+                svg {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        &__mode {
+            text-transform: uppercase;
+
+            @include respond(tablet-portrait) {
+                margin-top: 2rem;
+            }
+
+            &--underline {
+                text-decoration: underline;
+                text-underline-offset: .5rem;
+
+                &:hover {
+                    cursor: pointer;
+                    font-family: 'titillium-bold';
+                }
+            }
+        }
+    }
+
+    &__selector {
+        align-self: stretch;
+        border-left: 1px solid $color-environmental-accent;
+        padding-left: 2rem;
+        @include flex-column(center);
+        gap: 2rem;
+        @include respond(tablet-landscape) {
+            border-left: none;
+        }
+        @include respond(phone) {
+            margin-top: 2rem;
+            padding-left: 0;
+        }
+        @include respond(desktop) {
+            padding-left: 3rem;
+        }
+
+        .flight-details__price {
+            font-family: 'titillium-bold';
+            color: $color-environmental-deep;
+            font-size: 2.5rem;
+        }
+    }
+}

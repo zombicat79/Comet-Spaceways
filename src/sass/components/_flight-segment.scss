@@ -1,0 +1,40 @@
+.segment {
+    font-family: 'titillium-regular';
+    
+
+    &__header {
+        font-family: 'titillium-bold';
+        @include flex-column(space-between);
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    &__type {
+        @include flex-row(flex-start);
+        gap: 1rem;
+
+        p {
+            font-size: 1.75rem;
+            font-style: italic;
+        }
+
+        svg {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        &--outbound svg {
+            transform: rotate(45deg);
+        }
+        &--inbound svg {
+            transform: rotate(-135deg);
+        }
+    }
+
+    &__route {
+        text-align: left;
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+}

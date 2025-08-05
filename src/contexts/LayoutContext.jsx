@@ -20,6 +20,9 @@ function LayoutProvider({ children }) {
             case data.modalClass === 'flight-preview' && window.innerWidth <= 1000:
                 dispatch({ type: 'resize/modal', payload: {width: 'medium', height: 'regular'} });
                 break;
+            case data.modalClass === 'connection-info':
+                dispatch({ type: 'resize/modal', payload: {width: 'regular', height: 'large'} });
+                break;
             default:
                 dispatch({ type: 'resize/modal', payload: {width: 'regular', height: 'regular'} });
         }

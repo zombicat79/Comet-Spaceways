@@ -1,10 +1,10 @@
 function minimizeDestinations(fullDestination) {
     switch(fullDestination) {
-        case 'Earth - America':
+        case 'Earth (America)':
             return 'EAM';
-        case 'Earth - Europe':
+        case 'Earth (Europe)':
             return 'EEU';
-        case 'Earth - Asia':
+        case 'Earth (Asia)':
             return 'EAS'
         case 'Celestia Station':
             return 'CEL';

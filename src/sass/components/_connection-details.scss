@@ -1,0 +1,134 @@
+.connection {
+    font-size: 1rem;
+    width: 100%;
+
+    // CONNECTION FLIGHT SCHEMA HEADER
+    &__header {
+        @include flex-row(flex-start);
+        font-size: 1.4em;
+        @include respond(phone) {
+            font-size: 1.8em;
+        }
+    }
+
+    &__operator {
+        width: 4rem;
+        height: 4rem;
+        @include respond(phone) {
+            width: 6rem;
+            height: 6rem;
+        }
+    }
+
+    &__flight {
+        text-transform: uppercase;
+    }
+
+    // CONNECTION FLIGHT SCHEMA BODY
+    &__body {
+        @include flex-column(space-between);
+        position: relative;
+        align-items: flex-start;
+        text-align: left;
+        word-break: break-word;
+        margin-top: .5rem;
+        margin-left: 2rem;
+        border-left: 1px solid $color-text-light;
+        padding-left: 2rem;
+        gap: .5rem;
+        @include respond(phone) {
+            margin-left: 3rem;
+            font-size: 1.4em;
+            gap: 1.5rem;
+        }
+
+        & svg {
+            width: 2rem;
+            height: 2rem;
+            @include respond(phone) {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+    }
+
+    &__endpoint {
+        text-align: left;
+    }
+
+    &__date {
+        font-size: 1.2em;
+    }
+
+    &__time {
+        margin: 0 1rem 0 .5rem;
+    }
+
+    &__figure {
+        @include flex-row('flex-start');
+        gap: 1rem;
+        @include respond(phone) {
+            gap: 1.5rem;
+        }
+    }
+
+    &__bullet {
+        position: absolute;
+        left: -1.5%;
+        width: .75rem;
+        height: .75rem;
+        border-radius: 50%;
+        background-color: $color-text-light;
+        @include respond(phone) {
+            width: 1rem;
+            height: 1rem;
+            left: -3.75px;
+        }
+        @include respond(huge-screen) {
+            left: -1.65%;
+        }
+
+        &--top {
+            top: 0;
+        }
+
+        &--bottom {
+            bottom: 0;
+        }
+    }
+
+    // CONNECTION FLIGHT SCHEMA INTERLUDE
+    &__interlude {
+        width: 100%;
+        font-size: .8em;
+        font-family: 'poppins-bold';
+        background-color: $color-body-deep;
+        padding: 1rem;
+        margin: 2.5rem 0 2rem;
+        border-radius: 4px;
+        @include respond(phone) {
+            font-size: 1.2em;
+            margin: 4.5rem 0 4rem;
+        }
+    }
+
+    // CONNECTION SUMMARY
+    &__summary {
+        width: 100%;
+        font-size: .8em;
+        font-family: 'poppins-bold';
+        color: $color-text-dark;
+        margin-top: 2rem;
+        background-color: rgba($color-highlight-accent, 0.8);
+        padding: 1rem;
+        border-radius: 4px;
+        animation-name: shining-pulse-green;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 3s;
+        @include respond(phone) {
+            font-size: 1.2em;
+            margin-top: 4rem;
+        }
+    }
+}

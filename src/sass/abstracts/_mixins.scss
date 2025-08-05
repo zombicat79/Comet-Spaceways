@@ -37,6 +37,10 @@
     text-shadow: 0 .5rem 1.5rem $color;
 }
 
+@mixin variable-box-shadow($blur, $color) {
+    box-shadow: 0 0 $blur $color;
+}
+
 @mixin animation-standard($name) {
     animation-name: $name;
     animation-timing-function: linear;

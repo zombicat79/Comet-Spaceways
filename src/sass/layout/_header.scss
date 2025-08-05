@@ -26,6 +26,10 @@
             stroke-width: 1;
          }
       }
+
+      .header__secondary {
+         color: $color-text-light;
+      }
    }
 
    &[data-transparency="false"] {
@@ -49,6 +53,10 @@
             stroke: $color-text-dark;
             stroke-width: 2.5;
          }
+      }
+
+      .header__secondary {
+         color: $color-text-dark;
       }
    }
 
@@ -145,11 +153,31 @@
       }
    }
 
-   // MINIMAL HEADER SPECIFIC NUANCES
-   &--minimal {
+   // MINIMAL & PURCHASE HEADER SPECIFIC NUANCES
+   &--minimal,
+   &--purchase {
       .header__main {
          justify-content: center;
      }
+     .header__secondary {
+         font-family: 'roboto-regular';
+     }
+   }
+
+   &__info {
+      margin-bottom: 1rem;
+      @include respond(huge-screen) {
+         font-size: 2rem;
+      }
+      
+      &--progress::after {
+         content: '';
+         position: absolute;
+         animation-name: dot-progress;
+         animation-timing-function: linear;
+         animation-iteration-count: infinite;
+         animation-duration: 2s;
+      }
    }
 }
 

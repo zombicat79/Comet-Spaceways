@@ -3,7 +3,6 @@ import { Outlet, useLocation } from 'react-router';
 
 import ScrollBlocker from './ScrollBlocker';
 import Header from './headers/Header';
-import MinimalHeader from './headers/MinimalHeader';
 import PurchaseHeader from './headers/PurchaseHeader';
 import Footer from './Footer';
 import Subfooter from './Subfooter';

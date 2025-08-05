@@ -27,6 +27,14 @@
     100% { box-shadow: none }
 }
 
+@keyframes shining-pulse-green {
+    0% { transform: scale(.97); box-shadow: 0 0 .5rem $color-highlight-accent }
+    25% { transform: scale(1); box-shadow: 0 0 1.5rem $color-highlight-accent }
+    50% { transform: scale(1.03); box-shadow: 0 0 4rem $color-highlight-accent }
+    75% { transform: scale(1); box-shadow: 0 0 1.5rem $color-highlight-accent }
+    100% { transform: scale(.97); box-shadow: 0 0 .5rem $color-highlight-accent }
+}
+
 @keyframes appear-bottom {
     0% { transform: translate(-50%, 120vh) }
     75% { transform: translate(-50%, -60%) }
@@ -38,3 +46,10 @@
     25% { transform: translate(-50%, -60%) }
     100% { transform: translate(-50%, 120vh) }
 }
+
+@keyframes dot-progress {
+    0% { content: ''; }
+    33% { content: '.'; }
+    66% { content: '..'; }
+    100% { content: '...'; }
+ }

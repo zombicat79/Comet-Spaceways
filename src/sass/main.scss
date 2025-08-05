@@ -23,6 +23,11 @@
 @import "components/flightpreview";
 @import "components/infopiece";
 @import "components/loader";
+@import "components/stepbar";
+@import "components/itemlist";
+@import "components/flight-segment";
+@import "components/flight-details";
+@import "components/connection-details";
 
 @import "vendors/datepicker/datepicker";
 
@@ -32,7 +37,9 @@
 @import "layout/scrollblocker";
 @import "layout/modal";
 @import "layout/aside";
+@import "layout/content-section";
 
 @import "pages/home";
 @import "pages/tickets";
+@import "pages/details";
 @import "pages/notfound";

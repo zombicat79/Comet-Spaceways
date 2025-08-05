@@ -1,7 +1,5 @@
-import { FlightSearchProvider } from '../contexts/FlightSearchContext';
-
 import Banner from './../components/Banner';
-import FlightSearch from './../components/FlightSearch';
+import FlightSearch from './../components/flight/FlightSearch';
 import Card from './../components/Card';
 import PriceTag from './../components/PriceTag';
 import Intersection from '../components/Intersection';
@@ -53,9 +51,7 @@ function Home() {
                 }}
                 background={{ img: 'space-beer', height: 'full' }}
             >
-                <FlightSearchProvider>
-                    <FlightSearch />
-                </FlightSearchProvider>
+                <FlightSearch />
             </Banner>
             <section className="homepage__offers">
                 <h3 className="homepage__offers-heading">OFFERS FROM PLANET EARTH</h3>
