@@ -1,0 +1,94 @@
+{
+    "origins": [
+        {
+            "id": 1,
+            "port": "LUN",
+            "full_name": "Moon",
+            "connection_availability": true,
+            "flight_schedule": [
+                {
+                    "destination_id": 3,
+                    "destination_port": "EEU",
+                    "destination_full_name": "Earth (Europe)",
+                    "destination_connection_availability": false,
+                    "stopover_ports": null,
+                    "frequency": {
+                        "daily": {
+                            "min": 2,
+                            "max": 4
+                        },
+                        "weekly": [1, 2, 3, 4, 5, 6, 7],
+                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    },
+                    "duration": {
+                        "years": 0,
+                        "months": 0,
+                        "days": 0,
+                        "hours": 2,
+                        "minutes": 35
+                    },
+                    "vessels": [
+                        "Spacebus NEXT",
+                        "Shooting Star D400"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "port": "CEL",
+            "full_name": "Celestia Station",
+            "connection_availability": true,
+            "flight_schedule": []
+        },
+        {
+            "id": 3,
+            "port": "EEU",
+            "full_name": "Earth (Europe)",
+            "connection_availability": false,
+            "flight_schedule": []
+        },
+        {
+            "id": 4,
+            "port": "EAS",
+            "full_name": "Earth (Asia)",
+            "connection_availability": false,
+            "flight_schedule": []
+        },
+        {
+            "id": 5,
+            "port": "EAM",
+            "full_name": "Earth (America)",
+            "connection_availability": false,
+            "flight_schedule": []
+        },
+        {
+            "id": 6,
+            "port": "MRS",
+            "full_name": "Mars",
+            "connection_availability": true,
+            "flight_schedule": []
+        },
+        {
+            "id": 7,
+            "port": "VEN",
+            "full_name": "Venus",
+            "connection_availability": false,
+            "flight_schedule": []
+        },
+        {
+            "id": 8,
+            "port": "CRS",
+            "full_name": "Ceres",
+            "connection_availability": true,
+            "flight_schedule": []
+        },
+        {
+            "id": 9,
+            "port": "TTN",
+            "full_name": "Titan",
+            "connection_availability": false,
+            "flight_schedule": []
+        }
+    ]
+}

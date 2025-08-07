@@ -6,6 +6,8 @@ import NavBar from './../components/NavBar';
 import Badge from './../components/Badge';
 import WorkInProgress from '../components/infopieces/WorkInProgress';
 
+import footerBadge from '/logos/ctsw-logo_dark_badge.png';
+
 const footerLinks = {
     top1: [
         /* { id: 1, text: 'About us', action: 'navigate', path: '', decoration: 'underline' },
@@ -39,7 +41,7 @@ function Footer() {
     return (
         <footer className="footer">
             <section className="footer__section footer__section--top">
-                <Badge imgSrc="./../logos/ctsw-logo_dark_badge.png" />
+                <Badge imgSrc={footerBadge} />
                 <NavMenu 
                     title="Who we are"
                     columns={1}
