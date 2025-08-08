@@ -4,8 +4,23 @@ import { LayoutContext } from './../contexts/LayoutContext';
 import Button from './../components/Button';
 import WorkInProgress from './infopieces/WorkInProgress';
 
+import trappistImg from '/assets/images/trappist_promotion.webp';
+
 function PromoPoster({ promoCatch, heading, body, alert, cta, promoImg }) {
     const { handlePopupLaunch } = useContext(LayoutContext);
+    const featureImg = {
+        src: '',
+        alt: ''
+    }
+
+    switch(promoImg) {
+        case 'trappist':
+            featureImg.src = trappistImg;
+            featureImg.alt = 'Trappist';
+            break;
+        default:
+            break;
+    }
 
     return (
         <div className="promoposter">
