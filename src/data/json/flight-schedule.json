@@ -10,7 +10,7 @@
                     "destination_id": 2,
                     "destination_port": "CEL",
                     "destination_full_name": "Celestia Station",
-                    "destination_connection_availability": false,
+                    "destination_connection_availability": true,
                     "stopover_ports": null,
                     "frequency": {
                         "daily": {
@@ -21,11 +21,20 @@
                         "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                     },
                     "duration": {
-                        "years": 0,
-                        "months": 0,
-                        "days": 0,
-                        "hours": 1,
-                        "minutes": 55
+                        "min": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 1,
+                            "minutes": 55
+                        }, 
+                        "max": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 2,
+                            "minutes": 13
+                        }
                     },
                     "vessels": [
                         "Shooting Star D400",
@@ -47,11 +56,20 @@
                         "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                     },
                     "duration": {
-                        "years": 0,
-                        "months": 0,
-                        "days": 0,
-                        "hours": 2,
-                        "minutes": 35
+                        "min": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 2,
+                            "minutes": 25
+                        }, 
+                        "max": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 2,
+                            "minutes": 42
+                        }
                     },
                     "vessels": [
                         "Spacebus NEXT",
@@ -73,11 +91,20 @@
                         "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                     },
                     "duration": {
-                        "years": 0,
-                        "months": 0,
-                        "days": 0,
-                        "hours": 2,
-                        "minutes": 24
+                        "min": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 2,
+                            "minutes": 24
+                        }, 
+                        "max": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 2,
+                            "minutes": 38
+                        }
                     },
                     "vessels": [
                         "Spacebus NEXT",
@@ -99,11 +126,20 @@
                         "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                     },
                     "duration": {
-                        "years": 0,
-                        "months": 0,
-                        "days": 0,
-                        "hours": 2,
-                        "minutes": 28
+                        "min": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 2,
+                            "minutes": 28
+                        },
+                        "max": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 2,
+                            "minutes": 41
+                        }
                     },
                     "vessels": [
                         "Spacebus NEXT",
@@ -115,25 +151,138 @@
                     "destination_port": "MRS",
                     "destination_full_name": "Mars",
                     "destination_connection_availability": true,
-                    "stopover_ports": null,
+                    "stopover_ports": ["CEL"],
                     "frequency": {
                         "daily": {
-                            "min": 2,
-                            "max": 3
+                            "min": 1,
+                            "max": 2
                         },
                         "weekly": [1, 5],
                         "monthly": [1, 4, 5, 6, 7, 8, 9, 12]
                     },
                     "duration": {
-                        "years": 0,
-                        "months": 0,
-                        "days": 25,
-                        "hours": 14,
-                        "minutes": 42
+                        "min": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 25,
+                            "hours": 14,
+                            "minutes": 42
+                        }, 
+                        "max": {
+                            "years": 0,
+                            "months": 1,
+                            "days": 5,
+                            "hours": 6,
+                            "minutes": 25
+                        }
                     },
                     "vessels": [
                         "Supernova Cruiser",
                         "Galaxy Jumbo W80"
+                    ]
+                },
+                {
+                    "destination_id": 7,
+                    "destination_port": "VEN",
+                    "destination_full_name": "Venus",
+                    "destination_connection_availability": false,
+                    "stopover_ports": ["CEL"],
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 1
+                        },
+                        "weekly": [2, 4, 6],
+                        "monthly": [1, 4, 5, 6, 7, 8, 9, 12]
+                    },
+                    "duration": {
+                        "min": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 19,
+                            "hours": 5,
+                            "minutes": 58
+                        },
+                        "max": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 27,
+                            "hours": 12,
+                            "minutes": 33
+                        }
+                    },
+                    "vessels": [
+                        "Supernova Cruiser",
+                        "Galaxy Jumbo W80"
+                    ]
+                },
+                {
+                    "destination_id": 8,
+                    "destination_port": "CRS",
+                    "destination_full_name": "Ceres",
+                    "destination_connection_availability": true,
+                    "stopover_ports": ["CEL", "MRS"],
+                    "frequency": {
+                        "daily": {
+                            "min": 0,
+                            "max": 0
+                        },
+                        "weekly": [],
+                        "monthly": []
+                    },
+                    "duration": {
+                        "min": {
+                            "years": 0,
+                            "months": 2,
+                            "days": 10,
+                            "hours": 1,
+                            "minutes": 22
+                        }, 
+                        "max": {
+                            "years": 0,
+                            "months": 2,
+                            "days": 23,
+                            "hours": 19,
+                            "minutes": 47
+                        }
+                    },
+                    "vessels": [
+                        "Supernova Cruiser",
+                        "Galaxy Jumbo W80"
+                    ]
+                },
+                {
+                    "destination_id": 9,
+                    "destination_port": "TTN",
+                    "destination_full_name": "Titan",
+                    "destination_connection_availability": false,
+                    "stopover_ports": ["CEL", "CRS"],
+                    "frequency": {
+                        "daily": {
+                            "min": 0,
+                            "max": 0
+                        },
+                        "weekly": [],
+                        "monthly": []
+                    },
+                    "duration": {
+                        "min": {
+                            "years": 0,
+                            "months": 6,
+                            "days": 4,
+                            "hours": 18,
+                            "minutes": 35
+                        }, 
+                        "max": {
+                            "years": 0,
+                            "months": 6,
+                            "days": 15,
+                            "hours": 10,
+                            "minutes": 28
+                        }
+                    },
+                    "vessels": [
+                        "Supernova Cruiser"
                     ]
                 }
             ]
@@ -143,7 +292,284 @@
             "port": "CEL",
             "full_name": "Celestia Station",
             "connection_availability": true,
-            "flight_schedule": []
+            "flight_schedule": [
+                {
+                    "destination_id": 1,
+                    "destination_port": "LUN",
+                    "destination_full_name": "Moon",
+                    "destination_connection_availability": true,
+                    "stopover_ports": null,
+                    "frequency": {
+                        "daily": {
+                            "min": 4,
+                            "max": 8
+                        },
+                        "weekly": [1, 2, 3, 4, 5, 6, 7],
+                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    },
+                    "duration": {
+                        "min": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 1,
+                            "minutes": 55
+                        }, 
+                        "max": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 2,
+                            "minutes": 13
+                        }
+                    },
+                    "vessels": [
+                        "Shooting Star D400",
+                        "Planet Jumper EV-1"
+                    ]
+                },
+                {
+                    "destination_id": 3,
+                    "destination_port": "EEU",
+                    "destination_full_name": "Earth (Europe)",
+                    "destination_connection_availability": false,
+                    "stopover_ports": null,
+                    "frequency": {
+                        "daily": {
+                            "min": 8,
+                            "max": 12
+                        },
+                        "weekly": [1, 2, 3, 4, 5, 6, 7],
+                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    },
+                    "duration": {
+                        "min": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 0,
+                            "minutes": 9
+                        }, 
+                        "max": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 2,
+                            "minutes": 14
+                        }
+                    },
+                    "vessels": [
+                        "Planet Jumper EV-1"
+                    ]
+                },
+                {
+                    "destination_id": 4,
+                    "destination_port": "EAS",
+                    "destination_full_name": "Earth (Asia)",
+                    "destination_connection_availability": false,
+                    "stopover_ports": null,
+                    "frequency": {
+                        "daily": {
+                            "min": 12,
+                            "max": 24
+                        },
+                        "weekly": [1, 2, 3, 4, 5, 6, 7],
+                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    },
+                    "duration": {
+                        "min": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 0,
+                            "minutes": 10
+                        }, 
+                        "max": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 2,
+                            "minutes": 15
+                        }
+                    },
+                    "vessels": [
+                        "Planet Jumper EV-1"
+                    ]
+                },
+                {
+                    "destination_id": 5,
+                    "destination_port": "EAM",
+                    "destination_full_name": "Earth (America)",
+                    "destination_connection_availability": false,
+                    "stopover_ports": null,
+                    "frequency": {
+                        "daily": {
+                            "min": 8,
+                            "max": 12
+                        },
+                        "weekly": [1, 2, 3, 4, 5, 6, 7],
+                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    },
+                    "duration": {
+                        "min": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 0,
+                            "minutes": 10
+                        }, 
+                        "max": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 0,
+                            "hours": 2,
+                            "minutes": 14
+                        }
+                    },
+                    "vessels": [
+                        "Planet Jumper EV-1"
+                    ]
+                },
+                {
+                    "destination_id": 6,
+                    "destination_port": "MRS",
+                    "destination_full_name": "Mars",
+                    "destination_connection_availability": true,
+                    "stopover_ports": ["LUN"],
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 3
+                        },
+                        "weekly": [1, 2, 3, 4, 5, 6, 7],
+                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    },
+                    "duration": {
+                        "min": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 25,
+                            "hours": 18,
+                            "minutes": 3
+                        }, 
+                        "max": {
+                            "years": 0,
+                            "months": 1,
+                            "days": 5,
+                            "hours": 10,
+                            "minutes": 46
+                        }
+                    },
+                    "vessels": [
+                        "Supernova Cruiser",
+                        "Galaxy Jumbo W80"
+                    ]
+                },
+                {
+                    "destination_id": 7,
+                    "destination_port": "VEN",
+                    "destination_full_name": "Venus",
+                    "destination_connection_availability": false,
+                    "stopover_ports": ["LUN"],
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 1
+                        },
+                        "weekly": [1, 2, 3, 4, 5, 6, 7],
+                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    },
+                    "duration": {
+                        "min": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 19,
+                            "hours": 8,
+                            "minutes": 32
+                        },
+                        "max": {
+                            "years": 0,
+                            "months": 0,
+                            "days": 27,
+                            "hours": 15,
+                            "minutes": 12
+                        }
+                    },
+                    "vessels": [
+                        "Supernova Cruiser",
+                        "Galaxy Jumbo W80"
+                    ]
+                },
+                {
+                    "destination_id": 8,
+                    "destination_port": "CRS",
+                    "destination_full_name": "Ceres",
+                    "destination_connection_availability": true,
+                    "stopover_ports": ["MRS"],
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 1
+                        },
+                        "weekly": [2, 5, 7],
+                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    },
+                    "duration": {
+                        "min": {
+                            "years": 0,
+                            "months": 2,
+                            "days": 10,
+                            "hours": 5,
+                            "minutes": 3
+                        }, 
+                        "max": {
+                            "years": 0,
+                            "months": 2,
+                            "days": 24,
+                            "hours": 20,
+                            "minutes": 47
+                        }
+                    },
+                    "vessels": [
+                        "Supernova Cruiser",
+                        "Galaxy Jumbo W80"
+                    ]
+                },
+                {
+                    "destination_id": 9,
+                    "destination_port": "TTN",
+                    "destination_full_name": "Titan",
+                    "destination_connection_availability": false,
+                    "stopover_ports": ["CRS"],
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 1
+                        },
+                        "weekly": [3, 6],
+                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    },
+                    "duration": {
+                        "min": {
+                            "years": 0,
+                            "months": 6,
+                            "days": 4,
+                            "hours": 21,
+                            "minutes": 8
+                        }, 
+                        "max": {
+                            "years": 0,
+                            "months": 6,
+                            "days": 15,
+                            "hours": 14,
+                            "minutes": 56
+                        }
+                    },
+                    "vessels": [
+                        "Supernova Cruiser"
+                    ]
+                }
+            ]
         },
         {
             "id": 3,
