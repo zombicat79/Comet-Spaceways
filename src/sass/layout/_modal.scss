@@ -32,11 +32,15 @@
 
     &__content {
         overflow: auto;
-        
+
         scrollbar-color: $color-text-dark transparent;
         scrollbar-gutter: stable both-edges;
         padding: 3rem;
         border-radius: 1rem;
+        @include respond(phone) {
+            padding-top: 8rem;
+            padding-bottom: 10rem;
+        }
 
         &--default {
             background-color: $color-environmental-accent;
@@ -105,6 +109,11 @@
         .modal__closer {
             width: 5rem;
             height: 5rem;
+            @include respond(phone) {
+                position: fixed;
+                top: 2rem;
+                right: 2rem;
+            }
         }
 
         .infopiece__text {
