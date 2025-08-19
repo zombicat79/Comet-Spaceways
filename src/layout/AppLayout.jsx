@@ -30,6 +30,7 @@ function AppLayout() {
             {renderedHeader === 'purchase' && <PurchaseHeader />}
             <Aside side="left" />
             <Outlet />
+            <Aside side="right" />
             <Footer />
             <Subfooter />
         </>
