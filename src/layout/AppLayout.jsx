@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+import { LayoutContext } from '../contexts/LayoutContext';
 import { Outlet, useLocation } from 'react-router';
 
 import ScrollBlocker from './ScrollBlocker';
@@ -7,8 +8,10 @@ import PurchaseHeader from './headers/PurchaseHeader';
 import Footer from './Footer';
 import Subfooter from './Subfooter';
 import Aside from './Aside';
+import FloatingButton from '../components/FloatingButton';
 
 function AppLayout() {
+    const { dispatch } = useContext(LayoutContext);
     const location = useLocation();
     let renderedHeader = ''
     switch(true) {
@@ -23,6 +26,15 @@ function AppLayout() {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth'});
     }, [location]);
 
+    function openAside() {
+        dispatch({ type: 'toggle/scroll' });
+        dispatch({ type: 'toggle/aside', payload: {
+            side: 'right',
+            shown: true,
+            content: <p>This is the Cart</p> 
+        }})
+    }
+
     return (
         <>
             <ScrollBlocker />
@@ -33,6 +45,9 @@ function AppLayout() {
             <Aside side="right" />
             <Footer />
             <Subfooter />
+            {renderedHeader === 'purchase' && 
+                <FloatingButton position="bottom-right" action={openAside} icon="shopping-cart" bgColor="green" outlineColor="#121212" 
+            />}
         </>
     )
 }
