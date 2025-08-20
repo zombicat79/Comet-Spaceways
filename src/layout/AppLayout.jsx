@@ -9,6 +9,7 @@ import Footer from './Footer';
 import Subfooter from './Subfooter';
 import Aside from './Aside';
 import FloatingButton from '../components/FloatingButton';
+import ShoppingCart from '../components/ShoppingCart';
 
 function AppLayout() {
     const { dispatch } = useContext(LayoutContext);
@@ -31,7 +32,7 @@ function AppLayout() {
         dispatch({ type: 'toggle/aside', payload: {
             side: 'right',
             shown: true,
-            content: <p>This is the Cart</p> 
+            content: <ShoppingCart /> 
         }})
     }
 
