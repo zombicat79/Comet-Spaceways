@@ -1786,6 +1786,11 @@ h3 {
     max-width: 3rem;
     position: relative;
     bottom: -8px; }
+  .subfooter__humanBadge {
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+    margin-top: 2rem; }
 
 .scrollblocker {
   height: 100vh;
