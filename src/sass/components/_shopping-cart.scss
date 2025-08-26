@@ -1,11 +1,9 @@
 .cart {
-    height: 100%;
 
-    &__content {
-        display: flex;
-        flex-direction: column;
+    &--void {
+        height: 100%;
 
-        &--void {
+        .cart__content {
             height: 100%;
             justify-content: center;
             position: relative;
@@ -22,6 +20,30 @@
                 p {
                     font-size: 4rem;
                 }
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 2rem;
+        margin: 0 -2rem;
+        background-color: $color-environmental-pitch;
+        color: $color-text-light;
+
+        .cart__pricing {
+            display: flex;
+            justify-content: space-between;
+
+            & span {
+                font-size: 2rem;
             }
         }
     }

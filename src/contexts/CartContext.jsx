@@ -5,6 +5,7 @@ const CartContext = createContext();
 
 function CartProvider({ children }) {
     const { state, dispatch } = useCart();
+    console.log(state)
 
     return (
         <CartContext.Provider value={{cartState: state, cartDispatcher: dispatch}}>

@@ -1,5 +1,6 @@
 import { useEffect, useContext } from 'react';
 import { LayoutContext } from '../contexts/LayoutContext';
+import { CartContext } from '../contexts/CartContext';
 import { Outlet, useLocation } from 'react-router';
 
 import ScrollBlocker from './ScrollBlocker';
@@ -13,6 +14,7 @@ import ShoppingCart from '../components/ShoppingCart';
 
 function AppLayout() {
     const { dispatch } = useContext(LayoutContext);
+    const { cartState } = useContext(CartContext);
     const location = useLocation();
     let renderedHeader = ''
     switch(true) {
@@ -47,7 +49,13 @@ function AppLayout() {
             <Footer />
             <Subfooter />
             {renderedHeader === 'purchase' && 
-                <FloatingButton position="bottom-right" action={openAside} icon="shopping-cart" bgColor="green" outlineColor="#121212" 
+                <FloatingButton 
+                    position="bottom-right" 
+                    action={openAside} 
+                    icon="shopping-cart" 
+                    bgColor="green" 
+                    outlineColor="#121212"
+                    opacity={cartState.outboundFlight || cartState.inboundFlight ? "full" : "dimmed"} 
             />}
         </>
     )
