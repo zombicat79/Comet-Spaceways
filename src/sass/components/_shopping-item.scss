@@ -1,0 +1,46 @@
+.shop-item {
+    color: $color-text-dark;
+    border: 1px solid $color-environmental-deep;
+    border-radius: 1.5rem;
+
+    &__header {
+        @include flex-row(space-between);
+        font-family: 'bai-bold';
+        background-color: $color-body-shallow;
+        padding: .5rem 2rem .5rem 1rem;
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+        border-bottom: 1px solid $color-environmental-deep;
+
+        .expansion-arrow {
+            font-size: 2rem;
+            transform: rotate(90deg);
+        }
+    }
+    &__identifier {
+        @include flex-row(space-between);
+        gap: .5rem;
+        
+        & svg {
+            width: 4rem;
+            height: 4rem;
+        }
+        &--depart svg {
+            transform: rotate(45deg);
+        }
+        &--return svg {
+            transform: rotate(-45deg);
+        }
+
+        & p {
+            font-size: 2rem;
+        }
+    }
+
+    &__total {
+        @include flex-row(space-between);
+        padding: 1rem 2rem;
+        font-family: 'bai-bold';
+        text-transform: uppercase;
+    }
+}

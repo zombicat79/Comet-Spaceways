@@ -1,7 +1,8 @@
 import { useContext } from 'react';
-import { CartContext } from '../contexts/CartContext';
+import { CartContext } from '../../contexts/CartContext';
 
-import SvgIcon from './SvgIcon';
+import CartItem from './ShoppingItem';
+import SvgIcon from '../SvgIcon';
 
 function ShoppingCart() {
     const { cartState } = useContext(CartContext);
@@ -13,7 +14,7 @@ function ShoppingCart() {
                 <main className="aside__body cart__content cart__content--void">
                     <div className="cart__img">
                         <SvgIcon design="ufo" color="#272643" />
-                        <p>???</p>
+                        <p>!?</p>
                     </div>
                     <p className="cart__message">
                         <span>Your cart is as void as the interstellar space</span>
@@ -36,7 +37,8 @@ function ShoppingCart() {
     return (
         <section className="cart">
             <main className="aside__body cart__content">
-                Dummy text
+                {cartState.outboundFlight && <CartItem isFlight={true} data={cartState.outboundFlight} />}
+                {cartState.inboundFlight && <CartItem isFlight={true} data={cartState.inboundFlight} />}
             </main>
             <footer className="cart__footer">
                 <h4 className="cart__pricing">

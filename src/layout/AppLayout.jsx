@@ -10,7 +10,7 @@ import Footer from './Footer';
 import Subfooter from './Subfooter';
 import Aside from './Aside';
 import FloatingButton from '../components/FloatingButton';
-import ShoppingCart from '../components/ShoppingCart';
+import ShoppingCart from '../components/shopping/ShoppingCart';
 
 function AppLayout() {
     const { dispatch } = useContext(LayoutContext);

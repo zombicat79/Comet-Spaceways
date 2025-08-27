@@ -13,20 +13,23 @@
 
             .cart__img {
                 svg {
-                    width: 10rem;
-                    height: 10rem;
+                    width: 15rem;
+                    height: 15rem;
+                    transform: rotate(200deg);
                 }
 
                 p {
-                    font-size: 4rem;
+                    font-size: 5rem;
                 }
             }
         }
     }
 
     &__content {
+        margin-top: 2rem;
         display: flex;
         flex-direction: column;
+        gap: 2rem;
     }
 
     &__footer {

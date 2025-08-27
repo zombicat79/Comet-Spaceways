@@ -18,6 +18,7 @@ function FlightDetails({ itemDetails, onSelect, selected }) {
 
     // FAKE FLIGHT DATA -- Remove once real data is ready to be fed
     const fakeOutboundDetails = {
+        type: 'outbound',
         origin: 'Earth (Europe)',
         destination: 'Mars',
         departureDate: "03/05/2125",
@@ -27,6 +28,7 @@ function FlightDetails({ itemDetails, onSelect, selected }) {
     }
 
     const fakeInboundDetails = {
+        type: 'inbound',
         origin: 'Mars',
         destination: 'Earth (Europe)',
         departureDate: "10/06/2125",
