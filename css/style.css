@@ -328,6 +328,11 @@ h3 {
   transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out; }
   .btn:hover {
     cursor: pointer; }
+  .btn__icon {
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    right: 3px; }
   .btn--secondary {
     color: #F5F5F5;
     background-color: #4B0082;
@@ -336,6 +341,26 @@ h3 {
       filter: brightness(1.2);
       box-shadow: 0 0 15px #00FFFF;
       transform: scale(1.05); }
+  .btn--floating {
+    width: 8rem;
+    height: 8rem;
+    position: fixed;
+    border-radius: 50%;
+    z-index: 3; }
+    .btn--floating--full {
+      opacity: 1; }
+    .btn--floating--dimmed {
+      opacity: 0.5;
+      filter: grayscale(1); }
+    .btn--floating--bottom-right {
+      bottom: 3rem;
+      right: 3rem; }
+    .btn--floating--bg-green {
+      background-color: #32CD32; }
+    .btn--floating--outline-black {
+      border: 3px solid #121212; }
+    .btn--floating--outline-white {
+      border: 3px solid #F5F5F5; }
 
 .navlink {
   position: relative;
@@ -1223,40 +1248,6 @@ h3 {
         padding-bottom: 2rem; }
       .flight-details .routing__figure .routing__duration {
         padding-top: 2rem; }
-    .flight-details .routing__diagram {
-      position: relative; }
-      .flight-details .routing__diagram .routing__endpoint {
-        position: absolute;
-        top: -4px;
-        width: 1rem;
-        height: 1rem;
-        border-radius: 50%;
-        background-color: #4B0082; }
-        @media screen and (max-width: 600px) {
-          .flight-details .routing__diagram .routing__endpoint {
-            top: -3px; } }
-        @media screen and (min-width: 2000px) {
-          .flight-details .routing__diagram .routing__endpoint {
-            top: -5px; } }
-        @media screen and (min-width: 2800px) {
-          .flight-details .routing__diagram .routing__endpoint {
-            top: -7px; } }
-        .flight-details .routing__diagram .routing__endpoint--left {
-          left: 0; }
-        .flight-details .routing__diagram .routing__endpoint--right {
-          right: 0; }
-      .flight-details .routing__diagram .routing__line {
-        height: 2px;
-        background-color: #4B0082; }
-      .flight-details .routing__diagram .routing__arrow {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 3rem;
-        height: 3rem;
-        transform: translate(-50%, -50%); }
-        .flight-details .routing__diagram .routing__arrow svg {
-          transform: rotate(90deg); }
     .flight-details .routing__mode {
       text-transform: uppercase; }
       @media screen and (max-width: 768px) {
@@ -1400,6 +1391,144 @@ h3 {
       .connection__summary {
         font-size: 1.2em;
         margin-top: 4rem; } }
+
+.cart--void {
+  height: 100%; }
+  .cart--void .cart__content {
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    bottom: 3rem;
+    padding: 2rem;
+    gap: 3rem; }
+    .cart--void .cart__content .cart__img svg {
+      width: 15rem;
+      height: 15rem;
+      transform: rotate(200deg); }
+    .cart--void .cart__content .cart__img p {
+      font-size: 5rem; }
+
+.cart__content {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; }
+
+.cart__footer {
+  position: fixed;
+  bottom: 0;
+  width: 40rem;
+  padding: 2rem;
+  margin: 0 -2rem;
+  background-color: #121212;
+  color: #F5F5F5; }
+  @media screen and (max-width: 600px) {
+    .cart__footer {
+      width: 100%; } }
+  .cart__footer .cart__pricing {
+    display: flex;
+    justify-content: space-between; }
+    .cart__footer .cart__pricing span {
+      font-size: 2rem; }
+
+.shop-item {
+  color: #272643;
+  border: 2px solid #4B0082;
+  border-radius: 1.5rem; }
+  .shop-item:last-child {
+    margin-bottom: 6rem; }
+  .shop-item__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'bai-bold';
+    background-color: #bae8e8;
+    padding: .5rem 2rem .5rem 1rem !important;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    border-bottom: 2px solid #4B0082; }
+    .shop-item__header .expansion-arrow {
+      font-size: 2rem;
+      transform: rotate(90deg); }
+  .shop-item__identifier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem; }
+    .shop-item__identifier svg {
+      width: 4rem;
+      height: 4rem; }
+    .shop-item__identifier--depart svg {
+      transform: rotate(45deg); }
+    .shop-item__identifier--return svg {
+      transform: rotate(-45deg); }
+    .shop-item__identifier p {
+      font-size: 2rem; }
+  .shop-item__routing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: stretch;
+    gap: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0 !important; }
+  .shop-item__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00FFFF;
+    padding: 1rem 2rem !important;
+    font-family: 'bai-bold';
+    text-transform: uppercase;
+    border-top: 2px solid #4B0082;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem; }
+
+.routing__infopanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .routing__infopanel span {
+    font-size: 1.8rem;
+    font-family: 'bai-bold';
+    color: #4B0082; }
+
+.routing__diagram {
+  position: relative; }
+  .routing__diagram .routing__endpoint {
+    position: absolute;
+    top: -4px;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #4B0082; }
+    @media screen and (max-width: 600px) {
+      .routing__diagram .routing__endpoint {
+        top: -3px; } }
+    @media screen and (min-width: 2000px) {
+      .routing__diagram .routing__endpoint {
+        top: -5px; } }
+    @media screen and (min-width: 2800px) {
+      .routing__diagram .routing__endpoint {
+        top: -7px; } }
+    .routing__diagram .routing__endpoint--left {
+      left: 0; }
+    .routing__diagram .routing__endpoint--right {
+      right: 0; }
+  .routing__diagram .routing__line {
+    height: 2px;
+    background-color: #4B0082; }
+  .routing__diagram .routing__arrow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 3rem;
+    height: 3rem;
+    transform: translate(-50%, -50%); }
+    .routing__diagram .routing__arrow svg {
+      transform: rotate(90deg); }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
@@ -1748,6 +1877,11 @@ h3 {
     max-width: 3rem;
     position: relative;
     bottom: -8px; }
+  .subfooter__humanBadge {
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+    margin-top: 2rem; }
 
 .scrollblocker {
   height: 100vh;
@@ -1838,6 +1972,8 @@ h3 {
 
 .aside {
   height: 100vh;
+  font-family: 'bai-medium';
+  color: #272643;
   background-color: #F5F5F5;
   position: fixed;
   top: 0;
@@ -1845,10 +1981,13 @@ h3 {
   max-width: 40rem;
   padding: 2rem;
   z-index: 1100;
+  overflow: auto;
   box-shadow: 0 2.5px 100px 5px #4B0082; }
   @media screen and (max-width: 600px) {
     .aside {
       max-width: initial; } }
+  .aside section {
+    padding: 0; }
   .aside--left {
     left: -150%; }
     .aside--left--on {
@@ -1880,7 +2019,8 @@ h3 {
     align-items: center; }
   .aside__closer {
     width: 3rem;
-    height: 3rem; }
+    height: 3rem;
+    z-index: 1101; }
     @media screen and (max-width: 600px) {
       .aside__closer {
         width: 4rem;

@@ -1,0 +1,56 @@
+.cart {
+
+    &--void {
+        height: 100%;
+
+        .cart__content {
+            height: 100%;
+            justify-content: center;
+            position: relative;
+            bottom: 3rem;
+            padding: 2rem;
+            gap: 3rem;
+
+            .cart__img {
+                svg {
+                    width: 15rem;
+                    height: 15rem;
+                    transform: rotate(200deg);
+                }
+
+                p {
+                    font-size: 5rem;
+                }
+            }
+        }
+    }
+
+    &__content {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__footer {
+        position: fixed;
+        bottom: 0;
+        width: 40rem;
+        padding: 2rem;
+        margin: 0 -2rem;
+        background-color: $color-environmental-pitch;
+        color: $color-text-light;
+        @include respond(phone) {
+            width: 100%;
+        }
+
+        .cart__pricing {
+            display: flex;
+            justify-content: space-between;
+
+            & span {
+                font-size: 2rem;
+            }
+        }
+    }
+}

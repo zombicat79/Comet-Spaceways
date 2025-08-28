@@ -32,4 +32,11 @@
         position: relative;
         bottom: -8px;
     }
+
+    &__humanBadge {
+        width: 100%;
+        max-width: 30rem;
+        height: auto;
+        margin-top: 2rem;
+    }
 }
