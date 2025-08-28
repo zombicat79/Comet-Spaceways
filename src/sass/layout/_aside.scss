@@ -9,9 +9,14 @@
     max-width: 40rem;
     padding: 2rem;
     z-index: 1100;
+    overflow: auto;
     box-shadow: 0 2.5px 100px 5px $color-environmental-accent;
     @include respond(phone) {
         max-width: initial;
+    }
+
+    section {
+        padding: 0;
     }
 
     &--left {

@@ -1248,40 +1248,6 @@ h3 {
         padding-bottom: 2rem; }
       .flight-details .routing__figure .routing__duration {
         padding-top: 2rem; }
-    .flight-details .routing__diagram {
-      position: relative; }
-      .flight-details .routing__diagram .routing__endpoint {
-        position: absolute;
-        top: -4px;
-        width: 1rem;
-        height: 1rem;
-        border-radius: 50%;
-        background-color: #4B0082; }
-        @media screen and (max-width: 600px) {
-          .flight-details .routing__diagram .routing__endpoint {
-            top: -3px; } }
-        @media screen and (min-width: 2000px) {
-          .flight-details .routing__diagram .routing__endpoint {
-            top: -5px; } }
-        @media screen and (min-width: 2800px) {
-          .flight-details .routing__diagram .routing__endpoint {
-            top: -7px; } }
-        .flight-details .routing__diagram .routing__endpoint--left {
-          left: 0; }
-        .flight-details .routing__diagram .routing__endpoint--right {
-          right: 0; }
-      .flight-details .routing__diagram .routing__line {
-        height: 2px;
-        background-color: #4B0082; }
-      .flight-details .routing__diagram .routing__arrow {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 3rem;
-        height: 3rem;
-        transform: translate(-50%, -50%); }
-        .flight-details .routing__diagram .routing__arrow svg {
-          transform: rotate(90deg); }
     .flight-details .routing__mode {
       text-transform: uppercase; }
       @media screen and (max-width: 768px) {
@@ -1449,13 +1415,16 @@ h3 {
   gap: 2rem; }
 
 .cart__footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 40rem;
   padding: 2rem;
   margin: 0 -2rem;
   background-color: #121212;
   color: #F5F5F5; }
+  @media screen and (max-width: 600px) {
+    .cart__footer {
+      width: 100%; } }
   .cart__footer .cart__pricing {
     display: flex;
     justify-content: space-between; }
@@ -1464,18 +1433,20 @@ h3 {
 
 .shop-item {
   color: #272643;
-  border: 1px solid #0B3D91;
+  border: 2px solid #4B0082;
   border-radius: 1.5rem; }
+  .shop-item:last-child {
+    margin-bottom: 6rem; }
   .shop-item__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'bai-bold';
     background-color: #bae8e8;
-    padding: .5rem 2rem .5rem 1rem;
+    padding: .5rem 2rem .5rem 1rem !important;
     border-top-left-radius: 1.5rem;
     border-top-right-radius: 1.5rem;
-    border-bottom: 1px solid #0B3D91; }
+    border-bottom: 2px solid #4B0082; }
     .shop-item__header .expansion-arrow {
       font-size: 2rem;
       transform: rotate(90deg); }
@@ -1493,13 +1464,71 @@ h3 {
       transform: rotate(-45deg); }
     .shop-item__identifier p {
       font-size: 2rem; }
+  .shop-item__routing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: stretch;
+    gap: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0 !important; }
   .shop-item__total {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    background-color: #00FFFF;
+    padding: 1rem 2rem !important;
     font-family: 'bai-bold';
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    border-top: 2px solid #4B0082;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem; }
+
+.routing__infopanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .routing__infopanel span {
+    font-size: 1.8rem;
+    font-family: 'bai-bold';
+    color: #4B0082; }
+
+.routing__diagram {
+  position: relative; }
+  .routing__diagram .routing__endpoint {
+    position: absolute;
+    top: -4px;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #4B0082; }
+    @media screen and (max-width: 600px) {
+      .routing__diagram .routing__endpoint {
+        top: -3px; } }
+    @media screen and (min-width: 2000px) {
+      .routing__diagram .routing__endpoint {
+        top: -5px; } }
+    @media screen and (min-width: 2800px) {
+      .routing__diagram .routing__endpoint {
+        top: -7px; } }
+    .routing__diagram .routing__endpoint--left {
+      left: 0; }
+    .routing__diagram .routing__endpoint--right {
+      right: 0; }
+  .routing__diagram .routing__line {
+    height: 2px;
+    background-color: #4B0082; }
+  .routing__diagram .routing__arrow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 3rem;
+    height: 3rem;
+    transform: translate(-50%, -50%); }
+    .routing__diagram .routing__arrow svg {
+      transform: rotate(90deg); }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
@@ -1952,10 +1981,13 @@ h3 {
   max-width: 40rem;
   padding: 2rem;
   z-index: 1100;
+  overflow: auto;
   box-shadow: 0 2.5px 100px 5px #4B0082; }
   @media screen and (max-width: 600px) {
     .aside {
       max-width: initial; } }
+  .aside section {
+    padding: 0; }
   .aside--left {
     left: -150%; }
     .aside--left--on {

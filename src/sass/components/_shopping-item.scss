@@ -1,16 +1,20 @@
 .shop-item {
     color: $color-text-dark;
-    border: 1px solid $color-environmental-deep;
+    border: 2px solid $color-environmental-accent;
     border-radius: 1.5rem;
+
+    &:last-child {
+        margin-bottom: 6rem;
+    }
 
     &__header {
         @include flex-row(space-between);
         font-family: 'bai-bold';
         background-color: $color-body-shallow;
-        padding: .5rem 2rem .5rem 1rem;
+        padding: .5rem 2rem .5rem 1rem !important;
         border-top-left-radius: 1.5rem;
         border-top-right-radius: 1.5rem;
-        border-bottom: 1px solid $color-environmental-deep;
+        border-bottom: 2px solid $color-environmental-accent;
 
         .expansion-arrow {
             font-size: 2rem;
@@ -37,10 +41,23 @@
         }
     }
 
+    &__routing {
+        @include flex-column(center);
+        align-items: stretch;
+        gap: 1.5rem;
+        width: 90%;
+        margin: 0 auto;
+        padding: 2rem 0 !important;
+    }
+
     &__total {
         @include flex-row(space-between);
-        padding: 1rem 2rem;
+        background-color: $color-highlight-light;
+        padding: 1rem 2rem !important;
         font-family: 'bai-bold';
         text-transform: uppercase;
+        border-top: 2px solid $color-environmental-accent;
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
     }
 }

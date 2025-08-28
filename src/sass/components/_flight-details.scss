@@ -134,54 +134,6 @@
             }
         }
 
-        &__diagram {
-            position: relative;
-
-            .routing__endpoint {
-                position: absolute;
-                top: -4px;
-                width: 1rem;
-                height: 1rem;
-                border-radius: 50%;
-                background-color: $color-environmental-accent;
-                @include respond(phone) {
-                    top: -3px;
-                }
-                @include respond(big-screen) {
-                    top: -5px;
-                }
-                @include respond(huge-screen) {
-                    top: -7px;
-                }
-
-                &--left {
-                    left: 0;
-                }
-
-                &--right {
-                    right: 0;
-                }
-            }
-
-            .routing__line {
-                height: 2px;
-                background-color: $color-environmental-accent;
-            }
-
-            .routing__arrow {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                width: 3rem;
-                height: 3rem;
-                transform: translate(-50%, -50%);
-        
-                svg {
-                    transform: rotate(90deg);
-                }
-            }
-        }
-
         &__mode {
             text-transform: uppercase;
 

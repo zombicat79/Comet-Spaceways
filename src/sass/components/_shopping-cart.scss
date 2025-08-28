@@ -33,13 +33,16 @@
     }
 
     &__footer {
-        position: absolute;
+        position: fixed;
         bottom: 0;
-        width: 100%;
+        width: 40rem;
         padding: 2rem;
         margin: 0 -2rem;
         background-color: $color-environmental-pitch;
         color: $color-text-light;
+        @include respond(phone) {
+            width: 100%;
+        }
 
         .cart__pricing {
             display: flex;

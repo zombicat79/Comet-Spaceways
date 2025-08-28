@@ -23,6 +23,8 @@ function FlightDetails({ itemDetails, onSelect, selected }) {
         destination: 'Mars',
         departureDate: "03/05/2125",
         departureTime: "14:32h",
+        arrivalDate: "10/06/2125",
+        arrivalTime: "08:15h",
         mode: 'direct',
         price: 347.25,
     }
@@ -31,8 +33,10 @@ function FlightDetails({ itemDetails, onSelect, selected }) {
         type: 'inbound',
         origin: 'Mars',
         destination: 'Earth (Europe)',
-        departureDate: "10/06/2125",
+        departureDate: "11/07/2125",
         departureTime: "08:15h",
+        arrivalDate: "13/08/2125",
+        arrivalTime: "19:24h",
         mode: 'stopover',
         price: 412.08
     }
