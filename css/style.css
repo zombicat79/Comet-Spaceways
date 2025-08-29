@@ -328,6 +328,9 @@ h3 {
   transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out; }
   .btn:hover {
     cursor: pointer; }
+  .btn:disabled {
+    filter: grayscale(1);
+    pointer-events: none; }
   .btn__icon {
     width: 3rem;
     height: 3rem;
@@ -339,6 +342,17 @@ h3 {
     border: 1px solid #00FFFF; }
     .btn--secondary:hover {
       filter: brightness(1.2);
+      box-shadow: 0 0 15px #00FFFF;
+      transform: scale(1.05); }
+  .btn--primary {
+    background: #00FFFF;
+    color: #272643;
+    border: none;
+    padding: 1.2rem 2.4rem;
+    font-size: 1.6rem;
+    border-radius: 0.8rem;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out; }
+    .btn--primary:hover {
       box-shadow: 0 0 15px #00FFFF;
       transform: scale(1.05); }
   .btn--floating {
@@ -775,6 +789,15 @@ h3 {
       .intersection--cosmic__star {
         width: 140px;
         height: 140px; } }
+
+.ribbon {
+  padding: 8rem 0; }
+  .ribbon--transparent {
+    background-color: transparent; }
+  .ribbon--accent {
+    background-color: #4B0082; }
+  .ribbon--pitch {
+    background-color: #121212; }
 
 .promoposter {
   display: flex;
@@ -2186,6 +2209,13 @@ h3 {
   background-position: center; }
   .tickets .content-section:first-child {
     padding-top: 27rem; }
+  .tickets .btn--primary {
+    width: 40rem;
+    position: relative;
+    bottom: 3rem; }
+    @media screen and (max-width: 360px) {
+      .tickets .btn--primary {
+        width: 30rem; } }
 
 .details {
   position: relative;

@@ -11,4 +11,14 @@
     .content-section:first-child {
         padding-top: 27rem;
     }
+
+    .btn--primary {
+        width: 40rem;
+        position: relative;
+        bottom: 3rem;
+
+        @include respond(phone-small) {
+            width: 30rem;
+        }
+    }
 }
