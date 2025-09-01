@@ -1,11 +1,13 @@
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
+import { FlightSearchContext } from '../../contexts/FlightSearchContext'
 
-import CartItem from './ShoppingItem';
+import ShoppingItem from './ShoppingItem';
 import SvgIcon from '../SvgIcon';
 
 function ShoppingCart() {
     const { cartState } = useContext(CartContext);
+    const { flightSearchState } = useContext(FlightSearchContext);
     console.log(cartState);
 
     if (!cartState.outboundFlight && !cartState.inboundFlight) {
@@ -37,8 +39,24 @@ function ShoppingCart() {
     return (
         <section className="cart">
             <main className="aside__body cart__content">
-                {cartState.outboundFlight && <CartItem isFlight={true} data={cartState.outboundFlight} />}
-                {cartState.inboundFlight && <CartItem isFlight={true} data={cartState.inboundFlight} />}
+                {cartState.outboundFlight && <ShoppingItem isFlight={true} data={cartState.outboundFlight} />}
+                {flightSearchState.searchScope === '🔄 Round Trip' && !cartState.outboundFlight &&
+                    <>
+                        <div className="message-box message-box--alert">
+                            <p>* <span className="highlight">outbound</span> flight still unselected *</p>
+                        </div>
+                        <hr className="separator separator--dark" />
+                    </>
+                }
+                {cartState.inboundFlight && <ShoppingItem isFlight={true} data={cartState.inboundFlight} />}
+                {flightSearchState.searchScope === '🔄 Round Trip' && !cartState.inboundFlight && 
+                    <>
+                        <hr className="separator separator--dark" />
+                        <div className="message-box message-box--alert">
+                            <p>* <span className="highlight">inbound</span> flight still not unselected *</p>
+                        </div>
+                    </>
+                }
             </main>
             <footer className="cart__footer">
                 <h4 className="cart__pricing">

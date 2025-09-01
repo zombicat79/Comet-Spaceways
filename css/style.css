@@ -316,6 +316,21 @@ h3 {
 .scrollblock {
   overflow: hidden; }
 
+.separator {
+  width: 90%;
+  margin: 0 auto; }
+  .separator--dark {
+    border-bottom: 1px dashed #272643; }
+
+.message-box {
+  border-radius: 1.5rem;
+  padding: 1rem; }
+  .message-box--alert {
+    background-color: #FF4500;
+    color: #F5F5F5; }
+  .message-box .highlight {
+    text-transform: uppercase; }
+
 .btn {
   background-color: #00FFFF;
   color: #272643;
@@ -330,7 +345,8 @@ h3 {
     cursor: pointer; }
   .btn:disabled {
     filter: grayscale(1);
-    pointer-events: none; }
+    opacity: 0.5;
+    cursor: not-allowed; }
   .btn__icon {
     width: 3rem;
     height: 3rem;
@@ -355,6 +371,9 @@ h3 {
     .btn--primary:hover {
       box-shadow: 0 0 15px #00FFFF;
       transform: scale(1.05); }
+      .btn--primary:hover:disabled {
+        box-shadow: none;
+        transform: scale(1); }
   .btn--floating {
     width: 8rem;
     height: 8rem;

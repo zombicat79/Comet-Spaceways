@@ -15,3 +15,26 @@
 .scrollblock {
     overflow: hidden;
 }
+
+.separator {
+    width: 90%;
+    margin: 0 auto;
+
+    &--dark {
+        border-bottom: 1px dashed #272643;
+    }
+}
+
+.message-box {
+    border-radius: 1.5rem;
+    padding: 1rem;
+
+    &--alert {
+        background-color: $color-highlight-extreme;
+        color: $color-text-light;
+    }
+
+    .highlight {
+        text-transform: uppercase;
+    }
+}
