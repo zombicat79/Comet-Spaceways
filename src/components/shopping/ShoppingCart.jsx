@@ -16,14 +16,15 @@ function ShoppingCart() {
                 <main className="aside__body cart__content cart__content--void">
                     <div className="cart__img">
                         <SvgIcon design="ufo" color="#272643" />
-                        <p>!?</p>
+                        <p>⁉️</p>
                     </div>
-                    <p className="cart__message">
-                        <span>Your cart is as void as the interstellar space</span>
-                        <br/>
-                        <span>Pick some flights and...</span>
-                    </p>
-                    <h2 className="cart_motto">Go conquer the universe!</h2>
+                    <div className="cart__message">
+                        <div className="message-box message-box--alert">
+                            <p>Your cart is as <span className="highlight">void</span> as the interstellar space</p>
+                        </div>
+                        <p>Pick some flights and...</p>
+                        <h2 className="cart__motto">Go conquer the universe!</h2>
+                    </div>
                 </main>
             </section>
         )
@@ -41,21 +42,21 @@ function ShoppingCart() {
             <main className="aside__body cart__content">
                 {cartState.outboundFlight && <ShoppingItem isFlight={true} data={cartState.outboundFlight} />}
                 {flightSearchState.searchScope === '🔄 Round Trip' && !cartState.outboundFlight &&
-                    <>
+                    <div className="cart__message">
                         <div className="message-box message-box--alert">
                             <p>* <span className="highlight">outbound</span> flight still unselected *</p>
                         </div>
                         <hr className="separator separator--dark" />
-                    </>
+                    </div>
                 }
                 {cartState.inboundFlight && <ShoppingItem isFlight={true} data={cartState.inboundFlight} />}
                 {flightSearchState.searchScope === '🔄 Round Trip' && !cartState.inboundFlight && 
-                    <>
+                    <div className="cart__message">
                         <hr className="separator separator--dark" />
                         <div className="message-box message-box--alert">
-                            <p>* <span className="highlight">inbound</span> flight still not unselected *</p>
+                            <p>* <span className="highlight">inbound</span> flight still unselected *</p>
                         </div>
-                    </>
+                    </div>
                 }
             </main>
             <footer className="cart__footer">
