@@ -1,5 +1,7 @@
 .aside {
     height: 100vh;
+    font-family: 'bai-medium';
+    color: $color-text-dark;
     background-color: $color-text-light;
     position: fixed;
     top: 0;
@@ -12,6 +14,10 @@
     @include respond(phone) {
         max-width: initial;
         padding-bottom: 10rem;
+    }
+
+    section {
+        padding: 0;
     }
 
     &--left {
@@ -51,6 +57,7 @@
     &__closer {
         width: 3rem;
         height: 3rem;
+        z-index: 1101;
         @include respond(phone) {
             width: 4rem;
             height: 4rem;

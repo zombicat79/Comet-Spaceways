@@ -13,6 +13,19 @@
         cursor: pointer;
     }
 
+    &:disabled {
+        filter: grayscale(1);
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    &__icon {
+        width: 3rem;
+        height: 3rem;
+        position: relative;
+        right: 3px;
+    }
+
     &--secondary {
         color: $color-text-light;
         background-color: $color-environmental-accent;
@@ -21,6 +34,53 @@
         &:hover {
             filter: brightness(1.2);
             @include primary-response;
+        }
+    }
+
+    &--primary {
+        @include primary-appearance;
+
+        &:hover {
+            @include primary-response;
+
+            &:disabled {
+                box-shadow: none;
+                transform: scale(1);
+            }
+        }
+    }
+
+    &--floating {
+        width: 8rem;
+        height: 8rem;
+        position: fixed;
+        border-radius: 50%;
+        z-index: 3;
+
+        &--full {
+            opacity: 1;
+        }
+
+        &--dimmed {
+            opacity: 0.5;
+            filter: grayscale(1)
+        }
+
+        &--bottom-right {
+            bottom: 3rem;
+            right: 3rem;
+        }
+
+        &--bg-green {
+            background-color: $color-highlight-accent;
+        }
+
+        &--outline-black {
+            border: 3px solid $color-environmental-pitch;
+        }
+
+        &--outline-white {
+            border: 3px solid $color-text-light;
         }
     }
 }
