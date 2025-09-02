@@ -520,6 +520,9 @@ h3 {
   border: 1px solid #2c698d;
   border-radius: 4px;
   transition: filter 1s; }
+  @media screen and (max-width: 600px) {
+    .selector {
+      gap: 0.5rem; } }
   .selector:hover {
     cursor: pointer; }
   .selector--disabled {
@@ -534,6 +537,9 @@ h3 {
   .selector__id {
     color: inherit;
     font-size: 1rem; }
+    @media screen and (max-width: 600px) {
+      .selector__id {
+        font-size: 1.75rem; } }
   .selector__value {
     color: #272643;
     font-family: 'titillium-bold';
@@ -1023,7 +1029,7 @@ h3 {
     z-index: 0; }
 
 .infopiece {
-  height: 100%; }
+  overflow: auto; }
   .infopiece__icon {
     width: 35%; }
   .infopiece__content {
@@ -1418,7 +1424,7 @@ h3 {
         font-size: 1.2em;
         margin: 4.5rem 0 4rem; } }
   .connection__summary {
-    width: 100%;
+    width: 95%;
     font-size: .8em;
     font-family: 'poppins-bold';
     color: #272643;
@@ -1983,6 +1989,10 @@ h3 {
     scrollbar-gutter: stable both-edges;
     padding: 3rem;
     border-radius: 1rem; }
+    @media screen and (max-width: 600px) {
+      .modal__content {
+        padding-top: 8rem;
+        padding-bottom: 10rem; } }
     .modal__content--default {
       background-color: #4B0082;
       border: 2px solid #FF4500;
@@ -2026,6 +2036,11 @@ h3 {
     .modal__content .modal__closer {
       width: 5rem;
       height: 5rem; }
+      @media screen and (max-width: 600px) {
+        .modal__content .modal__closer {
+          position: fixed;
+          top: 2rem;
+          right: 2rem; } }
     .modal__content .infopiece__text {
       font-family: 'poppins-regular'; }
 
@@ -2044,9 +2059,13 @@ h3 {
   box-shadow: 0 2.5px 100px 5px #4B0082; }
   @media screen and (max-width: 600px) {
     .aside {
-      max-width: initial; } }
+      max-width: initial;
+      padding-bottom: 10rem;
+    }
+  }
   .aside section {
-    padding: 0; }
+    padding: 0;
+  }
   .aside--left {
     left: -150%; }
     .aside--left--on {
@@ -2076,6 +2095,11 @@ h3 {
     display: flex;
     justify-content: flex-end;
     align-items: center; }
+    @media screen and (max-width: 600px) {
+      .aside__header {
+        position: sticky;
+        right: 2rem;
+        top: 2rem; } }
   .aside__closer {
     width: 3rem;
     height: 3rem;
@@ -2138,8 +2162,8 @@ h3 {
     z-index: -1; }
   .aside__motto {
     font-style: italic;
-    position: absolute;
-    bottom: 2rem;
+    text-align: right;
+    margin-top: 2rem;
     right: 3rem;
     filter: opacity(0.5);
     z-index: -1; }
@@ -2214,6 +2238,9 @@ h3 {
   .homepage .banner__msg {
     top: initial;
     bottom: 3rem; }
+    @media screen and (max-width: 600px) {
+      .homepage .banner__msg {
+        bottom: -2rem; } }
     @media screen and (max-width: 360px) {
       .homepage .banner__msg {
         display: none; } }

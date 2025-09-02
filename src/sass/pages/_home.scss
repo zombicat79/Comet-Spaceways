@@ -30,6 +30,10 @@
             top: initial;
             bottom: 3rem;
 
+            @include respond(phone) {
+                bottom: -2rem;
+              }
+
             @include respond(phone-small) {
               display: none;
             }

@@ -13,6 +13,7 @@
     box-shadow: 0 2.5px 100px 5px $color-environmental-accent;
     @include respond(phone) {
         max-width: initial;
+        padding-bottom: 10rem;
     }
 
     section {
@@ -46,6 +47,11 @@
     &__header {
         margin-bottom: 1rem;
         @include flex-row(flex-end);
+        @include respond(phone) {
+            position: sticky;
+            right: 2rem;
+            top: 2rem;
+        }
     }
 
     &__closer {
@@ -130,8 +136,8 @@
 
     &__motto {
         font-style: italic;
-        position: absolute;
-        bottom: 2rem;
+        text-align: right;
+        margin-top: 2rem;
         right: 3rem;
         filter: opacity(0.5);
         z-index: -1;
