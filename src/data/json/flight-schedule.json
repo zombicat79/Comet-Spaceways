@@ -262,12 +262,11 @@
                         { "name": "CS1699", "deparure_time": "19:40" }
                     ],
                     "intermediate_ports": [
+                        ["CEL", "VEN"],
                         ["CEL"],
                         ["EEU"],
                         ["EAM"],
-                        ["EAS"],
-                        ["CEL", "VEN"],
-                        ["CEL", "CRS"]
+                        ["EAS"]
                     ],
                     "shared_operation": ["SpaceX", "Roscosmos Beyond", "Euroespace Voyage", "Milkyflight", "Red Star Spacelines"]
                 },
@@ -343,9 +342,7 @@
                     "destination_id": 1,
                     "destination_port": "LUN",
                     "destination_full_name": "Moon",
-                    "destination_connection_availability": true,
                     "direct_flight": true,
-                    "intermediate_ports": ["EEU", "EAS", "EAM"],
                     "frequency": {
                         "daily": {
                             "min": 4,
@@ -356,6 +353,7 @@
                     },
                     "duration": {
                         "min": {
+                            "overall_seconds": 6900,
                             "years": 0,
                             "months": 0,
                             "days": 0,
@@ -363,6 +361,7 @@
                             "minutes": 55
                         }, 
                         "max": {
+                            "overall_seconds": 7980,
                             "years": 0,
                             "months": 0,
                             "days": 0,
@@ -374,15 +373,34 @@
                         "Shooting Star D400",
                         "Spacebus NEXT",
                         "Planet Jumper EV-1"
-                    ]
+                    ],
+                    "price": {
+                        "min": 12,
+                        "max": 30,
+                        "rounding_options": [25, 55, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "name": "CS1250", "deparure_time": "00:55" },
+                        { "name": "CS1221", "deparure_time": "9:00" },
+                        { "name": "CS1234", "deparure_time": "10:15" },
+                        { "name": "CS1252", "deparure_time": "11:05" },
+                        { "name": "CS1278", "deparure_time": "13:20" },
+                        { "name": "CS1293", "deparure_time": "15:00" },
+                        { "name": "CS1207", "deparure_time": "19:30" },
+                        { "name": "CS1229", "deparure_time": "22:05" }
+                    ],
+                    "intermediate_ports": [
+                        ["EEU"],
+                        ["EAS"],
+                        ["EAM"]
+                    ],
+                    "shared_operation": null
                 },
                 {
                     "destination_id": 3,
                     "destination_port": "EEU",
                     "destination_full_name": "Earth (Europe)",
-                    "destination_connection_availability": true,
                     "direct_flight": true,
-                    "intermediate_ports": ["LUN"],
                     "frequency": {
                         "daily": {
                             "min": 8,
@@ -393,6 +411,7 @@
                     },
                     "duration": {
                         "min": {
+                            "overall_seconds": 540,
                             "years": 0,
                             "months": 0,
                             "days": 0,
@@ -400,24 +419,44 @@
                             "minutes": 9
                         }, 
                         "max": {
+                            "overall_seconds": 840,
                             "years": 0,
                             "months": 0,
                             "days": 0,
-                            "hours": 2,
+                            "hours": 0,
                             "minutes": 14
                         }
                     },
                     "vessels": [
                         "Planet Jumper EV-1"
-                    ]
+                    ],
+                    "price": {
+                        "min": 5,
+                        "max": 14,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "name": "CS3242", "deparure_time": "00:30" },
+                        { "name": "CS3278", "deparure_time": "02:20" },
+                        { "name": "CS3266", "deparure_time": "04:35" },
+                        { "name": "CS3222", "deparure_time": "06:15" },
+                        { "name": "CS3286", "deparure_time": "08:45" },
+                        { "name": "CS3214", "deparure_time": "10:00" },
+                        { "name": "CS3216", "deparure_time": "12:20" },
+                        { "name": "CS3228", "deparure_time": "14:45" },
+                        { "name": "CS3248", "deparure_time": "16:25" },
+                        { "name": "CS3252", "deparure_time": "18:15" },
+                        { "name": "CS3254", "deparure_time": "20:30" },
+                        { "name": "CS3288", "deparure_time": "22:55" }
+                    ],
+                    "intermediate_ports": null,
+                    "shared_operation": null
                 },
                 {
                     "destination_id": 4,
                     "destination_port": "EAS",
                     "destination_full_name": "Earth (Asia)",
-                    "destination_connection_availability": true,
                     "direct_flight": true,
-                    "intermediate_ports": ["LUN"],
                     "frequency": {
                         "daily": {
                             "min": 12,
@@ -428,6 +467,7 @@
                     },
                     "duration": {
                         "min": {
+                            "overall_seconds": 600,
                             "years": 0,
                             "months": 0,
                             "days": 0,
@@ -435,25 +475,57 @@
                             "minutes": 10
                         }, 
                         "max": {
+                            "overall_seconds": 900,
                             "years": 0,
                             "months": 0,
                             "days": 0,
-                            "hours": 2,
+                            "hours": 0,
                             "minutes": 15
                         }
                     },
                     "vessels": [
                         "Planet Jumper EV-1",
                         "Space Elevator"
-                    ]
+                    ],
+                    "price": {
+                        "min": 5,
+                        "max": 12,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "name": "CS4222", "deparure_time": "00:40" },
+                        { "name": "CS4258", "deparure_time": "01:35" },
+                        { "name": "CS4264", "deparure_time": "02:50" },
+                        { "name": "CS4262", "deparure_time": "03:15" },
+                        { "name": "CS4260", "deparure_time": "04:00" },
+                        { "name": "CS4252", "deparure_time": "05:10" },
+                        { "name": "CS4276", "deparure_time": "06:05" },
+                        { "name": "CS4238", "deparure_time": "07:15" },
+                        { "name": "CS4236", "deparure_time": "08:00" },
+                        { "name": "CS4216", "deparure_time": "09:20" },
+                        { "name": "CS4254", "deparure_time": "10:35" },
+                        { "name": "CS4288", "deparure_time": "11:35" },
+                        { "name": "CS4266", "deparure_time": "12:20" },
+                        { "name": "CS4282", "deparure_time": "13:35" },
+                        { "name": "CS4244", "deparure_time": "14:30" },
+                        { "name": "CS4218", "deparure_time": "15:20" },
+                        { "name": "CS4220", "deparure_time": "16:00" },
+                        { "name": "CS4292", "deparure_time": "17:10" },
+                        { "name": "CS4294", "deparure_time": "18:25" },
+                        { "name": "CS4284", "deparure_time": "19:10" },
+                        { "name": "CS4296", "deparure_time": "20:30" },
+                        { "name": "CS4202", "deparure_time": "21:55" },
+                        { "name": "CS4204", "deparure_time": "22:30" },
+                        { "name": "CS4208", "deparure_time": "23:45" }
+                    ],
+                    "intermediate_ports": null,
+                    "shared_operation": null
                 },
                 {
                     "destination_id": 5,
                     "destination_port": "EAM",
                     "destination_full_name": "Earth (America)",
-                    "destination_connection_availability": true,
                     "direct_flight": true,
-                    "intermediate_ports": ["LUN"],
                     "frequency": {
                         "daily": {
                             "min": 8,
@@ -464,6 +536,7 @@
                     },
                     "duration": {
                         "min": {
+                            "overall_seconds": 600,
                             "years": 0,
                             "months": 0,
                             "days": 0,
@@ -471,24 +544,44 @@
                             "minutes": 10
                         }, 
                         "max": {
+                            "overall_seconds": 840,
                             "years": 0,
                             "months": 0,
                             "days": 0,
-                            "hours": 2,
+                            "hours": 0,
                             "minutes": 14
                         }
                     },
                     "vessels": [
                         "Planet Jumper EV-1"
-                    ]
+                    ],
+                    "price": {
+                        "min": 5,
+                        "max": 14,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "name": "CS5242", "deparure_time": "00:50" },
+                        { "name": "CS5278", "deparure_time": "02:10" },
+                        { "name": "CS5266", "deparure_time": "04:15" },
+                        { "name": "CS5222", "deparure_time": "06:30" },
+                        { "name": "CS5286", "deparure_time": "08:30" },
+                        { "name": "CS5214", "deparure_time": "10:10" },
+                        { "name": "CS5216", "deparure_time": "12:45" },
+                        { "name": "CS5228", "deparure_time": "14:25" },
+                        { "name": "CS5248", "deparure_time": "16:40" },
+                        { "name": "CS5252", "deparure_time": "18:55" },
+                        { "name": "CS5254", "deparure_time": "20:25" },
+                        { "name": "CS5288", "deparure_time": "22:30" }
+                    ],
+                    "intermediate_ports": null,
+                    "shared_operation": null
                 },
                 {
                     "destination_id": 6,
                     "destination_port": "MRS",
                     "destination_full_name": "Mars",
-                    "destination_connection_availability": false,
                     "direct_flight": true,
-                    "intermediate_ports": ["LUN", "EEU", "EAM", "EAS"],
                     "frequency": {
                         "daily": {
                             "min": 1,
@@ -499,6 +592,7 @@
                     },
                     "duration": {
                         "min": {
+                            "overall_seconds": 2224980,
                             "years": 0,
                             "months": 0,
                             "days": 25,
@@ -506,6 +600,7 @@
                             "minutes": 3
                         }, 
                         "max": {
+                            "overall_seconds": 3062760,
                             "years": 0,
                             "months": 1,
                             "days": 5,
@@ -515,69 +610,102 @@
                     },
                     "vessels": [
                         "Galaxy Jumbo W80"
-                    ]
+                    ],
+                    "price": {
+                        "min": 120,
+                        "max": 280,
+                        "rounding_options": [25, 50, 75]
+                    },
+                    "flight_profiles": [
+                        { "name": "CS6241", "deparure_time": "11:20" },
+                        { "name": "CS6275", "deparure_time": "16:40" },
+                        { "name": "CS6263", "deparure_time": "21:15" }
+                    ],
+                    "intermediate_ports": [
+                        ["VEN"],
+                        ["LUN"],
+                        ["EAS"],
+                        ["EEU"],
+                        ["EAM"]
+                    ],
+                    "shared_operation": ["SpaceX", "Roscosmos Beyond", "Euroespace Voyage", "Milkyflight", "Red Star Spacelines", 
+                        "Daedalus", "Velocispace"]
                 },
                 {
                     "destination_id": 7,
                     "destination_port": "VEN",
                     "destination_full_name": "Venus",
-                    "destination_connection_availability": false,
                     "direct_flight": true,
-                    "intermediate_ports": ["MRS", "CRS"],
                     "frequency": {
                         "daily": {
                             "min": 1,
-                            "max": 1
+                            "max": 2
                         },
                         "weekly": [1, 2, 3, 4, 5, 6, 7],
                         "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                     },
                     "duration": {
                         "min": {
+                            "overall_seconds": 894720,
                             "years": 0,
                             "months": 0,
-                            "days": 19,
+                            "days": 10,
                             "hours": 8,
                             "minutes": 32
                         },
                         "max": {
+                            "overall_seconds": 1091520,
                             "years": 0,
                             "months": 0,
-                            "days": 27,
+                            "days": 12,
                             "hours": 15,
                             "minutes": 12
                         }
                     },
                     "vessels": [
                         "Galaxy Jumbo W80"
-                    ]
+                    ],
+                    "price": {
+                        "min": 50,
+                        "max": 100,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "name": "CS7291", "deparure_time": "11:22" },
+                        { "name": "CS7233", "deparure_time": "19:40" }
+                    ],
+                    "intermediate_ports": [
+                        ["EAS"],
+                        ["MRS"]
+                    ],
+                    "shared_operation": ["SpaceX", "Milkyflight", "Daedalus", "Velocispace", "Orion Go"]
                 },
                 {
                     "destination_id": 8,
                     "destination_port": "CRS",
                     "destination_full_name": "Ceres",
-                    "destination_connection_availability": false,
                     "direct_flight": true,
-                    "intermediate_ports": ["MRS", "VEN"],
                     "frequency": {
                         "daily": {
                             "min": 1,
-                            "max": 1
+                            "max": 3
                         },
                         "weekly": [2, 5, 7],
                         "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                     },
                     "duration": {
                         "min": {
+                            "overall_seconds": 3560580,
                             "years": 0,
-                            "months": 2,
-                            "days": 10,
+                            "months": 1,
+                            "days": 11,
                             "hours": 5,
                             "minutes": 3
                         }, 
                         "max": {
+                            "overall_seconds": 4740420,
                             "years": 0,
-                            "months": 2,
+                            "months": 1,
                             "days": 24,
                             "hours": 20,
                             "minutes": 47
@@ -585,15 +713,28 @@
                     },
                     "vessels": [
                         "Supernova Cruiser"
-                    ]
+                    ],
+                    "price": {
+                        "min": 240,
+                        "max": 410,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "name": "CS8221", "deparure_time": "08:35" },
+                        { "name": "CS8255", "deparure_time": "16:10" },
+                        { "name": "CS8279", "deparure_time": "21:45" }
+                    ],
+                    "intermediate_ports": [
+                        ["MRS"],
+                        ["VEN"]
+                    ],
+                    "shared_operation": ["SpaceX", "Roscosmos Beyond", "Euroespace Voyage", "Milkyflight", "Frontier Space", "Galaxyline"]
                 },
                 {
                     "destination_id": 9,
                     "destination_port": "TTN",
                     "destination_full_name": "Titan",
-                    "destination_connection_availability": false,
                     "direct_flight": true,
-                    "intermediate_ports": ["CRS"],
                     "frequency": {
                         "daily": {
                             "min": 1,
@@ -604,6 +745,7 @@
                     },
                     "duration": {
                         "min": {
+                            "overall_seconds": 15973680,
                             "years": 0,
                             "months": 6,
                             "days": 4,
@@ -611,6 +753,7 @@
                             "minutes": 8
                         }, 
                         "max": {
+                            "overall_seconds": 16901760,
                             "years": 0,
                             "months": 6,
                             "days": 15,
@@ -620,7 +763,19 @@
                     },
                     "vessels": [
                         "Supernova Cruiser"
-                    ]
+                    ],
+                    "price": {
+                        "min": 1000,
+                        "max": 1420,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "name": "CS9297", "deparure_time": "22:05" }
+                    ],
+                    "intermediate_ports": [
+                        ["CRS"]
+                    ],
+                    "shared_operation": ["SpaceX", "Roscosmos Beyond", "Frontier Space", "Galaxyline"]
                 }
             ]
         },
