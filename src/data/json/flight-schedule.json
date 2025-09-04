@@ -11,11 +11,6 @@
                     "destination_port": "CEL",
                     "destination_full_name": "Celestia Station",
                     "direct_flight": true,
-                    "intermediate_ports": [
-                        ["EEU"], 
-                        ["EAS"], 
-                        ["EAM"]
-                    ],
                     "frequency": {
                         "daily": {
                             "min": 4,
@@ -26,6 +21,7 @@
                     },
                     "duration": {
                         "min": {
+                            "overall_seconds": 6900,
                             "years": 0,
                             "months": 0,
                             "days": 0,
@@ -33,6 +29,7 @@
                             "minutes": 55
                         }, 
                         "max": {
+                            "overall_seconds": 7980,
                             "years": 0,
                             "months": 0,
                             "days": 0,
@@ -44,16 +41,34 @@
                         "Shooting Star D400",
                         "Spacebus NEXT",
                         "Planet Jumper EV-1"
-                    ]
+                    ],
+                    "price": {
+                        "min": 12,
+                        "max": 30,
+                        "rounding_options": [25, 55, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "name": "CS1220", "deparure_time": "6:00" },
+                        { "name": "CS1233", "deparure_time": "7:15" },
+                        { "name": "CS1251", "deparure_time": "8:05" },
+                        { "name": "CS1277", "deparure_time": "10:20" },
+                        { "name": "CS1292", "deparure_time": "12:00" },
+                        { "name": "CS1206", "deparure_time": "16:30" },
+                        { "name": "CS1228", "deparure_time": "19:05" },
+                        { "name": "CS1249", "deparure_time": "21:55" }
+                    ],
+                    "intermediate_ports": [
+                        ["EEU"], 
+                        ["EAS"], 
+                        ["EAM"]
+                    ],
+                    "shared_operation": null
                 },
                 {
                     "destination_id": 3,
                     "destination_port": "EEU",
                     "destination_full_name": "Earth (Europe)",
                     "direct_flight": true,
-                    "intermediate_ports": [
-                        ["CEL"]
-                    ],
                     "frequency": {
                         "daily": {
                             "min": 2,
@@ -64,6 +79,7 @@
                     },
                     "duration": {
                         "min": {
+                            "overall_seconds": 8700,
                             "years": 0,
                             "months": 0,
                             "days": 0,
@@ -71,6 +87,7 @@
                             "minutes": 25
                         }, 
                         "max": {
+                            "overall_seconds": 9720,
                             "years": 0,
                             "months": 0,
                             "days": 0,
@@ -81,16 +98,28 @@
                     "vessels": [
                         "Spacebus NEXT",
                         "Shooting Star D400"
-                    ]
+                    ],
+                    "price": {
+                        "min": 15,
+                        "max": 50,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "name": "CS1391", "deparure_time": "5:35" },
+                        { "name": "CS1345", "deparure_time": "9:00" },
+                        { "name": "CS1363", "deparure_time": "13:05" },
+                        { "name": "CS1377", "deparure_time": "18:30" }
+                    ],
+                    "intermediate_ports": [
+                        ["CEL"]
+                    ],
+                    "shared_operation": null
                 },
                 {
                     "destination_id": 4,
                     "destination_port": "EAS",
                     "destination_full_name": "Earth (Asia)",
                     "direct_flight": true,
-                    "intermediate_ports": [
-                        ["CEL"]
-                    ],
                     "frequency": {
                         "daily": {
                             "min": 3,
@@ -101,6 +130,7 @@
                     },
                     "duration": {
                         "min": {
+                            "overall_seconds": 8640,
                             "years": 0,
                             "months": 0,
                             "days": 0,
@@ -108,6 +138,7 @@
                             "minutes": 24
                         }, 
                         "max": {
+                            "overall_seconds": 9480,
                             "years": 0,
                             "months": 0,
                             "days": 0,
@@ -118,16 +149,29 @@
                     "vessels": [
                         "Spacebus NEXT",
                         "Shooting Star D400"
-                    ]
+                    ],
+                    "price": {
+                        "min": 15,
+                        "max": 50,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "name": "CS1435", "deparure_time": "6:20" },
+                        { "name": "CS1411", "deparure_time": "8:00" },
+                        { "name": "CS1493", "deparure_time": "11:35" },
+                        { "name": "CS1455", "deparure_time": "15:40" },
+                        { "name": "CS1463", "deparure_time": "20:25" }
+                    ],
+                    "intermediate_ports": [
+                        ["CEL"]
+                    ],
+                    "shared_operation": null
                 },
                 {
                     "destination_id": 5,
                     "destination_port": "EAM",
                     "destination_full_name": "Earth (America)",
                     "direct_flight": true,
-                    "intermediate_ports": [
-                        ["CEL"]
-                    ],
                     "frequency": {
                         "daily": {
                             "min": 2,
@@ -138,6 +182,7 @@
                     },
                     "duration": {
                         "min": {
+                            "overall_seconds": 8880,
                             "years": 0,
                             "months": 0,
                             "days": 0,
@@ -145,6 +190,7 @@
                             "minutes": 28
                         },
                         "max": {
+                            "overall_seconds": 9660,
                             "years": 0,
                             "months": 0,
                             "days": 0,
@@ -155,21 +201,28 @@
                     "vessels": [
                         "Spacebus NEXT",
                         "Shooting Star D400"
-                    ]
+                    ],
+                    "price": {
+                        "min": 15,
+                        "max": 50,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "name": "CS1597", "deparure_time": "7:00" },
+                        { "name": "CS1583", "deparure_time": "9:50" },
+                        { "name": "CS1529", "deparure_time": "13:35" },
+                        { "name": "CS1513", "deparure_time": "18:40" }
+                    ],
+                    "intermediate_ports": [
+                        ["CEL"]
+                    ],
+                    "shared_operation": null
                 },
                 {
                     "destination_id": 6,
                     "destination_port": "MRS",
                     "destination_full_name": "Mars",
                     "direct_flight": true,
-                    "intermediate_ports": [
-                        ["CEL"],
-                        ["EEU"],
-                        ["EAM"],
-                        ["EAS"],
-                        ["CEL", "VEN"],
-                        ["CEL", "CRS"]
-                    ],
                     "frequency": {
                         "daily": {
                             "min": 1,
@@ -180,6 +233,7 @@
                     },
                     "duration": {
                         "min": {
+                            "overall_seconds": 2212920,
                             "years": 0,
                             "months": 0,
                             "days": 25,
@@ -187,6 +241,7 @@
                             "minutes": 42
                         }, 
                         "max": {
+                            "overall_seconds": 3047100,
                             "years": 0,
                             "months": 1,
                             "days": 5,
@@ -196,13 +251,39 @@
                     },
                     "vessels": [
                         "Galaxy Jumbo W80"
-                    ]
+                    ],
+                    "price": {
+                        "min": 220,
+                        "max": 450,
+                        "rounding_options": [25, 50, 75]
+                    },
+                    "flight_profiles": [
+                        { "name": "CS1611", "deparure_time": "12:25" },
+                        { "name": "CS1699", "deparure_time": "19:40" }
+                    ],
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["EEU"],
+                        ["EAM"],
+                        ["EAS"],
+                        ["CEL", "VEN"],
+                        ["CEL", "CRS"]
+                    ],
+                    "shared_operation": ["SpaceX", "Roscosmos Beyond", "Euroespace Voyage", "Milkyflight", "Red Star Spacelines"]
                 },
                 {
                     "destination_id": 7,
                     "destination_port": "VEN",
                     "destination_full_name": "Venus",
                     "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 140,
+                        "max": 215,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
                     "intermediate_ports": [
                         ["CEL"],
                         ["MRS"],
@@ -210,38 +291,45 @@
                         ["EEU", "MRS"],
                         ["EAM", "MRS"],
                         ["EAS", "MRS"]
-                    ],
-                    "frequency": null,
-                    "duration": null,
-                    "vessels": null
+                    ]
                 },
                 {
                     "destination_id": 8,
                     "destination_port": "CRS",
                     "destination_full_name": "Ceres",
                     "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 300,
+                        "max": 550,
+                        "rounding_options": [25, 50, 75]
+                    },
                     "intermediate_ports": [
                         ["CEL"],
                         ["MRS"],
                         ["CEL", "MRS"]
-                    ],
-                    "frequency": null,
-                    "duration": null,
-                    "vessels": null
+                    ]
                 },
                 {
                     "destination_id": 9,
                     "destination_port": "TTN",
                     "destination_full_name": "Titan",
                     "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 750,
+                        "max": 980,
+                        "rounding_options": [25, 50, 75]
+                    },
                     "intermediate_ports": [
                         ["CEL"],
                         ["CEL", "CRS"],
                         ["MRS", "CRS"]
-                    ],
-                    "frequency": null,
-                    "duration": null,
-                    "vessels": null
+                    ]
                 }
             ]
         },
