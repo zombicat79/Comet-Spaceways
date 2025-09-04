@@ -1,0 +1,15 @@
+.ribbon {
+    padding: 8rem 0;
+
+    &--transparent {
+        background-color: transparent;
+    }
+
+    &--accent {
+        background-color: $color-environmental-accent;
+    }
+
+    &--pitch {
+        background-color: $color-environmental-pitch;
+    }
+}

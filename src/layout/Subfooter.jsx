@@ -1,6 +1,7 @@
 import Copyright from './../components/Copyright';
 
 import zombiecatLogo from '/logos/zombiecat-trans-logo.png';
+import humanDone from '/logos/human-certified.png';
 
 function Subfooter() {
     return (
@@ -13,6 +14,7 @@ function Subfooter() {
                     <img className="subfooter__makerLogo" src={zombiecatLogo} alt="ZombieCat logo" />
                 </a>
             </p>
+            <img className="subfooter__humanBadge" src={humanDone} alt="Done by human" />
         </footer>
     )
 }

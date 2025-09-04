@@ -4,6 +4,6 @@ import eslint from 'vite-plugin-eslint';
 
 // https://vite.dev/config/
 export default defineConfig({
-  // base: 'https://zombiecat.dev/projects/cometspaceways/',
+  // base: 'https://cometspaceways.zombiecat.dev/',
   plugins: [react(), eslint()],
 })

@@ -1,3 +1,6 @@
+import { useEffect, useContext } from 'react';
+import { CartContext } from './../contexts/CartContext';
+
 import Banner from './../components/Banner';
 import FlightSearch from './../components/flight/FlightSearch';
 import Card from './../components/Card';
@@ -41,6 +44,15 @@ const offers = [
 ]
 
 function Home() {
+    const { cartState, cartDispatcher } = useContext(CartContext);
+
+    useEffect(() => {
+        if (cartState.outboundFlight || cartState.inboundFlight) {
+            cartDispatcher({ type: "cart/removeOutbound" });
+            cartDispatcher({ type: "cart/removeInbound" });
+        }
+    }, [cartState])
+
     return (
         <main className="homepage">
             <Banner

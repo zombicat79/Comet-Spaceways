@@ -1,8 +1,11 @@
 {
   "name": "comet-spaceways",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "main": "index.html",
+  "homepage": "https://cometspaceways.zombiecat.dev/",
+  "author": "David Castejón Ferrer",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
