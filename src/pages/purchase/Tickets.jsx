@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { FlightSearchContext } from '../../contexts/FlightSearchContext';
 import { CartContext } from '../../contexts/CartContext';
 import { useNavigate } from 'react-router';
@@ -11,6 +11,13 @@ function Tickets() {
     const { flightSearchState } = useContext(FlightSearchContext);
     const { cartState } = useContext(CartContext);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        fetch("http://localhost:3000/origins")
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.log(err));
+    }, [])
 
     let proceedButtonState;
     if (flightSearchState.searchScope === '🔄 Round Trip') {
