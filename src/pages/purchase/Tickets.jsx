@@ -7,6 +7,9 @@ import FlightSegment from '../../components/flight/FlightSegment';
 import PageRibbon from '../../components/PageRibbon';
 import Button from '../../components/Button';
 
+import { minimizeDestinations } from '../../utilities/utils';
+import calculateAvailability from '../../utilities/availability-composer';
+
 function Tickets() {
     const { flightSearchState } = useContext(FlightSearchContext);
     const { cartState } = useContext(CartContext);
@@ -15,7 +18,14 @@ function Tickets() {
     useEffect(() => {
         fetch("http://localhost:3000/origins")
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                const departureObj = { 
+                    origin: minimizeDestinations(flightSearchState.origin),
+                    destination: minimizeDestinations(flightSearchState.destination),
+                    date: flightSearchState.departureDate
+                }
+                calculateAvailability(data, departureObj);
+            })
             .catch(err => console.log(err));
     }, [])
 
