@@ -23,4 +23,25 @@ function minimizeDestinations(fullDestination) {
     }
 }
 
-export { minimizeDestinations };
+function pickRandomFromArray(array) {
+    // Return a randomly selected member of the given array
+    return array[Math.round(Math.random() * array.length)];
+}
+
+function pickUniquesFromArray(array, outputLength) {
+    let workArray = [...array];
+
+    let iteration = 1;
+    let selection = [];
+
+    while (iteration <= outputLength) {
+        const randomIndex = Math.round(Math.random() * workArray.length);
+        selection.push(workArray[randomIndex]);
+        workArray.splice(randomIndex, 1);
+        iteration++;
+    }
+
+    return selection;
+}
+
+export { minimizeDestinations, pickRandomFromArray, pickUniquesFromArray };

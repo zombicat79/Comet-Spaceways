@@ -24,7 +24,13 @@ function Tickets() {
                     destination: minimizeDestinations(flightSearchState.destination),
                     date: flightSearchState.departureDate
                 }
-                calculateAvailability(data, departureObj);
+                const returnObj = flightSearchState.returnDate === '' ? null : {
+                    origin: minimizeDestinations(flightSearchState.destination),
+                    destination: minimizeDestinations(flightSearchState.origin),
+                    date: flightSearchState.returnDate
+                }
+
+                calculateAvailability(data, departureObj, returnObj);
             })
             .catch(err => console.log(err));
     }, [])
