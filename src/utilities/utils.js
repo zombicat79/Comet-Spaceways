@@ -25,7 +25,7 @@ function minimizeDestinations(fullDestination) {
 
 function pickRandomFromArray(array) {
     // Return a randomly selected member of the given array
-    return array[Math.round(Math.random() * array.length)];
+    return array[Math.floor(Math.random() * array.length)];
 }
 
 function pickUniquesFromArray(array, outputLength) {
@@ -35,7 +35,7 @@ function pickUniquesFromArray(array, outputLength) {
     let selection = [];
 
     while (iteration <= outputLength) {
-        const randomIndex = Math.round(Math.random() * workArray.length);
+        const randomIndex = Math.floor(Math.random() * workArray.length);
         selection.push(workArray[randomIndex]);
         workArray.splice(randomIndex, 1);
         iteration++;

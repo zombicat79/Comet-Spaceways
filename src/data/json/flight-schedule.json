@@ -16,8 +16,8 @@
                             "min": 4,
                             "max": 8
                         },
-                        "weekly": [1, 2, 3, 4, 5, 6, 7],
-                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        "weekly": [0, 1, 2, 3, 4, 5, 6],
+                        "monthly": [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
                     },
                     "duration": {
                         "min": {
@@ -48,14 +48,14 @@
                         "rounding_options": [25, 55, 75, 99]
                     },
                     "flight_profiles": [
-                        { "name": "CS1220", "deparure_time": "6:00" },
-                        { "name": "CS1233", "deparure_time": "7:15" },
-                        { "name": "CS1251", "deparure_time": "8:05" },
-                        { "name": "CS1277", "deparure_time": "10:20" },
-                        { "name": "CS1292", "deparure_time": "12:00" },
-                        { "name": "CS1206", "deparure_time": "16:30" },
-                        { "name": "CS1228", "deparure_time": "19:05" },
-                        { "name": "CS1249", "deparure_time": "21:55" }
+                        { "order": 1, "name": "CS1220", "departure_time": "6:00" },
+                        { "order": 2, "name": "CS1233", "departure_time": "7:15" },
+                        { "order": 3, "name": "CS1251", "departure_time": "8:05" },
+                        { "order": 4, "name": "CS1277", "departure_time": "10:20" },
+                        { "order": 5, "name": "CS1292", "departure_time": "12:00" },
+                        { "order": 6, "name": "CS1206", "departure_time": "16:30" },
+                        { "order": 7, "name": "CS1228", "departure_time": "19:05" },
+                        { "order": 8, "name": "CS1249", "departure_time": "21:55" }
                     ],
                     "intermediate_ports": [
                         ["EEU"], 
@@ -74,8 +74,8 @@
                             "min": 2,
                             "max": 4
                         },
-                        "weekly": [1, 2, 3, 4, 5, 6, 7],
-                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        "weekly": [0, 2, 3, 4, 5, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
                     },
                     "duration": {
                         "min": {
@@ -105,10 +105,10 @@
                         "rounding_options": [19, 49, 75, 99]
                     },
                     "flight_profiles": [
-                        { "name": "CS1391", "deparure_time": "5:35" },
-                        { "name": "CS1345", "deparure_time": "9:00" },
-                        { "name": "CS1363", "deparure_time": "13:05" },
-                        { "name": "CS1377", "deparure_time": "18:30" }
+                        { "order": 1, "name": "CS1391", "departure_time": "5:35" },
+                        { "order": 2, "name": "CS1345", "departure_time": "9:00" },
+                        { "order": 3, "name": "CS1363", "departure_time": "13:05" },
+                        { "order": 4, "name": "CS1377", "departure_time": "18:30" }
                     ],
                     "intermediate_ports": [
                         ["CEL"]
@@ -125,8 +125,8 @@
                             "min": 3,
                             "max": 5
                         },
-                        "weekly": [1, 2, 3, 4, 5, 6, 7],
-                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        "weekly": [0, 1, 2, 3, 4, 5, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
                     },
                     "duration": {
                         "min": {
@@ -156,11 +156,11 @@
                         "rounding_options": [19, 49, 75, 99]
                     },
                     "flight_profiles": [
-                        { "name": "CS1435", "deparure_time": "6:20" },
-                        { "name": "CS1411", "deparure_time": "8:00" },
-                        { "name": "CS1493", "deparure_time": "11:35" },
-                        { "name": "CS1455", "deparure_time": "15:40" },
-                        { "name": "CS1463", "deparure_time": "20:25" }
+                        { "order": 1, "name": "CS1435", "departure_time": "6:20" },
+                        { "order": 2, "name": "CS1411", "departure_time": "8:00" },
+                        { "order": 3, "name": "CS1493", "departure_time": "11:35" },
+                        { "order": 4, "name": "CS1455", "departure_time": "15:40" },
+                        { "order": 5, "name": "CS1463", "departure_time": "20:25" }
                     ],
                     "intermediate_ports": [
                         ["CEL"]
@@ -177,8 +177,8 @@
                             "min": 2,
                             "max": 4
                         },
-                        "weekly": [1, 2, 3, 4, 5, 6, 7],
-                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        "weekly": [0, 1, 2, 3, 4, 5, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
                     },
                     "duration": {
                         "min": {
@@ -208,10 +208,10 @@
                         "rounding_options": [19, 49, 75, 99]
                     },
                     "flight_profiles": [
-                        { "name": "CS1597", "deparure_time": "7:00" },
-                        { "name": "CS1583", "deparure_time": "9:50" },
-                        { "name": "CS1529", "deparure_time": "13:35" },
-                        { "name": "CS1513", "deparure_time": "18:40" }
+                        { "order": 1, "name": "CS1597", "departure_time": "7:00" },
+                        { "order": 2, "name": "CS1583", "departure_time": "9:50" },
+                        { "order": 3, "name": "CS1529", "departure_time": "13:35" },
+                        { "order": 4, "name": "CS1513", "departure_time": "18:40" }
                     ],
                     "intermediate_ports": [
                         ["CEL"]
@@ -229,7 +229,7 @@
                             "max": 2
                         },
                         "weekly": [1, 5],
-                        "monthly": [1, 4, 5, 6, 7, 8, 9, 12]
+                        "monthly": [0, 3, 4, 5, 6, 7, 8, 11]
                     },
                     "duration": {
                         "min": {
@@ -258,8 +258,8 @@
                         "rounding_options": [25, 50, 75]
                     },
                     "flight_profiles": [
-                        { "name": "CS1611", "deparure_time": "12:25" },
-                        { "name": "CS1699", "deparure_time": "19:40" }
+                        { "order": 1, "name": "CS1611", "departure_time": "12:25" },
+                        { "order": 2, "name": "CS1699", "departure_time": "19:40" }
                     ],
                     "intermediate_ports": [
                         ["CEL", "VEN"],
@@ -348,8 +348,8 @@
                             "min": 4,
                             "max": 8
                         },
-                        "weekly": [1, 2, 3, 4, 5, 6, 7],
-                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        "weekly": [0, 1, 2, 3, 4, 5, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
                     },
                     "duration": {
                         "min": {
@@ -380,14 +380,14 @@
                         "rounding_options": [25, 55, 75, 99]
                     },
                     "flight_profiles": [
-                        { "name": "CS1250", "deparure_time": "00:55" },
-                        { "name": "CS1221", "deparure_time": "9:00" },
-                        { "name": "CS1234", "deparure_time": "10:15" },
-                        { "name": "CS1252", "deparure_time": "11:05" },
-                        { "name": "CS1278", "deparure_time": "13:20" },
-                        { "name": "CS1293", "deparure_time": "15:00" },
-                        { "name": "CS1207", "deparure_time": "19:30" },
-                        { "name": "CS1229", "deparure_time": "22:05" }
+                        { "order": 1, "name": "CS1250", "departure_time": "00:55" },
+                        { "order": 2, "name": "CS1221", "departure_time": "9:00" },
+                        { "order": 3, "name": "CS1234", "departure_time": "10:15" },
+                        { "order": 4, "name": "CS1252", "departure_time": "11:05" },
+                        { "order": 5, "name": "CS1278", "departure_time": "13:20" },
+                        { "order": 6, "name": "CS1293", "departure_time": "15:00" },
+                        { "order": 7, "name": "CS1207", "departure_time": "19:30" },
+                        { "order": 8, "name": "CS1229", "departure_time": "22:05" }
                     ],
                     "intermediate_ports": [
                         ["EEU"],
@@ -406,8 +406,8 @@
                             "min": 8,
                             "max": 12
                         },
-                        "weekly": [1, 2, 3, 4, 5, 6, 7],
-                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        "weekly": [0, 1, 2, 3, 4, 5, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
                     },
                     "duration": {
                         "min": {
@@ -436,18 +436,18 @@
                         "rounding_options": [19, 49, 75, 99]
                     },
                     "flight_profiles": [
-                        { "name": "CS3242", "deparure_time": "00:30" },
-                        { "name": "CS3278", "deparure_time": "02:20" },
-                        { "name": "CS3266", "deparure_time": "04:35" },
-                        { "name": "CS3222", "deparure_time": "06:15" },
-                        { "name": "CS3286", "deparure_time": "08:45" },
-                        { "name": "CS3214", "deparure_time": "10:00" },
-                        { "name": "CS3216", "deparure_time": "12:20" },
-                        { "name": "CS3228", "deparure_time": "14:45" },
-                        { "name": "CS3248", "deparure_time": "16:25" },
-                        { "name": "CS3252", "deparure_time": "18:15" },
-                        { "name": "CS3254", "deparure_time": "20:30" },
-                        { "name": "CS3288", "deparure_time": "22:55" }
+                        { "order": 1, "name": "CS3242", "departure_time": "00:30" },
+                        { "order": 2, "name": "CS3278", "departure_time": "02:20" },
+                        { "order": 3, "name": "CS3266", "departure_time": "04:35" },
+                        { "order": 4, "name": "CS3222", "departure_time": "06:15" },
+                        { "order": 5, "name": "CS3286", "departure_time": "08:45" },
+                        { "order": 6, "name": "CS3214", "departure_time": "10:00" },
+                        { "order": 7, "name": "CS3216", "departure_time": "12:20" },
+                        { "order": 8, "name": "CS3228", "departure_time": "14:45" },
+                        { "order": 9, "name": "CS3248", "departure_time": "16:25" },
+                        { "order": 10, "name": "CS3252", "departure_time": "18:15" },
+                        { "order": 11, "name": "CS3254", "departure_time": "20:30" },
+                        { "order": 12, "name": "CS3288", "departure_time": "22:55" }
                     ],
                     "intermediate_ports": null,
                     "shared_operation": null
@@ -462,8 +462,8 @@
                             "min": 12,
                             "max": 24
                         },
-                        "weekly": [1, 2, 3, 4, 5, 6, 7],
-                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        "weekly": [0, 1, 2, 3, 4, 5, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
                     },
                     "duration": {
                         "min": {
@@ -493,30 +493,30 @@
                         "rounding_options": [19, 49, 75, 99]
                     },
                     "flight_profiles": [
-                        { "name": "CS4222", "deparure_time": "00:40" },
-                        { "name": "CS4258", "deparure_time": "01:35" },
-                        { "name": "CS4264", "deparure_time": "02:50" },
-                        { "name": "CS4262", "deparure_time": "03:15" },
-                        { "name": "CS4260", "deparure_time": "04:00" },
-                        { "name": "CS4252", "deparure_time": "05:10" },
-                        { "name": "CS4276", "deparure_time": "06:05" },
-                        { "name": "CS4238", "deparure_time": "07:15" },
-                        { "name": "CS4236", "deparure_time": "08:00" },
-                        { "name": "CS4216", "deparure_time": "09:20" },
-                        { "name": "CS4254", "deparure_time": "10:35" },
-                        { "name": "CS4288", "deparure_time": "11:35" },
-                        { "name": "CS4266", "deparure_time": "12:20" },
-                        { "name": "CS4282", "deparure_time": "13:35" },
-                        { "name": "CS4244", "deparure_time": "14:30" },
-                        { "name": "CS4218", "deparure_time": "15:20" },
-                        { "name": "CS4220", "deparure_time": "16:00" },
-                        { "name": "CS4292", "deparure_time": "17:10" },
-                        { "name": "CS4294", "deparure_time": "18:25" },
-                        { "name": "CS4284", "deparure_time": "19:10" },
-                        { "name": "CS4296", "deparure_time": "20:30" },
-                        { "name": "CS4202", "deparure_time": "21:55" },
-                        { "name": "CS4204", "deparure_time": "22:30" },
-                        { "name": "CS4208", "deparure_time": "23:45" }
+                        { "order": 1, "name": "CS4222", "departure_time": "00:40" },
+                        { "order": 2, "name": "CS4258", "departure_time": "01:35" },
+                        { "order": 3, "name": "CS4264", "departure_time": "02:50" },
+                        { "order": 4, "name": "CS4262", "departure_time": "03:15" },
+                        { "order": 5, "name": "CS4260", "departure_time": "04:00" },
+                        { "order": 6, "name": "CS4252", "departure_time": "05:10" },
+                        { "order": 7, "name": "CS4276", "departure_time": "06:05" },
+                        { "order": 8, "name": "CS4238", "departure_time": "07:15" },
+                        { "order": 9, "name": "CS4236", "departure_time": "08:00" },
+                        { "order": 10, "name": "CS4216", "departure_time": "09:20" },
+                        { "order": 11, "name": "CS4254", "departure_time": "10:35" },
+                        { "order": 12, "name": "CS4288", "departure_time": "11:35" },
+                        { "order": 13, "name": "CS4266", "departure_time": "12:20" },
+                        { "order": 14, "name": "CS4282", "departure_time": "13:35" },
+                        { "order": 15, "name": "CS4244", "departure_time": "14:30" },
+                        { "order": 16, "name": "CS4218", "departure_time": "15:20" },
+                        { "order": 17, "name": "CS4220", "departure_time": "16:00" },
+                        { "order": 18, "name": "CS4292", "departure_time": "17:10" },
+                        { "order": 19, "name": "CS4294", "departure_time": "18:25" },
+                        { "order": 20, "name": "CS4284", "departure_time": "19:10" },
+                        { "order": 21, "name": "CS4296", "departure_time": "20:30" },
+                        { "order": 22, "name": "CS4202", "departure_time": "21:55" },
+                        { "order": 23, "name": "CS4204", "departure_time": "22:30" },
+                        { "order": 24, "name": "CS4208", "departure_time": "23:45" }
                     ],
                     "intermediate_ports": null,
                     "shared_operation": null
@@ -531,8 +531,8 @@
                             "min": 8,
                             "max": 12
                         },
-                        "weekly": [1, 2, 3, 4, 5, 6, 7],
-                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        "weekly": [0, 1, 2, 3, 4, 5, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
                     },
                     "duration": {
                         "min": {
@@ -561,18 +561,18 @@
                         "rounding_options": [19, 49, 75, 99]
                     },
                     "flight_profiles": [
-                        { "name": "CS5242", "deparure_time": "00:50" },
-                        { "name": "CS5278", "deparure_time": "02:10" },
-                        { "name": "CS5266", "deparure_time": "04:15" },
-                        { "name": "CS5222", "deparure_time": "06:30" },
-                        { "name": "CS5286", "deparure_time": "08:30" },
-                        { "name": "CS5214", "deparure_time": "10:10" },
-                        { "name": "CS5216", "deparure_time": "12:45" },
-                        { "name": "CS5228", "deparure_time": "14:25" },
-                        { "name": "CS5248", "deparure_time": "16:40" },
-                        { "name": "CS5252", "deparure_time": "18:55" },
-                        { "name": "CS5254", "deparure_time": "20:25" },
-                        { "name": "CS5288", "deparure_time": "22:30" }
+                        { "order": 1, "name": "CS5242", "departure_time": "00:50" },
+                        { "order": 2, "name": "CS5278", "departure_time": "02:10" },
+                        { "order": 3, "name": "CS5266", "departure_time": "04:15" },
+                        { "order": 4, "name": "CS5222", "departure_time": "06:30" },
+                        { "order": 5, "name": "CS5286", "departure_time": "08:30" },
+                        { "order": 6, "name": "CS5214", "departure_time": "10:10" },
+                        { "order": 7, "name": "CS5216", "departure_time": "12:45" },
+                        { "order": 8, "name": "CS5228", "departure_time": "14:25" },
+                        { "order": 9, "name": "CS5248", "departure_time": "16:40" },
+                        { "order": 10, "name": "CS5252", "departure_time": "18:55" },
+                        { "order": 11, "name": "CS5254", "departure_time": "20:25" },
+                        { "order": 12, "name": "CS5288", "departure_time": "22:30" }
                     ],
                     "intermediate_ports": null,
                     "shared_operation": null
@@ -587,8 +587,8 @@
                             "min": 1,
                             "max": 3
                         },
-                        "weekly": [1, 2, 3, 4, 5, 6, 7],
-                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        "weekly": [0, 1, 2, 3, 4, 5, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
                     },
                     "duration": {
                         "min": {
@@ -617,9 +617,9 @@
                         "rounding_options": [25, 50, 75]
                     },
                     "flight_profiles": [
-                        { "name": "CS6241", "deparure_time": "11:20" },
-                        { "name": "CS6275", "deparure_time": "16:40" },
-                        { "name": "CS6263", "deparure_time": "21:15" }
+                        { "order": 1, "name": "CS6241", "departure_time": "11:20" },
+                        { "order": 2, "name": "CS6275", "departure_time": "16:40" },
+                        { "order": 3, "name": "CS6263", "departure_time": "21:15" }
                     ],
                     "intermediate_ports": [
                         ["VEN"],
@@ -641,8 +641,8 @@
                             "min": 1,
                             "max": 2
                         },
-                        "weekly": [1, 2, 3, 4, 5, 6, 7],
-                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        "weekly": [0, 1, 2, 3, 4, 5, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
                     },
                     "duration": {
                         "min": {
@@ -671,8 +671,8 @@
                         "rounding_options": [19, 49, 75, 99]
                     },
                     "flight_profiles": [
-                        { "name": "CS7291", "deparure_time": "11:22" },
-                        { "name": "CS7233", "deparure_time": "19:40" }
+                        { "order": 1, "name": "CS7291", "departure_time": "11:22" },
+                        { "order": 2, "name": "CS7233", "departure_time": "19:40" }
                     ],
                     "intermediate_ports": [
                         ["EAS"],
@@ -691,7 +691,7 @@
                             "max": 3
                         },
                         "weekly": [2, 5, 7],
-                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
                     },
                     "duration": {
                         "min": {
@@ -720,9 +720,9 @@
                         "rounding_options": [19, 49, 75, 99]
                     },
                     "flight_profiles": [
-                        { "name": "CS8221", "deparure_time": "08:35" },
-                        { "name": "CS8255", "deparure_time": "16:10" },
-                        { "name": "CS8279", "deparure_time": "21:45" }
+                        { "order": 1, "name": "CS8221", "departure_time": "08:35" },
+                        { "order": 2, "name": "CS8255", "departure_time": "16:10" },
+                        { "order": 3, "name": "CS8279", "departure_time": "21:45" }
                     ],
                     "intermediate_ports": [
                         ["MRS"],
@@ -741,7 +741,7 @@
                             "max": 1
                         },
                         "weekly": [3, 6],
-                        "monthly": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
                     },
                     "duration": {
                         "min": {
@@ -770,7 +770,7 @@
                         "rounding_options": [19, 49, 75, 99]
                     },
                     "flight_profiles": [
-                        { "name": "CS9297", "deparure_time": "22:05" }
+                        { "order": 1, "name": "CS9297", "departure_time": "22:05" }
                     ],
                     "intermediate_ports": [
                         ["CRS"]
