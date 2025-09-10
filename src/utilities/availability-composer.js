@@ -1,4 +1,4 @@
-import { pickRandomFromArray, pickUniquesFromArray } from "./utils";
+import { convertSeconds, pickFromNumberRange, pickRandomFromArray, pickUniquesFromArray } from "./utils";
 
 // --- AUXILIARY FUNCTIONS ---
 
@@ -35,6 +35,35 @@ function getFlightsPerDate(routeInfo, date) {
     });
 }
 
+function addCommonData(allFlights, origin, destination, departureDate) {
+    const departureDay = new Date(departureDate).getDate();
+    const departureMonth = new Date(departureDate).getMonth() + 1;
+    const departureYear = new Date(departureDate).getFullYear();
+    
+    return allFlights.map((el) => {
+        return { ...el, origin, destination, departure_date: `${departureDay}/${departureMonth}/${departureYear}` };
+    })
+}
+
+function calculateFlightDurations(allFlights, durationInfo) {
+    // UNDER CONSTRUCTION
+    return allFlights.map((el) => {
+        const secondsDuration = pickFromNumberRange(durationInfo.min.overall_seconds, durationInfo.max.overall_seconds);
+        console.log(secondsDuration)
+        convertSeconds(secondsDuration)
+        // return { ...el, price: `${price},${decimals}`};
+    })
+}
+
+function calculateFlightPrices(allFlights, priceInfo) {
+    return allFlights.map((el) => {
+        const price = pickFromNumberRange(priceInfo.min, priceInfo.max);
+        const decimals = pickRandomFromArray(priceInfo.rounding_options);
+
+        return { ...el, price: `${price},${decimals}`};
+    })
+}
+
 function determineVessels(allFlights, allVessels) {
     return allFlights.map((el) => {
         if (allVessels.length === 1) return { ...el, vessel: allVessels[0] };
@@ -66,8 +95,9 @@ function calculateAvailability(schedule, departureObj, returnObj = null, outputB
         // Recursive availability calculation via intermediate ports
     } else {
         availabilityDetails = getFlightsPerDate(routeInfo, date);
-        // calculateFlightDurations()
-        // calculateFlightPrices()
+        availabilityDetails = addCommonData([...availabilityDetails], origin, destination, date);
+        // availabilityDetails = calculateFlightDurations([...availabilityDetails], routeInfo.duration);
+        availabilityDetails = calculateFlightPrices([...availabilityDetails], routeInfo.price);
         availabilityDetails = determineVessels([...availabilityDetails], routeInfo.vessels);
         availabilityDetails = determineOperators([...availabilityDetails], routeInfo.shared_operation);
         console.log(availabilityDetails)
