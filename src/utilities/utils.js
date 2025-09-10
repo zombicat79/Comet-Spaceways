@@ -23,19 +23,68 @@ function minimizeDestinations(fullDestination) {
     }
 }
 
-function convertSeconds(totalSeconds) {
-    // UNDER CONSTRUCTION
-    let rest = totalSeconds;
+function formatTimeUnits(timeUnit) {
+    if (timeUnit.toString().length < 2) {
+        return `0${timeUnit}`;
+    }
 
-    function getMonths(actualSeconds) {
-        const secondsInMonth = 2592000;
-        const rawAmountOfMonths = actualSeconds / secondsInMonth;
-        rest = Math.abs(rawAmountOfMonths % 1) * secondsInMonth;
+    return timeUnit;
+}
+
+function getTimeSummaryFromSeconds(actualSeconds) {
+    // UNDER CONSTRUCTION
+    let rest = actualSeconds;
+
+    function getMonths(secondRepo) {
+        const SECONDS_IN_MONTH = 2592000;
+        const rawAmountOfMonths = secondRepo / SECONDS_IN_MONTH;
+        if (rawAmountOfMonths > 0) {
+            rest = Math.abs(rawAmountOfMonths % 1) * SECONDS_IN_MONTH;
+        } else {
+            rest = Math.abs(rawAmountOfMonths % 1);
+        }
         return Math.floor(rawAmountOfMonths);
     }
 
-    console.log(getMonths(rest));
-    console.log(rest)
+    function getDays(secondRepo) {
+        const SECONDS_IN_DAY = 86400;
+        const rawAmountOfDays = secondRepo / SECONDS_IN_DAY;
+        if (rawAmountOfDays > 0) {
+            rest = Math.abs(rawAmountOfDays % 1) * SECONDS_IN_DAY;
+        } else {
+            rest = Math.abs(rawAmountOfDays % 1);
+        }
+        return Math.floor(rawAmountOfDays);
+    }
+
+    function getHours(secondRepo) {
+        const SECONDS_IN_HOUR = 3600;
+        const rawAmountOfHours = secondRepo / SECONDS_IN_HOUR;
+        if (rawAmountOfHours > 0) {
+            rest = Math.abs(rawAmountOfHours % 1) * SECONDS_IN_HOUR;
+        } else {
+            rest = Math.abs(rawAmountOfHours % 1);
+        }
+        return Math.floor(rawAmountOfHours);
+    }
+
+    function getMinutes(secondRepo) {
+        const SECONDS_IN_MINUTE = 60;
+        const rawAmountOfMinutes = secondRepo / SECONDS_IN_MINUTE;
+        if (rawAmountOfMinutes > 0) {
+            rest = Math.abs(rawAmountOfMinutes % 1) * SECONDS_IN_MINUTE;
+        } else {
+            rest = Math.abs(rawAmountOfMinutes % 1);
+        }
+        return Math.floor(rawAmountOfMinutes);
+    }
+
+    const months = getMonths(rest);
+    const days = getDays(rest);
+    const hours = getHours(rest);
+    const minutes = getMinutes(rest);
+
+    return { months, days, hours, minutes }
 }
 
 function pickFromNumberRange(min, max) {
@@ -65,4 +114,4 @@ function pickUniquesFromArray(array, outputLength) {
     return selection;
 }
 
-export { minimizeDestinations, convertSeconds, pickFromNumberRange, pickRandomFromArray, pickUniquesFromArray };
+export { minimizeDestinations, formatTimeUnits, getTimeSummaryFromSeconds, pickFromNumberRange, pickRandomFromArray, pickUniquesFromArray };

@@ -1,4 +1,4 @@
-import { convertSeconds, pickFromNumberRange, pickRandomFromArray, pickUniquesFromArray } from "./utils";
+import { formatTimeUnits, getTimeSummaryFromSeconds, pickFromNumberRange, pickRandomFromArray, pickUniquesFromArray } from "./utils";
 
 // --- AUXILIARY FUNCTIONS ---
 
@@ -45,13 +45,25 @@ function addCommonData(allFlights, origin, destination, departureDate) {
     })
 }
 
-function calculateFlightDurations(allFlights, durationInfo) {
-    // UNDER CONSTRUCTION
+function calculateFlightDurations(allFlights, durationInfo, departureDate) {
     return allFlights.map((el) => {
-        const secondsDuration = pickFromNumberRange(durationInfo.min.overall_seconds, durationInfo.max.overall_seconds);
-        console.log(secondsDuration)
-        convertSeconds(secondsDuration)
-        // return { ...el, price: `${price},${decimals}`};
+        const durationInSeconds = pickFromNumberRange(durationInfo.min.overall_seconds, durationInfo.max.overall_seconds);
+        departureDate.setHours(el.departure_time.match(/\d+(?=:)/)[0]);
+        departureDate.setMinutes(el.departure_time.match(/(?<=:)\d+/)[0]);
+        const arrivalDate = new Date(departureDate.getTime() + durationInSeconds * 1000);
+
+        const arrivalDay = new Date(arrivalDate).getDate();
+        const arrivalMonth = new Date(arrivalDate).getMonth() + 1;
+        const arrivalYear = new Date(arrivalDate).getFullYear();
+        const arrivalHour = new Date(arrivalDate).getHours();
+        const arrivalMinute = new Date(arrivalDate).getMinutes();
+
+        return { 
+            ...el, 
+            duration: getTimeSummaryFromSeconds(durationInSeconds), 
+            arrival_date: `${arrivalDay}/${arrivalMonth}/${arrivalYear}`,
+            arrival_time: `${formatTimeUnits(arrivalHour)}:${formatTimeUnits(arrivalMinute)}`
+        };
     })
 }
 
@@ -72,7 +84,7 @@ function determineVessels(allFlights, allVessels) {
 }
 
 function determineOperators(allFlights, allOperators) {
-    const csFillArray = new Array(allOperators.length).fill("Comet Spaceways");
+    const csFillArray = new Array(allOperators?.length).fill("Comet Spaceways");
     
     return allFlights.map((el) => {
         if (!allOperators) return { ...el, operator: "Comet Spaceways" };
@@ -83,6 +95,7 @@ function determineOperators(allFlights, allOperators) {
 // --- MASTER FUNCTION ---
 
 function calculateAvailability(schedule, departureObj, returnObj = null, outputBuild = null) {
+    // MEMOIZE DATA FETCHING !!
     const { origin, destination, date } = departureObj;
     const originRoutes = schedule.find(el => el.port === origin);
     const routeInfo = originRoutes.flight_schedule.find(el => el.destination_port === destination);
@@ -95,12 +108,15 @@ function calculateAvailability(schedule, departureObj, returnObj = null, outputB
         // Recursive availability calculation via intermediate ports
     } else {
         availabilityDetails = getFlightsPerDate(routeInfo, date);
-        availabilityDetails = addCommonData([...availabilityDetails], origin, destination, date);
-        // availabilityDetails = calculateFlightDurations([...availabilityDetails], routeInfo.duration);
-        availabilityDetails = calculateFlightPrices([...availabilityDetails], routeInfo.price);
-        availabilityDetails = determineVessels([...availabilityDetails], routeInfo.vessels);
-        availabilityDetails = determineOperators([...availabilityDetails], routeInfo.shared_operation);
-        console.log(availabilityDetails)
+        if (availabilityDetails) {
+            availabilityDetails = addCommonData([...availabilityDetails], origin, destination, date);
+            availabilityDetails = calculateFlightDurations([...availabilityDetails], routeInfo.duration, date);
+            availabilityDetails = calculateFlightPrices([...availabilityDetails], routeInfo.price);
+            availabilityDetails = determineVessels([...availabilityDetails], routeInfo.vessels);
+            availabilityDetails = determineOperators([...availabilityDetails], routeInfo.shared_operation);
+            // calculateAlternateRoutings()
+            console.log(availabilityDetails)
+        }
     }
 
     /* let output;
