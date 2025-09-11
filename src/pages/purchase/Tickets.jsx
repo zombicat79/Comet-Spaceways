@@ -1,7 +1,7 @@
-import { useContext, useEffect } from 'react';
+import { useState, useContext, useEffect, useCallback } from 'react';
 import { FlightSearchContext } from '../../contexts/FlightSearchContext';
 import { CartContext } from '../../contexts/CartContext';
-import { useNavigate } from 'react-router';
+import { useNavigate, useLoaderData } from 'react-router';
 
 import FlightSegment from '../../components/flight/FlightSegment';
 import PageRibbon from '../../components/PageRibbon';
@@ -11,29 +11,34 @@ import { minimizeDestinations } from '../../utilities/utils';
 import calculateAvailability from '../../utilities/availability-composer';
 
 function Tickets() {
+    const [flights, setFlights] = useState({});
     const { flightSearchState } = useContext(FlightSearchContext);
     const { cartState } = useContext(CartContext);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        fetch("http://localhost:3000/origins")
-            .then(res => res.json())
-            .then(data => {
-                const departureObj = { 
-                    origin: minimizeDestinations(flightSearchState.origin),
-                    destination: minimizeDestinations(flightSearchState.destination),
-                    date: flightSearchState.departureDate
-                }
-                const returnObj = flightSearchState.returnDate === '' ? null : {
-                    origin: minimizeDestinations(flightSearchState.destination),
-                    destination: minimizeDestinations(flightSearchState.origin),
-                    date: flightSearchState.returnDate
-                }
+    const flightSchedule = useLoaderData();
+    const departureObj = { 
+        origin: minimizeDestinations(flightSearchState.origin),
+        destination: minimizeDestinations(flightSearchState.destination),
+        date: flightSearchState.departureDate
+    }
+    const returnObj = flightSearchState.returnDate === '' ? null : {
+        origin: minimizeDestinations(flightSearchState.destination),
+        destination: minimizeDestinations(flightSearchState.origin),
+        date: flightSearchState.returnDate
+    }
 
-                calculateAvailability(data, departureObj, returnObj);
+    useEffect(() => {
+        calculateAvailability(flightSchedule, departureObj, returnObj)
+            .then((calcResult1) => {
+                if (calcResult1?.returns === "pending") return calculateAvailability(flightSchedule, returnObj, null, calcResult1.departures);
+                return calcResult1;
             })
+            .then((calcResult2) => setFlights(calcResult2))
             .catch(err => console.log(err));
     }, [])
+
+    console.log(flights)
 
     let proceedButtonState;
     if (flightSearchState.searchScope === '🔄 Round Trip') {
@@ -54,4 +59,10 @@ function Tickets() {
     )
 }
 
+export function fetchFlights() {
+    return fetch("http://localhost:3000/origins")
+        .then(res => res.json())
+        .then(data => data)
+        .catch(err => console.log(err));
+};
 export default Tickets;

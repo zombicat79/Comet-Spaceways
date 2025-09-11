@@ -8,6 +8,8 @@ import Tickets from './pages/purchase/Tickets';
 import PassengerDetails from "./pages/purchase/Details";
 import NotFound from "./pages/NotFound";
 
+import { fetchFlights } from "./pages/purchase/Tickets";
+
 function purchaseRedirection() {
     return redirect('/purchase/tickets');
 }
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
                 path: 'purchase', 
                 children: [
                     { index: true, loader: purchaseRedirection },
-                    { path: 'tickets', Component: Tickets },
+                    { path: 'tickets', Component: Tickets, loader: fetchFlights },
                     { path: 'details', Component: PassengerDetails }
                 ]
             }

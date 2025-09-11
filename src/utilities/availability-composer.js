@@ -94,8 +94,7 @@ function determineOperators(allFlights, allOperators) {
 
 // --- MASTER FUNCTION ---
 
-function calculateAvailability(schedule, departureObj, returnObj = null, outputBuild = null) {
-    // MEMOIZE DATA FETCHING !!
+async function calculateAvailability(schedule, departureObj, returnObj = null, prevOutput = null) {
     const { origin, destination, date } = departureObj;
     const originRoutes = schedule.find(el => el.port === origin);
     const routeInfo = originRoutes.flight_schedule.find(el => el.destination_port === destination);
@@ -115,22 +114,21 @@ function calculateAvailability(schedule, departureObj, returnObj = null, outputB
             availabilityDetails = determineVessels([...availabilityDetails], routeInfo.vessels);
             availabilityDetails = determineOperators([...availabilityDetails], routeInfo.shared_operation);
             // calculateAlternateRoutings()
-            console.log(availabilityDetails)
         }
     }
 
-    /* let output;
-    if (outputBuild) {
-        output = { depart: { ...outputBuild }, return: {} }
+    let output;
+    if (prevOutput) {
+        output = { departures: prevOutput, returns: availabilityDetails }
     } else  {
-        output = { depart: {} }
+        output = { departures: availabilityDetails }
     }
     
     if (returnObj) {
-        output = calculateAvailability(schedule, returnObj, null, output);
+        output = { departures: availabilityDetails, returns: "pending" }
     }
 
-    return output; */
+    return output;
 }
 
 export default calculateAvailability;
