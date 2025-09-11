@@ -41,7 +41,7 @@ function addCommonData(allFlights, origin, destination, departureDate) {
     const departureYear = new Date(departureDate).getFullYear();
     
     return allFlights.map((el) => {
-        return { ...el, origin, destination, departure_date: `${departureDay}/${departureMonth}/${departureYear}` };
+        return { ...el, origin, destination, type: 'direct', departure_date: `${departureDay}/${departureMonth}/${departureYear}` };
     })
 }
 
@@ -92,6 +92,21 @@ function determineOperators(allFlights, allOperators) {
     })
 }
 
+function determineAlternateRoutings(alternatives) {
+    const randomChance = pickRandomFromArray([true, false, true]);
+    if (!randomChance) {
+        return null;
+    }
+
+    let alternativesAmount = [];
+    for (let i=1; i <= alternatives.length; i++) {
+        alternativesAmount.push(i)
+    }
+    
+    const routingsOccurrence = pickRandomFromArray(alternativesAmount);
+    return pickUniquesFromArray(alternatives, routingsOccurrence)
+}
+
 // --- MASTER FUNCTION ---
 
 async function calculateAvailability(schedule, departureObj, returnObj = null, prevOutput = null) {
@@ -101,9 +116,10 @@ async function calculateAvailability(schedule, departureObj, returnObj = null, p
 
     let availabilityDetails = [];
 
-    if (!routeInfo.direct_flight) {
+    if (!routeInfo.direct_flight && routeInfo.intermediate_ports) {
         // No direct flight --> Search for indirect routings
-        const { intermediate_ports } = routeInfo;
+        const alternateRoutings = determineAlternateRoutings(routeInfo.intermediate_ports);
+        console.log(alternateRoutings);
         // Recursive availability calculation via intermediate ports
     } else {
         availabilityDetails = getFlightsPerDate(routeInfo, date);
@@ -113,7 +129,10 @@ async function calculateAvailability(schedule, departureObj, returnObj = null, p
             availabilityDetails = calculateFlightPrices([...availabilityDetails], routeInfo.price);
             availabilityDetails = determineVessels([...availabilityDetails], routeInfo.vessels);
             availabilityDetails = determineOperators([...availabilityDetails], routeInfo.shared_operation);
-            // calculateAlternateRoutings()
+        }
+        if (routeInfo.intermediate_ports) {
+            const alternateRoutings = determineAlternateRoutings(routeInfo.intermediate_ports);
+            console.log(alternateRoutings);
         }
     }
 
