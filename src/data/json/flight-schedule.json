@@ -2070,7 +2070,336 @@
             "port": "VEN",
             "full_name": "Venus",
             "connection_availability": false,
-            "flight_schedule": []
+            "flight_schedule": [
+                {
+                    "destination_id": 1,
+                    "destination_port": "LUN",
+                    "destination_full_name": "Moon",
+                    "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 140,
+                        "max": 215,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": null,
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["EAS"],
+                        ["EEU"],
+                        ["MRS"],
+                        ["MRS", "CEL"],
+                        ["MRS", "EEU"],
+                        ["MRS", "EAS"],
+                        ["MRS", "EAM"]
+                    ],
+                    "shared_operation": null
+                },
+                {
+                    "destination_id": 2,
+                    "destination_port": "CEL",
+                    "destination_full_name": "Celestia Station",
+                    "direct_flight": true,
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 2
+                        },
+                        "weekly": [0, 1, 2, 3, 4, 5, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                    },
+                    "duration": {
+                        "min": {
+                            "overall_seconds": 894720,
+                            "years": 0,
+                            "months": 0,
+                            "days": 10,
+                            "hours": 8,
+                            "minutes": 32
+                        },
+                        "max": {
+                            "overall_seconds": 1091520,
+                            "years": 0,
+                            "months": 0,
+                            "days": 12,
+                            "hours": 15,
+                            "minutes": 12
+                        }
+                    },
+                    "vessels": [
+                        "Galaxy Jumbo W80"
+                    ],
+                    "price": {
+                        "min": 50,
+                        "max": 100,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "order": 1, "name": "CS7290", "departure_time": "12:15" },
+                        { "order": 2, "name": "CS7232", "departure_time": "20:30" }
+                    ],
+                    "intermediate_ports": [
+                        ["EAS"],
+                        ["EEU"],
+                        ["MRS"],
+                        ["MRS", "EEU"],
+                        ["MRS", "EAS"],
+                        ["MRS", "EAM"]
+                    ],
+                    "shared_operation": ["SpaceX", "Milkyflight", "Daedalus", "Velocispace", "Orion Go"]
+                },
+                {
+                    "destination_id": 3,
+                    "destination_port": "EEU",
+                    "destination_full_name": "Earth (Europe)",
+                    "direct_flight": true,
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 1
+                        },
+                        "weekly": [3, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5]
+                    },
+                    "duration": {
+                        "min": {
+                            "overall_seconds": 895260,
+                            "years": 0,
+                            "months": 0,
+                            "days": 10,
+                            "hours": 8,
+                            "minutes": 41
+                        },
+                        "max": {
+                            "overall_seconds": 1092360,
+                            "years": 0,
+                            "months": 0,
+                            "days": 12,
+                            "hours": 15,
+                            "minutes": 26
+                        }
+                    },
+                    "vessels": [
+                        "Galaxy Jumbo W80"
+                    ],
+                    "price": {
+                        "min": 67,
+                        "max": 115,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "order": 1, "name": "CS3744", "departure_time": "15:10" }
+                    ],
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["MRS"],
+                        ["MRS", "CEL"],
+                        ["MRS", "LUN"]
+                    ],
+                    "shared_operation": ["SpaceX", "Milkyflight", "Daedalus", "Velocispace", "Orion Go"]
+                },
+                {
+                    "destination_id": 4,
+                    "destination_port": "EAS",
+                    "destination_full_name": "Earth (Asia)",
+                    "direct_flight": true,
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 1
+                        },
+                        "weekly": [0, 5],
+                        "monthly": [6, 7, 8, 9, 10, 11]
+                    },
+                    "duration": {
+                        "min": {
+                            "overall_seconds": 895260,
+                            "years": 0,
+                            "months": 0,
+                            "days": 10,
+                            "hours": 8,
+                            "minutes": 41
+                        },
+                        "max": {
+                            "overall_seconds": 1092360,
+                            "years": 0,
+                            "months": 0,
+                            "days": 12,
+                            "hours": 15,
+                            "minutes": 26
+                        }
+                    },
+                    "vessels": [
+                        "Galaxy Jumbo W80"
+                    ],
+                    "price": {
+                        "min": 75,
+                        "max": 130,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "order": 1, "name": "CS4778", "departure_time": "21:20" }
+                    ],
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["MRS"],
+                        ["MRS", "CEL"],
+                        ["MRS", "LUN"]
+                    ],
+                    "shared_operation": ["Roscosmos Beyond", "Milkyflight", "Daedalus", "Velocispace", "Orion Go"]
+                },
+                {
+                    "destination_id": 5,
+                    "destination_port": "EAM",
+                    "destination_full_name": "Earth (America)",
+                    "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 75,
+                        "max": 130,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": null,
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["MRS"],
+                        ["MRS", "CEL"],
+                        ["MRS", "LUN"]
+                    ],
+                    "shared_operation": null
+                },
+                {
+                    "destination_id": 6,
+                    "destination_port": "MRS",
+                    "destination_full_name": "Mars",
+                    "direct_flight": true,
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 1
+                        },
+                        "weekly": [0, 2, 4, 5],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                    },
+                    "duration": {
+                        "min": {
+                            "overall_seconds": 898500,
+                            "years": 0,
+                            "months": 0,
+                            "days": 10,
+                            "hours": 9,
+                            "minutes": 35
+                        }, 
+                        "max": {
+                            "overall_seconds": 1138920,
+                            "years": 0,
+                            "months": 0,
+                            "days": 13,
+                            "hours": 4,
+                            "minutes": 22
+                        }
+                    },
+                    "vessels": [
+                        "Galaxy Jumbo W80"
+                    ],
+                    "price": {
+                        "min": 210,
+                        "max": 280,
+                        "rounding_options": [25, 50, 75]
+                    },
+                    "flight_profiles": [
+                        { "order": 1, "name": "CS6754", "departure_time": "16:45" }
+                    ],
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["EEU"],
+                        ["EAS"],
+                        ["CEL", "LUN"],
+                        ["CRS"]
+                    ],
+                    "shared_operation": ["SpaceX", "Milkyflight", "Red Star Spacelines", "Velocispace"]
+                },
+                {
+                    "destination_id": 8,
+                    "destination_port": "CRS",
+                    "destination_full_name": "Ceres",
+                    "direct_flight": true,
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 3
+                        },
+                        "weekly": [1, 5],
+                        "monthly": [0, 1, 4, 5, 8, 9, 10, 11]
+                    },
+                    "duration": {
+                        "min": {
+                            "overall_seconds": 3100500,
+                            "years": 0,
+                            "months": 1,
+                            "days": 5,
+                            "hours": 21,
+                            "minutes": 15
+                        }, 
+                        "max": {
+                            "overall_seconds": 3659820,
+                            "years": 0,
+                            "months": 1,
+                            "days": 12,
+                            "hours": 8,
+                            "minutes": 37
+                        }
+                    },
+                    "vessels": [
+                        "Galaxy Jumbo W80",
+                        "Supernova Cruiser"
+                    ],
+                    "price": {
+                        "min": 300,
+                        "max": 360,
+                        "rounding_options": [25, 50, 75]
+                    },
+                    "flight_profiles": [
+                        { "order": 1, "name": "CS8736", "departure_time": "10:00" },
+                        { "order": 2, "name": "CS8752", "departure_time": "16:55" },
+                        { "order": 3, "name": "CS8778", "departure_time": "22:10" }
+                    ],
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["EEU", "CEL"],
+                        ["EAS", "CEL"],
+                        ["MRS"]
+                    ],
+                    "shared_operation": ["SpaceX", "Milkyflight", "Orion Go", "Daedalus", "Velocispace"]
+                },
+                {
+                    "destination_id": 9,
+                    "destination_port": "TTN",
+                    "destination_full_name": "Titan",
+                    "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 875,
+                        "max": 1420,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": null,
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["CEL", "CRS"],
+                        ["CRS"],
+                        ["EEU", "CEL"],
+                        ["EAS", "CEL"]
+                    ],
+                    "shared_operation": null
+                }
+            ]
         },
         {
             "id": 8,
