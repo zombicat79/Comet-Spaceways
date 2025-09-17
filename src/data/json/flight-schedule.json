@@ -782,7 +782,9 @@
                         { "order": 1, "name": "CS9297", "departure_time": "22:05" }
                     ],
                     "intermediate_ports": [
-                        ["CRS"]
+                        ["CRS"],
+                        ["MRS", "CRS"],
+                        ["MRS", "VEN"]
                     ],
                     "shared_operation": ["SpaceX", "Roscosmos Beyond", "Frontier Space", "Galaxyline"]
                 }
@@ -2406,14 +2408,539 @@
             "port": "CRS",
             "full_name": "Ceres",
             "connection_availability": true,
-            "flight_schedule": []
+            "flight_schedule": [
+                {
+                    "destination_id": 1,
+                    "destination_port": "LUN",
+                    "destination_full_name": "Moon",
+                    "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 300,
+                        "max": 550,
+                        "rounding_options": [25, 50, 75]
+                    },
+                    "flight_profiles": null,
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["MRS"],
+                        ["MRS", "CEL"]
+                    ],
+                    "shared_operation": null
+                },
+                {
+                    "destination_id": 2,
+                    "destination_port": "CEL",
+                    "destination_full_name": "Celestia Station",
+                    "direct_flight": true,
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 3
+                        },
+                        "weekly": [2, 5, 7],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                    },
+                    "duration": {
+                        "min": {
+                            "overall_seconds": 3560580,
+                            "years": 0,
+                            "months": 1,
+                            "days": 11,
+                            "hours": 5,
+                            "minutes": 3
+                        }, 
+                        "max": {
+                            "overall_seconds": 4740420,
+                            "years": 0,
+                            "months": 1,
+                            "days": 24,
+                            "hours": 20,
+                            "minutes": 47
+                        }
+                    },
+                    "vessels": [
+                        "Supernova Cruiser"
+                    ],
+                    "price": {
+                        "min": 240,
+                        "max": 410,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "order": 1, "name": "CS8220", "departure_time": "00:45" },
+                        { "order": 2, "name": "CS8254", "departure_time": "09:15" },
+                        { "order": 3, "name": "CS8278", "departure_time": "17:30" }
+                    ],
+                    "intermediate_ports": [
+                        ["MRS"],
+                        ["VEN"]
+                    ],
+                    "shared_operation": ["SpaceX", "Roscosmos Beyond", "Euroespace Voyage", "Milkyflight", "Frontier Space", "Galaxyline"]
+                },
+                {
+                    "destination_id": 3,
+                    "destination_port": "EEU",
+                    "destination_full_name": "Earth (Europe)",
+                    "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 290,
+                        "max": 500,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": null,
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["MRS"],
+                        ["MRS", "CEL"],
+                        ["MRS", "LUN"]
+                    ],
+                    "shared_operation": null
+                },
+                {
+                    "destination_id": 4,
+                    "destination_port": "EAS",
+                    "destination_full_name": "Earth (Asia)",
+                    "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 275,
+                        "max": 490,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": null,
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["MRS"],
+                        ["MRS", "CEL"],
+                        ["MRS", "LUN"]
+                    ],
+                    "shared_operation": null
+                },
+                {
+                    "destination_id": 5,
+                    "destination_port": "EAM",
+                    "destination_full_name": "Earth (America)",
+                    "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 275,
+                        "max": 490,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": null,
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["MRS"],
+                        ["MRS", "CEL"],
+                        ["MRS", "LUN"]
+                    ],
+                    "shared_operation": null
+                },
+                {
+                    "destination_id": 6,
+                    "destination_port": "MRS",
+                    "destination_full_name": "Mars",
+                    "direct_flight": true,
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 2
+                        },
+                        "weekly": [0, 1, 2, 3, 4, 5, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                    },
+                    "duration": {
+                        "min": {
+                            "overall_seconds": 1176060,
+                            "years": 0,
+                            "months": 0,
+                            "days": 13,
+                            "hours": 14,
+                            "minutes": 41
+                        }, 
+                        "max": {
+                            "overall_seconds": 1454940,
+                            "years": 0,
+                            "months": 0,
+                            "days": 16,
+                            "hours": 20,
+                            "minutes": 9
+                        }
+                    },
+                    "vessels": [
+                        "Galaxy Jumbo W80",
+                        "Supernova Cruiser"
+                    ],
+                    "price": {
+                        "min": 150,
+                        "max": 190,
+                        "rounding_options": [25, 50, 75]
+                    },
+                    "flight_profiles": [
+                        { "order": 1, "name": "CS8612", "departure_time": "14:25" },
+                        { "order": 2, "name": "CS8644", "departure_time": "21:50" }
+                    ],
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["CEL", "LUN"],
+                        ["CEL", "EEU"],
+                        ["CEL", "EAS"],
+                        ["CEL", "EAM"],
+                        ["VEN"]
+                    ],
+                    "shared_operation": ["SpaceX", "Milkyflight", "Red Star Spacelines", "Roscosmos Beyond", "Daedalus", "Velocispace"]
+                },
+                {
+                    "destination_id": 7,
+                    "destination_port": "VEN",
+                    "destination_full_name": "Venus",
+                    "direct_flight": true,
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 3
+                        },
+                        "weekly": [1, 5],
+                        "monthly": [0, 1, 4, 5, 8, 9, 10, 11]
+                    },
+                    "duration": {
+                        "min": {
+                            "overall_seconds": 3100500,
+                            "years": 0,
+                            "months": 1,
+                            "days": 5,
+                            "hours": 21,
+                            "minutes": 15
+                        }, 
+                        "max": {
+                            "overall_seconds": 3659820,
+                            "years": 0,
+                            "months": 1,
+                            "days": 12,
+                            "hours": 8,
+                            "minutes": 37
+                        }
+                    },
+                    "vessels": [
+                        "Galaxy Jumbo W80",
+                        "Supernova Cruiser"
+                    ],
+                    "price": {
+                        "min": 300,
+                        "max": 360,
+                        "rounding_options": [25, 50, 75]
+                    },
+                    "flight_profiles": [
+                        { "order": 1, "name": "CS8735", "departure_time": "06:20" },
+                        { "order": 2, "name": "CS8751", "departure_time": "13:30" },
+                        { "order": 3, "name": "CS8777", "departure_time": "19:15" }
+                    ],
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["CEL", "EEU"],
+                        ["CEL", "EAS"],
+                        ["MRS"]
+                    ],
+                    "shared_operation": ["SpaceX", "Milkyflight", "Orion Go", "Daedalus", "Velocispace"]
+                },
+                {
+                    "destination_id": 9,
+                    "destination_port": "TTN",
+                    "destination_full_name": "Titan",
+                    "direct_flight": true,
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 4
+                        },
+                        "weekly": [0, 1, 2, 3, 4, 5, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                    },
+                    "duration": {
+                        "min": {
+                            "overall_seconds": 10248120,
+                            "years": 0,
+                            "months": 3,
+                            "days": 28,
+                            "hours": 14,
+                            "minutes": 42
+                        }, 
+                        "max": {
+                            "overall_seconds": 10927320,
+                            "years": 0,
+                            "months": 4,
+                            "days": 6,
+                            "hours": 11,
+                            "minutes": 22
+                        }
+                    },
+                    "vessels": [
+                        "Supernova Cruiser"
+                    ],
+                    "price": {
+                        "min": 820,
+                        "max": 1150,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "order": 1, "name": "CS9813", "departure_time": "01:25" },
+                        { "order": 2, "name": "CS9855", "departure_time": "07:05" },
+                        { "order": 3, "name": "CS9861", "departure_time": "13:40" },
+                        { "order": 4, "name": "CS9899", "departure_time": "20:10" }
+                    ],
+                    "intermediate_ports": null,
+                    "shared_operation": ["SpaceX", "Roscosmos Beyond", "Frontier Space", "Galaxyline"]
+                }
+            ]
         },
         {
             "id": 9,
             "port": "TTN",
             "full_name": "Titan",
             "connection_availability": false,
-            "flight_schedule": []
+            "flight_schedule": [
+                {
+                    "destination_id": 1,
+                    "destination_port": "LUN",
+                    "destination_full_name": "Moon",
+                    "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 750,
+                        "max": 980,
+                        "rounding_options": [25, 50, 75]
+                    },
+                    "flight_profiles": null,
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["CRS", "CEL"],
+                        ["CRS", "MRS"]
+                    ],
+                    "shared_operation": null
+                },
+                {
+                    "destination_id": 2,
+                    "destination_port": "CEL",
+                    "destination_full_name": "Celestia Station",
+                    "direct_flight": true,
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 1
+                        },
+                        "weekly": [3, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                    },
+                    "duration": {
+                        "min": {
+                            "overall_seconds": 15973680,
+                            "years": 0,
+                            "months": 6,
+                            "days": 4,
+                            "hours": 21,
+                            "minutes": 8
+                        }, 
+                        "max": {
+                            "overall_seconds": 16901760,
+                            "years": 0,
+                            "months": 6,
+                            "days": 15,
+                            "hours": 14,
+                            "minutes": 56
+                        }
+                    },
+                    "vessels": [
+                        "Supernova Cruiser"
+                    ],
+                    "price": {
+                        "min": 1000,
+                        "max": 1420,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "order": 1, "name": "CS9296", "departure_time": "12:35" }
+                    ],
+                    "intermediate_ports": [
+                        ["CRS"],
+                        ["CRS", "MRS"],
+                        ["CRS", "VEN"]
+                    ],
+                    "shared_operation": ["SpaceX", "Roscosmos Beyond", "Frontier Space", "Galaxyline"]
+                },
+                {
+                    "destination_id": 3,
+                    "destination_port": "EEU",
+                    "destination_full_name": "Earth (Europe)",
+                    "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 1150,
+                        "max": 1580,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": null,
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["CRS", "CEL"],
+                        ["CRS", "MRS"],
+                        ["CRS", "VEN"]
+
+                    ],
+                    "shared_operation": null
+                },
+                {
+                    "destination_id": 4,
+                    "destination_port": "EAS",
+                    "destination_full_name": "Earth (Asia)",
+                    "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 1075,
+                        "max": 1450,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": null,
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["CRS", "CEL"],
+                        ["CRS", "MRS"],
+                        ["CRS", "VEN"]
+
+                    ],
+                    "shared_operation": null
+                },
+                {
+                    "destination_id": 5,
+                    "destination_port": "EAM",
+                    "destination_full_name": "Earth (America)",
+                    "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 1075,
+                        "max": 1450,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": null,
+                    "intermediate_ports": [
+                        ["CEL"],
+                        ["CRS", "CEL"],
+                        ["CRS", "MRS"]
+                    ],
+                    "shared_operation": null
+                },
+                {
+                    "destination_id": 6,
+                    "destination_port": "MRS",
+                    "destination_full_name": "Mars",
+                    "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 950,
+                        "max": 1350,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": null,
+                    "intermediate_ports": [
+                        ["CRS"],
+                        ["CRS", "VEN"],
+                        ["CEL"],
+                        ["CRS", "CEL"]
+                    ],
+                    "shared_operation": null
+                },
+                {
+                    "destination_id": 7,
+                    "destination_port": "VEN",
+                    "destination_full_name": "Venus",
+                    "direct_flight": false,
+                    "frequency": null,
+                    "duration": null,
+                    "vessels": null,
+                    "price": {
+                        "min": 875,
+                        "max": 1420,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": null,
+                    "intermediate_ports": [
+                        ["CRS"],
+                        ["CRS", "MRS"],
+                        ["CEL"],
+                        ["CRS", "CEL"],
+                        ["CEL", "EEU"],
+                        ["CEL", "EAS"]
+                    ],
+                    "shared_operation": null
+                },
+                {
+                    "destination_id": 8,
+                    "destination_port": "CRS",
+                    "destination_full_name": "Ceres",
+                    "direct_flight": true,
+                    "frequency": {
+                        "daily": {
+                            "min": 1,
+                            "max": 4
+                        },
+                        "weekly": [0, 1, 2, 3, 4, 5, 6],
+                        "monthly": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                    },
+                    "duration": {
+                        "min": {
+                            "overall_seconds": 10248120,
+                            "years": 0,
+                            "months": 3,
+                            "days": 28,
+                            "hours": 14,
+                            "minutes": 42
+                        }, 
+                        "max": {
+                            "overall_seconds": 10927320,
+                            "years": 0,
+                            "months": 4,
+                            "days": 6,
+                            "hours": 11,
+                            "minutes": 22
+                        }
+                    },
+                    "vessels": [
+                        "Supernova Cruiser"
+                    ],
+                    "price": {
+                        "min": 820,
+                        "max": 1150,
+                        "rounding_options": [19, 49, 75, 99]
+                    },
+                    "flight_profiles": [
+                        { "order": 1, "name": "CS9812", "departure_time": "04:45" },
+                        { "order": 2, "name": "CS9854", "departure_time": "08:20" },
+                        { "order": 3, "name": "CS9860", "departure_time": "15:50" },
+                        { "order": 4, "name": "CS9898", "departure_time": "22:35" }
+                    ],
+                    "intermediate_ports": null,
+                    "shared_operation": ["SpaceX", "Roscosmos Beyond", "Frontier Space", "Galaxyline"]
+                }
+            ]
         }
     ]
 }
