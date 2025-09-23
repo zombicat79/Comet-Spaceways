@@ -17,7 +17,7 @@ function FlightDetails({ itemDetails, onSelect, selected }) {
     }
 
     // FAKE FLIGHT DATA -- Remove once real data is ready to be fed
-    const fakeOutboundDetails = {
+    /* const fakeOutboundDetails = {
         type: 'outbound',
         origin: 'Earth (Europe)',
         destination: 'Mars',
@@ -39,13 +39,13 @@ function FlightDetails({ itemDetails, onSelect, selected }) {
         arrivalTime: "19:24h",
         mode: 'stopover',
         price: 412.08
-    }
+    } */
     // -- END OF WARNING --
 
     function addToCart() {
         itemDetails.type === 'outbound'
-            ? dispatch({ type: "cart/addOutbound", payload: fakeOutboundDetails })
-            : dispatch({ type: "cart/addInbound", payload: fakeInboundDetails });
+            ? dispatch({ type: "cart/addOutbound", payload: itemDetails })
+            : dispatch({ type: "cart/addInbound", payload: itemDetails });
     }
 
     function removeFromCart() {
@@ -69,7 +69,7 @@ function FlightDetails({ itemDetails, onSelect, selected }) {
                 }}>
                     <Button type="secondary" text={selected ? 'Discard' : 'Select'} />
                 </div>
-                <p className="flight-details__price">1138,78€</p>
+                <p className="flight-details__price">{itemDetails.price}€</p>
             </div>
         </div>
     )

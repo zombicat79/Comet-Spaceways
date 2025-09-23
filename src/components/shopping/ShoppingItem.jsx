@@ -3,7 +3,7 @@ import { useState } from 'react';
 import RoutingDiagram from '../RoutingDiagram';
 import SvgIcon from "../SvgIcon";
 
-import { minimizeDestinations } from '../../utilities/utils';
+import { maximizeDestinations } from '../../utilities/utils';
 
 function ShoppingItem({ isFlight, data }) {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -25,13 +25,13 @@ function ShoppingItem({ isFlight, data }) {
             {isFlight && 
             <section className="shop-item__routing">
                 <div className="routing__infopanel">
-                    <span>{data.departureDate}</span>
-                    <span>{data.arrivalDate}</span>
+                    <span>{data.departure_date}</span>
+                    <span>{data.arrival_date}</span>
                 </div>
                 <RoutingDiagram />
                 <div className="routing__infopanel">
-                    <span>{minimizeDestinations(data.origin)}</span>
-                    <span>{minimizeDestinations(data.destination)}</span>
+                    <span>{data.origin}</span>
+                    <span>{data.destination}</span>
                 </div>
             </section>
             }

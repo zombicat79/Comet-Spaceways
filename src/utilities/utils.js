@@ -23,6 +23,31 @@ function minimizeDestinations(fullDestination) {
     }
 }
 
+function maximizeDestinations(compactDestination) {
+    switch(compactDestination) {
+        case 'EAM':
+            return 'Earth (America)';
+        case 'EEU':
+            return 'Earth (Europe)';
+        case 'EAS':
+            return 'Earth (Asia)'
+        case 'CEL':
+            return 'Celestia Station';
+        case 'LUN':
+            return 'Moon';
+        case 'MRS':
+            return 'Mars';
+        case 'CRS':
+            return 'Ceres'
+        case 'VEN':
+            return 'Venus';
+        case 'TTN':
+            return 'Titan'
+        default:
+            return '';
+    }
+}
+
 function formatTimeUnits(timeUnit) {
     if (timeUnit.toString().length < 2) {
         return `0${timeUnit}`;
@@ -32,7 +57,6 @@ function formatTimeUnits(timeUnit) {
 }
 
 function getTimeSummaryFromSeconds(actualSeconds) {
-    // UNDER CONSTRUCTION
     let rest = actualSeconds;
 
     function getMonths(secondRepo) {
@@ -87,6 +111,20 @@ function getTimeSummaryFromSeconds(actualSeconds) {
     return { months, days, hours, minutes }
 }
 
+function displayDurationInfo(timeInfo) {
+    if (timeInfo.months > 0) {
+        return `${timeInfo.months} month(s), ${timeInfo.days} day(s)`;
+    }
+    if (timeInfo.days > 0) {
+        return `${timeInfo.days} day(s), ${timeInfo.hours} hour(s)`;
+    }
+    if (timeInfo.hours > 0) {
+        return `${timeInfo.hours} hour(s), ${timeInfo.minutes} minute(s)`;
+    }
+
+    return `${timeInfo.minutes} minute(s)`;
+}
+
 function pickFromNumberRange(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -114,4 +152,13 @@ function pickUniquesFromArray(array, outputLength) {
     return selection;
 }
 
-export { minimizeDestinations, formatTimeUnits, getTimeSummaryFromSeconds, pickFromNumberRange, pickRandomFromArray, pickUniquesFromArray };
+export { 
+    minimizeDestinations, 
+    maximizeDestinations, 
+    formatTimeUnits, 
+    getTimeSummaryFromSeconds,
+    displayDurationInfo, 
+    pickFromNumberRange, 
+    pickRandomFromArray, 
+    pickUniquesFromArray 
+};

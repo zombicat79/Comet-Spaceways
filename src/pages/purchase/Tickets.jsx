@@ -49,8 +49,8 @@ function Tickets() {
 
     return (
         <main className="tickets">
-            <FlightSegment type='outbound' />
-            {flightSearchState.searchScope === "🔄 Round Trip" && <FlightSegment type='inbound' />}
+            <FlightSegment type='outbound' flightData={flights.departures} />
+            {flightSearchState.searchScope === "🔄 Round Trip" && <FlightSegment type='inbound' flightData={flights.returns} />}
             
             <PageRibbon>
                 <Button type="primary" action={() => navigate("/purchase/details")} text="proceed with purchase 🚀" isDisabled={proceedButtonState} />

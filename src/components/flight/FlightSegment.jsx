@@ -6,8 +6,11 @@ import ItemList from '../ItemList';
 import FlightDetails from './FlightDetails';
 import SvgIcon from "../SvgIcon";
 
-function FlightSegment({ type }) {
+function FlightSegment({ type, flightData }) {
     const { flightSearchState } = useContext(FlightSearchContext);
+    const segmentedFlightData = flightData?.map((el) => {
+        return { ...el, type };
+    })
 
     return (
         <ContentSection>
@@ -25,7 +28,10 @@ function FlightSegment({ type }) {
                     </p>
                 </header>
                 <main className="segment__body">
-                    <ItemList data={[{id: 1, mode: 'direct', type}, {id: 2, mode: 'stopover', type}]} ItemComponent={FlightDetails} separation={3}  />
+                    {segmentedFlightData
+                    ? <ItemList data={segmentedFlightData} ItemComponent={FlightDetails} separation={3}  />
+                    : <p>No flights available</p>
+                    }
                 </main>
             </div>
         </ContentSection>

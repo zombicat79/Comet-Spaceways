@@ -41,7 +41,7 @@ function addCommonData(allFlights, origin, destination, departureDate) {
     const departureYear = new Date(departureDate).getFullYear();
     
     return allFlights.map((el) => {
-        return { ...el, origin, destination, type: 'direct', departure_date: `${departureDay}/${departureMonth}/${departureYear}` };
+        return { ...el, origin, destination, mode: 'direct', departure_date: `${departureDay}/${departureMonth}/${departureYear}` };
     })
 }
 
