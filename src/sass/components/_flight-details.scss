@@ -119,6 +119,10 @@
                 width: 80%;
             }
 
+            .routing__identifier {
+                padding-bottom: 2rem;
+            }
+
             .routing__flight,
             .routing__duration {
                 display: inline-block;
@@ -126,11 +130,14 @@
 
             .routing__flight {
                 font-family: 'titillium-semibold';
-                padding-bottom: 2rem;
             }
 
             .routing__duration {
                 padding-top: 2rem;
+            }
+
+            .routing__operator {
+                display: block;
             }
         }
 

@@ -3,8 +3,6 @@ import { useState } from 'react';
 import RoutingDiagram from '../RoutingDiagram';
 import SvgIcon from "../SvgIcon";
 
-import { maximizeDestinations } from '../../utilities/utils';
-
 function ShoppingItem({ isFlight, data }) {
     const [isExpanded, setIsExpanded] = useState(false);
 

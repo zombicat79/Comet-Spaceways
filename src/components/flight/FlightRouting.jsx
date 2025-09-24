@@ -3,6 +3,7 @@ import { LayoutContext } from './../../contexts/LayoutContext';
 
 import SvgIcon from "../SvgIcon";
 import ConnectionDetails from '../infopieces/ConnectionDetails';
+import RoutingDiagram from '../RoutingDiagram';
 
 import { maximizeDestinations, displayDurationInfo } from '../../utilities/utils';
 
@@ -26,15 +27,11 @@ function FlightRouting({ routingDetails }) {
                     </span>}
                 </div>
                 <div className="routing__figure">
-                    <span className="routing__flight">{routingDetails.name}</span>
-                    <div className="routing__diagram">
-                        <hr className="routing__line"></hr>
-                        <div className="routing__endpoint routing__endpoint--left"></div>
-                        <div className="routing__arrow">
-                            <SvgIcon design="starship" color="#0B3D91" />
-                        </div>
-                        <div className="routing__endpoint routing__endpoint--right"></div>
+                    <div className="routing__identifier">
+                        <span className="routing__flight">{routingDetails.name}</span>
+                        {routingDetails.operator !== "Comet Spaceways" && <span className="routing__operator">(operated by {routingDetails.operator})</span>}
                     </div>
+                    <RoutingDiagram />
                     <span className="routing__duration">{displayDurationInfo(routingDetails.duration)}</span>
                 </div>
                 <div className="routing__coords">

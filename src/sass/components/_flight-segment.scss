@@ -1,5 +1,13 @@
 .segment {
     font-family: 'titillium-regular';
+
+    &__unavailable {
+        padding: 2rem;
+
+        & > button {
+            margin-top: 2rem;
+        }
+    }
     
 
     &__header {

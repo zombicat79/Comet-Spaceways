@@ -116,7 +116,10 @@ async function calculateAvailability(schedule, departureObj, returnObj = null, p
 
     let availabilityDetails = [];
 
-    if (!routeInfo.direct_flight && routeInfo.intermediate_ports) {
+    if (!routeInfo.direct_flight) {
+        return null
+    }
+    else if (!routeInfo.direct_flight && routeInfo.intermediate_ports) {
         // No direct flight --> Search for indirect routings
         const alternateRoutings = determineAlternateRoutings(routeInfo.intermediate_ports);
         console.log(alternateRoutings);
@@ -138,7 +141,7 @@ async function calculateAvailability(schedule, departureObj, returnObj = null, p
 
     let output;
     if (prevOutput) {
-        output = { departures: prevOutput, returns: availabilityDetails }
+        output = { departures: prevOutput.departures, returns: availabilityDetails }
     } else  {
         output = { departures: availabilityDetails }
     }

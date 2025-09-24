@@ -1149,6 +1149,10 @@ h3 {
 
 .segment {
   font-family: 'titillium-regular'; }
+  .segment__unavailable {
+    padding: 2rem; }
+    .segment__unavailable > button {
+      margin-top: 2rem; }
   .segment__header {
     font-family: 'titillium-bold';
     display: flex;
@@ -1289,14 +1293,17 @@ h3 {
       @media screen and (max-width: 768px) {
         .flight-details .routing__figure {
           width: 80%; } }
+      .flight-details .routing__figure .routing__identifier {
+        padding-bottom: 2rem; }
       .flight-details .routing__figure .routing__flight,
       .flight-details .routing__figure .routing__duration {
         display: inline-block; }
       .flight-details .routing__figure .routing__flight {
-        font-family: 'titillium-semibold';
-        padding-bottom: 2rem; }
+        font-family: 'titillium-semibold'; }
       .flight-details .routing__figure .routing__duration {
         padding-top: 2rem; }
+      .flight-details .routing__figure .routing__operator {
+        display: block; }
     .flight-details .routing__mode {
       text-transform: uppercase; }
       @media screen and (max-width: 768px) {
@@ -2060,12 +2067,9 @@ h3 {
   @media screen and (max-width: 600px) {
     .aside {
       max-width: initial;
-      padding-bottom: 10rem;
-    }
-  }
+      padding-bottom: 10rem; } }
   .aside section {
-    padding: 0;
-  }
+    padding: 0; }
   .aside--left {
     left: -150%; }
     .aside--left--on {

@@ -31,7 +31,7 @@ function Tickets() {
     useEffect(() => {
         calculateAvailability(flightSchedule, departureObj, returnObj)
             .then((calcResult1) => {
-                if (calcResult1?.returns === "pending") return calculateAvailability(flightSchedule, returnObj, null, calcResult1.departures);
+                if (calcResult1?.returns === "pending") return calculateAvailability(flightSchedule, returnObj, null, calcResult1);
                 return calcResult1;
             })
             .then((calcResult2) => setFlights(calcResult2))
@@ -49,8 +49,8 @@ function Tickets() {
 
     return (
         <main className="tickets">
-            <FlightSegment type='outbound' flightData={flights.departures} />
-            {flightSearchState.searchScope === "🔄 Round Trip" && <FlightSegment type='inbound' flightData={flights.returns} />}
+            <FlightSegment type='outbound' flightData={flights?.departures} />
+            {flightSearchState.searchScope === "🔄 Round Trip" && <FlightSegment type='inbound' flightData={flights?.returns} />}
             
             <PageRibbon>
                 <Button type="primary" action={() => navigate("/purchase/details")} text="proceed with purchase 🚀" isDisabled={proceedButtonState} />
