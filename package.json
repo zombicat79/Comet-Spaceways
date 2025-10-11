@@ -12,9 +12,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "compile:sass": "node-sass src/sass/main.scss css/style.css -w",
-    "serve:data": "json-server src/data/json/flight-schedule.json"
+    "serve:data": "json-server db/json/flight-schedule.json",
+    "upload:data": "node db/supabase-data-loader.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.75.0",
     "react": "^19.0.0",
     "react-datepicker": "^8.3.0",
     "react-dom": "^19.0.0",
@@ -25,6 +27,7 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
+    "dotenv": "^17.2.3",
     "eslint": "^8.0.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-react-hooks": "^5.1.0",

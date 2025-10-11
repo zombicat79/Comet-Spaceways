@@ -3,6 +3,8 @@ import { FlightSearchContext } from '../../contexts/FlightSearchContext';
 import { CartContext } from '../../contexts/CartContext';
 import { useNavigate, useLoaderData } from 'react-router';
 
+import { createClient } from "@supabase/supabase-js";
+
 import FlightSegment from '../../components/flight/FlightSegment';
 import PageRibbon from '../../components/PageRibbon';
 import Button from '../../components/Button';
@@ -59,10 +61,33 @@ function Tickets() {
     )
 }
 
-export function fetchFlights() {
-    return fetch("http://localhost:3000/origins")
+export async function fetchFlights() {
+    // FAVOUR THIS IMPLEMENTATION WHEN LOADING DATA FROM SUPABASE
+    const supabase = createClient(
+        import.meta.env.VITE_SUPABASE_DB_URL,
+        import.meta.env.VITE_SUPABASE_DB_KEY
+    );
+
+    async function getDataFromDB() {
+        const { data, error } = await supabase
+        .from('Origins')
+        .select()
+
+        if (error) {
+            console.log(error);
+            return;
+        }
+
+        return data;
+    }
+
+    const flights = await getDataFromDB();
+    return flights;
+
+    // FAVOUR THIS IMPLEMENTATION WHEN LOADING DATA FROM JSON-SERVER 
+    /* return fetch("http://localhost:3000/origins")
         .then(res => res.json())
         .then(data => data)
-        .catch(err => console.log(err));
+        .catch(err => console.log(err)); */
 };
 export default Tickets;
