@@ -10,13 +10,11 @@ import { CartProvider } from './contexts/CartContext';
 import App from './App';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <LayoutProvider>
-      <FlightSearchProvider>
-        <CartProvider>
-          <App />
-        </CartProvider>
-      </FlightSearchProvider>
-    </LayoutProvider>
-  </StrictMode>,
+  <LayoutProvider>
+    <FlightSearchProvider>
+      <CartProvider>
+        <App />
+      </CartProvider>
+    </FlightSearchProvider>
+  </LayoutProvider>,
 )

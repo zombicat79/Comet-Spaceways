@@ -46,7 +46,7 @@ function reducer(state, action) {
 
 function useLayout() {
     const [layoutState, dispatch] = useReducer(reducer, initialState);
-    console.log(layoutState)
+    // console.log(layoutState)
 
     return { layoutState, dispatch };
 }

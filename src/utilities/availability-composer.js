@@ -1,4 +1,6 @@
+import Cookies from "js-cookie";
 import { formatTimeUnits, getTimeSummaryFromSeconds, pickFromNumberRange, pickRandomFromArray, pickUniquesFromArray } from "./utils";
+import { readFlightCookies, writeFlightCookies } from "./cookie-checker";
 
 // --- AUXILIARY FUNCTIONS ---
 
@@ -111,20 +113,13 @@ function determineAlternateRoutings(alternatives) {
 
 async function calculateAvailability(schedule, departureObj, returnObj = null, prevOutput = null) {
     const { origin, destination, date } = departureObj;
+    const compactDate = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
     const originRoutes = schedule.find(el => el.port === origin);
     const routeInfo = originRoutes.flight_schedule.find(el => el.destination_port === destination);
 
     let availabilityDetails = [];
 
-    if (!routeInfo.direct_flight) {
-        return null
-    }
-    else if (!routeInfo.direct_flight && routeInfo.intermediate_ports) {
-        // No direct flight --> Search for indirect routings
-        const alternateRoutings = determineAlternateRoutings(routeInfo.intermediate_ports);
-        console.log(alternateRoutings);
-        // Recursive availability calculation via intermediate ports
-    } else {
+    function buildAvailabilityDetails() {
         availabilityDetails = getFlightsPerDate(routeInfo, date);
         if (availabilityDetails) {
             availabilityDetails = addCommonData([...availabilityDetails], origin, destination, date);
@@ -139,17 +134,49 @@ async function calculateAvailability(schedule, departureObj, returnObj = null, p
         }
     }
 
+    if (!routeInfo.direct_flight) {
+        return null
+    }
+    else if (!routeInfo.direct_flight && routeInfo.intermediate_ports) {
+        // No direct flight --> Search for indirect routings
+        const alternateRoutings = determineAlternateRoutings(routeInfo.intermediate_ports);
+        console.log(alternateRoutings);
+        // Recursive availability calculation via intermediate ports
+    } else {
+        buildAvailabilityDetails();
+    }
+
     let output;
     if (prevOutput) {
-        output = { departures: prevOutput.departures, returns: availabilityDetails }
+        const { origin: prevOrigin, destination: prevDestination, departure_date } = prevOutput.departures[0];
+        if (readFlightCookies(`${origin}-${destination}-${compactDate}`)) {
+            output = { 
+                departures: prevOutput.departures, 
+                returns: JSON.parse(localStorage.getItem(`${origin}-${destination}-${compactDate}`)) 
+            };
+        } else if (readFlightCookies(`${prevOrigin}-${prevDestination}-${departure_date.replace(/\//g, "-")}`)) {
+            output = { 
+                departures: JSON.parse(localStorage.getItem(`${prevOrigin}-${prevDestination}-${departure_date.replace(/\//g, "-")}`)), 
+                returns: availabilityDetails 
+            };
+        } else {
+            output = { departures: prevOutput.departures, returns: availabilityDetails };
+        }
     } else  {
         output = { departures: availabilityDetails }
     }
     
     if (returnObj) {
-        output = { departures: availabilityDetails, returns: "pending" }
+        if (readFlightCookies(`${origin}-${destination}-${compactDate}`)) {
+            output = { departures: JSON.parse(localStorage.getItem(`${origin}-${destination}-${compactDate}`)), returns: "pending" };
+        } else {
+            output = { departures: availabilityDetails, returns: "pending" };
+        }
     }
 
+    if (!Cookies.get(`${origin}-${destination}-${compactDate}`)) {
+        writeFlightCookies(`${origin}-${destination}-${compactDate}`, JSON.stringify(availabilityDetails));
+    }
     return output;
 }
 
