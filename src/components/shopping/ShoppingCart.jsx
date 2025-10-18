@@ -31,10 +31,10 @@ function ShoppingCart() {
     }
 
     function calculateTotalPrice() {
-        const outboundPrice = cartState?.outboundFlight?.price || 0;
-        const inboundPrice = cartState?.inboundFlight?.price || 0;
+        const outboundPrice = cartState?.outboundFlight?.price.replace(',', '.') || '0';
+        const inboundPrice = cartState?.inboundFlight?.price.replace(',', '.') || '0';
 
-        return (outboundPrice + inboundPrice).toFixed(2).toString().replace('.', ',');
+        return (Number(outboundPrice) + Number(inboundPrice)).toFixed(2).toString().replace('.', ',');
     }
 
     return (

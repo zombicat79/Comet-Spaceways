@@ -1,13 +1,19 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router';
 import { FlightSearchContext } from '../../contexts/FlightSearchContext';
 
 import ContentSection from "../../layout/ContentSection";
 import ItemList from '../ItemList';
 import FlightDetails from './FlightDetails';
 import SvgIcon from "../SvgIcon";
+import Button from '../Button';
 
-function FlightSegment({ type }) {
+function FlightSegment({ type, flightData }) {
     const { flightSearchState } = useContext(FlightSearchContext);
+    const navigate = useNavigate();
+    const segmentedFlightData = flightData?.map((el) => {
+        return { ...el, type };
+    })
 
     return (
         <ContentSection>
@@ -25,7 +31,13 @@ function FlightSegment({ type }) {
                     </p>
                 </header>
                 <main className="segment__body">
-                    <ItemList data={[{id: 1, mode: 'direct', type}, {id: 2, mode: 'stopover', type}]} ItemComponent={FlightDetails} separation={3}  />
+                    {flightData
+                    ? <ItemList data={segmentedFlightData} ItemComponent={FlightDetails} separation={3}  />
+                    : <div className="segment__unavailable">
+                        <p>No flights available on this route / date❗️</p>
+                        <Button text={'New search'} action={() => navigate("/")} />
+                    </div>
+                    }
                 </main>
             </div>
         </ContentSection>
