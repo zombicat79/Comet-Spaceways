@@ -31,4 +31,10 @@ function writeFlightCookies(cookieName, value) {
     Cookies.set(cookieName, 'true', { expires: 1 });
 }
 
-export { checkFlightCookies, readFlightCookies, writeFlightCookies };
+function clearFlightSearchStorage() {
+    for (const fligthSearchRecord in localStorage) {
+        if (!Cookies.get(fligthSearchRecord)) localStorage.removeItem(fligthSearchRecord);
+    }
+}
+
+export { checkFlightCookies, readFlightCookies, writeFlightCookies, clearFlightSearchStorage };

@@ -1,10 +1,16 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect} from 'react';
 import { RouterProvider } from 'react-router';
 import router from './router';
 import { LayoutContext } from './contexts/LayoutContext';
 
+import { clearFlightSearchStorage } from './utilities/cookie-checker';
+
 function App() {
   const { layoutState, dispatch } = useContext(LayoutContext);
+  
+  useEffect(() => {
+    clearFlightSearchStorage();
+  }, [])
 
   function handleResize() {
     dispatch({ type: 'set/viewportWidth', payload: window.innerWidth });
