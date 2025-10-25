@@ -1472,6 +1472,9 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 2rem; }
+  @media screen and (max-width: 600px) {
+    .cart__content {
+      margin-top: 4rem; } }
 
 .cart__message {
   display: flex;
