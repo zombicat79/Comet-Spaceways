@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { useNavigate, useLoaderData } from 'react-router';
+import { useNavigate, useLoaderData, useNavigation } from 'react-router';
+import useLayout from '../../hooks/useLayout';
 import Tickets from '../../pages/purchase/Tickets';
 
 import supabase from '../../../db/supabase-client';
@@ -7,10 +8,19 @@ import supabase from '../../../db/supabase-client';
 function FlightScheduleLoader() {
     const flightSchedule = useLoaderData();
     const navigate = useNavigate();
+    const navigation = useNavigation();
+    const { dispatch } = useLayout();
+
+    console.log(navigation.state)
 
     useEffect(() => {
         navigate('/purchase/tickets/flight-data');
     }, [])
+
+    /* useEffect(() => {
+        console.log("puta")
+        dispatch({ type: 'toggle/scroll' })
+    }, [navigation.state]) */
     
     return <Tickets flightSchedule={flightSchedule} />
 }
