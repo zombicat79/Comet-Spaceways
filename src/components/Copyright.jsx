@@ -1,5 +1,7 @@
+import { getYear } from "date-fns";
+
 function Copyright() {
-    const currentYear = new Date().getFullYear();
+    const currentYear = getYear(new Date());
 
     return <p className="copyright">Comet Spaceways {currentYear} - © All rights reserved</p>
 }

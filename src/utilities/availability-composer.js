@@ -1,4 +1,6 @@
 import Cookies from "js-cookie";
+import { getTime, getYear, getMonth, getDate, getDay, getHours, getMinutes, addSeconds } from "date-fns";
+
 import { formatTimeUnits, getTimeSummaryFromSeconds, pickFromNumberRange, pickRandomFromArray, pickUniquesFromArray } from "./utils";
 import { readFlightCookies, writeFlightCookies } from "./cookie-checker";
 
@@ -8,13 +10,13 @@ function getFlightsPerDate(routeInfo, date) {
     const { daily, weekly, monthly } = routeInfo.frequency;
 
     // Determine if there is flight availability for the selected departure month
-    const targetedFlightMonth = new Date(date).getMonth() + 1;
+    const targetedFlightMonth = getMonth(date);
     if (!(monthly.includes(targetedFlightMonth))) {
         return null;
     }
 
     // Determine if there is flight availability for the selected departure day of the week
-    const targetedFlightDay = new Date(date).getDay();
+    const targetedFlightDay = getDay(date);
     if (!(weekly.includes(targetedFlightDay))) {
         return null;
     }
@@ -38,9 +40,9 @@ function getFlightsPerDate(routeInfo, date) {
 }
 
 function addCommonData(allFlights, origin, destination, departureDate) {
-    const departureDay = new Date(departureDate).getDate();
-    const departureMonth = new Date(departureDate).getMonth() + 1;
-    const departureYear = new Date(departureDate).getFullYear();
+    const departureDay = getDate(departureDate);
+    const departureMonth = getMonth(departureDate) + 1;
+    const departureYear = getYear(departureDate);
     
     return allFlights.map((el) => {
         return { ...el, origin, destination, mode: 'direct', departure_date: `${departureDay}/${departureMonth}/${departureYear}` };
@@ -52,13 +54,13 @@ function calculateFlightDurations(allFlights, durationInfo, departureDate) {
         const durationInSeconds = pickFromNumberRange(durationInfo.min.overall_seconds, durationInfo.max.overall_seconds);
         departureDate.setHours(el.departure_time.match(/\d+(?=:)/)[0]);
         departureDate.setMinutes(el.departure_time.match(/(?<=:)\d+/)[0]);
-        const arrivalDate = new Date(departureDate.getTime() + durationInSeconds * 1000);
+        const arrivalDate = getTime(addSeconds(departureDate, durationInSeconds));
 
-        const arrivalDay = new Date(arrivalDate).getDate();
-        const arrivalMonth = new Date(arrivalDate).getMonth() + 1;
-        const arrivalYear = new Date(arrivalDate).getFullYear();
-        const arrivalHour = new Date(arrivalDate).getHours();
-        const arrivalMinute = new Date(arrivalDate).getMinutes();
+        const arrivalDay = getDate(arrivalDate);
+        const arrivalMonth = getMonth(arrivalDate) + 1;
+        const arrivalYear = getYear(arrivalDate);
+        const arrivalHour = getHours(arrivalDate);
+        const arrivalMinute = getMinutes(arrivalDate);
 
         return { 
             ...el, 
@@ -113,7 +115,7 @@ function determineAlternateRoutings(alternatives) {
 
 async function calculateAvailability(schedule, departureObj, returnObj = null, prevOutput = null) {
     const { origin, destination, date } = departureObj;
-    const compactDate = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
+    const compactDate = `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()}`;
     const originRoutes = schedule.find(el => el.port === origin);
     const routeInfo = originRoutes.flight_schedule.find(el => el.destination_port === destination);
 

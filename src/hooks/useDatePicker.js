@@ -1,4 +1,6 @@
-function useDatePicker(identifier, futurizedDate, dateComponents, searchScope, departureDate, returnDate) {
+import { addYears } from "date-fns";
+
+function useDatePicker(identifier, futurizedDate, searchScope, departureDate, returnDate) {
     if (!searchScope) return { minDate: null, maxDate: null, rangeStartDate: null, rangeEndDate: null };
     if (identifier !== 'Departure-Date' && identifier !== 'Return-Date') return { minDate: null, maxDate: null, rangeStartDate: null, rangeEndDate: null };
     
@@ -12,7 +14,7 @@ function useDatePicker(identifier, futurizedDate, dateComponents, searchScope, d
     }
 
     function determineMaxDate() {
-        return new Date(`${dateComponents.month + 1}-${dateComponents.day}-${dateComponents.year + 101}`);
+        return addYears(new Date(), 101);
     }
 
     function determineRangeStartDate() {

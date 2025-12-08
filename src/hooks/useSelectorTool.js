@@ -18,7 +18,7 @@ function useSelectorTool(initialValue = '', cssModifier = '') {
         switch(true) {
             case newSelection.toString().includes('GMT'):
                 if (selector === 'Return-Date' && (newSelection < flightSearchState.departureDate)) return;
-                setSelectionValue(new Date(newSelection));
+                setSelectionValue(newSelection);
                 break;
             case newSelection.innerText.toLowerCase() === 'round trip':
                 setSelectionValue(`🔄 ${newSelection.innerText}`);

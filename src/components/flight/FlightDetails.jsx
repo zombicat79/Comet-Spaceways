@@ -16,32 +16,6 @@ function FlightDetails({ itemDetails, onSelect, selected }) {
         detailClasses += ' flight-details--selected';
     }
 
-    // FAKE FLIGHT DATA -- Remove once real data is ready to be fed
-    /* const fakeOutboundDetails = {
-        type: 'outbound',
-        origin: 'Earth (Europe)',
-        destination: 'Mars',
-        departureDate: "03/05/2125",
-        departureTime: "14:32h",
-        arrivalDate: "10/06/2125",
-        arrivalTime: "08:15h",
-        mode: 'direct',
-        price: 347.25,
-    }
-
-    const fakeInboundDetails = {
-        type: 'inbound',
-        origin: 'Mars',
-        destination: 'Earth (Europe)',
-        departureDate: "11/07/2125",
-        departureTime: "08:15h",
-        arrivalDate: "13/08/2125",
-        arrivalTime: "19:24h",
-        mode: 'stopover',
-        price: 412.08
-    } */
-    // -- END OF WARNING --
-
     function addToCart() {
         itemDetails.type === 'outbound'
             ? dispatch({ type: "cart/addOutbound", payload: itemDetails })

@@ -1,4 +1,5 @@
 import { createContext, useEffect, useReducer } from "react";
+import { addMonths } from "date-fns";
 import useFutureDate from "../hooks/useFutureDate";
 
 const FlightSearchContext = createContext();
@@ -16,8 +17,8 @@ const initialState = {
     searchScope: '🔄 Round Trip',
     origin: 'Earth (Europe)',
     destination: 'Mars',
-    departureDate: '',
-    returnDate: '',
+    departureDate: null,
+    returnDate: null,
     passengers: {
         humanoids: 1,
         nhes: 0,
@@ -66,7 +67,8 @@ function fligtSearchReducer(state, action) {
 
 function FlightSearchProvider({ children }) {
     const [state, dispatch] = useReducer(fligtSearchReducer, initialState);
-    const { futurizedDate, dateComponents } = useFutureDate();
+    // const { futurizedDate, dateComponents } = useFutureDate();
+    const { futurizedDate } = useFutureDate();
 
     console.log(state)
 
@@ -78,8 +80,8 @@ function FlightSearchProvider({ children }) {
 
         dispatch({ type: 'offer-change', payload: destinationOffer });
         dispatch({ type: 'departure-change', payload: futurizedDate });
-        dispatch({ type: 'return-change', payload: new Date(`${dateComponents.month + 2}-${dateComponents.day}-${dateComponents.year + 100}`) });
-    }, [dateComponents.day, dateComponents.month, dateComponents.year])
+        dispatch({ type: 'return-change', payload: addMonths(futurizedDate, 1) });
+    }, [])
 
     return (
         <FlightSearchContext.Provider value={{

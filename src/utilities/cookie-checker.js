@@ -1,9 +1,10 @@
 import Cookies from 'js-cookie';
+import { getYear, getMonth, getDate } from "date-fns";
 
 function checkFlightCookies(departureObj, returnObj) {
-    const compactDepartureDate = `${departureObj.date.getDate()}-${departureObj.date.getMonth()}-${departureObj.date.getFullYear()}`;
+    const compactDepartureDate = `${getDate(departureObj.date)}-${getMonth(departureObj.date)}-${getYear(departureObj.date)}`;
     if (returnObj) {
-        const compactReturnDate = `${returnObj.date.getDate()}-${returnObj.date.getMonth()}-${returnObj.date.getFullYear()}`;
+        const compactReturnDate = `${getDate(returnObj.date)}-${getMonth(returnObj.date)}-${getYear(returnObj.date)}`;
         if (Cookies.get(`${departureObj.origin}-${departureObj.destination}-${compactDepartureDate}`) === 'true' && 
             Cookies.get(`${returnObj.origin}-${returnObj.destination}-${compactReturnDate}`) === 'true') {
                 return {

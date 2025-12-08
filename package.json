@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.75.0",
+    "date-fns": "^4.1.0",
     "js-cookie": "^3.0.5",
     "react": "^19.0.0",
     "react-datepicker": "^8.3.0",

@@ -14,7 +14,7 @@ function FlightFetcher() {
         destination: minimizeDestinations(flightSearchState.destination),
         date: flightSearchState.departureDate
     }
-    const returnObj = flightSearchState.returnDate === '' ? null : {
+    const returnObj = flightSearchState.returnDate === null ? null : {
         origin: minimizeDestinations(flightSearchState.destination),
         destination: minimizeDestinations(flightSearchState.origin),
         date: flightSearchState.returnDate
