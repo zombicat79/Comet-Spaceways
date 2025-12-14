@@ -5,6 +5,7 @@ const initialState = {
     scroll: true,
     scrollHeight: 0,
     modal: null,
+    loader: false,
     modalClass: 'generic',
     modalContent: null,
     modalDimensions: {
@@ -26,7 +27,15 @@ function reducer(state, action) {
         case 'set/viewportWidth':
             return { ...state, viewportWidth: action.payload };
         case 'toggle/scroll':
+            if (action.payload) {
+                return { ...state, loader: action.payload };
+            }
             return { ...state, scroll: !state.scroll };
+        case 'toggle/loader':
+            if (action.payload) {
+                return { ...state, loader: action.payload };
+            }
+            return { ...state, loader: !state.loader };
         case 'set/scrollHeight':
             return { ...state, scrollHeight: action.payload };
         case 'toggle/modal':

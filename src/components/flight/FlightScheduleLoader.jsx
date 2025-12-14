@@ -12,14 +12,15 @@ import errors from '../infopieces/errorTypes';
 
 function FlightScheduleLoader() {
     const [dataError, setDataError] = useState(null);
-    const { handlePopupLaunch } = useContext(LayoutContext);
+    const { layoutState, handlePopupLaunch, dispatch } = useContext(LayoutContext);
     const flightSchedule = useLoaderData();
     const navigate = useNavigate();
-    /* const navigation = useNavigation();
-    const { dispatch } = useLayout(); */
+    const navigation = useNavigation();
 
     useEffect(() => {
-        navigate('/purchase/tickets/flight-data');
+        if (window.location.pathname !== "/purchase/tickets/flight-data") {
+            navigate('/purchase/tickets/flight-data');
+        }
     }, []);
 
     useEffect(() => {
@@ -31,10 +32,18 @@ function FlightScheduleLoader() {
         }
     }, []);
 
-    /* useEffect(() => {
-        console.log("puta")
-        dispatch({ type: 'toggle/scroll' })
-    }, [navigation.state]) */
+    useEffect(() => {
+        if (navigation.state === "loading") {
+            dispatch({ type: 'toggle/scroll', payload: false })
+            dispatch({ type: 'toggle/loader', payload: true })
+        }
+        if (navigation.state === "idle") {
+            if (layoutState.scroll === false && layoutState.loader === true) {
+                dispatch({ type: 'toggle/scroll', payload: false })
+                dispatch({ type: 'toggle/loader', payload: true })
+            }
+        }
+    }, [navigation.state])
 
     if (dataError) {
         return <Tickets />
