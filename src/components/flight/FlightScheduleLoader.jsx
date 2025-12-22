@@ -1,9 +1,9 @@
-import { useState, useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { useNavigate, useLoaderData, useNavigation } from 'react-router';
 import { LayoutContext } from '../../contexts/LayoutContext';
-import useLayout from '../../hooks/useLayout';
 
 import Tickets from '../../pages/purchase/Tickets';
+import Banner from '../Banner';
 import ErrorNotice from '../infopieces/ErrorNotice';
 
 import supabase from '../../../db/supabase-client';
@@ -11,45 +11,51 @@ import supabase from '../../../db/supabase-client';
 import errors from '../infopieces/errorTypes';
 
 function FlightScheduleLoader() {
-    const [dataError, setDataError] = useState(null);
-    const { layoutState, handlePopupLaunch, dispatch } = useContext(LayoutContext);
-    const flightSchedule = useLoaderData();
+    const { handlePopupLaunch, dispatch } = useContext(LayoutContext);
+    const dataFromDB = useLoaderData();
     const navigate = useNavigate();
     const navigation = useNavigation();
 
     useEffect(() => {
-        if (window.location.pathname !== "/purchase/tickets/flight-data") {
+        if (!dataFromDB && window.location.pathname !== "/purchase/tickets/flight-data") {
             navigate('/purchase/tickets/flight-data');
         }
-    }, []);
-
-    useEffect(() => {
-        if (flightSchedule) {
-            if ("message" in flightSchedule && flightSchedule.message.includes("Error")) {
-                handlePopupLaunch({ modalClass: "generic", content: <ErrorNotice error={errors.flightData} /> })
-                setDataError(true);
-            }
-        }
-    }, []);
+    }, [dataFromDB, window.location.pathname]);
 
     useEffect(() => {
         if (navigation.state === "loading") {
-            dispatch({ type: 'toggle/scroll', payload: false })
-            dispatch({ type: 'toggle/loader', payload: true })
+            dispatch({ type: 'set/loader', payload: true })
+            dispatch({ type: 'set/scroll', payload: false })
+        } 
+        if (navigation.state === "idle" && dataFromDB)  {
+            dispatch({ type: 'set/loader', payload: false })
+            dispatch({ type: 'set/scroll', payload: true })
         }
-        if (navigation.state === "idle") {
-            if (layoutState.scroll === false && layoutState.loader === true) {
-                dispatch({ type: 'toggle/scroll', payload: false })
-                dispatch({ type: 'toggle/loader', payload: true })
+    }, [navigation.state, dataFromDB])
+
+    useEffect(() => {
+        if (dataFromDB?.error) {
+            if ("message" in dataFromDB.error && dataFromDB.error.message.includes("Error")) {
+                handlePopupLaunch({ modalClass: "generic", content: <ErrorNotice error={errors.flightData} /> })
             }
         }
-    }, [navigation.state])
+    }, [dataFromDB]);
 
-    if (dataError) {
-        return <Tickets />
+    if (!dataFromDB) {
+        return (
+            <main className="tickets">
+                <Banner
+                    textStyle={{ color: 'default', align: 'center' }}
+                    textContent={{
+                        heading: 'Fetching your flights...',
+                    }}
+                    background={{ img: 'starscape', height: 'full' }}
+                />
+            </main>
+        )
     }
     
-    return <Tickets flightSchedule={flightSchedule} />
+    return <Tickets flightSchedule={dataFromDB} />
 }
 
 export async function fetchFlights() {
@@ -59,9 +65,9 @@ export async function fetchFlights() {
         .from('Origins')
         .select()
 
-        if (error) return error;
+        if (error) return { error };
 
-        return data;
+        return { data };
     }
 
     const flights = await getDataFromDB();

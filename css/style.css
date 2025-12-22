@@ -635,6 +635,8 @@ h3 {
     background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./../assets/images/earth-moon_banner.webp"); }
   .banner--4 {
     background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./../assets/images/black-hole_banner.webp"); }
+  .banner--5 {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp"); }
   .banner__msg {
     width: 90%;
     position: absolute;

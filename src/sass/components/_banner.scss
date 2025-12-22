@@ -60,6 +60,11 @@
       rgba(18, 18, 18, 0.55)), url('./../assets/images/black-hole_banner.webp');
     }
 
+    &--5 {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/starscape_wallpaper.webp');
+    }
+
     // BANNER TEXT
     &__msg {
       width: 90%;

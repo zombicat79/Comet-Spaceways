@@ -27,15 +27,13 @@ function reducer(state, action) {
         case 'set/viewportWidth':
             return { ...state, viewportWidth: action.payload };
         case 'toggle/scroll':
-            if (action.payload) {
-                return { ...state, loader: action.payload };
-            }
             return { ...state, scroll: !state.scroll };
+        case 'set/scroll':
+            return { ...state, scroll: action.payload };
         case 'toggle/loader':
-            if (action.payload) {
-                return { ...state, loader: action.payload };
-            }
             return { ...state, loader: !state.loader };
+        case 'set/loader':
+            return { ...state, loader: action.payload };
         case 'set/scrollHeight':
             return { ...state, scrollHeight: action.payload };
         case 'toggle/modal':

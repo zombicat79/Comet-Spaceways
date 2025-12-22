@@ -19,6 +19,9 @@ function Banner({ background, textStyle, textContent, children }) {
         case 'black-hole':
             backgroundOption = 4;
             break;
+        case 'starscape':
+            backgroundOption = 5;
+            break;
         default:
             backgroundOption = 1;
     }

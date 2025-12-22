@@ -22,7 +22,7 @@ function FlightFetcher() {
     const cookieCheck = checkFlightCookies(departureObj, returnObj);
 
     if (cookieCheck) {
-        return <Tickets />
+        return <Tickets flightSchedule={cookieCheck} />
     }
 
     return <FlightScheduleLoader />
