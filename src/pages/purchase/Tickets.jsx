@@ -29,18 +29,20 @@ function Tickets({ flightSchedule }) {
     }
 
     useEffect(() => {
-        if (flightSchedule) {
-            calculateAvailability(flightSchedule, departureObj, returnObj)
+        if (flightSchedule?.data) {
+            calculateAvailability(flightSchedule.data, departureObj, returnObj)
             .then((calcResult1) => {
-                if (calcResult1?.returns === "pending") return calculateAvailability(flightSchedule, returnObj, null, calcResult1);
+                if (calcResult1?.returns === "pending") return calculateAvailability(flightSchedule.data, returnObj, null, calcResult1);
                 return calcResult1;
             })
             .then((calcResult2) => setFlights(calcResult2))
             .catch(err => console.log(err));
+        } else if (!flightSchedule || flightSchedule?.error) {
+            setFlights({});
         } else {
-            setFlights(checkFlightCookies(departureObj, returnObj));
+            setFlights(flightSchedule)
         }
-    }, [])
+    }, [flightSchedule])
 
     let proceedButtonState;
     if (flightSearchState.searchScope === '🔄 Round Trip') {

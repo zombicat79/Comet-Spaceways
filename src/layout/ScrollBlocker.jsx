@@ -2,6 +2,7 @@ import { useEffect, useContext } from 'react';
 import { LayoutContext } from './../contexts/LayoutContext';
 
 import Modal from './Modal';
+import Loader from '../components/Loader';
 
 function ScrollBlocker() {
     const { layoutState, dispatch } = useContext(LayoutContext);
@@ -47,6 +48,7 @@ function ScrollBlocker() {
                 }
             }}
         >
+            {layoutState.modal &&
             <Modal 
                 modalShown={layoutState.modal}
                 modalClass={layoutState.modalClass}
@@ -54,6 +56,10 @@ function ScrollBlocker() {
                 width={layoutState.modalDimensions.width} 
                 height={layoutState.modalDimensions.height} 
             />
+            }
+            {layoutState.loader &&
+            <Loader spinner="spinner_light" />
+            }
         </div>
     )
 }
