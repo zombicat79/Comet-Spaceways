@@ -1,4 +1,6 @@
 import { useEffect, useContext } from 'react';
+import { addYears, addMonths } from 'date-fns';
+
 import useSelectorTool from '../hooks/useSelectorTool';
 import useTextResize from '../hooks/useTextResize';
 import useFutureDate from "../hooks/useFutureDate";
@@ -15,11 +17,10 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
     
     const hasContext = useContext(FlightSearchContext);
 
-    const { futurizedDate, dateComponents } = useFutureDate();
+    const { futurizedDate } = useFutureDate();
     const { minDate, maxDate, rangeStartDate, rangeEndDate } = useDatePicker(
         identifier,
         futurizedDate,
-        dateComponents,
         hasContext.flightSearchState.searchScope, 
         hasContext.flightSearchState.departureDate, 
         hasContext.flightSearchState.returnDate
@@ -32,12 +33,12 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
             switch(identifier) {
                 case 'Voyage-Type':
                     if (selectionValue === '➡️ One-Way') {
-                        changeFlightSearchState({ type: 'return-change', payload: '' });
+                        changeFlightSearchState({ type: 'return-change', payload: null });
                     }
                     if (selectionValue === '🔄 Round Trip') {
                         changeFlightSearchState({ 
                             type: 'return-change', 
-                            payload: new Date(`${dateComponents.month + 2}-${dateComponents.day}-${dateComponents.year + 100}`) 
+                            payload: addMonths(hasContext.flightSearchState.departureDate, 1)
                         });
                     }
                     changeFlightSearchState({ type: 'scope-change', payload: selectionValue });
@@ -49,7 +50,7 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
                     changeFlightSearchState({ type: 'destination-change', payload: selectionValue });
                     break;
                 case 'Departure-Date':
-                    if (hasContext.flightSearchState.returnDate < selectionValue) {
+                    if (hasContext.flightSearchState.returnDate && (hasContext.flightSearchState.returnDate < selectionValue)) {
                         changeFlightSearchState({ type: 'return-change', payload: selectionValue });
                     } 
                     changeFlightSearchState({ type: 'departure-change', payload: selectionValue });
@@ -61,7 +62,8 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
                     return;
             }
         }
-    }, [identifier, selectionValue, dateComponents.day, dateComponents.month, dateComponents.year]);
+    }, [identifier, selectionValue]);
+
 
     return (
         <div 
@@ -70,7 +72,7 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
             onClick={(e) => handleFolding(e.target)}
         >
             <p className="selector__id">{identifier.replace('-', ' ')}</p>
-            { type === 'date'
+            { type === 'date' && cssModifier !== 'disabled'
                 ? <DatePicker
                     selected={initialValue}
                     onChange={(date) => handleSelection(date, identifier)}

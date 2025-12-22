@@ -3,6 +3,9 @@ function useTextResize(text) {
     let textSizeCorrection;
 
     switch(true) {
+        case !text:
+            textSizeCorrection = 'regular';
+            break;
         case text.length >= 15:
             textSizeCorrection = 'small';
             outputValueText = handleTextOversize();

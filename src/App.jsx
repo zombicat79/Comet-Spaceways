@@ -1,4 +1,4 @@
-import { useContext, useEffect} from 'react';
+import { useContext, useEffect } from 'react';
 import { RouterProvider } from 'react-router';
 import router from './router';
 import { LayoutContext } from './contexts/LayoutContext';
