@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { getTime, getYear, getMonth, getDate, getDay, getHours, getMinutes, addSeconds } from "date-fns";
+import { getTime, getYear, getMonth, getDate, getDay, getHours, getMinutes, addSeconds, parse } from "date-fns";
 
 import { formatTimeUnits, getTimeSummaryFromSeconds, pickFromNumberRange, pickRandomFromArray, pickUniquesFromArray } from "./utils";
 import { readFlightCookies, writeFlightCookies } from "./cookie-checker";
@@ -111,6 +111,14 @@ function determineAlternateRoutings(alternatives) {
     return pickUniquesFromArray(alternatives, routingsOccurrence)
 }
 
+function checkSegmentsCoherence(outboundOptions, inboundSelection) {
+    const coherentOptions = outboundOptions.filter((option) => {
+        const optionParsedArrivalDate = parse(option.arrival_date, 'dd/MM/yyyy', new Date());
+        return getTime(optionParsedArrivalDate) <= getTime(inboundSelection.date);
+    })
+    return coherentOptions;
+}
+
 // --- MASTER FUNCTION ---
 
 async function calculateAvailability(schedule, departureObj, returnObj = null, prevOutput = null) {
@@ -169,10 +177,16 @@ async function calculateAvailability(schedule, departureObj, returnObj = null, p
     }
     
     if (returnObj) {
+        const segmentsCoherence = checkSegmentsCoherence(availabilityDetails, returnObj);
         if (readFlightCookies(`${origin}-${destination}-${compactDate}`)) {
             output = { departures: JSON.parse(localStorage.getItem(`${origin}-${destination}-${compactDate}`)), returns: "pending" };
         } else {
-            output = { departures: availabilityDetails, returns: "pending" };
+            segmentsCoherence.length === 0
+            ? output = { 
+                departures: availabilityDetails, 
+                returns: { status: "incoherent", reason: "All departure flights arrive later than the selected return date", returnDate: returnObj.date }
+            }
+            : output = { departures: availabilityDetails, returns: "pending" };
         }
     }
 
