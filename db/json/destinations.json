@@ -22,14 +22,14 @@
                 "🔹 Adventure – Experience the Moon’s rugged beauty on rover expeditions",
                 "🔹 Marvel – Witness history in the making as we forge the next chapter of human expansion beyond Earth."
             ],
-            "coverImg": "/moon.webp",
+            "coverImg": "moon.webp",
             "pictures": [
-                "/lunar-haven.webp",
-                "/lunar-haven2.webp",
-                "/lunar-haven3.webp",
-                "/lunar-haven4.webp",
-                "/lunar-haven5.webp",
-                "/lunar-haven6.webp"
+                "lunar-haven.webp",
+                "lunar-haven2.webp",
+                "lunar-haven3.webp",
+                "lunar-haven4.webp",
+                "lunar-haven5.webp",
+                "lunar-haven6.webp"
             ]
         },
         {
@@ -53,14 +53,14 @@
                 "🔹 Designed for Efficiency and Comfort – Relax in our zero-gravity lounges, enjoy gourmet dining with a cosmic view, or connect with pioneers from across the solar system.",
                 "🔹 The Ultimate Interplanetary Hub – Celestia Station provides advanced docking services, refueling, and crew transfers."
             ],
-            "coverImg": "/celestia2.webp",
+            "coverImg": "celestia2.webp",
             "pictures": [
-                "/celestia.webp",
-                "/celestia3.webp",
-                "/celestia4.webp",
-                "/celestia5.webp",
-                "/celestia6.webp",
-                "/celestia7.webp"
+                "celestia.webp",
+                "celestia3.webp",
+                "celestia4.webp",
+                "celestia5.webp",
+                "celestia6.webp",
+                "celestia7.webp"
             ]
         },
         {
@@ -85,16 +85,16 @@
                 "🔹 A Thriving Community – State-of-the-art habitats, hydroponic farms, and Martian cafés create a unique and vibrant society beyond Earth.",
                 "🔹 Trade & Industry – A hub for aerospace innovation, resource extraction, and an emerging economy built around cloud-harvesting."
             ],
-            "coverImg": "/mars.webp",
+            "coverImg": "mars.webp",
             "pictures": [
-                "/new-olympus.webp",
-                "/new-olympus2.webp",
-                "/new-olympus3.webp",
-                "/new-olympus4.webp",
-                "/new-olympus5.webp",
-                "/new-olympus6.webp",
-                "/new-olympus7.webp",
-                "/new-olympus8.webp"
+                "new-olympus.webp",
+                "new-olympus2.webp",
+                "new-olympus3.webp",
+                "new-olympus4.webp",
+                "new-olympus5.webp",
+                "new-olympus6.webp",
+                "new-olympus7.webp",
+                "new-olympus8.webp"
             ]
         },
         {
@@ -118,45 +118,21 @@
                 "🔹 Solar-Powered Energy – Abundant sunlight drives high-efficiency solar farms, ensuring a continuous, renewable energy supply.",
                 "🔹 Scientific Research Hub – A prime location for studying Venusian weather, atmosphere, and potential for future expansion."
             ],
-            "coverImg": "/venus.webp",
+            "coverImg": "venus.webp",
             "pictures": [
-                "/cloud-nine.webp",
-                "/cloud-nine2.webp",
-                ""
+                "cloud-nine.webp",
+                "cloud-nine2.webp",
+                "cloud-nine3.webp",
+                "cloud-nine4.webp",
+                "cloud-nine5.webp",
+                "cloud-nine6.webp"
             ]
         },
         {
-            "id": 105,
-            "name": "Nova Thalassa",
-            "category": "outpost",
-            "location": "Titan",
-            "hostType": "natural satellite",
-            "region": "Solar System - Outer",
-            "domains": [
-                "deep space",
-                "planetary orbit",
-                "Saturn"
-            ],
-            "intro": "The Jewel of the Saturn System",
-            "description": "Imagine a world where golden skies stretch endlessly above, and methane rivers carve their way to converge into otherworldly lakes. Welcome to Nova Thalassa, humanity’s most daring outpost in the outer solar system! Nestled beneath protective domes, this futuristic haven offers a one-of-a-kind experience for adventurers, scientists, and dreamers alike.",
-            "promotionalCatch": "Humanity’s boldest step into the cosmos. Dare to live where none of your acquaintances has lived before.",
-            "features": [
-                "🔹 Breathtaking Landscapes – Explore Titan’s surreal terrain, from vast hydrocarbon lakes to towering cryovolcanoes. Don’t forget your thermal suit—it’s chilly out there!",
-                "🔹 Low-Gravity Thrills – Experience the thrill of low-gravity activities such as man-powered flight, thanks to Titan's thick atmosphere.",
-                "🔹 Stellar Views – Gaze at Saturn’s majestic rings from Titan's orbital observation decks — a sight you’ll never forget!",
-                "🔹 Cutting-Edge Science – Tour Nova Thalassa's state-of-the-art research facilities and learn how mankind is unlocking the secrets of this enigmatic moon.",
-                "🔹 Luxury Under the Dome – Relax in Nova Thalassa's climate-controlled habitats, complete with Earth-like gardens, gourmet dining, and spas."
-            ],
-            "coverImg": "/titan.webp",
-            "pictures": [
-                "",
-                "",
-                ""
-            ]
-        },
-        {
-            "id": 106,
-            "name": "Ceres Prime",
+            "id": 8,
+            "port": "CRS",
+            "full_name": "Ceres",
+            "alias": "Ceres Prime",
             "category": "outpost",
             "location": "Ceres",
             "hostType": "dwarf planet",
@@ -177,11 +153,49 @@
                 "🔹 Frontier Incentives – Benefit from tax breaks, profit-sharing programs, and claim-staking opportunities under the 'Asteroid Resource Act', designed to attract and reward hardworking pioneers.",
                 "🔹 Low-Gravity Thrills – Experience the exhilaration of low-gravity sports, from asteroid-hopping to orbital skydiving, all while surrounded by the wonders of space."
             ],
-            "coverImg": "/ceres.webp",
+            "coverImg": "ceres.webp",
             "pictures": [
-                "",
-                "",
-                ""
+                "ceres-prime.webp",
+                "ceres-prime2.webp",
+                "ceres-prime3.webp",
+                "ceres-prime4.webp",
+                "ceres-prime5.webp",
+                "ceres-prime6.webp"
+            ]
+        },
+        {
+            "id": 9,
+            "port": "TTN",
+            "full_name": "Titan",
+            "alias": "Nova Thalassa",
+            "category": "outpost",
+            "location": "Titan",
+            "hostType": "natural satellite",
+            "region": "Outer Solar System",
+            "domains": [
+                "deep space",
+                "planetary orbit",
+                "Saturn"
+            ],
+            "intro": "The Jewel of the Saturn System",
+            "description": "Imagine a world where golden skies stretch endlessly above, and methane rivers carve their way to converge into otherworldly lakes. Welcome to Nova Thalassa, humanity’s most daring outpost in the outer solar system! Nestled beneath protective domes, this futuristic haven offers a one-of-a-kind experience for adventurers, scientists, and dreamers alike.",
+            "promotionalCatch": "Humanity’s boldest step into the cosmos. Dare to live where none of your acquaintances has lived before.",
+            "features": [
+                "🔹 Breathtaking Landscapes – Explore Titan’s surreal terrain, from vast hydrocarbon lakes to towering cryovolcanoes. Don’t forget your thermal suit—it’s chilly out there!",
+                "🔹 Low-Gravity Thrills – Experience the thrill of low-gravity activities such as man-powered flight, thanks to Titan's thick atmosphere.",
+                "🔹 Stellar Views – Gaze at Saturn’s majestic rings from Titan's orbital observation decks — a sight you’ll never forget!",
+                "🔹 Cutting-Edge Science – Tour Nova Thalassa's state-of-the-art research facilities and learn how mankind is unlocking the secrets of this enigmatic moon.",
+                "🔹 Luxury Under the Dome – Relax in Nova Thalassa's climate-controlled habitats, complete with Earth-like gardens, gourmet dining, and spas."
+            ],
+            "coverImg": "titan.webp",
+            "pictures": [
+                "nova-thalassa.webp",
+                "nova-thalassa2.webp",
+                "nova-thalassa3.webp",
+                "nova-thalassa4.webp",
+                "nova-thalassa5.webp",
+                "nova-thalassa6.webp",
+                "nova-thalassa7.webp"
             ]
         },
         {
