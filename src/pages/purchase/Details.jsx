@@ -1,17 +1,30 @@
 import { useEffect, useContext } from 'react';
-import { LayoutContext } from '../../contexts/LayoutContext';
+import { useNavigate } from 'react-router';
 
-import WorkInProgress from '../../components/infopieces/WorkInProgress';
+import { LayoutContext } from '../../contexts/LayoutContext';
+import { FlightSearchContext } from '../../contexts/FlightSearchContext';
+import { CartContext } from '../../contexts/CartContext';
+
+import PassengerSegment from '../../components/passengers/PassengerSegment';
+import PageRibbon from '../../components/PageRibbon';
+import Button from '../../components/Button';
 
 function PassengerDetails() {
-    const { handlePopupLaunch } = useContext(LayoutContext);
-
-    useEffect(() => {
-        handlePopupLaunch({ modalClass: "generic", content: <WorkInProgress /> });
-    }, []);
+    const { flightSearchState } = useContext(FlightSearchContext);
+    const navigate = useNavigate();
+    const proceedButtonState = false;
 
     return (
-        <div className="details"></div>
+        <main className="details">
+            {flightSearchState.passengers.humanoids > 0 && <PassengerSegment type="humanoid" />}
+            {flightSearchState.passengers.minors > 0 && <PassengerSegment type="minor" />}
+            {flightSearchState.passengers.nhes > 0 && <PassengerSegment type="nhe" />}
+            {flightSearchState.passengers.pets > 0 && <PassengerSegment type="pet" />}
+
+            <PageRibbon>
+                <Button type="primary" action={() => navigate("/purchase/details")} text="proceed with purchase 🚀" isDisabled={proceedButtonState} />
+            </PageRibbon>
+        </main>
     )
 }
 
