@@ -9,6 +9,7 @@ import SvgIcon from "../SvgIcon";
 import Button from '../Button';
 
 function FlightSegment({ type, flightData }) {
+    console.log(flightData)
     const { flightSearchState } = useContext(FlightSearchContext);
     const navigate = useNavigate();
     const segmentedFlightData = flightData?.map((el) => {
@@ -31,13 +32,19 @@ function FlightSegment({ type, flightData }) {
                     </p>
                 </header>
                 <main className="segment__body">
-                    {flightData
-                    ? <ItemList data={segmentedFlightData} ItemComponent={FlightDetails} separation={3}  />
-                    : <div className="segment__unavailable">
-                        <p>No flights available on this route / date❗️</p>
-                        <Button text={'New search'} action={() => navigate("/")} />
-                    </div>
+                    {!flightData && 
+                        <div className="segment__unavailable">
+                            <p>No flights available on this route / date❗️</p>
+                            <Button text={'New search'} action={() => navigate("/")} />
+                        </div>
                     }
+                    {flightData && "reason" in flightData[0] &&
+                        <div className="segment__unavailable">
+                            <p>{flightData[0].reason}❗️</p>
+                            <Button text={'New search'} action={() => navigate("/")} />
+                        </div>
+                    }
+                    {flightData && "origin" in flightData[0] && <ItemList data={segmentedFlightData} ItemComponent={FlightDetails} separation={3}  />}
                 </main>
             </div>
         </ContentSection>

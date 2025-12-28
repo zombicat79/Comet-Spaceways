@@ -16,6 +16,7 @@ function Tickets({ flightSchedule }) {
     const { flightSearchState } = useContext(FlightSearchContext);
     const { cartState } = useContext(CartContext);
     const navigate = useNavigate();
+    console.log(flights)
 
     const departureObj = { 
         origin: minimizeDestinations(flightSearchState.origin),
