@@ -15,7 +15,7 @@ function PassengerSegment({ type }) {
                 <header className="segment__header">
                     <div className={`segment__type segment__type--${type}`}>
                         <SvgIcon design={type} color="#272643" />
-                        <p>{type.toUpperCase()}</p>
+                        <p>{type.toUpperCase() + 'S'}</p>
                     </div>
                 </header>
                 <main className="segment__body">

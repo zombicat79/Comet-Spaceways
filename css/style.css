@@ -1150,11 +1150,8 @@ h3 {
     width: 100%; }
 
 .segment {
-  font-family: 'titillium-regular'; }
-  .segment__unavailable {
-    padding: 2rem; }
-    .segment__unavailable > button {
-      margin-top: 2rem; }
+  font-family: 'titillium-regular';
+  /* FLIGHT SEGMENT */ }
   .segment__header {
     font-family: 'titillium-bold';
     display: flex;
@@ -1179,6 +1176,10 @@ h3 {
       transform: rotate(45deg); }
     .segment__type--inbound svg {
       transform: rotate(-135deg); }
+  .segment__unavailable {
+    padding: 2rem; }
+    .segment__unavailable > button {
+      margin-top: 2rem; }
   .segment__route {
     text-align: left;
     font-size: 3rem;
@@ -2292,11 +2293,21 @@ h3 {
 .details {
   position: relative;
   z-index: 2;
-  height: 100vh;
   background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
+  .details .content-section:first-child {
+    padding-top: 27rem; }
+  .details section:nth-child(odd):not(:first-child) {
+    background-color: transparent; }
+  .details .btn--primary {
+    width: 40rem;
+    position: relative;
+    bottom: 3rem; }
+    @media screen and (max-width: 360px) {
+      .details .btn--primary {
+        width: 30rem; } }
 
 .notfound {
   position: relative;

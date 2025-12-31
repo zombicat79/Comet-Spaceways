@@ -2,7 +2,8 @@ import { useReducer } from 'react';
 
 const initialState = {
     outboundFlight: null,
-    inboundFlight: null
+    inboundFlight: null,
+    passengers: null
 }
 
 function cartReducer(state, action) {
@@ -15,6 +16,8 @@ function cartReducer(state, action) {
             return { ...state, outboundFlight: null };
         case "cart/removeInbound":
             return { ...state, inboundFlight: null };
+        case "cart/addPassengers":
+            return { ...state, passengers: action.payload };
         default:
             return state;
     }

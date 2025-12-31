@@ -11,8 +11,29 @@ import Button from '../../components/Button';
 
 function PassengerDetails() {
     const { flightSearchState } = useContext(FlightSearchContext);
+    const { cartDispatcher } = useContext(CartContext);
     const navigate = useNavigate();
     const proceedButtonState = false;
+
+    /* PASSENGER DETAIL ADDITION LOGIC
+
+    switch(key) {
+        case "nhes":
+            passengersArray.push({ type: "nhe", subtype: "", model: "" });
+            break;
+        case "minors":
+            passengersArray.push({ type: "minor", subtype: "", age: 0 });
+            break;
+        case "pets":
+            passengersArray.push({ type: "pet", subtype: "" });
+            break;
+        default: // humanoids
+            passengersArray.push({ type: "humanoid", subtype: "", name: "", surname: ""});
+    }
+
+    dispatch({ type: "cart/addPassengers", payload: passengersArray });
+
+    */
 
     return (
         <main className="details">
