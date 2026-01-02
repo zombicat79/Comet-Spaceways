@@ -66,6 +66,111 @@
             ]
         },
         {
+            "id": 3,
+            "port": "EEU",
+            "full_name": "Earth (Europe)",
+            "alias": "",
+            "category": "terrestrial launch site",
+            "location": "Earth",
+            "hostType": "planet",
+            "region": "Earth Surface",
+            "domains": [
+                "planetary surface",
+                "continent",
+                "Earth",
+                "Europe",
+                "France"
+            ],
+            "intro": "From the Far East to the distant stars",
+            "description": "Located on the island of Hainan, China, Heavenly Gate is the Asia-Pacific region’s premier spaceport, connecting millions to the Moon, Mars, and beyond. As the most advanced interplanetary travel hub in the Eastern Hemisphere, it takes pride on serving as the launchpad for the entire Asia-Pacific community, offering cutting-edge technology, unmatched convenience, and a commitment to excellence that spans continents.",
+            "promotionalCatch": "No matter if you're a space tourist from Bangkok, a lunar entrepreneur from Singapore, or a Martian pioneer from Seoul, Starport Asia is your entry point to the cosmos.",
+            "features": [
+                "🔹 Asia-Pacific’s Premier Hub – Strategically located to serve the entire region, Starport Asia offers seamless connections for travelers, businesses, and explorers from Tokyo to Sydney, Mumbai to Seoul.",
+                "🔹 Direct Flights to Key Destinations – Fly daily to The Moon; weekly to Mars; monthly to Titan.",
+                "🔹 World-Class Facilities – Sleek modern terminals, featuring state-of-the-art VR lounges, immersive pre-flight simulations, luxury shopping and gourmet dining options.",
+                "🔹 Cultural Elegance – Inspired by the rich heritage of the Far East, Starport Asia blends traditional artistry with futuristic design, creating a truly unique travel experience."
+            ],
+            "coverImg": "earth-europe.webp",
+            "pictures": [
+                "airport-europe.webp",
+                "ski-resort.webp",
+                "barcelona.webp",
+                "berlin.webp",
+                "london.webp",
+                "paris.webp"
+            ]
+        },
+        {
+            "id": 4,
+            "port": "EAS",
+            "full_name": "Earth (Asia)",
+            "alias": "Heavenly Gate - Starport Asia",
+            "category": "terrestrial launch site",
+            "location": "Earth",
+            "hostType": "planet",
+            "region": "Earth Surface",
+            "domains": [
+                "planetary surface",
+                "continent",
+                "Earth",
+                "Asia",
+                "China"
+            ],
+            "intro": "From the Far East to the distant stars",
+            "description": "Located on the island of Hainan, China, Heavenly Gate is the Asia-Pacific region’s premier spaceport, connecting millions to the Moon, Mars, and beyond. As the most advanced interplanetary travel hub in the Eastern Hemisphere, it takes pride on serving as the launchpad for the entire Asia-Pacific community, offering cutting-edge technology, unmatched convenience, and a commitment to excellence that spans continents.",
+            "promotionalCatch": "No matter if you're a space tourist from Bangkok, a lunar entrepreneur from Singapore, or a Martian pioneer from Seoul, Starport Asia is your entry point to the cosmos.",
+            "features": [
+                "🔹 Asia-Pacific’s Premier Hub – Strategically located to serve the entire region, Starport Asia offers seamless connections for travelers, businesses, and explorers from Tokyo to Sydney, Mumbai to Seoul.",
+                "🔹 Direct Flights to Key Destinations – Fly daily to The Moon; weekly to Mars; monthly to Titan.",
+                "🔹 World-Class Facilities – Sleek modern terminals, featuring state-of-the-art VR lounges, immersive pre-flight simulations, luxury shopping and gourmet dining options.",
+                "🔹 Cultural Elegance – Inspired by the rich heritage of the Far East, Starport Asia blends traditional artistry with futuristic design, creating a truly unique travel experience."
+            ],
+            "coverImg": "earth-asia.webp",
+            "pictures": [
+                "airport-asia.webp",
+                "beach-resort.webp",
+                "australia.webp",
+                "bangkok.webp",
+                "hong-kong.webp",
+                "japan.webp"
+            ]
+        },
+        {
+            "id": 5,
+            "port": "EAM",
+            "full_name": "Earth (America)",
+            "alias": "Neil Armstrong Interplanetary Spaceport",
+            "category": "terrestrial launch site",
+            "location": "Earth",
+            "hostType": "planet",
+            "region": "Earth Surface",
+            "domains": [
+                "planetary surface",
+                "continent",
+                "Earth",
+                "America",
+                "United States"
+            ],
+            "intro": "From the Far East to the distant stars",
+            "description": "Located on the island of Hainan, China, Heavenly Gate is the Asia-Pacific region’s premier spaceport, connecting millions to the Moon, Mars, and beyond. As the most advanced interplanetary travel hub in the Eastern Hemisphere, it takes pride on serving as the launchpad for the entire Asia-Pacific community, offering cutting-edge technology, unmatched convenience, and a commitment to excellence that spans continents.",
+            "promotionalCatch": "No matter if you're a space tourist from Bangkok, a lunar entrepreneur from Singapore, or a Martian pioneer from Seoul, Starport Asia is your entry point to the cosmos.",
+            "features": [
+                "🔹 Asia-Pacific’s Premier Hub – Strategically located to serve the entire region, Starport Asia offers seamless connections for travelers, businesses, and explorers from Tokyo to Sydney, Mumbai to Seoul.",
+                "🔹 Direct Flights to Key Destinations – Fly daily to The Moon; weekly to Mars; monthly to Titan.",
+                "🔹 World-Class Facilities – Sleek modern terminals, featuring state-of-the-art VR lounges, immersive pre-flight simulations, luxury shopping and gourmet dining options.",
+                "🔹 Cultural Elegance – Inspired by the rich heritage of the Far East, Starport Asia blends traditional artistry with futuristic design, creating a truly unique travel experience."
+            ],
+            "coverImg": "earth-america.webp",
+            "pictures": [
+                "airport-america.webp",
+                "sequoia-forest.webp",
+                "brazil.webp",
+                "nyc.webp",
+                "vegas.webp",
+                "yucatan.webp"
+            ]
+        },
+        {
             "id": 6,
             "port": "MRS",
             "full_name": "Mars",
@@ -200,36 +305,6 @@
                 "nova-thalassa5.webp",
                 "nova-thalassa6.webp",
                 "nova-thalassa7.webp"
-            ]
-        },
-        {
-            "id": 107,
-            "name": "Heavenly Gate - Starport Asia",
-            "category": "terrestrial launch site",
-            "location": "Earth",
-            "hostType": "planet",
-            "region": "Earth Surface",
-            "domains": [
-                "planetary surface",
-                "continent",
-                "Earth",
-                "Asia",
-                "China"
-            ],
-            "intro": "From the Far East to the distant stars",
-            "description": "Located on the island of Hainan, China, Heavenly Gate is the Asia-Pacific region’s premier spaceport, connecting millions to the Moon, Mars, and beyond. As the most advanced interplanetary travel hub in the Eastern Hemisphere, it takes pride on serving as the launchpad for the entire Asia-Pacific community, offering cutting-edge technology, unmatched convenience, and a commitment to excellence that spans continents.",
-            "promotionalCatch": "No matter if you're a space tourist from Bangkok, a lunar entrepreneur from Singapore, or a Martian pioneer from Seoul, Starport Asia is your entry point to the cosmos.",
-            "features": [
-                "🔹 Asia-Pacific’s Premier Hub – Strategically located to serve the entire region, Starport Asia offers seamless connections for travelers, businesses, and explorers from Tokyo to Sydney, Mumbai to Seoul.",
-                "🔹 Direct Flights to Key Destinations – Fly daily to The Moon; weekly to Mars; monthly to Titan.",
-                "🔹 World-Class Facilities – Sleek modern terminals, featuring state-of-the-art VR lounges, immersive pre-flight simulations, luxury shopping and gourmet dining options.",
-                "🔹 Cultural Elegance – Inspired by the rich heritage of the Far East, Starport Asia blends traditional artistry with futuristic design, creating a truly unique travel experience."
-            ],
-            "coverImg": "",
-            "pictures": [
-                "",
-                "",
-                ""
             ]
         },
         {
