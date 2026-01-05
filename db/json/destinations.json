@@ -69,7 +69,7 @@
             "id": 3,
             "port": "EEU",
             "full_name": "Earth (Europe)",
-            "alias": "",
+            "alias": "Galileo Galilei Old World's Hub - Starport Europe",
             "category": "terrestrial launch site",
             "location": "Earth",
             "hostType": "planet",
@@ -81,19 +81,22 @@
                 "Europe",
                 "France"
             ],
-            "intro": "From the Far East to the distant stars",
-            "description": "Located on the island of Hainan, China, Heavenly Gate is the Asia-Pacific region’s premier spaceport, connecting millions to the Moon, Mars, and beyond. As the most advanced interplanetary travel hub in the Eastern Hemisphere, it takes pride on serving as the launchpad for the entire Asia-Pacific community, offering cutting-edge technology, unmatched convenience, and a commitment to excellence that spans continents.",
-            "promotionalCatch": "No matter if you're a space tourist from Bangkok, a lunar entrepreneur from Singapore, or a Martian pioneer from Seoul, Starport Asia is your entry point to the cosmos.",
+            "intro": "From the origins of civilization to new prospects among the stars",
+            "description": "Situated in the outskirts of Paris, France, Galileo Galilei Old World's Hub – Spaceport Europe stands as the continent’s gateway between ancient history and interplanetary futures. Blending Europe’s legacy of exploration with cutting-edge aerospace engineering, it connects millions of travelers to orbital stations, the Moon, Mars, and the far reaches beyond. From its elegant Parisian setting, it serves the entire European community with precision, culture, and innovation woven together beneath the city of lights.",
+            "promotionalCatch": "Whether you are a weekend orbital traveler from Berlin, a lunar researcher from Rome, or a Martian colonist returning home to Madrid, Spaceport Europe is your passage from the Old World to the wider universe.",
             "features": [
-                "🔹 Asia-Pacific’s Premier Hub – Strategically located to serve the entire region, Starport Asia offers seamless connections for travelers, businesses, and explorers from Tokyo to Sydney, Mumbai to Seoul.",
-                "🔹 Direct Flights to Key Destinations – Fly daily to The Moon; weekly to Mars; monthly to Titan.",
-                "🔹 World-Class Facilities – Sleek modern terminals, featuring state-of-the-art VR lounges, immersive pre-flight simulations, luxury shopping and gourmet dining options.",
-                "🔹 Cultural Elegance – Inspired by the rich heritage of the Far East, Starport Asia blends traditional artistry with futuristic design, creating a truly unique travel experience."
+                "🔹 Europe’s Primary Interplanetary Gateway – Centrally located in Paris to serve the entire continent, offering seamless connections from Lisbon to Warsaw, Dublin to Athens.",
+                "🔹 Direct Flights to Major Destinations – Frequent departures to Low Earth Orbit; daily flights to the Moon; regular missions to Mars and the outer colonies.",
+                "🔹 Elegant European Design – A harmonious fusion of classical architecture and ultramodern glass structures offering views of the Paris skyline.",
+                "🔹 World-Class Passenger Experience – Premium lounges, multilingual concierge services, immersive spaceflight museums, gourmet dining curated by renowned European chefs.",
+                "🔹 Innovation Meets Heritage – Named in honor of Galileo Galilei, the spaceport celebrates Europe’s great scientific pioneers while nurturing the explorers of tomorrow."
             ],
             "coverImg": "earth-europe.webp",
             "pictures": [
                 "airport-europe.webp",
                 "ski-resort.webp",
+                "medieval-future.webp",
+                "techno-museum.webp",
                 "barcelona.webp",
                 "berlin.webp",
                 "london.webp",
@@ -129,6 +132,9 @@
             "pictures": [
                 "airport-asia.webp",
                 "beach-resort.webp",
+                "buddha-city.webp",
+                "buddha-mountain.webp",
+                "floating-market.webp",
                 "australia.webp",
                 "bangkok.webp",
                 "hong-kong.webp",
@@ -151,19 +157,22 @@
                 "America",
                 "United States"
             ],
-            "intro": "From the Far East to the distant stars",
-            "description": "Located on the island of Hainan, China, Heavenly Gate is the Asia-Pacific region’s premier spaceport, connecting millions to the Moon, Mars, and beyond. As the most advanced interplanetary travel hub in the Eastern Hemisphere, it takes pride on serving as the launchpad for the entire Asia-Pacific community, offering cutting-edge technology, unmatched convenience, and a commitment to excellence that spans continents.",
-            "promotionalCatch": "No matter if you're a space tourist from Bangkok, a lunar entrepreneur from Singapore, or a Martian pioneer from Seoul, Starport Asia is your entry point to the cosmos.",
+            "intro": "From the Old New World to the novel frontier beyond",
+            "description": "Located in Cape Canaveral, Florida, Neil Armstrong Interplanetary Spaceport is the premier gateway for North, Central, and South America to the wider Solar System. Rising from the very coastline where humanity first leapt to the Moon, it now connects millions across two hemispheres to orbital habitats, the lunar cities, Martian settlements, and deep-space destinations. It embodies the spirit of exploration that has defined the Americas for centuries, where innovation, diversity, and bold adventure take flight together.",
+            "promotionalCatch": "Whether you are a business traveler from São Paulo, a student explorer from Mexico City, or a Martian returnee visiting family in Toronto, Neil Armstrong Interplanetary Spaceport is your launchpoint to everywhere beyond Earth.",
             "features": [
-                "🔹 Asia-Pacific’s Premier Hub – Strategically located to serve the entire region, Starport Asia offers seamless connections for travelers, businesses, and explorers from Tokyo to Sydney, Mumbai to Seoul.",
-                "🔹 Direct Flights to Key Destinations – Fly daily to The Moon; weekly to Mars; monthly to Titan.",
-                "🔹 World-Class Facilities – Sleek modern terminals, featuring state-of-the-art VR lounges, immersive pre-flight simulations, luxury shopping and gourmet dining options.",
-                "🔹 Cultural Elegance – Inspired by the rich heritage of the Far East, Starport Asia blends traditional artistry with futuristic design, creating a truly unique travel experience."
+                "🔹 Pan-American Interstellar Gateway – Designed to serve all of the Americas, offering seamless connections from Anchorage to Ushuaia, Lima to New York, Bogotá to Buenos Aires.",
+                "🔹 Direct Routes to Key Destinations – Frequent launches to Low Earth Orbit; daily service to the Moon; regular crewed and cargo missions to Mars and the outer settlements.",
+                "🔹 Legacy of Exploration – Built upon the historic launch coast of Cape Canaveral, where humanity first stepped beyond Earth, now reborn as the hub of interplanetary travel.",
+                "🔹 Next-Generation Terminals – Smart security, autonomous transit systems, multilingual AI assistance, immersive educational exhibits, and expansive ocean-view observation decks.",
+                "🔹 Spirit of the Americas – A celebration of the continent’s cultural richness, featuring art, music, and cuisine from across North, Central, and South America, all under one cosmic roof."
             ],
             "coverImg": "earth-america.webp",
             "pictures": [
                 "airport-america.webp",
                 "sequoia-forest.webp",
+                "floating-city.webp",
+                "grand-canyon.webp",
                 "brazil.webp",
                 "nyc.webp",
                 "vegas.webp",
@@ -305,36 +314,6 @@
                 "nova-thalassa5.webp",
                 "nova-thalassa6.webp",
                 "nova-thalassa7.webp"
-            ]
-        },
-        {
-            "id": 108,
-            "name": "Neil Armstrong Interplanetary Spaceport",
-            "category": "terrestrial launch site",
-            "location": "Earth",
-            "hostType": "planet",
-            "region": "Earth Surface",
-            "domains": [
-                "planetary surface",
-                "continent",
-                "Earth",
-                "America",
-                "United States"
-            ],
-            "intro": "From the Far East to the distant stars",
-            "description": "Located on the island of Hainan, China, Heavenly Gate is the Asia-Pacific region’s premier spaceport, connecting millions to the Moon, Mars, and beyond. As the most advanced interplanetary travel hub in the Eastern Hemisphere, it takes pride on serving as the launchpad for the entire Asia-Pacific community, offering cutting-edge technology, unmatched convenience, and a commitment to excellence that spans continents.",
-            "promotionalCatch": "No matter if you're a space tourist from Bangkok, a lunar entrepreneur from Singapore, or a Martian pioneer from Seoul, Starport Asia is your entry point to the cosmos.",
-            "features": [
-                "🔹 Asia-Pacific’s Premier Hub – Strategically located to serve the entire region, Starport Asia offers seamless connections for travelers, businesses, and explorers from Tokyo to Sydney, Mumbai to Seoul.",
-                "🔹 Direct Flights to Key Destinations – Fly daily to The Moon; weekly to Mars; monthly to Titan.",
-                "🔹 World-Class Facilities – Sleek modern terminals, featuring state-of-the-art VR lounges, immersive pre-flight simulations, luxury shopping and gourmet dining options.",
-                "🔹 Cultural Elegance – Inspired by the rich heritage of the Far East, Starport Asia blends traditional artistry with futuristic design, creating a truly unique travel experience."
-            ],
-            "coverImg": "",
-            "pictures": [
-                "",
-                "",
-                ""
             ]
         }
     ]
