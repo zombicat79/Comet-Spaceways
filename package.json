@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "compile:sass": "node-sass src/sass/main.scss css/style.css -w",
-    "serve:data": "json-server db/json/flight-schedule.json",
+    "serve:data": "json-server db/json/destinations.json",
     "upload:data": "node db/supabase-data-loader.js"
   },
   "dependencies": {
