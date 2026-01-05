@@ -7,7 +7,7 @@
             "alias": "Lunar Haven",
             "category": "surface colony",
             "location": "Moon",
-            "hostType": "natural satellite",
+            "host_type": "natural satellite",
             "region": "Earth Orbit",
             "domains": [
                 "near space",
@@ -16,13 +16,13 @@
             ],
             "intro": "The Frontier of Science, Industry, and Exploration!",
             "description": "Step onto the Moon and into the future at Lunar Haven, humanity’s premier off-world settlement. Strategically located in the Sea of Tranquility, this thriving colony is more than just a destination—it’s a hub of innovation, research, and resource extraction at the edge of space.",
-            "promotionalCatch": "Whether you’re a researcher, entrepreneur, or explorer, Lunar Haven is where discovery meets destiny. Join us on the next great journey—because the future starts here. 🚀🌕",
+            "promotional_catch": "Whether you’re a researcher, entrepreneur, or explorer, Lunar Haven is where discovery meets destiny. Join us on the next great journey—because the future starts here. 🚀🌕",
             "features": [
                 "🔹 Exploration – Visit cutting-edge laboratories where scientists unlock the secrets of lunar geology, high-tech mining operations harvesting rare lunar resources, and self-sustaining bio-domes pioneering the future of off-world living.",
                 "🔹 Adventure – Experience the Moon’s rugged beauty on rover expeditions",
                 "🔹 Marvel – Witness history in the making as we forge the next chapter of human expansion beyond Earth."
             ],
-            "coverImg": "moon.webp",
+            "cover_img": "moon.webp",
             "pictures": [
                 "lunar-haven.webp",
                 "lunar-haven2.webp",
@@ -41,7 +41,7 @@
             "alias": "Celestia Station",
             "category": "man-made station",
             "location": "Earth",
-            "hostType": "planet",
+            "host_type": "planet",
             "region": "LEO (Low Earth Orbit)",
             "domains": [
                 "near space",
@@ -50,12 +50,12 @@
             ],
             "intro": "The Gateway To The Solar System!",
             "description": "Perched in low Earth orbit, Celestia Station is your gateway to the stars! Whether you're a traveler en route to the Moon, Mars, or beyond, our state-of-the-art facility offers seamless transit, luxury accommodations, and breathtaking views of Earth from 400 kilometers above.",
-            "promotionalCatch": "Book your trip today—because the future isn’t light-years away. It’s just a rocket ride from home! 🚀🌕",
+            "promotional_catch": "Book your trip today—because the future isn’t light-years away. It’s just a rocket ride from home! 🚀🌕",
             "features": [
                 "🔹 Designed for Efficiency and Comfort – Relax in our zero-gravity lounges, enjoy gourmet dining with a cosmic view, or connect with pioneers from across the solar system.",
                 "🔹 The Ultimate Interplanetary Hub – Celestia Station provides advanced docking services, refueling, and crew transfers."
             ],
-            "coverImg": "celestia2.webp",
+            "cover_img": "celestia2.webp",
             "pictures": [
                 "celestia.webp",
                 "celestia3.webp",
@@ -72,7 +72,7 @@
             "alias": "Galileo Galilei Old World's Hub - Starport Europe",
             "category": "terrestrial launch site",
             "location": "Earth",
-            "hostType": "planet",
+            "host_type": "planet",
             "region": "Earth Surface",
             "domains": [
                 "planetary surface",
@@ -83,7 +83,7 @@
             ],
             "intro": "From the origins of civilization to new prospects among the stars",
             "description": "Situated in the outskirts of Paris, France, Galileo Galilei Old World's Hub – Spaceport Europe stands as the continent’s gateway between ancient history and interplanetary futures. Blending Europe’s legacy of exploration with cutting-edge aerospace engineering, it connects millions of travelers to orbital stations, the Moon, Mars, and the far reaches beyond. From its elegant Parisian setting, it serves the entire European community with precision, culture, and innovation woven together beneath the city of lights.",
-            "promotionalCatch": "Whether you are a weekend orbital traveler from Berlin, a lunar researcher from Rome, or a Martian colonist returning home to Madrid, Spaceport Europe is your passage from the Old World to the wider universe.",
+            "promotional_catch": "Whether you are a weekend orbital traveler from Berlin, a lunar researcher from Rome, or a Martian colonist returning home to Madrid, Spaceport Europe is your passage from the Old World to the wider universe.",
             "features": [
                 "🔹 Europe’s Primary Interplanetary Gateway – Centrally located in Paris to serve the entire continent, offering seamless connections from Lisbon to Warsaw, Dublin to Athens.",
                 "🔹 Direct Flights to Major Destinations – Frequent departures to Low Earth Orbit; daily flights to the Moon; regular missions to Mars and the outer colonies.",
@@ -91,7 +91,7 @@
                 "🔹 World-Class Passenger Experience – Premium lounges, multilingual concierge services, immersive spaceflight museums, gourmet dining curated by renowned European chefs.",
                 "🔹 Innovation Meets Heritage – Named in honor of Galileo Galilei, the spaceport celebrates Europe’s great scientific pioneers while nurturing the explorers of tomorrow."
             ],
-            "coverImg": "earth-europe.webp",
+            "cover_img": "earth-europe.webp",
             "pictures": [
                 "airport-europe.webp",
                 "ski-resort.webp",
@@ -110,7 +110,7 @@
             "alias": "Heavenly Gate - Starport Asia",
             "category": "terrestrial launch site",
             "location": "Earth",
-            "hostType": "planet",
+            "host_type": "planet",
             "region": "Earth Surface",
             "domains": [
                 "planetary surface",
@@ -121,14 +121,14 @@
             ],
             "intro": "From the Far East to the distant stars",
             "description": "Located on the island of Hainan, China, Heavenly Gate is the Asia-Pacific region’s premier spaceport, connecting millions to the Moon, Mars, and beyond. As the most advanced interplanetary travel hub in the Eastern Hemisphere, it takes pride on serving as the launchpad for the entire Asia-Pacific community, offering cutting-edge technology, unmatched convenience, and a commitment to excellence that spans continents.",
-            "promotionalCatch": "No matter if you're a space tourist from Bangkok, a lunar entrepreneur from Singapore, or a Martian pioneer from Seoul, Starport Asia is your entry point to the cosmos.",
+            "promotional_catch": "No matter if you're a space tourist from Bangkok, a lunar entrepreneur from Singapore, or a Martian pioneer from Seoul, Starport Asia is your entry point to the cosmos.",
             "features": [
                 "🔹 Asia-Pacific’s Premier Hub – Strategically located to serve the entire region, Starport Asia offers seamless connections for travelers, businesses, and explorers from Tokyo to Sydney, Mumbai to Seoul.",
                 "🔹 Direct Flights to Key Destinations – Fly daily to The Moon; weekly to Mars; monthly to Titan.",
                 "🔹 World-Class Facilities – Sleek modern terminals, featuring state-of-the-art VR lounges, immersive pre-flight simulations, luxury shopping and gourmet dining options.",
                 "🔹 Cultural Elegance – Inspired by the rich heritage of the Far East, Starport Asia blends traditional artistry with futuristic design, creating a truly unique travel experience."
             ],
-            "coverImg": "earth-asia.webp",
+            "cover_img": "earth-asia.webp",
             "pictures": [
                 "airport-asia.webp",
                 "beach-resort.webp",
@@ -148,7 +148,7 @@
             "alias": "Neil Armstrong Interplanetary Spaceport",
             "category": "terrestrial launch site",
             "location": "Earth",
-            "hostType": "planet",
+            "host_type": "planet",
             "region": "Earth Surface",
             "domains": [
                 "planetary surface",
@@ -159,7 +159,7 @@
             ],
             "intro": "From the Old New World to the novel frontier beyond",
             "description": "Located in Cape Canaveral, Florida, Neil Armstrong Interplanetary Spaceport is the premier gateway for North, Central, and South America to the wider Solar System. Rising from the very coastline where humanity first leapt to the Moon, it now connects millions across two hemispheres to orbital habitats, the lunar cities, Martian settlements, and deep-space destinations. It embodies the spirit of exploration that has defined the Americas for centuries, where innovation, diversity, and bold adventure take flight together.",
-            "promotionalCatch": "Whether you are a business traveler from São Paulo, a student explorer from Mexico City, or a Martian returnee visiting family in Toronto, Neil Armstrong Interplanetary Spaceport is your launchpoint to everywhere beyond Earth.",
+            "promotional_catch": "Whether you are a business traveler from São Paulo, a student explorer from Mexico City, or a Martian returnee visiting family in Toronto, Neil Armstrong Interplanetary Spaceport is your launchpoint to everywhere beyond Earth.",
             "features": [
                 "🔹 Pan-American Interstellar Gateway – Designed to serve all of the Americas, offering seamless connections from Anchorage to Ushuaia, Lima to New York, Bogotá to Buenos Aires.",
                 "🔹 Direct Routes to Key Destinations – Frequent launches to Low Earth Orbit; daily service to the Moon; regular crewed and cargo missions to Mars and the outer settlements.",
@@ -167,7 +167,7 @@
                 "🔹 Next-Generation Terminals – Smart security, autonomous transit systems, multilingual AI assistance, immersive educational exhibits, and expansive ocean-view observation decks.",
                 "🔹 Spirit of the Americas – A celebration of the continent’s cultural richness, featuring art, music, and cuisine from across North, Central, and South America, all under one cosmic roof."
             ],
-            "coverImg": "earth-america.webp",
+            "cover_img": "earth-america.webp",
             "pictures": [
                 "airport-america.webp",
                 "sequoia-forest.webp",
@@ -186,14 +186,14 @@
             "alias": "New Olympus",
             "category": "surface colony",
             "location": "Mars",
-            "hostType": "planet",
+            "host_type": "planet",
             "region": "Inner Solar System",
             "domains": [
                 "deep space"
             ],
             "intro": "The First Human Colony on Mars! 🚀🔴",
             "description": "Step into the future and be part of history! New Olympus, the first permanent human settlement on Mars, offers an unprecedented opportunity to live, work, and explore on the Red Planet. Whether you're a pioneering scientist, an ambitious entrepreneur, or an adventurous traveler, this thriving colony is the place to be.",
-            "promotionalCatch": "Become part of a legacy of pioneers, shaping the future of humanity on Mars.",
+            "promotional_catch": "Become part of a legacy of pioneers, shaping the future of humanity on Mars.",
             "features": [
                 "🔹 Cutting-Edge Research & Innovation – Join groundbreaking projects in terraforming, resource extraction, and space agriculture.",
                 "🔹 Dynamic Work Opportunities – Engineers, technicians, and specialists are shaping the future of interplanetary civilization.",
@@ -201,7 +201,7 @@
                 "🔹 A Thriving Community – State-of-the-art habitats, hydroponic farms, and Martian cafés create a unique and vibrant society beyond Earth.",
                 "🔹 Trade & Industry – A hub for aerospace innovation, resource extraction, and an emerging economy built around cloud-harvesting."
             ],
-            "coverImg": "mars.webp",
+            "cover_img": "mars.webp",
             "pictures": [
                 "new-olympus.webp",
                 "new-olympus2.webp",
@@ -220,21 +220,21 @@
             "alias": "Cloud Nine",
             "category": "floating city",
             "location": "Venus",
-            "hostType": "planet",
+            "host_type": "planet",
             "region": "Inner Solar System",
             "domains": [
                 "deep space"
             ],
             "intro": "Humanity’s First City In The Skies!",
             "description": "A new horizon awaits in the upper layers of Venus! Floating high above the planet' scorching surface, Cloud Nine is a marvel of human engineering—a city suspended within the planet’s temperate upper atmosphere. Shielded from the planet’s extreme heat and pressure, this aerial colony thrives in the golden skies, harnessing solar energy and extracting vital resources from the thick clouds below.",
-            "promotionalCatch": "Rise above and thrive beyond! Experience the future of urban development, suspended in the first human city ever drifting amongst clouds.",
+            "promotional_catch": "Rise above and thrive beyond! Experience the future of urban development, suspended in the first human city ever drifting amongst clouds.",
             "features": [
                 "🔹 Floating Megastructures – Advanced aerostat platforms keep the colony suspended at 50 km altitude, where temperatures and pressures are Earth-like.",
                 "🔹 Self-Sustaining Ecosystem – Cutting-edge carbon extraction and atmospheric processing provide breathable air, water, and essential resources.",
                 "🔹 Solar-Powered Energy – Abundant sunlight drives high-efficiency solar farms, ensuring a continuous, renewable energy supply.",
                 "🔹 Scientific Research Hub – A prime location for studying Venusian weather, atmosphere, and potential for future expansion."
             ],
-            "coverImg": "venus.webp",
+            "cover_img": "venus.webp",
             "pictures": [
                 "cloud-nine.webp",
                 "cloud-nine2.webp",
@@ -253,7 +253,7 @@
             "alias": "Ceres Prime",
             "category": "outpost",
             "location": "Ceres",
-            "hostType": "dwarf planet",
+            "host_type": "dwarf planet",
             "region": "Asteroid Belt",
             "domains": [
                 "deep space",
@@ -261,7 +261,7 @@
             ],
             "intro": "Humankind's New Industrial Heart",
             "description": "Nestled in the heart of the asteroid belt, Ceres Prime is humanity’s leading industrial outpost in space, as well as the busiest free trade zone in the Solar System. Once a barren dwarf planet, Ceres is now a thriving hub for asteroid mining, commerce and entrepreneurial exploration. Here, the raw materials of the solar system are transformed into the building blocks of the future.",
-            "promotionalCatch": "Whether you’re an industrialist, a miner, or just an adventurer, Ceres Prime offers a unique blend of hard work and cosmic wonder. Take your part in the future of economy!",
+            "promotional_catch": "Whether you’re an industrialist, a miner, or just an adventurer, Ceres Prime offers a unique blend of hard work and cosmic wonder. Take your part in the future of economy!",
             "features": [
                 "🔹 Asteroid Mining Capital – Witness the future of resource extraction at its state-of-the-art mining operations, where robotic drills and advanced refineries turn asteroids into precious metals and rare minerals.",
                 "🔹 Unparalleled Resources – Tap into the asteroid belt’s vast reserves of precious metals, rare minerals, and water ice.",
@@ -271,7 +271,7 @@
                 "🔹 Frontier Incentives – Benefit from tax breaks, profit-sharing programs, and claim-staking opportunities under the 'Asteroid Resource Act', designed to attract and reward hardworking pioneers.",
                 "🔹 Low-Gravity Thrills – Experience the exhilaration of low-gravity sports, from asteroid-hopping to orbital skydiving, all while surrounded by the wonders of space."
             ],
-            "coverImg": "ceres.webp",
+            "cover_img": "ceres.webp",
             "pictures": [
                 "ceres-prime.webp",
                 "ceres-prime2.webp",
@@ -288,7 +288,7 @@
             "alias": "Nova Thalassa",
             "category": "outpost",
             "location": "Titan",
-            "hostType": "natural satellite",
+            "host_type": "natural satellite",
             "region": "Outer Solar System",
             "domains": [
                 "deep space",
@@ -297,7 +297,7 @@
             ],
             "intro": "The Jewel of the Saturn System",
             "description": "Imagine a world where golden skies stretch endlessly above, and methane rivers carve their way to converge into otherworldly lakes. Welcome to Nova Thalassa, humanity’s most daring outpost in the outer solar system! Nestled beneath protective domes, this futuristic haven offers a one-of-a-kind experience for adventurers, scientists, and dreamers alike.",
-            "promotionalCatch": "Humanity’s boldest step into the cosmos. Dare to live where none of your acquaintances has lived before.",
+            "promotional_catch": "Humanity’s boldest step into the cosmos. Dare to live where none of your acquaintances has lived before.",
             "features": [
                 "🔹 Breathtaking Landscapes – Explore Titan’s surreal terrain, from vast hydrocarbon lakes to towering cryovolcanoes. Don’t forget your thermal suit—it’s chilly out there!",
                 "🔹 Low-Gravity Thrills – Experience the thrill of low-gravity activities such as man-powered flight, thanks to Titan's thick atmosphere.",
@@ -305,7 +305,7 @@
                 "🔹 Cutting-Edge Science – Tour Nova Thalassa's state-of-the-art research facilities and learn how mankind is unlocking the secrets of this enigmatic moon.",
                 "🔹 Luxury Under the Dome – Relax in Nova Thalassa's climate-controlled habitats, complete with Earth-like gardens, gourmet dining, and spas."
             ],
-            "coverImg": "titan.webp",
+            "cover_img": "titan.webp",
             "pictures": [
                 "nova-thalassa.webp",
                 "nova-thalassa2.webp",
