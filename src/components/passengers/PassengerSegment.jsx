@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { FlightSearchContext } from '../../contexts/FlightSearchContext';
 
 import ContentSection from "../../layout/ContentSection";
-import Form from './../Form';
+import Form from '../forms/Form';
 import SvgIcon from "../SvgIcon";
 
 function PassengerSegment({ type }) {
@@ -20,7 +20,7 @@ function PassengerSegment({ type }) {
                 </header>
                 <main className="segment__body">
                     {occurrences.map((el, index) => {
-                        return <Form key={"form-" + index} />
+                        return <Form key={`${type}-form-${index+1}`} type={type} occurrence={index + 1} />
                     })}
                 </main>
             </div>
