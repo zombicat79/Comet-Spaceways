@@ -13,9 +13,11 @@
         @include flex-row(flex-start);
         gap: 1rem;
 
-        p {
+        p, h3 {
+            font-family: inherit;
             font-size: 1.75rem;
             font-style: italic;
+            margin-bottom: 0;
         }
 
         svg {

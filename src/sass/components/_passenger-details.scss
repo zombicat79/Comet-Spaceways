@@ -1,0 +1,21 @@
+.passenger-details {
+    position: relative;
+    background-color: $color-environmental-light;
+    padding: 3rem;
+    margin: 3rem 0;
+    border: 2px solid $color-text-dark;
+    border-radius: 1.5rem;
+    transition: transform .5s;
+
+    &:first-child, 
+    &:last-child {
+        margin: 0;
+    }
+
+    &__occurrence {
+        font-family: 'titillium-bold';
+        font-size: 2.5rem;
+        text-align: left;
+        margin-bottom: 3rem;
+    }
+}

@@ -4,7 +4,7 @@ function Checkbox({ labelled, inputType, name, title, checked }) {
     return (
         <div>
             {labelled && <label htmlFor={inputId} >{title}</label>}
-            <input id={inputId} name={name} type={inputType} />
+            <input id={inputId} name={name} type={inputType} checked={checked} />
         </div>
     )
 }
