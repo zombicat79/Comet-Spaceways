@@ -113,7 +113,7 @@ function determineAlternateRoutings(alternatives) {
 
 // Check whether any of the listed outbound options makes it in time for the selected return trip
 function checkSegmentsCoherence(outboundOptions, inboundSelection) {
-    console.log(outboundOptions)
+    console.log(inboundSelection)
     if (!outboundOptions) return [null];
 
     const coherentOptions = outboundOptions.filter((option) => {
@@ -163,15 +163,17 @@ async function calculateAvailability(schedule, departureObj, returnObj = null, p
     let output;
     if (prevOutput) {
         if (prevOutput.departures) {
+            console.log(prevOutput.departures)
             const { origin: prevOrigin, destination: prevDestination, departure_date } = prevOutput.departures[0];
             const segmentsCoherence = checkSegmentsCoherence(prevOutput.departures, availabilityDetails);
-            let incoherenceInfo = {}; 
+            console.log(segmentsCoherence)
+            let incoherenceInfo = []; 
             if (segmentsCoherence.length === 0) {
-                incoherenceInfo = [{
+                incoherenceInfo.push({
                     status: "incoherent", 
-                    reason: "All departure flights arrive later than the selected return date", 
+                    reason: "All flights for the selected departure date arrive later than the selected return date", 
                     returnDate: date
-                }];
+                });
             }
 
             if (readFlightCookies(`${origin}-${destination}-${compactDate}`)) {
@@ -206,13 +208,13 @@ async function calculateAvailability(schedule, departureObj, returnObj = null, p
     
     if (returnObj) {
         const segmentsCoherence = checkSegmentsCoherence(availabilityDetails, returnObj);
-        let incoherenceInfo = {}; 
+        let incoherenceInfo = []; 
         if (segmentsCoherence.length === 0) {
-            incoherenceInfo = [{
+            incoherenceInfo.push({
                 status: "incoherent", 
-                reason: "All departure flights arrive later than the selected return date", 
+                reason: "All flights for the selected departure date arrive later than the selected return date", 
                 returnDate: returnObj.date
-            }];
+            });
         }
 
         if (readFlightCookies(`${origin}-${destination}-${compactDate}`)) {

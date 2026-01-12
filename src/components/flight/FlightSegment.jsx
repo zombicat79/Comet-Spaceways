@@ -38,7 +38,7 @@ function FlightSegment({ type, flightData }) {
                             <Button text={'New search'} action={() => navigate("/")} />
                         </div>
                     }
-                    {flightData && "reason" in flightData[0] &&
+                    {flightData && "status" in flightData[0] && flightData[0].status === "incoherent" &&
                         <div className="segment__unavailable">
                             <p>{flightData[0].reason}❗️</p>
                             <Button text={'New search'} action={() => navigate("/")} />
