@@ -26,7 +26,7 @@ function NavLink({ link, decoration, tooling }) {
             <li 
                 className={link.decoration ? `navlink navlink--${link.decoration}` : 'navlink'} 
             >
-                <Link to="/not-found" className="navlink__text">{link.text}</Link>
+                <Link to={link.payload} className="navlink__text">{link.text}</Link>
             </li>
         );
     }

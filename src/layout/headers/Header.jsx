@@ -1,7 +1,7 @@
-import { useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { LayoutContext } from '../../contexts/LayoutContext';
 import useHeader from './../../hooks/useHeader';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 
 import NavBar from '../../components/NavBar';
 import NavMenu from '../../components/NavMenu';
@@ -16,7 +16,8 @@ import LogoDark from '/logos/ctsw-logo_dark_horizontal.png';
 function Header() {
     const { layoutState, handlePopupLaunch, dispatch } = useContext(LayoutContext);
     const { transparency, expansion, handleResizing } = useHeader(layoutState);
-
+    const location = useLocation();
+    
     function openAside() {
         dispatch({ type: 'toggle/scroll' });
         dispatch({ type: 'toggle/aside', payload: {
@@ -25,6 +26,22 @@ function Header() {
             content: <AsideMenu links={menuLinks} /> 
         }})
     }
+
+    function closeAside() {
+        dispatch({ type: 'toggle/aside', payload: {
+            side: 'left',
+            shown: false,
+            content: null
+        }});
+        dispatch({ type: 'set/scroll', payload: true });
+    }
+
+    useEffect(() => {
+        if (!transparency) {
+            handleResizing();
+        }
+        closeAside();
+    }, [location])
 
     return (
         <header className="header" data-transparency={transparency} >

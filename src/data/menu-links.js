@@ -29,7 +29,7 @@ const menuLinks = {
         { id: 10, text: 'Cargo', action: 'popup', payload: WorkInProgress(), decoration: 'underline' },
         { id: 11, text: 'Seats & cabins', action: 'popup', payload: WorkInProgress(), decoration: 'underline' },
         { id: 12, text: 'Onboard experience', action: 'popup', payload: WorkInProgress(), decoration: 'underline' },
-        { id: 13, text: 'Destinations', action: 'popup', payload: WorkInProgress(), decoration: 'underline' }
+        { id: 13, text: 'Destinations', action: 'link', payload: '/destinations', decoration: 'underline' }
     ],
     bottomRight: [
         /* { id: 14, text: 'Check-in info', action: 'navigate', path: '', decoration: 'underline' },
