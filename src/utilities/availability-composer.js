@@ -113,12 +113,16 @@ function determineAlternateRoutings(alternatives) {
 
 // Check whether any of the listed outbound options makes it in time for the selected return trip
 function checkSegmentsCoherence(outboundOptions, inboundSelection) {
-    console.log(inboundSelection)
-    if (!outboundOptions) return [null];
+    console.log(outboundOptions)
+    if (!outboundOptions) return [undefined];
 
     const coherentOptions = outboundOptions.filter((option) => {
-        const optionParsedArrivalDate = parse(option.arrival_date, 'dd/MM/yyyy', new Date());
-        return getTime(optionParsedArrivalDate) <= getTime(inboundSelection.date);
+        if (!inboundSelection) {
+            return option
+        } else {
+            const optionParsedArrivalDate = parse(option.arrival_date, 'dd/MM/yyyy', new Date());
+            return getTime(optionParsedArrivalDate) <= getTime(inboundSelection.date);
+        }
     })
     return coherentOptions;
 }
@@ -161,7 +165,27 @@ async function calculateAvailability(schedule, departureObj, returnObj = null, p
     }
 
     let output;
-    if (prevOutput) {
+    if (returnObj) {
+        const segmentsCoherence = checkSegmentsCoherence(availabilityDetails, returnObj);
+        let incoherenceInfo = []; 
+        if (segmentsCoherence.length === 0) {
+            incoherenceInfo.push({
+                status: "incoherent", 
+                reason: "All listed flights for the selected departure date arrive later than the selected return date", 
+                returnDate: returnObj.date
+            });
+        }
+
+        if (readFlightCookies(`${origin}-${destination}-${compactDate}`)) {
+            segmentsCoherence.length === 0 && segmentsCoherence[0] !== undefined
+            ? output = { departures: JSON.parse(localStorage.getItem(`${origin}-${destination}-${compactDate}`)), returns: incoherenceInfo }
+            : output = { departures: JSON.parse(localStorage.getItem(`${origin}-${destination}-${compactDate}`)), returns: "pending" };
+        } else {
+            segmentsCoherence.length === 0 && segmentsCoherence[0] !== undefined
+            ? output = { departures: availabilityDetails, returns: incoherenceInfo }
+            : output = { departures: availabilityDetails, returns: "pending" };
+        }
+    } else if (prevOutput) {
         if (prevOutput.departures) {
             console.log(prevOutput.departures)
             const { origin: prevOrigin, destination: prevDestination, departure_date } = prevOutput.departures[0];
@@ -171,7 +195,7 @@ async function calculateAvailability(schedule, departureObj, returnObj = null, p
             if (segmentsCoherence.length === 0) {
                 incoherenceInfo.push({
                     status: "incoherent", 
-                    reason: "All flights for the selected departure date arrive later than the selected return date", 
+                    reason: "All listed flights for the selected departure date arrive later than the selected return date", 
                     returnDate: date
                 });
             }
@@ -204,28 +228,6 @@ async function calculateAvailability(schedule, departureObj, returnObj = null, p
         }
     } else  {
         output = { departures: availabilityDetails }
-    }
-    
-    if (returnObj) {
-        const segmentsCoherence = checkSegmentsCoherence(availabilityDetails, returnObj);
-        let incoherenceInfo = []; 
-        if (segmentsCoherence.length === 0) {
-            incoherenceInfo.push({
-                status: "incoherent", 
-                reason: "All flights for the selected departure date arrive later than the selected return date", 
-                returnDate: returnObj.date
-            });
-        }
-
-        if (readFlightCookies(`${origin}-${destination}-${compactDate}`)) {
-            segmentsCoherence.length === 0
-            ? output = { departures: JSON.parse(localStorage.getItem(`${origin}-${destination}-${compactDate}`)), returns: incoherenceInfo }
-            : output = { departures: JSON.parse(localStorage.getItem(`${origin}-${destination}-${compactDate}`)), returns: "pending" };
-        } else {
-            segmentsCoherence.length === 0
-            ? output = {departures: availabilityDetails, returns: incoherenceInfo }
-            : output = { departures: availabilityDetails, returns: "pending" };
-        }
     }
 
     if (!Cookies.get(`${origin}-${destination}-${compactDate}`)) {
