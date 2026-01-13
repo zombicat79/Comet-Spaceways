@@ -9,7 +9,6 @@ import SvgIcon from "../SvgIcon";
 import Button from '../Button';
 
 function FlightSegment({ type, flightData }) {
-    console.log(flightData)
     const { flightSearchState } = useContext(FlightSearchContext);
     const navigate = useNavigate();
     const segmentedFlightData = flightData?.map((el) => {
