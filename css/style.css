@@ -702,14 +702,24 @@ h3 {
     border-top-right-radius: 1.5rem;
     background-size: cover;
     background-repeat: no-repeat; }
-    .card__img--celestia {
-      background-image: url("./../assets/images/celestia.webp"); }
+    .card__img--earth-europe {
+      background-image: url("./../assets/images/destinations/earth-europe/earth-europe.webp"); }
+    .card__img--earth-asia {
+      background-image: url("./../assets/images/destinations/earth-asia/earth-asia.webp"); }
+    .card__img--earth-america {
+      background-image: url("./../assets/images/destinations/earth-america/earth-america.webp"); }
+    .card__img--celestia2 {
+      background-image: url("./../assets/images/destinations/celestia/celestia2.webp"); }
+    .card__img--ceres {
+      background-image: url("./../assets/images/destinations/ceres/ceres.webp"); }
     .card__img--moon {
-      background-image: url("./../assets/images/moon.webp"); }
+      background-image: url("./../assets/images/destinations/moon/moon.webp"); }
     .card__img--venus {
-      background-image: url("./../assets/images/venus.webp"); }
+      background-image: url("./../assets/images/destinations/venus/venus.webp"); }
     .card__img--mars {
-      background-image: url("./../assets/images/mars.webp"); }
+      background-image: url("./../assets/images/destinations/mars/mars.webp"); }
+    .card__img--titan {
+      background-image: url("./../assets/images/destinations/titan/titan.webp"); }
   .card__content {
     display: flex;
     flex-direction: column;

@@ -22,20 +22,40 @@
         background-size: cover;
         background-repeat: no-repeat;
 
-        &--celestia {
-            background-image: url('./../assets/images/celestia.webp');
+        &--earth-europe {
+            background-image: url('./../assets/images/destinations/earth-europe/earth-europe.webp');
+        }
+
+        &--earth-asia {
+            background-image: url('./../assets/images/destinations/earth-asia/earth-asia.webp');
+        }
+
+        &--earth-america {
+            background-image: url('./../assets/images/destinations/earth-america/earth-america.webp');
+        }
+
+        &--celestia2 {
+            background-image: url('./../assets/images/destinations/celestia/celestia2.webp');
+        }
+
+        &--ceres {
+            background-image: url('./../assets/images/destinations/ceres/ceres.webp');
         }
 
         &--moon {
-            background-image: url('./../assets/images/moon.webp');
+            background-image: url('./../assets/images/destinations/moon/moon.webp');
         }
 
         &--venus {
-            background-image: url('./../assets/images/venus.webp');
+            background-image: url('./../assets/images/destinations/venus/venus.webp');
         }
 
         &--mars {
-            background-image: url('./../assets/images/mars.webp');
+            background-image: url('./../assets/images/destinations/mars/mars.webp');
+        }
+
+        &--titan {
+            background-image: url('./../assets/images/destinations/titan/titan.webp');
         }
     }
 
