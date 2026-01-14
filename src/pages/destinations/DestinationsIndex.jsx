@@ -1,28 +1,29 @@
-import { useNavigation, useLoaderData } from 'react-router';
-
-import supabase from './../../../db/supabase-client';
+import { useContext } from 'react';
+import { DestinationsContext } from '../../contexts/DestinationsContext';
 
 import Card from './../../components/Card';
 
 function DestinationsIndex() {
-    const dataFromDB = useLoaderData();
-    console.log(dataFromDB);
+    const { destinations } = useContext(DestinationsContext);
 
-    if (dataFromDB) {
+    if (destinations.length > 0) {
         return (
             <main className="destinations">
-                {dataFromDB.data.map((el) => {
-                    return (
-                        <Card key={el.id} bgImg={el.cover_img.slice(0, el.cover_img.indexOf("."))}>
-                            <div className="card__heading">
-                                <h4 className="card__title">{el.full_name}</h4>
-                            </div>
-                            <div className="card__body">
-                                
-                            </div>
-                        </Card>
-                    )
-                })}
+                <h3 className="homepage__offers-heading">OUR DESTINATIONS</h3>
+                <div className="destinations__list">
+                    {destinations.map((el) => {
+                        return (
+                            <Card key={el.id} bgImg={el.cover_img} link={el.port}>
+                                <div className="card__heading">
+                                    <h4 className="card__title">{el.full_name}</h4>
+                                </div>
+                                <div className="card__body">
+                                    
+                                </div>
+                            </Card>
+                        )
+                    })}
+                </div>
             </main>
         )
     }
@@ -34,18 +35,4 @@ function DestinationsIndex() {
     )
 }
 
-export async function fetchDestinations() {
-    async function getDataFromDB() {
-        const { data, error } = await supabase
-        .from('Destinations')
-        .select()
-
-        if (error) return { error };
-
-        return { data };
-    }
-
-    const destinations = await getDataFromDB();
-    return destinations;
-};
 export default DestinationsIndex;

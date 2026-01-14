@@ -708,8 +708,8 @@ h3 {
       background-image: url("./../assets/images/destinations/earth-asia/earth-asia.webp"); }
     .card__img--earth-america {
       background-image: url("./../assets/images/destinations/earth-america/earth-america.webp"); }
-    .card__img--celestia2 {
-      background-image: url("./../assets/images/destinations/celestia/celestia2.webp"); }
+    .card__img--celestia {
+      background-image: url("./../assets/images/destinations/celestia/celestia.webp"); }
     .card__img--ceres {
       background-image: url("./../assets/images/destinations/ceres/ceres.webp"); }
     .card__img--moon {
@@ -2281,6 +2281,31 @@ h3 {
     animation-delay: 1.5s;
     animation-duration: 3s;
     animation-fill-mode: forwards; }
+
+.destinations {
+  position: relative;
+  z-index: 2;
+  padding: 10rem 0;
+  background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  .destinations__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    gap: 5rem; }
+    @media screen and (max-width: 1000px) {
+      .destinations__list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        row-gap: 5rem; } }
+    @media screen and (max-width: 768px) {
+      .destinations__list {
+        grid-template-columns: 1fr; } }
+    .destinations__list .card {
+      width: 100%; }
 
 .tickets {
   position: relative;
