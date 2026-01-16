@@ -37,7 +37,7 @@ function Header() {
     }
 
     useEffect(() => {
-        if (!transparency) {
+        if (!transparency && expansion) {
             handleResizing();
         }
         closeAside();

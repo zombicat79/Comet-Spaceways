@@ -14,7 +14,7 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
         justify-items: center;
-        gap: 5rem;
+        gap: 10rem;
 
         @include respond(tablet-landscape) {
             grid-template-columns: repeat(2, 1fr);
@@ -26,8 +26,13 @@
             grid-template-columns: 1fr;
         }
 
-        .card {
+        a, .card {
             width: 100%
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
         }
     }
 }

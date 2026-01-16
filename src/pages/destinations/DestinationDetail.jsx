@@ -2,6 +2,10 @@ import { useContext } from 'react';
 import { DestinationsContext } from '../../contexts/DestinationsContext';
 import { useLocation } from 'react-router';
 
+import Banner from './../../components/Banner';
+import ContentSection from './../../layout/ContentSection';
+import FlightSearch from '../../components/flight/FlightSearch';
+
 function DestinationDetail() {
     const { destinations } = useContext(DestinationsContext);
     const location = useLocation();
@@ -10,7 +14,19 @@ function DestinationDetail() {
     console.log(currentDestinationData)
 
     return (
-        <p>{currentDestination}</p>
+        <main>
+            <Banner 
+                textStyle={{ color: 'default', align: 'left' }}
+                textContent={{
+                    heading: `${currentDestinationData.full_name} - (${currentDestinationData.port})`,
+                    body: currentDestinationData.alias
+                }}
+                background={{ img: currentDestinationData.port, height: 'full' }}
+            />
+            <section>
+                <FlightSearch fixedDestination={true} />
+            </section>
+        </main>
     )
 }
 

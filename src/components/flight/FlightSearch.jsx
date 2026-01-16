@@ -8,7 +8,7 @@ import Selector from "../Selector";
 import Button from "../Button";
 import FlightPreview from './FlightPreview';
 
-function FlightSearch() {
+function FlightSearch({ fixedDestination }) {
     const { flightSearchState, changeFlightSearchState } = useContext(FlightSearchContext);
     const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
     const { humanoids, nhes, minors, pets } = flightSearchState.passengers;
@@ -79,6 +79,7 @@ function FlightSearch() {
                 initialValue={flightSearchState.searchScope}
                 choiceOptions={['round trip', 'one-way']}
             />
+            {!fixedDestination &&
             <div className="flightsearch__grouping">
                 <Selector
                     type="regular"
@@ -101,6 +102,7 @@ function FlightSearch() {
                     choiceOptions={flightSearchState.destinationOffer} 
                 />
             </div>
+            }
             <Selector 
                 type="date"
                 identifier="Departure-Date"

@@ -65,6 +65,52 @@
       url('./../assets/images/starscape_wallpaper.webp');
     }
 
+    // DESTINATION BANNER CHOICE
+    &--LUN {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/destinations/moon/moon.webp');
+    }
+
+    &--CEL {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/destinations/celestia/celestia.webp');
+    }
+
+    &--EEU {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/destinations/earth-europe/earth-europe.webp');
+    }
+
+    &--EAS {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/destinations/earth-asia/earth-asia.webp');
+    }
+
+    &--EAM {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/destinations/earth-america/earth-america.webp');
+    }
+
+    &--MRS {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/destinations/mars/mars.webp');
+    }
+
+    &--VEN {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/destinations/venus/venus.webp');
+    }
+
+    &--CRS {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/destinations/ceres/ceres.webp');
+    }
+
+    &--TTN {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/destinations/titan/titan.webp');
+    }
+
     // BANNER TEXT
     &__msg {
       width: 90%;

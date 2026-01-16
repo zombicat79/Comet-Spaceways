@@ -23,7 +23,7 @@ function Banner({ background, textStyle, textContent, children }) {
             backgroundOption = 5;
             break;
         default:
-            backgroundOption = 1;
+            backgroundOption = background.img;
     }
 
     return (

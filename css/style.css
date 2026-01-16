@@ -637,6 +637,24 @@ h3 {
     background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./../assets/images/black-hole_banner.webp"); }
   .banner--5 {
     background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp"); }
+  .banner--LUN {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/moon/moon.webp"); }
+  .banner--CEL {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/celestia/celestia.webp"); }
+  .banner--EEU {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/earth-europe/earth-europe.webp"); }
+  .banner--EAS {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/earth-asia/earth-asia.webp"); }
+  .banner--EAM {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/earth-america/earth-america.webp"); }
+  .banner--MRS {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/mars/mars.webp"); }
+  .banner--VEN {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/venus/venus.webp"); }
+  .banner--CRS {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/ceres/ceres.webp"); }
+  .banner--TTN {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/titan/titan.webp"); }
   .banner__msg {
     width: 90%;
     position: absolute;
@@ -2295,7 +2313,7 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     justify-items: center;
-    gap: 5rem; }
+    gap: 10rem; }
     @media screen and (max-width: 1000px) {
       .destinations__list {
         grid-template-columns: repeat(2, 1fr);
@@ -2304,8 +2322,11 @@ h3 {
     @media screen and (max-width: 768px) {
       .destinations__list {
         grid-template-columns: 1fr; } }
-    .destinations__list .card {
+    .destinations__list a, .destinations__list .card {
       width: 100%; }
+    .destinations__list a {
+      display: flex;
+      justify-content: center; }
 
 .tickets {
   position: relative;
