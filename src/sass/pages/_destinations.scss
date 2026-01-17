@@ -3,11 +3,15 @@
     z-index: 2;
     padding: 10rem 0;
     background-image:
-        linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)), 
-        url('./../assets/images/starscape_wallpaper.webp');
+        linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.15)), 
+        url('./../assets/images/milky_way_background.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    &__heading {
+        margin: 10rem 0;
+    }
 
     &__list {
         display: grid;

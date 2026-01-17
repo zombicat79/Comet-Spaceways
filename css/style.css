@@ -684,7 +684,8 @@ h3 {
       transform: translateX(-50%); } }
 
 .pricetag {
-  position: relative; }
+  position: relative;
+  margin-top: 1rem; }
   .pricetag__prefix {
     color: #2c698d; }
   .pricetag__amount {
@@ -703,11 +704,15 @@ h3 {
 
 .card {
   background-color: #e3f6f5;
-  height: 30rem;
+  height: 40rem;
   border-radius: 1.5rem;
   min-width: 20rem;
   max-width: 30rem;
   transition: all 1s; }
+  .card--h30 {
+    height: 30rem; }
+  .card--h50 {
+    height: 50rem; }
   .card:hover {
     box-shadow: 0 0 15px #00FFFF;
     transform: scale(1.05); }
@@ -753,6 +758,10 @@ h3 {
     font-family: 'poppins-extrabold';
     font-size: 2rem;
     text-transform: uppercase; }
+    .card__heading .card__subtitle {
+      font-family: 'poppins-regular';
+      font-size: 1.2rem;
+      font-style: italic; }
   .card__body {
     width: 100%;
     font-family: 'roboto-regular';
@@ -2304,10 +2313,12 @@ h3 {
   position: relative;
   z-index: 2;
   padding: 10rem 0;
-  background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp");
+  background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.15)), url("./../assets/images/milky_way_background.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
+  .destinations__heading {
+    margin: 10rem 0; }
   .destinations__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

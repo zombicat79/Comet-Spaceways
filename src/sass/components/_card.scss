@@ -1,10 +1,18 @@
 .card {
     background-color: $color-body-light;
-    height: 30rem;
+    height: 40rem;
     border-radius: 1.5rem;
     min-width: 20rem;
     max-width: 30rem;
     transition: all 1s;
+
+    &--h30 {
+        height: 30rem;
+    }
+
+    &--h50 {
+        height: 50rem;
+    }
 
     &:hover {
         @include primary-response;
@@ -73,6 +81,12 @@
         font-family: 'poppins-extrabold';
         font-size: $size-extrabig;
         text-transform: uppercase;
+
+        .card__subtitle {
+            font-family: 'poppins-regular';
+            font-size: $size-small;
+            font-style: italic;
+        }
     }
 
     &__body {
