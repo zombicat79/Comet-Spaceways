@@ -10,7 +10,13 @@
     background-position: center;
 
     &__heading {
+        @include flex-column(center);
         margin: 10rem 0;
+
+        h2 {
+            width: 50%;
+            line-height: 4rem;
+        }
     }
 
     &__list {
@@ -37,6 +43,15 @@
         a {
             display: flex;
             justify-content: center;
+        }
+    }
+
+    &__search {
+        @include flex-column(center);
+        margin-top: 10rem;
+
+        h3 {
+            margin-bottom: 3rem;
         }
     }
 }

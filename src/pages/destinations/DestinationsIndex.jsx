@@ -1,8 +1,10 @@
 import { useContext } from 'react';
 import { DestinationsContext } from '../../contexts/DestinationsContext';
 
+import StellarMap from '../../components/StellarMap';
 import Card from './../../components/Card';
 import PriceTag from '../../components/PriceTag';
+import FlightSearch from './../../components/flight/FlightSearch';
 
 function DestinationsIndex() {
     const { destinations } = useContext(DestinationsContext);
@@ -14,6 +16,7 @@ function DestinationsIndex() {
                     <h2>OUR DESTINATIONS WITHIN THE SOLAR SYSTEM</h2>
                     <p></p>
                 </div>
+                <StellarMap />
                 <div className="destinations__list">
                     {destinations.map((el) => {
                         return (
@@ -33,6 +36,10 @@ function DestinationsIndex() {
                             </Card>
                         )
                     })}
+                </div>
+                <div className="destinations__search">
+                    <h3>WHERE DO YOU FANCY GOING?</h3>
+                    <FlightSearch />
                 </div>
             </main>
         )

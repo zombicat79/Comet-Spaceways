@@ -53,3 +53,8 @@
     66% { content: '..'; }
     100% { content: '...'; }
  }
+
+ @keyframes object-rotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+ }
