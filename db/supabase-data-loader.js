@@ -4,8 +4,8 @@ import dotenv from 'dotenv'
 dotenv.config({ path: './../.env' });
 
 const supabase = createClient(
-    process.env.SUPABASE_DB_URL,
-    process.env.SUPABASE_DB_KEY
+    process.env.VITE_SUPABASE_DB_URL,
+    process.env.VITE_SUPABASE_DB_KEY
 );
 
 async function fetchJSONData() {
