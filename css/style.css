@@ -1686,7 +1686,7 @@ h3 {
     border: 1px solid #e3f6f5; }
     .stellar-map .orbit--outermost {
       animation-name: object-rotation;
-      animation-duration: 10s;
+      animation-duration: 60s;
       animation-timing-function: linear;
       animation-iteration-count: infinite; }
     .stellar-map .orbit:not(.orbit--outermost) {
@@ -1726,11 +1726,29 @@ h3 {
     .stellar-map .orbit__object {
       position: absolute;
       top: 50%;
-      left: -0.5rem;
       border-radius: 50%;
       background-color: red;
       width: 1rem;
       height: 1rem; }
+      .stellar-map .orbit__object--gigantic {
+        left: -1.5rem;
+        width: 3rem;
+        height: 3rem; }
+      .stellar-map .orbit__object--big {
+        left: -1rem;
+        width: 2rem;
+        height: 2rem; }
+      .stellar-map .orbit__object--regular {
+        left: -0.5rem;
+        width: 1rem;
+        height: 1rem; }
+      .stellar-map .orbit__object--small {
+        left: -0.3rem;
+        width: .5rem;
+        height: .5rem; }
+      .stellar-map .orbit__object--clickable-true:hover {
+        border: 1px solid white;
+        cursor: pointer; }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }

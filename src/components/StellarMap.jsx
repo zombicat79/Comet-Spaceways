@@ -1,9 +1,64 @@
 import OrbitalObject from "./OrbitalObject";
+import orbitCatalog from "../data/orbital-objects";
 
 function StellarMap() {
     return (
         <figure className="stellar-map">
-            <OrbitalObject distance="30ua" outermost={true}>
+            <OrbitalObject
+                key={orbitCatalog[0].orbitalObject.name}
+                distance={orbitCatalog[0].distance}
+                outermost={orbitCatalog[0].outermost}
+                type={orbitCatalog[0].type}
+                orbitalObject={orbitCatalog[0].orbitalObject}
+            >
+                <OrbitalObject
+                    key={orbitCatalog[1].orbitalObject.name}
+                    distance={orbitCatalog[1].distance}
+                    outermost={orbitCatalog[1].outermost}
+                    type={orbitCatalog[1].type}
+                    orbitalObject={orbitCatalog[1].orbitalObject}
+                >
+                    {orbitCatalog.map((item, index) => {
+                        if (index % 2 === 0 && index !== 0 && orbitCatalog[index+1]) {
+                            return (
+                                <OrbitalObject
+                                    key={item.orbitalObject.name}
+                                    distance={item.distance}
+                                    outermost={item.outermost}
+                                    type={item.type}
+                                    orbitalObject={item.orbitalObject}
+                                >
+                                    <OrbitalObject 
+                                        distance={orbitCatalog[index+1].distance}
+                                        outermost={orbitCatalog[index+1].outermost}
+                                        type={orbitCatalog[index+1].type}
+                                        orbitalObject={orbitCatalog[index+1].orbitalObject}
+                                    />
+                                </OrbitalObject>
+                            )
+                        } else if (!orbitCatalog[index+1]) {
+                            return (
+                                <OrbitalObject
+                                    key={item.orbitalObject.name}
+                                    distance={item.distance}
+                                    outermost={item.outermost}
+                                    type={item.type}
+                                    orbitalObject={item.orbitalObject}
+                                >
+                                    <div className={"stellar-map__star"}></div>
+                                </OrbitalObject>
+                            )
+                        } else {
+                            return null;
+                        }
+                    })}
+                </OrbitalObject>
+            </OrbitalObject>
+            
+            
+            { // CODE ABOVE RECREATES THE FOLLOWING STRUCURE FOR ANY GIVEN ITERABLE ARRAY OF ORBIT OBJECTS
+            
+            /* <OrbitalObject distance="30ua" outermost={true}>
                 <OrbitalObject distance="20ua">
                     <OrbitalObject distance="10ua">
                         <OrbitalObject distance="5ua">
@@ -21,7 +76,7 @@ function StellarMap() {
                         </OrbitalObject>
                     </OrbitalObject>
                 </OrbitalObject> 
-            </OrbitalObject>
+            </OrbitalObject> */}
         </figure>
     )
 }
