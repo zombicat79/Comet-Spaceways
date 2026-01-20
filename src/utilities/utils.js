@@ -152,6 +152,19 @@ function pickUniquesFromArray(array, outputLength) {
     return selection;
 }
 
+function filterSearch(queryTerm, sourceData, dataSection) {
+    let filterResults = [];
+    if (Array.isArray(sourceData)) {
+        const extractedData = sourceData.map((item) => {
+            return item[dataSection].join(" ");
+        })
+
+        if (extractedData.includes(queryTerm)) filterResults.push(sourceData.id);
+    }
+
+    return filterResults;
+}
+
 export { 
     minimizeDestinations, 
     maximizeDestinations, 
@@ -160,5 +173,6 @@ export {
     displayDurationInfo, 
     pickFromNumberRange, 
     pickRandomFromArray, 
-    pickUniquesFromArray 
+    pickUniquesFromArray,
+    filterSearch
 };

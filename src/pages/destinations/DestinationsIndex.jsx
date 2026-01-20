@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { LayoutContext } from '../../contexts/LayoutContext';
 import { DestinationsContext } from '../../contexts/DestinationsContext';
 
@@ -7,9 +7,17 @@ import Card from './../../components/Card';
 import PriceTag from '../../components/PriceTag';
 import FlightSearch from './../../components/flight/FlightSearch';
 
+import { filterSearch } from '../../utilities/utils';
+
 function DestinationsIndex() {
+    const [filteredDestinations, setFilteredDestinations] = useState([]);
     const { layoutState } = useContext(LayoutContext);
     const { destinations } = useContext(DestinationsContext);
+
+    const handleFilter = (query) => {
+        const filterResult = filterSearch("earth", destinations, "domains");
+        setFilteredDestinations(filterResult);
+    }
 
     if (destinations.length > 0) {
         return (
