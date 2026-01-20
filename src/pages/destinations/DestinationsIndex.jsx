@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { LayoutContext } from '../../contexts/LayoutContext';
 import { DestinationsContext } from '../../contexts/DestinationsContext';
 
 import StellarMap from '../../components/StellarMap';
@@ -7,6 +8,7 @@ import PriceTag from '../../components/PriceTag';
 import FlightSearch from './../../components/flight/FlightSearch';
 
 function DestinationsIndex() {
+    const { layoutState } = useContext(LayoutContext);
     const { destinations } = useContext(DestinationsContext);
 
     if (destinations.length > 0) {
@@ -14,9 +16,13 @@ function DestinationsIndex() {
             <main className="destinations">
                 <div className="destinations__heading">
                     <h2>OUR DESTINATIONS WITHIN THE SOLAR SYSTEM</h2>
-                    <p></p>
+                    <p>Click objects on the stellar map to filter down</p>
+                    <p>Click on the Sun ☀️ to remove filters</p>
                 </div>
-                <StellarMap />
+                {layoutState.viewportWidth >= 1000 
+                    ? <StellarMap />
+                    : null
+                }
                 <div className="destinations__list">
                     {destinations.map((el) => {
                         return (

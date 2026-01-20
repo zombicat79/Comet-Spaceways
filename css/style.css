@@ -185,11 +185,17 @@ img {
   100% {
     content: '...'; } }
 
-@keyframes object-rotation {
+@keyframes object-clockwise-rotation {
   from {
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
+
+@keyframes object-counterclockwise-rotation {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(-360deg); } }
 
 @font-face {
   font-family: roboto-extralight;
@@ -1664,7 +1670,7 @@ h3 {
     height: 60px;
     border-radius: 50%;
     background-color: white;
-    box-shadow: 1px 15px 40px white, 1px -15px 40px white, 40px 10px 40px white, -40px 10px 40px white; }
+    box-shadow: 1px 15px 80px white, 1px -15px 80px white, 40px 10px 80px white, -40px 10px 80px white; }
     @media screen and (max-width: 360px) {
       .stellar-map__star {
         width: 35px;
@@ -1681,12 +1687,16 @@ h3 {
       .stellar-map__star {
         width: 140px;
         height: 140px; } }
+    .stellar-map__star:hover {
+      background-color: #f3f3a5;
+      box-shadow: 1px 15px 80px #f3f3a5, 1px -15px 80px #f3f3a5, 40px 10px 80px #f3f3a5, -40px 10px 80px #f3f3a5;
+      cursor: pointer; }
   .stellar-map .orbit {
     border-radius: 50%;
     border: 1px solid #e3f6f5; }
     .stellar-map .orbit--outermost {
-      animation-name: object-rotation;
-      animation-duration: 60s;
+      animation-name: object-counterclockwise-rotation;
+      animation-duration: 75s;
       animation-timing-function: linear;
       animation-iteration-count: infinite; }
     .stellar-map .orbit:not(.orbit--outermost) {
@@ -1694,6 +1704,12 @@ h3 {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%); }
+    .stellar-map .orbit--90deg:not(.orbit--outermost) {
+      transform: translate(-50%, -50%) rotate(90deg); }
+    .stellar-map .orbit--180deg:not(.orbit--outermost) {
+      transform: translate(-50%, -50%) rotate(180deg); }
+    .stellar-map .orbit--270deg:not(.orbit--outermost) {
+      transform: translate(-50%, -50%) rotate(270deg); }
     .stellar-map .orbit--asteroid {
       border: 1px dashed #e3f6f5; }
     .stellar-map .orbit--30ua {
@@ -1726,10 +1742,18 @@ h3 {
     .stellar-map .orbit__object {
       position: absolute;
       top: 50%;
-      border-radius: 50%;
-      background-color: red;
-      width: 1rem;
-      height: 1rem; }
+      border-radius: 50%; }
+      .stellar-map .orbit__object--ringed-true:after {
+        content: "";
+        display: inline-block;
+        position: relative;
+        left: -15%;
+        width: 125%;
+        height: 3px;
+        background-color: #e3f6f5;
+        border-top: 1px solid #0B3D91;
+        border-bottom: 1px solid #0B3D91;
+        transform: rotate(45deg) skewX(85deg); }
       .stellar-map .orbit__object--gigantic {
         left: -1.5rem;
         width: 3rem;
@@ -1746,8 +1770,37 @@ h3 {
         left: -0.3rem;
         width: .5rem;
         height: .5rem; }
+      .stellar-map .orbit__object--solid--yellow {
+        background-color: yellow; }
+      .stellar-map .orbit__object--solid--red {
+        background-color: red; }
+      .stellar-map .orbit__object--solid--brown {
+        background-color: brown; }
+      .stellar-map .orbit__object--solid--grey {
+        background-color: grey; }
+      .stellar-map .orbit__object--gradient--azure {
+        background: linear-gradient(lightgreen, #308EAA); }
+      .stellar-map .orbit__object--gradient--blue {
+        background: linear-gradient(black, #4B70DD); }
+      .stellar-map .orbit__object--gradient--brown {
+        background: linear-gradient(black, #E3AD71); }
+      .stellar-map .orbit__object--gradient--jupiter {
+        background: linear-gradient(to right, grey, #E3AD71, #a75959, #E3AD71, #E3AD71, grey); }
+        .stellar-map .orbit__object--gradient--jupiter:after {
+          content: "";
+          display: inline-block;
+          position: relative;
+          left: -3px;
+          top: 3px;
+          background: rgba(255, 0, 0, 0.75);
+          border-radius: 50%;
+          width: .5rem;
+          height: 1rem;
+          box-shadow: 1px 1px 5px red, 1px -1px 5px red; }
+      .stellar-map .orbit__object--gradient--earth {
+        background: linear-gradient(skyblue, #E3AD71, lightgreen, skyblue); }
       .stellar-map .orbit__object--clickable-true:hover {
-        border: 1px solid white;
+        border: 2px solid white;
         cursor: pointer; }
 
 .selector--disabled .react-datepicker-wrapper {
@@ -2428,10 +2481,12 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10rem 0; }
+    margin: 5rem 0; }
     .destinations__heading h2 {
       width: 50%;
       line-height: 4rem; }
+  .destinations .stellar-map {
+    margin-bottom: 10rem; }
   .destinations__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

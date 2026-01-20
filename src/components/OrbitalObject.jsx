@@ -1,7 +1,14 @@
-function OrbitalObject({ children, type, distance, outermost, orbitalObject }) {
+function OrbitalObject({ children, type, distance, inclination, outermost, orbitalObject }) {
     return (
-        <div className={outermost ? `orbit orbit--${type} orbit--${distance} orbit--outermost` : `orbit orbit--${type} orbit--${distance}` }>
-            <div className={`orbit__object orbit__object--${orbitalObject.size} orbit__object--clickable-${orbitalObject.clickable}`}></div>
+        <div className={outermost ? `orbit orbit--${type} orbit--${distance} orbit--outermost orbit--${inclination}` : `orbit orbit--${type} orbit--${distance} orbit--${inclination}` }>
+            <div className={`
+                orbit__object 
+                orbit__object--${orbitalObject.size} 
+                orbit__object--clickable-${orbitalObject.clickable} 
+                orbit__object--ringed-${orbitalObject.ringed}
+                orbit__object--${orbitalObject.background}
+                orbit__object--${orbitalObject.background}--${orbitalObject.color}
+            `}></div>
             {children}
         </div>
     )

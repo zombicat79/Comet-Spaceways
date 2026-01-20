@@ -11,12 +11,16 @@
 
     &__heading {
         @include flex-column(center);
-        margin: 10rem 0;
+        margin: 5rem 0;
 
         h2 {
             width: 50%;
             line-height: 4rem;
         }
+    }
+
+    .stellar-map {
+        margin-bottom: 10rem;
     }
 
     &__list {

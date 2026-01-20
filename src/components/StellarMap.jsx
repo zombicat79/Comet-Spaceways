@@ -7,6 +7,7 @@ function StellarMap() {
             <OrbitalObject
                 key={orbitCatalog[0].orbitalObject.name}
                 distance={orbitCatalog[0].distance}
+                inclination={orbitCatalog[0].inclination}
                 outermost={orbitCatalog[0].outermost}
                 type={orbitCatalog[0].type}
                 orbitalObject={orbitCatalog[0].orbitalObject}
@@ -14,6 +15,7 @@ function StellarMap() {
                 <OrbitalObject
                     key={orbitCatalog[1].orbitalObject.name}
                     distance={orbitCatalog[1].distance}
+                    inclination={orbitCatalog[1].inclination}
                     outermost={orbitCatalog[1].outermost}
                     type={orbitCatalog[1].type}
                     orbitalObject={orbitCatalog[1].orbitalObject}
@@ -24,12 +26,14 @@ function StellarMap() {
                                 <OrbitalObject
                                     key={item.orbitalObject.name}
                                     distance={item.distance}
+                                    inclination={item.inclination}
                                     outermost={item.outermost}
                                     type={item.type}
                                     orbitalObject={item.orbitalObject}
                                 >
                                     <OrbitalObject 
                                         distance={orbitCatalog[index+1].distance}
+                                        inclination={orbitCatalog[index+1].inclination}
                                         outermost={orbitCatalog[index+1].outermost}
                                         type={orbitCatalog[index+1].type}
                                         orbitalObject={orbitCatalog[index+1].orbitalObject}
@@ -41,6 +45,7 @@ function StellarMap() {
                                 <OrbitalObject
                                     key={item.orbitalObject.name}
                                     distance={item.distance}
+                                    inclination={item.inclination}
                                     outermost={item.outermost}
                                     type={item.type}
                                     orbitalObject={item.orbitalObject}
