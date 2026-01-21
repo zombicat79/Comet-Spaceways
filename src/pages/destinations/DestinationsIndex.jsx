@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext, useRef } from 'react';
 import { LayoutContext } from '../../contexts/LayoutContext';
 import { DestinationsContext } from '../../contexts/DestinationsContext';
 
@@ -14,6 +14,7 @@ function DestinationsIndex() {
     const [filteredDestinations, setFilteredDestinations] = useState([]);
     const { layoutState } = useContext(LayoutContext);
     const { destinations } = useContext(DestinationsContext);
+    const destinationList = useRef(null);
     console.log(filteredDestinations)
 
     const handleFilter = (query, dataSection) => {
@@ -22,6 +23,10 @@ function DestinationsIndex() {
     }
 
     const handleFilterReset = () => setFilteredDestinations([]);
+
+    useEffect(() => {
+        destinationList.current.scrollIntoView({ block: "center", behavior: "smooth" });
+    }, [filteredDestinations])
 
     if (destinations.length > 0) {
         return (
@@ -40,7 +45,7 @@ function DestinationsIndex() {
                     ? <StellarMap onFilter={handleFilter} onFilterReset={handleFilterReset} />
                     : <SearchTool onFilter={handleFilter} />
                 }
-                <div className="destinations__list">
+                <div className="destinations__list" ref={destinationList}>
                     {destinations.map((el) => {
                         if (filteredDestinations.length === 0 || filteredDestinations.includes(el.id)) {
                             return (
@@ -60,6 +65,8 @@ function DestinationsIndex() {
                                 </Card>
                             )
                         }
+
+                        return null;
                     })}
                 </div>
                 <div className="destinations__search">
