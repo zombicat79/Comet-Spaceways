@@ -152,14 +152,29 @@ function pickUniquesFromArray(array, outputLength) {
     return selection;
 }
 
-function filterSearch(queryTerm, sourceData, dataSection) {
+function filterSearch(queryTerm, sourceData, dataSection=null) {
     let filterResults = [];
-    if (Array.isArray(sourceData)) {
-        const extractedData = sourceData.map((item) => {
-            return item[dataSection].join(" ");
+    
+    if (Array.isArray(sourceData) && dataSection) {
+        const extractedData = sourceData.map((item, index) => {
+            return {id: index+1, findings: item[dataSection].join(" ")};
         })
 
-        if (extractedData.includes(queryTerm)) filterResults.push(sourceData.id);
+        extractedData.forEach((el) => {
+            if (el.findings.includes(queryTerm)) filterResults.push(el.id);
+        })
+    } else if (Array.isArray(sourceData)) {
+        let isFound = false;
+        sourceData.forEach((item) => {
+            const trimmedItem = { ...item, features: []}
+            const stringifiedItem = JSON.stringify(trimmedItem).toLocaleLowerCase();
+            if (stringifiedItem.includes(queryTerm)) {
+                filterResults.push(item.id);
+                isFound = true;
+            }
+        })
+
+        if (!isFound) filterResults.push(null);
     }
 
     return filterResults;

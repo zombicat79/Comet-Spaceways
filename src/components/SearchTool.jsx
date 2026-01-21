@@ -1,6 +1,15 @@
-function SearchTool() {
+function SearchTool({ onFilter }) {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const queryTerm = (formData.get("term"));
+        onFilter(queryTerm.toLocaleLowerCase());
+    }
+
     return (
-        <div></div>
+        <form id="form" onSubmit={(e) => handleSubmit(e)}>
+            <input type="text" name="term" />
+        </form>
     )
 }
 

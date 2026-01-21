@@ -1,7 +1,7 @@
 import OrbitalObject from "./OrbitalObject";
 import orbitCatalog from "../data/orbital-objects";
 
-function StellarMap() {
+function StellarMap({ onFilter, onFilterReset }) {
     return (
         <figure className="stellar-map">
             <OrbitalObject
@@ -11,6 +11,7 @@ function StellarMap() {
                 outermost={orbitCatalog[0].outermost}
                 type={orbitCatalog[0].type}
                 orbitalObject={orbitCatalog[0].orbitalObject}
+                onFilter={onFilter}
             >
                 <OrbitalObject
                     key={orbitCatalog[1].orbitalObject.name}
@@ -19,6 +20,7 @@ function StellarMap() {
                     outermost={orbitCatalog[1].outermost}
                     type={orbitCatalog[1].type}
                     orbitalObject={orbitCatalog[1].orbitalObject}
+                    onFilter={onFilter}
                 >
                     {orbitCatalog.map((item, index) => {
                         if (index % 2 === 0 && index !== 0 && orbitCatalog[index+1]) {
@@ -30,6 +32,7 @@ function StellarMap() {
                                     outermost={item.outermost}
                                     type={item.type}
                                     orbitalObject={item.orbitalObject}
+                                    onFilter={onFilter}
                                 >
                                     <OrbitalObject 
                                         distance={orbitCatalog[index+1].distance}
@@ -37,6 +40,7 @@ function StellarMap() {
                                         outermost={orbitCatalog[index+1].outermost}
                                         type={orbitCatalog[index+1].type}
                                         orbitalObject={orbitCatalog[index+1].orbitalObject}
+                                        onFilter={onFilter}
                                     />
                                 </OrbitalObject>
                             )
@@ -49,8 +53,9 @@ function StellarMap() {
                                     outermost={item.outermost}
                                     type={item.type}
                                     orbitalObject={item.orbitalObject}
+                                    onFilter={onFilter}
                                 >
-                                    <div className={"stellar-map__star"}></div>
+                                    <div className={"stellar-map__star"} onClick={() => onFilterReset()}></div>
                                 </OrbitalObject>
                             )
                         } else {

@@ -5,7 +5,7 @@ const orbitCatalog = [
         outermost: true,
         type: "planet",
         orbitalObject: {
-            name: "Neptune",
+            name: "neptune",
             size: "big",
             ringed: false,
             background: "gradient",
@@ -19,7 +19,7 @@ const orbitCatalog = [
         inclination: "90deg",
         type: "planet",
         orbitalObject: {
-            name: "Uranus",
+            name: "uranus",
             size: "big",
             ringed: false,
             background: "gradient",
@@ -33,7 +33,7 @@ const orbitCatalog = [
         inclination: "180deg",
         type: "planet",
         orbitalObject: {
-            name: "Saturn",
+            name: "saturn",
             size: "gigantic",
             ringed: true,
             background: "gradient",
@@ -47,7 +47,7 @@ const orbitCatalog = [
         type: "planet",
         inclination: "90deg",
         orbitalObject: {
-            name: "Jupiter",
+            name: "jupiter",
             size: "gigantic",
             ringed: false,
             background: "gradient",
@@ -61,7 +61,7 @@ const orbitCatalog = [
         inclination: "0deg",
         type: "asteroid",
         orbitalObject: {
-            name: "Ceres",
+            name: "ceres",
             size: "small",
             ringed: false,
             background: "solid",
@@ -75,7 +75,7 @@ const orbitCatalog = [
         inclination: "180deg",
         type: "planet",
         orbitalObject: {
-            name: "Mars",
+            name: "mars",
             size: "regular",
             ringed: false,
             background: "solid",
@@ -89,7 +89,7 @@ const orbitCatalog = [
         inclination: "270deg",
         type: "planet",
         orbitalObject: {
-            name: "Earth",
+            name: "earth",
             size: "regular",
             ringed: false,
             background: "gradient",
@@ -103,7 +103,7 @@ const orbitCatalog = [
         inclination: "90deg",
         type: "planet",
         orbitalObject: {
-            name: "Venus",
+            name: "venus",
             size: "regular",
             ringed: false,
             background: "solid",
@@ -117,7 +117,7 @@ const orbitCatalog = [
         inclination: "90deg",
         type: "planet",
         orbitalObject: {
-            name: "Mercury",
+            name: "mercury",
             size: "small",
             ringed: false,
             background: "solid",
