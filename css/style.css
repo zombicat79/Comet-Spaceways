@@ -1839,6 +1839,8 @@ h3 {
       .stellar-map .orbit__object--clickable-true:hover {
         border: 2px solid white;
         cursor: pointer; }
+      .stellar-map .orbit__object--clickable-false:hover {
+        cursor: not-allowed; }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }

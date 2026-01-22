@@ -67,7 +67,7 @@ function DestinationsIndex() {
                                     <div className="card__body">
                                         <p>{el.intro}</p>
                                         <PriceTag 
-                                            price="45" 
+                                            price={el.lowest_accessibility} 
                                             priceType="initial"
                                             currency="au"
                                         />

@@ -218,6 +218,9 @@
                 border: 2px solid white;
                 cursor: pointer;
             }
+            &--clickable-false:hover {
+                cursor: not-allowed;
+            }
         }
     }
 }

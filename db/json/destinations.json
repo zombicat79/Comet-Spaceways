@@ -32,7 +32,8 @@
                 "lunar-haven6.webp",
                 "lunar-haven7.webp",
                 "lunar-haven8.webp"
-            ]
+            ],
+            "lowest_accessibility": 12
         },
         {
             "id": 2,
@@ -63,7 +64,8 @@
                 "celestia5.webp",
                 "celestia6.webp",
                 "celestia7.webp"
-            ]
+            ],
+            "lowest_accessibility": 5
         },
         {
             "id": 3,
@@ -101,7 +103,8 @@
                 "berlin.webp",
                 "london.webp",
                 "paris.webp"
-            ]
+            ],
+            "lowest_accessibility": 5
         },
         {
             "id": 4,
@@ -139,7 +142,8 @@
                 "bangkok.webp",
                 "hong-kong.webp",
                 "japan.webp"
-            ]
+            ],
+            "lowest_accessibility": 5
         },
         {
             "id": 5,
@@ -177,7 +181,8 @@
                 "nyc.webp",
                 "vegas.webp",
                 "yucatan.webp"
-            ]
+            ],
+            "lowest_accessibility": 5
         },
         {
             "id": 6,
@@ -211,7 +216,8 @@
                 "new-olympus6.webp",
                 "new-olympus7.webp",
                 "new-olympus8.webp"
-            ]
+            ],
+            "lowest_accessibility": 120
         },
         {
             "id": 7,
@@ -244,7 +250,8 @@
                 "cloud-nine6.webp",
                 "cloud-nine7.webp",
                 "cloud-nine8.webp"
-            ]
+            ],
+            "lowest_accessibility": 50
         },
         {
             "id": 8,
@@ -279,7 +286,8 @@
                 "ceres-prime4.webp",
                 "ceres-prime5.webp",
                 "ceres-prime6.webp"
-            ]
+            ],
+            "lowest_accessibility": 150
         },
         {
             "id": 9,
@@ -314,7 +322,8 @@
                 "nova-thalassa5.webp",
                 "nova-thalassa6.webp",
                 "nova-thalassa7.webp"
-            ]
+            ],
+            "lowest_accessibility": 750
         }
     ]
 }
