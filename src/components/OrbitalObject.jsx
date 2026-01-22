@@ -1,4 +1,4 @@
-function OrbitalObject({ children, type, distance, inclination, outermost, orbitalObject, onFilter }) {
+function OrbitalObject({ children, type, distance, inclination, outermost, orbitalObject, onFilter, onTooltip }) {
     return (
         <div className={outermost ? `orbit orbit--${type} orbit--${distance} orbit--outermost orbit--${inclination}` : `orbit orbit--${type} orbit--${distance} orbit--${inclination}` }>
             <div className={`
@@ -8,7 +8,12 @@ function OrbitalObject({ children, type, distance, inclination, outermost, orbit
                 orbit__object--ringed-${orbitalObject.ringed}
                 orbit__object--${orbitalObject.background}
                 orbit__object--${orbitalObject.background}--${orbitalObject.color}
-            `} onClick={() => orbitalObject.clickable ? onFilter(orbitalObject.name, "domains") : null}></div>
+            `} 
+                onClick={() => orbitalObject.clickable ? onFilter(orbitalObject.name, "domains") : null}
+                onMouseOver={() => onTooltip("show", orbitalObject.name)}
+                onMouseOut={() => onTooltip("hide")}
+            >
+            </div>
             {children}
         </div>
     )

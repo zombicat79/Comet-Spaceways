@@ -2,6 +2,8 @@ import { useState, useEffect, useContext, useRef } from 'react';
 import { LayoutContext } from '../../contexts/LayoutContext';
 import { DestinationsContext } from '../../contexts/DestinationsContext';
 
+import Tooltip from "../../components/Tooltip";
+import InfoPanel from '../../components/InfoPanel';
 import StellarMap from '../../components/StellarMap';
 import SearchTool from '../../components/SearchTool';
 import Card from './../../components/Card';
@@ -12,6 +14,7 @@ import { filterSearch } from '../../utilities/utils';
 
 function DestinationsIndex() {
     const [filteredDestinations, setFilteredDestinations] = useState([]);
+    const [tooltip, setTooltip] = useState({ active: false, text: "" });
     const { layoutState } = useContext(LayoutContext);
     const { destinations } = useContext(DestinationsContext);
     const destinationList = useRef(null);
@@ -24,13 +27,20 @@ function DestinationsIndex() {
 
     const handleFilterReset = () => setFilteredDestinations([]);
 
+    const handleTooltip = (action, payload) => {
+        action === "show" ? setTooltip({ active: true, text: payload}) : setTooltip({ active: false, text: "" });
+    }
+
     useEffect(() => {
-        destinationList.current.scrollIntoView({ block: "center", behavior: "smooth" });
+        if (destinationList.current) {
+            destinationList.current.scrollIntoView({ block: "center", behavior: "smooth" });
+        }
     }, [filteredDestinations])
 
     if (destinations.length > 0) {
         return (
             <main className="destinations">
+                {layoutState.viewportWidth >= 1000 && tooltip.active && <Tooltip title={tooltip.text.toUpperCase()} />}
                 {layoutState.viewportWidth >= 1000 
                     ?<div className="destinations__heading">
                         <h2>OUR DESTINATIONS WITHIN THE SOLAR SYSTEM</h2>
@@ -42,7 +52,7 @@ function DestinationsIndex() {
                     </div>
                 }
                 {layoutState.viewportWidth >= 1000 
-                    ? <StellarMap onFilter={handleFilter} onFilterReset={handleFilterReset} />
+                    ? <StellarMap onFilter={handleFilter} onFilterReset={handleFilterReset} onTooltip={handleTooltip} />
                     : <SearchTool onFilter={handleFilter} />
                 }
                 <div className="destinations__list" ref={destinationList}>
@@ -68,6 +78,12 @@ function DestinationsIndex() {
 
                         return null;
                     })}
+
+                    {filteredDestinations.length > 0 && filteredDestinations[0] === null && 
+                        <InfoPanel type="alert">
+                            <p>Ooops, we couldn't find a single thing in the Universe matching your search...</p>
+                        </InfoPanel>
+                    }
                 </div>
                 <div className="destinations__search">
                     <h3>WHERE DO YOU FANCY GOING?</h3>

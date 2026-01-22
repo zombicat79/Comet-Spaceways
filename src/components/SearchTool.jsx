@@ -7,7 +7,7 @@ function SearchTool({ onFilter }) {
     }
 
     return (
-        <form id="form" onSubmit={(e) => handleSubmit(e)}>
+        <form id="form" className="searchtool" onSubmit={(e) => handleSubmit(e)}>
             <input type="text" name="term" />
         </form>
     )

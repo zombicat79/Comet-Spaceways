@@ -1,0 +1,12 @@
+.tooltip {
+    color: $color-text-dark;
+    background-color: $color-body-light;
+    border-radius: 1.5rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 4.5rem $color-highlight-light;
+
+    &__title {
+        font-family: "poppins-bold";
+        font-size: 1.5rem;
+    }
+}

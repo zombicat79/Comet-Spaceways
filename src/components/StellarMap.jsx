@@ -1,7 +1,7 @@
 import OrbitalObject from "./OrbitalObject";
 import orbitCatalog from "../data/orbital-objects";
 
-function StellarMap({ onFilter, onFilterReset }) {
+function StellarMap({ onFilter, onFilterReset, onTooltip }) {
     return (
         <figure className="stellar-map">
             <OrbitalObject
@@ -12,6 +12,7 @@ function StellarMap({ onFilter, onFilterReset }) {
                 type={orbitCatalog[0].type}
                 orbitalObject={orbitCatalog[0].orbitalObject}
                 onFilter={onFilter}
+                onTooltip={onTooltip}
             >
                 <OrbitalObject
                     key={orbitCatalog[1].orbitalObject.name}
@@ -21,6 +22,7 @@ function StellarMap({ onFilter, onFilterReset }) {
                     type={orbitCatalog[1].type}
                     orbitalObject={orbitCatalog[1].orbitalObject}
                     onFilter={onFilter}
+                    onTooltip={onTooltip}
                 >
                     {orbitCatalog.map((item, index) => {
                         if (index % 2 === 0 && index !== 0 && orbitCatalog[index+1]) {
@@ -33,6 +35,7 @@ function StellarMap({ onFilter, onFilterReset }) {
                                     type={item.type}
                                     orbitalObject={item.orbitalObject}
                                     onFilter={onFilter}
+                                    onTooltip={onTooltip}
                                 >
                                     <OrbitalObject 
                                         distance={orbitCatalog[index+1].distance}
@@ -41,6 +44,7 @@ function StellarMap({ onFilter, onFilterReset }) {
                                         type={orbitCatalog[index+1].type}
                                         orbitalObject={orbitCatalog[index+1].orbitalObject}
                                         onFilter={onFilter}
+                                        onTooltip={onTooltip}
                                     />
                                 </OrbitalObject>
                             )
@@ -54,6 +58,7 @@ function StellarMap({ onFilter, onFilterReset }) {
                                     type={item.type}
                                     orbitalObject={item.orbitalObject}
                                     onFilter={onFilter}
+                                    onTooltip={onTooltip}
                                 >
                                     <div className={"stellar-map__star"} onClick={() => onFilterReset()}></div>
                                 </OrbitalObject>
