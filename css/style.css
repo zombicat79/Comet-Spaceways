@@ -308,7 +308,8 @@ h2 {
   font-size: 2.8rem; }
 
 h3 {
-  font-size: 2rem; }
+  font-size: 2rem;
+  line-height: 3rem; }
 
 .link:hover,
 .link--container,
@@ -687,23 +688,23 @@ h3 {
   .banner--5 {
     background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp"); }
   .banner--LUN {
-    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/moon/moon.webp"); }
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/LUN/moon.webp"); }
   .banner--CEL {
-    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/celestia/celestia.webp"); }
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/CEL/celestia.webp"); }
   .banner--EEU {
-    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/earth-europe/earth-europe.webp"); }
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/EEU/earth-europe.webp"); }
   .banner--EAS {
-    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/earth-asia/earth-asia.webp"); }
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/EAS/earth-asia.webp"); }
   .banner--EAM {
-    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/earth-america/earth-america.webp"); }
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/EAM/earth-america.webp"); }
   .banner--MRS {
-    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/mars/mars.webp"); }
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/MRS/mars.webp"); }
   .banner--VEN {
-    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/venus/venus.webp"); }
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/VEN/venus.webp"); }
   .banner--CRS {
-    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/ceres/ceres.webp"); }
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/CRS/ceres.webp"); }
   .banner--TTN {
-    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/titan/titan.webp"); }
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/TTN/titan.webp"); }
   .banner__msg {
     width: 90%;
     position: absolute;
@@ -775,23 +776,23 @@ h3 {
     background-size: cover;
     background-repeat: no-repeat; }
     .card__img--earth-europe {
-      background-image: url("./../assets/images/destinations/earth-europe/earth-europe.webp"); }
+      background-image: url("./../assets/images/destinations/EEU/earth-europe.webp"); }
     .card__img--earth-asia {
-      background-image: url("./../assets/images/destinations/earth-asia/earth-asia.webp"); }
+      background-image: url("./../assets/images/destinations/EAS/earth-asia.webp"); }
     .card__img--earth-america {
-      background-image: url("./../assets/images/destinations/earth-america/earth-america.webp"); }
+      background-image: url("./../assets/images/destinations/EAM/earth-america.webp"); }
     .card__img--celestia {
-      background-image: url("./../assets/images/destinations/celestia/celestia.webp"); }
+      background-image: url("./../assets/images/destinations/CEL/celestia.webp"); }
     .card__img--ceres {
-      background-image: url("./../assets/images/destinations/ceres/ceres.webp"); }
+      background-image: url("./../assets/images/destinations/CRS/ceres.webp"); }
     .card__img--moon {
-      background-image: url("./../assets/images/destinations/moon/moon.webp"); }
+      background-image: url("./../assets/images/destinations/LUN/moon.webp"); }
     .card__img--venus {
-      background-image: url("./../assets/images/destinations/venus/venus.webp"); }
+      background-image: url("./../assets/images/destinations/VEN/venus.webp"); }
     .card__img--mars {
-      background-image: url("./../assets/images/destinations/mars/mars.webp"); }
+      background-image: url("./../assets/images/destinations/MRS/mars.webp"); }
     .card__img--titan {
-      background-image: url("./../assets/images/destinations/titan/titan.webp"); }
+      background-image: url("./../assets/images/destinations/TTN/titan.webp"); }
   .card__content {
     display: flex;
     flex-direction: column;
@@ -817,6 +818,61 @@ h3 {
     font-size: 1.4rem; }
     .card__body .pricetag {
       width: 100%; }
+
+.figure--vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.figure--vertical-reverse {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse; }
+
+.figure--horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.figure--horizontal-reverse {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse; }
+
+.figure__img-wrapper {
+  display: flex;
+  width: 45%; }
+  .figure__img-wrapper--left {
+    justify-content: flex-start; }
+  .figure__img-wrapper--right {
+    justify-content: flex-end; }
+  .figure__img-wrapper:hover {
+    transform: scale(1.05);
+    cursor: zoom-in; }
+
+.figure__img {
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+  max-height: 30rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 4.5rem #4B0082; }
+  .figure__img--left {
+    margin-right: auto; }
+  .figure__img--right {
+    margin-left: auto; }
+
+.figure__text {
+  width: 55%;
+  display: inline-block; }
+  .figure__text--left {
+    text-align: left; }
+  .figure__text--right {
+    text-align: right; }
 
 .intersection--cosmic {
   position: relative;
@@ -2456,6 +2512,8 @@ h3 {
     @media screen and (min-width: 2800px) {
       .content-section__body {
         max-width: 75vw; } }
+    .content-section__body > *:not(:last-child) {
+      margin-bottom: 5rem; }
 
 .homepage {
   position: relative;
@@ -2562,6 +2620,17 @@ h3 {
     .destinations__search h3 {
       margin-bottom: 3rem; }
 
+.destination-details {
+  position: relative;
+  z-index: 2; }
+  .destination-details .banner__text {
+    font-style: italic;
+    font-size: 2rem; }
+  .destination-details .features__list {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+
 .tickets {
   position: relative;
   z-index: 2;
@@ -2579,7 +2648,7 @@ h3 {
       .tickets .btn--primary {
         width: 30rem; } }
 
-.details {
+.passenger-details {
   position: relative;
   z-index: 2;
   height: 100vh;

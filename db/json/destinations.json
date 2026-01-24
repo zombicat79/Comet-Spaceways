@@ -5,7 +5,7 @@
             "port": "LUN",
             "full_name": "Moon",
             "alias": "Lunar Haven",
-            "category": "surface colony",
+            "category": "underground colony",
             "location": "Moon",
             "host_type": "natural satellite",
             "region": "Earth Orbit",
@@ -40,7 +40,7 @@
             "port": "CEL",
             "full_name": "Low Earth Orbit",
             "alias": "Celestia Station",
-            "category": "man-made station",
+            "category": "orbital transport hub",
             "location": "Earth",
             "host_type": "planet",
             "region": "LEO (Low Earth Orbit)",
@@ -51,19 +51,21 @@
             ],
             "intro": "The gateway to the entire Solar System",
             "description": "Perched in low Earth orbit, Celestia Station is your gateway to the stars! Whether you're a traveler en route to the Moon, Mars, or beyond, our state-of-the-art facility offers seamless transit, luxury accommodations, and breathtaking views of Earth from 400 kilometers above.",
-            "promotional_catch": "Book your trip today—because the future isn’t light-years away. It’s just a rocket ride from home! 🚀🌕",
+            "promotional_catch": "Book your trip today - Because the future isn’t light-years away. It’s just a rocket ride from home! 🚀🌕",
             "features": [
                 "🔹 Designed for Efficiency and Comfort – Relax in our zero-gravity lounges, enjoy gourmet dining with a cosmic view, or connect with pioneers from across the solar system.",
                 "🔹 The Ultimate Interplanetary Hub – Celestia Station provides advanced docking services, refueling, and crew transfers."
             ],
-            "cover_img": "celestia2.webp",
+            "cover_img": "celestia.webp",
             "pictures": [
-                "celestia.webp",
+                "celestia2.webp",
                 "celestia3.webp",
                 "celestia4.webp",
-                "celestia5.webp",
-                "celestia6.webp",
-                "celestia7.webp"
+                "celestia5.webp"
+            ],
+            "feature_pictures": [
+                "celestia0.webp",
+                "celestia1.webp"
             ],
             "lowest_accessibility": 5
         },
@@ -71,7 +73,7 @@
             "id": 3,
             "port": "EEU",
             "full_name": "Earth (Europe)",
-            "alias": "Galileo Galilei Astrohub - Starport Europe",
+            "alias": "Galileo Galilei Paneuropean Astrohub",
             "category": "terrestrial launch site",
             "location": "Earth",
             "host_type": "planet",

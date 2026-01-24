@@ -11,7 +11,7 @@ function PassengerDetails() {
     }, []);
 
     return (
-        <div className="details"></div>
+        <div className="passenger-details"></div>
     )
 }
 
