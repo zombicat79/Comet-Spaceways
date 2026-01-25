@@ -74,9 +74,9 @@
     }
 }
 
-.destination-details {
+.destination-detail {
     position: relative;
-    z-index: 2;
+    z-index: 3;
 
     .banner__text {
         font-style: italic;
@@ -87,5 +87,10 @@
         width: 80%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .destination-search {
+        @include flex-column(center);
+        padding-bottom: 16rem;
     }
 }

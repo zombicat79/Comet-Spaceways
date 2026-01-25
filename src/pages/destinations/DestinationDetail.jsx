@@ -28,7 +28,7 @@ function DestinationDetail() {
 
     if (destinations.length > 0) {
         return (
-            <main className="destination-details">
+            <main className="destination-detail">
                 <Banner 
                     textStyle={{ color: 'default', align: 'left' }}
                     textContent={{
@@ -57,7 +57,7 @@ function DestinationDetail() {
                     </ul>
                     <h3>{currentDestinationData.promotional_catch}</h3>
                 </ContentSection>
-                <section>
+                <section className="destination-search">
                     <FlightSearch fixedDestination={true} />
                 </section>
                 

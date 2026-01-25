@@ -14,9 +14,9 @@
                 "planetary orbit",
                 "Earth"
             ],
-            "intro": "The new Mecca of science, industry, and exploration",
-            "description": "Step onto the Moon and into the future at Lunar Haven, humanity’s premier off-world settlement. Strategically located in the Sea of Tranquility, this thriving colony is more than just a destination—it’s a hub of innovation, research, and resource extraction at the edge of space.",
-            "promotional_catch": "Whether you’re a researcher, entrepreneur, or explorer, Lunar Haven is where discovery meets destiny. Join us on the next great journey—because the future starts here. 🚀🌕",
+            "intro": "Humankind's first-ever step into outer space",
+            "description": "Step onto the Moon and into the future at Lunar Haven, humanity’s premier off-world settlement. Strategically located in the Sea of Tranquility, this thriving colony is more than just a destination; it’s a hub of innovation, research, and resource extraction at the edge of Mother Earth's sphere of influence.",
+            "promotional_catch": "Whether you’re a researcher, entrepreneur, or explorer, Lunar Haven is where discovery meets destiny. Join us on the next great journey. Because the future starts here. 🚀🌕",
             "features": [
                 "🔹 Exploration – Visit cutting-edge laboratories where scientists unlock the secrets of lunar geology, high-tech mining operations harvesting rare lunar resources, and self-sustaining bio-domes pioneering the future of off-world living.",
                 "🔹 Adventure – Experience the Moon’s rugged beauty on rover expeditions",
@@ -86,8 +86,8 @@
                 "France"
             ],
             "intro": "From the origins of civilization to the distant stars",
-            "description": "Situated in the outskirts of Paris, France, Galileo Galilei Old World's Hub – Spaceport Europe stands as the continent’s gateway between ancient history and interplanetary futures. Blending Europe’s legacy of exploration with cutting-edge aerospace engineering, it connects millions of travelers to orbital stations, the Moon, Mars, and the far reaches beyond. From its elegant Parisian setting, it serves the entire European community with precision, culture, and innovation woven together beneath the city of lights.",
-            "promotional_catch": "Whether you are a weekend orbital traveler from Berlin, a lunar researcher from Rome, or a Martian colonist returning home to Madrid, Spaceport Europe is your passage from the Old World to the wider universe.",
+            "description": "Situated in the outskirts of Paris (France), Galileo Galilei Paneuropean Astrohub stands as the continent’s gateway between ancient history and interplanetary futures. Blending Europe’s legacy of exploration with cutting-edge aerospace engineering, it connects millions of travelers to orbital stations, the Moon, Mars, and the far reaches beyond. From its elegant Parisian setting, it serves the entire European community with precision, culture, and innovation woven together just outside the city of lights.",
+            "promotional_catch": "Whether you are a weekend orbital traveler from Berlin, a lunar researcher from Rome, or a Martian colonist returning home to Madrid, Galileo Galilei Paneuropean Astrohub is your passage from the Old World to the wider universe.",
             "features": [
                 "🔹 Europe’s Primary Interplanetary Gateway – Centrally located in Paris to serve the entire continent, offering seamless connections from Lisbon to Warsaw, Dublin to Athens.",
                 "🔹 Direct Flights to Major Destinations – Frequent departures to Low Earth Orbit; daily flights to the Moon; regular missions to Mars and the outer colonies.",
@@ -97,14 +97,16 @@
             ],
             "cover_img": "earth-europe.webp",
             "pictures": [
-                "airport-europe.webp",
-                "ski-resort.webp",
-                "medieval-future.webp",
-                "techno-museum.webp",
-                "barcelona.webp",
-                "berlin.webp",
-                "london.webp",
-                "paris.webp"
+                "earth-europe5.webp",
+                "earth-europe6.webp",
+                "earth-europe7.webp"
+            ],
+            "feature_pictures": [
+                "earth-europe0.webp",
+                "earth-europe1.webp",
+                "earth-europe2.webp",
+                "earth-europe3.webp",
+                "earth-europe4.webp"
             ],
             "lowest_accessibility": 5
         },
@@ -125,7 +127,7 @@
                 "China"
             ],
             "intro": "From the Far East to even farther unknown horizons",
-            "description": "Located on the island of Hainan, China, Heavenly Gate is the Asia-Pacific region’s premier spaceport, connecting millions to the Moon, Mars, and beyond. As the most advanced interplanetary travel hub in the Eastern Hemisphere, it takes pride on serving as the launchpad for the entire Asia-Pacific community, offering cutting-edge technology, unmatched convenience, and a commitment to excellence that spans continents.",
+            "description": "Located on the island of Hainan (China), Heavenly Gate is the Asia-Pacific region’s premier spaceport, connecting millions to the Moon, Mars, and beyond. As the most advanced interplanetary travel hub in the Eastern Hemisphere, it takes pride on serving as the launchpad for the entire Asia-Pacific community, offering cutting-edge technology, unmatched convenience, and a commitment to excellence that spans continents.",
             "promotional_catch": "No matter if you're a space tourist from Bangkok, a lunar entrepreneur from Singapore, or a Martian pioneer from Seoul, Starport Asia is your entry point to the cosmos.",
             "features": [
                 "🔹 Asia-Pacific’s Premier Hub – Strategically located to serve the entire region, Starport Asia offers seamless connections for travelers, businesses, and explorers from Tokyo to Sydney, Mumbai to Seoul.",
@@ -135,15 +137,17 @@
             ],
             "cover_img": "earth-asia.webp",
             "pictures": [
-                "airport-asia.webp",
-                "beach-resort.webp",
-                "buddha-city.webp",
-                "buddha-mountain.webp",
-                "floating-market.webp",
-                "australia.webp",
-                "bangkok.webp",
-                "hong-kong.webp",
-                "japan.webp"
+                "earth-asia4.webp",
+                "earth-asia5.webp",
+                "earth-asia6.webp",
+                "earth-asia7.webp",
+                "earth-asia8.webp"
+            ],
+            "feature_pictures": [
+                "earth-asia0.webp",
+                "earth-asia1.webp",
+                "earth-asia2.webp",
+                "earth-asia3.webp"
             ],
             "lowest_accessibility": 5
         },
@@ -164,7 +168,7 @@
                 "United States"
             ],
             "intro": "From the Old New World to the novel frontier beyond",
-            "description": "Located in Cape Canaveral, Florida, Neil Armstrong Interplanetary Spaceport is the premier gateway for North, Central, and South America to the wider Solar System. Rising from the very coastline where humanity first leapt to the Moon, it now connects millions across two hemispheres to orbital habitats, the lunar cities, Martian settlements, and deep-space destinations. It embodies the spirit of exploration that has defined the Americas for centuries, where innovation, diversity, and bold adventure take flight together.",
+            "description": "Located in Cape Canaveral (Florida - US), Neil Armstrong Interplanetary Spaceport is the premier gateway for North, Central, and South America to the wider Solar System. Rising from the very coastline where humanity first leapt to the Moon, it now connects millions across two hemispheres to orbital habitats, the lunar cities, Martian settlements, and deep-space destinations. It embodies the spirit of exploration that has defined the Americas for centuries, where innovation, diversity, and bold adventure take flight together.",
             "promotional_catch": "Whether you are a business traveler from São Paulo, a student explorer from Mexico City, or a Martian returnee visiting family in Toronto, Neil Armstrong Interplanetary Spaceport is your launchpoint to everywhere beyond Earth.",
             "features": [
                 "🔹 Pan-American Interstellar Gateway – Designed to serve all of the Americas, offering seamless connections from Anchorage to Ushuaia, Lima to New York, Bogotá to Buenos Aires.",
@@ -175,14 +179,16 @@
             ],
             "cover_img": "earth-america.webp",
             "pictures": [
-                "airport-america.webp",
-                "sequoia-forest.webp",
-                "floating-city.webp",
-                "grand-canyon.webp",
-                "brazil.webp",
-                "nyc.webp",
-                "vegas.webp",
-                "yucatan.webp"
+                "earth-america5.webp",
+                "earth-america6.webp",
+                "earth-america7.webp"
+            ],
+            "feature_pictures": [
+                "earth-america0.webp",
+                "earth-america1.webp",
+                "earth-america2.webp",
+                "earth-america3.webp",
+                "earth-america4.webp"
             ],
             "lowest_accessibility": 5
         },
@@ -206,18 +212,19 @@
                 "🔹 Dynamic Work Opportunities – Engineers, technicians, and specialists are shaping the future of interplanetary civilization.",
                 "🔹 Unforgettable Adventures – Explore Mars' breathtaking landscapes, from the towering cliffs of Valles Marineris to the mysterious dunes of Gale Crater.",
                 "🔹 A Thriving Community – State-of-the-art habitats, hydroponic farms, and Martian cafés create a unique and vibrant society beyond Earth.",
-                "🔹 Trade & Industry – A hub for aerospace innovation, resource extraction, and an emerging economy built around cloud-harvesting."
+                "🔹 Trade & Industry – A hub for aerospace innovation, resource extraction, and an emerging economy built around terraformation efforts."
             ],
             "cover_img": "mars.webp",
             "pictures": [
-                "new-olympus.webp",
-                "new-olympus2.webp",
-                "new-olympus3.webp",
-                "new-olympus4.webp",
-                "new-olympus5.webp",
-                "new-olympus6.webp",
-                "new-olympus7.webp",
-                "new-olympus8.webp"
+                "mars5.webp",
+                "mars6.webp"
+            ],
+            "feature_pictures": [
+                "mars0.webp",
+                "mars1.webp",
+                "mars2.webp",
+                "mars3.webp",
+                "mars4.webp"
             ],
             "lowest_accessibility": 120
         },
@@ -234,7 +241,7 @@
                 "deep space"
             ],
             "intro": "The first wandering urban development in the skies",
-            "description": "A new horizon awaits in the upper layers of Venus! Floating high above the planet' scorching surface, Cloud Nine is a marvel of human engineering—a city suspended within the planet’s temperate upper atmosphere. Shielded from the planet’s extreme heat and pressure, this aerial colony thrives in the golden skies, harnessing solar energy and extracting vital resources from the thick clouds below.",
+            "description": "A new horizon awaits in the upper layers of Venus! Floating high above the planet' scorching surface, Cloud Nine is a marvel of human engineering: a city suspended within the planet’s temperate upper atmosphere. Shielded from the planet’s extreme heat and pressure, this aerial colony thrives in the golden skies, harnessing solar energy and extracting vital resources from the thick clouds below.",
             "promotional_catch": "Rise above and thrive beyond! Experience the future of urban development, suspended in the first human city ever drifting amongst clouds.",
             "features": [
                 "🔹 Floating Megastructures – Advanced aerostat platforms keep the colony suspended at 50 km altitude, where temperatures and pressures are Earth-like.",
@@ -244,14 +251,15 @@
             ],
             "cover_img": "venus.webp",
             "pictures": [
-                "cloud-nine.webp",
-                "cloud-nine2.webp",
-                "cloud-nine3.webp",
-                "cloud-nine4.webp",
-                "cloud-nine5.webp",
-                "cloud-nine6.webp",
-                "cloud-nine7.webp",
-                "cloud-nine8.webp"
+                "venus4.webp",
+                "venus5.webp",
+                "venus6.webp"
+            ],
+            "feature_pictures": [
+                "venus0.webp",
+                "venus1.webp",
+                "venus2.webp",
+                "venus3.webp"
             ],
             "lowest_accessibility": 50
         },
@@ -282,12 +290,16 @@
             ],
             "cover_img": "ceres.webp",
             "pictures": [
-                "ceres-prime.webp",
-                "ceres-prime2.webp",
-                "ceres-prime3.webp",
-                "ceres-prime4.webp",
-                "ceres-prime5.webp",
-                "ceres-prime6.webp"
+                "ceres7.webp"
+            ],
+            "feature_pictures": [
+                "ceres0.webp",
+                "ceres1.webp",
+                "ceres2.webp",
+                "ceres3.webp",
+                "ceres4.webp",
+                "ceres5.webp",
+                "ceres6.webp"
             ],
             "lowest_accessibility": 150
         },
@@ -309,21 +321,23 @@
             "description": "Imagine a world where golden skies stretch endlessly above, and methane rivers carve their way to converge into otherworldly lakes. Welcome to Nova Thalassa, humanity’s most daring outpost in the outer solar system! Nestled beneath protective domes, this futuristic haven offers a one-of-a-kind experience for adventurers, scientists, and dreamers alike.",
             "promotional_catch": "Humanity’s boldest step into the cosmos. Dare to live where none of your acquaintances has lived before.",
             "features": [
-                "🔹 Breathtaking Landscapes – Explore Titan’s surreal terrain, from vast hydrocarbon lakes to towering cryovolcanoes. Don’t forget your thermal suit—it’s chilly out there!",
+                "🔹 Breathtaking Landscapes – Explore Titan’s surreal terrain, from vast hydrocarbon lakes to towering cryovolcanoes. Don’t forget your thermal suit: it’s chilly out there!",
                 "🔹 Low-Gravity Thrills – Experience the thrill of low-gravity activities such as man-powered flight, thanks to Titan's thick atmosphere.",
-                "🔹 Stellar Views – Gaze at Saturn’s majestic rings from Titan's orbital observation decks — a sight you’ll never forget!",
+                "🔹 Stellar Views – Gaze at Saturn’s majestic rings from Titan's orbital observation decks, a sight you’ll never forget!",
                 "🔹 Cutting-Edge Science – Tour Nova Thalassa's state-of-the-art research facilities and learn how mankind is unlocking the secrets of this enigmatic moon.",
                 "🔹 Luxury Under the Dome – Relax in Nova Thalassa's climate-controlled habitats, complete with Earth-like gardens, gourmet dining, and spas."
             ],
             "cover_img": "titan.webp",
             "pictures": [
-                "nova-thalassa.webp",
+                "nova-thalassa5.webp",
+                "nova-thalassa6.webp"
+            ],
+            "feature_pictures": [
+                "nova-thalassa0.webp",
+                "nova-thalassa1.webp",
                 "nova-thalassa2.webp",
                 "nova-thalassa3.webp",
-                "nova-thalassa4.webp",
-                "nova-thalassa5.webp",
-                "nova-thalassa6.webp",
-                "nova-thalassa7.webp"
+                "nova-thalassa4.webp"
             ],
             "lowest_accessibility": 750
         }

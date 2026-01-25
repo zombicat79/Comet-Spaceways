@@ -80,9 +80,10 @@ body {
 
 /* MAIN CONTENT */
 main section {
-  padding: 8rem 5rem; }
-  main section:nth-child(odd):not(:first-child) {
-    background-color: #2c698d; }
+  padding: 8rem 5rem;
+  /* &:nth-child(odd):not(:first-child) {
+            background-color: $color-environmental-deep;
+        } */ }
   @media screen and (max-width: 1000px) {
     main section {
       padding: 5rem; } }
@@ -2620,16 +2621,22 @@ h3 {
     .destinations__search h3 {
       margin-bottom: 3rem; }
 
-.destination-details {
+.destination-detail {
   position: relative;
-  z-index: 2; }
-  .destination-details .banner__text {
+  z-index: 3; }
+  .destination-detail .banner__text {
     font-style: italic;
     font-size: 2rem; }
-  .destination-details .features__list {
+  .destination-detail .features__list {
     width: 80%;
     margin-left: auto;
     margin-right: auto; }
+  .destination-detail .destination-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 16rem; }
 
 .tickets {
   position: relative;
