@@ -1,6 +1,6 @@
 .destinations {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     padding: 10rem 0;
     background-image:
         linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.15)), 
@@ -81,6 +81,10 @@
     .banner__text {
         font-style: italic;
         font-size: 2rem;
+    }
+
+    .destination-tags {
+        padding: 3rem;
     }
     
     .features__list {

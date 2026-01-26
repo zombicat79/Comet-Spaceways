@@ -3,11 +3,11 @@ import { DestinationsContext } from '../../contexts/DestinationsContext';
 import { FlightSearchContext } from '../../contexts/FlightSearchContext';
 import { useLocation } from 'react-router';
 
+import TagList from "./../../components/TagList";
 import Banner from './../../components/Banner';
 import ContentSection from './../../layout/ContentSection';
 import Figure from "../../components/Figure";
 import FlightSearch from '../../components/flight/FlightSearch';
-import FloatingButton from '../../components/FloatingButton';
 
 import { maximizeDestinations } from '../../utilities/utils';
 
@@ -21,12 +21,15 @@ function DestinationDetail() {
 
     useEffect(() => {
         if (flightSearchState.origin === maximizeDestinations(currentDestination)) {
-            changeFlightSearchState({ type: 'origin-change', payload: "TBD" });
+            changeFlightSearchState({ type: 'origin-change', payload: "--" });
         }
         changeFlightSearchState({ type: 'destination-change', payload: maximizeDestinations(currentDestination) });
     }, [])
 
     if (destinations.length > 0) {
+        const { domains, region, host_type, category } = currentDestinationData;
+        const tags = domains.concat([region]).concat([host_type]).concat([category]);
+
         return (
             <main className="destination-detail">
                 <Banner 
@@ -37,6 +40,9 @@ function DestinationDetail() {
                     }}
                     background={{ img: currentDestinationData.port, height: 'full' }}
                 />
+                <section className="destination-tags">
+                    <TagList listMembers={tags} />
+                </section>
                 <ContentSection>
                     <h2>{currentDestinationData.intro}</h2>
                     <p>{currentDestinationData.description}</p>
@@ -58,6 +64,7 @@ function DestinationDetail() {
                     <h3>{currentDestinationData.promotional_catch}</h3>
                 </ContentSection>
                 <section className="destination-search">
+                    <h3>READY TO GO?</h3>
                     <FlightSearch fixedDestination={true} />
                 </section>
                 

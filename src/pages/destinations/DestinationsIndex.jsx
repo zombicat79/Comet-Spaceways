@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext, useRef } from 'react';
+import { useLocation } from 'react-router';
 import { LayoutContext } from '../../contexts/LayoutContext';
 import { DestinationsContext } from '../../contexts/DestinationsContext';
 
@@ -14,9 +15,10 @@ import { filterSearch } from '../../utilities/utils';
 
 function DestinationsIndex() {
     const [filteredDestinations, setFilteredDestinations] = useState([]);
-    const [tooltip, setTooltip] = useState({ active: false, text: "" });
+    const [tooltip, setTooltip] = useState({ active: false, text: "", color: "" });
     const { layoutState } = useContext(LayoutContext);
     const { destinations } = useContext(DestinationsContext);
+    const location = useLocation();
     const destinationList = useRef(null);
     console.log(filteredDestinations)
 
@@ -28,7 +30,7 @@ function DestinationsIndex() {
     const handleFilterReset = () => setFilteredDestinations([]);
 
     const handleTooltip = (action, payload) => {
-        action === "show" ? setTooltip({ active: true, text: payload}) : setTooltip({ active: false, text: "" });
+        action === "show" ? setTooltip({ active: true, text: payload.text, color: payload.color}) : setTooltip({ active: false, text: "", color: "" });
     }
 
     useEffect(() => {
@@ -37,10 +39,15 @@ function DestinationsIndex() {
         }
     }, [filteredDestinations])
 
+    useEffect(() => {
+        const query = location.search.replace('?query=', '').replace(/%20/g, ' ');
+        handleFilter(query)
+    }, [location.search])
+
     if (destinations.length > 0) {
         return (
             <main className="destinations">
-                {layoutState.viewportWidth >= 1000 && tooltip.active && <Tooltip title={tooltip.text.toUpperCase()} />}
+                {layoutState.viewportWidth >= 1000 && tooltip.active && <Tooltip title={tooltip.text.toUpperCase()} color={tooltip.color} />}
                 {layoutState.viewportWidth >= 1000 
                     ?<div className="destinations__heading">
                         <h2>OUR DESTINATIONS WITHIN THE SOLAR SYSTEM</h2>

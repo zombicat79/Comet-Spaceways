@@ -5,6 +5,16 @@
     padding: 1rem 2rem;
     box-shadow: 0 0 4.5rem $color-highlight-light;
 
+    &--ok {
+        background-color: $color-body-light;
+        box-shadow: 0 0 4.5rem $color-highlight-light;
+    }
+
+    &--ko {
+        background-color: $color-body-error;
+        box-shadow: 0 0 4.5rem $color-highlight-extreme;
+    }
+
     &__title {
         font-family: "poppins-bold";
         font-size: 1.5rem;

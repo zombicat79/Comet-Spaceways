@@ -166,7 +166,7 @@ function filterSearch(queryTerm, sourceData, dataSection=null) {
     } else if (Array.isArray(sourceData)) {
         let isFound = false;
         sourceData.forEach((item) => {
-            const trimmedItem = { ...item, features: []}
+            const trimmedItem = { ...item, features: [], intro: "", description: "", promotional_catch: "" }
             const stringifiedItem = JSON.stringify(trimmedItem).toLocaleLowerCase();
             if (stringifiedItem.includes(queryTerm)) {
                 filterResults.push(item.id);

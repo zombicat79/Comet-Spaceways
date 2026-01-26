@@ -1,0 +1,30 @@
+.tag {
+    color: $color-text-dark;
+    background-color: $color-body-light;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 4.5rem $color-highlight-light;
+
+    &--smaller {
+        padding: .75rem 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    &--regular {
+        padding: 1rem 2rem;
+        font-size: 2rem;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &__list {
+        @include flex-row(flex-start);
+        gap: 2rem;
+    }
+
+    &__content {
+        font-family: "poppins-bold";
+        text-transform: uppercase;
+    }
+}

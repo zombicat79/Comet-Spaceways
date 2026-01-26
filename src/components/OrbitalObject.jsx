@@ -10,7 +10,7 @@ function OrbitalObject({ children, type, distance, inclination, outermost, orbit
                 orbit__object--${orbitalObject.background}--${orbitalObject.color}
             `} 
                 onClick={() => orbitalObject.clickable ? onFilter(orbitalObject.name, "domains") : null}
-                onMouseOver={() => onTooltip("show", orbitalObject.name)}
+                onMouseOver={() => onTooltip("show", { text: orbitalObject.name, color: orbitalObject.clickable ? "ok" : "ko" })}
                 onMouseOut={() => onTooltip("hide")}
             >
             </div>

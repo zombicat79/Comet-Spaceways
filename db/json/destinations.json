@@ -202,6 +202,7 @@
             "host_type": "planet",
             "region": "Inner Solar System",
             "domains": [
+                "planetary surface",
                 "deep space"
             ],
             "intro": "Humanity's first colony on an alien planet",
@@ -238,6 +239,7 @@
             "host_type": "planet",
             "region": "Inner Solar System",
             "domains": [
+                "planetary atmosphere",
                 "deep space"
             ],
             "intro": "The first wandering urban development in the skies",

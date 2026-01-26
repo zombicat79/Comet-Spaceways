@@ -484,9 +484,37 @@ h3 {
   border-radius: 1.5rem;
   padding: 1rem 2rem;
   box-shadow: 0 0 4.5rem #00FFFF; }
+  .tooltip--ok {
+    background-color: #e3f6f5;
+    box-shadow: 0 0 4.5rem #00FFFF; }
+  .tooltip--ko {
+    background-color: #f59977;
+    box-shadow: 0 0 4.5rem #FF4500; }
   .tooltip__title {
     font-family: "poppins-bold";
     font-size: 1.5rem; }
+
+.tag {
+  color: #272643;
+  background-color: #e3f6f5;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 4.5rem #00FFFF; }
+  .tag--smaller {
+    padding: .75rem 1.5rem;
+    font-size: 1.5rem; }
+  .tag--regular {
+    padding: 1rem 2rem;
+    font-size: 2rem; }
+  .tag:hover {
+    transform: scale(1.1); }
+  .tag__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem; }
+  .tag__content {
+    font-family: "poppins-bold";
+    text-transform: uppercase; }
 
 .infopanel {
   display: flex;
@@ -2568,7 +2596,7 @@ h3 {
 
 .destinations {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   padding: 10rem 0;
   background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.15)), url("./../assets/images/milky_way_background.webp");
   background-size: cover;
@@ -2627,6 +2655,8 @@ h3 {
   .destination-detail .banner__text {
     font-style: italic;
     font-size: 2rem; }
+  .destination-detail .destination-tags {
+    padding: 3rem; }
   .destination-detail .features__list {
     width: 80%;
     margin-left: auto;
