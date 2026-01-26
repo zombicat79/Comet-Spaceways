@@ -27,8 +27,8 @@ function DestinationDetail() {
     }, [])
 
     if (destinations.length > 0) {
-        const { domains, region, host_type, category } = currentDestinationData;
-        const tags = domains.concat([region]).concat([host_type]).concat([category]);
+        const { domains, region, host_type, category, uses } = currentDestinationData;
+        const tags = domains.concat([region]).concat([host_type]).concat([category].concat(uses));
 
         return (
             <main className="destination-detail">

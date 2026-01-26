@@ -14,6 +14,12 @@
                 "planetary orbit",
                 "Earth"
             ],
+            "uses": [
+                "science",
+                "mining",
+                "industry",
+                "tourism"
+            ],
             "intro": "Humankind's first-ever step into outer space",
             "description": "Step onto the Moon and into the future at Lunar Haven, humanity’s premier off-world settlement. Strategically located in the Sea of Tranquility, this thriving colony is more than just a destination; it’s a hub of innovation, research, and resource extraction at the edge of Mother Earth's sphere of influence.",
             "promotional_catch": "Whether you’re a researcher, entrepreneur, or explorer, Lunar Haven is where discovery meets destiny. Join us on the next great journey. Because the future starts here. 🚀🌕",
@@ -48,6 +54,10 @@
                 "near space",
                 "planetary orbit",
                 "Earth"
+            ],
+            "uses": [
+                "leisure",
+                "transport"
             ],
             "intro": "The gateway to the entire Solar System",
             "description": "Perched in low Earth orbit, Celestia Station is your gateway to the stars! Whether you're a traveler en route to the Moon, Mars, or beyond, our state-of-the-art facility offers seamless transit, luxury accommodations, and breathtaking views of Earth from 400 kilometers above.",
@@ -84,6 +94,13 @@
                 "Earth",
                 "Europe",
                 "France"
+            ],
+            "uses": [
+                "tourism",
+                "habitation",
+                "culture",
+                "heritage",
+                "leisure"
             ],
             "intro": "From the origins of civilization to the distant stars",
             "description": "Situated in the outskirts of Paris (France), Galileo Galilei Paneuropean Astrohub stands as the continent’s gateway between ancient history and interplanetary futures. Blending Europe’s legacy of exploration with cutting-edge aerospace engineering, it connects millions of travelers to orbital stations, the Moon, Mars, and the far reaches beyond. From its elegant Parisian setting, it serves the entire European community with precision, culture, and innovation woven together just outside the city of lights.",
@@ -126,6 +143,13 @@
                 "Asia",
                 "China"
             ],
+            "uses": [
+                "tourism",
+                "habitation",
+                "culture",
+                "heritage",
+                "business"
+            ],
             "intro": "From the Far East to even farther unknown horizons",
             "description": "Located on the island of Hainan (China), Heavenly Gate is the Asia-Pacific region’s premier spaceport, connecting millions to the Moon, Mars, and beyond. As the most advanced interplanetary travel hub in the Eastern Hemisphere, it takes pride on serving as the launchpad for the entire Asia-Pacific community, offering cutting-edge technology, unmatched convenience, and a commitment to excellence that spans continents.",
             "promotional_catch": "No matter if you're a space tourist from Bangkok, a lunar entrepreneur from Singapore, or a Martian pioneer from Seoul, Starport Asia is your entry point to the cosmos.",
@@ -167,6 +191,13 @@
                 "America",
                 "United States"
             ],
+            "uses": [
+                "tourism",
+                "habitation",
+                "culture",
+                "heritage",
+                "science"
+            ],
             "intro": "From the Old New World to the novel frontier beyond",
             "description": "Located in Cape Canaveral (Florida - US), Neil Armstrong Interplanetary Spaceport is the premier gateway for North, Central, and South America to the wider Solar System. Rising from the very coastline where humanity first leapt to the Moon, it now connects millions across two hemispheres to orbital habitats, the lunar cities, Martian settlements, and deep-space destinations. It embodies the spirit of exploration that has defined the Americas for centuries, where innovation, diversity, and bold adventure take flight together.",
             "promotional_catch": "Whether you are a business traveler from São Paulo, a student explorer from Mexico City, or a Martian returnee visiting family in Toronto, Neil Armstrong Interplanetary Spaceport is your launchpoint to everywhere beyond Earth.",
@@ -205,6 +236,14 @@
                 "planetary surface",
                 "deep space"
             ],
+        "uses": [
+            "tourism",
+            "habitation",
+            "mining",
+            "industry",
+            "science",
+            "exploration"
+        ],
             "intro": "Humanity's first colony on an alien planet",
             "description": "Step into the future and be part of history! New Olympus, the first permanent human settlement on Mars, offers an unprecedented opportunity to live, work, and explore on the Red Planet. Whether you're a pioneering scientist, an ambitious entrepreneur, or an adventurous traveler, this thriving colony is the place to be.",
             "promotional_catch": "Become part of a legacy of pioneers, shaping the future of humanity on Mars.",
@@ -242,6 +281,12 @@
                 "planetary atmosphere",
                 "deep space"
             ],
+            "uses": [
+                "tourism",
+                "habitation",
+                "science",
+                "exploration"
+            ],
             "intro": "The first wandering urban development in the skies",
             "description": "A new horizon awaits in the upper layers of Venus! Floating high above the planet' scorching surface, Cloud Nine is a marvel of human engineering: a city suspended within the planet’s temperate upper atmosphere. Shielded from the planet’s extreme heat and pressure, this aerial colony thrives in the golden skies, harnessing solar energy and extracting vital resources from the thick clouds below.",
             "promotional_catch": "Rise above and thrive beyond! Experience the future of urban development, suspended in the first human city ever drifting amongst clouds.",
@@ -277,6 +322,13 @@
             "domains": [
                 "deep space",
                 "asteroid field"
+            ],
+            "uses": [
+                "industry",
+                "mining",
+                "business",
+                "leisure",
+                "transport"
             ],
             "intro": "Humankind's new Gold Rush capital and industrial heart",
             "description": "Nestled in the heart of the asteroid belt, Ceres Prime is humanity’s leading industrial outpost in space, as well as the busiest free trade zone in the Solar System. Once a barren dwarf planet, Ceres is now a thriving hub for asteroid mining, commerce and entrepreneurial exploration. Here, the raw materials of the solar system are transformed into the building blocks of the future.",
@@ -318,6 +370,11 @@
                 "deep space",
                 "planetary orbit",
                 "Saturn"
+            ],
+            "uses": [
+                "leisure",
+                "tourism",
+                "exploration"
             ],
             "intro": "The ultimate leisure destination in Saturn's moon system",
             "description": "Imagine a world where golden skies stretch endlessly above, and methane rivers carve their way to converge into otherworldly lakes. Welcome to Nova Thalassa, humanity’s most daring outpost in the outer solar system! Nestled beneath protective domes, this futuristic haven offers a one-of-a-kind experience for adventurers, scientists, and dreamers alike.",
