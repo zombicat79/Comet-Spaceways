@@ -610,8 +610,9 @@ h3 {
     .selector--disabled:hover {
       cursor: not-allowed; }
   .selector--error {
-    border: 1px solid #FF4500 !important;
-    color: #FF4500; }
+    border: 1px solid #FF4500 !important; }
+    .selector--error .selector__choice--quantity {
+      color: #FF4500; }
     .selector--error .selector__value {
       filter: opacity(0.3); }
   .selector__id {

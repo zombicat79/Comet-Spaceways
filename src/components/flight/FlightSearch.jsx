@@ -13,6 +13,7 @@ function FlightSearch({ fixedDestination }) {
     const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
     const { humanoids, nhes, minors, pets } = flightSearchState.passengers;
     const navigate = useNavigate();
+    const noGo = (!humanoids && !nhes && !minors && !pets) || flightSearchState.origin === '--';
 
     function handleReverseChoice() {
         changeFlightSearchState({ 
@@ -85,6 +86,7 @@ function FlightSearch({ fixedDestination }) {
                     identifier="Origin"
                     initialValue={flightSearchState.origin}
                     choiceOptions={flightSearchState.destinationOffer}
+                    cssModifier={flightSearchState.origin === '--' ? 'error' : null}
                 />
                 {!fixedDestination &&
                     <>
@@ -129,7 +131,7 @@ function FlightSearch({ fixedDestination }) {
                 cssModifier={(!humanoids && !nhes && !minors && !pets) ? 'error' : null}
             />
 
-            <Button type="secondary" text="search" />
+            <Button type="secondary" text="search" isDisabled={noGo} />
         </form>
     )
 }
