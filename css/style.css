@@ -718,6 +718,8 @@ h3 {
     background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./../assets/images/black-hole_banner.webp"); }
   .banner--5 {
     background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp"); }
+  .banner--6 {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/milky_way_background.webp"); }
   .banner--LUN {
     background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/LUN/moon.webp"); }
   .banner--CEL {
@@ -2604,6 +2606,8 @@ h3 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
+  .destinations--loading {
+    height: 100vh; }
   .destinations .tooltip {
     position: fixed;
     bottom: 5%;

@@ -65,6 +65,11 @@
       url('./../assets/images/starscape_wallpaper.webp');
     }
 
+    &--6 {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/milky_way_background.webp');
+    }
+
     // DESTINATION BANNER CHOICE
     &--LUN {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),

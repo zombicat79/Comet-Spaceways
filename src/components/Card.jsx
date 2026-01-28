@@ -6,7 +6,6 @@ import WorkInProgress from './infopieces/WorkInProgress';
 
 function Card({ children, height=40, bgImg, link }) {
     const { handlePopupLaunch } = useContext(LayoutContext);
-    console.log(link)
 
     if (link) {
         return (

@@ -9,6 +9,10 @@
     background-repeat: no-repeat;
     background-position: center;
 
+    &--loading {
+        height: 100vh;
+    }
+
     .tooltip {
         position: fixed;
         bottom: 5%;

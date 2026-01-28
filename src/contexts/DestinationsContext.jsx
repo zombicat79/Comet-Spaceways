@@ -5,7 +5,6 @@ const DestinationsContext = createContext();
 
 function DestinationsProvider({ children }) {
     const [destinations, setDestinations] = useState([]);
-    console.log(destinations)
 
     useEffect(() => {
         async function fetchDestinations() {

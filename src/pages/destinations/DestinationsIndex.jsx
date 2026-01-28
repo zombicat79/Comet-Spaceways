@@ -5,6 +5,7 @@ import { DestinationsContext } from '../../contexts/DestinationsContext';
 
 import Tooltip from "../../components/Tooltip";
 import InfoPanel from '../../components/InfoPanel';
+import Banner from "../../components/Banner";
 import StellarMap from '../../components/StellarMap';
 import SearchTool from '../../components/SearchTool';
 import Card from './../../components/Card';
@@ -14,13 +15,13 @@ import FlightSearch from './../../components/flight/FlightSearch';
 import { filterSearch } from '../../utilities/utils';
 
 function DestinationsIndex() {
+    const [loading, setLoading] = useState(false);
     const [filteredDestinations, setFilteredDestinations] = useState([]);
     const [tooltip, setTooltip] = useState({ active: false, text: "", color: "" });
-    const { layoutState } = useContext(LayoutContext);
+    const { dispatch, layoutState } = useContext(LayoutContext);
     const { destinations } = useContext(DestinationsContext);
     const location = useLocation();
     const destinationList = useRef(null);
-    console.log(filteredDestinations)
 
     const handleFilter = (query, dataSection) => {
         const filterResult = filterSearch(query, destinations, dataSection || null);
@@ -34,17 +35,31 @@ function DestinationsIndex() {
     }
 
     useEffect(() => {
+        if (destinations.length <= 0) {
+            dispatch({ type: "set/scroll", payload: false });
+            dispatch({ type: "set/loader", payload: true });
+            setLoading(true);
+        } else {
+            dispatch({ type: "set/scroll", payload: true });
+            dispatch({ type: "set/loader", payload: false });
+            setLoading(false);
+        }
+    },[destinations])
+
+    useEffect(() => {
         if (destinationList.current) {
             destinationList.current.scrollIntoView({ block: "center", behavior: "smooth" });
         }
     }, [filteredDestinations])
 
     useEffect(() => {
-        const query = location.search.replace('?query=', '').replace(/%20/g, ' ');
-        handleFilter(query)
+        if (location.search) {
+            const query = location.search.replace('?query=', '').replace(/%20/g, ' ');
+            handleFilter(query)
+        }
     }, [location.search])
 
-    if (destinations.length > 0) {
+    if (!loading) {
         return (
             <main className="destinations">
                 {layoutState.viewportWidth >= 1000 && tooltip.active && <Tooltip title={tooltip.text.toUpperCase()} color={tooltip.color} />}
@@ -101,8 +116,14 @@ function DestinationsIndex() {
     }
 
     return (
-        <main className="destinations">
-            This is the destinations page
+        <main className="destinations destinations--loading">
+            <Banner
+                textStyle={{ color: 'default', align: 'center' }}
+                textContent={{
+                    heading: 'Fetching destinations...',
+                }}
+                background={{ img: 'milky', height: 'full' }}
+            />
         </main>
     )
 }
