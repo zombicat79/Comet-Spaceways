@@ -96,9 +96,58 @@
     position: relative;
     z-index: 3;
 
-    .banner__text {
-        font-style: italic;
-        font-size: 2rem;
+    .banner {
+        @include respond(huge-screen) {
+            background-position-y: 50%;
+        }
+
+        &--CEL {
+            @include respond(tablet-portrait) {
+                background-position-x: 75%;
+            }
+            @include respond(phone-medium) {
+                background-position-x: 85%;
+            }
+        }
+
+        &--EEU {
+            @include respond(huge-screen) {
+                background-position-y: 25%;
+            }
+        }
+
+        &--EEU, &--EAS, &--EAM {
+            @include respond(phone) {
+                background-position-x: 55%;
+            }
+        }
+
+        &--VEN, &--TTN {
+            @include respond(tablet-portrait) {
+                background-position-x: 40%;
+            }
+        }
+    }
+
+    .banner__msg {
+        @include respond(phone) {
+            text-align: center;
+        }
+
+        .banner__heading {
+            @include respond(phone) {
+                font-size: 3rem;
+            }
+        }
+    
+        .banner__text {
+            font-style: italic;
+            font-size: 2rem;
+            @include respond(tablet-landscape) {
+                max-width: none;
+                margin: 0;
+            }
+        }
     }
 
     .destination-tags {
@@ -106,16 +155,22 @@
     }
     
     .features__list {
-        width: 80%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
 
+        .figure {
+            gap: 5rem;
+        }
+
         @include respond(tablet-landscape) {
-            width: 100%;
-            
             .features__element:not(:last-child) {
                 margin-bottom: 5rem;
             }
+
+            .figure {
+                gap: 3rem;
+            }   
 
             .figure--horizontal, 
             .figure--horizontal-reverse {
@@ -132,9 +187,16 @@
                 }
 
                 .figure__text {
-                    margin-top: 3rem;
                     text-align: center;
                 }
+            }
+        }
+
+        @include respond(desktop) {
+            width: 80%;
+
+            .figure {
+                gap: 3rem;
             }
         }
     }

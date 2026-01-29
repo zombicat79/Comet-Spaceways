@@ -122,9 +122,14 @@ h1 {
 
 h2 {
     font-size: $size-gigantic;
+    line-height: 3.5rem;
 }
 
 h3 {
     font-size: $size-extrabig;
     line-height: 3rem;
+}
+
+p {
+    font-size: 1.5rem;
 }

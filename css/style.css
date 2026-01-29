@@ -306,11 +306,15 @@ h1 {
   font-size: 4.5rem; }
 
 h2 {
-  font-size: 2.8rem; }
+  font-size: 2.8rem;
+  line-height: 3.5rem; }
 
 h3 {
   font-size: 2rem;
   line-height: 3rem; }
+
+p {
+  font-size: 1.5rem; }
 
 .link:hover,
 .link--container,
@@ -2671,35 +2675,69 @@ h3 {
 .destination-detail {
   position: relative;
   z-index: 3; }
-  .destination-detail .banner__text {
+  @media screen and (min-width: 2800px) {
+    .destination-detail .banner {
+      background-position-y: 50%; } }
+  @media screen and (max-width: 768px) {
+    .destination-detail .banner--CEL {
+      background-position-x: 75%; } }
+  @media screen and (max-width: 480px) {
+    .destination-detail .banner--CEL {
+      background-position-x: 85%; } }
+  @media screen and (min-width: 2800px) {
+    .destination-detail .banner--EEU {
+      background-position-y: 25%; } }
+  @media screen and (max-width: 600px) {
+    .destination-detail .banner--EEU, .destination-detail .banner--EAS, .destination-detail .banner--EAM {
+      background-position-x: 55%; } }
+  @media screen and (max-width: 768px) {
+    .destination-detail .banner--VEN, .destination-detail .banner--TTN {
+      background-position-x: 40%; } }
+  @media screen and (max-width: 600px) {
+    .destination-detail .banner__msg {
+      text-align: center; } }
+  @media screen and (max-width: 600px) {
+    .destination-detail .banner__msg .banner__heading {
+      font-size: 3rem; } }
+  .destination-detail .banner__msg .banner__text {
     font-style: italic;
     font-size: 2rem; }
+    @media screen and (max-width: 1000px) {
+      .destination-detail .banner__msg .banner__text {
+        max-width: none;
+        margin: 0; } }
   .destination-detail .destination-tags {
     padding: 3rem; }
   .destination-detail .features__list {
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto; }
+    .destination-detail .features__list .figure {
+      gap: 5rem; }
     @media screen and (max-width: 1000px) {
+      .destination-detail .features__list .features__element:not(:last-child) {
+        margin-bottom: 5rem; }
+      .destination-detail .features__list .figure {
+        gap: 3rem; }
+      .destination-detail .features__list .figure--horizontal,
+      .destination-detail .features__list .figure--horizontal-reverse {
+        flex-direction: column; }
+        .destination-detail .features__list .figure--horizontal .figure__img-wrapper,
+        .destination-detail .features__list .figure--horizontal-reverse .figure__img-wrapper {
+          width: 100%; }
+          .destination-detail .features__list .figure--horizontal .figure__img-wrapper .figure__img,
+          .destination-detail .features__list .figure--horizontal-reverse .figure__img-wrapper .figure__img {
+            max-width: 80%;
+            max-height: 40rem;
+            margin: 0 auto; }
+        .destination-detail .features__list .figure--horizontal .figure__text,
+        .destination-detail .features__list .figure--horizontal-reverse .figure__text {
+          text-align: center; } }
+    @media screen and (min-width: 1280px) {
       .destination-detail .features__list {
-        width: 100%; }
-        .destination-detail .features__list .features__element:not(:last-child) {
-          margin-bottom: 5rem; }
-        .destination-detail .features__list .figure--horizontal,
-        .destination-detail .features__list .figure--horizontal-reverse {
-          flex-direction: column; }
-          .destination-detail .features__list .figure--horizontal .figure__img-wrapper,
-          .destination-detail .features__list .figure--horizontal-reverse .figure__img-wrapper {
-            width: 100%; }
-            .destination-detail .features__list .figure--horizontal .figure__img-wrapper .figure__img,
-            .destination-detail .features__list .figure--horizontal-reverse .figure__img-wrapper .figure__img {
-              max-width: 80%;
-              max-height: 40rem;
-              margin: 0 auto; }
-          .destination-detail .features__list .figure--horizontal .figure__text,
-          .destination-detail .features__list .figure--horizontal-reverse .figure__text {
-            margin-top: 3rem;
-            text-align: center; } }
+        width: 80%; }
+        .destination-detail .features__list .figure {
+          gap: 3rem; } }
   .destination-detail .destination-search {
     display: flex;
     flex-direction: column;
