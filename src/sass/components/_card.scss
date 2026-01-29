@@ -5,6 +5,9 @@
     min-width: 20rem;
     max-width: 30rem;
     transition: all 1s;
+    @include respond(phone) {
+        height: 50rem;
+    }
 
     &--h30 {
         height: 30rem;
