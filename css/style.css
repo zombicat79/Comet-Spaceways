@@ -1938,6 +1938,38 @@ p {
       .stellar-map .orbit__object--clickable-false:hover {
         cursor: not-allowed; }
 
+.slick-slider .slick-list {
+  overflow: visible !important; }
+  .slick-slider .slick-list .slick-slide.slick-current {
+    transform: scale(1.25); }
+    .slick-slider .slick-list .slick-slide.slick-current img {
+      box-shadow: 0 0 4.5rem #4B0082; }
+  .slick-slider .slick-list .slick-slide:not(.slick-current) {
+    filter: brightness(0.25);
+    pointer-events: none; }
+  @media screen and (max-width: 480px) {
+    .slick-slider .slick-list .slick-slide.slick-current {
+      transform: scale(1.25); }
+      .slick-slider .slick-list .slick-slide.slick-current img {
+        box-shadow: 0 0 4.5rem #4B0082; }
+    .slick-slider .slick-list .slick-slide:not(.slick-current) + div {
+      filter: none;
+      pointer-events: initial; } }
+  .slick-slider .slick-list .slick-slide img {
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    max-width: 20rem; }
+    @media screen and (min-width: 1280px) {
+      .slick-slider .slick-list .slick-slide img {
+        max-width: 30rem; } }
+
+.slick-slider .slick-dots {
+  bottom: -35%; }
+  .slick-slider .slick-dots li button:before {
+    color: #00FFFF; }
+  .slick-slider .slick-dots li.slick-active button:before {
+    color: #ffffff; }
+
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
 
@@ -2738,6 +2770,8 @@ p {
         width: 80%; }
         .destination-detail .features__list .figure {
           gap: 3rem; } }
+  .destination-detail .slick-slider {
+    margin: 8rem 0; }
   .destination-detail .destination-search {
     display: flex;
     flex-direction: column;

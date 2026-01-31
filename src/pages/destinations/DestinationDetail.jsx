@@ -8,6 +8,7 @@ import TagList from "./../../components/TagList";
 import Banner from './../../components/Banner';
 import ContentSection from './../../layout/ContentSection';
 import Figure from "../../components/Figure";
+import SliderTool from '../../components/SliderTool';
 import FlightSearch from '../../components/flight/FlightSearch';
 
 import { maximizeDestinations } from '../../utilities/utils';
@@ -43,6 +44,15 @@ function DestinationDetail() {
     if (!loading && currentDestinationData) {
         const { domains, region, host_type, category, uses } = currentDestinationData;
         const tags = domains.concat([region]).concat([host_type]).concat([category].concat(uses));
+        const sliderPics = currentDestinationData.pictures.map((el, index) => {
+            return { 
+                id: index+1, 
+                imgPath: `./../assets/images/destinations/${currentDestinationData.port}/`, 
+                img: el, 
+                alt: ""
+            }
+        })
+        const sliderCapacity = layoutState.viewportWidth >= 768 ? 3 : layoutState.viewportWidth >= 480 ? 2 : 1;
 
         return (
             <main className="destination-detail">
@@ -77,6 +87,20 @@ function DestinationDetail() {
                     </ul>
                     <h3>{currentDestinationData.promotional_catch}</h3>
                 </ContentSection>
+                <SliderTool 
+                    contentType="link-img"
+                    content={sliderPics}
+                    settings={{
+                        autoplay: true,
+                        arrows: false,
+                        dots: true,
+                        infinite: true,
+                        speed: 5000,
+                        slidesToShow: sliderCapacity,
+                        slidesToScroll: 1,
+                        centerMode: false
+                    }}
+                />
                 <section className="destination-search">
                     <h3>READY TO GO?</h3>
                     <FlightSearch fixedDestination={true} />

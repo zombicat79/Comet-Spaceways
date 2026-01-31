@@ -201,6 +201,10 @@
         }
     }
 
+    .slick-slider {
+        margin: 8rem 0;
+    }
+
     .destination-search {
         @include flex-column(center);
         padding-bottom: 16rem;
