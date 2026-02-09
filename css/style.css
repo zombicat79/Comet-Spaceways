@@ -80,9 +80,10 @@ body {
 
 /* MAIN CONTENT */
 main section {
-  padding: 8rem 5rem; }
-  main section:nth-child(odd):not(:first-child) {
-    background-color: #2c698d; }
+  padding: 8rem 5rem;
+  /* &:nth-child(odd):not(:first-child) {
+            background-color: $color-environmental-deep;
+        } */ }
   @media screen and (max-width: 1000px) {
     main section {
       padding: 5rem; } }
@@ -184,6 +185,18 @@ img {
     content: '..'; }
   100% {
     content: '...'; } }
+
+@keyframes object-clockwise-rotation {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes object-counterclockwise-rotation {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(-360deg); } }
 
 @font-face {
   font-family: roboto-extralight;
@@ -293,10 +306,15 @@ h1 {
   font-size: 4.5rem; }
 
 h2 {
-  font-size: 2.8rem; }
+  font-size: 2.8rem;
+  line-height: 3.5rem; }
 
 h3 {
-  font-size: 2rem; }
+  font-size: 2rem;
+  line-height: 3rem; }
+
+p {
+  font-size: 1.5rem; }
 
 .link:hover,
 .link--container,
@@ -464,6 +482,72 @@ h3 {
     gap: 3rem;
     margin-left: 1.5rem; }
 
+.tooltip {
+  color: #272643;
+  background-color: #e3f6f5;
+  border-radius: 1.5rem;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 4.5rem #00FFFF; }
+  .tooltip--ok {
+    background-color: #e3f6f5;
+    box-shadow: 0 0 4.5rem #00FFFF; }
+  .tooltip--ko {
+    background-color: #f59977;
+    box-shadow: 0 0 4.5rem #FF4500; }
+  .tooltip__title {
+    font-family: "poppins-bold";
+    font-size: 1.5rem; }
+
+.tag {
+  color: #272643;
+  background-color: #e3f6f5;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 4.5rem #00FFFF; }
+  .tag--smaller {
+    padding: .75rem 1.5rem;
+    font-size: 1.5rem; }
+  .tag--regular {
+    padding: 1rem 2rem;
+    font-size: 2rem; }
+  .tag:hover {
+    transform: scale(1.1); }
+  .tag__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem; }
+  .tag__content {
+    font-family: "poppins-bold";
+    text-transform: uppercase; }
+
+.infopanel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  color: #272643;
+  background-color: #e3f6f5;
+  max-width: 90vw;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 0 4.5rem #00FFFF; }
+  @media screen and (min-width: 2800px) {
+    .infopanel {
+      max-width: 75vw; } }
+  .infopanel--alert {
+    background-color: #ecf693;
+    box-shadow: 0 0 4.5rem #dff32a; }
+  .infopanel--error {
+    background-color: #f59977;
+    box-shadow: 0 0 4.5rem #FF4500; }
+  .infopanel--success {
+    background-color: #88f588;
+    box-shadow: 0 0 4.5rem #32CD32; }
+  .infopanel__icon {
+    font-size: 3.5rem; }
+
 .quantifier {
   display: flex;
   justify-content: space-between;
@@ -530,8 +614,9 @@ h3 {
     .selector--disabled:hover {
       cursor: not-allowed; }
   .selector--error {
-    border: 1px solid #FF4500 !important;
-    color: #FF4500; }
+    border: 1px solid #FF4500 !important; }
+    .selector--error .selector__choice--quantity {
+      color: #FF4500; }
     .selector--error .selector__value {
       filter: opacity(0.3); }
   .selector__id {
@@ -637,6 +722,26 @@ h3 {
     background-image: linear-gradient(to right, rgba(11, 61, 145, 0.3), rgba(18, 18, 18, 0.55)), url("./../assets/images/black-hole_banner.webp"); }
   .banner--5 {
     background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp"); }
+  .banner--6 {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/milky_way_background.webp"); }
+  .banner--LUN {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/LUN/moon.webp"); }
+  .banner--CEL {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/CEL/celestia.webp"); }
+  .banner--EEU {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/EEU/earth-europe.webp"); }
+  .banner--EAS {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/EAS/earth-asia.webp"); }
+  .banner--EAM {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/EAM/earth-america.webp"); }
+  .banner--MRS {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/MRS/mars.webp"); }
+  .banner--VEN {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/VEN/venus.webp"); }
+  .banner--CRS {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/CRS/ceres.webp"); }
+  .banner--TTN {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/TTN/titan.webp"); }
   .banner__msg {
     width: 90%;
     position: absolute;
@@ -666,7 +771,8 @@ h3 {
       transform: translateX(-50%); } }
 
 .pricetag {
-  position: relative; }
+  position: relative;
+  margin-top: 1rem; }
   .pricetag__prefix {
     color: #2c698d; }
   .pricetag__amount {
@@ -685,11 +791,18 @@ h3 {
 
 .card {
   background-color: #e3f6f5;
-  height: 30rem;
+  height: 40rem;
   border-radius: 1.5rem;
   min-width: 20rem;
   max-width: 30rem;
   transition: all 1s; }
+  @media screen and (max-width: 600px) {
+    .card {
+      height: 50rem; } }
+  .card--h30 {
+    height: 30rem; }
+  .card--h50 {
+    height: 50rem; }
   .card:hover {
     box-shadow: 0 0 15px #00FFFF;
     transform: scale(1.05); }
@@ -702,14 +815,24 @@ h3 {
     border-top-right-radius: 1.5rem;
     background-size: cover;
     background-repeat: no-repeat; }
+    .card__img--earth-europe {
+      background-image: url("./../assets/images/destinations/EEU/earth-europe.webp"); }
+    .card__img--earth-asia {
+      background-image: url("./../assets/images/destinations/EAS/earth-asia.webp"); }
+    .card__img--earth-america {
+      background-image: url("./../assets/images/destinations/EAM/earth-america.webp"); }
     .card__img--celestia {
-      background-image: url("./../assets/images/celestia.webp"); }
+      background-image: url("./../assets/images/destinations/CEL/celestia.webp"); }
+    .card__img--ceres {
+      background-image: url("./../assets/images/destinations/CRS/ceres.webp"); }
     .card__img--moon {
-      background-image: url("./../assets/images/moon.webp"); }
+      background-image: url("./../assets/images/destinations/LUN/moon.webp"); }
     .card__img--venus {
-      background-image: url("./../assets/images/venus.webp"); }
+      background-image: url("./../assets/images/destinations/VEN/venus.webp"); }
     .card__img--mars {
-      background-image: url("./../assets/images/mars.webp"); }
+      background-image: url("./../assets/images/destinations/MRS/mars.webp"); }
+    .card__img--titan {
+      background-image: url("./../assets/images/destinations/TTN/titan.webp"); }
   .card__content {
     display: flex;
     flex-direction: column;
@@ -725,12 +848,71 @@ h3 {
     font-family: 'poppins-extrabold';
     font-size: 2rem;
     text-transform: uppercase; }
+    .card__heading .card__subtitle {
+      font-family: 'poppins-regular';
+      font-size: 1.2rem;
+      font-style: italic; }
   .card__body {
     width: 100%;
     font-family: 'roboto-regular';
     font-size: 1.4rem; }
     .card__body .pricetag {
       width: 100%; }
+
+.figure--vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.figure--vertical-reverse {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse; }
+
+.figure--horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.figure--horizontal-reverse {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse; }
+
+.figure__img-wrapper {
+  display: flex;
+  width: 45%; }
+  .figure__img-wrapper--left {
+    justify-content: flex-start; }
+  .figure__img-wrapper--right {
+    justify-content: flex-end; }
+  .figure__img-wrapper:hover {
+    transform: scale(1.05);
+    cursor: zoom-in; }
+
+.figure__img {
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+  max-height: 30rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 4.5rem #4B0082; }
+  .figure__img--left {
+    margin-right: auto; }
+  .figure__img--right {
+    margin-left: auto; }
+
+.figure__text {
+  width: 55%;
+  display: inline-block; }
+  .figure__text--left {
+    text-align: left; }
+  .figure__text--right {
+    text-align: right; }
 
 .intersection--cosmic {
   position: relative;
@@ -1607,6 +1789,187 @@ h3 {
     .routing__diagram .routing__arrow svg {
       transform: rotate(90deg); }
 
+.stellar-map {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 90rem; }
+  .stellar-map__star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 1px 15px 80px white, 1px -15px 80px white, 40px 10px 80px white, -40px 10px 80px white; }
+    @media screen and (max-width: 360px) {
+      .stellar-map__star {
+        width: 35px;
+        height: 35px; } }
+    @media screen and (min-width: 2000px) {
+      .stellar-map__star {
+        width: 80px;
+        height: 80px; } }
+    @media screen and (min-width: 2800px) {
+      .stellar-map__star {
+        width: 120px;
+        height: 120px; } }
+    @media screen and (min-width: 3500px) {
+      .stellar-map__star {
+        width: 140px;
+        height: 140px; } }
+    .stellar-map__star:hover {
+      background-color: #f3f3a5;
+      box-shadow: 1px 15px 80px #f3f3a5, 1px -15px 80px #f3f3a5, 40px 10px 80px #f3f3a5, -40px 10px 80px #f3f3a5;
+      cursor: pointer; }
+  .stellar-map .orbit {
+    border-radius: 50%;
+    border: 1px solid #e3f6f5; }
+    .stellar-map .orbit--outermost {
+      animation-name: object-counterclockwise-rotation;
+      animation-duration: 75s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite; }
+    .stellar-map .orbit:not(.orbit--outermost) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .stellar-map .orbit--90deg:not(.orbit--outermost) {
+      transform: translate(-50%, -50%) rotate(90deg); }
+    .stellar-map .orbit--180deg:not(.orbit--outermost) {
+      transform: translate(-50%, -50%) rotate(180deg); }
+    .stellar-map .orbit--270deg:not(.orbit--outermost) {
+      transform: translate(-50%, -50%) rotate(270deg); }
+    .stellar-map .orbit--asteroid {
+      border: 1px dashed #e3f6f5; }
+    .stellar-map .orbit--30ua {
+      width: 90rem;
+      height: 90rem; }
+    .stellar-map .orbit--20ua {
+      width: 65rem;
+      height: 65rem; }
+    .stellar-map .orbit--10ua {
+      width: 40rem;
+      height: 40rem; }
+    .stellar-map .orbit--5ua {
+      width: 27.5rem;
+      height: 27.5rem; }
+    .stellar-map .orbit--3ua {
+      width: 22.5rem;
+      height: 22.5rem; }
+    .stellar-map .orbit--1halfua {
+      width: 18.75rem;
+      height: 18.75rem; }
+    .stellar-map .orbit--1ua {
+      width: 15rem;
+      height: 15rem; }
+    .stellar-map .orbit--3quarterua {
+      width: 13rem;
+      height: 13rem; }
+    .stellar-map .orbit--halfua {
+      width: 10rem;
+      height: 10rem; }
+    .stellar-map .orbit__object {
+      position: absolute;
+      top: 50%;
+      border-radius: 50%; }
+      .stellar-map .orbit__object--ringed-true:after {
+        content: "";
+        display: inline-block;
+        position: relative;
+        left: -15%;
+        width: 125%;
+        height: 3px;
+        background-color: #e3f6f5;
+        border-top: 1px solid #0B3D91;
+        border-bottom: 1px solid #0B3D91;
+        transform: rotate(45deg) skewX(85deg); }
+      .stellar-map .orbit__object--gigantic {
+        left: -1.5rem;
+        width: 3rem;
+        height: 3rem; }
+      .stellar-map .orbit__object--big {
+        left: -1rem;
+        width: 2rem;
+        height: 2rem; }
+      .stellar-map .orbit__object--regular {
+        left: -0.5rem;
+        width: 1rem;
+        height: 1rem; }
+      .stellar-map .orbit__object--small {
+        left: -0.3rem;
+        width: .5rem;
+        height: .5rem; }
+      .stellar-map .orbit__object--solid--yellow {
+        background-color: yellow; }
+      .stellar-map .orbit__object--solid--red {
+        background-color: red; }
+      .stellar-map .orbit__object--solid--brown {
+        background-color: brown; }
+      .stellar-map .orbit__object--solid--grey {
+        background-color: grey; }
+      .stellar-map .orbit__object--gradient--azure {
+        background: linear-gradient(lightgreen, #308EAA); }
+      .stellar-map .orbit__object--gradient--blue {
+        background: linear-gradient(black, #4B70DD); }
+      .stellar-map .orbit__object--gradient--brown {
+        background: linear-gradient(black, #E3AD71); }
+      .stellar-map .orbit__object--gradient--jupiter {
+        background: linear-gradient(to right, grey, #E3AD71, #a75959, #E3AD71, #E3AD71, grey); }
+        .stellar-map .orbit__object--gradient--jupiter:after {
+          content: "";
+          display: inline-block;
+          position: relative;
+          left: -3px;
+          top: 3px;
+          background: rgba(255, 0, 0, 0.75);
+          border-radius: 50%;
+          width: .5rem;
+          height: 1rem;
+          box-shadow: 1px 1px 5px red, 1px -1px 5px red; }
+      .stellar-map .orbit__object--gradient--earth {
+        background: linear-gradient(skyblue, #E3AD71, lightgreen, skyblue); }
+      .stellar-map .orbit__object--clickable-true:hover {
+        border: 2px solid white;
+        cursor: pointer; }
+      .stellar-map .orbit__object--clickable-false:hover {
+        cursor: not-allowed; }
+
+.slick-slider .slick-list {
+  overflow: visible !important; }
+  .slick-slider .slick-list .slick-slide.slick-current {
+    transform: scale(1.25); }
+    .slick-slider .slick-list .slick-slide.slick-current img {
+      box-shadow: 0 0 4.5rem #4B0082; }
+  .slick-slider .slick-list .slick-slide:not(.slick-current) {
+    filter: brightness(0.25);
+    pointer-events: none; }
+  @media screen and (max-width: 480px) {
+    .slick-slider .slick-list .slick-slide.slick-current {
+      transform: scale(1.25); }
+      .slick-slider .slick-list .slick-slide.slick-current img {
+        box-shadow: 0 0 4.5rem #4B0082; }
+    .slick-slider .slick-list .slick-slide:not(.slick-current) + div {
+      filter: none;
+      pointer-events: initial; } }
+  .slick-slider .slick-list .slick-slide img {
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    max-width: 20rem; }
+    @media screen and (min-width: 1280px) {
+      .slick-slider .slick-list .slick-slide img {
+        max-width: 30rem; } }
+
+.slick-slider .slick-dots {
+  bottom: -35%; }
+  .slick-slider .slick-dots li button:before {
+    color: #00FFFF; }
+  .slick-slider .slick-dots li.slick-active button:before {
+    color: #ffffff; }
+
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
 
@@ -2221,6 +2584,8 @@ h3 {
     @media screen and (min-width: 2800px) {
       .content-section__body {
         max-width: 75vw; } }
+    .content-section__body > *:not(:last-child) {
+      margin-bottom: 5rem; }
 
 .homepage {
   position: relative;
@@ -2272,6 +2637,148 @@ h3 {
     animation-duration: 3s;
     animation-fill-mode: forwards; }
 
+.destinations {
+  position: relative;
+  z-index: 3;
+  padding: 10rem 0;
+  background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.15)), url("./../assets/images/milky_way_background.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  .destinations--loading {
+    height: 100vh; }
+  .destinations .tooltip {
+    position: fixed;
+    bottom: 5%;
+    right: 5%; }
+  .destinations__heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0; }
+    .destinations__heading h2 {
+      width: 50%;
+      line-height: 4rem; }
+  .destinations .stellar-map {
+    margin-bottom: 10rem; }
+  .destinations .searchtool {
+    margin-bottom: 7rem; }
+  .destinations__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    gap: 10rem; }
+    @media screen and (max-width: 1000px) {
+      .destinations__list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        row-gap: 5rem; } }
+    @media screen and (max-width: 768px) {
+      .destinations__list {
+        grid-template-columns: 1fr; } }
+    @media screen and (min-width: 2800px) {
+      .destinations__list {
+        width: 75%;
+        margin: 0 auto; } }
+    .destinations__list a, .destinations__list .card {
+      width: 100%; }
+    .destinations__list a {
+      display: flex;
+      justify-content: center; }
+    .destinations__list .infopanel {
+      grid-column: 1 / -1; }
+  .destinations__search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem; }
+    .destinations__search h3 {
+      margin: 0 2rem 3rem; }
+  @media screen and (max-width: 600px) {
+    .destinations h2, .destinations h3 {
+      font-size: 2rem; } }
+  @media screen and (max-width: 360px) {
+    .destinations h2, .destinations h3 {
+      font-size: 1.5rem; } }
+
+.destination-detail {
+  position: relative;
+  z-index: 3; }
+  @media screen and (min-width: 2800px) {
+    .destination-detail .banner {
+      background-position-y: 50%; } }
+  @media screen and (max-width: 768px) {
+    .destination-detail .banner--CEL {
+      background-position-x: 75%; } }
+  @media screen and (max-width: 480px) {
+    .destination-detail .banner--CEL {
+      background-position-x: 85%; } }
+  @media screen and (min-width: 2800px) {
+    .destination-detail .banner--EEU {
+      background-position-y: 25%; } }
+  @media screen and (max-width: 600px) {
+    .destination-detail .banner--EEU, .destination-detail .banner--EAS, .destination-detail .banner--EAM {
+      background-position-x: 55%; } }
+  @media screen and (max-width: 768px) {
+    .destination-detail .banner--VEN, .destination-detail .banner--TTN {
+      background-position-x: 40%; } }
+  @media screen and (max-width: 600px) {
+    .destination-detail .banner__msg {
+      text-align: center; } }
+  @media screen and (max-width: 600px) {
+    .destination-detail .banner__msg .banner__heading {
+      font-size: 3rem; } }
+  .destination-detail .banner__msg .banner__text {
+    font-style: italic;
+    font-size: 2rem; }
+    @media screen and (max-width: 1000px) {
+      .destination-detail .banner__msg .banner__text {
+        max-width: none;
+        margin: 0; } }
+  .destination-detail .destination-tags {
+    padding: 3rem; }
+  .destination-detail .features__list {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto; }
+    .destination-detail .features__list .figure {
+      gap: 5rem; }
+    @media screen and (max-width: 1000px) {
+      .destination-detail .features__list .features__element:not(:last-child) {
+        margin-bottom: 5rem; }
+      .destination-detail .features__list .figure {
+        gap: 3rem; }
+      .destination-detail .features__list .figure--horizontal,
+      .destination-detail .features__list .figure--horizontal-reverse {
+        flex-direction: column; }
+        .destination-detail .features__list .figure--horizontal .figure__img-wrapper,
+        .destination-detail .features__list .figure--horizontal-reverse .figure__img-wrapper {
+          width: 100%; }
+          .destination-detail .features__list .figure--horizontal .figure__img-wrapper .figure__img,
+          .destination-detail .features__list .figure--horizontal-reverse .figure__img-wrapper .figure__img {
+            max-width: 80%;
+            max-height: 40rem;
+            margin: 0 auto; }
+        .destination-detail .features__list .figure--horizontal .figure__text,
+        .destination-detail .features__list .figure--horizontal-reverse .figure__text {
+          text-align: center; } }
+    @media screen and (min-width: 1280px) {
+      .destination-detail .features__list {
+        width: 80%; }
+        .destination-detail .features__list .figure {
+          gap: 3rem; } }
+  .destination-detail .slick-slider {
+    margin: 8rem 0; }
+  .destination-detail .destination-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 16rem; }
+
 .tickets {
   position: relative;
   z-index: 2;
@@ -2289,7 +2796,7 @@ h3 {
       .tickets .btn--primary {
         width: 30rem; } }
 
-.details {
+.passenger-details {
   position: relative;
   z-index: 2;
   height: 100vh;

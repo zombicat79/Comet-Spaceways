@@ -6,7 +6,9 @@ import MinAppLayout from "./layout/MinAppLayout";
 import Home from './pages/Home';
 import FlightFetcher from "./components/flight/FlightFetcher";
 import FlightScheduleLoader from "./components/flight/FlightScheduleLoader";
-import PassengerDetails from "./pages/purchase/Details";
+import PassengerDetails from "./pages/purchase/PassengerDetails";
+import DestinationsIndex from "./pages/destinations/DestinationsIndex";
+import DestinationDetail from "./pages/destinations/DestinationDetail";
 import NotFound from "./pages/NotFound";
 
 import { fetchFlights } from "./components/flight/FlightScheduleLoader";
@@ -29,6 +31,13 @@ const router = createBrowserRouter([
                         { path: 'flight-data', Component: FlightScheduleLoader, loader: fetchFlights }
                     ]},
                     { path: 'details', Component: PassengerDetails }
+                ]
+            },
+            {
+                path: 'destinations',
+                children: [
+                    { index: true, Component: DestinationsIndex },
+                    { path: "*", Component: DestinationDetail },
                 ]
             }
         ]

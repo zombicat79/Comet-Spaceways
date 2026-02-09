@@ -8,11 +8,12 @@ import Selector from "../Selector";
 import Button from "../Button";
 import FlightPreview from './FlightPreview';
 
-function FlightSearch() {
+function FlightSearch({ fixedDestination }) {
     const { flightSearchState, changeFlightSearchState } = useContext(FlightSearchContext);
     const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
     const { humanoids, nhes, minors, pets } = flightSearchState.passengers;
     const navigate = useNavigate();
+    const noGo = (!humanoids && !nhes && !minors && !pets) || flightSearchState.origin === '--';
 
     function handleReverseChoice() {
         changeFlightSearchState({ 
@@ -85,21 +86,26 @@ function FlightSearch() {
                     identifier="Origin"
                     initialValue={flightSearchState.origin}
                     choiceOptions={flightSearchState.destinationOffer}
+                    cssModifier={flightSearchState.origin === '--' ? 'error' : null}
                 />
-                <svg onClick={handleReverseChoice} className="flightsearch__icon flightsearch__icon--reversal" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
-                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path fill="#494c4e" d="M17.6,4.2l-4-3a1,1,0,0,0-1.05-.09A.977.977,0,0,0,12,2V4H1A1,1,0,0,0,1,6H12V8a.988.988,0,0,0,.55.89A.99.99,0,0,0,13.6,8.8l4-3a1,1,0,0,0,0-1.6Z"></path>
-                        <path fill="#494c4e" d="M.4,12.2l4-3a1,1,0,0,1,1.05-.09A.977.977,0,0,1,6,10v2H17a1,1,0,0,1,0,2H6v2a.988.988,0,0,1-.55.89A.99.99,0,0,1,4.4,16.8l-4-3a1,1,0,0,1,0-1.6Z"></path>
-                    </g>
-                </svg>
-                <Selector
-                    type="regular"
-                    identifier="Destination"
-                    initialValue={flightSearchState.destination}
-                    choiceOptions={flightSearchState.destinationOffer} 
-                />
+                {!fixedDestination &&
+                    <>
+                    <svg onClick={handleReverseChoice} className="flightsearch__icon flightsearch__icon--reversal" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
+                        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path fill="#494c4e" d="M17.6,4.2l-4-3a1,1,0,0,0-1.05-.09A.977.977,0,0,0,12,2V4H1A1,1,0,0,0,1,6H12V8a.988.988,0,0,0,.55.89A.99.99,0,0,0,13.6,8.8l4-3a1,1,0,0,0,0-1.6Z"></path>
+                            <path fill="#494c4e" d="M.4,12.2l4-3a1,1,0,0,1,1.05-.09A.977.977,0,0,1,6,10v2H17a1,1,0,0,1,0,2H6v2a.988.988,0,0,1-.55.89A.99.99,0,0,1,4.4,16.8l-4-3a1,1,0,0,1,0-1.6Z"></path>
+                        </g>
+                    </svg>
+                    <Selector
+                        type="regular"
+                        identifier="Destination"
+                        initialValue={flightSearchState.destination}
+                        choiceOptions={flightSearchState.destinationOffer} 
+                    />
+                    </>
+                }
             </div>
             <Selector 
                 type="date"
@@ -125,7 +131,7 @@ function FlightSearch() {
                 cssModifier={(!humanoids && !nhes && !minors && !pets) ? 'error' : null}
             />
 
-            <Button type="secondary" text="search" />
+            <Button type="secondary" text="search" isDisabled={noGo} />
         </form>
     )
 }

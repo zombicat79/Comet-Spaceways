@@ -1,7 +1,7 @@
 import { useEffect, useContext } from 'react';
 import { LayoutContext } from '../contexts/LayoutContext';
 import { CartContext } from '../contexts/CartContext';
-import { Outlet, useLocation } from 'react-router';
+import { Outlet, useLocation, useNavigate } from 'react-router';
 
 import ScrollBlocker from './ScrollBlocker';
 import Header from './headers/Header';
@@ -16,6 +16,7 @@ function AppLayout() {
     const { dispatch } = useContext(LayoutContext);
     const { cartState } = useContext(CartContext);
     const location = useLocation();
+    const navigate = useNavigate();
     let renderedHeader = ''
     switch(true) {
         case location.pathname.includes('purchase'):
@@ -48,6 +49,7 @@ function AppLayout() {
             <Aside side="right" />
             <Footer />
             <Subfooter />
+            
             {renderedHeader === 'purchase' && 
                 <FloatingButton 
                     position="bottom-right" 
@@ -56,6 +58,17 @@ function AppLayout() {
                     bgColor="green" 
                     outlineColor="#121212"
                     opacity={cartState.outboundFlight || cartState.inboundFlight ? "full" : "dimmed"} 
+            />}
+
+            {/* Floating button for destination detail pages */}
+            {/\/[A-Z]{3}$/.test(location.pathname) && 
+                <FloatingButton 
+                    position="bottom-right" 
+                    action={() => navigate("/destinations")} 
+                    icon="planet" 
+                    bgColor="green" 
+                    outlineColor="#121212"
+                    opacity="full" 
             />}
         </>
     )

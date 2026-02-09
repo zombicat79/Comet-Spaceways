@@ -1,0 +1,131 @@
+import { useState, useEffect, useContext, useRef } from 'react';
+import { useLocation } from 'react-router';
+import { LayoutContext } from '../../contexts/LayoutContext';
+import { DestinationsContext } from '../../contexts/DestinationsContext';
+
+import Tooltip from "../../components/Tooltip";
+import InfoPanel from '../../components/InfoPanel';
+import Banner from "../../components/Banner";
+import StellarMap from '../../components/StellarMap';
+import SearchTool from '../../components/SearchTool';
+import Card from './../../components/Card';
+import PriceTag from '../../components/PriceTag';
+import FlightSearch from './../../components/flight/FlightSearch';
+
+import { filterSearch } from '../../utilities/utils';
+
+function DestinationsIndex() {
+    const [loading, setLoading] = useState(false);
+    const [filteredDestinations, setFilteredDestinations] = useState([]);
+    const [tooltip, setTooltip] = useState({ active: false, text: "", color: "" });
+    const { dispatch, layoutState } = useContext(LayoutContext);
+    const { destinations } = useContext(DestinationsContext);
+    const location = useLocation();
+    const destinationList = useRef(null);
+
+    const handleFilter = (query, dataSection) => {
+        const filterResult = filterSearch(query, destinations, dataSection || null);
+        setFilteredDestinations(filterResult);
+    }
+
+    const handleFilterReset = () => setFilteredDestinations([]);
+
+    const handleTooltip = (action, payload) => {
+        action === "show" ? setTooltip({ active: true, text: payload.text, color: payload.color}) : setTooltip({ active: false, text: "", color: "" });
+    }
+
+    useEffect(() => {
+        if (destinations.length <= 0) {
+            dispatch({ type: "set/scroll", payload: false });
+            dispatch({ type: "set/loader", payload: true });
+            setLoading(true);
+        } else {
+            dispatch({ type: "set/scroll", payload: true });
+            dispatch({ type: "set/loader", payload: false });
+            setLoading(false);
+        }
+    },[destinations])
+
+    useEffect(() => {
+        if (destinationList.current) {
+            destinationList.current.scrollIntoView({ block: "center", behavior: "smooth" });
+        }
+    }, [filteredDestinations])
+
+    useEffect(() => {
+        if (location.search) {
+            const query = location.search.replace('?query=', '').replace(/%20/g, ' ');
+            handleFilter(query)
+        }
+    }, [location.search])
+
+    if (!loading) {
+        return (
+            <main className="destinations">
+                {layoutState.viewportWidth >= 1000 && tooltip.active && <Tooltip title={tooltip.text.toUpperCase()} color={tooltip.color} />}
+                {layoutState.viewportWidth >= 1000 
+                    ?<div className="destinations__heading">
+                        <h2>OUR DESTINATIONS WITHIN THE SOLAR SYSTEM</h2>
+                        <p>Click objects on the stellar map to filter down</p>
+                        <p>Click on the Sun ☀️ to remove filters</p>
+                    </div>
+                    :<div className="destinations__heading">
+                        <h2>OUR DESTINATIONS WITHIN THE SOLAR SYSTEM</h2>
+                    </div>
+                }
+                {layoutState.viewportWidth >= 1000 
+                    ? <StellarMap onFilter={handleFilter} onFilterReset={handleFilterReset} onTooltip={handleTooltip} />
+                    : <SearchTool onFilter={handleFilter} />
+                }
+                <div className="destinations__list" ref={destinationList}>
+                    {destinations.map((el) => {
+                        if (filteredDestinations.length === 0 || filteredDestinations.includes(el.id)) {
+                            return (
+                                <Card key={el.id} bgImg={el.cover_img} link={el.port}>
+                                    <div className="card__heading">
+                                        <h4 className="card__title">{el.full_name}</h4>
+                                        <h5 className="card__subtitle">{el.alias} - ({el.port})</h5>
+                                    </div>
+                                    <div className="card__body">
+                                        <p>{el.intro}</p>
+                                        <PriceTag 
+                                            price={el.lowest_accessibility} 
+                                            priceType="initial"
+                                            currency="au"
+                                        />
+                                    </div>
+                                </Card>
+                            )
+                        }
+
+                        return null;
+                    })}
+
+                    {filteredDestinations.length > 0 && filteredDestinations[0] === null && 
+                        <InfoPanel type="alert">
+                            <p>Ooops, we couldn't find a single thing in the Universe matching your search...</p>
+                        </InfoPanel>
+                    }
+                </div>
+                <div className="destinations__search">
+                    <h3>WHERE DO YOU FANCY GOING?</h3>
+                    <FlightSearch />
+                </div>
+            </main>
+        )
+    }
+
+    return (
+        <main className="destinations destinations--loading">
+            <Banner
+                textStyle={{ color: 'default', align: 'center' }}
+                textContent={{
+                    heading: 'Fetching destinations...',
+                }}
+                background={{ img: 'milky', height: 'full' }}
+            />
+        </main>
+    )
+}
+
+export default DestinationsIndex;

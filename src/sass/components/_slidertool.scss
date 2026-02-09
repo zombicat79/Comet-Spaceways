@@ -1,0 +1,57 @@
+.slick-slider {
+    .slick-list {
+        overflow: visible !important;
+    
+        .slick-slide {
+            
+            &.slick-current{
+                transform: scale(1.25);
+    
+                img {
+                    box-shadow: 0 0 4.5rem $color-environmental-accent;
+                }
+            }
+            
+            &:not(.slick-current) {
+                filter: brightness(0.25);
+                pointer-events: none;
+            }
+
+            @include respond(phone-medium) {
+                &.slick-current {
+                    transform: scale(1.25);
+        
+                    img {
+                        box-shadow: 0 0 4.5rem $color-environmental-accent;
+                    }
+                }
+
+                &:not(.slick-current) + div {
+                    filter: none;
+                    pointer-events: initial;
+                }
+            }
+        
+            & img {
+                margin: 0 auto;
+                border-radius: 1.5rem;
+                max-width: 20rem;
+
+                @include respond(desktop) {
+                    max-width: 30rem;
+                }
+            }
+        }
+    }
+    
+    .slick-dots {
+        bottom: -35%;
+
+        li button:before {
+            color: $color-highlight-light;
+        }
+        li.slick-active button:before {
+            color: $color-environmental-light;
+        }
+    }
+}

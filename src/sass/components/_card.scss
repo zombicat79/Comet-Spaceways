@@ -1,10 +1,21 @@
 .card {
     background-color: $color-body-light;
-    height: 30rem;
+    height: 40rem;
     border-radius: 1.5rem;
     min-width: 20rem;
     max-width: 30rem;
     transition: all 1s;
+    @include respond(phone) {
+        height: 50rem;
+    }
+
+    &--h30 {
+        height: 30rem;
+    }
+
+    &--h50 {
+        height: 50rem;
+    }
 
     &:hover {
         @include primary-response;
@@ -22,20 +33,40 @@
         background-size: cover;
         background-repeat: no-repeat;
 
+        &--earth-europe {
+            background-image: url('./../assets/images/destinations/EEU/earth-europe.webp');
+        }
+
+        &--earth-asia {
+            background-image: url('./../assets/images/destinations/EAS/earth-asia.webp');
+        }
+
+        &--earth-america {
+            background-image: url('./../assets/images/destinations/EAM/earth-america.webp');
+        }
+
         &--celestia {
-            background-image: url('./../assets/images/celestia.webp');
+            background-image: url('./../assets/images/destinations/CEL/celestia.webp');
+        }
+
+        &--ceres {
+            background-image: url('./../assets/images/destinations/CRS/ceres.webp');
         }
 
         &--moon {
-            background-image: url('./../assets/images/moon.webp');
+            background-image: url('./../assets/images/destinations/LUN/moon.webp');
         }
 
         &--venus {
-            background-image: url('./../assets/images/venus.webp');
+            background-image: url('./../assets/images/destinations/VEN/venus.webp');
         }
 
         &--mars {
-            background-image: url('./../assets/images/mars.webp');
+            background-image: url('./../assets/images/destinations/MRS/mars.webp');
+        }
+
+        &--titan {
+            background-image: url('./../assets/images/destinations/TTN/titan.webp');
         }
     }
 
@@ -53,6 +84,12 @@
         font-family: 'poppins-extrabold';
         font-size: $size-extrabig;
         text-transform: uppercase;
+
+        .card__subtitle {
+            font-family: 'poppins-regular';
+            font-size: $size-small;
+            font-style: italic;
+        }
     }
 
     &__body {

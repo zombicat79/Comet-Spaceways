@@ -1,0 +1,226 @@
+.stellar-map {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 90rem;
+
+    &__star {
+        @include absolute-center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 1px 15px 80px white, 1px -15px 80px white, 40px 10px 80px white, -40px 10px 80px white;
+
+        @include respond(phone-small) {
+            width: 35px;
+            height: 35px;
+        }
+
+        @include respond(big-screen) {
+            width: 80px;
+            height: 80px;
+        }
+        @include respond(huge-screen) {
+            width: 120px;
+            height: 120px;
+        }
+        @include respond(giant-screen) {
+            width: 140px;
+            height: 140px;
+        }
+
+        &:hover {
+            background-color: rgb(243, 243, 165);
+            box-shadow: 1px 15px 80px rgb(243, 243, 165), 1px -15px 80px rgb(243, 243, 165), 40px 10px 80px rgb(243, 243, 165), -40px 10px 80px rgb(243, 243, 165);
+            cursor: pointer;
+        }
+    }
+
+    .orbit {
+        border-radius: 50%;
+        border: 1px solid $color-body-light;
+
+        &--outermost {
+            animation-name: object-counterclockwise-rotation;
+            animation-duration: 75s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        &:not(.orbit--outermost) {
+            @include absolute-center();
+        }
+
+        &--90deg:not(.orbit--outermost) {
+            transform: translate(-50%, -50%) rotate(90deg);
+         }
+
+        &--180deg:not(.orbit--outermost) {
+           transform: translate(-50%, -50%) rotate(180deg);
+        }
+
+        &--270deg:not(.orbit--outermost) {
+            transform: translate(-50%, -50%) rotate(270deg);
+         }
+
+        // TYPE
+        &--asteroid {
+            border: 1px dashed $color-body-light;
+        }
+
+        // DISTANCE
+        &--30ua {
+            width: 90rem;
+            height: 90rem;
+        }
+
+        &--20ua {
+            width: 65rem;
+            height: 65rem;
+        }
+
+        &--10ua {
+            width: 40rem;
+            height: 40rem;
+        }
+
+        &--5ua {
+            width: 27.5rem;
+            height: 27.5rem;
+        }
+
+        &--3ua {
+            width: 22.5rem;
+            height: 22.5rem;
+        }
+
+        &--1halfua {
+            width: 18.75rem;
+            height: 18.75rem;
+        }
+
+        &--1ua {
+            width: 15rem;
+            height: 15rem;
+        }
+
+        &--3quarterua {
+            width: 13rem;
+            height: 13rem;
+        }
+
+        &--halfua {
+            width: 10rem;
+            height: 10rem;
+        }
+
+        &__object {
+            position: absolute;
+            top: 50%;
+            border-radius: 50%;
+
+            // GARNMENTS
+            &--ringed-true:after {
+                content: "";
+                display: inline-block;
+                position: relative;
+                left: -15%;
+                width: 125%;
+                height: 3px;
+                background-color: $color-body-light;
+                border-top: 1px solid $color-environmental-deep;
+                border-bottom: 1px solid $color-environmental-deep;
+                transform: rotate(45deg) skewX(85deg);
+            }
+
+            // SIZE
+            &--gigantic {
+                left: -1.5rem;
+                width: 3rem;
+                height: 3rem;
+            }
+
+            &--big {
+                left: -1rem;
+                width: 2rem;
+                height: 2rem;
+            }
+
+            &--regular {
+                left: -0.5rem;
+                width: 1rem;
+                height: 1rem;
+            }
+
+            &--small {
+                left: -0.3rem;
+                width: .5rem;
+                height: .5rem;
+            }
+
+            // COLOR
+            &--solid {
+                &--yellow {
+                    background-color: yellow;
+                }
+
+                &--red {
+                    background-color: red;
+                }
+
+                &--brown {
+                    background-color: brown;
+                }
+
+                &--grey {
+                    background-color: grey;
+                }
+            }
+
+            &--gradient {
+                &--azure {
+                    background: linear-gradient(lightgreen, #308EAA);
+                }
+
+                &--blue {
+                    background: linear-gradient(black, #4B70DD);
+                }
+
+                &--brown {
+                    background: linear-gradient(black, #E3AD71);
+                }
+
+                &--jupiter {
+                    background: linear-gradient(to right, grey, #E3AD71, rgb(167, 89, 89), #E3AD71, #E3AD71, grey);
+                    
+                    &:after {
+                        content: "";
+                        display: inline-block;
+                        position: relative;
+                        left: -3px;
+                        top: 3px;
+                        background: rgba(255, 0, 0, .75);
+                        border-radius: 50%;
+                        width: .5rem;
+                        height: 1rem;
+                        box-shadow: 1px 1px 5px red, 1px -1px 5px red;
+                    }
+                }
+
+                &--earth {
+                    background: linear-gradient(skyblue, #E3AD71, lightgreen, skyblue);
+                }
+            }
+
+            // INTERACTION
+            &--clickable-true:hover {
+                border: 2px solid white;
+                cursor: pointer;
+            }
+            &--clickable-false:hover {
+                cursor: not-allowed;
+            }
+        }
+    }
+}
