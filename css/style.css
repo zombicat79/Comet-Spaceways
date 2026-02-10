@@ -1228,8 +1228,10 @@ p {
     @media screen and (max-width: 600px) {
       .infopiece__routing {
         justify-content: flex-start; } }
-  .infopiece__text:not(.infopiece__text:last-child) {
-    margin-bottom: 1.5rem; }
+  .infopiece__text {
+    font-size: 1.2rem; }
+    .infopiece__text:not(.infopiece__text:last-child) {
+      margin-bottom: 1.5rem; }
 
 .loader {
   position: absolute;

@@ -11,14 +11,16 @@ import SearchTool from '../../components/SearchTool';
 import Card from './../../components/Card';
 import PriceTag from '../../components/PriceTag';
 import FlightSearch from './../../components/flight/FlightSearch';
+import ErrorNotice from '../../components/infopieces/ErrorNotice';
 
 import { filterSearch } from '../../utilities/utils';
+import errors from '../../components/infopieces/errorTypes';
 
 function DestinationsIndex() {
     const [loading, setLoading] = useState(false);
     const [filteredDestinations, setFilteredDestinations] = useState([]);
     const [tooltip, setTooltip] = useState({ active: false, text: "", color: "" });
-    const { dispatch, layoutState } = useContext(LayoutContext);
+    const { dispatch, layoutState, handlePopupLaunch } = useContext(LayoutContext);
     const { destinations } = useContext(DestinationsContext);
     const location = useLocation();
     const destinationList = useRef(null);
@@ -35,14 +37,19 @@ function DestinationsIndex() {
     }
 
     useEffect(() => {
-        if (destinations.length <= 0) {
+        if (!destinations) {
+            console.log("chocho")
+            handlePopupLaunch({ modalClass: "generic", content: <ErrorNotice error={errors.destinationData} /> })
+        } else if (destinations.length <= 0) {
             dispatch({ type: "set/scroll", payload: false });
             dispatch({ type: "set/loader", payload: true });
             setLoading(true);
+            console.log("polla")
         } else {
             dispatch({ type: "set/scroll", payload: true });
             dispatch({ type: "set/loader", payload: false });
             setLoading(false);
+            console.log("pene")
         }
     },[destinations])
 
@@ -59,7 +66,7 @@ function DestinationsIndex() {
         }
     }, [location.search])
 
-    if (!loading) {
+    if (destinations && !loading) {
         return (
             <main className="destinations">
                 {layoutState.viewportWidth >= 1000 && tooltip.active && <Tooltip title={tooltip.text.toUpperCase()} color={tooltip.color} />}

@@ -18,7 +18,11 @@
         margin-top: 0;
     }
 
-    &__text:not(.infopiece__text:last-child) {
-        margin-bottom: 1.5rem;
+    &__text {
+        font-size: 1.2rem;
+
+        &:not(.infopiece__text:last-child) {
+            margin-bottom: 1.5rem;
+        }
     }
 }
