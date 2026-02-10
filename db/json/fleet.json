@@ -1,0 +1,224 @@
+{
+    "fleet": [
+        {
+            "id": 1,
+            "full_name": "Planet Jumper EV-1",
+            "maker": "Hanseo Galactic",
+            "category": "ascent",
+            "domains": [
+                "planetary orbit",
+                "navigation cluster"
+            ],
+            "uses": [
+                "ascent",
+                "descent",
+                "ferrying",
+                "short transfer"
+            ],
+            "capacity": {
+                "seats": 120,
+                "cabins": null,
+                "habitats": null
+            },
+            "amenities": null,
+            "includes": null,
+            "intro": "Humankind's first-ever step into outer space",
+            "description": "Step onto the Moon and into the future at Lunar Haven, humanity’s premier off-world settlement. Strategically located in the Sea of Tranquility, this thriving colony is more than just a destination; it’s a hub of innovation, research, and resource extraction at the edge of Mother Earth's sphere of influence.",
+            "features": [
+                "🔹 Exploration – Visit cutting-edge laboratories where scientists unlock the secrets of lunar geology, high-tech mining operations harvesting rare lunar resources, and self-sustaining bio-domes pioneering the future of off-world living.",
+                "🔹 Adventure – Experience the Moon’s rugged beauty on rover expeditions",
+                "🔹 Marvel – Witness history in the making as we forge the next chapter of human expansion beyond Earth."
+            ],
+            "cover_img": "moon.webp",
+            "pictures": [
+                "lunar-haven.webp",
+                "lunar-haven2.webp",
+                "lunar-haven3.webp",
+                "lunar-haven4.webp",
+                "lunar-haven5.webp",
+                "lunar-haven6.webp",
+                "lunar-haven7.webp",
+                "lunar-haven8.webp"
+            ]
+        },
+        {
+            "id": 2,
+            "full_name": "Space Elevator",
+            "maker": "EuroStar Consortium",
+            "category": "ascent",
+            "domains": [
+                "planetary orbit"
+            ],
+            "uses": [
+                "ascent",
+                "descent"
+            ],
+            "capacity": {
+                "seats": 350,
+                "cabins": null,
+                "habitats": null
+            },
+            "amenities": null,
+            "includes": null,
+            "intro": "Humankind's first-ever step into outer space",
+            "description": "Step onto the Moon and into the future at Lunar Haven, humanity’s premier off-world settlement. Strategically located in the Sea of Tranquility, this thriving colony is more than just a destination; it’s a hub of innovation, research, and resource extraction at the edge of Mother Earth's sphere of influence.",
+            "features": [
+                "🔹 Exploration – Visit cutting-edge laboratories where scientists unlock the secrets of lunar geology, high-tech mining operations harvesting rare lunar resources, and self-sustaining bio-domes pioneering the future of off-world living.",
+                "🔹 Adventure – Experience the Moon’s rugged beauty on rover expeditions",
+                "🔹 Marvel – Witness history in the making as we forge the next chapter of human expansion beyond Earth."
+            ],
+            "cover_img": "moon.webp",
+            "pictures": [
+                "lunar-haven.webp",
+                "lunar-haven2.webp",
+                "lunar-haven3.webp",
+                "lunar-haven4.webp",
+                "lunar-haven5.webp",
+                "lunar-haven6.webp",
+                "lunar-haven7.webp",
+                "lunar-haven8.webp"
+            ]
+        },
+        {
+            "id": 3,
+            "full_name": "Shooting Star D400",
+            "maker": "Bharat Interstellar",
+            "category": "short-haul",
+            "domains": [
+                "planetary orbit",
+                ""
+            ],
+            "uses": [
+                "ascent",
+                "descent",
+                "ferrying",
+                "short transfer"
+            ],
+            "capacity": {
+                "seats": 350,
+                "cabins": null,
+                "habitats": null
+            },
+            "amenities": null,
+            "includes": null,
+            "intro": "Humankind's first-ever step into outer space",
+            "description": "Step onto the Moon and into the future at Lunar Haven, humanity’s premier off-world settlement. Strategically located in the Sea of Tranquility, this thriving colony is more than just a destination; it’s a hub of innovation, research, and resource extraction at the edge of Mother Earth's sphere of influence.",
+            "features": [
+                "🔹 Exploration – Visit cutting-edge laboratories where scientists unlock the secrets of lunar geology, high-tech mining operations harvesting rare lunar resources, and self-sustaining bio-domes pioneering the future of off-world living.",
+                "🔹 Adventure – Experience the Moon’s rugged beauty on rover expeditions",
+                "🔹 Marvel – Witness history in the making as we forge the next chapter of human expansion beyond Earth."
+            ],
+            "cover_img": "moon.webp",
+            "pictures": [
+                "lunar-haven.webp",
+                "lunar-haven2.webp",
+                "lunar-haven3.webp",
+                "lunar-haven4.webp",
+                "lunar-haven5.webp",
+                "lunar-haven6.webp",
+                "lunar-haven7.webp",
+                "lunar-haven8.webp"
+            ]
+        },
+        {
+            "id": 4,
+            "full_name": "Spacebus NEXT",
+            "maker": "EuroStar Consortium",
+            "category": "medium-haul",
+            "domains": [
+                "planetary orbit",
+                ""
+            ],
+            "uses": [
+                "ascent",
+                "descent",
+                "ferrying",
+                "short transfer"
+            ],
+            "includes": [
+                {
+                    "vehicle_id": 1,
+                    "vehicle_full_name": "Planet Jumper EV-1",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "full_name": "Galaxy Jumbo W80",
+            "maker": "Zenith Motor Corp",
+            "category": "medium-haul",
+            "domains": [
+                "planetary orbit",
+                ""
+            ],
+            "uses": [
+                "ascent",
+                "descent",
+                "ferrying",
+                "short transfer"
+            ],
+            "includes": [
+                {
+                    "vehicle_id": 1,
+                    "vehicle_full_name": "Planet Jumper EV-1",
+                    "quantity": 2
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "full_name": "Supernova Cruiser",
+            "maker": "Zenith Motor Corp",
+            "category": "long-haul",
+            "domains": [
+                "planetary orbit",
+                ""
+            ],
+            "uses": [
+                "deep space transfer"
+            ],
+            "includes": [
+                {
+                    "vehicle_id": 1,
+                    "vehicle_full_name": "Planet Jumper EV-1",
+                    "quantity": 2
+                },
+                {
+                    "vehicle_id": 3,
+                    "vehicle_full_name": "Shooting Star D400",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "full_name": "",
+            "maker": "Zhongquo Heavy Industries",
+            "category": "interstellar",
+            "domains": [
+                "generational travel",
+                "interstellar space",
+                "light-year distances"
+            ],
+            "uses": [
+                "ascent",
+                "descent",
+                "ferrying",
+                "short transfer"
+            ],
+            "includes": [
+                {
+                    "vehicle_id": 1,
+                    "vehicle_full_name": "Planet Jumper EV-1",
+                    "quantity": 10
+                },
+                {
+                    "vehicle_id": 3,
+                    "vehicle_full_name": "Shooting Star D400",
+                    "quantity": 1
+                }
+            ]
+        }
+    ]
+}
