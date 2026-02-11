@@ -30,14 +30,15 @@
             ],
             "cover_img": "moon.webp",
             "pictures": [
-                "lunar-haven.webp",
-                "lunar-haven2.webp",
                 "lunar-haven3.webp",
                 "lunar-haven4.webp",
                 "lunar-haven5.webp",
-                "lunar-haven6.webp",
-                "lunar-haven7.webp",
-                "lunar-haven8.webp"
+                "lunar-haven6.webp"
+            ],
+            "feature_pictures": [
+                "lunar-haven0.webp",
+                "lunar-haven1.webp",
+                "lunar-haven2.webp"
             ],
             "lowest_accessibility": 12
         },

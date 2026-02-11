@@ -15,30 +15,37 @@
                 "ferrying",
                 "short transfer"
             ],
+            "overall_quantity": 232,
             "capacity": {
                 "seats": 120,
                 "cabins": null,
-                "habitats": null
+                "habitats": null,
+                "cargo": 6000,
+                "data": 1200
             },
             "amenities": null,
             "includes": null,
-            "intro": "Humankind's first-ever step into outer space",
-            "description": "Step onto the Moon and into the future at Lunar Haven, humanity’s premier off-world settlement. Strategically located in the Sea of Tranquility, this thriving colony is more than just a destination; it’s a hub of innovation, research, and resource extraction at the edge of Mother Earth's sphere of influence.",
+            "intro": "From surface to stars in a single bound",
+            "description": "Built by Hanseo Galactic and operated by Comet Spaceways, the Planet Jumper EV-1 is a high-performance ascent and short-transfer vehicle engineered for rapid, reliable travel between planetary surfaces and orbit. Whether lifting passengers from Earth’s spaceports to Celestia Orbital Station or conducting swift transfers between neighboring deep-space platforms, the EV-1 is purpose-built for efficiency. Designed with precision aerodynamics, reinforced orbital shielding, and advanced guidance systems, it transforms what was once a complex launch procedure into a seamless transition from ground to gateway.",
+            "promotionalCatch": "From runway to rendezvous, Planet Jumper EV-1 delivers you to orbit with speed, confidence, and uncompromising control.",
             "features": [
-                "🔹 Exploration – Visit cutting-edge laboratories where scientists unlock the secrets of lunar geology, high-tech mining operations harvesting rare lunar resources, and self-sustaining bio-domes pioneering the future of off-world living.",
-                "🔹 Adventure – Experience the Moon’s rugged beauty on rover expeditions",
-                "🔹 Marvel – Witness history in the making as we forge the next chapter of human expansion beyond Earth."
+                "🔹 Optimized Ascent Architecture – High-thrust propulsion and adaptive flight control systems ensure rapid, stable climbs from planetary surfaces to low orbit.",
+                "🔹 Precision Orbital Transfers – Advanced docking guidance and autonomous navigation enable smooth, accurate connections with orbital stations and nearby space habitats.",
+                "🔹 Security-First Engineering – Reinforced hull integrity, redundant life-support systems, and real-time diagnostics prioritize passenger safety at every stage of flight.",
+                "🔹 Comfort in Motion – Ergonomically designed seating, vibration-dampening structures, and pressure-stabilized cabins provide a calm and controlled ride, even during high-acceleration ascent.",
+                "🔹 Streamlined Configuration – Designed exclusively for short-duration missions, the EV-1 eliminates unnecessary onboard amenities to maximize performance, reliability, and turnaround efficiency."
             ],
-            "cover_img": "moon.webp",
-            "pictures": [
-                "lunar-haven.webp",
-                "lunar-haven2.webp",
-                "lunar-haven3.webp",
-                "lunar-haven4.webp",
-                "lunar-haven5.webp",
-                "lunar-haven6.webp",
-                "lunar-haven7.webp",
-                "lunar-haven8.webp"
+            "cover_img": "planet-jumper.webp",
+            "feature_pictures": [
+                "planet-jumper0.webp",
+                "planet-jumper1.webp",
+                "planet-jumper2.webp",
+                "planet-jumper3.webp",
+                "planet-jumper4.webp"
+            ],
+            "technical_pictures": [
+                "planet-jumper5.webp",
+                "planet-jumper6.webp"
             ]
         },
         {
