@@ -7,7 +7,7 @@
             "category": "ascent",
             "domains": [
                 "planetary orbit",
-                "navigation cluster"
+                "spaceship cluster"
             ],
             "uses": [
                 "ascent",
@@ -15,7 +15,6 @@
                 "ferrying",
                 "short transfer"
             ],
-            "overall_quantity": 232,
             "capacity": {
                 "seats": 120,
                 "cabins": null,
@@ -25,15 +24,15 @@
             },
             "amenities": null,
             "includes": null,
-            "intro": "From surface to stars in a single bound",
+            "intro": "From planetary surface to orbit in a single bound",
             "description": "Built by Hanseo Galactic and operated by Comet Spaceways, the Planet Jumper EV-1 is a high-performance ascent and short-transfer vehicle engineered for rapid, reliable travel between planetary surfaces and orbit. Whether lifting passengers from Earth’s spaceports to Celestia Orbital Station or conducting swift transfers between neighboring deep-space platforms, the EV-1 is purpose-built for efficiency. Designed with precision aerodynamics, reinforced orbital shielding, and advanced guidance systems, it transforms what was once a complex launch procedure into a seamless transition from ground to gateway.",
-            "promotionalCatch": "From runway to rendezvous, Planet Jumper EV-1 delivers you to orbit with speed, confidence, and uncompromising control.",
+            "promotionalCatch": "From launchpad to rendezvous, Planet Jumper EV-1 delivers you to orbit with speed, confidence, and uncompromising control.",
             "features": [
                 "🔹 Optimized Ascent Architecture – High-thrust propulsion and adaptive flight control systems ensure rapid, stable climbs from planetary surfaces to low orbit.",
                 "🔹 Precision Orbital Transfers – Advanced docking guidance and autonomous navigation enable smooth, accurate connections with orbital stations and nearby space habitats.",
                 "🔹 Security-First Engineering – Reinforced hull integrity, redundant life-support systems, and real-time diagnostics prioritize passenger safety at every stage of flight.",
                 "🔹 Comfort in Motion – Ergonomically designed seating, vibration-dampening structures, and pressure-stabilized cabins provide a calm and controlled ride, even during high-acceleration ascent.",
-                "🔹 Streamlined Configuration – Designed exclusively for short-duration missions, the EV-1 eliminates unnecessary onboard amenities to maximize performance, reliability, and turnaround efficiency."
+                "🔹 Streamlined Configuration – Designed exclusively for short-duration flights, the EV-1 eliminates unnecessary onboard amenities to maximize performance, reliability, and turnaround efficiency."
             ],
             "cover_img": "planet-jumper.webp",
             "feature_pictures": [
@@ -46,7 +45,8 @@
             "technical_pictures": [
                 "planet-jumper5.webp",
                 "planet-jumper6.webp"
-            ]
+            ],
+            "overall_quantity": 232
         },
         {
             "id": 2,
@@ -63,28 +63,35 @@
             "capacity": {
                 "seats": 350,
                 "cabins": null,
-                "habitats": null
+                "habitats": null,
+                "cargo": 20000,
+                "data": true
             },
             "amenities": null,
             "includes": null,
-            "intro": "Humankind's first-ever step into outer space",
-            "description": "Step onto the Moon and into the future at Lunar Haven, humanity’s premier off-world settlement. Strategically located in the Sea of Tranquility, this thriving colony is more than just a destination; it’s a hub of innovation, research, and resource extraction at the edge of Mother Earth's sphere of influence.",
+            "intro": "Elevate yourself from Earth’s surface to orbit on a continuous line",
+            "description": "Developed by the EuroStar Consortium and operated by Comet Spaceways, the Space Elevator redefines ascent as a seamless vertical journey rather than a launch. Instead of rockets and combustion, passengers board a high-speed transportation pod mounted on reinforced orbital railings that extend from a dedicated Earth-based spaceport to a terminal hub within Celestia Orbital Station. Permanently anchored to both planet and station, the system offers a stable, efficient, and precisely controlled transfer corridor between ground and low orbit. It transforms the once dramatic leap into space into a smooth, engineered climb along humanity’s most ambitious infrastructure spine.",
+            "promotionalCatch": "No countdown. No turbulence. Just a direct ascent from Earth to orbit, permanently connected every second of the way.",
             "features": [
-                "🔹 Exploration – Visit cutting-edge laboratories where scientists unlock the secrets of lunar geology, high-tech mining operations harvesting rare lunar resources, and self-sustaining bio-domes pioneering the future of off-world living.",
-                "🔹 Adventure – Experience the Moon’s rugged beauty on rover expeditions",
-                "🔹 Marvel – Witness history in the making as we forge the next chapter of human expansion beyond Earth."
+                "🔹 Continuous Surface-to-Orbit Link – A structurally reinforced rail system connecting Earth directly to Celestia Orbital Station, ensuring uninterrupted transit without conventional launch procedures.",
+                "🔹 High-Speed Vertical Transfer Pods – Aerodynamically shielded, magnetically stabilized cabins engineered for rapid ascent and descent with minimal vibration and controlled acceleration.",
+                "🔹 Security-Integrated Infrastructure – Multi-layer structural monitoring, redundant braking systems, and real-time environmental controls provide constant operational oversight throughout the journey.",
+                "🔹 Comfort Through Stability – Pressurized cabins, adaptive seating, and motion-balancing systems deliver a calm, steady ride designed specifically for short-duration transfers.",
+                "🔹 Unlimited Data Continuity – Permanently connected to Earth’s global data grid, the Space Elevator imposes no restrictions on digital bandwidth, allowing passengers unrestricted data access and real-time connectivity from surface to orbit.",
+                "🔹 Streamlined Transit Design – Built exclusively for efficient ascent and descent operations, the system eliminates onboard amenities in favor of speed, safety, and rapid turnaround scheduling."
             ],
-            "cover_img": "moon.webp",
-            "pictures": [
-                "lunar-haven.webp",
-                "lunar-haven2.webp",
-                "lunar-haven3.webp",
-                "lunar-haven4.webp",
-                "lunar-haven5.webp",
-                "lunar-haven6.webp",
-                "lunar-haven7.webp",
-                "lunar-haven8.webp"
-            ]
+            "cover_img": "space-elevator.webp",
+            "feature_pictures": [
+                "space-elevator0.webp",
+                "space-elevator1.webp",
+                "space-elevator2.webp",
+                "space-elevator3.webp"
+            ],
+            "technical_pictures": [
+                "space-elevator4.webp",
+                "space-elevator5.webp"
+            ],
+            "overall_quantity": 10
         },
         {
             "id": 3,
