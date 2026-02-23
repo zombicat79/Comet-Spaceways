@@ -11,8 +11,16 @@
         z-index: 1000;
     }
 
-    &-off {
+    &--off {
         background-color: transparent;
         z-index: 1;
+    }
+
+    &--clickable {
+        pointer-events: initial;
+    }
+
+    &--unclickable {
+        pointer-events: none;
     }
 }

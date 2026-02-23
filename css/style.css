@@ -2335,9 +2335,13 @@ p {
   .scrollblocker--on {
     background-color: rgba(18, 18, 18, 0.8);
     z-index: 1000; }
-  .scrollblocker-off {
+  .scrollblocker--off {
     background-color: transparent;
     z-index: 1; }
+  .scrollblocker--clickable {
+    pointer-events: initial; }
+  .scrollblocker--unclickable {
+    pointer-events: none; }
 
 .modal {
   position: absolute;

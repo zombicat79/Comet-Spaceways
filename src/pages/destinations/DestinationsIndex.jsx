@@ -1,7 +1,8 @@
 import { useState, useEffect, useContext, useRef } from 'react';
 import { useLocation } from 'react-router';
 import { LayoutContext } from '../../contexts/LayoutContext';
-import { DestinationsContext } from '../../contexts/DestinationsContext';
+
+import useDestinationFetch from '../../hooks/useDestinationFetch';
 
 import Tooltip from "../../components/Tooltip";
 import InfoPanel from '../../components/InfoPanel';
@@ -17,11 +18,10 @@ import { filterSearch } from '../../utilities/utils';
 import errors from '../../components/infopieces/errorTypes';
 
 function DestinationsIndex() {
-    const [loading, setLoading] = useState(false);
+    const { loading, fetchAlert, setFetchAlert, destinations } = useDestinationFetch();
     const [filteredDestinations, setFilteredDestinations] = useState([]);
     const [tooltip, setTooltip] = useState({ active: false, text: "", color: "" });
-    const { dispatch, layoutState, handlePopupLaunch } = useContext(LayoutContext);
-    const { destinations } = useContext(DestinationsContext);
+    const { layoutState, dispatch, handlePopupLaunch } = useContext(LayoutContext);
     const location = useLocation();
     const destinationList = useRef(null);
 
@@ -37,21 +37,19 @@ function DestinationsIndex() {
     }
 
     useEffect(() => {
-        if (!destinations) {
-            console.log("chocho")
-            handlePopupLaunch({ modalClass: "generic", content: <ErrorNotice error={errors.destinationData} /> })
-        } else if (destinations.length <= 0) {
-            dispatch({ type: "set/scroll", payload: false });
-            dispatch({ type: "set/loader", payload: true });
-            setLoading(true);
-            console.log("polla")
+        if (fetchAlert) handlePopupLaunch({ modalClass: "generic", content: <ErrorNotice error={errors.destinationData} /> })
+    }, [fetchAlert])
+
+    useEffect(() => {
+        if (layoutState.modal && fetchAlert) {
+            dispatch({ type: "set/clickable", payload: false });
+            setTimeout(() => {
+                setFetchAlert(false);
+            }, 6000);
         } else {
-            dispatch({ type: "set/scroll", payload: true });
-            dispatch({ type: "set/loader", payload: false });
-            setLoading(false);
-            console.log("pene")
+            dispatch({ type: "set/clickable", payload: true });
         }
-    },[destinations])
+    }, [layoutState.modal, fetchAlert])
 
     useEffect(() => {
         if (destinationList.current) {

@@ -10,7 +10,7 @@ function DestinationsProvider({ children }) {
         async function fetchDestinations() {
             async function getDataFromDB() {
                 const { data, error } = await supabase
-                .from('Destination')
+                .from('Destinations')
                 .select()
         
                 if (error) return { error };
