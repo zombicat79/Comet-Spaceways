@@ -7,7 +7,7 @@
             "category": "ascent",
             "domains": [
                 "planetary orbit",
-                "spaceship cluster"
+                "navigation cluster"
             ],
             "uses": [
                 "ascent",
@@ -99,21 +99,24 @@
             "maker": "Bharat Interstellar",
             "category": "short-haul",
             "domains": [
-                "planetary orbit",
-                ""
+                "cisplanetary space"
             ],
             "uses": [
-                "ascent",
-                "descent",
-                "ferrying",
-                "short transfer"
+                "interlunar travel",
+                "intra-belt travel"
             ],
             "capacity": {
-                "seats": 350,
+                "seats": 238,
                 "cabins": null,
-                "habitats": null
+                "habitats": null,
+                "cargo": 15000,
+                "data": 3000
             },
-            "amenities": null,
+            "amenities": [
+                "bar",
+                "restaurant",
+                "VR lounge"
+            ],
             "includes": null,
             "intro": "Humankind's first-ever step into outer space",
             "description": "Step onto the Moon and into the future at Lunar Haven, humanity’s premier off-world settlement. Strategically located in the Sea of Tranquility, this thriving colony is more than just a destination; it’s a hub of innovation, research, and resource extraction at the edge of Mother Earth's sphere of influence.",
@@ -122,17 +125,18 @@
                 "🔹 Adventure – Experience the Moon’s rugged beauty on rover expeditions",
                 "🔹 Marvel – Witness history in the making as we forge the next chapter of human expansion beyond Earth."
             ],
-            "cover_img": "moon.webp",
-            "pictures": [
-                "lunar-haven.webp",
-                "lunar-haven2.webp",
-                "lunar-haven3.webp",
-                "lunar-haven4.webp",
-                "lunar-haven5.webp",
-                "lunar-haven6.webp",
-                "lunar-haven7.webp",
-                "lunar-haven8.webp"
-            ]
+            "cover_img": "space-elevator.webp",
+            "feature_pictures": [
+                "space-elevator0.webp",
+                "space-elevator1.webp",
+                "space-elevator2.webp",
+                "space-elevator3.webp"
+            ],
+            "technical_pictures": [
+                "space-elevator4.webp",
+                "space-elevator5.webp"
+            ],
+            "overall_quantity": 10
         },
         {
             "id": 4,
@@ -140,14 +144,10 @@
             "maker": "EuroStar Consortium",
             "category": "medium-haul",
             "domains": [
-                "planetary orbit",
-                ""
+                "deep space"
             ],
             "uses": [
-                "ascent",
-                "descent",
-                "ferrying",
-                "short transfer"
+                "interplanetary travel"
             ],
             "includes": [
                 {
@@ -163,8 +163,7 @@
             "maker": "Zenith Motor Corp",
             "category": "medium-haul",
             "domains": [
-                "planetary orbit",
-                ""
+                "deep space"
             ],
             "uses": [
                 "ascent",
@@ -186,8 +185,7 @@
             "maker": "Zenith Motor Corp",
             "category": "long-haul",
             "domains": [
-                "planetary orbit",
-                ""
+                "interplanetary travel"
             ],
             "uses": [
                 "deep space transfer"
@@ -216,10 +214,7 @@
                 "light-year distances"
             ],
             "uses": [
-                "ascent",
-                "descent",
-                "ferrying",
-                "short transfer"
+                "interstellar travel"
             ],
             "includes": [
                 {
