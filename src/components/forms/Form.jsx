@@ -1,53 +1,40 @@
-import Input from "./Input";
-import Checkbox from "./Checkbox";
-import Range from "./Range";
-import RadioGroup from "./RadioGroup";
-import Selector from "./../Selector";
+import useForm from './../../hooks/useForm';
 
-function Form({ type, occurrence }) {
-    let content;
+import Input from './../forms/Input';
+import Checkbox from './../forms/Checkbox';
+import Range from './../forms/Range';
+import RadioGroup from './../forms/RadioGroup';
+import Selector from './../Selector';
 
-    switch(type) {
-        case "nhes":
-            content = <form><p>This is a form</p></form>
-        case "minors":
-            content = <form><p>This is a form</p></form>
-        case "pets":
-            content = <form><p>This is a form</p></form>
-        default: // humanoids
-            content = (
-                <form className="form">
-                    <Input labelled={true} inputType="text" name="name" title="First Name" />
-                    <Input labelled={true} inputType="text" name="surname" title="Last Name" />
-                    <Range labelled={true} inputType="range" name="age" title="Age" min="18" max="150" />
-                    <Selector
-                        type="regular"
-                        identifier="Voyage-Type"
-                        initialValue="Earthling"
-                        choiceOptions={['Earthling', 'Selenyte', 'Martian', 'Venusian', 'Belter', 'Saturnian', 'Other...']}
-                    />
-                    <RadioGroup 
-                        labelled={true} 
-                        name="race" 
-                        title="Build" 
-                        options={[{ value: 'organic' }, { value: 'cyborg' }, { value: 'android' }]} 
-                    />
-                    <Checkbox labelled={true} inputType="checkbox" name="contact" title="Contact this passenger" checked={occurrence === 1 ? true : false} />
-                    <Checkbox labelled={true} inputType="checkbox" name="billing" title="Bill this passenger" checked={occurrence === 1 ? true : false} />
-                    <select name="nationality">
-                        <option value="1">Selenyte</option>
-                        <option value="2">Earthling</option>
-                        <option value="3">Martian</option>
-                        <option value="4">Venusian</option>
-                        <option value="5">Belter</option>
-                        <option value="6">Saturnian</option>
-                        <option value="7">Other</option>
-                    </select>
-                </form>
-            )
-    }
+function Form({ id, formFields }) {
+    const { formState, dispatch } = useForm(id);
+    console.log(formState)
 
-    return content;
+    return (
+        <form id={id} className="form" >
+            {formFields.map((el, index) => {
+                let content;
+                switch(el.type) {
+                    case 'checkbox':
+                        content = <Checkbox {...el.props} />
+                        break;
+                    case 'range':
+                        content = <Range {...el.props} />
+                        break;
+                    case 'radio':
+                        content = <RadioGroup {...el.props} />
+                        break;
+                    case 'selector':
+                        content = <Selector {...el.props} />
+                        break;
+                    default: // input
+                        content = <Input {...el.props} onChange={dispatch} />
+                }
+
+                return <div key={`${id}-${el}-${index}`}>{content}</div>
+            })}
+        </form>
+    )
 }
 
 export default Form;
