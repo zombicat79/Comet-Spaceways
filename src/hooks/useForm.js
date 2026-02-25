@@ -10,8 +10,8 @@ function reducer(state, action) {
     }
 }
 
-function useForm(formId) {
-    const [formValues, dispatch] = useReducer(reducer, {});
+function useForm(formId, initialState) {
+    const [formValues, dispatch] = useReducer(reducer, initialState);
     const formState = {
         [formId]: formValues
     }

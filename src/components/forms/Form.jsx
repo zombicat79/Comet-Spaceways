@@ -1,13 +1,13 @@
 import useForm from './../../hooks/useForm';
 
-import Input from './../forms/Input';
-import Checkbox from './../forms/Checkbox';
-import Range from './../forms/Range';
-import RadioGroup from './../forms/RadioGroup';
-import Selector from './../Selector';
+import Input from './Input';
+import Checkbox from './Checkbox';
+import Range from './Range';
+import RadioGroup from './RadioGroup';
+import ChoiceList from './ChoiceList';
 
-function Form({ id, formFields }) {
-    const { formState, dispatch } = useForm(id);
+function Form({ id, formFields, defaultValues }) {
+    const { formState, dispatch } = useForm(id, defaultValues);
     console.log(formState)
 
     return (
@@ -16,22 +16,22 @@ function Form({ id, formFields }) {
                 let content;
                 switch(el.type) {
                     case 'checkbox':
-                        content = <Checkbox {...el.props} />
+                        content = <Checkbox {...el.props} parentForm={id} />
                         break;
                     case 'range':
-                        content = <Range {...el.props} />
+                        content = <Range {...el.props} parentForm={id} />
                         break;
                     case 'radio':
-                        content = <RadioGroup {...el.props} />
+                        content = <RadioGroup {...el.props} parentForm={id} />
                         break;
                     case 'selector':
-                        content = <Selector {...el.props} />
+                        content = <ChoiceList {...el.props} onChange={dispatch} parentForm={id} />
                         break;
                     default: // input
-                        content = <Input {...el.props} onChange={dispatch} />
+                        content = <Input {...el.props} onChange={dispatch} parentForm={id} formState={formState} />
                 }
 
-                return <div key={`${id}-${el}-${index}`}>{content}</div>
+                return <div key={`${id}-${el}-${index}`} className="form__element">{content}</div>
             })}
         </form>
     )
