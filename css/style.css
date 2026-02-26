@@ -1634,6 +1634,8 @@ h3 {
   grid-template-rows: auto;
   column-gap: 3rem;
   row-gap: 1rem; }
+  .form__element--full-width {
+    grid-column: 1 / -1; }
 
 .form .field {
   display: flex;
@@ -1654,6 +1656,12 @@ h3 {
   @media screen and (max-width: 600px) {
     .form .field {
       gap: 0.5rem; } }
+  .form .field--type-checkbox {
+    flex-direction: row;
+    justify-content: flex-start;
+    border: none; }
+    .form .field--type-checkbox .field__id {
+      color: #272643; }
   .form .field:hover {
     cursor: pointer; }
   .form .field--disabled {
@@ -1684,7 +1692,7 @@ h3 {
       font-size: 1.4rem; }
     .form .field__value--regular {
       font-size: 1.6rem; }
-  .form .field__choice {
+  .form .field__list {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1703,13 +1711,20 @@ h3 {
     animation-duration: 1s;
     animation-fill-mode: both; }
     @media screen and (min-width: 1280px) {
-      .form .field__choice {
+      .form .field__list {
         background-color: #e3f6f5; } }
-    .form .field__choice--quantity {
+    .form .field__list--quantity {
       width: max-content; }
       @media screen and (max-width: 600px) {
-        .form .field__choice--quantity {
+        .form .field__list--quantity {
           width: 100%; } }
+  .form .field__choice-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: .75rem;
+    gap: 10rem; }
   .form .field__option {
     display: inline-block;
     width: 100%;
@@ -1725,6 +1740,10 @@ h3 {
       .form .field__option--disabled:hover {
         background-color: transparent;
         cursor: not-allowed; }
+  .form .field__radiobutton, .form .field__checkbutton {
+    position: relative;
+    top: .2rem;
+    margin-left: .5rem; }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }

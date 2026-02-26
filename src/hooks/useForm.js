@@ -1,10 +1,12 @@
 import { useReducer } from 'react';
 
 function reducer(state, action) {
+    const field = action.payload.field;
     switch(action.type) {
         case 'modify/field':
-            const field = action.payload.field;
             return {...state, [field]: action.payload.value}
+        case 'toggle/check':
+            return {...state, [field]: !state[field]}
         default:
             return state;
     }

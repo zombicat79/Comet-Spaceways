@@ -14,15 +14,18 @@ function Form({ id, formFields, defaultValues }) {
         <form id={id} className="form" >
             {formFields.map((el, index) => {
                 let content;
+                let cssClasses = 'form-element';
                 switch(el.type) {
                     case 'checkbox':
-                        content = <Checkbox {...el.props} parentForm={id} />
+                        content = <Checkbox {...el.props} onChange={dispatch} parentForm={id} formState={formState} />
+                        cssClasses += ' form__element--full-width';
                         break;
                     case 'range':
                         content = <Range {...el.props} parentForm={id} />
                         break;
                     case 'radio':
-                        content = <RadioGroup {...el.props} parentForm={id} />
+                        content = <RadioGroup {...el.props} onChange={dispatch} parentForm={id} />
+                        cssClasses += ' form__element--full-width';
                         break;
                     case 'selector':
                         content = <ChoiceList {...el.props} onChange={dispatch} parentForm={id} />
@@ -31,7 +34,7 @@ function Form({ id, formFields, defaultValues }) {
                         content = <Input {...el.props} onChange={dispatch} parentForm={id} formState={formState} />
                 }
 
-                return <div key={`${id}-${el}-${index}`} className="form__element">{content}</div>
+                return <div key={`${id}-${el}-${index}`} className={cssClasses}>{content}</div>
             })}
         </form>
     )

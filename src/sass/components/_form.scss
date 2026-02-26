@@ -4,6 +4,13 @@
     grid-template-rows: auto;
     column-gap: 3rem;
     row-gap: 1rem;
+
+    &__element {
+
+        &--full-width {
+            grid-column: 1 / -1;
+        }
+    }
 }
 
 .form .field {
@@ -22,6 +29,16 @@
     transition: filter 1s;
     @include respond(phone) {
         gap: 0.5rem;
+    }
+
+    &--type-checkbox {
+        flex-direction: row;
+        justify-content: flex-start;
+        border: none;
+
+        .field__id {
+            color: $color-text-dark;
+        }
     }
 
     // STATES
@@ -80,7 +97,7 @@
         }
     }
 
-    &__choice {
+    &__list {
         @include flex-column(center);
         align-items: flex-start;
         width: 100%;
@@ -111,6 +128,13 @@
         }
     }
 
+    &__choice-wrapper {
+        width: 100%;
+        @include flex-row(flex-start);
+        margin-top: .75rem;
+        gap: 10rem
+    }
+
     &__option {
         display: inline-block;
         width: 100%;
@@ -134,5 +158,12 @@
                 cursor: not-allowed;
             }
         }
+    }
+
+    &__radiobutton,
+    &__checkbutton {
+        position: relative;
+        top: .2rem;
+        margin-left: .5rem;
     }
 }

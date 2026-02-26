@@ -1,48 +1,43 @@
+import { useContext, useMemo } from "react";
+import { FlightSearchContext } from "../../contexts/FlightSearchContext";
+
 import Form from "../forms/Form";
 
+import * as formConfig from './passenger-form-config';
+
 function PassengerForm({ type, occurrence }) {
-    const humanoidFormFields = [
-        { type: 'input', props: {labelled: true, inputType: 'text', name: 'name', title: 'First Name'}},
-        { type: 'input', props: {labelled: true, inputType: 'text', name: 'surname', title: 'Last Name'}},
-        { type: 'input', props: {labelled: true, inputType: 'text', name: 'email', title: 'Messaging Address'}},
-        { type: 'selector', props: {labelled: true, name: 'nationality', title: "Nationality", options: [
-            "Selenyte",
-            "Earthling",
-            "Martian",
-            "Venusian",
-            "Belter",
-            "Saturnian",
-            "Other"
-        ]}},
-        { type: 'radio', props: {labelled: true, name: 'race', title: 'Build', options: [{value: 'organic'}, { value: 'cyborg' }, { value: 'android' }]}},
-        { type: 'range', props: {labelled: true, inputType: 'range', name: 'age', title: 'Age', min: '18', max: '150'}},
-        { type: 'checkbox', props: {labelled: true, inputType: 'checkbox', name: 'contact', title: 'Contact this passenger', checked: occurrence === 1 ? true : false}},
-        { type: 'checkbox', props: {labelled: true, inputType: 'checkbox', name: 'billing', title: 'Bill this passenger', checked: occurrence === 1 ? true : false}},
-    ];
-    const humanoidFormDefaultValues = { 
-        ['name']: '',
-        ['surname']: '',
-        ['email']: '',
-        ['nationality']: 'N/A',
-        ['build']: '',
-        ['age']: '',
-        ['contact']: '',
-        ['billing']: '',
-    }
+    const { flightSearchState } = useContext(FlightSearchContext)
+    const { humanoids, nhes, minors, pets } = flightSearchState.passengers;
+    
+    const [minorFormFields, minorFormDefaultValues] = useMemo(() => {
+        if (minors > 0 && humanoids === 0) {
+            const processedMinorFormFields = formConfig.minorFormFields.map((el) => {
+                if (el.props.name === "unaccompanied") return { ...el, props: { ...el.props, visible: true }};
+                return el;
+            })
+            const processedMinorFormDefaults = { ...formConfig.minorFormDefaultValues, unaccompanied: true };
+            return [processedMinorFormFields, processedMinorFormDefaults]
+        }
+        return [formConfig.minorFormFields, formConfig.minorFormDefaultValues]
+    }, [humanoids, minors])
 
-    const nheFormFields = [];
-    const nheFormDefaultValues = {}
-
-    const minorFormFields = [];
-    const minorFormDefaultValues = {}
-
-    const petFormFields = [];
-    const petFormDefaultValues = {}
+    const [petFormFields, petFormDefaultValues] = useMemo(() => {
+        if (pets > 0 && humanoids === 0 && nhes === 0 && minors === 0) {
+            const processedPetFormFields = formConfig.petFormFields.map((el) => {
+                if (el.props.name === "unaccompanied") return { ...el, props: { ...el.props, visible: true }};
+                if (el.props.name === "conversational") return { ...el, props: { ...el.props, visible: true }};
+                return el;
+            })
+            const processedMPetFormDefaults = { ...formConfig.petFormDefaultValues, unaccompanied: true };
+            return [processedPetFormFields, processedMPetFormDefaults]
+        }
+        return [formConfig.petFormFields, formConfig.petFormDefaultValues]
+    }, [humanoids, nhes, minors, pets])
     
     let content;
     switch(type) {
         case "nhe":
-            content = <Form id={`${type}-form-${occurrence}`} formFields={nheFormFields} defaultValues={nheFormDefaultValues} />
+            content = <Form id={`${type}-form-${occurrence}`} formFields={formConfig.nheFormFields} defaultValues={formConfig.nheFormDefaultValues} />
             break;
         case "minor":
             content = <Form id={`${type}-form-${occurrence}`} formFields={minorFormFields} defaultValues={minorFormDefaultValues} />
@@ -51,7 +46,7 @@ function PassengerForm({ type, occurrence }) {
             content = <Form id={`${type}-form-${occurrence}`} formFields={petFormFields} defaultValues={petFormDefaultValues} />
             break;
         default: // humanoids
-            content = <Form id={`${type}-form-${occurrence}`} formFields={humanoidFormFields} defaultValues={humanoidFormDefaultValues} />
+            content = <Form id={`${type}-form-${occurrence}`} formFields={formConfig.humanoidFormFields} defaultValues={formConfig.humanoidFormDefaultValues} />
     }
 
     return content;

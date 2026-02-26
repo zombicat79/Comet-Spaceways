@@ -12,9 +12,9 @@ function ChoiceList({ labelled, name, title, options, onChange, parentForm }) {
 
     return (
         <div className="form__data-wrapper">
-            <div id={inputId} className="field" onClick={() => setOpen((curr) => !curr)}>
+            <div id={inputId} className="field" tabIndex="0" onClick={() => setOpen((curr) => !curr)} onBlur={() => setOpen(false)}>
                 {labelled && <label htmlFor={inputId} className="field__id">{title}</label>}
-                {open && <div className="field__choice">
+                {open && <div className="field__list">
                     {options?.map((el, index) => {
                         return (
                             <span 
