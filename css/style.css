@@ -1669,8 +1669,7 @@ h3 {
     .form .field--disabled:hover {
       cursor: not-allowed; }
   .form .field--error {
-    border: 1px solid #FF4500 !important;
-    color: #FF4500; }
+    border: 1px solid #FF4500 !important; }
     .form .field--error .selector__value {
       filter: opacity(0.3); }
   .form .field__id {
@@ -1744,6 +1743,10 @@ h3 {
     position: relative;
     top: .2rem;
     margin-left: .5rem; }
+  .form .field__msg {
+    color: #F5F5F5;
+    background-color: #FF4500;
+    padding: .5rem 1rem; }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }

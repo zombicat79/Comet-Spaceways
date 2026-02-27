@@ -1,11 +1,19 @@
+import { useState } from 'react';
 import RadioButton from "./RadioButton";
+import errorChecker from "./error-checker";
 
-function RadioGroup({ labelled, name, title, options, onChange, parentForm }) {
+function RadioGroup({ labelled, name, title, options, onChange, parentForm, formState, formRules }) {
+    const [errorMsg, setErrorMsg] = useState('');
     const inputId = `${parentForm}-${name}`;
 
+    function checkNoSelection() {
+        const check = errorChecker(name, formState[parentForm][name], formRules);
+        setErrorMsg(check.message);
+    }
+
     return (
-        <div className="form__data-wrapper">
-            <div className="field">
+        <div className="form__data-wrapper" tabIndex="0" onBlur={checkNoSelection}>
+            <div className={errorMsg === '' ? 'field' : 'field field--error'}>
                 {labelled && <label htmlFor={inputId} className="field__id">{title}</label>}
                 <ul className="field__choice-wrapper">
                     {options.map((option) => {
@@ -17,8 +25,8 @@ function RadioGroup({ labelled, name, title, options, onChange, parentForm }) {
                     })}
                 </ul>
             </div>
-        <p className="field__msg">Test message</p>
-    </div>
+            {errorMsg !== '' && <p className="field__msg">{errorMsg}</p>}
+        </div>
     )
 }
 

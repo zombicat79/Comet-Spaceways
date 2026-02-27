@@ -1,18 +1,33 @@
 import { useState, useEffect } from 'react';
 import useSelectorTool from './../../hooks/useSelectorTool';
 
-function ChoiceList({ labelled, name, title, options, onChange, parentForm }) {
+import errorChecker from "./error-checker";
+
+function ChoiceList({ labelled, name, title, options, onChange, parentForm, formRules }) {
     const [open, setOpen] = useState(false);
+    const [errorMsg, setErrorMsg] = useState('');
     const { selectionValue, handleSelection } = useSelectorTool('N/A');
     const inputId = `${parentForm}-${name}`;
 
+    function closeList() {
+        const check = errorChecker(name, selectionValue, formRules);
+        setOpen(false)
+        setErrorMsg(check.message);
+    }
+
     useEffect(() => {
-        onChange({ type: "modify/field", payload: {field: name, value: selectionValue}})
+        const check = errorChecker(name, selectionValue, formRules);
+        if (check.status === 'ok') {
+            onChange({ type: "modify/field", payload: {field: name, value: selectionValue}});
+        }
+        if (selectionValue !== 'N/A') {
+            setErrorMsg(check.message);
+        }
     }, [selectionValue])
 
     return (
         <div className="form__data-wrapper">
-            <div id={inputId} className="field" tabIndex="0" onClick={() => setOpen((curr) => !curr)} onBlur={() => setOpen(false)}>
+            <div id={inputId} className={errorMsg === '' ? 'field' : 'field field--error'} tabIndex="0" onClick={() => setOpen((curr) => !curr)} onBlur={closeList}>
                 {labelled && <label htmlFor={inputId} className="field__id">{title}</label>}
                 {open && <div className="field__list">
                     {options?.map((el, index) => {
@@ -30,7 +45,7 @@ function ChoiceList({ labelled, name, title, options, onChange, parentForm }) {
                 </div>}
                 <span className="field__value field__value--medium">{selectionValue}</span>
             </div>
-            <p className="field__msg">Test message</p>
+            {errorMsg !== '' && <p className="field__msg">{errorMsg}</p>}
         </div>
     )
 }

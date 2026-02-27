@@ -37,16 +37,16 @@ function PassengerForm({ type, occurrence }) {
     let content;
     switch(type) {
         case "nhe":
-            content = <Form id={`${type}-form-${occurrence}`} formFields={formConfig.nheFormFields} defaultValues={formConfig.nheFormDefaultValues} />
+            content = <Form id={`${type}-form-${occurrence}`} formFields={formConfig.nheFormFields} defaultValues={formConfig.nheFormDefaultValues} formRules={formConfig.nheFormRules} />
             break;
         case "minor":
-            content = <Form id={`${type}-form-${occurrence}`} formFields={minorFormFields} defaultValues={minorFormDefaultValues} />
+            content = <Form id={`${type}-form-${occurrence}`} formFields={minorFormFields} defaultValues={minorFormDefaultValues} formRules={formConfig.minorFormRules} />
             break;
         case "pet":
-            content = <Form id={`${type}-form-${occurrence}`} formFields={petFormFields} defaultValues={petFormDefaultValues} />
+            content = <Form id={`${type}-form-${occurrence}`} formFields={petFormFields} defaultValues={petFormDefaultValues} formRules={formConfig.petFormRules} />
             break;
         default: // humanoids
-            content = <Form id={`${type}-form-${occurrence}`} formFields={formConfig.humanoidFormFields} defaultValues={formConfig.humanoidFormDefaultValues} />
+            content = <Form id={`${type}-form-${occurrence}`} formFields={formConfig.humanoidFormFields} defaultValues={formConfig.humanoidFormDefaultValues} formRules={formConfig.humanoidFormRules} />
     }
 
     return content;
