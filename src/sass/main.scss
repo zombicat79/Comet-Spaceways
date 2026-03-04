@@ -28,7 +28,7 @@
 @import "components/itemlist";
 @import "components/segment";
 @import "components/flight-details";
-@import "components/passenger-details";
+@import "components/passenger-segment";
 @import "components/connection-details";
 @import "components/shopping-cart";
 @import "components/shopping-item";
@@ -47,5 +47,5 @@
 
 @import "pages/home";
 @import "pages/tickets";
-@import "pages/details";
+@import "pages/passenger-details";
 @import "pages/notfound";

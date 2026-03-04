@@ -3,7 +3,7 @@ import useSelectorTool from './../../hooks/useSelectorTool';
 
 import errorChecker from "./error-checker";
 
-function ChoiceList({ labelled, name, title, options, onChange, parentForm, formRules }) {
+function ChoiceList({ labelled, name, title, options, onChange, parentForm, formRules, superform, onSuperChange }) {
     const [open, setOpen] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
     const { selectionValue, handleSelection } = useSelectorTool('N/A');
@@ -18,7 +18,14 @@ function ChoiceList({ labelled, name, title, options, onChange, parentForm, form
     useEffect(() => {
         const check = errorChecker(name, selectionValue, formRules);
         if (check.status === 'ok') {
-            onChange({ type: "modify/field", payload: {field: name, value: selectionValue}});
+            if (superform) {
+                onSuperChange({ 
+                    type: "cart/modifyPassengers", 
+                    payload: {id: parentForm, data: { field: name, value: selectionValue }}
+                });
+            } else {
+                onChange({ type: "modify/field", payload: {field: name, value: selectionValue}});
+            }
         }
         if (selectionValue !== 'N/A') {
             setErrorMsg(check.message);

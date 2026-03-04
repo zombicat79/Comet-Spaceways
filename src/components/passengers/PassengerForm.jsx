@@ -1,5 +1,6 @@
 import { useContext, useMemo } from "react";
 import { FlightSearchContext } from "../../contexts/FlightSearchContext";
+import { CartContext } from "../../contexts/CartContext";
 
 import Form from "../forms/Form";
 
@@ -7,6 +8,7 @@ import * as formConfig from './passenger-form-config';
 
 function PassengerForm({ type, occurrence }) {
     const { flightSearchState } = useContext(FlightSearchContext)
+    const { cartState, cartDispatcher } = useContext(CartContext);
     const { humanoids, nhes, minors, pets } = flightSearchState.passengers;
     
     const [minorFormFields, minorFormDefaultValues] = useMemo(() => {
@@ -37,16 +39,16 @@ function PassengerForm({ type, occurrence }) {
     let content;
     switch(type) {
         case "nhe":
-            content = <Form id={`${type}-form-${occurrence}`} formFields={formConfig.nheFormFields} defaultValues={formConfig.nheFormDefaultValues} formRules={formConfig.nheFormRules} />
+            content = <Form id={`${type}-form-${occurrence}`} formFields={formConfig.nheFormFields} defaultValues={formConfig.nheFormDefaultValues} formRules={formConfig.nheFormRules} superform={true} superformHandler={cartDispatcher} superformState={cartState} />
             break;
         case "minor":
-            content = <Form id={`${type}-form-${occurrence}`} formFields={minorFormFields} defaultValues={minorFormDefaultValues} formRules={formConfig.minorFormRules} />
+            content = <Form id={`${type}-form-${occurrence}`} formFields={minorFormFields} defaultValues={minorFormDefaultValues} formRules={formConfig.minorFormRules} superform={true} superformHandler={cartDispatcher} superformState={cartState} />
             break;
         case "pet":
-            content = <Form id={`${type}-form-${occurrence}`} formFields={petFormFields} defaultValues={petFormDefaultValues} formRules={formConfig.petFormRules} />
+            content = <Form id={`${type}-form-${occurrence}`} formFields={petFormFields} defaultValues={petFormDefaultValues} formRules={formConfig.petFormRules} superform={true} superformHandler={cartDispatcher} superformState={cartState} />
             break;
         default: // humanoids
-            content = <Form id={`${type}-form-${occurrence}`} formFields={formConfig.humanoidFormFields} defaultValues={formConfig.humanoidFormDefaultValues} formRules={formConfig.humanoidFormRules} />
+            content = <Form id={`${type}-form-${occurrence}`} formFields={formConfig.humanoidFormFields} defaultValues={formConfig.humanoidFormDefaultValues} formRules={formConfig.humanoidFormRules} superform={true} superformHandler={cartDispatcher} superformState={cartState} />
     }
 
     return content;

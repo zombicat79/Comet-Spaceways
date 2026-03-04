@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import errorChecker from "./error-checker";
 
-function Input({ labelled, inputType, name, title, onChange, parentForm, formState, formRules }) {
+function Input({ labelled, inputType, name, title, onChange, parentForm, formState, formRules, superform, onSuperChange }) {
     const [errorMsg, setErrorMsg] = useState('');
     const inputId = `${parentForm}-${name}`;
 
@@ -10,7 +10,14 @@ function Input({ labelled, inputType, name, title, onChange, parentForm, formSta
         if (e.target.value !== formState[parentForm][name]) {
             const check = errorChecker(name, e.target.value, formRules);
             if (check.status === 'ok') {
-                onChange({ type: "modify/field", payload: {field: name, value: e.target.value}});
+                if (superform) {
+                    onSuperChange({ 
+                        type: "cart/modifyPassengers", 
+                        payload: {id: parentForm, data: { field: name, value: e.target.value, formRules }}
+                    });
+                } else {
+                    onChange({ type: "modify/field", payload: {field: name, value: e.target.value}});
+                }
             } 
             setErrorMsg(check.message);
         }

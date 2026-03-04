@@ -21,8 +21,8 @@ function PassengerSegment({ type }) {
                 <main className="segment__body">
                     {occurrences.map((el, index) => {
                         return (
-                            <section key={`${type}-form-${index+1}`} className="passenger-details">
-                                <h4 className="passenger-details__occurrence">{index + 1}.</h4>
+                            <section key={`${type}-form-${index+1}`} className="passenger-segment">
+                                <h4 className="passenger-segment__occurrence">{index + 1}.</h4>
                                 <PassengerForm type={type} occurrence={index + 1} />
                             </section>
                         )

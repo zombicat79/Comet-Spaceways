@@ -1344,7 +1344,7 @@ h3 {
       color: #0B3D91;
       font-size: 2.5rem; }
 
-.passenger-details {
+.passenger-segment {
   position: relative;
   background-color: #ffffff;
   padding: 3rem;
@@ -1352,11 +1352,11 @@ h3 {
   border: 2px solid #272643;
   border-radius: 1.5rem;
   transition: transform .5s; }
-  .passenger-details:first-child {
+  .passenger-segment:first-child {
     margin-top: 0; }
-  .passenger-details:last-child {
+  .passenger-segment:last-child {
     margin-bottom: 0; }
-  .passenger-details__occurrence {
+  .passenger-segment__occurrence {
     font-family: 'titillium-bold';
     font-size: 2.5rem;
     text-align: left;
@@ -1682,6 +1682,7 @@ h3 {
     color: #272643;
     font-family: 'titillium-bold';
     text-transform: uppercase;
+    width: 100%;
     padding-top: .75rem; }
     .form .field__value--smaller {
       font-size: 1rem; }
@@ -2430,23 +2431,23 @@ h3 {
       .tickets .btn--primary {
         width: 30rem; } }
 
-.details {
+.passenger-details {
   position: relative;
   z-index: 2;
   background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
-  .details .content-section:first-child {
+  .passenger-details .content-section:first-child {
     padding-top: 27rem; }
-  .details section:nth-child(odd):not(:first-child) {
+  .passenger-details section:nth-child(odd):not(:first-child) {
     background-color: transparent; }
-  .details .btn--primary {
+  .passenger-details .btn--primary {
     width: 40rem;
     position: relative;
     bottom: 3rem; }
     @media screen and (max-width: 360px) {
-      .details .btn--primary {
+      .passenger-details .btn--primary {
         width: 30rem; } }
 
 .notfound {

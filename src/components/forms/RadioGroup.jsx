@@ -2,7 +2,7 @@ import { useState } from 'react';
 import RadioButton from "./RadioButton";
 import errorChecker from "./error-checker";
 
-function RadioGroup({ labelled, name, title, options, onChange, parentForm, formState, formRules }) {
+function RadioGroup({ labelled, name, title, options, onChange, parentForm, formState, formRules, superform, onSuperChange }) {
     const [errorMsg, setErrorMsg] = useState('');
     const inputId = `${parentForm}-${name}`;
 
@@ -19,7 +19,7 @@ function RadioGroup({ labelled, name, title, options, onChange, parentForm, form
                     {options.map((option) => {
                         return (
                             <li key={`${inputId}-${option}`} className="field__choice">
-                                <RadioButton name={name} value={option} onChange={onChange} parentForm={parentForm} />
+                                <RadioButton name={name} value={option} onChange={onChange} parentForm={parentForm} formRules={formRules} superform={superform} onSuperChange={onSuperChange} />
                             </li>
                         )
                     })}

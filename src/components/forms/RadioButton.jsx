@@ -1,8 +1,15 @@
-function RadioButton({ name, value, onChange, parentForm }) {
+function RadioButton({ name, value, onChange, parentForm, formRules, superform, onSuperChange }) {
     const inputId = `${parentForm}-${name}-${value}-radio-button`;
 
     function handleChange(e) {
-        onChange({ type: "modify/field", payload: {field: name, value: e.target.value}})
+        if (superform) {
+            onSuperChange({ 
+                type: "cart/modifyPassengers", 
+                payload: {id: parentForm, data: { field: name, value: e.target.value, formRules }}
+            });
+        } else {
+            onChange({ type: "modify/field", payload: {field: name, value: e.target.value}});
+        }
     }
 
     return (

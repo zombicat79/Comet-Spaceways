@@ -6,7 +6,7 @@ import MinAppLayout from "./layout/MinAppLayout";
 import Home from './pages/Home';
 import FlightFetcher from "./components/flight/FlightFetcher";
 import FlightScheduleLoader from "./components/flight/FlightScheduleLoader";
-import PassengerDetails from "./pages/purchase/Details";
+import PassengerDetails from "./pages/purchase/PassengerDetails";
 import NotFound from "./pages/NotFound";
 
 import { fetchFlights } from "./components/flight/FlightScheduleLoader";
