@@ -1692,6 +1692,8 @@ h3 {
       font-size: 1.4rem; }
     .form .field__value--regular {
       font-size: 1.6rem; }
+    .form .field__value--hidden {
+      display: none; }
   .form .field__list {
     display: flex;
     flex-direction: column;

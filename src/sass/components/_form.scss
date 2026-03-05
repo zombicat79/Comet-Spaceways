@@ -95,6 +95,10 @@
         &--regular {
             font-size: $size-regular;
         }
+
+        &--hidden {
+            display: none;
+        }
     }
 
     &__list {

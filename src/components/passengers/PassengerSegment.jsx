@@ -5,7 +5,7 @@ import ContentSection from "../../layout/ContentSection";
 import PassengerForm from './PassengerForm';
 import SvgIcon from "../SvgIcon";
 
-function PassengerSegment({ type }) {
+function PassengerSegment({ type, onFormAdd }) {
     const { flightSearchState } = useContext(FlightSearchContext);
     const occurrences = new Array(flightSearchState.passengers[type + "s"]).fill(true);
 
@@ -23,7 +23,7 @@ function PassengerSegment({ type }) {
                         return (
                             <section key={`${type}-form-${index+1}`} className="passenger-segment">
                                 <h4 className="passenger-segment__occurrence">{index + 1}.</h4>
-                                <PassengerForm type={type} occurrence={index + 1} />
+                                <PassengerForm type={type} occurrence={index + 1} onFormAdd={onFormAdd} />
                             </section>
                         )
                     })}

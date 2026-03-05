@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import useSelectorTool from './../../hooks/useSelectorTool';
 
-import errorChecker from "./error-checker";
+import { errorChecker } from "./error-checker";
 
 function ChoiceList({ labelled, name, title, options, onChange, parentForm, formRules, superform, onSuperChange }) {
     const [open, setOpen] = useState(false);
@@ -17,16 +17,15 @@ function ChoiceList({ labelled, name, title, options, onChange, parentForm, form
 
     useEffect(() => {
         const check = errorChecker(name, selectionValue, formRules);
-        if (check.status === 'ok') {
-            if (superform) {
-                onSuperChange({ 
-                    type: "cart/modifyPassengers", 
-                    payload: {id: parentForm, data: { field: name, value: selectionValue }}
-                });
-            } else {
-                onChange({ type: "modify/field", payload: {field: name, value: selectionValue}});
-            }
+        if (superform) {
+            onSuperChange({ 
+                type: "cart/modifyPassengers", 
+                payload: {id: parentForm, data: { field: name, value: selectionValue }}
+            });
+        } else {
+            onChange({ type: "modify/field", payload: {field: name, value: selectionValue}});
         }
+
         if (selectionValue !== 'N/A') {
             setErrorMsg(check.message);
         }
@@ -51,6 +50,7 @@ function ChoiceList({ labelled, name, title, options, onChange, parentForm, form
                     })}
                 </div>}
                 <span className="field__value field__value--medium">{selectionValue}</span>
+                <input className="field__value field__value--hidden" type="hidden" name={name} value={selectionValue} />
             </div>
             {errorMsg !== '' && <p className="field__msg">{errorMsg}</p>}
         </div>

@@ -1,26 +1,22 @@
 import { useState } from 'react';
 
-import errorChecker from "./error-checker";
+import { errorChecker } from "./error-checker";
 
-function Input({ labelled, inputType, name, title, onChange, parentForm, formState, formRules, superform, onSuperChange }) {
+function Input({ labelled, inputType, name, title, onChange, parentForm, formState, formRules, superform, onSuperChange, superformState }) {
     const [errorMsg, setErrorMsg] = useState('');
     const inputId = `${parentForm}-${name}`;
 
     function handleChange(e) {
-        if (e.target.value !== formState[parentForm][name]) {
-            const check = errorChecker(name, e.target.value, formRules);
-            if (check.status === 'ok') {
-                if (superform) {
-                    onSuperChange({ 
-                        type: "cart/modifyPassengers", 
-                        payload: {id: parentForm, data: { field: name, value: e.target.value, formRules }}
-                    });
-                } else {
-                    onChange({ type: "modify/field", payload: {field: name, value: e.target.value}});
-                }
-            } 
-            setErrorMsg(check.message);
+        const check = errorChecker(name, e.target.value, formRules);
+        if (superform) {
+            onSuperChange({ 
+                type: "cart/modifyPassengers", 
+                payload: {id: parentForm, data: { field: name, value: e.target.value, formRules }}
+            });
+        } else {
+            onChange({ type: "modify/field", payload: {field: name, value: e.target.value}});
         }
+        setErrorMsg(check.message);
     }
 
     return (

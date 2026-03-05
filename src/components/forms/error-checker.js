@@ -29,7 +29,6 @@ function checkNoVoidValue(actualValue) {
 function errorChecker(field, actualValue, formRules) {
     const fieldRules = formRules.filter((el) => el.field === field );
     const { rules } = fieldRules[0];
-    console.log(rules)
 
     let status = 'ok';
     let message = '';
@@ -68,4 +67,18 @@ function errorChecker(field, actualValue, formRules) {
     return { status, message };
 }
 
-export default errorChecker;
+function completionChecker(form, formRules) {
+    const formObj = new FormData(form);
+    let status = 'ok';
+    
+    for (const [key, value] of formObj) {
+        if (errorChecker(key, value, formRules).status === 'ko') {
+            status = 'ko';
+            break;
+        }
+    }
+    
+    return status;
+}
+
+export { errorChecker, completionChecker };

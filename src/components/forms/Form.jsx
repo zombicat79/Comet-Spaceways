@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+
 import useForm from './../../hooks/useForm';
 
 import Input from './Input';
@@ -6,32 +8,66 @@ import Range from './Range';
 import RadioGroup from './RadioGroup';
 import ChoiceList from './ChoiceList';
 
-function Form({ id, formFields, defaultValues, formRules, superform, superformHandler, superformState }) {
+function Form({ id, formFields, defaultValues, formRules, superform, superformHandler, superformState, onFormAdd }) {
     const { formState, dispatch } = useForm(id, defaultValues);
-    console.log(formState)
+    const formElement = useRef(null);
+
+    useEffect(() => {
+        onFormAdd(formElement.current);
+    }, [])
 
     return (
-        <form id={id} className="form" >
+        <form id={id} className="form" ref={formElement} >
             {formFields.map((el, index) => {
                 let content;
                 let cssClasses = 'form-element';
                 switch(el.type) {
                     case 'checkbox':
-                        content = <Checkbox {...el.props} onChange={dispatch} parentForm={id} formState={formState} formRules={formRules} superform={superform} onSuperChange={superformHandler} superformState={superformState} />
+                        content = <Checkbox 
+                            {...el.props} 
+                            onChange={dispatch} 
+                            parentForm={id} formState={formState} 
+                            formRules={formRules} 
+                            superform={superform} 
+                            onSuperChange={superformHandler} 
+                            superformState={superformState} />
                         cssClasses += ' form__element--full-width';
                         break;
                     case 'range':
                         content = <Range {...el.props} parentForm={id} />
                         break;
                     case 'radio':
-                        content = <RadioGroup {...el.props} onChange={dispatch} parentForm={id} formState={formState} formRules={formRules} superform={superform} onSuperChange={superformHandler} />
+                        content = <RadioGroup 
+                            {...el.props} 
+                            onChange={dispatch} 
+                            parentForm={id} 
+                            formState={formState} 
+                            formRules={formRules} 
+                            superform={superform} 
+                            onSuperChange={superformHandler} 
+                            superformState={superformState} />
                         cssClasses += ' form__element--full-width';
                         break;
                     case 'selector':
-                        content = <ChoiceList {...el.props} onChange={dispatch} parentForm={id} formRules={formRules} superform={superform} onSuperChange={superformHandler} />
+                        content = <ChoiceList 
+                            {...el.props} 
+                            onChange={dispatch} 
+                            parentForm={id} 
+                            formRules={formRules} 
+                            superform={superform} 
+                            onSuperChange={superformHandler} 
+                            superformState={superformState} />
                         break;
                     default: // input
-                        content = <Input {...el.props} onChange={dispatch} parentForm={id} formState={formState} formRules={formRules} superform={superform} onSuperChange={superformHandler} />
+                        content = <Input 
+                            {...el.props} 
+                            onChange={dispatch} 
+                            parentForm={id} 
+                            formState={formState} 
+                            formRules={formRules} 
+                            superform={superform} 
+                            onSuperChange={superformHandler} 
+                            superformState={superformState} />
                 }
 
                 return <div key={`${id}-${el}-${index}`} className={cssClasses}>{content}</div>
