@@ -1,11 +1,33 @@
-function Checkbox({ labelled, inputType, name, title, visible, readOnly, onChange, parentForm, formState }) {
-    const inputId = `${parentForm}-${name}`;
+import { useState, useEffect, useRef } from 'react';
 
-    function handleChange(e) {
-        if (!(e.target.readOnly)) {
-            onChange({ type: "toggle/check", payload: {field: name}})
+function Checkbox({ labelled, inputType, name, title, visible, readOnly, onChange, parentForm, defaultValues, formRules, superform, onSuperChange }) {
+    const [value, setValue] = useState(defaultValues[name]);
+    const checkboxElement = useRef(null);
+    const inputId = `${parentForm}-${name}`;
+    console.log(value)
+
+    function handleChange() {
+        if (superform) {
+            onSuperChange({ 
+                type: "cart/modifyPassengers", 
+                payload: {id: parentForm, data: { field: name, value: !value, formRules }}
+            });
+        } else {
+            onChange({ type: "toggle/check", payload: {field: name}});
         }
+        setValue((curr) => !curr);
     }
+
+    useEffect(() => {
+        if (superform) {
+            onSuperChange({ 
+                type: "cart/modifyPassengers", 
+                payload: {id: parentForm, data: { field: name, value, formRules }}
+            });
+        } else {
+            onChange({ type: "toggle/check", payload: {field: name}});
+        }
+    }, [])
 
     if (visible) {
         return (
@@ -14,12 +36,13 @@ function Checkbox({ labelled, inputType, name, title, visible, readOnly, onChang
                     {labelled && <label htmlFor={inputId} className="field__id">{title}</label>}
                     <input 
                         id={inputId}
+                        ref={checkboxElement}
                         className="field__checkbutton"
                         type={inputType} 
                         name={name}
-                        checked={formState[parentForm][name]}
-                        readOnly={readOnly}
-                        onChange={(e) => handleChange(e)}
+                        checked={value}
+                        disabled={readOnly}
+                        onChange={() => handleChange()}
                     />
                 </div>
                 <p className="field__msg">Test message</p>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { errorChecker } from "./error-checker";
 
-function Input({ labelled, inputType, name, title, onChange, parentForm, formState, formRules, superform, onSuperChange, superformState }) {
+function Input({ labelled, inputType, name, title, onChange, parentForm, formRules, superform, onSuperChange }) {
     const [errorMsg, setErrorMsg] = useState('');
     const inputId = `${parentForm}-${name}`;
 

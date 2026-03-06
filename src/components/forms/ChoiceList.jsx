@@ -20,7 +20,7 @@ function ChoiceList({ labelled, name, title, options, onChange, parentForm, form
         if (superform) {
             onSuperChange({ 
                 type: "cart/modifyPassengers", 
-                payload: {id: parentForm, data: { field: name, value: selectionValue }}
+                payload: {id: parentForm, data: { field: name, value: selectionValue, formRules }}
             });
         } else {
             onChange({ type: "modify/field", payload: {field: name, value: selectionValue}});

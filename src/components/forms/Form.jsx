@@ -8,7 +8,7 @@ import Range from './Range';
 import RadioGroup from './RadioGroup';
 import ChoiceList from './ChoiceList';
 
-function Form({ id, formFields, defaultValues, formRules, superform, superformHandler, superformState, onFormAdd }) {
+function Form({ id, formFields, defaultValues, formRules, superform, superformHandler, onFormAdd }) {
     const { formState, dispatch } = useForm(id, defaultValues);
     const formElement = useRef(null);
 
@@ -26,11 +26,11 @@ function Form({ id, formFields, defaultValues, formRules, superform, superformHa
                         content = <Checkbox 
                             {...el.props} 
                             onChange={dispatch} 
-                            parentForm={id} formState={formState} 
+                            parentForm={id} formState={formState}
+                            defaultValues={defaultValues} 
                             formRules={formRules} 
                             superform={superform} 
-                            onSuperChange={superformHandler} 
-                            superformState={superformState} />
+                            onSuperChange={superformHandler} />
                         cssClasses += ' form__element--full-width';
                         break;
                     case 'range':
@@ -40,12 +40,10 @@ function Form({ id, formFields, defaultValues, formRules, superform, superformHa
                         content = <RadioGroup 
                             {...el.props} 
                             onChange={dispatch} 
-                            parentForm={id} 
-                            formState={formState} 
+                            parentForm={id}  
                             formRules={formRules} 
                             superform={superform} 
-                            onSuperChange={superformHandler} 
-                            superformState={superformState} />
+                            onSuperChange={superformHandler} />
                         cssClasses += ' form__element--full-width';
                         break;
                     case 'selector':
@@ -55,19 +53,16 @@ function Form({ id, formFields, defaultValues, formRules, superform, superformHa
                             parentForm={id} 
                             formRules={formRules} 
                             superform={superform} 
-                            onSuperChange={superformHandler} 
-                            superformState={superformState} />
+                            onSuperChange={superformHandler} />
                         break;
                     default: // input
                         content = <Input 
                             {...el.props} 
                             onChange={dispatch} 
                             parentForm={id} 
-                            formState={formState} 
                             formRules={formRules} 
                             superform={superform} 
-                            onSuperChange={superformHandler} 
-                            superformState={superformState} />
+                            onSuperChange={superformHandler} />
                 }
 
                 return <div key={`${id}-${el}-${index}`} className={cssClasses}>{content}</div>

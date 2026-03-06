@@ -2,7 +2,7 @@ import { useState } from 'react';
 import RadioButton from "./RadioButton";
 import { errorChecker } from "./error-checker";
 
-function RadioGroup({ labelled, name, title, options, onChange, parentForm, formState, formRules, superform, onSuperChange }) {
+function RadioGroup({ labelled, name, title, options, onChange, parentForm, formRules, superform, onSuperChange }) {
     const [errorMsg, setErrorMsg] = useState('');
     const [selectedOption, setSelectedOption] = useState('');
     const inputId = `${parentForm}-${name}`;
@@ -20,7 +20,7 @@ function RadioGroup({ labelled, name, title, options, onChange, parentForm, form
     }
 
     function checkNoSelection() {
-        const check = errorChecker(name, formState[parentForm][name], formRules);
+        const check = errorChecker(name, selectedOption, formRules);
         setErrorMsg(check.message);
     }
 
