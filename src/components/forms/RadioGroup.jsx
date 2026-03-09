@@ -2,7 +2,7 @@ import { useState } from 'react';
 import RadioButton from "./RadioButton";
 import { errorChecker } from "./error-checker";
 
-function RadioGroup({ labelled, name, title, options, onChange, parentForm, formRules, superform, onSuperChange }) {
+function RadioGroup({ labelled, name, title, options, onChange, parentForm, formRules, superform, onSuperChange, superformAction }) {
     const [errorMsg, setErrorMsg] = useState('');
     const [selectedOption, setSelectedOption] = useState('');
     const inputId = `${parentForm}-${name}`;
@@ -10,7 +10,7 @@ function RadioGroup({ labelled, name, title, options, onChange, parentForm, form
     function handleSelect(e) {
         if (superform) {
             onSuperChange({ 
-                type: "cart/modifyPassengers", 
+                type: superformAction, 
                 payload: {id: parentForm, data: { field: name, value: e.target.value, formRules }}
             });
         } else {

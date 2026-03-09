@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { errorChecker } from "./error-checker";
 
-function Input({ labelled, inputType, name, title, onChange, parentForm, formRules, superform, onSuperChange }) {
+function Input({ labelled, inputType, name, title, onChange, parentForm, formRules, superform, onSuperChange, superformAction }) {
     const [errorMsg, setErrorMsg] = useState('');
     const inputId = `${parentForm}-${name}`;
 
@@ -10,7 +10,7 @@ function Input({ labelled, inputType, name, title, onChange, parentForm, formRul
         const check = errorChecker(name, e.target.value, formRules);
         if (superform) {
             onSuperChange({ 
-                type: "cart/modifyPassengers", 
+                type: superformAction, 
                 payload: {id: parentForm, data: { field: name, value: e.target.value, formRules }}
             });
         } else {

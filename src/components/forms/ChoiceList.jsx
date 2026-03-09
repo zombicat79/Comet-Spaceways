@@ -3,7 +3,7 @@ import useSelectorTool from './../../hooks/useSelectorTool';
 
 import { errorChecker } from "./error-checker";
 
-function ChoiceList({ labelled, name, title, options, onChange, parentForm, formRules, superform, onSuperChange }) {
+function ChoiceList({ labelled, name, title, options, onChange, parentForm, formRules, superform, onSuperChange, superformAction }) {
     const [open, setOpen] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
     const { selectionValue, handleSelection } = useSelectorTool('N/A');
@@ -19,7 +19,7 @@ function ChoiceList({ labelled, name, title, options, onChange, parentForm, form
         const check = errorChecker(name, selectionValue, formRules);
         if (superform) {
             onSuperChange({ 
-                type: "cart/modifyPassengers", 
+                type: superformAction, 
                 payload: {id: parentForm, data: { field: name, value: selectionValue, formRules }}
             });
         } else {

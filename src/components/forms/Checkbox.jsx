@@ -1,31 +1,27 @@
 import { useState, useEffect, useRef } from 'react';
 
-function Checkbox({ labelled, inputType, name, title, visible, readOnly, onChange, parentForm, defaultValues, formRules, superform, onSuperChange }) {
+function Checkbox({ labelled, inputType, name, title, visible, readOnly, onChange, parentForm, defaultValues, formRules, superform, onSuperChange, superformAction }) {
     const [value, setValue] = useState(defaultValues[name]);
     const checkboxElement = useRef(null);
     const inputId = `${parentForm}-${name}`;
     console.log(value)
 
-    function handleChange() {
+    function handleChange(changeType) {
         if (superform) {
             onSuperChange({ 
-                type: "cart/modifyPassengers", 
+                type: superformAction, 
                 payload: {id: parentForm, data: { field: name, value: !value, formRules }}
             });
         } else {
             onChange({ type: "toggle/check", payload: {field: name}});
         }
-        setValue((curr) => !curr);
+
+        if (changeType === 'subsequent') setValue((curr) => !curr);
     }
 
     useEffect(() => {
-        if (superform) {
-            onSuperChange({ 
-                type: "cart/modifyPassengers", 
-                payload: {id: parentForm, data: { field: name, value, formRules }}
-            });
-        } else {
-            onChange({ type: "toggle/check", payload: {field: name}});
+        if (superform && name === 'unaccompanied') {
+            handleChange('initial');
         }
     }, [])
 
@@ -42,7 +38,7 @@ function Checkbox({ labelled, inputType, name, title, visible, readOnly, onChang
                         name={name}
                         checked={value}
                         disabled={readOnly}
-                        onChange={() => handleChange()}
+                        onChange={() => handleChange('subsequent')}
                     />
                 </div>
                 <p className="field__msg">Test message</p>

@@ -44,7 +44,8 @@ function PassengerForm({ type, occurrence, onFormAdd }) {
                 formFields={formConfig.nheFormFields} 
                 defaultValues={formConfig.nheFormDefaultValues} 
                 formRules={formConfig.nheFormRules} superform={true} 
-                superformHandler={cartDispatcher} 
+                superformHandler={cartDispatcher}
+                superformAction={"cart/modifyPassengers"}
                 superformState={cartState} 
                 onFormAdd={onFormAdd} />
             break;
@@ -55,7 +56,8 @@ function PassengerForm({ type, occurrence, onFormAdd }) {
                 defaultValues={minorFormDefaultValues} 
                 formRules={formConfig.minorFormRules} 
                 superform={true} 
-                superformHandler={cartDispatcher} 
+                superformHandler={cartDispatcher}
+                superformAction={"cart/modifyPassengers"}
                 superformState={cartState} 
                 onFormAdd={onFormAdd} />
             break;
@@ -66,7 +68,8 @@ function PassengerForm({ type, occurrence, onFormAdd }) {
                 defaultValues={petFormDefaultValues} 
                 formRules={formConfig.petFormRules} 
                 superform={true} 
-                superformHandler={cartDispatcher} 
+                superformHandler={cartDispatcher}
+                superformAction={"cart/modifyPassengers"} 
                 superformState={cartState} 
                 onFormAdd={onFormAdd} />
             break;
@@ -77,7 +80,8 @@ function PassengerForm({ type, occurrence, onFormAdd }) {
                 defaultValues={formConfig.humanoidFormDefaultValues} 
                 formRules={formConfig.humanoidFormRules} 
                 superform={true} 
-                superformHandler={cartDispatcher} 
+                superformHandler={cartDispatcher}
+                superformAction={"cart/modifyPassengers"}
                 superformState={cartState} 
                 onFormAdd={onFormAdd} />
     }

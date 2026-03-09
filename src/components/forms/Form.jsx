@@ -8,7 +8,7 @@ import Range from './Range';
 import RadioGroup from './RadioGroup';
 import ChoiceList from './ChoiceList';
 
-function Form({ id, formFields, defaultValues, formRules, superform, superformHandler, onFormAdd }) {
+function Form({ id, formFields, defaultValues, formRules, superform, superformHandler, superformAction, onFormAdd }) {
     const { formState, dispatch } = useForm(id, defaultValues);
     const formElement = useRef(null);
 
@@ -30,7 +30,8 @@ function Form({ id, formFields, defaultValues, formRules, superform, superformHa
                             defaultValues={defaultValues} 
                             formRules={formRules} 
                             superform={superform} 
-                            onSuperChange={superformHandler} />
+                            onSuperChange={superformHandler}
+                            superformAction={superformAction} />
                         cssClasses += ' form__element--full-width';
                         break;
                     case 'range':
@@ -43,7 +44,8 @@ function Form({ id, formFields, defaultValues, formRules, superform, superformHa
                             parentForm={id}  
                             formRules={formRules} 
                             superform={superform} 
-                            onSuperChange={superformHandler} />
+                            onSuperChange={superformHandler}
+                            superformAction={superformAction} />
                         cssClasses += ' form__element--full-width';
                         break;
                     case 'selector':
@@ -53,7 +55,8 @@ function Form({ id, formFields, defaultValues, formRules, superform, superformHa
                             parentForm={id} 
                             formRules={formRules} 
                             superform={superform} 
-                            onSuperChange={superformHandler} />
+                            onSuperChange={superformHandler}
+                            superformAction={superformAction} />
                         break;
                     default: // input
                         content = <Input 
@@ -62,7 +65,8 @@ function Form({ id, formFields, defaultValues, formRules, superform, superformHa
                             parentForm={id} 
                             formRules={formRules} 
                             superform={superform} 
-                            onSuperChange={superformHandler} />
+                            onSuperChange={superformHandler}
+                            superformAction={superformAction} />
                 }
 
                 return <div key={`${id}-${el}-${index}`} className={cssClasses}>{content}</div>
