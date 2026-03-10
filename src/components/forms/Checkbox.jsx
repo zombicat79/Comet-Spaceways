@@ -1,26 +1,31 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
+
+import { errorChecker } from "./error-checker";
 
 function Checkbox({ labelled, inputType, name, title, visible, readOnly, onChange, parentForm, defaultValues, formRules, superform, onSuperChange, superformAction }) {
     const [value, setValue] = useState(defaultValues[name]);
-    const checkboxElement = useRef(null);
+    const [errorMsg, setErrorMsg] = useState('');
     const inputId = `${parentForm}-${name}`;
-    console.log(value)
 
     function handleChange(changeType) {
+        const newValue = changeType === 'initial' ? value : !value;
+        const check = errorChecker(name, newValue, formRules);
+
         if (superform) {
             onSuperChange({ 
                 type: superformAction, 
-                payload: {id: parentForm, data: { field: name, value: !value, formRules }}
+                payload: {id: parentForm, data: { field: name, value: newValue, formRules }}
             });
         } else {
             onChange({ type: "toggle/check", payload: {field: name}});
         }
 
-        if (changeType === 'subsequent') setValue((curr) => !curr);
+        setValue(newValue);
+        setErrorMsg(check.message);
     }
 
     useEffect(() => {
-        if (superform && name === 'unaccompanied') {
+        if (superform) {
             handleChange('initial');
         }
     }, [])
@@ -32,16 +37,15 @@ function Checkbox({ labelled, inputType, name, title, visible, readOnly, onChang
                     {labelled && <label htmlFor={inputId} className="field__id">{title}</label>}
                     <input 
                         id={inputId}
-                        ref={checkboxElement}
                         className="field__checkbutton"
                         type={inputType} 
-                        name={name}
                         checked={value}
                         disabled={readOnly}
                         onChange={() => handleChange('subsequent')}
                     />
                 </div>
-                <p className="field__msg">Test message</p>
+                {errorMsg !== '' && <p className="field__msg">{errorMsg}</p>}
+                <input className="field__value field__value--hidden" type="hidden" name={name} value={value} />
             </div>
         )
     }

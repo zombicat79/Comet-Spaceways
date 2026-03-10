@@ -14,7 +14,7 @@ import * as formConfig from './../../components/passengers/passenger-form-config
 
 function PassengerDetails() {
     const { flightSearchState } = useContext(FlightSearchContext);
-    const { cartState, cartDispatcher } = useContext(CartContext);
+    const { cartState } = useContext(CartContext);
     const [passengerForms, setPassengerForms] = useState([]);
     const [progressDisabled, setProgressDisabled] = useState(true);
     const navigate = useNavigate();
@@ -22,10 +22,6 @@ function PassengerDetails() {
     function addPassengerForm(form) {
         setPassengerForms((curr) => [...curr, form]);
     }
-
-    useEffect(() => {
-        cartDispatcher({ type: 'cart/removePassengers' });
-    }, [])
 
     useEffect(() => {
         let superformCompletion = 'ok';

@@ -26,6 +26,14 @@ function checkNoVoidValue(actualValue) {
     }
 }
 
+function checkRequirement(actualValue) {
+    if (!actualValue || actualValue === 'false') {
+        return { status: 'ko', msg: 'Field must be marked as confirmed' };
+    } else {
+        return { status: 'ok', msg: '' };
+    }
+}
+
 function errorChecker(field, actualValue, formRules) {
     const fieldRules = formRules.filter((el) => el.field === field );
     const { rules } = fieldRules[0];
@@ -50,8 +58,17 @@ function errorChecker(field, actualValue, formRules) {
                 }
                 break;
             case 'void':
-                if (rule.value === false) {
+                if (rule.value === true) {
                     checkResult = checkNoVoidValue(actualValue);
+                    if (checkResult.status === 'ko') {
+                        status = checkResult.status;
+                        message = checkResult.msg;
+                    }
+                }
+                break;
+            case 'obligation':
+                if (rule.value === true) {
+                    checkResult = checkRequirement(actualValue);
                     if (checkResult.status === 'ko') {
                         status = checkResult.status;
                         message = checkResult.msg;

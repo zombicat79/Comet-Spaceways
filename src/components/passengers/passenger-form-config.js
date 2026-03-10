@@ -64,7 +64,7 @@ export const minorFormFields = [
     { type: 'input', props: {labelled: true, inputType: 'text', name: 'surname', title: 'Last Name'}},
     { type: 'range', props: {labelled: true, inputType: 'range', name: 'age', title: 'Age', min: '2', max: '17'}},
     { type: 'radio', props: {labelled: true, name: 'build', title: 'Build', options: ['organic', 'cyborg', 'android']}},
-    { type: 'checkbox', props: {labelled: true, inputType: 'checkbox', name: 'unaccompanied', title: 'Minor travelling without humanoid adult supervision', visible: false, readOnly: true}},
+    { type: 'checkbox', props: {labelled: true, inputType: 'checkbox', name: 'unaccompanied', title: 'Minor travelling without humanoid adult supervision', visible: false, readOnly: true, marked: true}},
 ];
 export const minorFormDefaultValues = {
     name: '',
@@ -77,8 +77,8 @@ export const minorFormRules = [
     { field: 'name', rules: [{ name: 'minLength', value: 2}, { name: 'maxLength', value: 15 }] },
     { field: 'surname', rules: [{ name: 'minLength', value: 2}, { name: 'maxLength', value: 15 }] },
     { field: 'age', rules: [{ name: 'minValue', value: 2}, { name: 'maxValue', value: 17 }] },
-    { field: 'build', rules: [{ name: 'void', value: false}] },
-    { field: 'unaccompanied', rules: [{ name: 'void', value: false}, { name: 'boolean', value: true}] }
+    { field: 'build', rules: [{ name: 'void', value: true}] },
+    { field: 'unaccompanied', rules: [{ name: 'obligation', value: true}] }
 ]
 
 export const petFormFields = [
@@ -107,8 +107,8 @@ export const petFormDefaultValues = {
 }
 export const petFormRules = [
     { field: 'name', rules: [{ name: 'minLength', value: 2}, { name: 'maxLength', value: 15 }] },
-    { field: 'species', rules: [{ name: 'void', value: false}] },
-    { field: 'build', rules: [{ name: 'void', value: false}] },
-    { field: 'unaccompanied', rules: [{ name: 'void', value: false}, { name: 'boolean', value: true}] },
-    { field: 'conversational', rules: [{ name: 'void', value: false}, { name: 'boolean', value: true}] }
+    { field: 'species', rules: [{ name: 'void', value: true}] },
+    { field: 'build', rules: [{ name: 'void', value: true}] },
+    { field: 'unaccompanied', rules: [{ name: 'obligation', value: true}] },
+    { field: 'conversational', rules: [{ name: 'obligation', value: false}] }
 ]
