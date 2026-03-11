@@ -1672,6 +1672,11 @@ h3 {
     border: 1px solid #FF4500 !important; }
     .form .field--error .selector__value {
       filter: opacity(0.3); }
+  .form .field__data-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%; }
   .form .field__id {
     color: inherit;
     font-size: 1.4rem; }
@@ -1746,6 +1751,22 @@ h3 {
     position: relative;
     top: .2rem;
     margin-left: .5rem; }
+  .form .field--range {
+    border: none; }
+    .form .field--range .rangebar {
+      width: 100%;
+      margin-top: 1rem;
+      flex: 90%; }
+    .form .field--range .output {
+      font-family: 'titillium-bold';
+      color: #272643;
+      font-size: 1.6rem;
+      flex: 10%;
+      text-align: right;
+      position: relative;
+      top: 4px; }
+      .form .field--range .output--error {
+        color: #FF4500; }
   .form .field__msg {
     color: #F5F5F5;
     background-color: #FF4500;

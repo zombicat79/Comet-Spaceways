@@ -26,7 +26,7 @@ function Form({ id, formFields, defaultValues, formRules, superform, superformHa
                         content = <Checkbox 
                             {...el.props} 
                             onChange={dispatch} 
-                            parentForm={id} formState={formState}
+                            parentForm={id}
                             defaultValues={defaultValues} 
                             formRules={formRules} 
                             superform={superform} 
@@ -35,7 +35,15 @@ function Form({ id, formFields, defaultValues, formRules, superform, superformHa
                         cssClasses += ' form__element--full-width';
                         break;
                     case 'range':
-                        content = <Range {...el.props} parentForm={id} />
+                        content = <Range 
+                            {...el.props}
+                            onChange={dispatch} 
+                            parentForm={id}
+                            defaultValues={defaultValues}
+                            formRules={formRules} 
+                            superform={superform} 
+                            onSuperChange={superformHandler}
+                            superformAction={superformAction} />
                         break;
                     case 'radio':
                         content = <RadioGroup 

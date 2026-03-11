@@ -18,6 +18,26 @@ function checkMaxLength(expectedValue, actualValue) {
     }
 }
 
+function checkMinValue(expectedValue, actualValue) {
+    if (!actualValue) {
+        return { status: 'ko', msg: 'You must provide a value' };
+    } else if (actualValue < expectedValue) {
+        return { status: 'ko', msg: `Minimum value must be ${expectedValue}` };
+    } else {
+        return { status: 'ok', msg: '' };
+    }
+}
+
+function checkMaxValue(expectedValue, actualValue) {
+    if (!actualValue) {
+        return { status: 'ko', msg: 'You must provide a value' };
+    } else if (actualValue > expectedValue) {
+        return { status: 'ko', msg: `Maximum accepted value is ${expectedValue}` };
+    } else {
+        return { status: 'ok', msg: '' };
+    }
+}
+
 function checkNoVoidValue(actualValue) {
     if (!actualValue || actualValue === '' || actualValue === 'N/A') {
         return { status: 'ko', msg: 'You must select an option' };
@@ -52,6 +72,20 @@ function errorChecker(field, actualValue, formRules) {
                 break;
             case 'maxLength':
                 checkResult = checkMaxLength(rule.value, actualValue);
+                if (checkResult.status === 'ko') {
+                    status = checkResult.status;
+                    message = checkResult.msg;
+                }
+                break;
+            case 'minValue':
+                checkResult = checkMinValue(rule.value, actualValue);
+                if (checkResult.status === 'ko') {
+                    status = checkResult.status;
+                    message = checkResult.msg;
+                }
+                break;
+            case 'maxValue':
+                checkResult = checkMaxValue(rule.value, actualValue);
                 if (checkResult.status === 'ko') {
                     status = checkResult.status;
                     message = checkResult.msg;

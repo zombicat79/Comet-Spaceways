@@ -65,6 +65,11 @@
 
     // SUB-ELEMENTS
 
+    &__data-wrapper {
+        @include flex-row(flex-start);
+        width: 100%;
+    }
+
     &__id {
         color: inherit;
         font-size: $size-medium;
@@ -169,6 +174,30 @@
         position: relative;
         top: .2rem;
         margin-left: .5rem;
+    }
+
+    &--range {
+        border: none;
+
+        .rangebar {
+            width: 100%;
+            margin-top: 1rem;
+            flex: 90%;
+        }
+
+        .output {
+            font-family: 'titillium-bold';
+            color: $color-text-dark;
+            font-size: $size-regular;
+            flex: 10%;
+            text-align: right;
+            position: relative;
+            top: 4px;
+
+            &--error {
+                color: $color-highlight-extreme;
+            }
+        }
     }
 
     // INFO MESSAGING

@@ -69,7 +69,7 @@ export const minorFormFields = [
 export const minorFormDefaultValues = {
     name: '',
     surname: '',
-    age: '',
+    age: 0,
     build: '',
     unaccompanied: false
 }
