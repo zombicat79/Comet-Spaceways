@@ -2508,6 +2508,30 @@ h3 {
       .passenger-details .btn--primary {
         width: 30rem; } }
 
+.allocation {
+  position: relative;
+  z-index: 2;
+  background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center; }
+  .allocation .content-section:first-child {
+    padding-top: 27rem; }
+  .allocation section:nth-child(odd):not(:first-child) {
+    background-color: transparent; }
+  .allocation .btn--primary {
+    width: 40rem;
+    position: relative;
+    bottom: 3rem; }
+    @media screen and (max-width: 360px) {
+      .allocation .btn--primary {
+        width: 30rem; } }
+
 .notfound {
   position: relative;
   z-index: 2; }

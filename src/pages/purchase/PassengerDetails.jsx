@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router';
 
-import { LayoutContext } from '../../contexts/LayoutContext';
 import { FlightSearchContext } from '../../contexts/FlightSearchContext';
 import { CartContext } from '../../contexts/CartContext';
 

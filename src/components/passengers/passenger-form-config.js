@@ -22,8 +22,8 @@ export const humanoidFormDefaultValues = {
 export const humanoidFormRules = [
     { field: 'name', rules: [{ name: 'minLength', value: 2}, { name: 'maxLength', value: 15 }] },
     { field: 'surname', rules: [{ name: 'minLength', value: 2}, { name: 'maxLength', value: 15 }] },
-    { field: 'nationality', rules: [{ name: 'void', value: false}] },
-    { field: 'build', rules: [{ name: 'void', value: false}] }
+    { field: 'nationality', rules: [{ name: 'void', value: true}] },
+    { field: 'build', rules: [{ name: 'void', value: true}] }
 ]
 
 export const nheFormFields = [
@@ -55,8 +55,8 @@ export const nheFormDefaultValues = {
 export const nheFormRules = [
     { field: 'name', rules: [{ name: 'minLength', value: 2}, { name: 'maxLength', value: 15 }] },
     { field: 'surname', rules: [{ name: 'minLength', value: 2}, { name: 'maxLength', value: 15 }] },
-    { field: 'race', rules: [{ name: 'void', value: false}] },
-    { field: 'origin', rules: [{ name: 'void', value: false}] }
+    { field: 'race', rules: [{ name: 'void', value: true}] },
+    { field: 'origin', rules: [{ name: 'void', value: true}] }
 ]
 
 export const minorFormFields = [
