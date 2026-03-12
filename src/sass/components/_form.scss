@@ -2,10 +2,22 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
+    grid-auto-flow: row dense;
     column-gap: 3rem;
     row-gap: 1rem;
+    @include respond(tablet-landscape) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @include respond(tablet-portrait) {
+        grid-template-columns: 100%;
+    }
 
     &__element {
+        &:nth-child(3) {
+            @include respond(tablet-landscape) {
+                grid-column: 1 / -1;
+            }
+        }
 
         &--full-width {
             grid-column: 1 / -1;
@@ -38,6 +50,9 @@
 
         .field__id {
             color: $color-text-dark;
+            @include respond(phone) {
+                line-height: 2.5rem;
+            }
         }
     }
 
@@ -141,7 +156,13 @@
         width: 100%;
         @include flex-row(flex-start);
         margin-top: .75rem;
-        gap: 10rem
+        gap: 10rem;
+        @include respond(tablet-portrait) {
+            @include flex-column(space-between);
+            align-items: flex-start;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
     }
 
     &__option {
@@ -174,6 +195,16 @@
         position: relative;
         top: .2rem;
         margin-left: .5rem;
+        @include respond(big-screen) {
+            width: .75vw;
+            height: .75vw;
+            top: .1rem;
+        }
+        @include respond(huge-screen) {
+            width: .75vw;
+            height: .75vw;
+            top: .5rem;
+        }
     }
 
     &--range {
@@ -188,7 +219,7 @@
         .output {
             font-family: 'titillium-bold';
             color: $color-text-dark;
-            font-size: $size-regular;
+            font-size: $size-big;
             flex: 10%;
             text-align: right;
             position: relative;

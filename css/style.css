@@ -1352,6 +1352,9 @@ h3 {
   border: 2px solid #272643;
   border-radius: 1.5rem;
   transition: transform .5s; }
+  @media screen and (max-width: 480px) {
+    .passenger-segment {
+      padding: 3rem 1.5rem; } }
   .passenger-segment:first-child {
     margin-top: 0; }
   .passenger-segment:last-child {
@@ -1632,8 +1635,18 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
+  grid-auto-flow: row dense;
   column-gap: 3rem;
   row-gap: 1rem; }
+  @media screen and (max-width: 1000px) {
+    .form {
+      grid-template-columns: 1fr 1fr; } }
+  @media screen and (max-width: 768px) {
+    .form {
+      grid-template-columns: 100%; } }
+  @media screen and (max-width: 1000px) {
+    .form__element:nth-child(3) {
+      grid-column: 1 / -1; } }
   .form__element--full-width {
     grid-column: 1 / -1; }
 
@@ -1662,6 +1675,9 @@ h3 {
     border: none; }
     .form .field--type-checkbox .field__id {
       color: #272643; }
+      @media screen and (max-width: 600px) {
+        .form .field--type-checkbox .field__id {
+          line-height: 2.5rem; } }
   .form .field:hover {
     cursor: pointer; }
   .form .field--disabled {
@@ -1732,6 +1748,15 @@ h3 {
     align-items: center;
     margin-top: .75rem;
     gap: 10rem; }
+    @media screen and (max-width: 768px) {
+      .form .field__choice-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-top: 2rem; } }
   .form .field__option {
     display: inline-block;
     width: 100%;
@@ -1751,6 +1776,16 @@ h3 {
     position: relative;
     top: .2rem;
     margin-left: .5rem; }
+    @media screen and (min-width: 2000px) {
+      .form .field__radiobutton, .form .field__checkbutton {
+        width: .75vw;
+        height: .75vw;
+        top: .1rem; } }
+    @media screen and (min-width: 2800px) {
+      .form .field__radiobutton, .form .field__checkbutton {
+        width: .75vw;
+        height: .75vw;
+        top: .5rem; } }
   .form .field--range {
     border: none; }
     .form .field--range .rangebar {
@@ -1760,7 +1795,7 @@ h3 {
     .form .field--range .output {
       font-family: 'titillium-bold';
       color: #272643;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       flex: 10%;
       text-align: right;
       position: relative;

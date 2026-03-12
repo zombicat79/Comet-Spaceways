@@ -20,7 +20,7 @@ function Form({ id, formFields, defaultValues, formRules, superform, superformHa
         <form id={id} className="form" ref={formElement} >
             {formFields.map((el, index) => {
                 let content;
-                let cssClasses = 'form-element';
+                let cssClasses = 'form__element';
                 switch(el.type) {
                     case 'checkbox':
                         content = <Checkbox 
