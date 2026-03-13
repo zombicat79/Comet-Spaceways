@@ -7,14 +7,15 @@ function Input({ labelled, inputType, name, title, onChange, parentForm, formRul
     const inputId = `${parentForm}-${name}`;
 
     function handleChange(e) {
-        const check = errorChecker(name, e.target.value, formRules);
+        const normalizedValue = e.target.value.toLowerCase();
+        const check = errorChecker(name, normalizedValue, formRules);
         if (superform) {
             onSuperChange({ 
                 type: superformAction, 
-                payload: {id: parentForm, data: { field: name, value: e.target.value, formRules }}
+                payload: {id: parentForm, data: { field: name, value: normalizedValue, formRules }}
             });
         } else {
-            onChange({ type: "modify/field", payload: {field: name, value: e.target.value}});
+            onChange({ type: "modify/field", payload: {field: name, value: normalizedValue}});
         }
         setErrorMsg(check.message);
     }

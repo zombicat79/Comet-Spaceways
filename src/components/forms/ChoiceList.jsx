@@ -7,23 +7,24 @@ function ChoiceList({ labelled, name, title, options, onChange, parentForm, form
     const [open, setOpen] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
     const { selectionValue, handleSelection } = useSelectorTool('N/A');
+    const normalizedValue = selectionValue.toLowerCase();
     const inputId = `${parentForm}-${name}`;
 
     function closeList() {
-        const check = errorChecker(name, selectionValue, formRules);
+        const check = errorChecker(name, normalizedValue, formRules);
         setOpen(false)
         setErrorMsg(check.message);
     }
 
     useEffect(() => {
-        const check = errorChecker(name, selectionValue, formRules);
+        const check = errorChecker(name, normalizedValue, formRules);
         if (superform) {
             onSuperChange({ 
                 type: superformAction, 
-                payload: {id: parentForm, data: { field: name, value: selectionValue, formRules }}
+                payload: {id: parentForm, data: { field: name, value: normalizedValue, formRules }}
             });
         } else {
-            onChange({ type: "modify/field", payload: {field: name, value: selectionValue}});
+            onChange({ type: "modify/field", payload: {field: name, value: normalizedValue}});
         }
 
         if (selectionValue !== 'N/A') {
