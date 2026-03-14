@@ -30,7 +30,8 @@ export const nheFormFields = [
     { type: 'input', props: {labelled: true, inputType: 'text', name: 'name', title: 'Human Pronounceable Name'}},
     { type: 'input', props: {labelled: true, inputType: 'text', name: 'surname', title: 'Tribe / Cast / Faction Name'}},
     { type: 'selector', props: {labelled: true, name: 'race', title: 'Race', options: [
-        'gray / green dwarf',
+        'green little man',
+        'big-headed gray',
         'reptilian',
         'insectoid',
         'cephalopodian',

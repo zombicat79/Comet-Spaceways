@@ -31,9 +31,15 @@ function PassengerForm({ type, occurrence, onFormAdd }) {
                 return el;
             })
             const processedMPetFormDefaults = { ...formConfig.petFormDefaultValues, unaccompanied: true };
-            return [processedPetFormFields, processedMPetFormDefaults]
+            return [processedPetFormFields, processedMPetFormDefaults];
+        } else if (pets > 0 && humanoids === 0 && nhes > 0 && minors === 0) {
+            const processedPetFormFields = formConfig.petFormFields.map((el) => {
+                if (el.props.name === "conversational") return { ...el, props: { ...el.props, visible: true }};
+                return el;
+            })
+            return [processedPetFormFields, formConfig.petFormDefaultValues];
         }
-        return [formConfig.petFormFields, formConfig.petFormDefaultValues]
+        return [formConfig.petFormFields, formConfig.petFormDefaultValues];
     }, [humanoids, nhes, minors, pets])
     
     let content;
