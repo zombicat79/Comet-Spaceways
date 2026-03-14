@@ -16,7 +16,14 @@
                 "short transfer"
             ],
             "capacity": {
-                "seats": 120,
+                "seats": {
+                    "total": 120,
+                    "distribution": {
+                        "type": "column-row",
+                        "columns": [[1, 1, 1], [1, 1, 1]],
+                        "rows": 20
+                    }
+                },
                 "cabins": null,
                 "habitats": null,
                 "cargo": 6000,
@@ -61,7 +68,18 @@
                 "descent"
             ],
             "capacity": {
-                "seats": 350,
+                "seats": {
+                    "total": 350,
+                    "distribution": {
+                        "type": "circle-level",
+                        "circles": [
+                            [1, 1, 1, 1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                        ],
+                        "levels": 10
+                    }
+                },
                 "cabins": null,
                 "habitats": null,
                 "cargo": 20000,
@@ -106,7 +124,14 @@
                 "intra-belt travel"
             ],
             "capacity": {
-                "seats": 238,
+                "seats": {
+                    "total": 240,
+                    "distribution": {
+                        "type": "column-row",
+                        "columns": [[1, 1, 1], [1, 1, 1, 1], [1, 1, 1]],
+                        "rows": 24
+                    }
+                },
                 "cabins": null,
                 "habitats": null,
                 "cargo": 15000,
