@@ -2,6 +2,7 @@ import { useReducer } from 'react';
 
 const initialState = {
     viewportWidth: window.innerWidth,
+    isClickable: true,
     scroll: true,
     scrollHeight: 0,
     modal: null,
@@ -26,6 +27,8 @@ function reducer(state, action) {
     switch(action.type) {
         case 'set/viewportWidth':
             return { ...state, viewportWidth: action.payload };
+        case 'set/clickable':
+            return { ...state, isClickable: action.payload };
         case 'toggle/scroll':
             return { ...state, scroll: !state.scroll };
         case 'set/scroll':

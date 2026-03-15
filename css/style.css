@@ -1228,8 +1228,10 @@ p {
     @media screen and (max-width: 600px) {
       .infopiece__routing {
         justify-content: flex-start; } }
-  .infopiece__text:not(.infopiece__text:last-child) {
-    margin-bottom: 1.5rem; }
+  .infopiece__text {
+    font-size: 1.2rem; }
+    .infopiece__text:not(.infopiece__text:last-child) {
+      margin-bottom: 1.5rem; }
 
 .loader {
   position: absolute;
@@ -2333,9 +2335,13 @@ p {
   .scrollblocker--on {
     background-color: rgba(18, 18, 18, 0.8);
     z-index: 1000; }
-  .scrollblocker-off {
+  .scrollblocker--off {
     background-color: transparent;
     z-index: 1; }
+  .scrollblocker--clickable {
+    pointer-events: initial; }
+  .scrollblocker--unclickable {
+    pointer-events: none; }
 
 .modal {
   position: absolute;

@@ -19,12 +19,17 @@ function DestinationsProvider({ children }) {
             }
         
             const destinationData = await getDataFromDB();
-            const sortedData = destinationData.data.sort((a, b) => {
-                if (a.id > b.id) return 1;
-                if (a.id < b.id) return -1;
-                return 0;
-            })
-            setDestinations(sortedData);
+
+            if (destinationData["error"]) {
+                setDestinations(null);
+            } else {
+                const sortedData = destinationData.data.sort((a, b) => {
+                    if (a.id > b.id) return 1;
+                    if (a.id < b.id) return -1;
+                    return 0;
+                })
+                setDestinations(sortedData);
+            }
         };
 
         fetchDestinations();

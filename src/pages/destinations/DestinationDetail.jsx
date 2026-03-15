@@ -1,8 +1,9 @@
-import { useState, useEffect, useContext } from 'react';
-import { DestinationsContext } from '../../contexts/DestinationsContext';
+import { useEffect, useContext } from 'react';
 import { FlightSearchContext } from '../../contexts/FlightSearchContext';
 import { LayoutContext } from '../../contexts/LayoutContext';
 import { useLocation } from 'react-router';
+
+import useDestinationFetch from '../../hooks/useDestinationFetch';
 
 import TagList from "./../../components/TagList";
 import Banner from './../../components/Banner';
@@ -10,29 +11,33 @@ import ContentSection from './../../layout/ContentSection';
 import Figure from "../../components/Figure";
 import SliderTool from '../../components/SliderTool';
 import FlightSearch from '../../components/flight/FlightSearch';
+import ErrorNotice from '../../components/infopieces/ErrorNotice';
 
 import { maximizeDestinations } from '../../utilities/utils';
+import errors from '../../components/infopieces/errorTypes';
 
 function DestinationDetail() {
-    const [loading, setLoading] = useState(false);
-    const { destinations } = useContext(DestinationsContext);
+    const { loading, fetchAlert, setFetchAlert, destinations } = useDestinationFetch();
     const { flightSearchState, changeFlightSearchState } = useContext(FlightSearchContext);
-    const { dispatch, layoutState } = useContext(LayoutContext);
+    const { layoutState, dispatch, handlePopupLaunch } = useContext(LayoutContext);
     const location = useLocation();
     const [currentDestination] = location.pathname.match(/(?<=\/)[A-Z]{3}$/);
-    const currentDestinationData = destinations.find((el) => el.port === currentDestination);
+    const currentDestinationData = destinations?.find((el) => el.port === currentDestination) || null;
 
     useEffect(() => {
-        if (destinations.length <= 0) {
-            dispatch({ type: "set/scroll", payload: false });
-            dispatch({ type: "set/loader", payload: true });
-            setLoading(true);
+        if (fetchAlert) handlePopupLaunch({ modalClass: "generic", content: <ErrorNotice error={errors.destinationData} /> })
+    }, [fetchAlert])
+
+    useEffect(() => {
+        if (layoutState.modal && fetchAlert) {
+            dispatch({ type: "set/clickable", payload: false });
+            setTimeout(() => {
+                setFetchAlert(false);
+            }, 6000);
         } else {
-            dispatch({ type: "set/scroll", payload: true });
-            dispatch({ type: "set/loader", payload: false });
-            setLoading(false);
+            dispatch({ type: "set/clickable", payload: true });
         }
-    },[destinations])
+    }, [layoutState.modal, fetchAlert])
 
     useEffect(() => {
         if (flightSearchState.origin === maximizeDestinations(currentDestination)) {
@@ -41,7 +46,7 @@ function DestinationDetail() {
         changeFlightSearchState({ type: 'destination-change', payload: maximizeDestinations(currentDestination) });
     }, [])
 
-    if (!loading && currentDestinationData) {
+    if (currentDestinationData && !loading) {
         const { domains, region, host_type, category, uses } = currentDestinationData;
         const tags = domains.concat([region]).concat([host_type]).concat([category].concat(uses));
         const sliderPics = currentDestinationData.pictures.map((el, index) => {
@@ -111,7 +116,7 @@ function DestinationDetail() {
     }
 
     return (
-        <main className="destinations destinations--loading">
+        <main className="destinations">
             <Banner
                 textStyle={{ color: 'default', align: 'center' }}
                 textContent={{
