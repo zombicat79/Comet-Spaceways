@@ -1,0 +1,212 @@
+.destinations {
+    position: relative;
+    z-index: 3;
+    padding: 10rem 0;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.15)), 
+        url('./../assets/images/milky_way_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--loading {
+        height: 100vh;
+    }
+
+    .tooltip {
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+    }
+
+    &__heading {
+        @include flex-column(center);
+        margin: 5rem 0;
+
+        h2 {
+            width: 50%;
+            line-height: 4rem;
+        }
+    }
+
+    .stellar-map {
+        margin-bottom: 10rem;
+    }
+
+    .searchtool {
+        margin-bottom: 7rem;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        justify-items: center;
+        gap: 10rem;
+
+        @include respond(tablet-landscape) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            row-gap: 5rem;
+        }
+
+        @include respond(tablet-portrait) {
+            grid-template-columns: 1fr;
+        }
+
+        @include respond(huge-screen) {
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        a, .card {
+            width: 100%
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+        }
+
+        .infopanel {
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__search {
+        @include flex-column(center);
+        margin-top: 10rem;
+
+        h3 {
+            margin: 0 2rem 3rem;
+        }
+    }
+
+    h2, h3 {
+        @include respond(phone) {
+            font-size: 2rem;
+        }
+        @include respond(phone-small) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.destination-detail {
+    position: relative;
+    z-index: 3;
+
+    .banner {
+        @include respond(huge-screen) {
+            background-position-y: 50%;
+        }
+
+        &--CEL {
+            @include respond(tablet-portrait) {
+                background-position-x: 75%;
+            }
+            @include respond(phone-medium) {
+                background-position-x: 85%;
+            }
+        }
+
+        &--EEU {
+            @include respond(huge-screen) {
+                background-position-y: 25%;
+            }
+        }
+
+        &--EEU, &--EAS, &--EAM {
+            @include respond(phone) {
+                background-position-x: 55%;
+            }
+        }
+
+        &--VEN, &--TTN {
+            @include respond(tablet-portrait) {
+                background-position-x: 40%;
+            }
+        }
+    }
+
+    .banner__msg {
+        @include respond(phone) {
+            text-align: center;
+        }
+
+        .banner__heading {
+            @include respond(phone) {
+                font-size: 3rem;
+            }
+        }
+    
+        .banner__text {
+            font-style: italic;
+            font-size: 2rem;
+            @include respond(tablet-landscape) {
+                max-width: none;
+                margin: 0;
+            }
+        }
+    }
+
+    .destination-tags {
+        padding: 3rem;
+    }
+    
+    .features__list {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+
+        .figure {
+            gap: 5rem;
+        }
+
+        @include respond(tablet-landscape) {
+            .features__element:not(:last-child) {
+                margin-bottom: 5rem;
+            }
+
+            .figure {
+                gap: 3rem;
+            }   
+
+            .figure--horizontal, 
+            .figure--horizontal-reverse {
+                flex-direction: column;
+
+                .figure__img-wrapper {
+                    width: 100%;
+
+                    .figure__img {
+                        max-width: 80%;
+                        max-height: 40rem;
+                        margin: 0 auto;
+                    }
+                }
+
+                .figure__text {
+                    text-align: center;
+                }
+            }
+        }
+
+        @include respond(desktop) {
+            width: 80%;
+
+            .figure {
+                gap: 3rem;
+            }
+        }
+    }
+
+    .slick-slider {
+        margin: 8rem 0;
+    }
+
+    .destination-search {
+        @include flex-column(center);
+        padding-bottom: 16rem;
+    }
+}

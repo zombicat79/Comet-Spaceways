@@ -22,8 +22,11 @@ function Banner({ background, textStyle, textContent, children }) {
         case 'starscape':
             backgroundOption = 5;
             break;
+        case 'milky':
+            backgroundOption = 6;
+            break;
         default:
-            backgroundOption = 1;
+            backgroundOption = background.img;
     }
 
     return (

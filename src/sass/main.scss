@@ -12,11 +12,15 @@
 @import "components/navlink";
 @import "components/navbar";
 @import "components/navmenu";
+@import "components/tooltip";
+@import "components/tag";
+@import "components/infopanel";
 @import "components/quantifier";
 @import "components/selector";
 @import "components/banner";
 @import "components/pricetag";
 @import "components/card";
+@import "components/figure";
 @import "components/intersection";
 @import "components/page-ribbon";
 @import "components/promoposter";
@@ -34,6 +38,8 @@
 @import "components/shopping-item";
 @import "components/routing_diagram";
 @import "components/form.scss";
+@import "components/stellar-map";
+@import "components/slidertool";
 
 @import "vendors/datepicker/datepicker";
 
@@ -46,6 +52,7 @@
 @import "layout/content-section";
 
 @import "pages/home";
+@import "pages/destinations";
 @import "pages/tickets";
 @import "pages/passenger-details";
 @import "pages/allocation";

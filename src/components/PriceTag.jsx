@@ -4,7 +4,7 @@ function PriceTag({ price, priceType, currency }) {
             {priceType === 'initial' &&
                 <p className="pricetag__prefix">from</p>
             }
-            <p className="pricetag__amount">{price} {currency}<span className="pricetag__prompt">&gt;</span></p>
+            <p className="pricetag__amount">${price} {currency}<span className="pricetag__prompt">&gt;</span></p>
         </div>
     )
 }

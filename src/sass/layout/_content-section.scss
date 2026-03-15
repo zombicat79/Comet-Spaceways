@@ -20,5 +20,9 @@
         @include respond(huge-screen) {
             max-width: 75vw;
         }
+
+        & > *:not(:last-child) {
+            margin-bottom: 5rem;
+        }
     }
 }

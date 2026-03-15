@@ -32,7 +32,10 @@
 
     &--error {
         border: 1px solid $color-highlight-extreme !important;
-        color: $color-highlight-extreme;
+
+        .selector__choice--quantity {
+            color: $color-highlight-extreme;
+        }
 
         .selector__value {
             filter: opacity(0.3)

@@ -12,8 +12,8 @@ function ErrorNotice({ error }) {
         setTimeout(() => {
           dispatch({ type: "toggle/modal" });
           dispatch({ type: "toggle/scroll" });
-        }, 5000);
-        setTimeout(() => navigate(action.destinationUrl), 6000);
+          navigate(action.destinationUrl);
+        }, 6000);
       }
     }, [action])
 

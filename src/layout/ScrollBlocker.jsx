@@ -6,6 +6,7 @@ import Loader from '../components/Loader';
 
 function ScrollBlocker() {
     const { layoutState, dispatch } = useContext(LayoutContext);
+    const cssClasses = `scrollblocker ${layoutState.scroll ? 'scrollblocker--off' : 'scrollblocker--on'} ${layoutState.isClickable ? 'scrollblocker--clickable' : 'scrollblocker--unclickable'}`
 
     useEffect(() => {
         const appBody = document.querySelector('body');
@@ -18,7 +19,7 @@ function ScrollBlocker() {
 
     return (
         <div 
-            className={layoutState.scroll ? 'scrollblocker scrollblocker-off' : 'scrollblocker scrollblocker--on'}
+            className={cssClasses}
             onClick={(e) => {
                 if (e.target.classList.contains('modal')) return;
                 if (e.target.classList.contains('scrollblocker--on')) {
