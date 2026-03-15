@@ -1334,11 +1334,8 @@ p {
     width: 100%; }
 
 .segment {
-  font-family: 'titillium-regular'; }
-  .segment__unavailable {
-    padding: 2rem; }
-    .segment__unavailable > button {
-      margin-top: 2rem; }
+  font-family: 'titillium-regular';
+  /* FLIGHT SEGMENT */ }
   .segment__header {
     font-family: 'titillium-bold';
     display: flex;
@@ -1353,9 +1350,11 @@ p {
     justify-content: flex-start;
     align-items: center;
     gap: 1rem; }
-    .segment__type p {
+    .segment__type p, .segment__type h3 {
+      font-family: inherit;
       font-size: 1.75rem;
-      font-style: italic; }
+      font-style: italic;
+      margin-bottom: 0; }
     .segment__type svg {
       width: 3rem;
       height: 3rem; }
@@ -1363,6 +1362,10 @@ p {
       transform: rotate(45deg); }
     .segment__type--inbound svg {
       transform: rotate(-135deg); }
+  .segment__unavailable {
+    padding: 2rem; }
+    .segment__unavailable > button {
+      margin-top: 2rem; }
   .segment__route {
     text-align: left;
     font-size: 3rem;
@@ -1524,6 +1527,27 @@ p {
       font-family: 'titillium-bold';
       color: #0B3D91;
       font-size: 2.5rem; }
+
+.passenger-segment {
+  position: relative;
+  background-color: #ffffff;
+  padding: 3rem;
+  margin: 3rem 0;
+  border: 2px solid #272643;
+  border-radius: 1.5rem;
+  transition: transform .5s; }
+  @media screen and (max-width: 480px) {
+    .passenger-segment {
+      padding: 3rem 1.5rem; } }
+  .passenger-segment:first-child {
+    margin-top: 0; }
+  .passenger-segment:last-child {
+    margin-bottom: 0; }
+  .passenger-segment__occurrence {
+    font-family: 'titillium-bold';
+    font-size: 2.5rem;
+    text-align: left;
+    margin-bottom: 3rem; }
 
 .connection {
   font-size: 1rem;
@@ -1791,6 +1815,181 @@ p {
     .routing__diagram .routing__arrow svg {
       transform: rotate(90deg); }
 
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-auto-flow: row dense;
+  column-gap: 3rem;
+  row-gap: 1rem; }
+  @media screen and (max-width: 1000px) {
+    .form {
+      grid-template-columns: 1fr 1fr; } }
+  @media screen and (max-width: 768px) {
+    .form {
+      grid-template-columns: 100%; } }
+  @media screen and (max-width: 1000px) {
+    .form__element:nth-child(3) {
+      grid-column: 1 / -1; } }
+  .form__element--full-width {
+    grid-column: 1 / -1; }
+
+.form .field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  position: relative;
+  background-color: transparent;
+  color: #2c698d;
+  font-family: 'titillium-regular';
+  line-height: 1.75rem;
+  text-align: left;
+  padding: 1rem;
+  border: 1px solid #2c698d;
+  border-radius: 4px;
+  transition: filter 1s; }
+  @media screen and (max-width: 600px) {
+    .form .field {
+      gap: 0.5rem; } }
+  .form .field--type-checkbox {
+    flex-direction: row;
+    justify-content: flex-start;
+    border: none; }
+    .form .field--type-checkbox .field__id {
+      color: #272643; }
+      @media screen and (max-width: 600px) {
+        .form .field--type-checkbox .field__id {
+          line-height: 2.5rem; } }
+  .form .field:hover {
+    cursor: pointer; }
+  .form .field--disabled {
+    filter: opacity(0.3) grayscale(1); }
+    .form .field--disabled:hover {
+      cursor: not-allowed; }
+  .form .field--error {
+    border: 1px solid #FF4500 !important; }
+    .form .field--error .selector__value {
+      filter: opacity(0.3); }
+  .form .field__data-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%; }
+  .form .field__id {
+    color: inherit;
+    font-size: 1.4rem; }
+    @media screen and (max-width: 600px) {
+      .form .field__id {
+        font-size: 1.75rem; } }
+  .form .field__value {
+    color: #272643;
+    font-family: 'titillium-bold';
+    text-transform: uppercase;
+    width: 100%;
+    padding-top: .75rem; }
+    .form .field__value--smaller {
+      font-size: 1rem; }
+    .form .field__value--small {
+      font-size: 1.2rem; }
+    .form .field__value--medium {
+      font-size: 1.4rem; }
+    .form .field__value--regular {
+      font-size: 1.6rem; }
+    .form .field__value--hidden {
+      display: none; }
+  .form .field__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    background-color: #F5F5F5;
+    padding: 1rem;
+    border: 1px solid #2c698d;
+    animation-name: fadein;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-fill-mode: both; }
+    @media screen and (min-width: 1280px) {
+      .form .field__list {
+        background-color: #e3f6f5; } }
+    .form .field__list--quantity {
+      width: max-content; }
+      @media screen and (max-width: 600px) {
+        .form .field__list--quantity {
+          width: 100%; } }
+  .form .field__choice-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: .75rem;
+    gap: 10rem; }
+    @media screen and (max-width: 768px) {
+      .form .field__choice-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-top: 2rem; } }
+  .form .field__option {
+    display: inline-block;
+    width: 100%;
+    padding: .5rem;
+    text-transform: capitalize;
+    z-index: 1; }
+    .form .field__option:not(:last-child) {
+      margin-bottom: .5rem; }
+    .form .field__option:hover {
+      background-color: #bae8e8; }
+    .form .field__option--disabled {
+      filter: opacity(0.3) grayscale(1); }
+      .form .field__option--disabled:hover {
+        background-color: transparent;
+        cursor: not-allowed; }
+  .form .field__radiobutton, .form .field__checkbutton {
+    position: relative;
+    top: .2rem;
+    margin-left: .5rem; }
+    @media screen and (min-width: 2000px) {
+      .form .field__radiobutton, .form .field__checkbutton {
+        width: .75vw;
+        height: .75vw;
+        top: .1rem; } }
+    @media screen and (min-width: 2800px) {
+      .form .field__radiobutton, .form .field__checkbutton {
+        width: .75vw;
+        height: .75vw;
+        top: .5rem; } }
+  .form .field--range {
+    border: none; }
+    .form .field--range .rangebar {
+      width: 100%;
+      margin-top: 1rem;
+      flex: 90%; }
+    .form .field--range .output {
+      font-family: 'titillium-bold';
+      color: #272643;
+      font-size: 1.8rem;
+      flex: 10%;
+      text-align: right;
+      position: relative;
+      top: 4px; }
+      .form .field--range .output--error {
+        color: #FF4500; }
+  .form .field__msg {
+    color: #F5F5F5;
+    background-color: #FF4500;
+    padding: .5rem 1rem; }
 .stellar-map {
   position: relative;
   display: flex;
@@ -2805,11 +3004,45 @@ p {
 .passenger-details {
   position: relative;
   z-index: 2;
-  height: 100vh;
   background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
+  .passenger-details .content-section:first-child {
+    padding-top: 27rem; }
+  .passenger-details section:nth-child(odd):not(:first-child) {
+    background-color: transparent; }
+  .passenger-details .btn--primary {
+    width: 40rem;
+    position: relative;
+    bottom: 3rem; }
+    @media screen and (max-width: 360px) {
+      .passenger-details .btn--primary {
+        width: 30rem; } }
+
+.allocation {
+  position: relative;
+  z-index: 2;
+  background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center; }
+  .allocation .content-section:first-child {
+    padding-top: 27rem; }
+  .allocation section:nth-child(odd):not(:first-child) {
+    background-color: transparent; }
+  .allocation .btn--primary {
+    width: 40rem;
+    position: relative;
+    bottom: 3rem; }
+    @media screen and (max-width: 360px) {
+      .allocation .btn--primary {
+        width: 30rem; } }
 
 .notfound {
   position: relative;

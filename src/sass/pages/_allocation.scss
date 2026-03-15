@@ -1,4 +1,4 @@
-.passenger-details {
+.allocation {
     position: relative;
     z-index: 2;
     background-image:
@@ -7,6 +7,12 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    // TEMPORARY -- REMOVE AFTER ADDING CONTENT TO THE PAGE
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 
     .content-section:first-child {
         padding-top: 27rem;

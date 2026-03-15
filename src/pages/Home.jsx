@@ -50,6 +50,7 @@ function Home() {
         if (cartState.outboundFlight || cartState.inboundFlight) {
             cartDispatcher({ type: "cart/removeOutbound" });
             cartDispatcher({ type: "cart/removeInbound" });
+            cartDispatcher({ type: 'cart/removePassengers' });
         }
     }, [cartState])
 

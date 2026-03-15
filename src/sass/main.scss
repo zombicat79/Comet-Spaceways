@@ -30,12 +30,14 @@
 @import "components/loader";
 @import "components/stepbar";
 @import "components/itemlist";
-@import "components/flight-segment";
+@import "components/segment";
 @import "components/flight-details";
+@import "components/passenger-segment";
 @import "components/connection-details";
 @import "components/shopping-cart";
 @import "components/shopping-item";
 @import "components/routing_diagram";
+@import "components/form.scss";
 @import "components/stellar-map";
 @import "components/slidertool";
 
@@ -53,4 +55,5 @@
 @import "pages/destinations";
 @import "pages/tickets";
 @import "pages/passenger-details";
+@import "pages/allocation";
 @import "pages/notfound";

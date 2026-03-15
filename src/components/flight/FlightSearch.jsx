@@ -124,7 +124,7 @@ function FlightSearch({ fixedDestination }) {
                 initialValue={buildPassengerSelectionString()}
                 choiceOptions={[
                     {category: 'humanoids', description: 'Adult humans, cyborgs or androids'},
-                    {category: 'NHEs', description: 'Non-antropomorphic robots & AIs'},
+                    {category: 'NHEs', description: 'Non-human entities (aliens)'},
                     {category: 'minors', description: 'Organic or synthetic children'},
                     {category: 'pets', description: 'Organic or synthetic animals'}
                 ]}

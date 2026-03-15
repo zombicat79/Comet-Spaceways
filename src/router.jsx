@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import FlightFetcher from "./components/flight/FlightFetcher";
 import FlightScheduleLoader from "./components/flight/FlightScheduleLoader";
 import PassengerDetails from "./pages/purchase/PassengerDetails";
+import Allocation from "./pages/purchase/Allocation";
 import DestinationsIndex from "./pages/destinations/DestinationsIndex";
 import DestinationDetail from "./pages/destinations/DestinationDetail";
 import NotFound from "./pages/NotFound";
@@ -30,7 +31,8 @@ const router = createBrowserRouter([
                         { index: true, Component: FlightFetcher },
                         { path: 'flight-data', Component: FlightScheduleLoader, loader: fetchFlights }
                     ]},
-                    { path: 'details', Component: PassengerDetails }
+                    { path: 'details', Component: PassengerDetails },
+                    { path: 'allocation', Component: Allocation }
                 ]
             },
             {

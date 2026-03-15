@@ -1,15 +1,6 @@
 .segment {
     font-family: 'titillium-regular';
 
-    &__unavailable {
-        padding: 2rem;
-
-        & > button {
-            margin-top: 2rem;
-        }
-    }
-    
-
     &__header {
         font-family: 'titillium-bold';
         @include flex-column(space-between);
@@ -22,9 +13,11 @@
         @include flex-row(flex-start);
         gap: 1rem;
 
-        p {
+        p, h3 {
+            font-family: inherit;
             font-size: 1.75rem;
             font-style: italic;
+            margin-bottom: 0;
         }
 
         svg {
@@ -37,6 +30,15 @@
         }
         &--inbound svg {
             transform: rotate(-135deg);
+        }
+    }
+
+    /* FLIGHT SEGMENT */
+    &__unavailable {
+        padding: 2rem;
+
+        & > button {
+            margin-top: 2rem;
         }
     }
 
