@@ -80,7 +80,7 @@ function DestinationsIndex() {
                 }
                 {layoutState.viewportWidth >= 1000 
                     ? <StellarMap onFilter={handleFilter} onFilterReset={handleFilterReset} onTooltip={handleTooltip} />
-                    : <SearchTool onFilter={handleFilter} />
+                    : <SearchTool id='destination' onFilter={handleFilter} />
                 }
                 <div className="destinations__list" ref={destinationList}>
                     {destinations.map((el) => {
