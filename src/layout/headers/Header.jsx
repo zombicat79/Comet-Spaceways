@@ -6,7 +6,7 @@ import { Link, useLocation } from 'react-router';
 import NavBar from '../../components/NavBar';
 import NavMenu from '../../components/NavMenu';
 import AsideMenu from '../../components/AsideMenu';
-import WorkInProgress from '../../components/infopieces/WorkInProgress';
+import WorkInProgress from '../../components/modalpieces/WorkInProgress';
 
 import { menuLinks } from '../../data/menu-links';
 

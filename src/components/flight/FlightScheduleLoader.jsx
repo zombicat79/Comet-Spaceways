@@ -4,11 +4,11 @@ import { LayoutContext } from '../../contexts/LayoutContext';
 
 import Tickets from '../../pages/purchase/Tickets';
 import Banner from '../Banner';
-import ErrorNotice from '../infopieces/ErrorNotice';
+import ErrorNotice from '../modalpieces/ErrorNotice';
 
 import supabase from '../../../db/supabase-client';
 
-import errors from '../infopieces/errorTypes';
+import errors from '../modalpieces/errorTypes';
 
 function FlightScheduleLoader() {
     const { handlePopupLaunch, dispatch } = useContext(LayoutContext);

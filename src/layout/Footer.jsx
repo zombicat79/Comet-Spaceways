@@ -4,7 +4,7 @@ import { LayoutContext } from '../contexts/LayoutContext';
 import NavMenu from './../components/NavMenu';
 import NavBar from './../components/NavBar';
 import Badge from './../components/Badge';
-import WorkInProgress from '../components/infopieces/WorkInProgress';
+import WorkInProgress from '../components/modalpieces/WorkInProgress';
 
 import footerBadge from '/logos/ctsw-logo_dark_badge.png';
 

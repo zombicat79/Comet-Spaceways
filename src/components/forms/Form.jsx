@@ -13,7 +13,9 @@ function Form({ id, formFields, defaultValues, formRules, superform, superformHa
     const formElement = useRef(null);
 
     useEffect(() => {
-        onFormAdd(formElement.current);
+        if (onFormAdd) {
+            onFormAdd(formElement.current);
+        }
     }, [])
 
     return (

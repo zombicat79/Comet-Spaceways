@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router';
 import { LayoutContext } from './../contexts/LayoutContext';
 
-import WorkInProgress from './infopieces/WorkInProgress';
+import WorkInProgress from './modalpieces/WorkInProgress';
 
 function Card({ children, height=40, bgImg, link }) {
     const { handlePopupLaunch } = useContext(LayoutContext);

@@ -1,4 +1,5 @@
-import WorkInProgress from "../components/infopieces/WorkInProgress";
+import WorkInProgress from "../components/modalpieces/WorkInProgress";
+import LogIn from "../components/modalpieces/LogIn";
 
 const menuLinks = {
     topLeft: [
@@ -15,7 +16,7 @@ const menuLinks = {
         { id: 4, text: 'promos', action: 'popup', payload: WorkInProgress(), decoration: null },
         { id: 5, text: 'cosmic club', action: 'popup', payload: WorkInProgress(), decoration: null },
         { id: 6, text: 'info', action: 'expand', path: null, decoration: null },
-        { id: 7, text: 'log in', action: 'popup', payload: WorkInProgress(), decoration: 'primary' }
+        { id: 7, text: 'log in', action: 'popup', payload: LogIn(), decoration: 'primary' }
     ],
     bottomLeft: [
         /* { id: 8, text: 'Help centre', action: 'navigate', path: '', decoration: 'underline' },

@@ -11,10 +11,10 @@ import ContentSection from './../../layout/ContentSection';
 import Figure from "../../components/Figure";
 import SliderTool from '../../components/SliderTool';
 import FlightSearch from '../../components/flight/FlightSearch';
-import ErrorNotice from '../../components/infopieces/ErrorNotice';
+import ErrorNotice from '../../components/modalpieces/ErrorNotice';
 
 import { maximizeDestinations } from '../../utilities/utils';
-import errors from '../../components/infopieces/errorTypes';
+import errors from '../../components/modalpieces/errorTypes';
 
 function DestinationDetail() {
     const { loading, fetchAlert, setFetchAlert, destinations } = useDestinationFetch();

@@ -12,10 +12,10 @@ import SearchTool from '../../components/SearchTool';
 import Card from './../../components/Card';
 import PriceTag from '../../components/PriceTag';
 import FlightSearch from './../../components/flight/FlightSearch';
-import ErrorNotice from '../../components/infopieces/ErrorNotice';
+import ErrorNotice from '../../components/modalpieces/ErrorNotice';
 
 import { filterSearch } from '../../utilities/utils';
-import errors from '../../components/infopieces/errorTypes';
+import errors from '../../components/modalpieces/errorTypes';
 
 function DestinationsIndex() {
     const { loading, fetchAlert, setFetchAlert, destinations } = useDestinationFetch();

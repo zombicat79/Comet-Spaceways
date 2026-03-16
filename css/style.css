@@ -1212,13 +1212,13 @@ p {
     filter: opacity(0.3);
     z-index: 0; }
 
-.infopiece {
+.modalpiece {
   overflow: auto; }
-  .infopiece__icon {
+  .modalpiece__icon {
     width: 35%; }
-  .infopiece__content {
+  .modalpiece__content {
     margin-top: 3rem; }
-  .infopiece__routing {
+  .modalpiece__routing {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -1226,11 +1226,11 @@ p {
     align-items: center;
     margin-top: 0; }
     @media screen and (max-width: 600px) {
-      .infopiece__routing {
+      .modalpiece__routing {
         justify-content: flex-start; } }
-  .infopiece__text {
+  .modalpiece__text {
     font-size: 1.2rem; }
-    .infopiece__text:not(.infopiece__text:last-child) {
+    .modalpiece__text:not(.modalpiece__text:last-child) {
       margin-bottom: 1.5rem; }
 
 .loader {
@@ -1990,6 +1990,7 @@ p {
     color: #F5F5F5;
     background-color: #FF4500;
     padding: .5rem 1rem; }
+
 .stellar-map {
   position: relative;
   display: flex;
@@ -2621,7 +2622,7 @@ p {
           position: fixed;
           top: 2rem;
           right: 2rem; } }
-    .modal__content .infopiece__text {
+    .modal__content .modalpiece__text {
       font-family: 'poppins-regular'; }
 
 .aside {

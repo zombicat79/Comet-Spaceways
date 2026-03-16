@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { LayoutContext } from './../contexts/LayoutContext';
 
 import Button from './../components/Button';
-import WorkInProgress from './infopieces/WorkInProgress';
+import WorkInProgress from './modalpieces/WorkInProgress';
 
 import trappistImg from '/assets/images/trappist_promotion.webp';
 
