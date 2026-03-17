@@ -47,6 +47,7 @@ function PassengerForm({ type, occurrence, onFormAdd }) {
         case "nhe":
             content = <Form 
                 id={`${type}-form-${occurrence}`} 
+                display={"grid"} 
                 formFields={formConfig.nheFormFields} 
                 defaultValues={formConfig.nheFormDefaultValues} 
                 formRules={formConfig.nheFormRules} 
@@ -59,6 +60,7 @@ function PassengerForm({ type, occurrence, onFormAdd }) {
         case "minor":
             content = <Form 
                 id={`${type}-form-${occurrence}`} 
+                display={"grid"}
                 formFields={minorFormFields} 
                 defaultValues={minorFormDefaultValues} 
                 formRules={formConfig.minorFormRules} 
@@ -71,6 +73,7 @@ function PassengerForm({ type, occurrence, onFormAdd }) {
         case "pet":
             content = <Form 
                 id={`${type}-form-${occurrence}`} 
+                display={"grid"}
                 formFields={petFormFields} 
                 defaultValues={petFormDefaultValues} 
                 formRules={formConfig.petFormRules} 
@@ -83,6 +86,7 @@ function PassengerForm({ type, occurrence, onFormAdd }) {
         default: // humanoids
             content = <Form 
                 id={`${type}-form-${occurrence}`} 
+                display={"grid"}
                 formFields={formConfig.humanoidFormFields} 
                 defaultValues={formConfig.humanoidFormDefaultValues} 
                 formRules={formConfig.humanoidFormRules} 

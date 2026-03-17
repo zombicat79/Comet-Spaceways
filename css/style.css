@@ -1815,7 +1815,18 @@ p {
     .routing__diagram .routing__arrow svg {
       transform: rotate(90deg); }
 
-.form {
+.form--flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.form--flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.form--grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
@@ -1823,15 +1834,15 @@ p {
   column-gap: 3rem;
   row-gap: 1rem; }
   @media screen and (max-width: 1000px) {
-    .form {
+    .form--grid {
       grid-template-columns: 1fr 1fr; } }
   @media screen and (max-width: 768px) {
-    .form {
+    .form--grid {
       grid-template-columns: 100%; } }
   @media screen and (max-width: 1000px) {
-    .form__element:nth-child(3) {
+    .form--grid .form__element:nth-child(3) {
       grid-column: 1 / -1; } }
-  .form__element--full-width {
+  .form--grid .form__element--full-width {
     grid-column: 1 / -1; }
 
 .form .field {
@@ -1862,6 +1873,9 @@ p {
       @media screen and (max-width: 600px) {
         .form .field--type-checkbox .field__id {
           line-height: 2.5rem; } }
+  .form .field--contrast {
+    color: #ffffff;
+    border: 1px solid #ffffff; }
   .form .field:hover {
     cursor: pointer; }
   .form .field--disabled {
@@ -2171,6 +2185,28 @@ p {
     color: #00FFFF; }
   .slick-slider .slick-dots li.slick-active button:before {
     color: #ffffff; }
+
+.searchtool {
+  margin: 2rem;
+  font-size: 1.6rem; }
+  .searchtool__field {
+    font-size: inherit;
+    border-radius: 0.8rem !important;
+    padding: 1.15rem !important; }
+    .searchtool__field--left {
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important; }
+    .searchtool__field--right {
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important; }
+  .searchtool__btn {
+    padding: 1rem; }
+    .searchtool__btn--left {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0; }
+    .searchtool__btn--right {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0; }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
@@ -2869,7 +2905,7 @@ p {
   .destinations .stellar-map {
     margin-bottom: 10rem; }
   .destinations .searchtool {
-    margin-bottom: 7rem; }
+    margin-bottom: 5rem; }
   .destinations__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
