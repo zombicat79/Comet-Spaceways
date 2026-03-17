@@ -4,7 +4,6 @@ import { LayoutContext } from '../../contexts/LayoutContext';
 
 import Tickets from '../../pages/purchase/Tickets';
 import Banner from '../Banner';
-import ErrorNotice from '../modalpieces/ErrorNotice';
 
 import supabase from '../../../db/supabase-client';
 
@@ -36,7 +35,11 @@ function FlightScheduleLoader() {
     useEffect(() => {
         if (dataFromDB?.error) {
             if ("message" in dataFromDB.error && dataFromDB.error.message.includes("Error")) {
-                handlePopupLaunch({ modalClass: "generic", content: <ErrorNotice error={errors.flightData} /> })
+                handlePopupLaunch({ 
+                    modalClass: 'generic', 
+                    content: 'error-notice',
+                    props: { error: errors.flightData } 
+                })
             }
         }
     }, [dataFromDB]);

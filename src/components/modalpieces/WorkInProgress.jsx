@@ -1,4 +1,4 @@
-function WorkInProgress() {
+function WorkInProgress({ props }) {
     return (
       <main className="modalpiece">
         <svg

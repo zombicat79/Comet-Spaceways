@@ -5,6 +5,11 @@
 
     &--flex-column {
         @include flex-column(center);
+        gap: 2rem;
+
+        .form__element {
+            width: 100%;
+        }
     }
 
     &--grid {
@@ -112,6 +117,7 @@
 
     &__value {
         color: $color-text-dark;
+        background-color: inherit;
         font-family: 'titillium-bold';
         text-transform: uppercase;
         width: 100%;

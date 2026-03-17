@@ -1,8 +1,27 @@
 import { useContext } from 'react';
 import { LayoutContext } from '../contexts/LayoutContext';
 
-function Modal({ modalShown, modalClass, content, width, height }) {
+import LogIn from './../components/modalpieces/LogIn';
+import ErrorNotice from './../components/modalpieces/ErrorNotice';
+import ConnectionDetails from './../components/modalpieces/ConnectionDetails';
+import WorkInProgress from './../components/modalpieces/WorkInProgress';
+
+function Modal({ modalShown, modalClass, content, props, width, height }) {
     const { layoutState, dispatch } = useContext(LayoutContext);
+    let modalContent;
+    switch(content) {
+      case 'login':
+        modalContent = <LogIn props={{...props}} />;
+        break;
+      case 'error-notice':
+        modalContent = <ErrorNotice props={{...props}} />;
+        break;
+      case 'connection-info':
+        modalContent = <ConnectionDetails props={{...props}} />;
+        break;
+      default: // Work In Progress popup
+        modalContent = <WorkInProgress props={{...props}} />;
+    }
     
     function deployGenericClasses() {
         return modalShown ? `modal__content modal__content--default modal__content--shine-in modal__content--${width}-width modal__content--${height}-height` 
@@ -18,7 +37,7 @@ function Modal({ modalShown, modalClass, content, width, height }) {
         dispatch({ type: 'toggle/modal' });
         setTimeout(() => {
             dispatch({ type: 'toggle/scroll' });
-            dispatch({ type: 'fill/modal', payload: null })
+            dispatch({ type: 'fill/modal', payload: { content: null, props: {} }})
         }, 1000);
     }
     
@@ -64,7 +83,7 @@ function Modal({ modalShown, modalClass, content, width, height }) {
               </svg>
             </header>
           )}
-          {content}
+          {modalContent}
         </div>
       </div>
     );

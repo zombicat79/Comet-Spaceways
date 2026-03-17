@@ -1,6 +1,6 @@
 import SvgIcon from "../SvgIcon";
 
-function ConnectionDetails({ routingDetails }) {
+function ConnectionDetails({ props }) {
     return (
       <main className="modalpiece">
         <article className="modalpiece__content modalpiece__routing">

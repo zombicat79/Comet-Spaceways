@@ -2,8 +2,6 @@ import { useContext } from 'react';
 import { Link } from 'react-router';
 import { LayoutContext } from './../contexts/LayoutContext';
 
-import WorkInProgress from './modalpieces/WorkInProgress';
-
 function Card({ children, height=40, bgImg, link }) {
     const { handlePopupLaunch } = useContext(LayoutContext);
 
@@ -21,7 +19,7 @@ function Card({ children, height=40, bgImg, link }) {
     }
 
     return (
-        <div className="card element--clickable" onClick={() => handlePopupLaunch({ modalClass: 'generic', content: <WorkInProgress /> })}>
+        <div className="card element--clickable" onClick={() => handlePopupLaunch({ modalClass: 'generic', content: 'work-in-progress' })}>
             <div className={`card__img card__img--${bgImg}`}></div>
             <div className="card__content">
                 {children}

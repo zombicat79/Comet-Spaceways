@@ -10,7 +10,12 @@ function NavLink({ link, decoration, tooling }) {
                 tooling.handleResizing();
                 break;
             case 'popup':
-                tooling.handlePopupLaunch({ modalClass: 'generic', content: link.payload });
+            case 'large-popup':
+                tooling.handlePopupLaunch({ 
+                    modalClass: link.action === 'large-popup' ? 'large' : 'generic', 
+                    content: link.payload,
+                    props: {} 
+                });
                 break;
             case 'hint':
                 setHint((curr) => !curr);

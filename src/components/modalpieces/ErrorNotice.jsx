@@ -2,8 +2,8 @@ import { useEffect, useContext } from 'react';
 import { LayoutContext } from '../../contexts/LayoutContext';
 import { useNavigate } from 'react-router';
 
-function ErrorNotice({ error }) {
-    const { title, paragraph1, paragraph2, action } = error;
+function ErrorNotice({ props }) {
+    const { title, paragraph1, paragraph2, action } = props.error;
     const { dispatch } = useContext(LayoutContext);
     const navigate = useNavigate();
 

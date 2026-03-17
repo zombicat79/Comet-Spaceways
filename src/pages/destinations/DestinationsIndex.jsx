@@ -12,7 +12,6 @@ import SearchTool from '../../components/SearchTool';
 import Card from './../../components/Card';
 import PriceTag from '../../components/PriceTag';
 import FlightSearch from './../../components/flight/FlightSearch';
-import ErrorNotice from '../../components/modalpieces/ErrorNotice';
 
 import { filterSearch } from '../../utilities/utils';
 import errors from '../../components/modalpieces/errorTypes';
@@ -37,7 +36,11 @@ function DestinationsIndex() {
     }
 
     useEffect(() => {
-        if (fetchAlert) handlePopupLaunch({ modalClass: "generic", content: <ErrorNotice error={errors.destinationData} /> })
+        if (fetchAlert) handlePopupLaunch({ 
+            modalClass: 'generic', 
+            content: 'error-notice',
+            props: { error: errors.destinationData } 
+        })
     }, [fetchAlert])
 
     useEffect(() => {

@@ -1,12 +1,12 @@
 .modalpiece {
-    overflow: auto;
     
-    &__icon {
+    &__icon, .badge__img {
         width: 35%;
     }
 
     &__content {
         margin-top: 3rem;
+        @include flex-column(space-between)
     }
 
     &__routing {
@@ -23,6 +23,44 @@
 
         &:not(.modalpiece__text:last-child) {
             margin-bottom: 1.5rem;
+        }
+    }
+
+    .form {
+        width: 100%;
+
+        &__element {
+            .field {
+                color: $color-environmental-light;
+                border: 1px solid $color-environmental-light;
+    
+                &__value {
+                    color: $color-environmental-light;
+                }
+            }
+        }
+    }
+
+    .btn {
+        margin: 2rem 0;
+
+        &--link {
+            font-family: 'poppins-regular';
+            color: $color-environmental-light;
+            text-decoration: underline;
+    
+            &:hover {
+                @include animation-standard(pulsate);
+                animation-iteration-count: infinite;
+                animation-duration: 2s;
+                color: $color-highlight-accent;
+                font-family: 'poppins-bold';
+                text-decoration: none;
+                &::after {
+                    content: "\2192";
+                    margin-left: .5rem;
+                }
+            }
         }
     }
 }
