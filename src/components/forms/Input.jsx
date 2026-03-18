@@ -1,23 +1,31 @@
 import { useState } from 'react';
 
+import SvgIcon from './../SvgIcon';
+
 import { errorChecker } from "./error-checker";
 
-function Input({ labelled, inputType, name, title, onChange, parentForm, formRules, superform, onSuperChange, superformAction }) {
+function Input({ labelled, inputType, valueOutput, name, title, onChange, parentForm, formRules, superform, onSuperChange, superformAction }) {
     const [errorMsg, setErrorMsg] = useState('');
+    const [passwordIconState, setPasswordIconState] = useState('invisible');
+    const [inputMode, setInputMode] = useState(inputType)
     const inputId = `${parentForm}-${name}`;
 
     function handleChange(e) {
-        const normalizedValue = e.target.value.toLowerCase();
-        const check = errorChecker(name, normalizedValue, formRules);
+        const check = errorChecker(name, e.target.value, formRules);
         if (superform) {
             onSuperChange({ 
                 type: superformAction, 
-                payload: {id: parentForm, data: { field: name, value: normalizedValue, formRules }}
+                payload: {id: parentForm, data: { field: name, value: e.target.value, formRules }}
             });
         } else {
-            onChange({ type: "modify/field", payload: {field: name, value: normalizedValue}});
+            onChange({ type: "modify/field", payload: {field: name, value: e.target.value}});
         }
         setErrorMsg(check.message);
+    }
+
+    function handlePasswordIcon() {
+        passwordIconState === 'invisible' ? setPasswordIconState('visible') : setPasswordIconState('invisible');
+        inputMode === 'text' ? setInputMode('password') : setInputMode('text');
     }
 
     return (
@@ -26,11 +34,15 @@ function Input({ labelled, inputType, name, title, onChange, parentForm, formRul
                 {labelled && <label htmlFor={inputId} className="field__id">{title}</label>}
                 <input 
                     id={inputId}
-                    className="field__value field__value--medium"
-                    type={inputType} 
+                    className={`field__value field__value--medium field__value--${valueOutput}`}
+                    type={inputMode} 
                     name={name} 
                     onBlur={(e) => handleChange(e)} 
                 />
+                {name === 'password' && (passwordIconState === 'invisible' 
+                    ? <div onClick={handlePasswordIcon}><SvgIcon design='eye' /></div>
+                    : <div onClick={handlePasswordIcon}><SvgIcon design='eye-shut' /></div>
+                )}
             </div>
             {errorMsg !== '' && <p className="field__msg">{errorMsg}</p>}
         </div>

@@ -5,6 +5,7 @@ import { LayoutContext } from '../../contexts/LayoutContext';
 import Form from "./../forms/Form";
 import Badge from "./../Badge";
 import Button from '../Button';
+import InfoPanel from './../InfoPanel';
 import * as formConfig from './login-form-config';
 
 import cometBadge from '/logos/ctsw-logo_dark_badge.png';
@@ -12,6 +13,7 @@ import cometBadge from '/logos/ctsw-logo_dark_badge.png';
 function LogIn({ props }) {
     const [linkText, setLinkText] = useState('I do not have an account yet...');
     const [authenticated, setAuthenticated] = useState(false);
+    const [errorMsg, setErrorMsg] = useState('');
     const { dispatch } = useContext(LayoutContext);
     const navigate = useNavigate();
 
@@ -22,6 +24,14 @@ function LogIn({ props }) {
     function handleNavigation() {
       closeModal();
       navigate('/create-account');
+    }
+
+    function handleCompletion(result) {
+      result === 'ok' ? setAuthenticated(true) : setAuthenticated(false);
+    }
+
+    function handleLogin() {
+      setErrorMsg('Ooops! Login feature is not available yet...')
     }
 
     function closeModal() {
@@ -43,10 +53,17 @@ function LogIn({ props }) {
                 formFields={formConfig.loginFormFields} 
                 defaultValues={formConfig.loginFormDefaultValues} 
                 formRules={formConfig.loginFormRules}
+                onFormCheck={handleCompletion}
               />
-              <Button type="primary" action={() => null} text={authenticated ? "Ready to launch!" : "It's a no-go"} isDisabled={!authenticated} />
-              <div onMouseEnter={() => handleLinkText('hover')} onMouseLeave={() => handleLinkText('leave')}>
-                <Button type="link" action={handleNavigation} text={linkText} />
+              <Button type="primary" action={handleLogin} text={authenticated ? "Ready to launch! 🚀" : "It's a no-go 🙁"} isDisabled={!authenticated} />
+              {errorMsg !== '' && <InfoPanel type="alert">{errorMsg}</InfoPanel>}
+              <div 
+                className="btn-wrapper" 
+                onMouseEnter={() => handleLinkText('hover')} 
+                onMouseLeave={() => handleLinkText('leave')}
+                onClick={handleNavigation}
+              >
+                <Button type="link" text={linkText} />
               </div>
         </article>
       </main>

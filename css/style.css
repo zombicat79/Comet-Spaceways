@@ -1262,19 +1262,28 @@ p {
     font-family: 'poppins-regular';
     color: #ffffff;
     text-decoration: underline; }
-    .modalpiece .btn--link:hover {
-      animation-name: pulsate;
-      animation-timing-function: linear;
-      animation-duration: .75s;
-      animation-fill-mode: forwards;
-      animation-iteration-count: infinite;
-      animation-duration: 2s;
-      color: #32CD32;
-      font-family: 'poppins-bold';
-      text-decoration: none; }
-      .modalpiece .btn--link:hover::after {
-        content: "\2192";
-        margin-left: .5rem; }
+
+.modalpiece .btn-wrapper:hover {
+  cursor: pointer; }
+  .modalpiece .btn-wrapper:hover .btn--link {
+    animation-name: pulsate;
+    animation-timing-function: linear;
+    animation-duration: .75s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    color: #32CD32;
+    font-family: 'poppins-bold';
+    text-decoration: none; }
+    .modalpiece .btn-wrapper:hover .btn--link::after {
+      content: "\2192";
+      margin-left: .5rem; }
+
+.modalpiece .infopanel {
+  padding: 1.5rem;
+  font-size: 1.2rem; }
+  .modalpiece .infopanel__icon {
+    font-size: 3rem; }
 
 .loader {
   position: absolute;
@@ -1960,6 +1969,16 @@ p {
       font-size: 1.6rem; }
     .form .field__value--hidden {
       display: none; }
+    .form .field__value--raw {
+      text-transform: none; }
+  .form .field svg {
+    fill: #ffffff;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%); }
   .form .field__list {
     display: flex;
     flex-direction: column;

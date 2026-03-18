@@ -54,6 +54,19 @@ function checkRequirement(actualValue) {
     }
 }
 
+function checkPattern(rule, pattern, actualValue) {
+    if (!pattern.test(actualValue)) {
+        switch(rule) {
+            case 'patternConform-pwd':
+                return { status: 'ko', msg: 'Password must contain at least 1 digit, 1 uppercase character, 1 lowercase character and 1 special symbol' };
+            default: // patternConform-no-space
+                return { status: 'ko', msg: 'Field cannot contain spaces' };
+        }
+    } else {
+        return { status: 'ok', msg: '' };
+    }
+}
+
 function errorChecker(field, actualValue, formRules) {
     const fieldRules = formRules.filter((el) => el.field === field );
     const { rules } = fieldRules[0];
@@ -98,6 +111,14 @@ function errorChecker(field, actualValue, formRules) {
                         status = checkResult.status;
                         message = checkResult.msg;
                     }
+                }
+                break;
+            case 'patternConform-no-space':
+            case 'patternConform-pwd':
+                checkResult = checkPattern(rule.name, rule.value, actualValue);
+                if (checkResult.status === 'ko') {
+                    status = checkResult.status;
+                    message = checkResult.msg;
                 }
                 break;
             case 'obligation':

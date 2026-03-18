@@ -8,7 +8,9 @@ import Range from './Range';
 import RadioGroup from './RadioGroup';
 import ChoiceList from './ChoiceList';
 
-function Form({ id, display, formFields, defaultValues, formRules, superform, superformHandler, superformAction, onFormAdd }) {
+import { completionChecker } from './error-checker';
+
+function Form({ id, display, formFields, defaultValues, formRules, onFormCheck, superform, superformHandler, superformAction, onFormAdd }) {
     const { formState, dispatch } = useForm(id, defaultValues);
     const formElement = useRef(null);
 
@@ -17,6 +19,12 @@ function Form({ id, display, formFields, defaultValues, formRules, superform, su
             onFormAdd(formElement.current);
         }
     }, [])
+
+    useEffect(() => {
+        if (onFormCheck) {
+            onFormCheck(completionChecker(formElement.current, formRules));
+        }
+    }, [formState])
 
     return (
         <form id={id} className={`form form--${display}`} ref={formElement} >

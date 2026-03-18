@@ -48,8 +48,14 @@
             font-family: 'poppins-regular';
             color: $color-environmental-light;
             text-decoration: underline;
-    
-            &:hover {
+        }
+    }
+
+    .btn-wrapper {
+        &:hover {
+            cursor: pointer;
+
+            .btn--link {
                 @include animation-standard(pulsate);
                 animation-iteration-count: infinite;
                 animation-duration: 2s;
@@ -61,6 +67,15 @@
                     margin-left: .5rem;
                 }
             }
+        }
+    }
+
+    .infopanel {
+        padding: 1.5rem;
+        font-size: $size-small;
+
+        &__icon {
+            font-size: 3rem;
         }
     }
 }
