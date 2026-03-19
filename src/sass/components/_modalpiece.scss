@@ -52,7 +52,11 @@
     }
 
     .btn-wrapper {
-        &:hover {
+        @include flex-row(center);
+        width: 100%;
+        gap: 2rem;
+
+        &--actionable:hover {
             cursor: pointer;
 
             .btn--link {

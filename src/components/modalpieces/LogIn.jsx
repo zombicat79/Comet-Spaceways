@@ -54,17 +54,17 @@ function LogIn({ props }) {
                 defaultValues={formConfig.loginFormDefaultValues} 
                 formRules={formConfig.loginFormRules}
                 onFormCheck={handleCompletion}
-              />
-              <Button type="primary" action={handleLogin} text={authenticated ? "Ready to launch! 🚀" : "It's a no-go 🙁"} isDisabled={!authenticated} />
-              {errorMsg !== '' && <InfoPanel type="alert">{errorMsg}</InfoPanel>}
-              <div 
-                className="btn-wrapper" 
-                onMouseEnter={() => handleLinkText('hover')} 
-                onMouseLeave={() => handleLinkText('leave')}
-                onClick={handleNavigation}
-              >
-                <Button type="link" text={linkText} />
-              </div>
+            />
+            <Button type="primary" action={handleLogin} text={authenticated ? "Ready to launch! 🚀" : "It's a no-go 🙁"} isDisabled={!authenticated} />
+            {errorMsg !== '' && <InfoPanel type="alert">{errorMsg}</InfoPanel>}
+            <div 
+              className="btn-wrapper btn-wrapper--actionable" 
+              onMouseEnter={() => handleLinkText('hover')} 
+              onMouseLeave={() => handleLinkText('leave')}
+              onClick={handleNavigation}
+            >
+              <Button type="link" text={linkText} />
+            </div>
         </article>
       </main>
     );

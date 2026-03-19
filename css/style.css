@@ -1263,21 +1263,27 @@ p {
     color: #ffffff;
     text-decoration: underline; }
 
-.modalpiece .btn-wrapper:hover {
-  cursor: pointer; }
-  .modalpiece .btn-wrapper:hover .btn--link {
-    animation-name: pulsate;
-    animation-timing-function: linear;
-    animation-duration: .75s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-duration: 2s;
-    color: #32CD32;
-    font-family: 'poppins-bold';
-    text-decoration: none; }
-    .modalpiece .btn-wrapper:hover .btn--link::after {
-      content: "\2192";
-      margin-left: .5rem; }
+.modalpiece .btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem; }
+  .modalpiece .btn-wrapper--actionable:hover {
+    cursor: pointer; }
+    .modalpiece .btn-wrapper--actionable:hover .btn--link {
+      animation-name: pulsate;
+      animation-timing-function: linear;
+      animation-duration: .75s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+      color: #32CD32;
+      font-family: 'poppins-bold';
+      text-decoration: none; }
+      .modalpiece .btn-wrapper--actionable:hover .btn--link::after {
+        content: "\2192";
+        margin-left: .5rem; }
 
 .modalpiece .infopanel {
   padding: 1.5rem;
