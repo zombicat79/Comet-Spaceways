@@ -143,25 +143,31 @@
                 "VR lounge"
             ],
             "includes": null,
-            "intro": "Humankind's first-ever step into outer space",
-            "description": "Step onto the Moon and into the future at Lunar Haven, humanity’s premier off-world settlement. Strategically located in the Sea of Tranquility, this thriving colony is more than just a destination; it’s a hub of innovation, research, and resource extraction at the edge of Mother Earth's sphere of influence.",
+            "intro": "Transforming short-haul transit into a celestial masterpiece.",
+            "description": "Engineered by Bharat Interstellar and operated by the visionaries at Comet Spaceways, the Shooting Star D400 is the definitive workhorse of cisplanetary travel. Designed to bridge the gap between neighboring moons, orbital space stations, and the rugged, resource-rich sectors of the asteroid belt, this vessel prioritizes both industrial-grade reliability and passenger indulgence. While its sleek, dark-metallic hull is built to navigate the high-velocity debris of the belt with ease, the interior remains a sanctuary of calm. The D400 turns a routine commute into a premium voyage, ensuring that every jump through the stars feels less like a flight and more like a destination in its own right.",
+            "promotionalCatch": "Fast as a meteor, smooth as a star. Your premium bridge across the belt and beyond.",
             "features": [
-                "🔹 Exploration – Visit cutting-edge laboratories where scientists unlock the secrets of lunar geology, high-tech mining operations harvesting rare lunar resources, and self-sustaining bio-domes pioneering the future of off-world living.",
-                "🔹 Adventure – Experience the Moon’s rugged beauty on rover expeditions",
-                "🔹 Marvel – Witness history in the making as we forge the next chapter of human expansion beyond Earth."
+                "🔹 Optimized Cisplanetary Agility – Engineered specifically for rapid-response maneuvers between moons and stations, minimizing transit time within local gravitational wells.",
+                "🔹 Asteroid Belt Navigation Suite – Equipped with reinforced hull plating and advanced predictive sensor arrays designed for high-speed, safe passage through dense asteroid corridors.",
+                "🔹 The 'Nirvana' Dining Experience – A sophisticated onboard bar and restaurant served by a seamless blend of human hospitality and precision robotic attendants.",
+                "🔹 Deep-Space VR Immersion – A dedicated VR lounge featuring high-tech armchairs and neural-link headsets for entertainment that transcends the physical cabin.",
+                "🔹 Ergonomic Multi-Aisle Cabin – A spacious 3-4-3 seating configuration inspired by elite commercial airliners, providing maximum accessibility and passenger comfort.",
+                "🔹 Bharat Interstellar Propulsion – Powered by 'Hanuman' dual-core engines, providing silent, vibration-free thrust for a stable ride even during complex orbital injections."
             ],
-            "cover_img": "space-elevator.webp",
+            "cover_img": "shooting-star.webp",
             "feature_pictures": [
-                "space-elevator0.webp",
-                "space-elevator1.webp",
-                "space-elevator2.webp",
-                "space-elevator3.webp"
+                "shooting-star0.webp",
+                "shooting-star1.webp",
+                "shooting-star2.webp",
+                "shooting-star3.webp",
+                "shooting-star4.webp",
+                "shooting-star5.webp"
             ],
             "technical_pictures": [
-                "space-elevator4.webp",
-                "space-elevator5.webp"
+                "shooting-star6.webp",
+                "shooting-star7.webp"
             ],
-            "overall_quantity": 10
+            "overall_quantity": 53
         },
         {
             "id": 4,
