@@ -1906,6 +1906,12 @@ p {
   .form--grid .form__element--full-width {
     grid-column: 1 / -1; }
 
+.form--unavailable {
+  cursor: not-allowed; }
+  .form--unavailable .form__element {
+    pointer-events: none;
+    opacity: 0.3; }
+
 .form .field {
   display: flex;
   flex-direction: column;
@@ -2888,6 +2894,7 @@ p {
   .content-section:last-child {
     padding-bottom: 8rem; }
   .content-section__body {
+    position: relative;
     color: #272643;
     background-color: #e3f6f5;
     max-width: 90vw;
@@ -2900,6 +2907,18 @@ p {
         max-width: 75vw; } }
     .content-section__body > *:not(:last-child) {
       margin-bottom: 5rem; }
+  .content-section__tab {
+    position: absolute;
+    color: inherit;
+    background-color: inherit;
+    box-shadow: 0 0.5rem 4.5rem #00FFFF;
+    font-size: 1.8rem;
+    padding: 1rem 3rem 3rem;
+    border-radius: inherit;
+    top: -4rem;
+    z-index: -1; }
+    .content-section__tab--r20 {
+      right: 20%; }
 
 .homepage {
   position: relative;
@@ -3152,6 +3171,26 @@ p {
     @media screen and (max-width: 360px) {
       .allocation .btn--primary {
         width: 30rem; } }
+
+.signup {
+  position: relative;
+  z-index: 3;
+  padding: 10rem 0;
+  background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.15)), url("./../assets/images/milky_way_background.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  .signup__tab {
+    position: absolute; }
+  .signup__heading {
+    font-family: 'titillium-bold';
+    font-size: 3.5rem;
+    font-style: italic;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem !important; }
+    .signup__heading--unavailable {
+      opacity: 0.3; }
 
 .notfound {
   position: relative;

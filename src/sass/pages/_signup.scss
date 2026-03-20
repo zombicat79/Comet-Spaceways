@@ -1,0 +1,28 @@
+.signup {
+    position: relative;
+    z-index: 3;
+    padding: 10rem 0;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.15)), 
+        url('./../assets/images/milky_way_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &__tab {
+        position: absolute;
+    }
+
+    &__heading {
+        font-family: 'titillium-bold';
+        font-size: 3.5rem;
+        font-style: italic;
+        text-align: left;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem !important;
+
+        &--unavailable {
+            opacity: 0.3;
+        }
+    }
+}

@@ -6,7 +6,7 @@ import Form from "./../forms/Form";
 import Badge from "./../Badge";
 import Button from '../Button';
 import InfoPanel from './../InfoPanel';
-import * as formConfig from './login-form-config';
+import * as formConfig from './../../data/form-configs/login-form-config';
 
 import cometBadge from '/logos/ctsw-logo_dark_badge.png';
 

@@ -10,6 +10,7 @@ import PassengerDetails from "./pages/purchase/PassengerDetails";
 import Allocation from "./pages/purchase/Allocation";
 import DestinationsIndex from "./pages/destinations/DestinationsIndex";
 import DestinationDetail from "./pages/destinations/DestinationDetail";
+import SignUp from "./pages/SignUp";
 import NotFound from "./pages/NotFound";
 
 import { fetchFlights } from "./components/flight/FlightScheduleLoader";
@@ -47,7 +48,8 @@ const router = createBrowserRouter([
     {
         Component: MinAppLayout,
         children: [
-            { path: '*', Component: NotFound }
+            { path: '*', Component: NotFound },
+            { path: 'create-account', Component: SignUp }
         ]
     }
 ]);

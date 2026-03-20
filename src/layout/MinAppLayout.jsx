@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router';
 
+import ScrollBlocker from './ScrollBlocker';
 import MinimalHeader from './headers/MinimalHeader';
 
 function MinAppLayout() {
@@ -12,6 +13,7 @@ function MinAppLayout() {
 
     return (
         <>
+            <ScrollBlocker />
             <MinimalHeader />
             <Outlet />
         </>
