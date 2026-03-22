@@ -8,7 +8,7 @@ import Range from './Range';
 import RadioGroup from './RadioGroup';
 import ChoiceList from './ChoiceList';
 
-function Form({ id, formFields, defaultValues, formRules, superform, superformHandler, superformAction, onFormAdd }) {
+function Form({ id, display, formFields, defaultValues, formRules, superform, superformHandler, superformAction, onFormAdd }) {
     const { formState, dispatch } = useForm(id, defaultValues);
     const formElement = useRef(null);
 
@@ -17,7 +17,7 @@ function Form({ id, formFields, defaultValues, formRules, superform, superformHa
     }, [])
 
     return (
-        <form id={id} className="form" ref={formElement} >
+        <form id={id} className={`form form--${display}`} ref={formElement} >
             {formFields.map((el, index) => {
                 let content;
                 let cssClasses = 'form__element';
