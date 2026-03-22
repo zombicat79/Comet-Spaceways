@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { useLocation } from 'react-router';
 import { LayoutContext } from '../../contexts/LayoutContext';
 import useHeader from './../../hooks/useHeader';
-import { Link } from 'react-router';
 
 import StepBar from '../../components/StepBar';
 import SvgIcon from '../../components/SvgIcon';
@@ -11,9 +10,10 @@ import LogoLight from '/logos/ctsw-logo_light_horizontal.png';
 import LogoDark from '/logos/ctsw-logo_dark_horizontal.png';
 
 function PurchaseHeader() {
-    const { layoutState } = useContext(LayoutContext);
+    const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
     const { transparency } = useHeader(layoutState);
     const location = useLocation();
+    
     let purchaseProgress = 0;
     switch(location.pathname) {
         case '/purchase/details':
@@ -44,17 +44,25 @@ function PurchaseHeader() {
         { id: 'checkout', name: "payment", icon: <SvgIcon transparency={transparency} design="money" /> },
     ]
 
+    function handlePurchaseInterruption() {
+        handlePopupLaunch({ 
+            modalClass: 'generic', 
+            content: 'confirmation',
+            props: { issue: 'You are about to quit your flight purchasing process', question: 'Are you sure to proceed?', button1: 'handleNavigation', button2: 'closeModal' } 
+        });
+    }
+
     return (
         <header className="header header--purchase" data-transparency={transparency} >
             <section className="header__main">
                 {layoutState.scrollHeight <= 30 && 
-                <Link to="/" className="link--container">
+                <div className="link--container" onClick={handlePurchaseInterruption}>
                     <img 
                         className="header__logo" 
                         src={transparency ? LogoLight : LogoDark}
                         alt="Comet Spaceways"
                     />
-                </Link>
+                </div>
                 }
             </section>
             <section className="header__secondary">

@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { LayoutContext } from '../contexts/LayoutContext';
 
 import LogIn from './../components/modalpieces/LogIn';
+import Confirmation from '../components/modalpieces/Confirmation';
 import ErrorNotice from './../components/modalpieces/ErrorNotice';
 import ConnectionDetails from './../components/modalpieces/ConnectionDetails';
 import WorkInProgress from './../components/modalpieces/WorkInProgress';
@@ -12,6 +13,9 @@ function Modal({ modalShown, modalClass, content, props, width, height }) {
     switch(content) {
       case 'login':
         modalContent = <LogIn props={{...props}} />;
+        break;
+      case 'confirmation':
+        modalContent = <Confirmation props={{...props}} />;
         break;
       case 'error-notice':
         modalContent = <ErrorNotice props={{...props}} />;
