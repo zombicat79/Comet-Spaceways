@@ -19,7 +19,20 @@ function Confirmation({ props }) {
           dispatch({ type: 'set/scroll', payload: true });
           dispatch({ type: 'fill/modal', payload: { content: null, props: {} }})
       }, 1000);
-  }
+    }
+
+    function handleButtonAction(action) {
+      switch(action) {
+        case 'handleNavigation':
+          handleNavigation();
+          break;
+        case 'closeModal':
+          closeModal();
+          break;
+        default:
+          return null;
+      }
+    }
 
     return (
       <main className="modalpiece">
@@ -29,8 +42,8 @@ function Confirmation({ props }) {
             <p className="modalpiece__text">{props.issue}</p>
             <p className="modalpiece__heading">{props.question}</p>
             <div className="btn-wrapper btn-wrapper--actionable">
-                <Button type="primary" action={eval(props.button1)} text="Yes" />
-                <Button type="primary" action={eval(props.button2)} text="No" />
+                <Button type="primary" action={() => handleButtonAction(props.button1)} text="Yes" />
+                <Button type="primary" action={() => handleButtonAction(props.button2)} text="No" />
             </div>
         </article>
       </main>
