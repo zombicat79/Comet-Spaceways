@@ -7,7 +7,6 @@ import { CartContext } from '../../contexts/CartContext';
 
 import PageRibbon from '../../components/PageRibbon';
 import Button from '../../components/Button';
-import WorkInProgress from '../../components/infopieces/WorkInProgress';
 
 function Allocation() {
     const { handlePopupLaunch } = useContext(LayoutContext); // TEMPORARY -- REMOVE AFTER ADDING ACTUAL CONTENT TO THE PAGE
@@ -17,7 +16,7 @@ function Allocation() {
 
     // TEMPORARY -- REMOVE AFTER ADDING ACTUAL CONTENT TO THE PAGE
     useEffect(() => {
-        handlePopupLaunch({content: WorkInProgress()});
+        handlePopupLaunch({content: 'work-in-progress'});
     }, [])
 
     return (

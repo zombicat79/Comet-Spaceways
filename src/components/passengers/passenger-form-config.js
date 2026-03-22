@@ -1,6 +1,6 @@
 export const humanoidFormFields = [
-    { type: 'input', props: {labelled: true, inputType: 'text', name: 'name', title: 'First Name'}},
-    { type: 'input', props: {labelled: true, inputType: 'text', name: 'surname', title: 'Last Name'}},
+    { type: 'input', props: {labelled: true, inputType: 'text', valueOutput: 'upper', name: 'name', title: 'First Name'}},
+    { type: 'input', props: {labelled: true, inputType: 'text', valueOutput: 'upper', name: 'surname', title: 'Last Name'}},
     { type: 'selector', props: {labelled: true, name: 'nationality', title: "Nationality", options: [
         'selenyte',
         'earthling',
@@ -27,8 +27,8 @@ export const humanoidFormRules = [
 ]
 
 export const nheFormFields = [
-    { type: 'input', props: {labelled: true, inputType: 'text', name: 'name', title: 'Human Pronounceable Name'}},
-    { type: 'input', props: {labelled: true, inputType: 'text', name: 'surname', title: 'Tribe / Cast / Faction Name'}},
+    { type: 'input', props: {labelled: true, inputType: 'text', valueOutput: 'upper', name: 'name', title: 'Human Pronounceable Name'}},
+    { type: 'input', props: {labelled: true, inputType: 'text', valueOutput: 'upper', name: 'surname', title: 'Tribe / Cast / Faction Name'}},
     { type: 'selector', props: {labelled: true, name: 'race', title: 'Race', options: [
         'green little man',
         'big-headed gray',
@@ -61,8 +61,8 @@ export const nheFormRules = [
 ]
 
 export const minorFormFields = [
-    { type: 'input', props: {labelled: true, inputType: 'text', name: 'name', title: 'First Name'}},
-    { type: 'input', props: {labelled: true, inputType: 'text', name: 'surname', title: 'Last Name'}},
+    { type: 'input', props: {labelled: true, inputType: 'text', valueOutput: 'upper', name: 'name', title: 'First Name'}},
+    { type: 'input', props: {labelled: true, inputType: 'text', valueOutput: 'upper', name: 'surname', title: 'Last Name'}},
     { type: 'range', props: {labelled: true, inputType: 'range', name: 'age', title: 'Age', min: '2', max: '17'}},
     { type: 'radio', props: {labelled: true, name: 'build', title: 'Build', options: ['organic', 'cyborg', 'android']}},
     { type: 'checkbox', props: {labelled: true, inputType: 'checkbox', name: 'unaccompanied', title: 'Minor travelling without humanoid adult supervision', visible: false, readOnly: true, marked: true}},
@@ -83,7 +83,7 @@ export const minorFormRules = [
 ]
 
 export const petFormFields = [
-    { type: 'input', props: {labelled: true, inputType: 'text', name: 'name', title: 'Nickname'}},
+    { type: 'input', props: {labelled: true, inputType: 'text', valueOutput: 'upper', name: 'name', title: 'Nickname'}},
     { type: 'selector', props: {labelled: true, name: 'species', title: "Species", options: [
         'dog',
         'cat',

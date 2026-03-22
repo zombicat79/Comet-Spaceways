@@ -27,7 +27,7 @@ function ScrollBlocker() {
                         dispatch({ type: 'toggle/modal' });
                         setTimeout(() => {
                             dispatch({ type: 'toggle/scroll' });
-                            dispatch({ type: 'fill/modal', payload: null })
+                            dispatch({ type: 'fill/modal', payload: {content: null, props: {} }})
                         }, 1000);
                     }
                     if (layoutState.asideleft.shown) {
@@ -53,7 +53,8 @@ function ScrollBlocker() {
             <Modal 
                 modalShown={layoutState.modal}
                 modalClass={layoutState.modalClass}
-                content={layoutState.modalContent} 
+                content={layoutState.modalContent}
+                props={layoutState.modalProps} 
                 width={layoutState.modalDimensions.width} 
                 height={layoutState.modalDimensions.height} 
             />

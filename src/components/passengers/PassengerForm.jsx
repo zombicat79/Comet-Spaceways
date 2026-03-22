@@ -50,7 +50,8 @@ function PassengerForm({ type, occurrence, onFormAdd }) {
                 display={"grid"} 
                 formFields={formConfig.nheFormFields} 
                 defaultValues={formConfig.nheFormDefaultValues} 
-                formRules={formConfig.nheFormRules} superform={true} 
+                formRules={formConfig.nheFormRules} 
+                superform={true} 
                 superformHandler={cartDispatcher}
                 superformAction={"cart/modifyPassengers"}
                 superformState={cartState} 

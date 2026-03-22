@@ -9,6 +9,7 @@ const initialState = {
     loader: false,
     modalClass: 'generic',
     modalContent: null,
+    modalProps: null,
     modalDimensions: {
         width: 'regular',
         height: 'regular'
@@ -42,7 +43,7 @@ function reducer(state, action) {
         case 'toggle/modal':
             return { ...state, modal: !state.modal };
         case 'fill/modal':
-            return { ...state, modalContent: action.payload };
+            return { ...state, modalContent: action.payload.content, modalProps: action.payload.props };
         case 'transform/modal':
             return { ...state, modalClass: action.payload };
         case 'resize/modal':

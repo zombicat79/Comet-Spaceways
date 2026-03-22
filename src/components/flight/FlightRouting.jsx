@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { LayoutContext } from './../../contexts/LayoutContext';
 
 import SvgIcon from "../SvgIcon";
-import ConnectionDetails from '../infopieces/ConnectionDetails';
 import RoutingDiagram from '../RoutingDiagram';
 
 import { maximizeDestinations, displayDurationInfo } from '../../utilities/utils';
@@ -52,7 +51,11 @@ function FlightRouting({ routingDetails }) {
             {routingDetails.mode === 'stopover' && 
             <span 
                 className="routing__mode routing__mode--underline" 
-                onClick={() => handlePopupLaunch({ modalClass: 'connection-info', content: <ConnectionDetails routingDetails={routingDetails} /> })}
+                onClick={() => handlePopupLaunch({ 
+                    modalClass: 'large', 
+                    content: 'connection-info',
+                    props: { routingDetails: routingDetails } 
+                })}
             >
             1 stopover
             </span>

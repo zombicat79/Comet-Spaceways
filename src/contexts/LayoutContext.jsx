@@ -8,7 +8,7 @@ function LayoutProvider({ children }) {
 
     function handlePopupLaunch(data) {
         dispatch({ type: 'toggle/scroll' });
-        dispatch({ type: 'fill/modal', payload: data.content });
+        dispatch({ type: 'fill/modal', payload: { content: data.content, props: data.props } });
         dispatch({ type: 'transform/modal', payload: data.modalClass })
         switch(true) {
             case window.innerWidth <= 600:
@@ -20,7 +20,7 @@ function LayoutProvider({ children }) {
             case data.modalClass === 'flight-preview' && window.innerWidth <= 1000:
                 dispatch({ type: 'resize/modal', payload: {width: 'medium', height: 'regular'} });
                 break;
-            case data.modalClass === 'connection-info':
+            case data.modalClass === 'large':
                 dispatch({ type: 'resize/modal', payload: {width: 'regular', height: 'large'} });
                 break;
             default:

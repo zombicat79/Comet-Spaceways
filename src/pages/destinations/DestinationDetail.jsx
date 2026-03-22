@@ -11,10 +11,9 @@ import ContentSection from './../../layout/ContentSection';
 import Figure from "../../components/Figure";
 import SliderTool from '../../components/SliderTool';
 import FlightSearch from '../../components/flight/FlightSearch';
-import ErrorNotice from '../../components/infopieces/ErrorNotice';
 
 import { maximizeDestinations } from '../../utilities/utils';
-import errors from '../../components/infopieces/errorTypes';
+import errors from '../../components/modalpieces/errorTypes';
 
 function DestinationDetail() {
     const { loading, fetchAlert, setFetchAlert, destinations } = useDestinationFetch();
@@ -25,7 +24,11 @@ function DestinationDetail() {
     const currentDestinationData = destinations?.find((el) => el.port === currentDestination) || null;
 
     useEffect(() => {
-        if (fetchAlert) handlePopupLaunch({ modalClass: "generic", content: <ErrorNotice error={errors.destinationData} /> })
+        if (fetchAlert) handlePopupLaunch({ 
+            modalClass: 'generic', 
+            content: 'error-notice',
+            props: { error: errors.destinationData } 
+        })
     }, [fetchAlert])
 
     useEffect(() => {

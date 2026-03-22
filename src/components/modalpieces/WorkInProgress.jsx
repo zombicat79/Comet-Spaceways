@@ -1,8 +1,8 @@
-function WorkInProgress() {
+function WorkInProgress({ props }) {
     return (
-      <main className="infopiece">
+      <main className="modalpiece">
         <svg
-          className="infopiece__icon"
+          className="modalpiece__icon"
           viewBox="0 0 128 128"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -89,10 +89,10 @@ function WorkInProgress() {
           </g>
         </svg>
 
-        <article className="infopiece__content">
-            <h3 className="infopiece__heading">Work in Progress</h3>
-            <p className="infopiece__text">Just as the Universe is constantly expanding, so is our website...</p>
-            <p className="infopiece__text">This section is still under construction. We'll make it available to you very soon! 😉</p>
+        <article className="modalpiece__content">
+            <h3 className="modalpiece__heading">Work in Progress</h3>
+            <p className="modalpiece__text">Just as the Universe is constantly expanding, so is our website...</p>
+            <p className="modalpiece__text">This section is still under construction. We'll make it available to you very soon! 😉</p>
         </article>
       </main>
     );

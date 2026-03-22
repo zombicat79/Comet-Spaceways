@@ -50,6 +50,20 @@
         }
     }
 
+    &--link {
+        font-family: 'titillium-regular';
+        font-size: $size-small;
+        background-color: transparent;
+        padding: 0;
+        text-transform: none;
+        border-radius: 0;
+        transition: none;
+
+        &:hover {
+            color: $color-highlight-light;
+        }
+    }
+
     &--floating {
         width: 8rem;
         height: 8rem;

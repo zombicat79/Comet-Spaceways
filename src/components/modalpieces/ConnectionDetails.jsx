@@ -1,10 +1,10 @@
 import SvgIcon from "../SvgIcon";
 
-function ConnectionDetails({ routingDetails }) {
+function ConnectionDetails({ props }) {
     return (
-      <main className="infopiece">
-        <article className="infopiece__content infopiece__routing">
-          <div className="infopiece__segment connection">
+      <main className="modalpiece">
+        <article className="modalpiece__content modalpiece__routing">
+          <div className="modalpiece__segment connection">
             <div className="connection__header">
               <img className="connection__operator" src='/logos/ctsw-logo_light_badge.svg' alt="Comet Spaceways badge" />
               <p className="connection__flight">Comet CS2225</p>
@@ -36,7 +36,7 @@ function ConnectionDetails({ routingDetails }) {
           <div className="connection__interlude">
             <p>8h interlude at the spaceport</p>
           </div>
-          <div className="infopiece__segment connection">
+          <div className="modalpiece__segment connection">
             <figure className="connection__header">
               <img className="connection__operator" src='/logos/ctsw-logo_light_badge.svg' alt="Comet Spaceways badge" />
               <p className="connection__flight">Comet CS6348</p>
