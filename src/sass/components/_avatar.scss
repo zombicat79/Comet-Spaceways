@@ -1,0 +1,56 @@
+.avatar {
+    width: fit-content;
+    border: 5px solid $color-text-dark;
+    border-radius: 50%;
+
+    &__img-wrapper {
+        border-radius: inherit;
+        background-image: url('/assets/images/icos/profile-default.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 13.5rem;
+        height: 13.5rem;
+
+        &--green {
+            background-image: url('/assets/images/icos/profile-green.webp');
+        }
+
+        &--big-headed {
+            background-image: url('/assets/images/icos/profile-gray.webp');
+        }
+
+        &--reptilian {
+            background-image: url('/assets/images/icos/profile-reptilian.webp');
+        }
+
+        &--cephalopodian {
+            background-image: url('/assets/images/icos/profile-cephalopodian.webp');
+        }
+
+        &--insectoid {
+            background-image: url('/assets/images/icos/profile-insectoid.webp');
+        }
+
+        &--polymorphic {
+            background-image: url('/assets/images/icos/profile-polymorphic.webp');
+        }
+
+        &--leonian {
+            background-image: url('/assets/images/icos/profile-leonian.webp');
+        }
+
+        &--amoebian {
+            background-image: url('/assets/images/icos/profile-amoebian.webp');
+        }
+
+        &--aetherian {
+            background-image: url('/assets/images/icos/profile-aetherian.webp');
+        }
+    }
+
+    img {
+        max-width: 13.5rem;
+        top: 50%;
+    }
+}

@@ -16,6 +16,10 @@ const initialState = {
 function accountReducer(state, action) {
     switch(action.type) {
         case 'account/modifyField':
+            if (action.payload.data.field === 'race') {
+                const shortenedRaceNaming = action.payload.data.value.split(' ')[0]
+                return { ...state, [action.payload.data.field]: action.payload.data.value, avatar: shortenedRaceNaming };
+            }
             return { ...state, [action.payload.data.field]: action.payload.data.value };
         default:
             return state;

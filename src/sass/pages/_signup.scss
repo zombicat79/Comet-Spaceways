@@ -9,11 +9,42 @@
     background-repeat: no-repeat;
     background-position: center;
 
-    &__tab {
-        position: absolute;
+    &__heading {
+        @include flex-column(center);
+        margin: 5rem 0;
+
+        h2 {
+            width: 50%;
+            line-height: 4rem;
+        }
+
+        p {
+            width: 50%;
+
+            span {
+                font-family: 'roboto-bold';
+            }
+        }
     }
 
-    &__heading {
+    .content-section {
+        fill: $color-text-dark;
+
+        .avatar {
+            position: absolute;
+            top: 3rem;
+            right: 3rem;
+            @include respond(tablet-portrait) {
+                position: relative;
+                top: 1.5rem;
+                right: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &__subtitle {
         font-family: 'titillium-bold';
         font-size: 3.5rem;
         font-style: italic;
@@ -23,6 +54,52 @@
 
         &--unavailable {
             opacity: 0.3;
+        }
+    }
+
+    &__badge {
+        position: relative;
+        width: fit-content;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &:hover {
+            .badge__img {
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+        }
+
+        &::after {
+            content: 'Go conquer the universe 🚀';
+            font-family: 'roboto-semibold';
+            font-size: $size-huge;
+            display: inline-block;
+            margin-top: 2rem;
+            @include animation-standard(pulsate);
+            animation-iteration-count: infinite;
+            animation-duration: 2s;
+            cursor: pointer;
+        }
+
+        &--disabled {
+            cursor: not-allowed;
+            filter: opacity(0.2);
+
+            &:hover {
+                .badge__img {
+                    pointer-events: none;
+                    transform: none;
+                }
+            }
+
+            &::after {
+                content: '';
+            }
+        }
+
+        .badge__img {
+            max-width: 25rem;
         }
     }
 }

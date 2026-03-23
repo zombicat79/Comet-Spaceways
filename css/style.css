@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* --- COLOR VARIABLES --- */
 /* --- COLOR GRADIENTS --- */
 /* --- SIZES --- */
@@ -924,6 +925,40 @@ p {
   .figure__text--right {
     text-align: right; }
 
+.avatar {
+  width: fit-content;
+  border: 5px solid #272643;
+  border-radius: 50%; }
+  .avatar__img-wrapper {
+    border-radius: inherit;
+    background-image: url("/assets/images/icos/profile-default.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 13.5rem;
+    height: 13.5rem; }
+    .avatar__img-wrapper--green {
+      background-image: url("/assets/images/icos/profile-green.webp"); }
+    .avatar__img-wrapper--big-headed {
+      background-image: url("/assets/images/icos/profile-gray.webp"); }
+    .avatar__img-wrapper--reptilian {
+      background-image: url("/assets/images/icos/profile-reptilian.webp"); }
+    .avatar__img-wrapper--cephalopodian {
+      background-image: url("/assets/images/icos/profile-cephalopodian.webp"); }
+    .avatar__img-wrapper--insectoid {
+      background-image: url("/assets/images/icos/profile-insectoid.webp"); }
+    .avatar__img-wrapper--polymorphic {
+      background-image: url("/assets/images/icos/profile-polymorphic.webp"); }
+    .avatar__img-wrapper--leonian {
+      background-image: url("/assets/images/icos/profile-leonian.webp"); }
+    .avatar__img-wrapper--amoebian {
+      background-image: url("/assets/images/icos/profile-amoebian.webp"); }
+    .avatar__img-wrapper--aetherian {
+      background-image: url("/assets/images/icos/profile-aetherian.webp"); }
+  .avatar img {
+    max-width: 13.5rem;
+    top: 50%; }
+
 .intersection--cosmic {
   position: relative;
   background-image: linear-gradient(177deg, #121212 30%, #2c698d, #bae8e8, #2c698d, #121212 70%); }
@@ -1222,74 +1257,69 @@ p {
     filter: opacity(0.3);
     z-index: 0; }
 
-.modalpiece__icon, .modalpiece .badge__img {
-  width: 35%; }
-
-.modalpiece__content {
-  margin-top: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center; }
-
-.modalpiece__routing {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0; }
-  @media screen and (max-width: 600px) {
-    .modalpiece__routing {
-      justify-content: flex-start; } }
-
-.modalpiece__text {
-  font-size: 1.2rem; }
-  .modalpiece__text:not(.modalpiece__text:last-child) {
-    margin-bottom: 1.5rem; }
-
-.modalpiece .form {
-  width: 100%; }
-  .modalpiece .form__element .field {
-    color: #ffffff;
-    border: 1px solid #ffffff; }
-    .modalpiece .form__element .field__value {
-      color: #ffffff; }
-
-.modalpiece .btn {
-  margin: 2rem 0; }
-  .modalpiece .btn--link {
-    font-family: 'poppins-regular';
-    color: #ffffff;
-    text-decoration: underline; }
-
-.modalpiece .btn-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 2rem; }
-  .modalpiece .btn-wrapper--actionable:hover {
-    cursor: pointer; }
-    .modalpiece .btn-wrapper--actionable:hover .btn--link {
-      animation-name: pulsate;
-      animation-timing-function: linear;
-      animation-duration: .75s;
-      animation-fill-mode: forwards;
-      animation-iteration-count: infinite;
-      animation-duration: 2s;
-      color: #32CD32;
-      font-family: 'poppins-bold';
-      text-decoration: none; }
-      .modalpiece .btn-wrapper--actionable:hover .btn--link::after {
-        content: "\2192";
-        margin-left: .5rem; }
-
-.modalpiece .infopanel {
-  padding: 1.5rem;
-  font-size: 1.2rem; }
-  .modalpiece .infopanel__icon {
-    font-size: 3rem; }
+.modalpiece {
+  fill: #F5F5F5; }
+  .modalpiece__icon, .modalpiece .badge__img {
+    width: 35%; }
+  .modalpiece__content {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
+  .modalpiece__routing {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0; }
+    @media screen and (max-width: 600px) {
+      .modalpiece__routing {
+        justify-content: flex-start; } }
+  .modalpiece__text {
+    font-size: 1.2rem; }
+    .modalpiece__text:not(.modalpiece__text:last-child) {
+      margin-bottom: 1.5rem; }
+  .modalpiece .form {
+    width: 100%; }
+    .modalpiece .form__element .field {
+      color: #ffffff;
+      border: 1px solid #ffffff; }
+      .modalpiece .form__element .field__value {
+        color: #ffffff; }
+  .modalpiece .btn {
+    margin: 2rem 0; }
+    .modalpiece .btn--link {
+      font-family: 'poppins-regular';
+      color: #ffffff;
+      text-decoration: underline; }
+  .modalpiece .btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2rem; }
+    .modalpiece .btn-wrapper--actionable:hover {
+      cursor: pointer; }
+      .modalpiece .btn-wrapper--actionable:hover .btn--link {
+        animation-name: pulsate;
+        animation-timing-function: linear;
+        animation-duration: .75s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+        color: #32CD32;
+        font-family: 'poppins-bold';
+        text-decoration: none; }
+        .modalpiece .btn-wrapper--actionable:hover .btn--link::after {
+          content: "\2192";
+          margin-left: .5rem; }
+  .modalpiece .infopanel {
+    padding: 1.5rem;
+    font-size: 1.2rem; }
+    .modalpiece .infopanel__icon {
+      font-size: 3rem; }
 
 .loader {
   position: absolute;
@@ -1984,7 +2014,7 @@ p {
     .form .field__value--raw {
       text-transform: none; }
   .form .field svg {
-    fill: #ffffff;
+    fill: inherit;
     width: 3rem;
     height: 3rem;
     position: absolute;
@@ -2917,6 +2947,8 @@ p {
     border-radius: inherit;
     top: -4rem;
     z-index: -1; }
+    .content-section__tab--r10 {
+      right: 10%; }
     .content-section__tab--r20 {
       right: 20%; }
 
@@ -3180,17 +3212,72 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
-  .signup__tab {
-    position: absolute; }
   .signup__heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0; }
+    .signup__heading h2 {
+      width: 50%;
+      line-height: 4rem; }
+    .signup__heading p {
+      width: 50%; }
+      .signup__heading p span {
+        font-family: 'roboto-bold'; }
+  .signup .content-section {
+    fill: #272643; }
+    .signup .content-section .avatar {
+      position: absolute;
+      top: 3rem;
+      right: 3rem; }
+      @media screen and (max-width: 768px) {
+        .signup .content-section .avatar {
+          position: relative;
+          top: 1.5rem;
+          right: 0;
+          left: 50%;
+          transform: translateX(-50%); } }
+  .signup__subtitle {
     font-family: 'titillium-bold';
     font-size: 3.5rem;
     font-style: italic;
     text-align: left;
     text-transform: uppercase;
     margin-bottom: 1.5rem !important; }
-    .signup__heading--unavailable {
+    .signup__subtitle--unavailable {
       opacity: 0.3; }
+  .signup__badge {
+    position: relative;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%); }
+    .signup__badge:hover .badge__img {
+      cursor: pointer;
+      transform: scale(1.2); }
+    .signup__badge::after {
+      content: 'Go conquer the universe 🚀';
+      font-family: 'roboto-semibold';
+      font-size: 2.4rem;
+      display: inline-block;
+      margin-top: 2rem;
+      animation-name: pulsate;
+      animation-timing-function: linear;
+      animation-duration: .75s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+      cursor: pointer; }
+    .signup__badge--disabled {
+      cursor: not-allowed;
+      filter: opacity(0.2); }
+      .signup__badge--disabled:hover .badge__img {
+        pointer-events: none;
+        transform: none; }
+      .signup__badge--disabled::after {
+        content: ''; }
+    .signup__badge .badge__img {
+      max-width: 25rem; }
 
 .notfound {
   position: relative;

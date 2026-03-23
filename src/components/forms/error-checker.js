@@ -1,3 +1,5 @@
+import { capitalize } from "lodash";
+
 function checkMinLength(expectedValue, actualValue) {
     if (actualValue.length === 0) {
         return { status: 'ko', msg: 'Field cannot be empty' };
@@ -67,6 +69,15 @@ function checkPattern(rule, pattern, actualValue) {
     }
 }
 
+function checkEquivalence(targetField, actualValue) {
+    const mirrorField = Array.from(document.getElementsByName(targetField))[0];
+    if (actualValue !== mirrorField.value) {
+        return { status: 'ko', msg: `Value must be equal to what you typed in '${capitalize(targetField)}' field` };
+    } else {
+        return { status: 'ok', msg: '' };
+    }
+}
+
 function errorChecker(field, actualValue, formRules) {
     const fieldRules = formRules.filter((el) => el.field === field );
     const { rules } = fieldRules[0];
@@ -116,6 +127,13 @@ function errorChecker(field, actualValue, formRules) {
             case 'patternConform-no-space':
             case 'patternConform-pwd':
                 checkResult = checkPattern(rule.name, rule.value, actualValue);
+                if (checkResult.status === 'ko') {
+                    status = checkResult.status;
+                    message = checkResult.msg;
+                }
+                break;
+            case 'equivalence':
+                checkResult = checkEquivalence(rule.value, actualValue);
                 if (checkResult.status === 'ko') {
                     status = checkResult.status;
                     message = checkResult.msg;
