@@ -2479,8 +2479,19 @@ p {
         overflow: hidden; }
         .header__expand[data-expansion="true"] {
           max-height: 20rem; }
+          .header__expand[data-expansion="true"] #foldback-btn {
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+            right: 1.5rem;
+            bottom: 1rem;
+            transform: rotate(90deg); }
+            .header__expand[data-expansion="true"] #foldback-btn:hover {
+              transform: translateY(-3px) scale(1.2) rotate(90deg); }
         .header__expand[data-expansion="false"] {
           max-height: 0; }
+          .header__expand[data-expansion="false"] #foldback-btn {
+            display: none; }
         .header__expand .navmenu {
           color: #272643;
           padding: 2rem; }
