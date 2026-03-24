@@ -5,7 +5,7 @@
 
     &__img-wrapper {
         border-radius: inherit;
-        background-image: url('/assets/images/icos/profile-default.png');
+        background-image: url('/assets/images/characters/profiles/profile-default.png');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
@@ -13,44 +13,63 @@
         height: 13.5rem;
 
         &--green {
-            background-image: url('/assets/images/icos/profile-green.webp');
+            background-image: url('/assets/images/characters/profiles/profile-green.webp');
         }
 
         &--big-headed {
-            background-image: url('/assets/images/icos/profile-gray.webp');
+            background-image: url('/assets/images/characters/profiles/profile-gray.webp');
         }
 
         &--reptilian {
-            background-image: url('/assets/images/icos/profile-reptilian.webp');
+            background-image: url('/assets/images/characters/profiles/profile-reptilian.webp');
         }
 
         &--cephalopodian {
-            background-image: url('/assets/images/icos/profile-cephalopodian.webp');
+            background-image: url('/assets/images/characters/profiles/profile-cephalopodian.webp');
         }
 
         &--insectoid {
-            background-image: url('/assets/images/icos/profile-insectoid.webp');
+            background-image: url('/assets/images/characters/profiles/profile-insectoid.webp');
         }
 
         &--polymorphic {
-            background-image: url('/assets/images/icos/profile-polymorphic.webp');
+            background-image: url('/assets/images/characters/profiles/profile-polymorphic.webp');
         }
 
         &--leonian {
-            background-image: url('/assets/images/icos/profile-leonian.webp');
+            background-image: url('/assets/images/characters/profiles/profile-leonian.webp');
         }
 
         &--amoebian {
-            background-image: url('/assets/images/icos/profile-amoebian.webp');
+            background-image: url('/assets/images/characters/profiles/profile-amoebian.webp');
         }
 
         &--aetherian {
-            background-image: url('/assets/images/icos/profile-aetherian.webp');
+            background-image: url('/assets/images/characters/profiles/profile-aetherian.webp');
         }
-    }
 
-    img {
-        max-width: 13.5rem;
-        top: 50%;
+        &--organic-male, &--humanoid {
+            background-image: url('/assets/images/characters/profiles/profile-organic-male.webp');
+        }
+
+        &--organic-female, &--organic-other {
+            background-image: url('/assets/images/characters/profiles/profile-organic-female.webp');
+        }
+
+        &--cyborg-male {
+            background-image: url('/assets/images/characters/profiles/profile-cyborg-male.webp');
+        }
+
+        &--cyborg-female, &--cyborg-other {
+            background-image: url('/assets/images/characters/profiles/profile-cyborg-female.webp');
+        }
+
+        &--android-male, &--android-other {
+            background-image: url('/assets/images/characters/profiles/profile-android-male.webp');
+        }
+
+        &--android-female {
+            background-image: url('/assets/images/characters/profiles/profile-android-female.webp');
+        }
     }
 }

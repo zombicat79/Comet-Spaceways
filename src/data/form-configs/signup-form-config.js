@@ -2,11 +2,11 @@ export const raceFields = [
     { type: 'selector', props: {labelled: true, name: 'race', title: 'Race', options: [
         'humanoid', 
         'green little man',
-        'big-headed gray',
         'reptilian',
         'insectoid',
         'cephalopodian',
         'polymorphic',
+        'big-headed gray',
         'amoebian',
         'leonian',
         'aetherian',
@@ -34,15 +34,16 @@ export const humanoidFormFields = [
         'other'
     ]}},
     { type: 'radio', props: {labelled: true, name: 'build', title: 'Build', options: ['organic', 'cyborg', 'android']}},
+    { type: 'radio', props: {labelled: true, name: 'gender', title: 'Gender', options: ['male', 'female', 'other']}},
     { type: 'selector', props: {labelled: true, name: 'job', title: "Job", options: [
-        'astrophysician',
-        'IA psychologist',
+        'astrophysicist',
+        'AI psychologist',
         'pirate',
         'colonist',
-        'builder',
-        'cyborg doctor',
+        'habitat builder',
+        'cybersurgeon',
         'VR soldier',
-        'adventurer'
+        'asteroid miner'
     ]}}
 ];
 export const humanoidFormDefaultValues = { 
@@ -50,6 +51,7 @@ export const humanoidFormDefaultValues = {
     surname: '',
     nationality: 'N/A',
     build: '',
+    gender: '',
     job: 'N/A'
 }
 export const humanoidFormRules = [
@@ -57,20 +59,22 @@ export const humanoidFormRules = [
     { field: 'surname', rules: [{ name: 'minLength', value: 2}, { name: 'maxLength', value: 15 }] },
     { field: 'nationality', rules: [{ name: 'void', value: true}] },
     { field: 'build', rules: [{ name: 'void', value: true}] },
+    { field: 'gender', rules: [{ name: 'void', value: true}] },
     { field: 'job', rules: [{ name: 'void', value: true}] }
 ]
 
 export const nheFormFields = [
     { type: 'input', props: {labelled: true, inputType: 'text', valueOutput: 'upper', name: 'name', title: 'Human Pronounceable Name'}},
     { type: 'input', props: {labelled: true, inputType: 'text', valueOutput: 'upper', name: 'surname', title: 'Tribe / Cast / Faction Name'}},
-    { type: 'selector', props: {labelled: true, name: 'job', title: "Area of expertise", options: [
+    { type: 'selector', props: {labelled: true, name: 'job', title: "Area of Expertise", options: [
         'invasion',
         'colonization',
         'exploration',
         'invention',
         'scientific research',
         'philosophy',
-        'religion'
+        'religion',
+        'language interpretation'
     ]}},
     { type: 'radio', props: {labelled: true, name: 'origin', title: 'Origin', options: [
         'milky way',

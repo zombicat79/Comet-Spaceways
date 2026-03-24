@@ -27,6 +27,11 @@
         }
     }
 
+    .flashoffer {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .content-section {
         fill: $color-text-dark;
 

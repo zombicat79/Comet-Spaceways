@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import useAccount from '../hooks/useAccount';
 
+import FlashOffer from '../components/FlashOffer';
 import ContentSection from './../layout/ContentSection';
 import Avatar from '../components/Avatar';
 import Form from '../components/forms/Form';
@@ -21,9 +22,20 @@ function SignUp() {
         setPassengerForms((curr) => [...curr, form]);
     }
 
+    function determineCharacter() {
+        if (accountState.race === 'humanoid') {
+            let build = 'organic';
+            let gender = 'male';
+            build = accountState.build === '' ? 'organic' : accountState.build;
+            gender = accountState.gender === '' ? 'male' : accountState.gender;
+            return `${build}-${gender}`;
+        }
+        return accountState.race;
+    }
+
     useEffect(() => {
         accountState.race !== 'n/a' ? setFormAvailability('available') : setFormAvailability('unavailable');
-    }, [accountState])
+    }, [accountState.race])
 
     useEffect(() => {
         let superformCompletion = 'ok';
@@ -43,7 +55,6 @@ function SignUp() {
             }
             if (superformCompletion === 'ko') break;
         }
-        console.log(superformCompletion)
         superformCompletion === 'ok' ? setProgressDisabled(false) : setProgressDisabled(true);
     }, [accountState, passengerForms])
 
@@ -53,6 +64,7 @@ function SignUp() {
                 <h2>BECOME A SPACEFARER 👨‍🚀</h2>
                 <p>Sign up for <span>Comet Spaceways'</span> interplanetary travel scheme and brace for a new life full of wonders, excitement and adventure!</p>
             </div>
+            <FlashOffer width={20} text='Get $50 AU for free!' textAngle={340} />
 
             <ContentSection>
                 <div className="content-section__tab content-section__tab--r10">Your new account</div>
@@ -72,7 +84,7 @@ function SignUp() {
                         superformState={accountState} 
                         onFormAdd={addPassengerForm}
                     />
-                    <Avatar character={accountState.race} />
+                    <Avatar character={determineCharacter()} />
                 </div>
                 <h3 className={`signup__subtitle signup__subtitle--${formAvailability}`}>Who are you?</h3>
                 {accountState.race === 'humanoid' || accountState.race === 'n/a'
@@ -127,13 +139,3 @@ function SignUp() {
 }
 
 export default SignUp;
-
-/*
-
-superform={true} 
-superformHandler={cartDispatcher}
-superformAction={"cart/modifyPassengers"}
-superformState={cartState} 
-onFormAdd={onFormAdd}
-
-*/

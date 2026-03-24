@@ -931,33 +931,42 @@ p {
   border-radius: 50%; }
   .avatar__img-wrapper {
     border-radius: inherit;
-    background-image: url("/assets/images/icos/profile-default.png");
+    background-image: url("/assets/images/characters/profiles/profile-default.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     width: 13.5rem;
     height: 13.5rem; }
     .avatar__img-wrapper--green {
-      background-image: url("/assets/images/icos/profile-green.webp"); }
+      background-image: url("/assets/images/characters/profiles/profile-green.webp"); }
     .avatar__img-wrapper--big-headed {
-      background-image: url("/assets/images/icos/profile-gray.webp"); }
+      background-image: url("/assets/images/characters/profiles/profile-gray.webp"); }
     .avatar__img-wrapper--reptilian {
-      background-image: url("/assets/images/icos/profile-reptilian.webp"); }
+      background-image: url("/assets/images/characters/profiles/profile-reptilian.webp"); }
     .avatar__img-wrapper--cephalopodian {
-      background-image: url("/assets/images/icos/profile-cephalopodian.webp"); }
+      background-image: url("/assets/images/characters/profiles/profile-cephalopodian.webp"); }
     .avatar__img-wrapper--insectoid {
-      background-image: url("/assets/images/icos/profile-insectoid.webp"); }
+      background-image: url("/assets/images/characters/profiles/profile-insectoid.webp"); }
     .avatar__img-wrapper--polymorphic {
-      background-image: url("/assets/images/icos/profile-polymorphic.webp"); }
+      background-image: url("/assets/images/characters/profiles/profile-polymorphic.webp"); }
     .avatar__img-wrapper--leonian {
-      background-image: url("/assets/images/icos/profile-leonian.webp"); }
+      background-image: url("/assets/images/characters/profiles/profile-leonian.webp"); }
     .avatar__img-wrapper--amoebian {
-      background-image: url("/assets/images/icos/profile-amoebian.webp"); }
+      background-image: url("/assets/images/characters/profiles/profile-amoebian.webp"); }
     .avatar__img-wrapper--aetherian {
-      background-image: url("/assets/images/icos/profile-aetherian.webp"); }
-  .avatar img {
-    max-width: 13.5rem;
-    top: 50%; }
+      background-image: url("/assets/images/characters/profiles/profile-aetherian.webp"); }
+    .avatar__img-wrapper--organic-male, .avatar__img-wrapper--humanoid {
+      background-image: url("/assets/images/characters/profiles/profile-organic-male.webp"); }
+    .avatar__img-wrapper--organic-female, .avatar__img-wrapper--organic-other {
+      background-image: url("/assets/images/characters/profiles/profile-organic-female.webp"); }
+    .avatar__img-wrapper--cyborg-male {
+      background-image: url("/assets/images/characters/profiles/profile-cyborg-male.webp"); }
+    .avatar__img-wrapper--cyborg-female, .avatar__img-wrapper--cyborg-other {
+      background-image: url("/assets/images/characters/profiles/profile-cyborg-female.webp"); }
+    .avatar__img-wrapper--android-male, .avatar__img-wrapper--android-other {
+      background-image: url("/assets/images/characters/profiles/profile-android-male.webp"); }
+    .avatar__img-wrapper--android-female {
+      background-image: url("/assets/images/characters/profiles/profile-android-female.webp"); }
 
 .intersection--cosmic {
   position: relative;
@@ -1117,6 +1126,25 @@ p {
     @media screen and (max-width: 1000px) {
       .promoposter__img {
         margin-top: 3rem; } }
+
+.flashoffer {
+  position: relative;
+  width: fit-content; }
+  .flashoffer__img {
+    width: 100%; }
+  .flashoffer__text {
+    color: #272643;
+    font-family: 'roboto-extrabold';
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .flashoffer__text--340 {
+      transform: translate(-50%, -50%) rotate(340deg); }
+  .flashoffer--20 .flashoffer__img {
+    max-width: 20rem; }
 
 .flightsearch {
   display: grid;
@@ -3225,6 +3253,9 @@ p {
       width: 50%; }
       .signup__heading p span {
         font-family: 'roboto-bold'; }
+  .signup .flashoffer {
+    left: 50%;
+    transform: translateX(-50%); }
   .signup .content-section {
     fill: #272643; }
     .signup .content-section .avatar {

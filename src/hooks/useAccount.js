@@ -7,6 +7,7 @@ const initialState = {
     nationality: 'N/A',
     origin: 'N/A',
     build: '',
+    gender: '',
     job: 'N/A',
     avatar: '',
     username: '',
@@ -18,9 +19,15 @@ function accountReducer(state, action) {
         case 'account/modifyField':
             if (action.payload.data.field === 'race') {
                 const shortenedRaceNaming = action.payload.data.value.split(' ')[0]
-                return { ...state, [action.payload.data.field]: action.payload.data.value, avatar: shortenedRaceNaming };
+                if (state.race === 'humanoid' || action.payload.data.value === 'humanoid') {
+                    return { ...initialState, [action.payload.data.field]: action.payload.data.value, avatar: shortenedRaceNaming };
+                } else {
+                    return { ...state, [action.payload.data.field]: action.payload.data.value, avatar: shortenedRaceNaming };
+                }
             }
             return { ...state, [action.payload.data.field]: action.payload.data.value };
+        case 'account/reset':
+            return initialState;
         default:
             return state;
     }
