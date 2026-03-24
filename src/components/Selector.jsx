@@ -70,6 +70,8 @@ function Selector({ type, identifier, initialValue, choiceOptions, cssModifier }
             id={identifier}
             className={cssModifier ? `selector selector--${cssModifier}` : `selector`} 
             onClick={(e) => handleFolding(e.target)}
+            onBlur={(e) => handleFolding(e.target)}
+            tabIndex={0}
         >
             <p className="selector__id">{identifier.replace('-', ' ')}</p>
             { type === 'date' && cssModifier !== 'disabled'

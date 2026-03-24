@@ -660,14 +660,7 @@ p {
     left: 0;
     background-color: #F5F5F5;
     padding: 1rem;
-    border: 1px solid #2c698d;
-    animation-name: fadein;
-    animation-timing-function: linear;
-    animation-duration: 1s;
-    animation-fill-mode: both; }
-    @media screen and (min-width: 1280px) {
-      .selector__choice {
-        background-color: #e3f6f5; } }
+    border: 1px solid #2c698d; }
     .selector__choice--quantity {
       width: max-content; }
       @media screen and (max-width: 600px) {
@@ -1996,16 +1989,10 @@ p {
     position: absolute;
     top: 6rem;
     left: 0;
-    background-color: #F5F5F5;
+    color: #F5F5F5;
+    background-color: #2c698d;
     padding: 1rem;
-    border: 1px solid #2c698d;
-    animation-name: fadein;
-    animation-timing-function: linear;
-    animation-duration: 1s;
-    animation-fill-mode: both; }
-    @media screen and (min-width: 1280px) {
-      .form .field__list {
-        background-color: #e3f6f5; } }
+    border: 1px solid #0B3D91; }
     .form .field__list--quantity {
       width: max-content; }
       @media screen and (max-width: 600px) {
@@ -2036,7 +2023,7 @@ p {
     .form .field__option:not(:last-child) {
       margin-bottom: .5rem; }
     .form .field__option:hover {
-      background-color: #bae8e8; }
+      background-color: #4B0082; }
     .form .field__option--disabled {
       filter: opacity(0.3) grayscale(1); }
       .form .field__option--disabled:hover {
@@ -2305,13 +2292,9 @@ p {
   font-family: 'titillium-bold';
   font-size: 1.6rem;
   color: red;
-  background-color: #e3f6f5;
+  background-color: #F5F5F5;
   border: 1px solid #2c698d;
-  border-radius: 4px;
-  animation-name: fadein;
-  animation-timing-function: linear;
-  animation-duration: 1s;
-  animation-fill-mode: both; }
+  border-radius: 4px; }
 
 .react-datepicker__header {
   background-color: #bae8e8;

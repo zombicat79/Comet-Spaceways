@@ -29,13 +29,9 @@
     font-family: 'titillium-bold';
     font-size: $size-regular;
     color: red;
-    background-color: $color-body-light;
+    background-color: $color-text-light;
     border: 1px solid $color-body-deep;
     border-radius: 4px;
-    animation-name: fadein;
-    animation-timing-function: linear;
-    animation-duration: 1s;
-    animation-fill-mode: both;
 }
 
 .react-datepicker__header {

@@ -86,13 +86,6 @@
         background-color: $color-text-light;
         padding: 1rem;
         border: 1px solid $color-body-deep;
-        animation-name: fadein;
-        animation-timing-function: linear;
-        animation-duration: 1s;
-        animation-fill-mode: both;
-        @include respond(desktop) {
-            background-color: $color-body-light;
-        }
 
         // TYPES
 
