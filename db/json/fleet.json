@@ -16,6 +16,7 @@
                 "short transfer"
             ],
             "capacity": {
+                "totalPassengers": 120,
                 "seats": {
                     "total": 120,
                     "distribution": {
@@ -68,6 +69,7 @@
                 "descent"
             ],
             "capacity": {
+                "totalPassengers": 350,
                 "seats": {
                     "total": 350,
                     "distribution": {
@@ -124,6 +126,7 @@
                 "intra-belt travel"
             ],
             "capacity": {
+                "totalPassengers": 240,
                 "seats": {
                     "total": 240,
                     "distribution": {
@@ -180,13 +183,89 @@
             "uses": [
                 "interplanetary travel"
             ],
+            "capacity": {
+                "totalPassengers": 550,
+                "seats": {
+                    "total": 100,
+                    "distribution": {
+                        "type": "circle-level",
+                        "circles": [
+                            [1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                        ],
+                        "levels": 2
+                    }
+                },
+                "cabins": [
+                    {
+                        "type": "single",
+                        "total": 50,
+                        "distribution": {
+                            "type": "column-row-level",
+                            "columns": [[1], [1]],
+                            "rows": 25,
+                            "levels": [4]
+                        },
+                        "capacity": 1
+                    },
+                    {
+                        "type": "double",
+                        "total": 100,
+                        "distribution": {
+                            "type": "column-row-level",
+                            "columns": [[1], [1]],
+                            "rows": 25,
+                            "levels": [2, 3]
+                        },
+                        "capacity": 2
+                    },
+                    {
+                        "type": "multiple",
+                        "total": 50,
+                        "distribution": {
+                            "type": "column-row-level",
+                            "columns": [[1], [1]],
+                            "rows": 25,
+                            "levels": [1]
+                        },
+                        "capacity": 4
+                    }
+                ],
+                "habitats": null,
+                "cargo": 50000,
+                "data": 10000
+            },
+            "amenities": [
+                "bar",
+                "restaurant",
+                "VR lounge",
+                "casino",
+                "gym"
+            ],
             "includes": [
                 {
                     "vehicle_id": 1,
                     "vehicle_full_name": "Planet Jumper EV-1",
                     "quantity": 1
                 }
-            ]
+            ],
+            "cover_img": "spacebus-next.webp",
+            "feature_pictures": [
+                "shooting-star0.webp",
+                "shooting-star1.webp",
+                "shooting-star2.webp",
+                "shooting-star3.webp",
+                "shooting-star4.webp",
+                "shooting-star5.webp"
+            ],
+            "technical_pictures": [
+                "shooting-star6.webp",
+                "shooting-star7.webp"
+            ],
+            "overall_quantity": 53
         },
         {
             "id": 5,
