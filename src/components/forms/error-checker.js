@@ -41,7 +41,7 @@ function checkMaxValue(expectedValue, actualValue) {
 }
 
 function checkNoVoidValue(actualValue) {
-    if (!actualValue || actualValue === '' || actualValue === 'n/a') {
+    if (!actualValue || actualValue === '' || actualValue === '-----') {
         return { status: 'ko', msg: 'You must select an option' };
     } else {
         return { status: 'ok', msg: '' };

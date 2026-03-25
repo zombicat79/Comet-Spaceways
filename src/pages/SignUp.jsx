@@ -9,6 +9,8 @@ import Badge from '../components/Badge';
 
 import * as signupFormConfig from '../data/form-configs/signup-form-config';
 import { completionChecker } from '../components/forms/error-checker';
+import User from '../data/user-data-model';
+
 import footerBadge from '/logos/ctsw-logo_dark_badge.png';
 
 function SignUp() {
@@ -26,15 +28,29 @@ function SignUp() {
         if (accountState.race === 'humanoid') {
             let build = 'organic';
             let gender = 'male';
-            build = accountState.build === '' ? 'organic' : accountState.build;
-            gender = accountState.gender === '' ? 'male' : accountState.gender;
+            build = accountState.build === null ? 'organic' : accountState.build;
+            gender = accountState.gender === null ? 'male' : accountState.gender;
             return `${build}-${gender}`;
         }
         return accountState.race;
     }
 
+    function handleUserCreation() {
+        const newUser = new User(accountState);
+        if (accountState.race !== 'humanoid') {
+            newUser.addRaceFeatures();
+            newUser.addOriginFeatures();
+        } else {
+            newUser.addBuildFeatures();
+            newUser.addGenderFeatures();
+            newUser.addNationalityFeatures();
+        }
+        newUser.addJobFeatures();
+        console.log(newUser);
+    }
+
     useEffect(() => {
-        accountState.race !== 'n/a' ? setFormAvailability('available') : setFormAvailability('unavailable');
+        accountState.race !== '-----' ? setFormAvailability('available') : setFormAvailability('unavailable');
     }, [accountState.race])
 
     useEffect(() => {
@@ -87,7 +103,7 @@ function SignUp() {
                     <Avatar character={determineCharacter()} />
                 </div>
                 <h3 className={`signup__subtitle signup__subtitle--${formAvailability}`}>Who are you?</h3>
-                {accountState.race === 'humanoid' || accountState.race === 'n/a'
+                {accountState.race === 'humanoid' || accountState.race === '-----'
                 ? <Form 
                     id="signup-humanoid-specific-form" 
                     display={"grid"}
@@ -131,7 +147,10 @@ function SignUp() {
                 />
             </ContentSection>
             
-            <div className={`signup__badge signup__badge--${progressDisabled ? 'disabled' : 'enabled'}`}>
+            <div 
+                className={`signup__badge signup__badge--${progressDisabled ? 'disabled' : 'enabled'}`}
+                onClick={handleUserCreation}
+            >
                 <Badge imgSrc={footerBadge} />
             </div>
         </main>

@@ -14,7 +14,7 @@ export const raceFields = [
     ]}},
 ];
 export const raceDefaultValues = { 
-    race: 'N/A'
+    race: '-----'
 }
 export const raceRules = [
     { field: 'race', rules: [{ name: 'void', value: true}] },
@@ -49,10 +49,10 @@ export const humanoidFormFields = [
 export const humanoidFormDefaultValues = { 
     name: '',
     surname: '',
-    nationality: 'N/A',
+    nationality: '-----',
     build: '',
     gender: '',
-    job: 'N/A'
+    job: '-----'
 }
 export const humanoidFormRules = [
     { field: 'name', rules: [{ name: 'minLength', value: 2}, { name: 'maxLength', value: 15 }] },
@@ -85,7 +85,7 @@ export const nheFormFields = [
 export const nheFormDefaultValues = {
     name: '',
     surname: '',
-    job: 'N/A',
+    job: '-----',
     origin: ''
 }
 export const nheFormRules = [

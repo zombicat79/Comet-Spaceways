@@ -16,7 +16,7 @@ export const humanoidFormFields = [
 export const humanoidFormDefaultValues = { 
     name: '',
     surname: '',
-    nationality: 'N/A',
+    nationality: '-----',
     build: ''
 }
 export const humanoidFormRules = [
@@ -51,7 +51,7 @@ export const nheFormDefaultValues = {
     name: '',
     surname: '',
     origin: '',
-    race: 'N/A'
+    race: '-----'
 }
 export const nheFormRules = [
     { field: 'name', rules: [{ name: 'minLength', value: 2}, { name: 'maxLength', value: 15 }] },
@@ -101,7 +101,7 @@ export const petFormFields = [
 ];
 export const petFormDefaultValues = {
     name: '',
-    species: '',
+    species: '-----',
     build: '',
     unaccompanied: false,
     conversational: false

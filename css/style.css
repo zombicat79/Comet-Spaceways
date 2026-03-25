@@ -937,9 +937,9 @@ p {
     background-repeat: no-repeat;
     width: 13.5rem;
     height: 13.5rem; }
-    .avatar__img-wrapper--green {
+    .avatar__img-wrapper--green_little_man {
       background-image: url("/assets/images/characters/profiles/profile-green.webp"); }
-    .avatar__img-wrapper--big-headed {
+    .avatar__img-wrapper--big_headed_gray {
       background-image: url("/assets/images/characters/profiles/profile-gray.webp"); }
     .avatar__img-wrapper--reptilian {
       background-image: url("/assets/images/characters/profiles/profile-reptilian.webp"); }
@@ -3249,13 +3249,23 @@ p {
     .signup__heading h2 {
       width: 50%;
       line-height: 4rem; }
+      @media screen and (max-width: 768px) {
+        .signup__heading h2 {
+          width: 60%; } }
+      @media screen and (max-width: 600px) {
+        .signup__heading h2 {
+          width: 70%; } }
+      @media screen and (max-width: 480px) {
+        .signup__heading h2 {
+          width: 90%; } }
     .signup__heading p {
       width: 50%; }
       .signup__heading p span {
         font-family: 'roboto-bold'; }
   .signup .flashoffer {
     left: 50%;
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    margin-bottom: 3rem; }
   .signup .content-section {
     fill: #272643; }
     .signup .content-section .avatar {
@@ -3272,6 +3282,7 @@ p {
   .signup__subtitle {
     font-family: 'titillium-bold';
     font-size: 3.5rem;
+    line-height: 3.8rem;
     font-style: italic;
     text-align: left;
     text-transform: uppercase;

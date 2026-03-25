@@ -1,17 +1,17 @@
 import { useReducer } from "react";
 
 const initialState = {
-    name: '',
-    surname: '',
-    race: 'N/A',
-    nationality: 'N/A',
-    origin: 'N/A',
-    build: '',
-    gender: '',
-    job: 'N/A',
-    avatar: '',
-    username: '',
-    password: ''
+    name: null,
+    surname: null,
+    race: '-----',
+    nationality: '-----',
+    origin: '-----',
+    build: null,
+    gender: null,
+    job: '-----',
+    avatar: null,
+    username: null,
+    password: null
 }
 
 function accountReducer(state, action) {
@@ -22,10 +22,24 @@ function accountReducer(state, action) {
                 if (state.race === 'humanoid' || action.payload.data.value === 'humanoid') {
                     return { ...initialState, [action.payload.data.field]: action.payload.data.value, avatar: shortenedRaceNaming };
                 } else {
-                    return { ...state, [action.payload.data.field]: action.payload.data.value, avatar: shortenedRaceNaming };
+                    return { ...state, [action.payload.data.field]: action.payload.data.value.replace(/[\s-]/g, '_'), avatar: shortenedRaceNaming };
                 }
             }
-            return { ...state, [action.payload.data.field]: action.payload.data.value };
+            if (action.payload.data.field === 'build') {
+                return { 
+                    ...state, 
+                    [action.payload.data.field]: action.payload.data.value, 
+                    avatar: `${action.payload.data.value}-${state.gender}` 
+                };
+            }
+            if (action.payload.data.field === 'gender') {
+                return { 
+                    ...state, 
+                    [action.payload.data.field]: action.payload.data.value, 
+                    avatar: `${state.build}-${action.payload.data.value}` 
+                };
+            }
+            return { ...state, [action.payload.data.field]: action.payload.data.value.replace(/[\s-]/g, '_') };
         case 'account/reset':
             return initialState;
         default:
