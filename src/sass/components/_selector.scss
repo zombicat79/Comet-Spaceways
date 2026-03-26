@@ -86,6 +86,11 @@
         background-color: $color-text-light;
         padding: 1rem;
         border: 1px solid $color-body-deep;
+        @include respond(tablet-portrait) {
+            color: $color-text-light;
+            background-color: $color-body-deep;
+            border: 1px solid $color-environmental-deep;
+        }
 
         // TYPES
 
@@ -118,6 +123,9 @@
 
         &:hover {
             background-color: $color-body-shallow;
+            @include respond(tablet-portrait) {
+                background-color: $color-environmental-accent;
+            }
         }
 
         &--disabled {
