@@ -3279,6 +3279,20 @@ p {
           right: 0;
           left: 50%;
           transform: translateX(-50%); } }
+    .signup .content-section a {
+      display: block;
+      text-align: left;
+      width: fit-content;
+      margin-top: 1rem;
+      transition: transform .5s; }
+      .signup .content-section a:hover {
+        cursor: pointer;
+        font-family: 'roboto-semibold';
+        transform: translateX(2rem); }
+        .signup .content-section a:hover::before {
+          content: '\2192';
+          margin-right: .5rem;
+          font-size: 1.8rem; }
   .signup__subtitle {
     font-family: 'titillium-bold';
     font-size: 3.5rem;

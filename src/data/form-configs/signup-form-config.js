@@ -9,12 +9,11 @@ export const raceFields = [
         'big-headed gray',
         'amoebian',
         'leonian',
-        'aetherian',
-        'other'
+        'aetherian'
     ]}},
 ];
 export const raceDefaultValues = { 
-    race: '-----'
+    race: '_____'
 }
 export const raceRules = [
     { field: 'race', rules: [{ name: 'void', value: true}] },
@@ -30,8 +29,7 @@ export const humanoidFormFields = [
         'venusian',
         'belter',
         'jovian',
-        'saturnian',
-        'other'
+        'saturnian'
     ]}},
     { type: 'radio', props: {labelled: true, name: 'build', title: 'Build', options: ['organic', 'cyborg', 'android']}},
     { type: 'radio', props: {labelled: true, name: 'gender', title: 'Gender', options: ['male', 'female', 'other']}},
@@ -49,10 +47,10 @@ export const humanoidFormFields = [
 export const humanoidFormDefaultValues = { 
     name: '',
     surname: '',
-    nationality: '-----',
+    nationality: '_____',
     build: '',
     gender: '',
-    job: '-----'
+    job: '_____'
 }
 export const humanoidFormRules = [
     { field: 'name', rules: [{ name: 'minLength', value: 2}, { name: 'maxLength', value: 15 }] },
@@ -85,7 +83,7 @@ export const nheFormFields = [
 export const nheFormDefaultValues = {
     name: '',
     surname: '',
-    job: '-----',
+    job: '_____',
     origin: ''
 }
 export const nheFormRules = [

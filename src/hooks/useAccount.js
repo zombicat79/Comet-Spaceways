@@ -3,12 +3,12 @@ import { useReducer } from "react";
 const initialState = {
     name: null,
     surname: null,
-    race: '-----',
-    nationality: '-----',
-    origin: '-----',
+    race: '_____',
+    nationality: '_____',
+    origin: '_____',
     build: null,
     gender: null,
-    job: '-----',
+    job: '_____',
     avatar: null,
     username: null,
     password: null

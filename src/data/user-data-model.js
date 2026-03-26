@@ -29,31 +29,31 @@ const userProgressData = {
 
 const raceVitalsAdjustment = {
     green_little_man: {
-        health: 1, strength: -2, intelligence: 5, wisdom: 5, dexterity: 2, diplomacy: -5, skills: ["sneaking", "abduction"]
+        health: -5, strength: -4, intelligence: 3, wisdom: 0, dexterity: 2, diplomacy: -1, skills: ["stealthiness", "abduction", "emotion-suppression"]
     },
     reptilian: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 6, strength: 8, intelligence: 0, wisdom: 2, dexterity: -2, diplomacy: -3, skills: ["subjugation", "ambushing"]
     },
     insectoid: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 4, strength: 5, intelligence: 1, wisdom: 3, dexterity: 6, diplomacy: 0, skills: [""]
     },
     cephalopodian: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 5, wisdom: 5, dexterity: 7, diplomacy: 3, skills: []
     },
     polymorphic: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 3, strength: 2, intelligence: -2, wisdom: -2, dexterity: 5, diplomacy: -5, skills: ["impersonation"]
     },
     big_headed_gray: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: -2, strength: -4, intelligence: 6, wisdom: 5, dexterity: 2, diplomacy: 2, skills: ["telepathy"]
     },
     amoebian: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: -5, wisdom: -5, dexterity: 0, diplomacy: -4, skills: [""]
     },
     leonian: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 5, strength: 7, intelligence: 0, wisdom: 2, dexterity: 2, diplomacy: 0, skills: [""]
     },
     aetherian: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: -2, strength: -2, intelligence: 7, wisdom: 8, dexterity: 0, diplomacy: 7, skills: ["transcendence"]
     },
 }
 
@@ -61,37 +61,37 @@ const raceVitalsAdjustment = {
 
 const nationalityVitalsAdjustment = {
     selenyte: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: -1, intelligence: 0, wisdom: 0, dexterity: 1, diplomacy: 0, skills: []
     },
     earthling: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 1, strength: 0, intelligence: 0, wisdom: 0, dexterity: 0, diplomacy: 1, skills: []
     },
     martian: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 0, wisdom: 0, dexterity: 0, diplomacy: 1, skills: []
     },
     venusian: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 0, wisdom: 0, dexterity: 0, diplomacy: 0, skills: []
     },
     belter: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: -1, strength: -2, intelligence: 0, wisdom: 0, dexterity: 2, diplomacy: 1, skills: []
     },
     jovian: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: -1, strength: 1, intelligence: 0, wisdom: 1, dexterity: 1, diplomacy: 0, skills: []
     },
     saturnian: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: -1, strength: 1, intelligence: 0, wisdom: 1, dexterity: 1, diplomacy: 0, skills: []
     }
 }
 
 const originVitalsAdjustment = {
     milky_way: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 0, wisdom: 0, dexterity: 0, diplomacy: 0, skills: ["navigation"]
     },
     other_galaxies: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 0, wisdom: 1, dexterity: 0, diplomacy: 1, skills: [""]
     },
     other_dimensions: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 0, wisdom: 2, dexterity: 0, diplomacy: -1, skills: []
     }
 }
 
@@ -99,13 +99,13 @@ const originVitalsAdjustment = {
 
 const buildVitalsAdjustment = {
     organic: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 2, strength: 2, intelligence: 3, wisdom: 2, dexterity: 2, diplomacy: 4, skills: []
     },
     cyborg: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 2, strength: 5, intelligence: 6, wisdom: 4, dexterity: 3, diplomacy: -3, skills: ["self-repair"]
     },
     android: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 4, strength: 6, intelligence: 6, wisdom: 4, dexterity: 0, diplomacy: -1, skills: ["self-repair"]
     }
 }
 
@@ -113,13 +113,13 @@ const buildVitalsAdjustment = {
 
 const genderVitalsAdjustment = {
     male: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 1, intelligence: 0, wisdom: 0, dexterity: 1, diplomacy: 0, skills: []
     },
     female: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 1, wisdom: 0, dexterity: 0, diplomacy: 1, skills: []
     },
     other: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 0, wisdom: 0, dexterity: 0, diplomacy: 0, skills: []
     }
 }
 
@@ -127,52 +127,52 @@ const genderVitalsAdjustment = {
 
 const jobVitalsAdjustment = {
     astrophysicist: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 3, wisdom: 5, dexterity: 0, diplomacy: 0, skills: ["navigation"]
     },
     ai_psychologist: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 3, wisdom: 3, dexterity: 0, diplomacy: 3, skills: []
     },
     pirate: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 2, strength: 3, intelligence: 0, wisdom: 0, dexterity: 2, diplomacy: -2, skills: []
     },
     colonist: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 1, strength: 0, intelligence: 0, wisdom: 1, dexterity: 3, diplomacy: 2, skills: []
     },
     habitat_builder: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 1, intelligence: 1, wisdom: 1, dexterity: 4, diplomacy: 0, skills: []
     },
     cybersurgeon: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 1, strength: 0, intelligence: 1, wisdom: 2, dexterity: 4, diplomacy: 1, skills: [""]
     },
     vr_soldier: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 2, strength: 1, intelligence: 1, wisdom: 0, dexterity: 2, diplomacy: 0, skills: []
     },
     asteroid_miner: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: -2, strength: 3, intelligence: 0, wisdom: 0, dexterity: 3, diplomacy: 0, skills: []
     },
     invasion: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 2, strength: 3, intelligence: 1, wisdom: 0, dexterity: 0, diplomacy: -2, skills: ["subjugation"]
     },
     colonization: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 1, strength: 0, intelligence: 1, wisdom: 1, dexterity: 3, diplomacy: 2, skills: ["harvesting", ""]
     },
     exploration: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 2, wisdom: 2, dexterity: 1, diplomacy: 3, skills: ["navigation"]
     },
     invention: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 4, wisdom: 3, dexterity: 4, diplomacy: 0, skills: [""]
     },
     scientific_research: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 2, wisdom: 4, dexterity: 1, diplomacy: 0, skills: [""]
     },
     philosophy: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 2, wisdom: 5, dexterity: 0, diplomacy: 2, skills: ["transcendence"]
     },
     religion: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 1, wisdom: 4, dexterity: 0, diplomacy: 4, skills: ["transcendence", "subjugation"]
     },
     language_interpretation: {
-        health: 10, strength: 10, intelligence: 10, wisdom: 10, dexterity: 10, diplomacy: 10, skills: []
+        health: 0, strength: 0, intelligence: 2, wisdom: 2, dexterity: 1, diplomacy: 3, skills: ["translation", "communication"]
     }
 }
 
@@ -206,7 +206,9 @@ export default class User {
         this.wisdom += raceVitalsAdjustment[this.race].wisdom;
         this.dexterity += raceVitalsAdjustment[this.race].dexterity;
         this.diplomacy += raceVitalsAdjustment[this.race].diplomacy;
-        raceVitalsAdjustment[this.race].skills.forEach((skill) => this.skills.push(skill));
+        raceVitalsAdjustment[this.race].skills.forEach((skill) => {
+            if (!(this.skills.includes(skill))) this.skills.push(skill);
+        });
     }
 
     addNationalityFeatures() {
@@ -216,7 +218,9 @@ export default class User {
         this.wisdom += nationalityVitalsAdjustment[this.nationality].wisdom;
         this.dexterity += nationalityVitalsAdjustment[this.nationality].dexterity;
         this.diplomacy += nationalityVitalsAdjustment[this.nationality].diplomacy;
-        nationalityVitalsAdjustment[this.nationality].skills.forEach((skill) => this.skills.push(skill));
+        nationalityVitalsAdjustment[this.nationality].skills.forEach((skill) => {
+            if (!(this.skills.includes(skill))) this.skills.push(skill);
+        });
     }
 
     addOriginFeatures() {
@@ -226,7 +230,9 @@ export default class User {
         this.wisdom += originVitalsAdjustment[this.origin].wisdom;
         this.dexterity += originVitalsAdjustment[this.origin].dexterity;
         this.diplomacy += originVitalsAdjustment[this.origin].diplomacy;
-        originVitalsAdjustment[this.origin].skills.forEach((skill) => this.skills.push(skill));
+        originVitalsAdjustment[this.origin].skills.forEach((skill) => {
+            if (!(this.skills.includes(skill))) this.skills.push(skill);
+        });
     }
 
     addBuildFeatures() {
@@ -236,7 +242,9 @@ export default class User {
         this.wisdom += buildVitalsAdjustment[this.build].wisdom;
         this.dexterity += buildVitalsAdjustment[this.build].dexterity;
         this.diplomacy += buildVitalsAdjustment[this.build].diplomacy;
-        buildVitalsAdjustment[this.build].skills.forEach((skill) => this.skills.push(skill));
+        buildVitalsAdjustment[this.build].skills.forEach((skill) => {
+            if (!(this.skills.includes(skill))) this.skills.push(skill);
+        });
     }
 
     addGenderFeatures() {
@@ -246,7 +254,9 @@ export default class User {
         this.wisdom += genderVitalsAdjustment[this.gender].wisdom;
         this.dexterity += genderVitalsAdjustment[this.gender].dexterity;
         this.diplomacy += genderVitalsAdjustment[this.gender].diplomacy;
-        genderVitalsAdjustment[this.gender].skills.forEach((skill) => this.skills.push(skill));
+        genderVitalsAdjustment[this.gender].skills.forEach((skill) => {
+            if (!(this.skills.includes(skill))) this.skills.push(skill);
+        });
     }
 
     addJobFeatures() {
@@ -256,6 +266,8 @@ export default class User {
         this.wisdom += jobVitalsAdjustment[this.job].wisdom;
         this.dexterity += jobVitalsAdjustment[this.job].dexterity;
         this.diplomacy += jobVitalsAdjustment[this.job].diplomacy;
-        jobVitalsAdjustment[this.job].skills.forEach((skill) => this.skills.push(skill));
+        jobVitalsAdjustment[this.job].skills.forEach((skill) => {
+            if (!(this.skills.includes(skill))) this.skills.push(skill);
+        });
     }
 }

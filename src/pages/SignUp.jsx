@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router';
+import { LayoutContext } from '../contexts/LayoutContext'; 
 import useAccount from '../hooks/useAccount';
 
 import FlashOffer from '../components/FlashOffer';
@@ -10,6 +12,8 @@ import Badge from '../components/Badge';
 import * as signupFormConfig from '../data/form-configs/signup-form-config';
 import { completionChecker } from '../components/forms/error-checker';
 import User from '../data/user-data-model';
+// REMOVE AFTER REAL API CONNECTION
+import errors from './../components/modalpieces/errorTypes';
 
 import footerBadge from '/logos/ctsw-logo_dark_badge.png';
 
@@ -18,6 +22,8 @@ function SignUp() {
     const { accountState, accountDispatcher } = useAccount();
     const [passengerForms, setPassengerForms] = useState([]);
     const [progressDisabled, setProgressDisabled] = useState(true);
+    // REMOVE AFTER REAL API CONNECTION
+    const { handlePopupLaunch } = useContext(LayoutContext);
     console.log(accountState)
 
     function addPassengerForm(form) {
@@ -47,10 +53,18 @@ function SignUp() {
         }
         newUser.addJobFeatures();
         console.log(newUser);
+
+        // REMOVE AFTER REAL API CONNECTION
+        debugger
+        handlePopupLaunch({ 
+            modalClass: 'generic', 
+            content: 'error-notice',
+            props: { error: errors.signupInterruption } 
+        })
     }
 
     useEffect(() => {
-        accountState.race !== '-----' ? setFormAvailability('available') : setFormAvailability('unavailable');
+        accountState.race !== '_____' ? setFormAvailability('available') : setFormAvailability('unavailable');
     }, [accountState.race])
 
     useEffect(() => {
@@ -86,7 +100,7 @@ function SignUp() {
                 <div className="content-section__tab content-section__tab--r10">Your new account</div>
 
                 <h3 className={`signup__subtitle signup__subtitle--available`}>What are you?</h3>
-                <div>
+                <div className='signup__block'>
                     <Form 
                         id="signup-race-form" 
                         display={"grid"}
@@ -100,10 +114,19 @@ function SignUp() {
                         superformState={accountState} 
                         onFormAdd={addPassengerForm}
                     />
+                    {(accountState.race !== "_____" && accountState.race !== 'humanoid') && 
+                        <Link to={{
+                            pathname: "/nhes",
+                            search: `?race=${accountState.race}`,
+                          }} target='_blank' rel="noreferrer">
+                            Need more details about this race?
+                        </Link>
+                    }
+
                     <Avatar character={determineCharacter()} />
                 </div>
                 <h3 className={`signup__subtitle signup__subtitle--${formAvailability}`}>Who are you?</h3>
-                {accountState.race === 'humanoid' || accountState.race === '-----'
+                {accountState.race === 'humanoid' || accountState.race === '_____'
                 ? <Form 
                     id="signup-humanoid-specific-form" 
                     display={"grid"}

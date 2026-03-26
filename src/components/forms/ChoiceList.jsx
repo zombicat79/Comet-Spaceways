@@ -6,7 +6,7 @@ import { errorChecker } from "./error-checker";
 function ChoiceList({ labelled, name, title, options, onChange, parentForm, formRules, superform, onSuperChange, superformAction }) {
     const [open, setOpen] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
-    const { selectionValue, handleSelection } = useSelectorTool('-----');
+    const { selectionValue, handleSelection } = useSelectorTool('_____');
     const normalizedValue = selectionValue.toLowerCase();
     const inputId = `${parentForm}-${name}`;
 
@@ -27,7 +27,7 @@ function ChoiceList({ labelled, name, title, options, onChange, parentForm, form
             onChange({ type: "modify/field", payload: {field: name, value: normalizedValue}});
         }
 
-        if (selectionValue !== '-----') {
+        if (selectionValue !== '_____') {
             setErrorMsg(check.message);
         }
     }, [selectionValue])

@@ -57,6 +57,25 @@
                 transform: translateX(-50%);
             }
         }
+
+        a {
+            display: block;
+            text-align: left;
+            width: fit-content;
+            margin-top: 1rem;
+            transition: transform .5s;
+
+            &:hover {
+                cursor: pointer;
+                font-family: 'roboto-semibold';
+                transform: translateX(2rem);
+                &::before {
+                    content: '\2192';
+                    margin-right: .5rem;
+                    font-size: $size-big;
+                }
+            }
+        }
     }
 
     &__subtitle {

@@ -8,15 +8,14 @@ export const humanoidFormFields = [
         'venusian',
         'belter',
         'jovian',
-        'saturnian',
-        'other'
+        'saturnian'
     ]}},
     { type: 'radio', props: {labelled: true, name: 'build', title: 'Build', options: ['organic', 'cyborg', 'android']}},
 ];
 export const humanoidFormDefaultValues = { 
     name: '',
     surname: '',
-    nationality: '-----',
+    nationality: '_____',
     build: ''
 }
 export const humanoidFormRules = [
@@ -38,8 +37,7 @@ export const nheFormFields = [
         'polymorphic',
         'amoebian',
         'leonian',
-        'aetherian',
-        'other'
+        'aetherian'
     ]}},
     { type: 'radio', props: {labelled: true, name: 'origin', title: 'Origin', options: [
         'milky way',
@@ -51,7 +49,7 @@ export const nheFormDefaultValues = {
     name: '',
     surname: '',
     origin: '',
-    race: '-----'
+    race: '_____'
 }
 export const nheFormRules = [
     { field: 'name', rules: [{ name: 'minLength', value: 2}, { name: 'maxLength', value: 15 }] },
@@ -101,7 +99,7 @@ export const petFormFields = [
 ];
 export const petFormDefaultValues = {
     name: '',
-    species: '-----',
+    species: '_____',
     build: '',
     unaccompanied: false,
     conversational: false
