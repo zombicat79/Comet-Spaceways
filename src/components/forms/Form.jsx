@@ -10,7 +10,7 @@ import ChoiceList from './ChoiceList';
 
 import { completionChecker } from './error-checker';
 
-function Form({ id, display, formFields, defaultValues, formRules, onFormCheck, superform, superformHandler, superformAction, onFormAdd }) {
+function Form({ id, display, availability='available', formFields, defaultValues, formRules, onFormCheck, superform, superformHandler, superformAction, onFormAdd }) {
     const { formState, dispatch } = useForm(id, defaultValues);
     const formElement = useRef(null);
 
@@ -27,7 +27,7 @@ function Form({ id, display, formFields, defaultValues, formRules, onFormCheck, 
     }, [formState])
 
     return (
-        <form id={id} className={`form form--${display}`} ref={formElement} >
+        <form id={id} className={`form form--${display} form--${availability}`} ref={formElement} >
             {formFields.map((el, index) => {
                 let content;
                 let cssClasses = 'form__element';

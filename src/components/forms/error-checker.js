@@ -1,3 +1,5 @@
+import { capitalize } from "lodash";
+
 function checkMinLength(expectedValue, actualValue) {
     if (actualValue.length === 0) {
         return { status: 'ko', msg: 'Field cannot be empty' };
@@ -39,7 +41,7 @@ function checkMaxValue(expectedValue, actualValue) {
 }
 
 function checkNoVoidValue(actualValue) {
-    if (!actualValue || actualValue === '' || actualValue === 'n/a') {
+    if (!actualValue || actualValue === '' || actualValue === '_____') {
         return { status: 'ko', msg: 'You must select an option' };
     } else {
         return { status: 'ok', msg: '' };
@@ -62,6 +64,15 @@ function checkPattern(rule, pattern, actualValue) {
             default: // patternConform-no-space
                 return { status: 'ko', msg: 'Field cannot contain spaces' };
         }
+    } else {
+        return { status: 'ok', msg: '' };
+    }
+}
+
+function checkEquivalence(targetField, actualValue) {
+    const mirrorField = Array.from(document.getElementsByName(targetField))[0];
+    if (actualValue !== mirrorField.value) {
+        return { status: 'ko', msg: `Value must be equal to what you typed in '${capitalize(targetField)}' field` };
     } else {
         return { status: 'ok', msg: '' };
     }
@@ -116,6 +127,13 @@ function errorChecker(field, actualValue, formRules) {
             case 'patternConform-no-space':
             case 'patternConform-pwd':
                 checkResult = checkPattern(rule.name, rule.value, actualValue);
+                if (checkResult.status === 'ko') {
+                    status = checkResult.status;
+                    message = checkResult.msg;
+                }
+                break;
+            case 'equivalence':
+                checkResult = checkEquivalence(rule.value, actualValue);
                 if (checkResult.status === 'ko') {
                     status = checkResult.status;
                     message = checkResult.msg;

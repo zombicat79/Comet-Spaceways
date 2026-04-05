@@ -9,7 +9,7 @@ import PageRibbon from '../../components/PageRibbon';
 import Button from '../../components/Button';
 
 import { completionChecker } from '../../components/forms/error-checker';
-import * as formConfig from './../../components/passengers/passenger-form-config';
+import * as formConfig from './../../data/form-configs/passenger-form-config';
 
 function PassengerDetails() {
     const { flightSearchState } = useContext(FlightSearchContext);

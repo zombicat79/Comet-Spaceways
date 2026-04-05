@@ -9,6 +9,7 @@ function Input({ labelled, inputType, valueOutput, name, title, onChange, parent
     const [passwordIconState, setPasswordIconState] = useState('invisible');
     const [inputMode, setInputMode] = useState(inputType)
     const inputId = `${parentForm}-${name}`;
+    const securedFields = ['password', 'repassword'];
 
     function handleChange(e) {
         const check = errorChecker(name, e.target.value, formRules);
@@ -39,7 +40,7 @@ function Input({ labelled, inputType, valueOutput, name, title, onChange, parent
                     name={name} 
                     onBlur={(e) => handleChange(e)} 
                 />
-                {name === 'password' && (passwordIconState === 'invisible' 
+                {securedFields.includes(name) && (passwordIconState === 'invisible' 
                     ? <div onClick={handlePasswordIcon}><SvgIcon design='eye' /></div>
                     : <div onClick={handlePasswordIcon}><SvgIcon design='eye-shut' /></div>
                 )}

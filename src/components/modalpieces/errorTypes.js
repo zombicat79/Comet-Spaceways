@@ -16,6 +16,16 @@ const errors = {
             type: "redirection",
             destinationUrl: "/"
         }
+    },
+    // REMOVE AFTER SIGN UP PROCESS COMPLETION
+    signupInterruption: {
+        title: "Demo mode",
+        paragraph1: "Apologies, account creation is not available yet.",
+        paragraph2: "You'll be now redirected so you can keep browsing our site. Please try again in the future 🙏🏼",
+        action: {
+            type: "redirection",
+            destinationUrl: "/"
+        }
     }
 }
 

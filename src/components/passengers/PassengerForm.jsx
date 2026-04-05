@@ -4,7 +4,7 @@ import { CartContext } from "../../contexts/CartContext";
 
 import Form from "../forms/Form";
 
-import * as formConfig from './passenger-form-config';
+import * as formConfig from '../../data/form-configs/passenger-form-config';
 
 function PassengerForm({ type, occurrence, onFormAdd }) {
     const { flightSearchState } = useContext(FlightSearchContext)

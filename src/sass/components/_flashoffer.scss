@@ -1,0 +1,29 @@
+.flashoffer {
+    position: relative;
+    width: fit-content;
+
+    &__img {
+        width: 100%;
+    }
+
+    &__text {
+        color: $color-text-dark;
+        font-family: 'roboto-extrabold';
+        font-size: $size-huge;
+        line-height: $size-gigantic;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &--340 {
+            transform: translate(-50%, -50%) rotate(340deg);
+        }
+    }
+
+    &--20 {
+        .flashoffer__img {
+            max-width: 20rem;
+        }
+    }
+}

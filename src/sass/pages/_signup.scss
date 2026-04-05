@@ -1,0 +1,140 @@
+.signup {
+    position: relative;
+    z-index: 3;
+    padding: 10rem 0;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.15)), 
+        url('./../assets/images/milky_way_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &__heading {
+        @include flex-column(center);
+        margin: 5rem 0;
+
+        h2 {
+            width: 50%;
+            line-height: 4rem;
+            @include respond(tablet-portrait) {
+                width: 60%;
+            }
+            @include respond(phone) {
+                width: 70%;
+            }
+            @include respond(phone-medium) {
+                width: 90%;
+            }
+        }
+
+        p {
+            width: 50%;
+
+            span {
+                font-family: 'roboto-bold';
+            }
+        }
+    }
+
+    .flashoffer {
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 3rem;
+    }
+
+    .content-section {
+        fill: $color-text-dark;
+
+        .avatar {
+            position: absolute;
+            top: 3rem;
+            right: 3rem;
+            @include respond(tablet-portrait) {
+                position: relative;
+                top: 1.5rem;
+                right: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        a {
+            display: block;
+            text-align: left;
+            width: fit-content;
+            margin-top: 1rem;
+            transition: transform .5s;
+
+            &:hover {
+                cursor: pointer;
+                font-family: 'roboto-semibold';
+                transform: translateX(2rem);
+                &::before {
+                    content: '\2192';
+                    margin-right: .5rem;
+                    font-size: $size-big;
+                }
+            }
+        }
+    }
+
+    &__subtitle {
+        font-family: 'titillium-bold';
+        font-size: 3.5rem;
+        line-height: 3.8rem;
+        font-style: italic;
+        text-align: left;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem !important;
+
+        &--unavailable {
+            opacity: 0.3;
+        }
+    }
+
+    &__badge {
+        position: relative;
+        width: fit-content;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &:hover {
+            .badge__img {
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+        }
+
+        &::after {
+            content: 'Go conquer the universe 🚀';
+            font-family: 'roboto-semibold';
+            font-size: $size-huge;
+            display: inline-block;
+            margin-top: 2rem;
+            @include animation-standard(pulsate);
+            animation-iteration-count: infinite;
+            animation-duration: 2s;
+            cursor: pointer;
+        }
+
+        &--disabled {
+            cursor: not-allowed;
+            filter: opacity(0.2);
+
+            &:hover {
+                .badge__img {
+                    pointer-events: none;
+                    transform: none;
+                }
+            }
+
+            &::after {
+                content: '';
+            }
+        }
+
+        .badge__img {
+            max-width: 25rem;
+        }
+    }
+}

@@ -10,6 +10,7 @@
     }
 
     &__body {
+        position: relative;
         color: $color-text-dark;
         background-color: $color-body-light;
         max-width: 90vw;
@@ -23,6 +24,26 @@
 
         & > *:not(:last-child) {
             margin-bottom: 5rem;
+        }
+    }
+
+    &__tab {
+        position: absolute;
+        color: inherit;
+        background-color: inherit;
+        box-shadow: 0 .5rem 4.5rem $color-highlight-light;
+        font-size: 1.8rem;
+        padding: 1rem 3rem 3rem;
+        border-radius: inherit;
+        top: -4rem;
+        z-index: -1;
+
+        &--r10 {
+            right: 10%;
+        }
+        
+        &--r20 {
+            right: 20%;
         }
     }
 }

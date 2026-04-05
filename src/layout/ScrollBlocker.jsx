@@ -22,6 +22,7 @@ function ScrollBlocker() {
             className={cssClasses}
             onClick={(e) => {
                 if (e.target.classList.contains('modal')) return;
+                if (e.target.classList.contains('scrollblocker--on') && layoutState.modalContent === 'error-notice') return;
                 if (e.target.classList.contains('scrollblocker--on')) {
                     if (layoutState.modal) {
                         dispatch({ type: 'toggle/modal' });
