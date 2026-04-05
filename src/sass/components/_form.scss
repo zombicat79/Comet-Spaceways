@@ -167,16 +167,10 @@
         position: absolute;
         top: 6rem;
         left: 0;
-        background-color: $color-text-light;
+        color: $color-text-light;
+        background-color: $color-body-deep;
         padding: 1rem;
-        border: 1px solid $color-body-deep;
-        animation-name: fadein;
-        animation-timing-function: linear;
-        animation-duration: 1s;
-        animation-fill-mode: both;
-        @include respond(desktop) {
-            background-color: $color-body-light;
-        }
+        border: 1px solid $color-environmental-deep;
 
         // TYPES
 
@@ -214,7 +208,7 @@
         }
 
         &:hover {
-            background-color: $color-body-shallow;
+            background-color: $color-environmental-accent;
         }
 
         &--disabled {

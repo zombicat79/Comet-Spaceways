@@ -86,12 +86,10 @@
         background-color: $color-text-light;
         padding: 1rem;
         border: 1px solid $color-body-deep;
-        animation-name: fadein;
-        animation-timing-function: linear;
-        animation-duration: 1s;
-        animation-fill-mode: both;
-        @include respond(desktop) {
-            background-color: $color-body-light;
+        @include respond(tablet-portrait) {
+            color: $color-text-light;
+            background-color: $color-body-deep;
+            border: 1px solid $color-environmental-deep;
         }
 
         // TYPES
@@ -125,6 +123,9 @@
 
         &:hover {
             background-color: $color-body-shallow;
+            @include respond(tablet-portrait) {
+                background-color: $color-environmental-accent;
+            }
         }
 
         &--disabled {

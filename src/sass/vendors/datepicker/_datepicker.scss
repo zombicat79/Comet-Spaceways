@@ -29,18 +29,18 @@
     font-family: 'titillium-bold';
     font-size: $size-regular;
     color: red;
-    background-color: $color-body-light;
+    background-color: $color-text-light;
     border: 1px solid $color-body-deep;
     border-radius: 4px;
-    animation-name: fadein;
-    animation-timing-function: linear;
-    animation-duration: 1s;
-    animation-fill-mode: both;
 }
 
 .react-datepicker__header {
     background-color: $color-body-shallow;
     border-bottom: 1px solid $color-body-deep;
+    @include respond(tablet-portrait) {
+        background-color: $color-body-deep;
+        
+    }
 }
 
 .react-datepicker__navigation-icon::before, 
@@ -56,6 +56,10 @@
     position: absolute;
     top: 1.5rem;
     width: 1rem;
+    @include respond(tablet-portrait) {
+        color: $color-text-light;
+        
+    }
 }
 
 .react-datepicker__current-month {
@@ -63,6 +67,9 @@
     font-size: $size-big;
     color: $color-text-dark;
     text-transform: uppercase;
+    @include respond(tablet-portrait) {
+        color: $color-text-light;
+    }
 }
 
 .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name {
@@ -82,6 +89,9 @@
 
 .react-datepicker__day-name {
     color: $color-text-dark;
+    @include respond(tablet-portrait) {
+        color: $color-text-light;
+    }
 }
 
 .react-datepicker__day, .react-datepicker__time-name {
@@ -98,7 +108,7 @@
 }
 
 .react-datepicker__day--disabled {
-    filter: opacity(0.3);
+    filter: opacity(0.4);
     cursor: not-allowed;
 }
 
@@ -126,4 +136,10 @@
 
 .react-datepicker__day:not([aria-disabled=true]):hover {
     background-color: $color-highlight-accent;
+}
+
+.react-datepicker__month-container {
+    @include respond(tablet-portrait) {
+        background-color: $color-body-shallow;
+    }
 }

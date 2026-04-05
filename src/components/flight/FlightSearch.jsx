@@ -6,7 +6,6 @@ import { LayoutContext } from '../../contexts/LayoutContext';
 
 import Selector from "../Selector";
 import Button from "../Button";
-import FlightPreview from './FlightPreview';
 
 function FlightSearch({ fixedDestination }) {
     const { flightSearchState, changeFlightSearchState } = useContext(FlightSearchContext);
@@ -42,27 +41,6 @@ function FlightSearch({ fixedDestination }) {
 
     function handleOnSubmit(e) {
         e.preventDefault();
-
-        /* let modalWidth = '';
-        let modalHeigth = 'regular';
-        switch(true) {
-            case layoutState.viewportWidth > 1000:
-                modalWidth = 'large';
-                break;
-            case layoutState.viewportWidth <= 600:
-                modalWidth = 'small';
-                modalHeigth = 'small';
-                break;
-            default:
-                modalWidth = 'medium';
-        }
-
-        handlePopupLaunch({
-            modalClass: 'flight-preview',
-            content: <FlightPreview state={flightSearchState} />,
-            width: modalWidth,
-            height: modalHeigth
-        }) */
         navigate('/purchase/tickets/')
     }
 

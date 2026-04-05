@@ -12,11 +12,17 @@
 
     &__category {
         text-transform: capitalize;
+        @include respond(tablet-portrait) {
+            color: $color-environmental-light;
+        }
     }
 
     &__description {
         color: $color-text-dark;
         font-size: $size-smaller;
+        @include respond(tablet-portrait) {
+            color: $color-body-light;
+        }
     }
 
     &__counter {
@@ -35,6 +41,10 @@
         border-radius: 50%;
         min-width: 3.5rem;
         user-select: none;
+        @include respond(tablet-portrait) {
+            color: $color-text-light;
+            border: 1px solid $color-text-light;
+        }
         @include respond(phone-medium) {
             border: none;
         }
