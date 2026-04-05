@@ -20,7 +20,7 @@ function accountReducer(state, action) {
             if (action.payload.data.field === 'race') {
                 const shortenedRaceNaming = action.payload.data.value.split(' ')[0]
                 if (state.race === 'humanoid' || action.payload.data.value === 'humanoid') {
-                    return { ...initialState, [action.payload.data.field]: action.payload.data.value, avatar: shortenedRaceNaming };
+                    return { ...initialState, [action.payload.data.field]: action.payload.data.value.replace(/[\s-]/g, '_'), avatar: shortenedRaceNaming };
                 } else {
                     return { ...state, [action.payload.data.field]: action.payload.data.value.replace(/[\s-]/g, '_'), avatar: shortenedRaceNaming };
                 }
@@ -49,7 +49,6 @@ function accountReducer(state, action) {
 
 function useAccount() {
     const [state, dispatch] = useReducer(accountReducer, initialState);
-    console.log(state)
     return { accountState: state, accountDispatcher: dispatch };
 }
 

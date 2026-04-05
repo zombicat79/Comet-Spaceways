@@ -24,7 +24,6 @@ function SignUp() {
     const [progressDisabled, setProgressDisabled] = useState(true);
     // REMOVE AFTER REAL API CONNECTION
     const { handlePopupLaunch } = useContext(LayoutContext);
-    console.log(accountState)
 
     function addPassengerForm(form) {
         setPassengerForms((curr) => [...curr, form]);
