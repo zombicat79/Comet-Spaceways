@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { LayoutContext } from './../../contexts/LayoutContext';
 
-import SvgIcon from "../SvgIcon";
 import RoutingDiagram from '../RoutingDiagram';
 
 import { maximizeDestinations, displayDurationInfo } from '../../utilities/utils';
