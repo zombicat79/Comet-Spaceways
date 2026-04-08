@@ -27,7 +27,7 @@
                 "exploration",
                 "scientific research"
             ],
-            "bosses": ["Big-headed Grays"],
+            "bosses": ["big-headed grays"],
             "vassals": [],
             "friends": [],
             "enemies": [],
@@ -95,7 +95,7 @@
             "bosses": [],
             "vassals": [],
             "friends": [],
-            "enemies": ["leonians"],
+            "enemies": ["leonians", "polymorphics", "big-headed grays"],
             "permission_type": "D",
             "consulates": ["Earth (Asia)"],
             "intro": "A formidable warrior race driven by territorial expansion and the systematic extraction of planetary wealth",
@@ -187,11 +187,228 @@
             "cover_img": "insectoid.webp"
         },
         {
-            "id": 2,
-            "full_name": "Reptilians",
+            "id": 4,
+            "full_name": "Cephalopodians",
             "nicknames": [
-                "lizardmen",
-                "crocs",
+                "octopussies",
+                "squidmen",
+                "tentabros",
+                "little Cthulhus",
+                "ink-spitters",
+                "children of the Kraken"
+            ],
+            "alignment": "friendly",
+            "origins": [
+                "milky way",
+                "other galaxies"
+            ],
+            "languages": [
+                {
+                    "name": "Aquagliphic",
+                    "type": "ideographic",
+                    "human_readable": true,
+                    "human_writable": true,
+                    "human_comprehensible": false,
+                    "human_speakable": false
+                },
+                {
+                    "name": "Luminal",
+                    "type": "sign language",
+                    "human_readable": true,
+                    "human_writable": false,
+                    "human_comprehensible": true,
+                    "human_speakable": false
+                }
+            ],
+            "abilities": [
+                "multitasking",
+                "stealthiness",
+                "navigation"
+            ],
+            "strengths": ["wisdom", "dexterity"],
+            "weaknesses": ["health", "strength"],
+            "jobs": [
+                "scientific research",
+                "language interpretation"
+            ],
+            "bosses": [],
+            "vassals": [],
+            "friends": ["aetherians", "big-headed grays"],
+            "enemies": ["amoebians", "polymorphics"],
+            "permission_type": "A",
+            "consulates": ["Earth (Europe)", "Earth (Asia)", "Earth (America)", "Moon", "Mars", "Venus", "Ceres"],
+            "intro": "An ancient benevolent race of aquatic polymaths dedicated to cross-cultural linguistic synthesis and stellar charting",
+            "description": "The Cephalopodians are hypothesized to be the primary chroniclers of the Milky Way, possessing a fluid biological form that allows them to interact with a vast array of alien technologies and environments with graceful precision",
+            "physical_features": [
+                "🔹 Bioluminescent Mantle – A semi-translucent outer membrane that pulses with soft light, potentially used for mood expression or silent communication.",
+                "🔹 Multiaxial Tentacles – Flexible appendages equipped with micro-suction cups that allow for the simultaneous manipulation of multiple complex interfaces.",
+                "🔹 Chromatophoric Skin – Highly adaptive skin cells that can alter color and texture instantaneously, aiding in their natural stealth and camouflage.",
+                "🔹 Hydro-Ocular Bulbs – Large, specialized eyes designed to process visual data across high-pressure gradients and various liquid densities.",
+                "🔹 Gelatinous Articulation – A lack of a rigid internal skeleton allows them to compress their bodies into spaces otherwise inaccessible to humanoid researchers."
+            ],
+            "intellectual_features": [
+                "🔹 Parallel Processing – Their neural architecture is distributed across their limbs, allowing them to engage in separate scientific calculations simultaneously.",
+                "🔹 Semantic Intuition – They possess a legendary capacity for interpreting dead or alien languages by sensing the 'rhythm' of the data structure.",
+                "🔹 Celestial Mnemonics – They can memorize complex star charts without digital aid, functioning as living biological GPS units for deep-space navigation.",
+                "🔹 Holistic Wisdom – Their long lifespans allow them to view galactic history through a lens of deep time, making them excellent mediators and advisors.",
+                "🔹 Adaptive Logic – Their thinking is fluid and non-linear, enabling them to find creative solutions to physics problems that stymie more rigid, carbon-based minds."
+            ],
+            "social_features": [
+                "🔹 Collaborative Harmony – They prioritize group consensus above all else, often spending hours in synchronized bioluminescent 'debates' to reach a decision.",
+                "🔹 Xenophilic Nature – Unlike many races, they are genuinely curious about foreign cultures, often seeking out 'friends' like the Aetherians to share knowledge.",
+                "🔹 Pacifist Ethos – Their society is built on the principle of non-interference and intellectual growth, resulting in a complete lack of military standing.",
+                "🔹 Shared Scholasticism – Cephalopodians do not own information; they believe data is a universal resource that must be interpreted and shared for the common good.",
+                "🔹 Fluid Hierarchy – Leadership roles shift based on who possesses the most wisdom regarding a specific subject, rather than through birthright or force."
+            ],
+            "cover_img": "cephalopodian.webp"
+        },
+        {
+            "id": 5,
+            "full_name": "Polymorphics",
+            "nicknames": [
+                "deformies",
+                "mishaps",
+                "space horrors",
+                "abominazis",
+                "walking nightmares",
+                "trash-piles"
+            ],
+            "alignment": "hostile",
+            "origins": [
+                "other dimensions",
+                "other galaxies"
+            ],
+            "languages": [],
+            "abilities": [
+                "transmutation",
+                "regeneration",
+                "emotion-suppression"
+            ],
+            "strengths": ["dexterity", "health"],
+            "weaknesses": ["diplomacy", "wisdom"],
+            "jobs": [
+                "invasion"
+            ],
+            "bosses": [],
+            "vassals": [],
+            "friends": [],
+            "enemies": ["cephalopodians", "leonians", "reptilians"],
+            "permission_type": "D",
+            "consulates": ["Earth (Asia)"],
+            "intro": "An unstable multi-dimensional biological anomaly that assimilates and mimics organic matter to facilitate planetary takeover",
+            "description": "The Polymorphics are hypothesized to be a sentient biological weapon that escaped its creators, currently existing in a state of constant, uncontrolled cellular flux. Their presence in the Milky Way is treated as a localized reality-warping event rather than a standard migration",
+            "physical_features": [
+                "🔹 Chaotic Morphogenesis – Their bodies lack a fixed skeletal structure, allowing for the spontaneous eruption of eyes, maws, and limbs from any surface.",
+                "🔹 Rapid Mitosis – They possess a near-instantaneous regenerative capability, where severed tissues can re-merge or develop into independent offensive protrusions.",
+                "🔹 Multi-Species Chimerism – Their physical form often displays vestigial traits of consumed prey, such as reptilian scales or insectoid mandibles, in a grotesque patchwork.",
+                "🔹 Amorphous Locomotion – They move by shifting their entire mass, allowing them to flow through ventilation systems or expand their size to engulf obstacles.",
+                "🔹 Ocular Redundancy – The presence of dozens of eyes scattered across their mass provides them with a 360-degree awareness that is impossible to blind."
+            ],
+            "intellectual_features": [
+                "🔹 Instinctive Mimicry – While lacking wisdom, they can perfectly replicate the physical actions and vocal patterns of other races to infiltrate secure zones.",
+                "🔹 Singular Invasive Focus – Their intelligence is entirely channeled into a 'consumption-and-expansion' loop, making them immune to psychological manipulation.",
+                "🔹 Tactical Transmutation – They can intellectually assess an enemy's weakness and physically mutate their appendages into the exact tools needed to counter them.",
+                "🔹 Low-Level Psychic Static – Their presence generates a mental 'noise' that suppresses the emotions of nearby biologicals, facilitating an easier invasion.",
+                "🔹 Non-Linear Problem Solving – Lacking traditional logic, they bypass obstacles through sheer physical ingenuity, such as melting their own tissue to gum up machinery."
+            ],
+            "social_features": [
+                "🔹 Predatory Solipsism – They do not recognize other life forms as sentient, viewing the entire galaxy as a mere catalog of biomass to be assimilated.",
+                "🔹 Collective Ego-Suppression – Within a swarm, individuals merge their consciousness, resulting in a terrifyingly coordinated assault with no internal dissent.",
+                "🔹 Total Diplomatic Immunity – Because they lack a centralized governing philosophy or empathy, negotiation is biologically impossible for this race.",
+                "🔹 Parasitic Hierarchies – They do not have leaders; instead, the largest mass of biomass dictates the direction of the smaller 'droplets' through chemical signals.",
+                "🔹 Hostile Integration – Their only form of 'socializing' is the physical absorption of other species, which they treat as the ultimate form of unification."
+            ],
+            "cover_img": "polymorphic.webp"
+        },
+        {
+            "id": 6,
+            "full_name": "Big-headed Grays",
+            "nicknames": [
+                "ultrabrains",
+                "spacenerds",
+                "puppeteers",
+                "bubbleheads",
+                "techno-enslavers"
+            ],
+            "alignment": "neutral",
+            "origins": [
+                "milky way",
+                "other galaxies"
+            ],
+            "languages": [
+                {
+                    "name": "New Passodian",
+                    "type": "numeric",
+                    "human_readable": true,
+                    "human_writable": true,
+                    "human_comprehensible": true,
+                    "human_speakable": true
+                },
+                {
+                    "name": "Mentagrammic",
+                    "type": "telepathic",
+                    "human_readable": false,
+                    "human_writable": false,
+                    "human_comprehensible": true,
+                    "human_speakable": false
+                },
+                {
+                    "name": "Xyznabic",
+                    "type": "algorithmic",
+                    "human_readable": true,
+                    "human_writable": true,
+                    "human_comprehensible": false,
+                    "human_speakable": false
+                }
+            ],
+            "abilities": [
+                "psionics",
+                "subjugation",
+                "superthinking"
+            ],
+            "strengths": ["intelligence", "wisdom"],
+            "weaknesses": ["strength", "health"],
+            "jobs": [
+                "invention",
+                "scientific research"
+            ],
+            "bosses": [],
+            "vassals": ["green little men"],
+            "friends": ["cephalopodians", "aetherians"],
+            "enemies": ["reptilians"],
+            "permission_type": "B1",
+            "consulates": ["Earth (Europe)", "Earth (Asia)", "Earth (America)", "Moon", "Mars", "Venus", "Ceres"],
+            "intro": "The preeminent intellectual architects of the galaxy, utilizing advanced psionics and technological invention to steer stellar development",
+            "description": "The Big-headed Grays are hypothesized to be an ancient evolution of a humanoid line that sacrificed physical mass for neural expansion. They operate as a silent administrative power, delegating physical labor to vassals like the Green Little Men while focusing on the high-level scientific structure of the cosmos",
+            "physical_features": [
+                "🔹 Hyper-Expanded Cranium – An oversized skull designed to accommodate a massively developed cerebral cortex, necessitated by their superthinking capabilities.",
+                "🔹 Atmospheric Containment Sphere – A transparent helmet typically worn to maintain a specific pressurized gas mix, protecting their fragile, cracked skin from alien environments.",
+                "🔹 Atrophied Limbs – Slender, spindly arms and legs that suggest a total reliance on technology and psionics rather than physical exertion.",
+                "🔹 Obsidian Ocular Lenses – Large, pitch-black eyes capable of perceiving psychic auras and high-frequency electromagnetic waves.",
+                "🔹 Nano-Fiber Flight Suit – A sleek, form-fitting black suit integrated with an atomic symbol, likely serving as a conduit for their inventions and personal life-support."
+            ],
+            "intellectual_features": [
+                "🔹 Multidimensional Calculus – Their brains can solve equations involving more than four dimensions instinctively, making them the galaxy's primary inventors.",
+                "🔹 Psionic Subjugation – They possess the mental capacity to impose their will onto 'lesser' minds, a tool they use to maintain order among their worker-vassals.",
+                "🔹 Predictive Historicity – Using superthinking, they can simulate societal outcomes centuries in advance with startling accuracy.",
+                "🔹 Technological Symbiosis – They interact with their machinery via direct neural links, blurring the line between biological thought and digital execution.",
+                "🔹 Infinite Information Retention – They appear to have bypassed biological forgetting, maintaining total access to every piece of data they have ever processed."
+            ],
+            "social_features": [
+                "🔹 Meritocratic Technocracy – Social status is determined strictly by the complexity of one's inventions and the depth of one's psionic reach.",
+                "🔹 Detached Paternalism – They view other races like the Green Little Men as useful children, providing them with structure in exchange for total obedience.",
+                "🔹 Telepathic Consensus – They rarely speak aloud among themselves, instead existing in a constant, high-bandwidth psychic network that eliminates social friction.",
+                "🔹 Non-Aggressive Superiority – They rarely initiate war, preferring to out-think or psionically neutralize enemies like the Reptilians rather than engage in physical combat.",
+                "🔹 Cultural Archivalism – They consider themselves the librarians of the universe, obsessive about documenting every scientific anomaly they encounter."
+            ],
+            "cover_img": "big-headed-gray.webp"
+        },
+        {
+            "id": 6,
+            "full_name": "Big-headed Grays",
+            "nicknames": [
+                "ultrabrains",
+                "spacenerds",
                 "placeholder text: it should contain a one-word made-up nickname derived from the known information about the race (mostly abilities and jobs). it should be humorous, mocking some of its features",
                 "placeholder text: it should contain a one-word made-up nickname derived from the known information about the race (mostly abilities and jobs). it should be humorous, mocking some of its features",
                 "placeholder text: it should contain a one-word made-up nickname derived from the known information about the race (mostly abilities and jobs). it should be disrespectful, despising some of its features",
@@ -199,11 +416,28 @@
                 "placeholder text: it should contain a one-word made-up nickname derived from the known information about the race (mostly abilities and jobs). it should be uplifting, showing respect for some of its features",
                 "placeholder text: it should contain a one-word made-up nickname derived from the known information about the race (mostly abilities and jobs). it should be respectful, showing fear for some of its features"
             ],
-            "alignment": "hostile",
+            "alignment": "neutral",
             "origins": [
-                "milky way"
+                "milky way",
+                "other galaxies"
             ],
             "languages": [
+                {
+                    "name": "placeholder text: it should contain a made-up name for an alien language",
+                    "type": "placeholder text: it should contain refer the main characteristic of the language (based on hieroglyphs | cuneiform | ideographic | sung not spoken | predominance of gutural sounds | numeric | algorithmic, etc.)",
+                    "human_readable": true,
+                    "human_writable": true,
+                    "human_comprehensible": true,
+                    "human_speakable": true
+                },
+                {
+                    "name": "placeholder text: it should contain a made-up name for an alien language",
+                    "type": "placeholder text: it should contain refer the main characteristic of the language (based on hieroglyphs | cuneiform | ideographic | sung not spoken | predominance of gutural sounds | numeric | algorithmic, etc.)",
+                    "human_readable": false,
+                    "human_writable": false,
+                    "human_comprehensible": true,
+                    "human_speakable": false
+                },
                 {
                     "name": "placeholder text: it should contain a made-up name for an alien language",
                     "type": "placeholder text: it should contain refer the main characteristic of the language (based on hieroglyphs | cuneiform | ideographic | sung not spoken | predominance of gutural sounds | numeric | algorithmic, etc.)",
@@ -214,22 +448,22 @@
                 }
             ],
             "abilities": [
+                "psionics",
                 "subjugation",
-                "warfare",
-                "resource-extraction"
+                "superthinking"
             ],
-            "strengths": ["strength", "health"],
-            "weaknesses": ["diplomacy", "dexterity"],
+            "strengths": ["intelligence", "wisdom"],
+            "weaknesses": ["strength", "health"],
             "jobs": [
-                "invasion",
-                "colonization"
+                "invention",
+                "scientific research"
             ],
             "bosses": [],
-            "vassals": [],
-            "friends": [],
-            "enemies": ["leonians"],
-            "permission_type": "D",
-            "consulates": ["Earth (Asia)"],
+            "vassals": ["green little men"],
+            "friends": ["cephalopodians", "aetherians"],
+            "enemies": ["reptilians"],
+            "permission_type": "B1",
+            "consulates": ["Earth (Europe)", "Earth (Asia)", "Earth (America)", "Moon", "Mars", "Venus", "Ceres"],
             "intro": "placeholder text: it should contain a one-line presentation of the race",
             "description": "placeholder text: it should contain a general short description of the race (what is known should be treated as a hypothesis, not a certainty)",
             "physical_features": [
@@ -253,7 +487,7 @@
                 "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]",
                 "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]"
             ],
-            "cover_img": "reptilian.webp"
+            "cover_img": "big-headed-gray.webp"
         }
     ]
 }
