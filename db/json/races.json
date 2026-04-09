@@ -232,9 +232,9 @@
                 "language interpretation"
             ],
             "bosses": [],
-            "vassals": [],
+            "vassals": ["amoebians"],
             "friends": ["aetherians", "big-headed grays"],
-            "enemies": ["amoebians", "polymorphics"],
+            "enemies": ["polymorphics"],
             "permission_type": "A",
             "consulates": ["Earth (Europe)", "Earth (Asia)", "Earth (America)", "Moon", "Mars", "Venus", "Ceres"],
             "intro": "An ancient benevolent race of aquatic polymaths dedicated to cross-cultural linguistic synthesis and stellar charting",
@@ -404,43 +404,174 @@
             "cover_img": "big-headed-gray.webp"
         },
         {
-            "id": 6,
-            "full_name": "Big-headed Grays",
+            "id": 7,
+            "full_name": "Amoebians",
             "nicknames": [
-                "ultrabrains",
-                "spacenerds",
-                "placeholder text: it should contain a one-word made-up nickname derived from the known information about the race (mostly abilities and jobs). it should be humorous, mocking some of its features",
-                "placeholder text: it should contain a one-word made-up nickname derived from the known information about the race (mostly abilities and jobs). it should be humorous, mocking some of its features",
-                "placeholder text: it should contain a one-word made-up nickname derived from the known information about the race (mostly abilities and jobs). it should be disrespectful, despising some of its features",
-                "placeholder text: it should contain a one-word made-up nickname derived from the known information about the race (mostly abilities and jobs). it should be disrespectful, despising some of its features",
-                "placeholder text: it should contain a one-word made-up nickname derived from the known information about the race (mostly abilities and jobs). it should be uplifting, showing respect for some of its features",
-                "placeholder text: it should contain a one-word made-up nickname derived from the known information about the race (mostly abilities and jobs). it should be respectful, showing fear for some of its features"
+                "mucusballs",
+                "megacells",
+                "spaceblobs",
+                "sludgies",
+                "snotballs",
+                "infection bags"
             ],
             "alignment": "neutral",
             "origins": [
-                "milky way",
-                "other galaxies"
+                "other galaxies",
+                "other dimensions"
+            ],
+            "languages": [],
+            "abilities": [
+                "transversality",
+                "regeneration",
+                "stealthiness"
+            ],
+            "strengths": ["health", "strength"],
+            "weaknesses": ["intelligence", "wisdom"],
+            "jobs": [
+                "colonization",
+                "exploration"
+            ],
+            "bosses": ["cephalopodians"],
+            "vassals": [],
+            "friends": [],
+            "enemies": ["polymorphics"],
+            "permission_type": "C",
+            "consulates": ["Earth (Asia)", "Ceres"],
+            "intro": "A vast, macro-cellular organism capable of dimensional transversality and rapid environmental adaptation.",
+            "description": "The Amoebians are hypothesized to be a form of living geography. They are massive singular cells that explore the universe by physically absorbing and processing the environments they encounter. It is thought they were either created or adapted and tamed by the Cephalopodians, with which they show a particular bond. Sometimes on their own and other times under the guidance of their 'shepherds', they serve as the ultimate frontline for deep-space colonization.",
+            "physical_features": [
+                "🔹 Protoplasmic Veins – Complex, golden-hued internal channels that transport nutrients and sensory data across their massive cellular body.",
+                "🔹 Translucent Membrane – A semi-permeable outer layer that allows them to squeeze through microscopic cracks or expand to engulf entire resource deposits.",
+                "🔹 Nucleus Core – A dense, luminous central hub that houses their vital biological functions and acts as the 'anchor' for their physical form.",
+                "🔹 Pseudopodial Limbs – Temporary protrusions that can be hardened for strength or thinned into delicate filaments for stealthy exploration.",
+                "🔹 Cytoplasmic Glow – Subtle bioluminescent nodes that shift in color based on the chemical composition of the atmosphere they are currently processing."
+            ],
+            "intellectual_features": [
+                "🔹 Instinctive Navigation – While lacking high-level wisdom, they possess a primal, multi-dimensional sense of direction that allows them to cross galactic voids unerringly.",
+                "🔹 Cellular Memory – They do not learn through study but through consumption; when they absorb matter, they 'know' its history and properties.",
+                "🔹 Algorithmic Efficiency – Their intelligence is purely operational, focused on the most direct path to nutrient acquisition and colonization.",
+                "🔹 Sensory Synthesis – They lack traditional brains, instead processing stimuli through their entire surface area, making them impossible to surprise.",
+                "🔹 Biological Encryption – Their 'thoughts' are encoded in chemical sequences that are nearly impossible for outside psionics to read or manipulate."
+            ],
+            "social_features": [
+                "🔹 Symbiotic Subservience – They share a unique bond with the Cephalopodians, acting as the 'muscle' and 'territory' for their wise, multi-tentacled bosses.",
+                "🔹 Colonial Expansion – Their social drive is purely expansionist; they do not build cities but rather 'become' the landscape of the planets they occupy.",
+                "🔹 Emotional Flatline – Lacking a nervous system, they do not experience fear or anger, which makes them terrifyingly persistent in their exploration duties.",
+                "🔹 Group Merging – When two Amoebians meet, they often temporarily fuse to exchange data before splitting, a social process that is purely transactional.",
+                "🔹 Ecological Indifference – They treat other life forms as temporary obstacles or potential biomass, unless specifically directed otherwise by their superiors."
+            ],
+            "cover_img": "amoebian.webp"
+        },
+        {
+            "id": 8,
+            "full_name": "Leonians",
+            "nicknames": [
+                "spacecats",
+                "cosmokittens",
+                "furries",
+                "miaow-miaows",
+                "fleabags",
+                "spacepurrs"
+            ],
+            "alignment": "friendly",
+            "origins": [
+                "milky way"
             ],
             "languages": [
                 {
-                    "name": "placeholder text: it should contain a made-up name for an alien language",
-                    "type": "placeholder text: it should contain refer the main characteristic of the language (based on hieroglyphs | cuneiform | ideographic | sung not spoken | predominance of gutural sounds | numeric | algorithmic, etc.)",
-                    "human_readable": true,
-                    "human_writable": true,
-                    "human_comprehensible": true,
-                    "human_speakable": true
-                },
-                {
-                    "name": "placeholder text: it should contain a made-up name for an alien language",
-                    "type": "placeholder text: it should contain refer the main characteristic of the language (based on hieroglyphs | cuneiform | ideographic | sung not spoken | predominance of gutural sounds | numeric | algorithmic, etc.)",
+                    "name": "Roar Codex",
+                    "type": "guttural",
                     "human_readable": false,
                     "human_writable": false,
                     "human_comprehensible": true,
                     "human_speakable": false
                 },
                 {
-                    "name": "placeholder text: it should contain a made-up name for an alien language",
-                    "type": "placeholder text: it should contain refer the main characteristic of the language (based on hieroglyphs | cuneiform | ideographic | sung not spoken | predominance of gutural sounds | numeric | algorithmic, etc.)",
+                    "name": "Scarcratchik",
+                    "type": "hieroglyphic",
+                    "human_readable": true,
+                    "human_writable": true,
+                    "human_comprehensible": true,
+                    "human_speakable": true
+                }
+            ],
+            "abilities": [
+                "warfare",
+                "navigation",
+                "resource-extraction"
+            ],
+            "strengths": ["strength", "health"],
+            "weaknesses": ["diplomacy", "intelligence"],
+            "jobs": [
+                "exploration",
+                "religion"
+            ],
+            "bosses": [],
+            "vassals": [],
+            "friends": [],
+            "enemies": ["reptilians", "polymorphics"],
+            "permission_type": "B1",
+            "consulates": ["Earth (Europe)", "Earth (Asia)", "Earth (America)", "Moon", "Mars", "Venus", "Ceres"],
+            "intro": "A noble and physically imposing race of feline warriors who blend ritualistic tradition with stellar prowess",
+            "description": "The Leonians are hypothesized to be the ancestral guardians of the Milky Way, maintaining a society built on honor, territorial integrity and a deep faith-based connection to the stars",
+            "physical_features": [
+                "🔹 Dense Mane Structure – A thick, voluminous growth of fur around the neck and head that serves as both a sign of maturity and natural protection during warfare.",
+                "🔹 Digitaligrade Stance – Powerful lower limbs ending in clawed paws that allow for rapid bursts of speed during exploration and resource-extraction missions.",
+                "🔹 Retractable Talons – Razor-sharp claws housed within the digits, utilized as secondary weapons in close-quarters warfare.",
+                "🔹 Tapetum Lucidum – Advanced ocular tissue that grants superior night vision, essential for navigating the dim corridors of deep-space vessels.",
+                "🔹 Ornate Battle-Garb – Traditional heavy robes and gilded armor often featuring lion-head motifs to signify rank and religious devotion."
+            ],
+            "intellectual_features": [
+                "🔹 Instinctive Navigation – A primal, highly developed sense of spatial awareness that allows them to chart new star systems without complex computer aid.",
+                "🔹 Tactical Predation – Their combat intelligence is focused on ambushes and overwhelming physical force rather than intricate long-term diplomacy.",
+                "🔹 Oral Traditions – They possess a remarkable capacity for memorizing vast religious epics and ancestral lineages through guttural vocalizations.",
+                "🔹 Resource Sensitivity – An innate ability to 'scent' mineral-rich asteroids, making them highly efficient at planetary resource-extraction.",
+                "🔹 Moral Absolutism – A rigid intellectual framework where actions are strictly judged as either honorable or cowardly, leaving little room for diplomatic nuance."
+            ],
+            "social_features": [
+                "🔹 Pride-Based Governance – Social structure is centered around a central leader, often depicted in regal attire and fur-lined capes within high-tech command centers.",
+                "🔹 Religious Militarism – Their approach to warfare is deeply intertwined with their faith, viewing exploration and conquest as a holy mandate.",
+                "🔹 Ancestral Veneration – Much of their social interaction is governed by the honor of one's bloodline and the preservation of ancient pride-glyphs.",
+                "🔹 Territorial Hospitality – While friendly, they maintain strict boundaries; those who respect their space are treated as honored guests in their global consulates.",
+                "🔹 Ceremonial Uniformity – Leonians often display their status through lavishly decorated belts and wrist guards featuring sun and lion iconography."
+            ],
+            "cover_img": "leonian.webp"
+        },
+        {
+            "id": 9,
+            "full_name": "Aetherians",
+            "nicknames": [
+                "spacesouls",
+                "wisdom-whirls",
+                "shinies",
+                "angels from the void",
+                "ultradimensionals",
+                "eternals"
+            ],
+            "alignment": "friendly",
+            "origins": [
+                "other dimensions"
+            ],
+            "languages": [
+                {
+                    "name": "Translumenearmonic",
+                    "type": "chanted",
+                    "human_readable": false,
+                    "human_writable": false,
+                    "human_comprehensible": false,
+                    "human_speakable": false
+                },
+                {
+                    "name": "Mystic Whispering",
+                    "type": "telepathic",
+                    "human_readable": false,
+                    "human_writable": false,
+                    "human_comprehensible": true,
+                    "human_speakable": false
+                },
+                {
+                    "name": "Vortex Script",
+                    "type": "ideographic",
                     "human_readable": true,
                     "human_writable": true,
                     "human_comprehensible": true,
@@ -448,46 +579,46 @@
                 }
             ],
             "abilities": [
+                "transversality",
                 "psionics",
-                "subjugation",
-                "superthinking"
+                "self-sustenance"
             ],
-            "strengths": ["intelligence", "wisdom"],
-            "weaknesses": ["strength", "health"],
+            "strengths": ["wisdom", "intelligence"],
+            "weaknesses": ["health", "strength"],
             "jobs": [
-                "invention",
+                "philosophy",
                 "scientific research"
             ],
             "bosses": [],
-            "vassals": ["green little men"],
-            "friends": ["cephalopodians", "aetherians"],
-            "enemies": ["reptilians"],
-            "permission_type": "B1",
+            "vassals": [],
+            "friends": ["cephalopodians", "big-headed grays"],
+            "enemies": [],
+            "permission_type": "A",
             "consulates": ["Earth (Europe)", "Earth (Asia)", "Earth (America)", "Moon", "Mars", "Venus", "Ceres"],
-            "intro": "placeholder text: it should contain a one-line presentation of the race",
-            "description": "placeholder text: it should contain a general short description of the race (what is known should be treated as a hypothesis, not a certainty)",
+            "intro": "Luminous, ethereal beings from a higher dimension who exist as pure psionic energy and profound cosmic intellect",
+            "description": "The Aetherians are hypothesized to be the final evolutionary stage of biological consciousness, having shed physical density to exist as shimmering interconnected energy matrices",
             "physical_features": [
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]",
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]",
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]",
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]",
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]"
+                "🔹 Iridescent Energy Matrix – Their 'body' consists of swirling, pearlescent vapors that shift in hue according to their current psionic frequency.",
+                "🔹 Ocular Clusters – Multiple glowing apertures located on their upper mass that perceive reality across several dimensions simultaneously.",
+                "🔹 Tendrilous Extensions – Fine, thread-like energy filaments that reach out from their base to interact with physical matter or transmit data.",
+                "🔹 Photonic Halo – A constant radiance emanating from their core that provides natural illumination and serves as a primary source of self-sustenance.",
+                "🔹 Non-Skeletonized Form – A complete lack of rigid internal structures, allowing them to drift through solid obstacles and survive the vacuum of space."
             ],
             "intellectual_features": [
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]",
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]",
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]",
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]",
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]"
+                "🔹 Trans-Dimensional Logic – Their intellect operates on a scale that ignores linear time, allowing for scientific research into the very fabric of existence.",
+                "🔹 Collective Wisdom – They possess a shared consciousness that aggregates millions of years of philosophical inquiry and cosmic observation.",
+                "🔹 Psionic Encoding – They can project complex thoughts directly into the minds of allies like the Cephalopodians, bypassing the need for physical media.",
+                "🔹 Infinite Concept Synthesis – The ability to combine disparate scientific theories into unified laws of physics instantaneously.",
+                "🔹 Emotional Translucency – Their feelings are projected through their color shifts, making them incapable of the deception found in more 'solid' races."
             ],
             "social_features": [
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]",
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]",
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]",
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]",
-                "placeholder text: it should contain a description for some of the race's features in the following format -> 🔹 [feature name] – [feature description]"
+                "🔹 Philosophical Hedonism – Their society is structured around the pursuit of ultimate truth and the joy of expanding the galaxy's collective knowledge.",
+                "🔹 Pacifist Isolation – While friendly, they rarely intervene in physical conflicts, preferring to act as silent advisors to their allies.",
+                "🔹 Consensus Luminescence – Major social decisions are made by large gatherings merging their energy fields until a single harmonic color is achieved.",
+                "🔹 Inter-Galactic Mentorship – They view younger races with a gentle patient curiosity, often establishing consulates to guide planetary development.",
+                "🔹 Ritualistic Meditation – Long periods of stillness spent 'singing' to the void to maintain their connection to their original dimension."
             ],
-            "cover_img": "big-headed-gray.webp"
+            "cover_img": "aetherian.webp"
         }
     ]
 }
