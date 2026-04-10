@@ -1,19 +1,24 @@
+import { useLoaderData } from 'react-router';
+
 import ContentSection from '../../layout/ContentSection';
 import Intersection from '../../components/Intersection';
 import SliderTool from '../../components/SliderTool';
 import PromoPoster from '../../components/PromoPoster';
 
+import supabase from '../../../db/supabase-client';
+
 function Nhes() {
+    const dataFromDB = useLoaderData();
     const sliderSettings = {
-        autoplay: true,
+        autoplay: false,
         arrows: true,
         dots: true,
-        infinite: true,
         speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: true
+        centerMode: false
     }
+    console.log(dataFromDB)
 
     return (
         <main className="nhes">
@@ -29,19 +34,25 @@ function Nhes() {
             </section>
             <section className="homepage__promos">
                 <h3 className="homepage__offers-heading">PERMITTED RACES</h3>
+                {dataFromDB && 
                 <SliderTool contentType="component" settings={sliderSettings} >
-                    <PromoPoster
-                        promoCatch="Recognize yourself? 🤔"
-                        heading="big-headed gray"
-                        body={[
-                            "Join humankind's colonization effort, and embark on a life-changing journey that will take you and your family to a new home on a brave new world.",
-                            "New generational spaceship set to depart on early 2127."
-                        ]}
-                        promoImg="trappist"
-                        alert="wanna know more?"
-                        cta="inspect"
-                    />
+                    {dataFromDB.map((el) => {
+                        return (
+                            <PromoPoster
+                                promoCatch=""
+                                heading={el.full_name}
+                                body={[
+                                    el.full_name.toUpperCase(),
+                                    el.intro
+                                ]}
+                                promoImg={`/characters/${el.cover_img}`}
+                                alert="wanna know more?"
+                                cta="inspect"
+                            />
+                        )
+                    })}
                 </SliderTool>
+                }
             </section>
             <section>
             <h3 className="homepage__offers-heading">REQUIREMENTS</h3>
@@ -50,5 +61,26 @@ function Nhes() {
     );
 }
 
+export async function fetchRaces() {
+    // FAVOUR THIS IMPLEMENTATION WHEN LOADING DATA FROM SUPABASE
+    async function getDataFromDB() {
+        const { data, error } = await supabase
+        .from('Races')
+        .select()
+
+        if (error) return { error };
+
+        return data;
+    }
+
+    const races = await getDataFromDB();
+    return races;
+
+    // FAVOUR THIS IMPLEMENTATION WHEN LOADING DATA FROM JSON-SERVER 
+    /* return fetch("http://localhost:3000/races")
+        .then(res => res.json())
+        .then(data => data)
+        .catch(err => console.log(err)); */
+};
 export default Nhes;
 

@@ -96,7 +96,7 @@ function Home() {
                         "Join humankind's colonization effort, and embark on a life-changing journey that will take you and your family to a new home on a brave new world.",
                         "New generational spaceship set to depart on early 2127."
                     ]}
-                    promoImg="trappist"
+                    promoImg="/promos/trappist.webp"
                     alert="do not miss your spot!"
                     cta="book now"
                 />

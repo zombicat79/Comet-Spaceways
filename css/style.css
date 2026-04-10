@@ -1109,6 +1109,7 @@ p {
       .promoposter__heading {
         display: block;
         font-size: 4.5rem;
+        line-height: 5rem;
         text-transform: uppercase;
         transform: rotate(-10deg);
         padding: 8rem 0;
@@ -3206,7 +3207,12 @@ p {
 .nhes {
   position: relative;
   z-index: 2;
-  padding-top: 8rem; }
+  padding-top: 8rem;
+  overflow: hidden; }
+  .nhes .slick-slider .slick-list .slick-slide {
+    transform: scale(0.8); }
+  .nhes .slick-slider .slick-list .slick-slide.slick-current {
+    transform: scale(0.9); }
 
 .tickets {
   position: relative;

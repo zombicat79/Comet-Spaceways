@@ -2,4 +2,12 @@
     position: relative;
     z-index: 2;
     padding-top: 8rem;
+    overflow: hidden;
+
+    .slick-slider .slick-list .slick-slide {
+        transform: scale(0.8);
+    }
+    .slick-slider .slick-list .slick-slide.slick-current {
+        transform: scale(0.9);
+    }
 }

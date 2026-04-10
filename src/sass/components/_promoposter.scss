@@ -38,6 +38,7 @@
         @include respond(desktop) {
             display: block;
             font-size: 4.5rem;
+            line-height: 5rem;
             text-transform: uppercase;
             transform: rotate(-10deg);
             padding: 8rem 0;

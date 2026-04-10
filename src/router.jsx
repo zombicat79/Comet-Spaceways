@@ -15,6 +15,7 @@ import SignUp from "./pages/SignUp";
 import NotFound from "./pages/NotFound";
 
 import { fetchFlights } from "./components/flight/FlightScheduleLoader";
+import { fetchRaces } from "./pages/info/Nhes";
 
 function purchaseRedirection() {
     return redirect('/purchase/tickets');
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
                     { path: "*", Component: DestinationDetail },
                 ]
             },
-            { path: 'nhes', Component: Nhes }
+            { path: 'nhes', Component: Nhes, loader: fetchRaces }
         ]
     },
     {
