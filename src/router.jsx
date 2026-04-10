@@ -10,6 +10,7 @@ import PassengerDetails from "./pages/purchase/PassengerDetails";
 import Allocation from "./pages/purchase/Allocation";
 import DestinationsIndex from "./pages/destinations/DestinationsIndex";
 import DestinationDetail from "./pages/destinations/DestinationDetail";
+import Nhes from "./pages/info/Nhes";
 import SignUp from "./pages/SignUp";
 import NotFound from "./pages/NotFound";
 
@@ -42,7 +43,8 @@ const router = createBrowserRouter([
                     { index: true, Component: DestinationsIndex },
                     { path: "*", Component: DestinationDetail },
                 ]
-            }
+            },
+            { path: 'nhes', Component: Nhes }
         ]
     },
     {

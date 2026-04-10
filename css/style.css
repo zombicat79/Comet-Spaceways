@@ -3203,6 +3203,11 @@ p {
     align-items: center;
     padding-bottom: 16rem; }
 
+.nhes {
+  position: relative;
+  z-index: 2;
+  padding-top: 8rem; }
+
 .tickets {
   position: relative;
   z-index: 2;

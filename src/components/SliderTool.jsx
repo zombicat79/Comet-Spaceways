@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function SliderTool({ contentType, content, settings }) {
+function SliderTool({ contentType, content, settings, children }) {
     switch(contentType) {
         case "img":
             return (
@@ -28,6 +28,8 @@ function SliderTool({ contentType, content, settings }) {
                     })}
                 </Slider>
             )
+        case "component":
+            return <Slider {...settings}>{children}</Slider>
         default:
             return (
                 <Slider {...settings}>
