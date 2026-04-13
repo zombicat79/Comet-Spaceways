@@ -3,7 +3,7 @@ import { LayoutContext } from './../contexts/LayoutContext';
 
 import Button from './../components/Button';
 
-function PromoPoster({ promoCatch, heading, body, alert, cta, promoImg }) {
+function PromoPoster({ promoCatch, heading, body, alert, cta, action, promoImg }) {
     const { handlePopupLaunch } = useContext(LayoutContext);
     const featureImg = {
         src: `./../assets/images/${promoImg}`,
@@ -22,7 +22,10 @@ function PromoPoster({ promoCatch, heading, body, alert, cta, promoImg }) {
                 </div>
                 <p className="promoposter__alert">{alert}</p>
                 
-                <Button type="secondary" action={() => handlePopupLaunch({ modalClass: 'generic', content: 'work-in-progress' })} text={cta} />
+                {action 
+                    ? <Button type="secondary" action={action} text={cta} />
+                    : <Button type="secondary" action={() => handlePopupLaunch({ modalClass: 'generic', content: 'work-in-progress' })} text={cta} />
+                }
             </div>
             <div className="promoposter__side promoposter__side--right">
                 <img className="promoposter__img" src={featureImg.src} alt={featureImg.alt} />

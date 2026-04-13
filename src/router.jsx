@@ -8,14 +8,15 @@ import FlightFetcher from "./components/flight/FlightFetcher";
 import FlightScheduleLoader from "./components/flight/FlightScheduleLoader";
 import PassengerDetails from "./pages/purchase/PassengerDetails";
 import Allocation from "./pages/purchase/Allocation";
-import DestinationsIndex from "./pages/destinations/DestinationsIndex";
-import DestinationDetail from "./pages/destinations/DestinationDetail";
-import Nhes from "./pages/info/Nhes";
+import DestinationsIndex from "./pages/info/destinations/DestinationsIndex";
+import DestinationDetail from "./pages/info/destinations/DestinationDetail";
+import NheIndex from "./pages/info/nhes/NheIndex";
+import NheDetail from "./pages/info/nhes/NheDetail";
 import SignUp from "./pages/SignUp";
 import NotFound from "./pages/NotFound";
 
 import { fetchFlights } from "./components/flight/FlightScheduleLoader";
-import { fetchRaces } from "./pages/info/Nhes";
+import { fetchRaces } from "./pages/info/nhes/NheIndex";
 
 function purchaseRedirection() {
     return redirect('/purchase/tickets');
@@ -45,7 +46,13 @@ const router = createBrowserRouter([
                     { path: "*", Component: DestinationDetail },
                 ]
             },
-            { path: 'nhes', Component: Nhes, loader: fetchRaces }
+            {
+                path: 'nhes',
+                children: [
+                    { index: true, Component: NheIndex, loader: fetchRaces, hydrateFallbackElement: <Home /> },
+                    { path: "*", Component: NheDetail },
+                ]
+            }
         ]
     },
     {

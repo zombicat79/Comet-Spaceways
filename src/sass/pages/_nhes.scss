@@ -4,10 +4,46 @@
     padding-top: 8rem;
     overflow: hidden;
 
+    & section {
+        padding: 5rem 5rem 10rem;
+
+        &:nth-child(2) {
+            padding: 0 5rem;
+        }
+    }
+
+    // RACE SLIDER CONFIG    
     .slick-slider .slick-list .slick-slide {
         transform: scale(0.8);
     }
     .slick-slider .slick-list .slick-slide.slick-current {
         transform: scale(0.9);
+    }
+    .slick-arrow {
+        z-index: 1;
+
+        &::before{
+            font-size: 4rem;
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+    .slick-prev {
+        left: -10px;
+    }
+    .slick-next {
+        right: 10px;
+    }
+
+    // RACE PROMOPOSTER SPECIFIC CONFIG
+    .promoposter__body p:first-child {
+        display: block;
+        font-size: $size-huge;
+
+        @include respond(desktop) {
+            display: none;
+        }
     }
 }

@@ -1,20 +1,20 @@
 import { useState, useEffect, useContext, useRef } from 'react';
 import { useLocation } from 'react-router';
-import { LayoutContext } from '../../contexts/LayoutContext';
+import { LayoutContext } from '../../../contexts/LayoutContext';
 
-import useDestinationFetch from '../../hooks/useDestinationFetch';
+import useDestinationFetch from '../../../hooks/useDestinationFetch';
 
-import Tooltip from "../../components/Tooltip";
-import InfoPanel from '../../components/InfoPanel';
-import Banner from "../../components/Banner";
-import StellarMap from '../../components/StellarMap';
-import SearchTool from '../../components/SearchTool';
-import Card from './../../components/Card';
-import PriceTag from '../../components/PriceTag';
-import FlightSearch from './../../components/flight/FlightSearch';
+import Tooltip from "../../../components/Tooltip";
+import InfoPanel from '../../../components/InfoPanel';
+import Banner from "../../../components/Banner";
+import StellarMap from '../../../components/StellarMap';
+import SearchTool from '../../../components/SearchTool';
+import Card from './../../../components/Card';
+import PriceTag from '../../../components/PriceTag';
+import FlightSearch from './../../../components/flight/FlightSearch';
 
-import { filterSearch } from '../../utilities/utils';
-import errors from '../../components/modalpieces/errorTypes';
+import { filterSearch } from '../../../utilities/utils';
+import errors from '../../../components/modalpieces/errorTypes';
 
 function DestinationsIndex() {
     const { loading, fetchAlert, setFetchAlert, destinations } = useDestinationFetch();

@@ -1,19 +1,19 @@
 import { useEffect, useContext } from 'react';
-import { FlightSearchContext } from '../../contexts/FlightSearchContext';
-import { LayoutContext } from '../../contexts/LayoutContext';
+import { FlightSearchContext } from '../../../contexts/FlightSearchContext';
+import { LayoutContext } from '../../../contexts/LayoutContext';
 import { useLocation } from 'react-router';
 
-import useDestinationFetch from '../../hooks/useDestinationFetch';
+import useDestinationFetch from '../../../hooks/useDestinationFetch';
 
-import TagList from "./../../components/TagList";
-import Banner from './../../components/Banner';
-import ContentSection from './../../layout/ContentSection';
-import Figure from "../../components/Figure";
-import SliderTool from '../../components/SliderTool';
-import FlightSearch from '../../components/flight/FlightSearch';
+import TagList from "./../../../components/TagList";
+import Banner from './../../../components/Banner';
+import ContentSection from './../../../layout/ContentSection';
+import Figure from "../../../components/Figure";
+import SliderTool from '../../../components/SliderTool';
+import FlightSearch from '../../../components/flight/FlightSearch';
 
-import { maximizeDestinations } from '../../utilities/utils';
-import errors from '../../components/modalpieces/errorTypes';
+import { maximizeDestinations } from '../../../utilities/utils';
+import errors from '../../../components/modalpieces/errorTypes';
 
 function DestinationDetail() {
     const { loading, fetchAlert, setFetchAlert, destinations } = useDestinationFetch();

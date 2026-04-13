@@ -3209,10 +3209,30 @@ p {
   z-index: 2;
   padding-top: 8rem;
   overflow: hidden; }
+  .nhes section {
+    padding: 5rem 5rem 10rem; }
+    .nhes section:nth-child(2) {
+      padding: 0 5rem; }
   .nhes .slick-slider .slick-list .slick-slide {
     transform: scale(0.8); }
   .nhes .slick-slider .slick-list .slick-slide.slick-current {
     transform: scale(0.9); }
+  .nhes .slick-arrow {
+    z-index: 1; }
+    .nhes .slick-arrow::before {
+      font-size: 4rem; }
+    .nhes .slick-arrow:active {
+      transform: scale(0.9); }
+  .nhes .slick-prev {
+    left: -10px; }
+  .nhes .slick-next {
+    right: 10px; }
+  .nhes .promoposter__body p:first-child {
+    display: block;
+    font-size: 2.4rem; }
+    @media screen and (min-width: 1280px) {
+      .nhes .promoposter__body p:first-child {
+        display: none; } }
 
 .tickets {
   position: relative;
