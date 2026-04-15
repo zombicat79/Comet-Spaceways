@@ -514,13 +514,16 @@ p {
   background-color: #e3f6f5;
   border-radius: 1.5rem;
   box-shadow: 0 0 4.5rem #00FFFF; }
+  .tag--smallest {
+    padding: .5rem 1rem;
+    font-size: 1.3rem; }
   .tag--smaller {
     padding: .75rem 1.5rem;
     font-size: 1.5rem; }
   .tag--regular {
     padding: 1rem 2rem;
     font-size: 2rem; }
-  .tag:hover {
+  .tag--interactive:hover {
     transform: scale(1.1); }
   .tag__list {
     display: flex;
@@ -528,6 +531,8 @@ p {
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem; }
+    .tag__list--smallest {
+      gap: 1rem; }
   .tag__content {
     font-family: "poppins-bold";
     text-transform: uppercase; }
@@ -2349,6 +2354,39 @@ p {
     .searchtool__btn--right {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0; }
+
+.diptych {
+  gap: 5rem; }
+  .diptych--vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .diptych--horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .diptych__media {
+    flex: 1;
+    max-width: 40rem; }
+    .diptych__media img {
+      max-height: 50rem; }
+  .diptych__content {
+    flex: 1;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    align-items: flex-start;
+    text-align: left; }
+  .diptych__heading {
+    line-height: 5rem; }
+  .diptych__subheading {
+    font-size: 1.6rem; }
+  .diptych__paragraph {
+    font-size: 1.2rem; }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }

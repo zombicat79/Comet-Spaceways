@@ -73,7 +73,14 @@ function DestinationDetail() {
                     background={{ img: currentDestinationData.port, height: 'full' }}
                 />
                 <section className="destination-tags">
-                    <TagList listMembers={tags} />
+                    <TagList 
+                        listMembers={tags} 
+                        linked={true} 
+                        actionable={false}
+                        path="/destinations"
+                        queryParams={true} 
+                        size="smaller"
+                    />
                 </section>
                 <ContentSection>
                     <h2>{currentDestinationData.intro}</h2>

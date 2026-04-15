@@ -1,0 +1,41 @@
+.diptych {
+    gap: 5rem;
+
+    &--vertical {
+        @include flex-column(center)
+    }
+
+    &--horizontal {
+        @include flex-row(center)
+    }
+
+    &__media {
+        flex: 1;
+        max-width: 40rem;
+        
+        img {
+            max-height: 50rem;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        align-self: flex-start;
+        @include flex-column(flex-start);
+        gap: 1.5rem;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    &__heading {
+        line-height: 5rem;
+    }
+
+    &__subheading {
+        font-size: $size-regular
+    }
+
+    &__paragraph {
+        font-size: $size-small
+    }
+}

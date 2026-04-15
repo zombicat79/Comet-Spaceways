@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router';
 
+import Diptych from '../../../components/diptychs/Diptych';
+
 import { readFromStorage } from '../../../utilities/utils';
 
 function NheDetail () {
     const [raceData, setRaceData] = useState(null)
     const location = useLocation();
-    console.log(raceData);
 
     useEffect(() => {
         const storedData = readFromStorage('session-storage', 'nhes');
@@ -15,7 +16,19 @@ function NheDetail () {
     }, [])
 
     return (
-        <div></div>
+        <main className="nhes">
+            {raceData && <Diptych 
+                alignment="horizontal"
+                theme="nhes" 
+                img={raceData.cover_img}
+                title={raceData.full_name}
+                mainContent={raceData.description}
+                bulletLists={[raceData.physical_features, raceData.intellectual_features, raceData.social_features]}
+                specifics={{
+                    nicknames: raceData.nicknames,
+                }} 
+            />}
+        </main>
     )
 }
 

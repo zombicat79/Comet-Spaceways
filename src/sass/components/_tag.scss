@@ -4,6 +4,11 @@
     border-radius: 1.5rem;
     box-shadow: 0 0 4.5rem $color-highlight-light;
 
+    &--smallest {
+        padding: .5rem 1rem;
+        font-size: 1.3rem;
+    }
+
     &--smaller {
         padding: .75rem 1.5rem;
         font-size: 1.5rem;
@@ -14,14 +19,20 @@
         font-size: 2rem;
     }
 
-    &:hover {
-        transform: scale(1.1);
+    &--interactive {
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     &__list {
         @include flex-row(flex-start);
         flex-wrap: wrap;
         gap: 2rem;
+
+        &--smallest {
+            gap: 1rem;
+        }
     }
 
     &__content {
