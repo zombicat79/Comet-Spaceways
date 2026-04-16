@@ -1,9 +1,18 @@
 .tag {
-    color: $color-text-dark;
-    background-color: $color-body-light;
-    border-radius: 1.5rem;
-    box-shadow: 0 0 4.5rem $color-highlight-light;
+    //TAG COLORS
+    &--blue {
+        color: $color-text-dark;
+        background-color: $color-body-light;
+        box-shadow: 0 0 4.5rem $color-highlight-light;
+    }
 
+    &--green {
+        color: $color-text-dark;
+        background-color: $color-highlight-accent;
+        box-shadow: 0 0 4.5rem $color-highlight-accent;
+    }
+
+    // TAG SIZES
     &--smallest {
         padding: .5rem 1rem;
         font-size: 1.3rem;
@@ -17,6 +26,21 @@
     &--regular {
         padding: 1rem 2rem;
         font-size: 2rem;
+    }
+
+    //TAG SHAPES
+    &--round {
+        border-radius: 1.5rem;
+    }
+
+    &--square {
+        border-radius: 0;
+    }
+
+    &--none {
+        color: $color-text-light;
+        background-color: transparent;
+        box-shadow: none;
     }
 
     &--interactive {

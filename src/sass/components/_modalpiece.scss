@@ -27,6 +27,30 @@
         }
     }
 
+    &__list {
+        margin-top: 2rem;
+
+        &--left {
+            text-align: left;
+        }
+
+        &--right {
+            text-align: right;
+        }
+    }
+
+    &__bulletpoint {
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .bulletpoint__header {
+            font-family: 'roboto-medium';
+        }
+    }
+
     .form {
         width: 100%;
 

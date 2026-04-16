@@ -26,6 +26,11 @@ function NheDetail () {
                 bulletLists={[raceData.physical_features, raceData.intellectual_features, raceData.social_features]}
                 specifics={{
                     nicknames: raceData.nicknames,
+                    physical_features: raceData.physical_features,
+                    intellectual_features: raceData.intellectual_features,
+                    social_features: raceData.social_features,
+                    permission_type: raceData.permission_type,
+                    consulates: raceData.consulates
                 }} 
             />}
         </main>

@@ -32,10 +32,30 @@
     }
 
     &__subheading {
-        font-size: $size-regular
+        font-size: $size-regular;
+        margin: 0;
     }
 
     &__paragraph {
-        font-size: $size-small
+        font-size: $size-small;
+
+        .highlight {
+            font-family: 'roboto-bold';
+            text-transform: uppercase;
+        }
+    }
+
+    &__section, &__iconset {
+        @include flex-row(flex-start);
+        gap: 2rem;
+
+        svg {
+            width: 3.5rem;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+        }
     }
 }
