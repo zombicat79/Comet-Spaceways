@@ -26,11 +26,22 @@ function NheDetail () {
                 bulletLists={[raceData.physical_features, raceData.intellectual_features, raceData.social_features]}
                 specifics={{
                     nicknames: raceData.nicknames,
+                    origins: raceData.origins,
                     physical_features: raceData.physical_features,
                     intellectual_features: raceData.intellectual_features,
                     social_features: raceData.social_features,
                     permission_type: raceData.permission_type,
-                    consulates: raceData.consulates
+                    consulates: raceData.consulates,
+                    jobs: raceData.jobs,
+                    alignment: raceData.alignment,
+                    bosses: raceData.bosses,
+                    vassals: raceData.vassals,
+                    friends: raceData.friends,
+                    enemies: raceData.enemies,
+                    languages: raceData.languages,
+                    strengths: raceData.strengths,
+                    weaknesses: raceData.weaknesses,
+                    abilities: raceData.abilities
                 }} 
             />}
         </main>

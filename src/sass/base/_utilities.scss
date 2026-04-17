@@ -3,6 +3,9 @@
 .element--clickable {
     cursor: pointer;
 }
+.element--observable {
+    cursor: help;
+}
 
 .link--container {
     @include flex-row(center);

@@ -12,10 +12,18 @@
             ],
             "alignment": "neutral",
             "origins": [
-                "milky way",
                 "other galaxies"
             ],
-            "languages": [],
+            "languages": [
+                {
+                    "name": "Mentagrammic",
+                    "type": "telepathic",
+                    "human_readable": false,
+                    "human_writable": false,
+                    "human_comprehensible": true,
+                    "human_speakable": false
+                }
+            ],
             "abilities": [
                 "stealthiness", 
                 "cooperation", 
@@ -69,7 +77,7 @@
             ],
             "alignment": "hostile",
             "origins": [
-                "milky way"
+                "the Milky Way"
             ],
             "languages": [
                 {
@@ -99,7 +107,7 @@
             "permission_type": "D",
             "consulates": ["Earth (Asia)"],
             "intro": "A formidable warrior race driven by territorial expansion and the systematic extraction of planetary wealth",
-            "description": "The Reptilians are widely viewed as the Milky Way's premier militaristic power, though some xenobiologists hypothesize that their aggressive expansionism is actually a survival response to a dying home system rather than pure malice",
+            "description": "The Reptilians are widely viewed as the premier militaristic power of the known Universe, though some xenobiologists hypothesize that their aggressive expansionism is actually a survival response to a dying home system rather than pure malice",
             "physical_features": [
                 "🔹 Dermal Plating – Their bodies are covered in thick, interlocking scales that provide natural resistance to kinetic impact and thermal fluctuations.",
                 "🔹 Prehensile Caudal Limb – A powerful, muscular tail that functions as a balance stabilizer in combat and a lethal bludgeoning weapon in close quarters.",
@@ -132,7 +140,7 @@
             ],
             "alignment": "neutral",
             "origins": [
-                "milky way"
+                "the Milky Way"
             ],
             "languages": [
                 {
@@ -199,8 +207,7 @@
             ],
             "alignment": "friendly",
             "origins": [
-                "milky way",
-                "other galaxies"
+                "the Milky Way"
             ],
             "languages": [
                 {
@@ -238,7 +245,7 @@
             "permission_type": "A",
             "consulates": ["Earth (Europe)", "Earth (Asia)", "Earth (America)", "Moon", "Mars", "Venus", "Ceres"],
             "intro": "An ancient benevolent race of aquatic polymaths dedicated to cross-cultural linguistic synthesis and stellar charting",
-            "description": "The Cephalopodians are hypothesized to be the primary chroniclers of the Milky Way, possessing a fluid biological form that allows them to interact with a vast array of alien technologies and environments with graceful precision",
+            "description": "The Cephalopodians are hypothesized to be the primary chroniclers of the known cosmos, possessing a fluid biological form that allows them to interact with a vast array of alien technologies and environments with graceful precision",
             "physical_features": [
                 "🔹 Bioluminescent Mantle – A semi-translucent outer membrane that pulses with soft light, potentially used for mood expression or silent communication.",
                 "🔹 Multiaxial Tentacles – Flexible appendages equipped with micro-suction cups that allow for the simultaneous manipulation of multiple complex interfaces.",
@@ -332,7 +339,6 @@
             ],
             "alignment": "neutral",
             "origins": [
-                "milky way",
                 "other galaxies"
             ],
             "languages": [
@@ -475,7 +481,7 @@
             ],
             "alignment": "friendly",
             "origins": [
-                "milky way"
+                "the Milky Way"
             ],
             "languages": [
                 {
@@ -513,7 +519,7 @@
             "permission_type": "B1",
             "consulates": ["Earth (Europe)", "Earth (Asia)", "Earth (America)", "Moon", "Mars", "Venus", "Ceres"],
             "intro": "A noble and physically imposing race of feline warriors who blend ritualistic tradition with stellar prowess",
-            "description": "The Leonians are hypothesized to be the ancestral guardians of the Milky Way, maintaining a society built on honor, territorial integrity and a deep faith-based connection to the stars",
+            "description": "The Leonians are hypothesized to be the ancestral guardians of a whole huge cluster of galaxies, maintaining a society built on honor, territorial integrity and a deep faith-based connection to the stars",
             "physical_features": [
                 "🔹 Dense Mane Structure – A thick, voluminous growth of fur around the neck and head that serves as both a sign of maturity and natural protection during warfare.",
                 "🔹 Digitaligrade Stance – Powerful lower limbs ending in clawed paws that allow for rapid bursts of speed during exploration and resource-extraction missions.",

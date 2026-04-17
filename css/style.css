@@ -325,6 +325,9 @@ p {
 .element--clickable {
   cursor: pointer; }
 
+.element--observable {
+  cursor: help; }
+
 .link--container {
   display: flex;
   justify-content: center;
@@ -501,7 +504,8 @@ p {
   background-color: #e3f6f5;
   border-radius: 1.5rem;
   padding: 1rem 2rem;
-  box-shadow: 0 0 4.5rem #00FFFF; }
+  box-shadow: 0 0 4.5rem #00FFFF;
+  max-width: 50rem; }
   .tooltip--ok {
     background-color: #e3f6f5;
     box-shadow: 0 0 4.5rem #00FFFF; }
@@ -2432,11 +2436,23 @@ p {
     justify-content: flex-start;
     align-items: center;
     gap: 2rem; }
+    .diptych__section--vertical, .diptych__iconset--vertical {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      align-items: flex-start;
+      gap: 1rem; }
     .diptych__section svg, .diptych__iconset svg {
       width: 3.5rem; }
-      .diptych__section svg:hover, .diptych__iconset svg:hover {
-        cursor: pointer;
-        transform: scale(1.2); }
+    .diptych__section.element--clickable svg:hover, .diptych__iconset.element--clickable svg:hover {
+      cursor: pointer;
+      transform: scale(1.2); }
+    .diptych__section .tooltip, .diptych__iconset .tooltip {
+      position: absolute; }
+      .diptych__section .tooltip ul, .diptych__iconset .tooltip ul {
+        margin-left: 2.5rem;
+        list-style: disc; }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }

@@ -49,12 +49,29 @@
         @include flex-row(flex-start);
         gap: 2rem;
 
+        &--vertical {
+            @include flex-column(flex-start);
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
         svg {
             width: 3.5rem;
+        }
 
-            &:hover {
+        &.element--clickable {
+            svg:hover {
                 cursor: pointer;
                 transform: scale(1.2);
+            }
+        }
+
+        .tooltip {
+            position: absolute;
+
+            ul {
+                margin-left: 2.5rem;
+                list-style: disc;
             }
         }
     }
