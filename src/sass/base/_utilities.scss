@@ -42,3 +42,17 @@
         text-transform: uppercase;
     }
 }
+
+// VISIBILITY
+.tablet-landscape--visible {
+    display: none;
+    @include respond(tablet-landscape) {
+        display: block;
+    }
+}
+
+.tablet-landscape--invisible {
+    @include respond(tablet-landscape) {
+        display: none;
+    }
+}

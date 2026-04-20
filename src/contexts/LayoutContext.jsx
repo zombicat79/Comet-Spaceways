@@ -12,16 +12,23 @@ function LayoutProvider({ children }) {
         dispatch({ type: 'transform/modal', payload: data.modalClass })
         switch(true) {
             // PRESENTATIONAL POPUP
-            case data.modalClass === 'presentational' && window.innerWidth > 1000:
-                dispatch({ type: 'resize/modal', payload: {width: 'large', height: 'regular'} });
+            case data.modalClass === 'presentational' && window.innerWidth <= 600:
+                dispatch({ type: 'resize/modal', payload: {width: 'small', height: 'small'} });
                 break;
-            case data.modalClass === 'presentational' && window.innerWidth <= 1000:
-                dispatch({ type: 'resize/modal', payload: {width: 'medium', height: 'regular'} });
+            case data.modalClass === 'presentational' && window.innerWidth > 600:
+                if (window.innerWidth > 768) {
+                    dispatch({ type: 'resize/modal', payload: {width: 'large', height: 'regular'} });
+                } else {
+                    dispatch({ type: 'resize/modal', payload: {width: 'regular', height: 'large'} });      
+                }
+                break;
+            case data.modalClass === 'presentational' && window.innerWidth > 768:
+                dispatch({ type: 'resize/modal', payload: {width: 'large', height: 'regular'} });
                 break;
             // INFO & FUNCTIONAL PURPLE POPUP
             case window.innerWidth <= 600:
-                    dispatch({ type: 'resize/modal', payload: {width: 'small', height: 'small'} });
-                    break;
+                dispatch({ type: 'resize/modal', payload: {width: 'small', height: 'small'} });
+                break;
             case data.modalClass === 'large':
                 dispatch({ type: 'resize/modal', payload: {width: 'regular', height: 'large'} });
                 break;

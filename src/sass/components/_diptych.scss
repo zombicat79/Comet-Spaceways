@@ -28,7 +28,11 @@
     }
 
     &__heading {
+        font-size: 4rem;
         line-height: 5rem;
+        @include respond(phone-small) {
+            font-size: 3rem;
+        }
     }
 
     &__subheading {
@@ -45,15 +49,22 @@
         }
     }
 
-    &__section, &__iconset {
-        @include flex-row(flex-start);
-        gap: 2rem;
+    &__section {
+        &--horizontal {
+            @include flex-row(flex-start);
+            gap: 2rem;
+        }
 
         &--vertical {
             @include flex-column(flex-start);
             align-items: flex-start;
             gap: 1rem;
         }
+    }
+
+    &__iconset {
+        @include flex-row(flex-start);
+        gap: 2rem;
 
         svg {
             width: 3.5rem;
@@ -68,11 +79,32 @@
 
         .tooltip {
             position: absolute;
+            min-width: max-content;
+            top: 0;
+            right: 120%;
+            @include respond(tablet-landscape) {
+                top: -150%;
+                right: initial;
+                left: 120%;
+                min-width: 25rem;
+            }
+            @include respond(tablet-portrait) {
+                left: initial;
+                right: 120%;
+            }
+            @include respond(desktop) {
+                top: initial;
+                right: initial;
+            }
 
             ul {
                 margin-left: 2.5rem;
                 list-style: disc;
             }
         }
+    }
+
+    &__iconwrap {
+        position: relative;
     }
 }

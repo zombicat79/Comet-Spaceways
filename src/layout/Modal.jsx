@@ -6,6 +6,7 @@ import Confirmation from '../components/modalpieces/Confirmation';
 import ErrorNotice from './../components/modalpieces/ErrorNotice';
 import ConnectionDetails from './../components/modalpieces/ConnectionDetails';
 import WorkInProgress from './../components/modalpieces/WorkInProgress';
+import GenericPopup from '../components/modalpieces/GenericPopup';
 import ListPopup from '../components/modalpieces/ListPopup';
 
 function Modal({ modalShown, modalClass, content, props, width, height }) {
@@ -27,8 +28,11 @@ function Modal({ modalShown, modalClass, content, props, width, height }) {
       case 'info-list':
         modalContent = <ListPopup props={{...props}} />;
         break;
-      default: // Generic presentational popup
+      case 'work-in-progress':
         modalContent = <WorkInProgress props={{...props}} />;
+        break;
+      default: // Generic presentational popup
+        modalContent = <GenericPopup props={{...props}} />;
     }
     
     function deployGenericClasses() {

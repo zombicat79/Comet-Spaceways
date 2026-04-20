@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useLocation } from 'react-router';
+import { LayoutContext } from '../../../contexts/LayoutContext';
 
 import Diptych from '../../../components/diptychs/Diptych';
 
@@ -8,6 +9,8 @@ import { readFromStorage } from '../../../utilities/utils';
 function NheDetail () {
     const [raceData, setRaceData] = useState(null)
     const location = useLocation();
+    const { layoutState } = useContext(LayoutContext);
+    const calculatedAlignment = layoutState.viewportWidth >= 1000 ? 'horizontal' : 'vertical';
 
     useEffect(() => {
         const storedData = readFromStorage('session-storage', 'nhes');
@@ -18,7 +21,7 @@ function NheDetail () {
     return (
         <main className="nhes">
             {raceData && <Diptych 
-                alignment="horizontal"
+                alignment={calculatedAlignment}
                 theme="nhes" 
                 img={raceData.cover_img}
                 title={raceData.full_name}

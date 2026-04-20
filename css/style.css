@@ -357,6 +357,16 @@ p {
   .message-box .highlight {
     text-transform: uppercase; }
 
+.tablet-landscape--visible {
+  display: none; }
+  @media screen and (max-width: 1000px) {
+    .tablet-landscape--visible {
+      display: block; } }
+
+@media screen and (max-width: 1000px) {
+  .tablet-landscape--invisible {
+    display: none; } }
+
 .btn {
   background-color: #00FFFF;
   color: #272643;
@@ -505,7 +515,8 @@ p {
   border-radius: 1.5rem;
   padding: 1rem 2rem;
   box-shadow: 0 0 4.5rem #00FFFF;
-  max-width: 50rem; }
+  max-width: 50rem;
+  z-index: 1; }
   .tooltip--ok {
     background-color: #e3f6f5;
     box-shadow: 0 0 4.5rem #00FFFF; }
@@ -2422,7 +2433,11 @@ p {
     align-items: flex-start;
     text-align: left; }
   .diptych__heading {
+    font-size: 4rem;
     line-height: 5rem; }
+    @media screen and (max-width: 360px) {
+      .diptych__heading {
+        font-size: 3rem; } }
   .diptych__subheading {
     font-size: 1.6rem;
     margin: 0; }
@@ -2431,28 +2446,52 @@ p {
     .diptych__paragraph .highlight {
       font-family: 'roboto-bold';
       text-transform: uppercase; }
-  .diptych__section, .diptych__iconset {
+  .diptych__section--horizontal {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 2rem; }
-    .diptych__section--vertical, .diptych__iconset--vertical {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      align-items: flex-start;
-      gap: 1rem; }
-    .diptych__section svg, .diptych__iconset svg {
+  .diptych__section--vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-items: flex-start;
+    gap: 1rem; }
+  .diptych__iconset {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem; }
+    .diptych__iconset svg {
       width: 3.5rem; }
-    .diptych__section.element--clickable svg:hover, .diptych__iconset.element--clickable svg:hover {
+    .diptych__iconset.element--clickable svg:hover {
       cursor: pointer;
       transform: scale(1.2); }
-    .diptych__section .tooltip, .diptych__iconset .tooltip {
-      position: absolute; }
-      .diptych__section .tooltip ul, .diptych__iconset .tooltip ul {
+    .diptych__iconset .tooltip {
+      position: absolute;
+      min-width: max-content;
+      top: 0;
+      right: 120%; }
+      @media screen and (max-width: 1000px) {
+        .diptych__iconset .tooltip {
+          top: -150%;
+          right: initial;
+          left: 120%;
+          min-width: 25rem; } }
+      @media screen and (max-width: 768px) {
+        .diptych__iconset .tooltip {
+          left: initial;
+          right: 120%; } }
+      @media screen and (min-width: 1280px) {
+        .diptych__iconset .tooltip {
+          top: initial;
+          right: initial; } }
+      .diptych__iconset .tooltip ul {
         margin-left: 2.5rem;
         list-style: disc; }
+  .diptych__iconwrap {
+    position: relative; }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
