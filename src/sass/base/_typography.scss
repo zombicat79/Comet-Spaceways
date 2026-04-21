@@ -117,17 +117,18 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 4.5rem;
-}
-
-h2 {
     font-size: $size-gigantic;
     line-height: 3.5rem;
 }
 
-h3 {
+h2 {
     font-size: $size-extrabig;
     line-height: 3rem;
+}
+
+h3 {
+    font-size: $size-regular;
+    line-height: 2rem;
 }
 
 p {

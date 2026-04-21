@@ -73,12 +73,12 @@ function DestinationsIndex() {
                 {layoutState.viewportWidth >= 1000 && tooltip.active && <Tooltip title={tooltip.text.toUpperCase()} color={tooltip.color} />}
                 {layoutState.viewportWidth >= 1000 
                     ?<div className="destinations__heading">
-                        <h2>OUR DESTINATIONS WITHIN THE SOLAR SYSTEM</h2>
+                        <h1>OUR DESTINATIONS WITHIN THE SOLAR SYSTEM</h1>
                         <p>Click objects on the stellar map to filter down</p>
                         <p>Click on the Sun ☀️ to remove filters</p>
                     </div>
                     :<div className="destinations__heading">
-                        <h2>OUR DESTINATIONS WITHIN THE SOLAR SYSTEM</h2>
+                        <h1>OUR DESTINATIONS WITHIN THE SOLAR SYSTEM</h1>
                     </div>
                 }
                 {layoutState.viewportWidth >= 1000 
@@ -116,7 +116,7 @@ function DestinationsIndex() {
                     }
                 </div>
                 <div className="destinations__search">
-                    <h3>WHERE DO YOU FANCY GOING?</h3>
+                    <h2>WHERE DO YOU FANCY GOING?</h2>
                     <FlightSearch />
                 </div>
             </main>

@@ -4,7 +4,7 @@
     padding-top: 8rem;
     overflow: hidden;
 
-    & section {
+    & section:not(.content-section) {
         padding: 5rem 5rem 10rem;
 
         &:nth-child(2) {

@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLoaderData, useNavigate, useLocation } from 'react-router';
 
+import ContentSection from './../../../layout/ContentSection';
 import SliderTool from '../../../components/SliderTool';
 import PromoPoster from '../../../components/PromoPoster';
 
@@ -48,7 +49,7 @@ function NheIndex() {
     return (
         <main className="nhes">
             <section className="nhes__intro">
-                <h2 className="nhes__heading">TRAVELING AS A NON-HUMAN ENTITY (Nhe)</h2>
+                <h1 className="nhes__heading">TRAVELING AS A NON-HUMAN ENTITY (Nhe)</h1>
                 <p className="nhes__paragraph">
                     Since the landmark passage of the Alien Liberty of Movement Act in 2094 all alien passengers are allowed to travel 
                     within the boundaries of the Solar Systemo. This historic legislation, approved by the Senate of the Solar Federation, officially mandates that non-human travelers be permitted to board commercial flights and travel normally between all established destinations within the Solar System.
@@ -58,7 +59,7 @@ function NheIndex() {
                 </p>
             </section>
             <section className="nhes__races">
-                <h3 className="nhes__heading">PERMITTED RACES</h3>
+                <h2 className="nhes__subheading">PERMITTED RACES</h2>
                 {dataFromDB && 
                 <SliderTool contentType="component" settings={sliderSettings} >
                     {dataFromDB.map((el) => {
@@ -81,7 +82,31 @@ function NheIndex() {
                 }
             </section>
             <section className="nhes__requirements">
-                <h3 className="nhes__heading">REQUIREMENTS</h3>
+                <h2 className="nhes__subheading">REQUIREMENTS</h2>
+                <ContentSection>
+                    <h3>1. Spacepass</h3>
+                    <p className="nhes__paragraph">
+                        In accordance with current law provisions established by the of the Solar Federation all passengers 
+                        (human or non-human) must be in possession of a valid Spacepass in order to travel within the boundaries of the 
+                        Solar System
+                    </p>
+                    <p>Spacepasses must be valid at the time of boarding a flight</p>
+                </ContentSection>
+                <ContentSection>
+                    <h3>2. Goodwill Declaration</h3>
+                    <p className="nhes__paragraph">
+                        The Alien Liberty of Movement Act establishes that all alien passengers willing to travel within the 
+                        boundaries of the Solar System must complete a declaration of godwill towards humanity.
+                    </p>
+                </ContentSection>
+                <ContentSection>
+                    <h3>3. Effective Communication Capacity</h3>
+                    <p className="nhes__paragraph">
+                        It is also established in the Alien Liberty of Movement Act establishes that all alien passengers willing to 
+                        travel within the boundaries of the Solar System must be able to effectively communicate with flight crew members 
+                        at all time
+                    </p>
+                </ContentSection>
             </section>
         </main>
     );

@@ -67,7 +67,7 @@ function Home() {
                 <FlightSearch />
             </Banner>
             <section className="homepage__offers">
-                <h3 className="homepage__offers-heading">OFFERS FROM PLANET EARTH</h3>
+                <h2 className="homepage__offers-heading">OFFERS FROM PLANET EARTH</h2>
                 <div className="homepage__offers-list">
                 {offers.map((el) => {
                     return (

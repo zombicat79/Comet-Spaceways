@@ -83,7 +83,7 @@ function DestinationDetail() {
                     />
                 </section>
                 <ContentSection>
-                    <h2>{currentDestinationData.intro}</h2>
+                    <h1>{currentDestinationData.intro}</h1>
                     <p>{currentDestinationData.description}</p>
                     <ul className="features__list">
                         {currentDestinationData.features.map((el, index) => {
@@ -100,7 +100,7 @@ function DestinationDetail() {
                             )
                         })}
                     </ul>
-                    <h3>{currentDestinationData.promotional_catch}</h3>
+                    <h2>{currentDestinationData.promotional_catch}</h2>
                 </ContentSection>
                 <SliderTool 
                     contentType="link-img"
@@ -117,7 +117,7 @@ function DestinationDetail() {
                     }}
                 />
                 <section className="destination-search">
-                    <h3>READY TO GO?</h3>
+                    <h2>READY TO GO?</h2>
                     <FlightSearch fixedDestination={true} />
                 </section>
                 
