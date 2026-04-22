@@ -2494,6 +2494,39 @@ p {
   .diptych__iconwrap {
     position: relative; }
 
+.spacepass {
+  background-color: #ffffff;
+  border: 2px solid #121212;
+  border-radius: 1rem;
+  color: #121212;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("./../../../../public/assets/images/spacepass_background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 60rem;
+  height: 40rem;
+  margin: 0 auto;
+  padding: 2rem; }
+  .spacepass__header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'russo-one';
+    color: #272643;
+    text-transform: uppercase;
+    margin-bottom: 2rem; }
+  .spacepass__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .spacepass__body .spacepass__picture {
+      width: 100%;
+      max-width: 15rem;
+      opacity: 0.6;
+      flex: 1; }
+    .spacepass__body .spacepass__data {
+      flex: 2; }
+
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
 

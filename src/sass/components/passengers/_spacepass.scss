@@ -1,0 +1,36 @@
+.spacepass {
+    background-color: $color-environmental-light;
+    border: 2px solid $color-environmental-pitch;
+    border-radius: 1rem;
+    color: $color-environmental-pitch;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('./../../../../public/assets/images/spacepass_background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 60rem;
+    height: 40rem;
+    margin: 0 auto;
+    padding: 2rem;
+
+    &__header {
+        @include flex-row(space-around);
+        font-family: 'russo-one';
+        color: $color-text-dark;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+    }
+
+    &__body {
+        @include flex-row(space-between);
+        .spacepass__picture {
+            width: 100%;
+            max-width: 15rem;
+            opacity: 0.6;
+            flex: 1;
+        }
+
+        .spacepass__data {
+            flex: 2;
+        }
+    }
+}

@@ -4,6 +4,7 @@ import { useLoaderData, useNavigate, useLocation } from 'react-router';
 import ContentSection from './../../../layout/ContentSection';
 import SliderTool from '../../../components/SliderTool';
 import PromoPoster from '../../../components/PromoPoster';
+import Spacepass from './../../../components/passengers/Spacepass';
 
 import supabase from '../../../../db/supabase-client';
 import { writeToStorage, readFromStorage } from '../../../utilities/utils';
@@ -86,18 +87,22 @@ function NheIndex() {
                 <ContentSection>
                     <h3>1. Spacepass</h3>
                     <p className="nhes__paragraph">
-                        In accordance with current law provisions established by the of the Solar Federation all passengers 
+                        In accordance with current law provisions established by the of the Government of the Solar Federation all passengers 
                         (human or non-human) must be in possession of a valid Spacepass in order to travel within the boundaries of the 
                         Solar System
                     </p>
+                    <Spacepass />
                     <p>Spacepasses must be valid at the time of boarding a flight</p>
                 </ContentSection>
                 <ContentSection>
                     <h3>2. Goodwill Declaration</h3>
                     <p className="nhes__paragraph">
                         The Alien Liberty of Movement Act establishes that all alien passengers willing to travel within the 
-                        boundaries of the Solar System must complete a declaration of godwill towards humanity.
+                        boundaries of the Solar System must complete a declaration of godwill towards humanity, thereby explicitly refraining of 
+                        participating in any activities whatsoever that may lead to or result in harm to human civilization and/or any of its 
+                        interests.
                     </p>
+                    <p>In compliance with Comet Spaceways demands its alien passengers to </p>
                 </ContentSection>
                 <ContentSection>
                     <h3>3. Effective Communication Capacity</h3>
