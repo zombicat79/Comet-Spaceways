@@ -25,6 +25,59 @@
         & > *:not(:last-child) {
             margin-bottom: 5rem;
         }
+
+        .content-section__heading {
+            font-family: 'roboto-extrabold';
+            font-size: $size-huge;
+        }
+    
+        .content-section__paragraph {
+            &.text-bold {
+                font-family: 'roboto-bold';
+            }
+
+            &.text-alert {
+                color: $color-highlight-extreme;
+                text-transform: uppercase;
+            }
+        }
+
+        .content-section__list {
+            width: 100%;
+            text-align: left;
+            padding-left: 5rem;
+            margin: 0 auto;
+            @include respond(desktop) {
+                width: max-content;
+            }
+
+            &--numeric {
+                list-style: decimal;
+            }
+
+            .list-title {
+                font-family: 'roboto-extrabold';
+                font-size: $size-big;
+                font-style: italic;
+                text-decoration: underline;
+                text-underline-offset: .5rem;
+                margin-bottom: 1rem;
+            }
+
+            .list-element {
+                &:not(.list-element:last-child) {
+                    margin-bottom: 2rem;
+                }
+
+                .btn {
+                    position: relative;
+                    left: 50%;
+                    margin-top: 1rem;
+                    transform: translateX(-50%);
+                    min-width: 20rem;
+                }
+            }
+        }
     }
 
     &__tab {

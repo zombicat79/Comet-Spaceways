@@ -12,6 +12,12 @@
         }
     }
 
+    &__paragraph {
+        span {
+            font-family: 'roboto-extrabold';
+        }
+    }
+
     // RACE SLIDER CONFIG    
     .slick-slider .slick-list .slick-slide {
         transform: scale(0.8);
