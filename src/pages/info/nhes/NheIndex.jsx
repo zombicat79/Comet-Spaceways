@@ -6,6 +6,7 @@ import SliderTool from '../../../components/SliderTool';
 import PromoPoster from '../../../components/PromoPoster';
 import Spacepass from './../../../components/passengers/Spacepass';
 import Button from '../../../components/Button';
+import SvgIcon from '../../../components/SvgIcon';
 
 import supabase from '../../../../db/supabase-client';
 import { writeToStorage, readFromStorage } from '../../../utilities/utils';
@@ -57,7 +58,7 @@ function NheIndex() {
                     are allowed to travel between any two given points within the boundaries of the Solar System. This historic legislation, 
                     approved by the Senate of the Solar Federation and sanctioned by its Supreme AI Counsellor, officially mandates that 
                     non-human travelers be permitted to board commercial flights and travel normally between all worlds, colonies and civilian 
-                    outposts under the rule of the united humanoid civilization.
+                    outposts under the rule of the humanoid civilization.
                 </p>
                 <p className="nhes__paragraph">
                     In compliance with current law provisions, we at <span>Comet Spaceways</span> guarantee all of our non-human customers 
@@ -135,10 +136,46 @@ function NheIndex() {
                 <ContentSection>
                     <h3 className="content-section__heading">3. Effective Communication Capacity</h3>
                     <p className="content-section__paragraph">
-                        It is also established in the Alien Liberty of Movement Act establishes that all alien passengers willing to 
-                        travel within the boundaries of the Solar System must be able to effectively communicate with flight crew members 
-                        at all time
+                        In order to prevent any cultural misunderstandings that may pose a disruption to the security of other passengers, it 
+                        is also established in the Alien Liberty of Movement Act that all alien passengers traveling in commercial flights 
+                        must be able to effectively communicate with flight crew members at all time.
                     </p>
+                    <p className="content-section__paragraph">
+                        Non-human passengers in Comet Spaceways flights will thus be allowed to travel, provided they find themselves 
+                        in one or more of the following situations at the time of boarding:
+                    </p>
+                    <ul className="content-section__list">
+                        <li className="list-element list-element--horizontal">
+                            <SvgIcon design="speech" color="#272643" />
+                            <p className="content-section__paragraph text-bold">
+                                Demonstrates a minimum level of English or any other commonly spoken human language
+                            </p>
+                        </li>
+                        <li className="list-element list-element--horizontal">
+                            <SvgIcon design="brain" color="#272643" />
+                            <p className="content-section__paragraph text-bold">
+                                Possesses natural psionic capacities and the possibility to establish telepathic links with other beings
+                            </p>
+                        </li>
+                        <li className="list-element list-element--horizontal">
+                            <SvgIcon design="tools" color="#272643" />
+                            <p className="content-section__paragraph text-bold">
+                                Brings along certified automated "alien-to-human" translation devices
+                            </p>
+                        </li>
+                        <li className="list-element list-element--horizontal">
+                            <SvgIcon design="people" color="#272643" />
+                            <p className="content-section__paragraph text-bold">
+                                Is accompanied by humanoids or other able NHEs traveling in the same party 
+                            </p>
+                        </li>
+                        <li className="list-element list-element--horizontal">
+                            <SvgIcon design="pet" color="#272643" />
+                            <p className="content-section__paragraph text-bold">
+                                Carries assistive animals or pets capable of basic speech and emotional relay
+                            </p>
+                        </li>
+                    </ul>
                 </ContentSection>
             </section>
         </main>

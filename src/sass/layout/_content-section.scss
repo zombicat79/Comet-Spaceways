@@ -29,9 +29,17 @@
         .content-section__heading {
             font-family: 'roboto-extrabold';
             font-size: $size-huge;
+            
+            & + .content-section__paragraph {
+                margin-bottom: 3rem;
+            }
         }
     
         .content-section__paragraph {
+            & + .content-section__paragraph {
+                margin-bottom: 3rem;
+            }
+
             &.text-bold {
                 font-family: 'roboto-bold';
             }
@@ -76,6 +84,15 @@
                     transform: translateX(-50%);
                     min-width: 20rem;
                 }
+
+                &--horizontal {
+                    @include flex-row(flex-start);
+                    gap: 2rem;
+                }
+            }
+
+            svg {
+                width: 5rem;
             }
         }
     }

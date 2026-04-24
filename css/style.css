@@ -3221,6 +3221,10 @@ p {
     .content-section__body .content-section__heading {
       font-family: 'roboto-extrabold';
       font-size: 2.4rem; }
+      .content-section__body .content-section__heading + .content-section__paragraph {
+        margin-bottom: 3rem; }
+    .content-section__body .content-section__paragraph + .content-section__paragraph {
+      margin-bottom: 3rem; }
     .content-section__body .content-section__paragraph.text-bold {
       font-family: 'roboto-bold'; }
     .content-section__body .content-section__paragraph.text-alert {
@@ -3251,6 +3255,13 @@ p {
         margin-top: 1rem;
         transform: translateX(-50%);
         min-width: 20rem; }
+      .content-section__body .content-section__list .list-element--horizontal {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem; }
+      .content-section__body .content-section__list svg {
+        width: 5rem; }
   .content-section__tab {
     position: absolute;
     color: inherit;
