@@ -58,7 +58,7 @@ function NheIndex() {
                     are allowed to travel between any two given points within the boundaries of the Solar System. This historic legislation, 
                     approved by the Senate of the Solar Federation and sanctioned by its Supreme AI Counsellor, officially mandates that 
                     non-human travelers be permitted to board commercial flights and travel normally between all worlds, colonies and civilian 
-                    outposts under the rule of the humanoid civilization.
+                    outposts under the rule of the human civilization.
                 </p>
                 <p className="nhes__paragraph">
                     In compliance with current law provisions, we at <span>Comet Spaceways</span> guarantee all of our non-human customers 
@@ -131,7 +131,25 @@ function NheIndex() {
                         participating in any activities whatsoever that may lead to or result in harm to human civilization and/or any of its 
                         interests.
                     </p>
-                    <p>In compliance with Comet Spaceways demands its alien passengers to </p>
+                    <p className="content-section__paragraph">
+                        In compliance with this particular mandate, we at Comet Spaceways demand that all our non-human passengers provide a signed 
+                        copy of such declaration on every single occasion they use our transport services (before or during check-in time): 
+                    </p>
+                    <ul className="content-section__list content-section__list--numeric">
+                        <p className="list-title">HOW TO</p>
+                        <li className="list-element">
+                            <p className="content-section__paragraph">
+                                A "Declaration of godwill" document template may be downloaded here for your inspection and later fulfillment:
+                            </p>
+                            <Button type="secondary" text="Download" />
+                        </li>
+                        <li className="list-element">
+                            <p className="content-section__paragraph">
+                                Depending on flight characteristics and passenger personal circumstances, the document might be automatically 
+                                fulfilled during the completion of flight check-in procedures.
+                            </p>
+                        </li>
+                    </ul>
                 </ContentSection>
                 <ContentSection>
                     <h3 className="content-section__heading">3. Effective Communication Capacity</h3>
