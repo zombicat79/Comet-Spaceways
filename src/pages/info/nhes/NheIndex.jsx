@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLoaderData, useNavigate, useLocation, Link } from 'react-router';
+import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
+import { GoodwillDoc } from '../../../templates/pdf/GoodwillDoc';
 
 import ContentSection from './../../../layout/ContentSection';
 import SliderTool from '../../../components/SliderTool';
@@ -141,7 +143,9 @@ function NheIndex() {
                             <p className="content-section__paragraph">
                                 A "Declaration of godwill" document template may be downloaded here for your inspection and later fulfillment:
                             </p>
-                            <Button type="secondary" text="Download" />
+                            <PDFDownloadLink document={<GoodwillDoc />} fileName="declaration_of_goodwill.pdf">
+                                <Button type="secondary" text="Download" />
+                            </PDFDownloadLink>
                         </li>
                         <li className="list-element">
                             <p className="content-section__paragraph">
