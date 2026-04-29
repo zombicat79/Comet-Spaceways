@@ -22,22 +22,6 @@
 }
 
 */
-/*
-
-@function random-name($param1, $param2, $paramN) {
-    @return $param1 * $param2
-}
-
-*/
-/* 
-
-.random-selector {
-    Regular CSS declarations
-    
-    padding: randon-name(10, 2) * 1px;
-}
-
-*/
 /* GENERAL RESET */
 *,
 *::before,
@@ -3237,7 +3221,8 @@ p {
       margin: 0 auto; }
       @media screen and (min-width: 1280px) {
         .content-section__body .content-section__list {
-          width: max-content; } }
+          width: max-content;
+          max-width: 60%; } }
       .content-section__body .content-section__list--numeric {
         list-style: decimal; }
       .content-section__body .content-section__list .list-title {

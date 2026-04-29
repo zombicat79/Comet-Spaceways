@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLoaderData, useNavigate, useLocation, Link } from 'react-router';
-import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
+import { BlobProvider, PDFDownloadLink } from '@react-pdf/renderer';
 import { GoodwillDoc } from '../../../templates/pdf/GoodwillDoc';
 
 import ContentSection from './../../../layout/ContentSection';
@@ -134,23 +134,29 @@ function NheIndex() {
                         interests.
                     </p>
                     <p className="content-section__paragraph">
-                        In compliance with this particular mandate, we at Comet Spaceways demand that all our non-human passengers provide a signed 
-                        copy of such declaration on every single occasion they use our transport services (before or during check-in time): 
+                        In compliance with this particular legal imperative we at Comet Spaceways demand that all our non-human passengers (NHEs) provide a signed 
+                        copy of such declaration, on every single occasion they intend to use our transport services: 
                     </p>
                     <ul className="content-section__list content-section__list--numeric">
                         <p className="list-title">HOW TO</p>
                         <li className="list-element">
                             <p className="content-section__paragraph">
-                                A "Declaration of godwill" document template may be downloaded here for your inspection and later fulfillment:
+                                A sample "Declaration of godwill" document may be generated and downloaded for a detailed inspection of its clauses:
                             </p>
-                            <PDFDownloadLink document={<GoodwillDoc />} fileName="declaration_of_goodwill.pdf">
-                                <Button type="secondary" text="Download" />
-                            </PDFDownloadLink>
+                            <BlobProvider document={<GoodwillDoc />}>
+                                {({ blob, url, loading, error }) => {
+                                    return (
+                                        <Link to={url} target='_blank'>
+                                            <Button type="secondary" text="Generate" />
+                                        </Link>
+                                    )
+                                }}
+                            </BlobProvider>
                         </li>
                         <li className="list-element">
                             <p className="content-section__paragraph">
-                                Depending on flight characteristics and passenger personal circumstances, the document might be automatically 
-                                fulfilled during the completion of flight check-in procedures.
+                                Formal acceptance and proper fulfillment with actual passenger data will be automatically carried out during flight check-in 
+                                procedures (no need to fill out the document beforehand).
                             </p>
                         </li>
                     </ul>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Document, Page, View, Font, Text, Image, ImageBackground, TextInput, StyleSheet } from '@react-pdf/renderer';
+import { format, addYears } from 'date-fns';
+import { Document, Page, View, Font, Text, Image, ImageBackground, Checkbox, StyleSheet } from '@react-pdf/renderer';
 
 Font.register({ family: 'Roboto', src: '/assets/fonts/roboto/Roboto_Condensed-Regular.ttf'});
 Font.register({ family: 'Roboto-Bold', src: '/assets/fonts/roboto/Roboto_Condensed-Bold.ttf'});
@@ -28,6 +29,17 @@ const styles = StyleSheet.create({
       height: "auto",
       margin: "0 auto 20px"  
     },
+    specimen: {
+        position: "absolute",
+        right: "8%",
+        top: "10%",
+        fontSize: 20,
+        color: "#FF4500",
+        textDecoration: "underline",
+        textUnderlineOffset: "0.75px",
+        transform: "rotate(-45deg)",
+        opacity: "0.8"
+    },
     background: {
         position: "absolute",
         left: "10px",
@@ -41,8 +53,16 @@ const styles = StyleSheet.create({
         fontSize: 12,
         padding: "0 30px"
     },
-    textInput: {
-        height: "20px"
+    checkbox: {
+        width: "20px",
+        height: "20px",
+        border: "1px solid #000000",
+        backgroundColor: "rgb(224, 220, 220)",
+        display: "inline"
+    },
+    mockInput: {
+        height: "20px",
+        backgroundColor: "rgb(224, 220, 220)"
     },
     bold: {
         fontFamily: "Roboto-Bold"
@@ -55,28 +75,52 @@ const styles = StyleSheet.create({
     },
     separation20: {
         marginBottom: "20px"
+    },
+    separation30: {
+        marginBottom: "30px"
+    },
+    flexRowStart: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        gap: "10px"
+    },
+    flexRowBetween: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     }
 })
 
 export function GoodwillDoc() {
+    const sampleFlight = 'CS1344';
+    const sampleSpacepass = 'WYZ010101';
+    const sampleDate = format(addYears(new Date(Date.now()), 100), 'dd-MM-yyyy');
+
     return (
         <Document style={styles.document} >
             <Page style={styles.page} >
+                <Text style={styles.specimen} fixed>*-- SPECIMEN --*</Text>
                 <ImageBackground src="/logos/sfederation-logo_dark.png" style={styles.background} fixed />
                 <View style={styles.separation20} >
                     <Image src="/logos/ctsw-logo_dark_badge.png" style={styles.csBadge} />
                     <Text style={styles.title}>
                         DECLARATION OF GODWILL
                     </Text>
+                    <Text style={styles.separation10}>
+                        As a condition of passage through the territorial space under the rule of the Solar Federation, I understand and acknowledge that 
+                        all non-human passengers on commercial spaceflights (NHEs) are required to respect and preserve the integrity of the human civilization 
+                        and that of its individual members.
+                    </Text>
                     <Text>
-                        As a condition of passage within the jurisdiction of the Solar Federation, all non-human passengers on commercial spaceflights (NHEs) 
-                        are required to observe the following mandates:
+                        I hereby declare myself a guest in the Solar System, morally and legally obliged to observe the following mandates during the full length 
+                        of my travels:
                     </Text>
                 </View>
                 <View>
                     <Text style={{...styles.clause, ...styles.separation10}} >
-                        <Text style={styles.bold}>1. Non-Interference with Planetary Governance:</Text> I commit to refraining from any attempt to influence, subvert or de-stabilize the 
-                        political, social or administrative structures of the Solar Federation or any of its subsidiary planetary governments, moons, colonies and outposts.
+                        <Text style={styles.bold}>1. Non-Interference with Planetary Governance:</Text> I commit to refraining from any attempt to influence, subvert or destabilize the 
+                        political, social or administrative structures of the Solar Federation or any of its subsidiary territorial possessions.
                     </Text>
                     <Text style={{...styles.clause, ...styles.separation10}} >
                         <Text style={styles.bold}>2. Abstention from Biological Contamination:</Text> I pledge to maintain strict xenobiological quarantine 
@@ -84,7 +128,7 @@ export function GoodwillDoc() {
                     </Text>
                     <Text style={{...styles.clause, ...styles.separation10}} >
                         <Text style={styles.bold}>3. Prohibition of Economic Sabotage:</Text> I will not engage in activities designed to manipulate human 
-                        markets, destabilize the Solar Federation's Astronomical Unit ($AU currency) or devalue human or artificially-generated resources and labor.
+                        markets, destabilize the Solar Federation's currency (Astronomical Unit - $AU) or devalue human or artificially-generated resources and labor.
                     </Text>
                     <Text style={{...styles.clause, ...styles.separation10}} >
                         <Text style={styles.bold}>4. Preservation of Technological Parity:</Text> I commit to withholding advanced technology or forbidden 
@@ -111,25 +155,30 @@ export function GoodwillDoc() {
                         pheromonal influence or hypnotic suggestion on human subjects for personal or political gain.
                     </Text>
                     <Text style={{...styles.clause, ...styles.separation20}} >
-                        <Text style={styles.bold}>10. Absolute Non-Aggression:</Text> I solemnly swear that my presence, my equipment and my retinue shall not be used 
-                        to inflict physical harm, psychological trauma or structural damage upon human civilization or any of its collective interests..
+                        <Text style={styles.bold}>10. Absolute Non-Aggression:</Text> I solemnly swear that my presence, my skills and my knowledge shall not be used 
+                        to inflict physical harm, psychological trauma or structural damage upon human individuals or any of its collective interests.
                     </Text>
                 </View>
-                <View style={styles.separation20} >
+                <View style={{...styles.separation30, ...styles.flexRowStart}}>
+                    <Checkbox name="signature" style={styles.checkbox} checked={true} readOnly={true} required />
                     <Text>
-                        By entering, I acknowledge that any violation of these commitments may result in immediate or terminal revocation of my 
-                        Solar Federation's spacepass.
+                        By ticking this box I promise to uphold and abide by the principles listed above, and acknowledge that any violation of these commitments 
+                        may result in the immediate and permanent revocation of my Solar Federation's spacepass.
                     </Text>
                 </View>
-                <View>
-                    <Text>
-                        Spacepass No.
-                    </Text>
-                    <TextInput style={styles.textInput} />
-                    <Text>
-                        Date
-                    </Text>
-                    <TextInput style={styles.textInput} />
+                <View style={{...styles.separation20, ...styles.flexRowBetween}}>
+                    <View style={styles.flexRowStart}>
+                        <Text style={styles.bold}>FLIGHT No.</Text>
+                        <Text style={styles.mockInput}>{sampleFlight}</Text>
+                    </View>
+                    <View style={styles.flexRowStart}>
+                        <Text style={styles.bold}>DATE</Text>
+                        <Text style={styles.mockInput}>{sampleDate}</Text>
+                    </View>
+                </View>
+                <View style={{...styles.separation20, ...styles.flexRowStart}}>
+                    <Text style={styles.bold}>SPACEPASS No.</Text>
+                    <Text style={styles.mockInput}>{sampleSpacepass}</Text>
                 </View>
             </Page>
         </Document>
