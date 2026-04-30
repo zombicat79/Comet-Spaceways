@@ -1,10 +1,13 @@
 import { format, add } from "date-fns";
 
-function Spacepass({ userData }) {
+function Spacepass({ userData, orientation="landscape" }) {
+    let classesCalculation = 'spacepass';
+    if (!userData) classesCalculation = classesCalculation + ' spacepass--generic';
+    if (orientation === 'portrait') classesCalculation = classesCalculation + ' spacepass--inverted';
     const defaultPicString = '/assets/images/characters/profiles/profile-default.png';
 
     return (
-        <figure className={userData ? "spacepass" : "spacepass spacepass--generic"}>
+        <figure className={classesCalculation}>
             <div className="spacepass__header">
                 <p className="spacepass__provider">solar federation</p>
                 <p className="spacepass__title">spacepass</p>
@@ -62,10 +65,10 @@ function Spacepass({ userData }) {
             </div>
             <div className="spacepass__footer">
                 <p className="spacepass__encoding">
-                    {'P<SFSAMPLEFACTION<SAMPLENAME<<<<<<<<<<<<<<<<<<<<<<<<<'}
+                    {'P<SFSAMPLEFACTION<SAMPLENAME<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'}
                 </p>
                 <p className="spacepass__encoding">
-                    {'AAA000000SF743499958HJ744424<<<<<<<<<<<<<<<<<<<<<EEU<<<<'}
+                    {'AAA000000SF743499958HJ744424<<<<<<<<<<<EEU<<<<<<<<<<<<<<<<<<<<<<'}
                 </p>
             </div>
 

@@ -1,5 +1,13 @@
 .content-section {
     padding: 5rem;
+    @include respond(tablet-landscape) {
+        padding: 5rem 2rem;
+    }
+    @include respond(giant-screen) {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     &:first-child {
         padding-top: 8rem;
@@ -18,6 +26,9 @@
         border-radius: 1.5rem;
         padding: 3rem;
         box-shadow: 0 0 4.5rem $color-highlight-light;
+        @include respond(phone-small) {
+            //padding: 3rem 2rem;
+        }
         @include respond(huge-screen) {
             max-width: 75vw;
         }
@@ -29,6 +40,7 @@
         .content-section__heading {
             font-family: 'roboto-extrabold';
             font-size: $size-huge;
+            line-height: $size-gigantic;
             
             & + .content-section__paragraph {
                 margin-bottom: 3rem;
@@ -48,6 +60,14 @@
                 color: $color-highlight-extreme;
                 text-transform: uppercase;
             }
+
+            .inline-icon {
+                font-size: 3rem;
+                @include respond(tablet-portrait) {
+                    display: block;
+                    margin-bottom: 1.5rem;
+                }
+            }
         }
 
         .content-section__list {
@@ -55,6 +75,9 @@
             text-align: left;
             padding-left: 5rem;
             margin: 0 auto;
+            @include respond(tablet-portrait) {
+                padding-left: 2rem;
+            }
             @include respond(desktop) {
                 width: max-content;
                 max-width: 60%;
@@ -80,20 +103,30 @@
 
                 .btn {
                     position: relative;
-                    left: 50%;
+                    left: calc(50% - 2.5rem);
                     margin-top: 1rem;
                     transform: translateX(-50%);
                     min-width: 20rem;
+                    @include respond(tablet-portrait) {
+                        left: calc(50% - 1rem);
+                    }
                 }
 
                 &--horizontal {
                     @include flex-row(flex-start);
                     gap: 2rem;
                 }
+
+                &--vertical {
+                    @include flex-column(flex-start);
+                    gap: 0.5rem;
+                }
             }
 
             svg {
-                width: 5rem;
+                width: 100%;
+                min-width: 5rem;
+                max-width: 5rem;
             }
         }
     }

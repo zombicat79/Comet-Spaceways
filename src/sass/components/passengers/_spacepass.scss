@@ -13,6 +13,9 @@
     margin: 0 auto;
     padding: 2rem;
     position: relative;
+    @include respond(tablet-landscape) {
+        width: 65vw;
+    }
 
     &__header {
         @include flex-row(space-evenly);
@@ -37,6 +40,9 @@
             max-width: 15rem;
             opacity: 0.6;
             flex: 1;
+            @include respond(tablet-landscape) {
+                max-width: 10rem;
+            }
         }
 
         .spacepass__data {
@@ -82,6 +88,18 @@
             text-decoration: underline;
             text-underline-offset: .75rem;
             transform: rotate(-45deg);
+        }
+    }
+
+    // INVERTED SPACEPASS
+    &--inverted {
+        width: 600px;
+        height: 400px;
+        left: -26%;
+        @include respond(phone) {
+            width: 600px;
+            height: 80vw;
+            left: 10%;
         }
     }
 }

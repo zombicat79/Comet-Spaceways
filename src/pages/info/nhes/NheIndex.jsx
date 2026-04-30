@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useContext, useCallback } from 'react';
+import { LayoutContext } from '../../../contexts/LayoutContext';
 import { useLoaderData, useNavigate, useLocation, Link } from 'react-router';
-import { BlobProvider, PDFDownloadLink } from '@react-pdf/renderer';
+import { BlobProvider } from '@react-pdf/renderer';
 import { GoodwillDoc } from '../../../templates/pdf/GoodwillDoc';
 
 import ContentSection from './../../../layout/ContentSection';
@@ -14,6 +15,7 @@ import supabase from '../../../../db/supabase-client';
 import { writeToStorage, readFromStorage } from '../../../utilities/utils';
 
 function NheIndex() {
+    const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
     const dataFromDB = useLoaderData();
     const location = useLocation();
     const [navigationReady, setNavigationReady] = useState(false);
@@ -67,7 +69,7 @@ function NheIndex() {
                     their right to access our transport services, provided they prove themselves eligible by race and capable of meeting the 
                     legal requirements listed further below by the time of their scheduled departure: 
                 </p>
-                <img src="/logos/sfederation-logo_light.png" style={{width: "200px"}} />
+                <img src="/logos/sfederation-logo_light.png" alt="solar federation logo" />
             </section>
             <section className="nhes__races">
                 <h2 className="nhes__subheading">PERMITTED RACES</h2>
@@ -101,9 +103,22 @@ function NheIndex() {
                         passengers (human or non-human) must be in possession of a valid Spacepass in order to travel within the boundaries 
                         of the Solar System:
                     </p>
-                    <Spacepass />
+                    {layoutState.viewportWidth > 768
+                        ? <Spacepass />
+                        : <Button 
+                            type="secondary"
+                            action={() => {
+                                handlePopupLaunch({ 
+                                    modalClass: 'presentational', 
+                                    content: 'spacepass', 
+                                    props: {body: <Spacepass orientation='portrait' />, contentModifier: 'rotate90'}
+                                })}
+                            }
+                            text="View spacepass" 
+                        />
+                    }
                     <p className="content-section__paragraph text-bold text-alert">
-                        <span style={{fontSize: '30px'}}>⚠️</span> All spacepasses must be valid at scheduled boarding time!
+                        <span className="inline-icon">⚠️</span> All spacepasses must be valid at scheduled boarding time!
                     </p>
                     <ul className="content-section__list content-section__list--numeric">
                         <p className="list-title">HOW TO</p>
@@ -173,31 +188,31 @@ function NheIndex() {
                         in one or more of the following situations at the time of boarding:
                     </p>
                     <ul className="content-section__list">
-                        <li className="list-element list-element--horizontal">
+                        <li className={layoutState.viewportWidth > 360 ? `list-element list-element--horizontal` : `list-element list-element--vertical`}>
                             <SvgIcon design="speech" color="#272643" />
                             <p className="content-section__paragraph text-bold">
                                 Demonstrates a minimum level of English or any other commonly spoken human language
                             </p>
                         </li>
-                        <li className="list-element list-element--horizontal">
+                        <li className={layoutState.viewportWidth > 360 ? `list-element list-element--horizontal` : `list-element list-element--vertical`}>
                             <SvgIcon design="brain" color="#272643" />
                             <p className="content-section__paragraph text-bold">
                                 Possesses natural psionic capacities and the possibility to establish telepathic links with other beings
                             </p>
                         </li>
-                        <li className="list-element list-element--horizontal">
+                        <li className={layoutState.viewportWidth > 360 ? `list-element list-element--horizontal` : `list-element list-element--vertical`}>
                             <SvgIcon design="tools" color="#272643" />
                             <p className="content-section__paragraph text-bold">
                                 Brings along certified automated "alien-to-human" translation devices
                             </p>
                         </li>
-                        <li className="list-element list-element--horizontal">
+                        <li className={layoutState.viewportWidth > 360 ? `list-element list-element--horizontal` : `list-element list-element--vertical`}>
                             <SvgIcon design="people" color="#272643" />
                             <p className="content-section__paragraph text-bold">
                                 Is accompanied by humanoids or other able NHEs traveling in the same party 
                             </p>
                         </li>
-                        <li className="list-element list-element--horizontal">
+                        <li className={layoutState.viewportWidth > 360 ? `list-element list-element--horizontal` : `list-element list-element--vertical`}>
                             <SvgIcon design="pet" color="#272643" />
                             <p className="content-section__paragraph text-bold">
                                 Carries assistive animals or pets capable of basic speech and emotional relay

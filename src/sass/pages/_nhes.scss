@@ -13,8 +13,24 @@
     }
 
     &__paragraph {
+        @include respond(giant-screen) {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         span {
             font-family: 'roboto-extrabold';
+        }
+    }
+
+    &__intro img {
+        width: 30rem;
+        @include respond(phone) {
+            width: 60vw;
+        }
+        @include respond(phone-medium) {
+            width: 70vw;
         }
     }
 
