@@ -2410,8 +2410,12 @@ p {
   .diptych__media {
     flex: 1;
     max-width: 40rem; }
+    @media screen and (max-width: 1000px) {
+      .diptych__media {
+        max-width: none; } }
     .diptych__media img {
-      max-height: 50rem; }
+      max-height: 50rem;
+      max-width: 40rem; }
   .diptych__content {
     flex: 1;
     align-self: flex-start;
@@ -2425,7 +2429,7 @@ p {
   .diptych__heading {
     font-size: 4rem;
     line-height: 5rem; }
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 480px) {
       .diptych__heading {
         font-size: 3rem; } }
   .diptych__subheading {
