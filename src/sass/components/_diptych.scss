@@ -1,0 +1,114 @@
+.diptych {
+    gap: 5rem;
+
+    &--vertical {
+        @include flex-column(center)
+    }
+
+    &--horizontal {
+        @include flex-row(center)
+    }
+
+    &__media {
+        flex: 1;
+        max-width: 40rem;
+        @include respond(tablet-landscape) {
+            max-width: none;
+        }
+        
+        img {
+            max-height: 50rem;
+            max-width: 40rem;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        align-self: flex-start;
+        @include flex-column(flex-start);
+        gap: 1.5rem;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    &__heading {
+        font-size: 4rem;
+        line-height: 5rem;
+        @include respond(phone-medium) {
+            font-size: 3rem;
+        }
+    }
+
+    &__subheading {
+        font-size: $size-regular;
+        margin: 0;
+    }
+
+    &__paragraph {
+        font-size: $size-small;
+
+        .highlight {
+            font-family: 'roboto-bold';
+            text-transform: uppercase;
+        }
+    }
+
+    &__section {
+        &--horizontal {
+            @include flex-row(flex-start);
+            gap: 2rem;
+        }
+
+        &--vertical {
+            @include flex-column(flex-start);
+            align-items: flex-start;
+            gap: 1rem;
+        }
+    }
+
+    &__iconset {
+        @include flex-row(flex-start);
+        gap: 2rem;
+
+        svg {
+            width: 3.5rem;
+        }
+
+        &.element--clickable {
+            svg:hover {
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+        }
+
+        .tooltip {
+            position: absolute;
+            min-width: max-content;
+            top: 0;
+            right: 120%;
+            @include respond(tablet-landscape) {
+                top: -150%;
+                right: initial;
+                left: 120%;
+                min-width: 25rem;
+            }
+            @include respond(tablet-portrait) {
+                left: initial;
+                right: 120%;
+            }
+            @include respond(desktop) {
+                top: initial;
+                right: initial;
+            }
+
+            ul {
+                margin-left: 2.5rem;
+                list-style: disc;
+            }
+        }
+    }
+
+    &__iconwrap {
+        position: relative;
+    }
+}

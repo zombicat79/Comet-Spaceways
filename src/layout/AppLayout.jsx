@@ -70,6 +70,17 @@ function AppLayout() {
                     outlineColor="#121212"
                     opacity="full" 
             />}
+
+            {/* Floating button for nhe detail pages */}
+            {/\/[\w-]+(ians|oids|grays|little-men|phics)$/.test(location.pathname) && 
+                <FloatingButton 
+                    position="bottom-right" 
+                    action={() => navigate("/nhes")} 
+                    icon="nhe" 
+                    bgColor="green" 
+                    outlineColor="#121212"
+                    opacity="full" 
+            />}
         </>
     )
 }

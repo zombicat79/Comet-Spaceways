@@ -67,7 +67,7 @@ function Home() {
                 <FlightSearch />
             </Banner>
             <section className="homepage__offers">
-                <h3 className="homepage__offers-heading">OFFERS FROM PLANET EARTH</h3>
+                <h2 className="homepage__offers-heading">OFFERS FROM PLANET EARTH</h2>
                 <div className="homepage__offers-list">
                 {offers.map((el) => {
                     return (
@@ -96,7 +96,7 @@ function Home() {
                         "Join humankind's colonization effort, and embark on a life-changing journey that will take you and your family to a new home on a brave new world.",
                         "New generational spaceship set to depart on early 2127."
                     ]}
-                    promoImg="trappist"
+                    promoImg="/promos/trappist.webp"
                     alert="do not miss your spot!"
                     cta="book now"
                 />

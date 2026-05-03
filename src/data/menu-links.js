@@ -24,7 +24,7 @@ const menuLinks = {
         { id: 16, text: 'Travel docs', action: 'popup', payload: 'work-in-progress', decoration: 'underline' },
         { id: 17, text: 'Additional services', action: 'popup', payload: 'work-in-progress', decoration: 'underline' },
         { id: 18, text: 'Flexibility services', action: 'popup', payload: 'work-in-progress', decoration: 'underline' },
-        { id: 19, text: 'Traveling as NHE', action: 'popup', payload: 'work-in-progress', decoration: 'underline' },
+        { id: 19, text: 'Traveling as NHE', action: 'link', payload: '/nhes', decoration: 'underline' },
         { id: 20, text: 'Spaceport transfer', action: 'popup', payload: 'work-in-progress', decoration: 'underline' },
         { id: 21, text: 'Security', action: 'popup', payload: 'work-in-progress', decoration: 'underline' },
     ]

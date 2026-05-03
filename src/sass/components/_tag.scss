@@ -1,8 +1,22 @@
 .tag {
-    color: $color-text-dark;
-    background-color: $color-body-light;
-    border-radius: 1.5rem;
-    box-shadow: 0 0 4.5rem $color-highlight-light;
+    //TAG COLORS
+    &--blue {
+        color: $color-text-dark;
+        background-color: $color-body-light;
+        box-shadow: 0 0 4.5rem $color-highlight-light;
+    }
+
+    &--green {
+        color: $color-text-dark;
+        background-color: $color-highlight-accent;
+        box-shadow: 0 0 4.5rem $color-highlight-accent;
+    }
+
+    // TAG SIZES
+    &--smallest {
+        padding: .5rem 1rem;
+        font-size: 1.3rem;
+    }
 
     &--smaller {
         padding: .75rem 1.5rem;
@@ -14,14 +28,35 @@
         font-size: 2rem;
     }
 
-    &:hover {
-        transform: scale(1.1);
+    //TAG SHAPES
+    &--round {
+        border-radius: 1.5rem;
+    }
+
+    &--square {
+        border-radius: 0;
+    }
+
+    &--none {
+        color: $color-text-light;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    &--interactive {
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     &__list {
         @include flex-row(flex-start);
         flex-wrap: wrap;
         gap: 2rem;
+
+        &--smallest {
+            gap: 1rem;
+        }
     }
 
     &__content {

@@ -3,6 +3,9 @@
 .element--clickable {
     cursor: pointer;
 }
+.element--observable {
+    cursor: help;
+}
 
 .link--container {
     @include flex-row(center);
@@ -38,4 +41,23 @@
     .highlight {
         text-transform: uppercase;
     }
+}
+
+// VISIBILITY
+.tablet-landscape--visible {
+    display: none;
+    @include respond(tablet-landscape) {
+        display: block;
+    }
+}
+
+.tablet-landscape--invisible {
+    @include respond(tablet-landscape) {
+        display: none;
+    }
+}
+
+// MARGINS
+.mb-2 {
+    margin-bottom: 2rem;
 }

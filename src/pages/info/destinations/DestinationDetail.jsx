@@ -1,19 +1,19 @@
 import { useEffect, useContext } from 'react';
-import { FlightSearchContext } from '../../contexts/FlightSearchContext';
-import { LayoutContext } from '../../contexts/LayoutContext';
+import { FlightSearchContext } from '../../../contexts/FlightSearchContext';
+import { LayoutContext } from '../../../contexts/LayoutContext';
 import { useLocation } from 'react-router';
 
-import useDestinationFetch from '../../hooks/useDestinationFetch';
+import useDestinationFetch from '../../../hooks/useDestinationFetch';
 
-import TagList from "./../../components/TagList";
-import Banner from './../../components/Banner';
-import ContentSection from './../../layout/ContentSection';
-import Figure from "../../components/Figure";
-import SliderTool from '../../components/SliderTool';
-import FlightSearch from '../../components/flight/FlightSearch';
+import TagList from "./../../../components/TagList";
+import Banner from './../../../components/Banner';
+import ContentSection from './../../../layout/ContentSection';
+import Figure from "../../../components/Figure";
+import SliderTool from '../../../components/SliderTool';
+import FlightSearch from '../../../components/flight/FlightSearch';
 
-import { maximizeDestinations } from '../../utilities/utils';
-import errors from '../../components/modalpieces/errorTypes';
+import { maximizeDestinations } from '../../../utilities/utils';
+import errors from '../../../components/modalpieces/errorTypes';
 
 function DestinationDetail() {
     const { loading, fetchAlert, setFetchAlert, destinations } = useDestinationFetch();
@@ -73,10 +73,17 @@ function DestinationDetail() {
                     background={{ img: currentDestinationData.port, height: 'full' }}
                 />
                 <section className="destination-tags">
-                    <TagList listMembers={tags} />
+                    <TagList 
+                        listMembers={tags} 
+                        linked={true} 
+                        actionable={false}
+                        path="/destinations"
+                        queryParams={true} 
+                        size="smaller"
+                    />
                 </section>
                 <ContentSection>
-                    <h2>{currentDestinationData.intro}</h2>
+                    <h1>{currentDestinationData.intro}</h1>
                     <p>{currentDestinationData.description}</p>
                     <ul className="features__list">
                         {currentDestinationData.features.map((el, index) => {
@@ -93,7 +100,7 @@ function DestinationDetail() {
                             )
                         })}
                     </ul>
-                    <h3>{currentDestinationData.promotional_catch}</h3>
+                    <h2>{currentDestinationData.promotional_catch}</h2>
                 </ContentSection>
                 <SliderTool 
                     contentType="link-img"
@@ -110,7 +117,7 @@ function DestinationDetail() {
                     }}
                 />
                 <section className="destination-search">
-                    <h3>READY TO GO?</h3>
+                    <h2>READY TO GO?</h2>
                     <FlightSearch fixedDestination={true} />
                 </section>
                 

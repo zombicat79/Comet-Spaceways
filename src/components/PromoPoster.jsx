@@ -3,22 +3,11 @@ import { LayoutContext } from './../contexts/LayoutContext';
 
 import Button from './../components/Button';
 
-import trappistImg from '/assets/images/trappist_promotion.webp';
-
-function PromoPoster({ promoCatch, heading, body, alert, cta, promoImg }) {
+function PromoPoster({ promoCatch, heading, body, alert, cta, action, promoImg }) {
     const { handlePopupLaunch } = useContext(LayoutContext);
     const featureImg = {
-        src: '',
-        alt: ''
-    }
-
-    switch(promoImg) {
-        case 'trappist':
-            featureImg.src = trappistImg;
-            featureImg.alt = 'Trappist';
-            break;
-        default:
-            break;
+        src: `./../assets/images/${promoImg}`,
+        alt: `${promoImg.match(/\/[\w\s-]+(?=.webp$)/)[0].replace('/', '')} poster`
     }
 
     return (
@@ -33,10 +22,13 @@ function PromoPoster({ promoCatch, heading, body, alert, cta, promoImg }) {
                 </div>
                 <p className="promoposter__alert">{alert}</p>
                 
-                <Button type="secondary" action={() => handlePopupLaunch({ modalClass: 'generic', content: 'work-in-progress' })} text="book now" />
+                {action 
+                    ? <Button type="secondary" action={action} text={cta} />
+                    : <Button type="secondary" action={() => handlePopupLaunch({ modalClass: 'generic', content: 'work-in-progress' })} text={cta} />
+                }
             </div>
             <div className="promoposter__side promoposter__side--right">
-                <img className="promoposter__img" src={`./../assets/images/${promoImg}_promotion.webp`} alt={`${promoImg} poster`} />
+                <img className="promoposter__img" src={featureImg.src} alt={featureImg.alt} />
             </div>
         </div>
     )

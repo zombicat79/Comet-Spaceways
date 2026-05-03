@@ -180,6 +180,20 @@ function filterSearch(queryTerm, sourceData, dataSection=null) {
     return filterResults;
 }
 
+function readFromStorage(storageType, dataKey) {
+    const storedData = storageType === 'local-storage' ? localStorage.getItem(dataKey) : sessionStorage.getItem(dataKey);
+    if (storedData) {
+        return JSON.parse(storedData);
+    }
+
+    return null;
+}
+
+function writeToStorage(storageType, dataKey, dataContent) {
+    storageType === 'local-storage' ? localStorage.setItem(dataKey, JSON.stringify(dataContent)) : sessionStorage.setItem(dataKey, JSON.stringify(dataContent));
+    return 'ok';
+}
+
 export { 
     minimizeDestinations, 
     maximizeDestinations, 
@@ -189,5 +203,7 @@ export {
     pickFromNumberRange, 
     pickRandomFromArray, 
     pickUniquesFromArray,
-    filterSearch
+    filterSearch,
+    readFromStorage,
+    writeToStorage
 };

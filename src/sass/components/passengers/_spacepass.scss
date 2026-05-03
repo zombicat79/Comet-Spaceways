@@ -1,0 +1,105 @@
+.spacepass {
+    @include flex-column(space-between);
+    background-color: $color-environmental-light;
+    border: 2px solid $color-environmental-pitch;
+    border-radius: 1rem;
+    color: $color-environmental-pitch;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('./../../../../public/assets/images/spacepass_background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 60rem;
+    height: 40rem;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    @include respond(tablet-landscape) {
+        width: 65vw;
+    }
+
+    &__header {
+        @include flex-row(space-evenly);
+        width: 100%;
+        font-family: 'russo-one';
+        color: $color-text-dark;
+        text-transform: uppercase;
+
+        .spacepass__provider {
+            font-size: $size-huge;
+            font-style: italic;
+        }
+    }
+
+    &__body {
+        @include flex-row(space-between);
+        width: 100%;
+        gap: 2rem;
+
+        .spacepass__picture {
+            width: 100%;
+            max-width: 15rem;
+            opacity: 0.6;
+            flex: 1;
+            @include respond(tablet-landscape) {
+                max-width: 10rem;
+            }
+        }
+
+        .spacepass__data {
+            flex: 2;
+            @include flex-column(space-between);
+            align-items: stretch;
+            gap: .5rem;
+
+            .data__row {
+                @include flex-row(space-between);
+            }
+
+            .data__item {
+                text-align: left;
+            }
+
+            .data__label {
+                font-size: $size-smaller;
+                font-family: 'roboto-regular';
+            }
+
+            .data__value {
+                font-family: 'roboto-semibold';
+            }
+        }
+    }
+
+    &__footer {
+        width: 100%;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    // GENERIC SPACEPASS
+    &--generic {
+        .specimen-tag {
+            position: absolute;
+            right: 8%;
+            top: 50%;
+            font-family: '';
+            font-size: $size-huge;
+            color: $color-highlight-extreme;
+            text-decoration: underline;
+            text-underline-offset: .75rem;
+            transform: rotate(-45deg);
+        }
+    }
+
+    // INVERTED SPACEPASS
+    &--inverted {
+        width: 600px;
+        height: 400px;
+        left: -26%;
+        @include respond(phone) {
+            width: 600px;
+            height: 80vw;
+            left: 10%;
+        }
+    }
+}

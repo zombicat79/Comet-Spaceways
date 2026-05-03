@@ -7,7 +7,7 @@ function AsideMenu({ links }) {
         const linksCopy = JSON.parse(JSON.stringify(links));
         for (let key in linksCopy) {
             linksCopy[key].forEach((el) => {
-                if (el.id !== 13) {
+                if (el.id !== 13 && el.id !== 19) {
                     el.action = 'hint';
                 }
             });

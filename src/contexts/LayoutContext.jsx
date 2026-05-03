@@ -11,14 +11,23 @@ function LayoutProvider({ children }) {
         dispatch({ type: 'fill/modal', payload: { content: data.content, props: data.props } });
         dispatch({ type: 'transform/modal', payload: data.modalClass })
         switch(true) {
-            case window.innerWidth <= 600:
+            // PRESENTATIONAL POPUP
+            case data.modalClass === 'presentational' && window.innerWidth <= 600:
                 dispatch({ type: 'resize/modal', payload: {width: 'small', height: 'small'} });
                 break;
-            case data.modalClass === 'flight-preview' && window.innerWidth > 1000:
+            case data.modalClass === 'presentational' && window.innerWidth > 600:
+                if (window.innerWidth > 768) {
+                    dispatch({ type: 'resize/modal', payload: {width: 'large', height: 'regular'} });
+                } else {
+                    dispatch({ type: 'resize/modal', payload: {width: 'regular', height: 'large'} });      
+                }
+                break;
+            case data.modalClass === 'presentational' && window.innerWidth > 768:
                 dispatch({ type: 'resize/modal', payload: {width: 'large', height: 'regular'} });
                 break;
-            case data.modalClass === 'flight-preview' && window.innerWidth <= 1000:
-                dispatch({ type: 'resize/modal', payload: {width: 'medium', height: 'regular'} });
+            // INFO & FUNCTIONAL PURPLE POPUP
+            case window.innerWidth <= 600:
+                dispatch({ type: 'resize/modal', payload: {width: 'small', height: 'small'} });
                 break;
             case data.modalClass === 'large':
                 dispatch({ type: 'resize/modal', payload: {width: 'regular', height: 'large'} });

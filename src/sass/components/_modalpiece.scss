@@ -7,7 +7,11 @@
 
     &__content {
         margin-top: 3rem;
-        @include flex-column(space-between)
+        @include flex-column(space-between);
+
+        &--rotate90 {
+            transform: rotate(90deg);
+        }
     }
 
     &__routing {
@@ -24,6 +28,30 @@
 
         &:not(.modalpiece__text:last-child) {
             margin-bottom: 1.5rem;
+        }
+    }
+
+    &__list {
+        margin-top: 2rem;
+
+        &--left {
+            text-align: left;
+        }
+
+        &--right {
+            text-align: right;
+        }
+    }
+
+    &__bulletpoint {
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .bulletpoint__header {
+            font-family: 'roboto-medium';
         }
     }
 
