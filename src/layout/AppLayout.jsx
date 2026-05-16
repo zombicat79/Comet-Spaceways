@@ -21,6 +21,7 @@ function AppLayout() {
     const floatingBtn1 = useRef(null);
     const floatingBtn2 = useRef(null);
     const floatingBtn3 = useRef(null);
+    const floatingBtn4 = useRef(null);
 
     let renderedHeader = ''
     switch(true) {
@@ -37,7 +38,10 @@ function AppLayout() {
 
     useLayoutEffect(() => {
         // Piling up logic for managing concurrent floating buttons on screen
-        const floatBtnsAmount = [floatingBtn1.current, floatingBtn2.current, floatingBtn3.current].filter(el => Boolean(el));
+        const floatBtnsAmount = [
+            floatingBtn1.current, floatingBtn2.current, 
+            floatingBtn3.current, floatingBtn4.current
+        ].filter(el => Boolean(el));
         floatBtnsAmount.forEach((btn, index) => {
             let position;
             if (Array.from(btn.classList).includes('btn--floating--bottom-right')) {
@@ -107,7 +111,8 @@ function AppLayout() {
 
             {/* Floating button for nhe detail pages */}
             {/\/[\w-]+(ians|oids|grays|little-men|phics)$/.test(location.pathname) && 
-                <FloatingButton 
+                <FloatingButton
+                    ref={floatingBtn4} 
                     position="bottom-right" 
                     action={() => navigate("/nhes")} 
                     icon="nhe" 
