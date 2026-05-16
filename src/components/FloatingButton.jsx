@@ -1,6 +1,6 @@
 import SvgIcon from "./SvgIcon";
 
-function FloatingButton({ position, action, bgColor, outlineColor, opacity, text, icon }) {
+function FloatingButton({ ref, position, action, bgColor, outlineColor, opacity, text, icon }) {
     let outlineColorClass;
     switch(outlineColor) {
         case "#121212":
@@ -12,6 +12,7 @@ function FloatingButton({ position, action, bgColor, outlineColor, opacity, text
     
     return (
         <button 
+            ref={ref}
             className={`btn btn--floating btn--floating--${outlineColorClass} btn--floating--bg-${bgColor} btn--floating--${position} btn--floating--${opacity}`}
             onClick={action}
         >
