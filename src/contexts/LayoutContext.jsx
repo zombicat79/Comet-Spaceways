@@ -4,7 +4,7 @@ import useLayout from '../hooks/useLayout';
 const LayoutContext = createContext();
 
 function LayoutProvider({ children }) {
-    const { layoutState, dispatch } = useLayout();
+    const { layoutState, dispatch, resetPageScroll } = useLayout();
 
     function handlePopupLaunch(data) {
         dispatch({ type: 'toggle/scroll' });
@@ -44,7 +44,8 @@ function LayoutProvider({ children }) {
         <LayoutContext.Provider value={{
             layoutState,
             handlePopupLaunch,
-            dispatch
+            dispatch,
+            resetPageScroll
         }}>
             {children}
         </LayoutContext.Provider>

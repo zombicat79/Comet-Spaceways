@@ -57,9 +57,13 @@ function reducer(state, action) {
 
 function useLayout() {
     const [layoutState, dispatch] = useReducer(reducer, initialState);
+    const resetPageScroll = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth'});
+        dispatch({ type: 'set/scrollHeight', payload: 0 });
+    }
     // console.log(layoutState)
 
-    return { layoutState, dispatch };
+    return { layoutState, dispatch, resetPageScroll };
 }
 
 export default useLayout;
