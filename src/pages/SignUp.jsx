@@ -14,6 +14,7 @@ import { completionChecker } from '../components/forms/error-checker';
 import User from '../data/user-data-model';
 // REMOVE AFTER REAL API CONNECTION
 import errors from './../components/modalpieces/errorTypes';
+import { createUserAccount } from './../services/userService';
 
 import footerBadge from '/logos/ctsw-logo_dark_badge.png';
 
@@ -40,7 +41,7 @@ function SignUp() {
         return accountState.race;
     }
 
-    function handleUserCreation() {
+    async function handleUserCreation() {
         const newUser = new User(accountState);
         if (accountState.race !== 'humanoid') {
             newUser.addRaceFeatures();
@@ -51,7 +52,8 @@ function SignUp() {
             newUser.addNationalityFeatures();
         }
         newUser.addJobFeatures();
-        console.log(newUser);
+        const createdUser = await createUserAccount(newUser);
+        console.log(createdUser);
 
         // REMOVE AFTER REAL API CONNECTION
         debugger
