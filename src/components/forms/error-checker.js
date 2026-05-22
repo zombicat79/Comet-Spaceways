@@ -61,6 +61,8 @@ function checkPattern(rule, pattern, actualValue) {
         switch(rule) {
             case 'patternConform-pwd':
                 return { status: 'ko', msg: 'Password must contain at least 1 digit, 1 uppercase character, 1 lowercase character and 1 special symbol' };
+            case 'patternConform-email':
+                return { status: 'ko', msg: 'You must provide a valid email' };
             default: // patternConform-no-space
                 return { status: 'ko', msg: 'Field cannot contain spaces' };
         }
@@ -126,6 +128,7 @@ function errorChecker(field, actualValue, formRules) {
                 break;
             case 'patternConform-no-space':
             case 'patternConform-pwd':
+            case 'patternConform-email':
                 checkResult = checkPattern(rule.name, rule.value, actualValue);
                 if (checkResult.status === 'ko') {
                     status = checkResult.status;

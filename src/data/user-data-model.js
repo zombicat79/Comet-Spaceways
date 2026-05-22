@@ -191,6 +191,7 @@ export default class User {
         this.avatar = newUserData.avatar;
         this.username = newUserData.username;
         this.password = newUserData.password;
+        this.email = newUserData.email;
         for (let key in userProgressData) {
             this[key] = userProgressData[key];
         }
