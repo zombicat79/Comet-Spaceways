@@ -18,10 +18,10 @@ const errors = {
         }
     },
     // REMOVE AFTER SIGN UP PROCESS COMPLETION
-    signupInterruption: {
-        title: "Demo mode",
-        paragraph1: "Apologies, account creation is not available yet.",
-        paragraph2: "You'll be now redirected so you can keep browsing our site. Please try again in the future 🙏🏼",
+    signupError: {
+        title: "Service Unavailable",
+        paragraph1: "We encountered a problem while creating your account.",
+        paragraph2: "You'll be now redirected so you can keep browsing our site. Please try again in a few minutes 🙏🏼",
         action: {
             type: "redirection",
             destinationUrl: "/"

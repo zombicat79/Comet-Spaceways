@@ -35,7 +35,7 @@ function SignUp() {
         onError: () => handlePopupLaunch({ 
             modalClass: 'generic', 
             content: 'error-notice',
-            props: { error: errors.signupInterruption } 
+            props: { error: errors.signupError } 
         })
     });
 
