@@ -1,18 +1,24 @@
-const baseUrl = 'http://localhost:3000/cometspaceways/api/v1/users';
+let baseUrl = '';
+const route = '/cometspaceways/api/v1/users';
+if (import.meta.env.PROD) {
+    baseUrl = 'https://backend.zombiecat.dev'
+} else {
+    baseUrl = 'http://localhost:3000';
+}
 
 async function createUserAccount(userData) {
     try {
-        const response = await fetch(baseUrl, {
+        const response = await fetch(`${baseUrl}${route}`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
             },
             body: JSON.stringify(userData)
         });
-        const data = await response.json();
+        const { data } = await response.json();
         return data;
     } catch(err) {
-        console.log(err);
+        throw new Error(err);
     }
 }
 

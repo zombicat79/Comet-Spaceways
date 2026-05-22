@@ -1,11 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
-import dotenv from 'dotenv'
-
-dotenv.config({ path: './../.env' });
 
 const supabase = createClient(
-    process.env.VITE_SUPABASE_DB_URL,
-    process.env.VITE_SUPABASE_DB_KEY
+    import.meta.env.VITE_SUPABASE_DB_URL,
+    import.meta.env.VITE_SUPABASE_DB_KEY
 );
 
 async function fetchJSONData() {

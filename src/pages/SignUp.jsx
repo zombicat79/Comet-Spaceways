@@ -1,4 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router';
+import { useMutation } from '@tanstack/react-query';
 import { Link } from 'react-router';
 import { LayoutContext } from '../contexts/LayoutContext'; 
 import useAccount from '../hooks/useAccount';
@@ -8,11 +10,11 @@ import ContentSection from './../layout/ContentSection';
 import Avatar from '../components/Avatar';
 import Form from '../components/forms/Form';
 import Badge from '../components/Badge';
+import Loader from '../components/Loader';
 
 import * as signupFormConfig from '../data/form-configs/signup-form-config';
 import { completionChecker } from '../components/forms/error-checker';
 import User from '../data/user-data-model';
-// REMOVE AFTER REAL API CONNECTION
 import errors from './../components/modalpieces/errorTypes';
 import { createUserAccount } from './../services/userService';
 
@@ -23,8 +25,19 @@ function SignUp() {
     const { accountState, accountDispatcher } = useAccount();
     const [passengerForms, setPassengerForms] = useState([]);
     const [progressDisabled, setProgressDisabled] = useState(true);
-    // REMOVE AFTER REAL API CONNECTION
     const { handlePopupLaunch } = useContext(LayoutContext);
+    const navigate = useNavigate();
+    const { mutate, isPending } = useMutation({
+        mutationFn: () => handleUserCreation(),
+        onSuccess: (data) => {
+            navigate(`/user-profile?id=${data.id}&newUser=true`);
+        },
+        onError: () => handlePopupLaunch({ 
+            modalClass: 'generic', 
+            content: 'error-notice',
+            props: { error: errors.signupInterruption } 
+        })
+    });
 
     function addPassengerForm(form) {
         setPassengerForms((curr) => [...curr, form]);
@@ -52,16 +65,7 @@ function SignUp() {
             newUser.addNationalityFeatures();
         }
         newUser.addJobFeatures();
-        const createdUser = await createUserAccount(newUser);
-        console.log(createdUser);
-
-        // REMOVE AFTER REAL API CONNECTION
-        debugger
-        handlePopupLaunch({ 
-            modalClass: 'generic', 
-            content: 'error-notice',
-            props: { error: errors.signupInterruption } 
-        })
+        return createUserAccount(newUser);
     }
 
     useEffect(() => {
@@ -97,7 +101,8 @@ function SignUp() {
             </div>
             <FlashOffer width={20} text='Get $50 AU for free!' textAngle={340} />
 
-            <ContentSection>
+            <ContentSection bodyModifiers={isPending ? ['disabled'] : null} >
+                {isPending && <Loader spinner='spinner_dark' />}
                 <div className="content-section__tab content-section__tab--r10">Your new account</div>
 
                 <h3 className={`signup__subtitle signup__subtitle--available`}>What are you?</h3>
@@ -173,7 +178,7 @@ function SignUp() {
             
             <div 
                 className={`signup__badge signup__badge--${progressDisabled ? 'disabled' : 'enabled'}`}
-                onClick={handleUserCreation}
+                onClick={mutate}
             >
                 <Badge imgSrc={footerBadge} />
             </div>

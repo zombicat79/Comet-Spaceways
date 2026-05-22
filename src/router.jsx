@@ -59,7 +59,8 @@ const router = createBrowserRouter([
         Component: MinAppLayout,
         children: [
             { path: '*', Component: NotFound },
-            { path: 'create-account', Component: SignUp }
+            { path: 'create-account', Component: SignUp },
+            { path: 'user-profile', Component: NotFound }
         ]
     }
 ]);
