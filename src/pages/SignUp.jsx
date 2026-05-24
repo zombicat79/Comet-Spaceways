@@ -36,7 +36,7 @@ function SignUp() {
         onSuccess: () => handlePopupLaunch({ 
             modalClass: 'generic', 
             content: 'work-in-progress',
-            props: { error: errors.processInterruption } 
+            props: { customContent: errors.processInterruption } 
         }),
         onError: () => handlePopupLaunch({ 
             modalClass: 'generic', 

@@ -29,8 +29,8 @@ const errors = {
     // READAPT PARAGRAPH CONTENT DEPENDING ON SPECIFIC NEEDS OF THE MOMENT (CURRENT: PROFILE PAGE)
     processInterruption: {
         title: null,
-        paragraph1: "Your account was successfully created, but profile page is not yet available. It will be real soon! 😎",
-        paragraph2: "You'll be now redirected so you can keep browsing other sections of our site",
+        paragraph1: "Your account was successfully created, but profile page is NOT YET available. It will be real soon! 😎",
+        paragraph2: "You'll be now redirected so you can keep browsing our site",
         action: {
             type: "redirection",
             destinationUrl: "/"

@@ -1,4 +1,28 @@
+import { useEffect, useContext } from 'react';
+import { LayoutContext } from '../../contexts/LayoutContext';
+import { useNavigate } from 'react-router';
+
 function WorkInProgress({ props }) {
+    let title, paragraph1, paragraph2, action;
+    if (props.customContent) {
+      title = props.customContent.title;
+      paragraph1 = props.customContent.paragraph1;
+      paragraph2 = props.customContent.paragraph2;
+      action = props.customContent.action;
+    }
+    const { dispatch } = useContext(LayoutContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      if (action && action.type === "redirection") {
+        setTimeout(() => {
+          dispatch({ type: "toggle/modal" });
+          dispatch({ type: "toggle/scroll" });
+          navigate(props?.customContent.action.destinationUrl);
+        }, 6000);
+      }
+    }, [action])
+
     return (
       <main className="modalpiece">
         <svg
@@ -90,9 +114,9 @@ function WorkInProgress({ props }) {
         </svg>
 
         <article className="modalpiece__content">
-            <h3 className="modalpiece__heading">{props.title || 'Work in Progress'}</h3>
-            <p className="modalpiece__text">{props.paragraph1 || 'Just as the Universe is constantly expanding, so is our website...'}</p>
-            <p className="modalpiece__text">{props.paragraph2 || "This section is still under construction. We'll make it available to you very soon! 😉"}</p>
+            <h3 className="modalpiece__heading">{title || 'Work in Progress'}</h3>
+            <p className="modalpiece__text">{paragraph1 || 'Just as the Universe is constantly expanding, so is our website...'}</p>
+            <p className="modalpiece__text">{paragraph2 || "This section is still under construction. We'll make it available to you very soon! 😉"}</p>
         </article>
       </main>
     );
