@@ -90,9 +90,9 @@ function WorkInProgress({ props }) {
         </svg>
 
         <article className="modalpiece__content">
-            <h3 className="modalpiece__heading">Work in Progress</h3>
-            <p className="modalpiece__text">Just as the Universe is constantly expanding, so is our website...</p>
-            <p className="modalpiece__text">This section is still under construction. We'll make it available to you very soon! 😉</p>
+            <h3 className="modalpiece__heading">{props.title || 'Work in Progress'}</h3>
+            <p className="modalpiece__text">{props.paragraph1 || 'Just as the Universe is constantly expanding, so is our website...'}</p>
+            <p className="modalpiece__text">{props.paragraph2 || "This section is still under construction. We'll make it available to you very soon! 😉"}</p>
         </article>
       </main>
     );

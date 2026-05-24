@@ -29,9 +29,15 @@ function SignUp() {
     const navigate = useNavigate();
     const { mutate, isPending } = useMutation({
         mutationFn: () => handleUserCreation(),
-        onSuccess: (data) => {
+        // UNCOMMENT AND ACTIVATE ONCE 'PROFILE-PAGE' IS AVAILABLE !!!
+        /* onSuccess: (data) => {
             navigate(`/user-profile?id=${data.id}&newUser=true`);
-        },
+        }, */
+        onSuccess: () => handlePopupLaunch({ 
+            modalClass: 'generic', 
+            content: 'work-in-progress',
+            props: { error: errors.processInterruption } 
+        }),
         onError: () => handlePopupLaunch({ 
             modalClass: 'generic', 
             content: 'error-notice',
