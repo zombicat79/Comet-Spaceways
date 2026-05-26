@@ -1,5 +1,6 @@
 import { createBrowserRouter, redirect } from "react-router";
 
+import ProtectedRoute from "./core/guards/ProtectedRoute";
 import AppLayout from "./layout/AppLayout";
 import MinAppLayout from "./layout/MinAppLayout";
 
@@ -12,7 +13,8 @@ import DestinationsIndex from "./pages/info/destinations/DestinationsIndex";
 import DestinationDetail from "./pages/info/destinations/DestinationDetail";
 import NheIndex from "./pages/info/nhes/NheIndex";
 import NheDetail from "./pages/info/nhes/NheDetail";
-import SignUp from "./pages/SignUp";
+import SignUp from "./features/profile/pages/SignUp";
+import UserProfile from "./features/profile/pages/UserProfile";
 import NotFound from "./pages/NotFound";
 
 import { fetchFlights } from "./components/flight/FlightScheduleLoader";
@@ -59,8 +61,13 @@ const router = createBrowserRouter([
         Component: MinAppLayout,
         children: [
             { path: '*', Component: NotFound },
-            { path: 'create-account', Component: SignUp },
-            { path: 'user-profile', Component: NotFound }
+            { path: 'create-account', Component: SignUp }
+        ]
+    },
+    {
+        Component: ProtectedRoute,
+        children: [
+            { path: 'user-profile', Component: UserProfile }
         ]
     }
 ]);
