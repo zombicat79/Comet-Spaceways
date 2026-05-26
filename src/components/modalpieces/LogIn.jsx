@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import { LayoutContext } from '../../contexts/LayoutContext';
 
 import Form from "./../forms/Form";
-import Badge from "./../Badge";
+import Badge from "../../shared/components/presentation/Badge";
 import Button from '../Button';
 import InfoPanel from './../InfoPanel';
 import * as formConfig from './../../data/form-configs/login-form-config';

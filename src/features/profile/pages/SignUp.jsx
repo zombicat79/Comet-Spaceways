@@ -2,21 +2,21 @@ import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router';
 import { useMutation } from '@tanstack/react-query';
 import { Link } from 'react-router';
-import { LayoutContext } from '../contexts/LayoutContext'; 
-import useAccount from '../hooks/useAccount';
+import { LayoutContext } from '../../../contexts/LayoutContext'; 
+import useAccount from '../../../hooks/useAccount';
 
-import FlashOffer from '../components/FlashOffer';
-import ContentSection from './../layout/ContentSection';
+import FlashOffer from '../../../shared/components/presentation/FlashOffer';
+import ContentSection from '../../../layout/ContentSection';
 import Avatar from '../components/Avatar';
-import Form from '../components/forms/Form';
-import Badge from '../components/Badge';
-import Loader from '../components/Loader';
+import Form from '../../../components/forms/Form';
+import Badge from '../../../shared/components/presentation/Badge';
+import Loader from '../../../shared/components/navigation/Loader';
 
-import * as signupFormConfig from '../data/form-configs/signup-form-config';
-import { completionChecker } from '../components/forms/error-checker';
-import User from '../data/user-data-model';
-import errors from './../components/modalpieces/errorTypes';
-import { createUserAccount } from './../services/userService';
+import * as signupFormConfig from '../../../data/form-configs/signup-form-config';
+import { completionChecker } from '../../../components/forms/error-checker';
+import User from '../../../data/user-data-model';
+import errors from '../../../components/modalpieces/errorTypes';
+import { createUserAccount } from '../../../services/userService';
 
 import footerBadge from '/logos/ctsw-logo_dark_badge.png';
 

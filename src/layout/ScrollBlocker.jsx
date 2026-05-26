@@ -2,7 +2,7 @@ import { useEffect, useContext } from 'react';
 import { LayoutContext } from './../contexts/LayoutContext';
 
 import Modal from './Modal';
-import Loader from '../components/Loader';
+import Loader from '../shared/components/navigation/Loader';
 
 function ScrollBlocker() {
     const { layoutState, dispatch } = useContext(LayoutContext);
