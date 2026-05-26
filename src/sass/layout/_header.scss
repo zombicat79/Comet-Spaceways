@@ -63,10 +63,6 @@
    &__icon {
       width: 5rem;
       height: 5rem;
-
-      @include respond(desktop) {
-         display: none;
-      }
    }
    
    &__main {

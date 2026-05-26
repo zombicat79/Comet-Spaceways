@@ -1,12 +1,12 @@
 
 import { useEffect, useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
-import { LayoutContext } from "../../contexts/LayoutContext";
+import { LayoutContext } from "../contexts/LayoutContext";
 
 // ARCHITECTURE ISSUE
-import AppLayout from "../../layout/AppLayout";
+import AppLayout from "./AppLayout";
 import { Outlet } from "react-router";
-import ScrollBlocker from './../../layout/ScrollBlocker';
+import ScrollBlocker from './ScrollBlocker';
 
 function ProtectedRoute() {
     const { isAuth } = useContext(AuthContext);

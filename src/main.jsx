@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import "react-datepicker/dist/react-datepicker.css";
 import './../css/style.css'
 
-import { AuthProvider } from './core/contexts/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 import { LayoutProvider } from './contexts/LayoutContext';
 import { DestinationsProvider } from './contexts/DestinationsContext';
 import { FlightSearchProvider } from './contexts/FlightSearchContext';
