@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useCallback } from 'react';
 import useLayout from '../hooks/useLayout';
 
 const LayoutContext = createContext();
@@ -6,7 +6,7 @@ const LayoutContext = createContext();
 function LayoutProvider({ children }) {
     const { layoutState, dispatch, resetPageScroll } = useLayout();
 
-    function handlePopupLaunch(data) {
+    const handlePopupLaunch = useCallback((data) => {
         dispatch({ type: 'toggle/scroll' });
         dispatch({ type: 'fill/modal', payload: { content: data.content, props: data.props } });
         dispatch({ type: 'transform/modal', payload: data.modalClass })
@@ -38,7 +38,7 @@ function LayoutProvider({ children }) {
         setTimeout(() => {
             dispatch({ type: 'toggle/modal' });
         }, 1000);
-    }
+    }, [dispatch]);
 
     return (
         <LayoutContext.Provider value={{

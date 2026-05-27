@@ -10,7 +10,7 @@ import ChoiceList from './ChoiceList';
 
 import { completionChecker } from './error-checker';
 
-function Form({ id, display, availability='available', formFields, defaultValues, formRules, onFormCheck, superform, superformHandler, superformAction, onFormAdd }) {
+function Form({ id, display, availability='available', formFields, defaultValues, formRules, onFormChange, onFormCheck, superform, superformHandler, superformAction, onFormAdd }) {
     const { formState, dispatch } = useForm(id, defaultValues);
     const formElement = useRef(null);
 
@@ -23,6 +23,12 @@ function Form({ id, display, availability='available', formFields, defaultValues
     useEffect(() => {
         if (onFormCheck) {
             onFormCheck(completionChecker(formElement.current, formRules));
+        }
+    }, [formState])
+
+    useEffect(() => {
+        if (onFormChange) {
+            onFormChange(formState);
         }
     }, [formState])
 

@@ -13,11 +13,10 @@ function ProtectedRoute() {
     const { handlePopupLaunch } = useContext(LayoutContext);
 
     useEffect(() => {
-        // DEPENDENCY ISSUE
         if (!isAuth) {
             handlePopupLaunch({ modalClass: 'large', content: 'login' });
         }
-    }, [isAuth])
+    }, [isAuth, handlePopupLaunch])
 
     if (!isAuth) {
         return (

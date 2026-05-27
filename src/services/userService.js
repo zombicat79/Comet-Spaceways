@@ -22,4 +22,15 @@ async function createUserAccount(userData) {
     }
 }
 
-export { createUserAccount };
+async function getUserAccount(username) {
+    try {
+        const response = await fetch(`${baseUrl}${route}`);
+        const { data } = await response.json();
+        const targetUser = data.users.find((user) => user.username === username);
+        return targetUser;
+    } catch(err) {
+        return 'ko';
+    }
+}
+
+export { createUserAccount, getUserAccount };
