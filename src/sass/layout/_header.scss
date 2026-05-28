@@ -103,7 +103,7 @@
             margin: 0 3vw;
          }
 
-         @include flex-row(center);
+         @include flex-row(space-between);
       }
    }
 

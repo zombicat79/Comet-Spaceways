@@ -2742,10 +2742,7 @@ p {
       color: #272643; }
   .header__icon {
     width: 5rem;
-    height: 5rem;
-    /* @include respond(desktop) {
-         display: none;
-      } */ }
+    height: 5rem; }
   .header__main {
     display: flex;
     justify-content: space-between;
@@ -2770,7 +2767,7 @@ p {
     @media screen and (min-width: 2000px) {
       .header__main {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center; }
         .header__main .navbar {
           flex: initial; }
