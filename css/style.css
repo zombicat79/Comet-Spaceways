@@ -2743,9 +2743,6 @@ p {
   .header__icon {
     width: 5rem;
     height: 5rem; }
-    @media screen and (min-width: 1280px) {
-      .header__icon {
-        display: none; } }
   .header__main {
     display: flex;
     justify-content: space-between;
@@ -2770,7 +2767,7 @@ p {
     @media screen and (min-width: 2000px) {
       .header__main {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center; }
         .header__main .navbar {
           flex: initial; }

@@ -11,7 +11,8 @@ const initialState = {
     job: '_____',
     avatar: null,
     username: null,
-    password: null
+    password: null,
+    email: null
 }
 
 function accountReducer(state, action) {
