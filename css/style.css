@@ -778,6 +778,8 @@ p {
     background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/starscape_wallpaper.webp"); }
   .banner--6 {
     background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/milky_way_background.webp"); }
+  .banner--7 {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/hubble_wallpaper.webp"); }
   .banner--LUN {
     background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/LUN/moon.webp"); }
   .banner--CEL {
@@ -814,8 +816,14 @@ p {
     .banner__text {
       max-width: 50rem;
       margin: 0 auto; } }
-  .banner__text .btn {
-    margin-top: 3rem; }
+  .banner__cta {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem; }
+    .banner__cta .btn {
+      min-width: 15rem; }
   @media screen and (max-width: 360px) {
     .banner__logo {
       max-width: 34rem;
@@ -3722,4 +3730,20 @@ p {
         background-image: url("./../assets/images/black-hole_banner.webp"); } }
   @media screen and (min-width: 2800px) {
     .notfound .banner--full {
+      height: 100vh; } }
+
+.restricted-page {
+  position: relative;
+  z-index: 2; }
+  @media screen and (max-width: 600px) {
+    .restricted-page .banner--7 {
+      background-image: url("./../assets/images/probe_mobile_wallpaper.webp"); } }
+  @media screen and (max-width: 480px) {
+    .restricted-page .banner--7 {
+      background-position-x: -12vw; } }
+  @media screen and (max-width: 360px) {
+    .restricted-page .banner--7 {
+      background-position-x: -35vw; } }
+  @media screen and (min-width: 2800px) {
+    .restricted-page .banner--full {
       height: 100vh; } }
