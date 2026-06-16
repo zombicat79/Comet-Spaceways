@@ -1,0 +1,53 @@
+.panel {
+    display: grid;
+    gap: 2rem;
+    padding: 5rem 8rem;
+
+    .content-section {
+        padding: 0;
+
+        &:first-child {
+            padding-top: 0;
+        }
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        &  > div {
+            height: 100%;
+        }
+    }
+
+    &--profile {
+        grid-template-areas:
+            "persona inv inv inv inv"
+            "persona inv inv inv inv"
+            "stats flights flights flights settings"
+            "stats quests quests quests settings" 
+        ;
+
+        .content-section:nth-child(1) {
+            grid-area: persona;
+        }
+
+        .content-section:nth-child(2) {
+            grid-area: inv;
+        }
+
+        .content-section:nth-child(3) {
+            grid-area: stats;
+        }
+
+        .content-section:nth-child(4) {
+            grid-area: flights;
+        }
+
+        .content-section:nth-child(5) {
+            grid-area: quests;
+        }
+
+        .content-section:nth-child(6) {
+            grid-area: settings;
+        }
+    }
+}

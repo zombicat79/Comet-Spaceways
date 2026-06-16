@@ -2584,6 +2584,33 @@ p {
         height: 80vw;
         left: 10%; } }
 
+.panel {
+  display: grid;
+  gap: 2rem;
+  padding: 5rem 8rem; }
+  .panel .content-section {
+    padding: 0; }
+    .panel .content-section:first-child {
+      padding-top: 0; }
+    .panel .content-section:last-child {
+      padding-bottom: 0; }
+    .panel .content-section > div {
+      height: 100%; }
+  .panel--profile {
+    grid-template-areas: "persona inv inv inv inv" "persona inv inv inv inv" "stats flights flights flights settings" "stats quests quests quests settings"; }
+    .panel--profile .content-section:nth-child(1) {
+      grid-area: persona; }
+    .panel--profile .content-section:nth-child(2) {
+      grid-area: inv; }
+    .panel--profile .content-section:nth-child(3) {
+      grid-area: stats; }
+    .panel--profile .content-section:nth-child(4) {
+      grid-area: flights; }
+    .panel--profile .content-section:nth-child(5) {
+      grid-area: quests; }
+    .panel--profile .content-section:nth-child(6) {
+      grid-area: settings; }
+
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
 
@@ -3747,3 +3774,15 @@ p {
   @media screen and (min-width: 2800px) {
     .restricted-page .banner--full {
       height: 100vh; } }
+
+.profile {
+  position: relative;
+  z-index: 3;
+  padding: 10rem 0;
+  /*background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.15)), 
+        url('./../assets/images/milky_way_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+  height: 100vh; }

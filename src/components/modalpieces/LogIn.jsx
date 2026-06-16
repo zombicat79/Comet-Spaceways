@@ -19,7 +19,7 @@ function LogIn({ props }) {
     const [authenticated, setAuthenticated] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
     const { dispatch } = useContext(LayoutContext);
-    const { setIsAuth } = useContext(AuthContext);
+    const { setIsAuth, setActiveUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
     function handleLinkText(action) {
@@ -50,7 +50,8 @@ function LogIn({ props }) {
       }
 
       setIsAuth(true);
-      handleNavigation('/');
+      setActiveUser(loginResponse)
+      handleNavigation('/user-profile');
     }
 
     function closeModal() {

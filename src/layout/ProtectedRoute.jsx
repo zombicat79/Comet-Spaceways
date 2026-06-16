@@ -5,6 +5,7 @@ import { LayoutContext } from "../contexts/LayoutContext";
 
 // ARCHITECTURE ISSUE
 import AppLayout from "./AppLayout";
+import MinAppLayout from "./MinAppLayout";
 import ScrollBlocker from './ScrollBlocker';
 import MinimalHeader from "./headers/MinimalHeader";
 import RestrictedPage from "../pages/RestrictedPage";
@@ -33,7 +34,7 @@ function ProtectedRoute() {
         )
     }
 
-    return <AppLayout />
+    return <MinAppLayout />
 }
 
 export default ProtectedRoute;
