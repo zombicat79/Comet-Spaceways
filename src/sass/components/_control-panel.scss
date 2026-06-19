@@ -2,6 +2,7 @@
     display: grid;
     gap: 2rem;
     padding: 5rem 8rem;
+    height: 100%;
 
     .content-section {
         padding: 0;
@@ -13,21 +14,23 @@
             padding-bottom: 0;
         }
 
-        &  > div {
+        & > div {
             height: 100%;
         }
     }
 
     &--profile {
+        grid-template-columns: repeat(5, 1fr);
         grid-template-areas:
-            "persona inv inv inv inv"
-            "persona inv inv inv inv"
-            "stats flights flights flights settings"
-            "stats quests quests quests settings" 
+            "usr inv inv inv inv"
+            "usr sks sks sks set"
+            "sts flt flt flt set"
+            "sts qst qst qst set"
+            "sts nts nts nts set"
         ;
 
         .content-section:nth-child(1) {
-            grid-area: persona;
+            grid-area: usr;
         }
 
         .content-section:nth-child(2) {
@@ -35,19 +38,68 @@
         }
 
         .content-section:nth-child(3) {
-            grid-area: stats;
+            grid-area: sts;
         }
 
         .content-section:nth-child(4) {
-            grid-area: flights;
+            grid-area: sks;
         }
 
         .content-section:nth-child(5) {
-            grid-area: quests;
+            grid-area: flt;
         }
 
         .content-section:nth-child(6) {
-            grid-area: settings;
+            grid-area: qst;
+        }
+
+        .content-section:nth-child(7) {
+            grid-area: nts;
+        }
+
+        .content-section:nth-child(8) {
+            grid-area: set;
+        }
+    }
+
+    &__piece {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &--horizontal {
+            @include flex-row(center);
+        }
+
+        .piece {
+            &__title {
+                justify-self: flex-start;
+                text-transform: uppercase;
+                font-weight: 900;
+            }
+
+            &__dataItem {
+                &--piped:not(.piece__dataItem:last-child)::after {
+                    content: "|";
+                    margin: 0 1rem;
+                }
+
+                &--bar {
+                    height: 1rem;
+                    border: 1px solid $color-text-dark;
+                    border-radius: 5px;
+                }
+            }
+
+            &__dataProgress {
+                height: 100%;
+                border-radius: inherit;
+                background-color: $color-highlight-accent;
+
+                &--15 {
+                    width: calc(15% * 3);
+                }
+            }
         }
     }
 }

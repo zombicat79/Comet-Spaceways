@@ -1,10 +1,14 @@
 .avatar {
-    width: fit-content;
-    border: 5px solid $color-text-dark;
-    border-radius: 50%;
+    width: min-content;
+    gap: 1rem;
+
+    &--vertical {
+        @include flex-column(center);
+    }
 
     &__img-wrapper {
-        border-radius: inherit;
+        border: 5px solid $color-text-dark;
+        border-radius: 50%;
         background-image: url('/assets/images/characters/profiles/profile-default.png');
         background-size: cover;
         background-position: center center;

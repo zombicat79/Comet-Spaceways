@@ -194,6 +194,10 @@ function writeToStorage(storageType, dataKey, dataContent) {
     return 'ok';
 }
 
+function capitalizeFirst(word) {
+    return word.replace(/^\w/, word[0].toUpperCase());
+}
+
 export { 
     minimizeDestinations, 
     maximizeDestinations, 
@@ -205,5 +209,6 @@ export {
     pickUniquesFromArray,
     filterSearch,
     readFromStorage,
-    writeToStorage
+    writeToStorage,
+    capitalizeFirst
 };

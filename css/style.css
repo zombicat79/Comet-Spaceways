@@ -977,11 +977,16 @@ p {
     text-align: right; }
 
 .avatar {
-  width: fit-content;
-  border: 5px solid #272643;
-  border-radius: 50%; }
+  width: min-content;
+  gap: 1rem; }
+  .avatar--vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
   .avatar__img-wrapper {
-    border-radius: inherit;
+    border: 5px solid #272643;
+    border-radius: 50%;
     background-image: url("/assets/images/characters/profiles/profile-default.png");
     background-size: cover;
     background-position: center center;
@@ -2587,7 +2592,8 @@ p {
 .panel {
   display: grid;
   gap: 2rem;
-  padding: 5rem 8rem; }
+  padding: 5rem 8rem;
+  height: 100%; }
   .panel .content-section {
     padding: 0; }
     .panel .content-section:first-child {
@@ -2597,19 +2603,49 @@ p {
     .panel .content-section > div {
       height: 100%; }
   .panel--profile {
-    grid-template-areas: "persona inv inv inv inv" "persona inv inv inv inv" "stats flights flights flights settings" "stats quests quests quests settings"; }
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "usr inv inv inv inv" "usr sks sks sks set" "sts flt flt flt set" "sts qst qst qst set" "sts nts nts nts set"; }
     .panel--profile .content-section:nth-child(1) {
-      grid-area: persona; }
+      grid-area: usr; }
     .panel--profile .content-section:nth-child(2) {
       grid-area: inv; }
     .panel--profile .content-section:nth-child(3) {
-      grid-area: stats; }
+      grid-area: sts; }
     .panel--profile .content-section:nth-child(4) {
-      grid-area: flights; }
+      grid-area: sks; }
     .panel--profile .content-section:nth-child(5) {
-      grid-area: quests; }
+      grid-area: flt; }
     .panel--profile .content-section:nth-child(6) {
-      grid-area: settings; }
+      grid-area: qst; }
+    .panel--profile .content-section:nth-child(7) {
+      grid-area: nts; }
+    .panel--profile .content-section:nth-child(8) {
+      grid-area: set; }
+  .panel__piece {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+    .panel__piece--horizontal {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .panel__piece .piece__title {
+      justify-self: flex-start;
+      text-transform: uppercase;
+      font-weight: 900; }
+    .panel__piece .piece__dataItem--piped:not(.piece__dataItem:last-child)::after {
+      content: "|";
+      margin: 0 1rem; }
+    .panel__piece .piece__dataItem--bar {
+      height: 1rem;
+      border: 1px solid #272643;
+      border-radius: 5px; }
+    .panel__piece .piece__dataProgress {
+      height: 100%;
+      border-radius: inherit;
+      background-color: #32CD32; }
+      .panel__piece .piece__dataProgress--15 {
+        width: calc(15% * 3); }
 
 .selector--disabled .react-datepicker-wrapper {
   pointer-events: none; }
