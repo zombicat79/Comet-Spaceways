@@ -198,10 +198,18 @@ function capitalizeFirst(word) {
     return word.replace(/^\w/, word[0].toUpperCase());
 }
 
+function pruneString(string, pruneChars) {
+    let newString = string;
+    for (const char of pruneChars) {
+        newString = newString.replace(char, " ");
+    }
+    return newString;
+}
+
 export { 
     minimizeDestinations, 
     maximizeDestinations, 
-    formatTimeUnits, 
+    formatTimeUnits,
     getTimeSummaryFromSeconds,
     displayDurationInfo, 
     pickFromNumberRange, 
@@ -210,5 +218,6 @@ export {
     filterSearch,
     readFromStorage,
     writeToStorage,
-    capitalizeFirst
+    capitalizeFirst,
+    pruneString
 };

@@ -1,15 +1,19 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useRef, useEffect } from "react";
 
 import ContentSection from "../../../layout/ContentSection";
 import Avatar from "./../../Avatar";
 
-import { capitalizeFirst } from "../../../utilities/utils";
+import { capitalizeFirst, pruneString } from "../../../utilities/utils";
 
 // COMPOUND COMPONENT CONTEXT
 const PanelContext = createContext();
 function PanelProvider({ children, panelData }) {
+    function formatDataOutput(dataOutput) {
+        return pruneString(capitalizeFirst(dataOutput), ["_"]);
+    }
+
     return (
-        <PanelContext.Provider value={panelData}>
+        <PanelContext.Provider value={{ panelData, formatDataOutput }}>
             {children}
         </PanelContext.Provider>
     )
@@ -22,7 +26,7 @@ function ControlPanel({ distribution, panelComponents, panelData }) {
         <PanelProvider panelData={panelData}>
             <div className={`panel panel--${distribution}`}>
                 {panelComponents.map((el) => {
-                    return <ContentSection>{el}</ContentSection>
+                    return <ContentSection key={el.keyId}>{el}</ContentSection>
                 })}
             </div>
         </PanelProvider>
@@ -31,25 +35,25 @@ function ControlPanel({ distribution, panelComponents, panelData }) {
 
 // CHILD COMPONENTS
 function CharacterPiece({ relevantKeys }) {
-    const panelData = useContext(PanelContext);
+    const { panelData, formatDataOutput } = useContext(PanelContext);
 
     return (
         <div className='panel__piece panel__piece--horizontal'>
             <Avatar character={panelData[relevantKeys[8]]} text={panelData[relevantKeys[0]] + " " + panelData[relevantKeys[1]]} />
-            <div>
-                {panelData[relevantKeys[2]] && <p><span>{`${relevantKeys[2].toUpperCase()}: `}</span><span>{panelData[relevantKeys[2]]}</span></p>}
-                {panelData[relevantKeys[3]] && <p><span>{`${relevantKeys[3].toUpperCase()}: `}</span><span>{panelData[relevantKeys[3]]}</span></p>}
-                {panelData[relevantKeys[4]] && <p><span>{`${relevantKeys[4].toUpperCase()}: `}</span><span>{panelData[relevantKeys[4]]}</span></p>}
-                {panelData[relevantKeys[5]] && <p><span>{`${relevantKeys[5].toUpperCase()}: `}</span><span>{panelData[relevantKeys[5]]}</span></p>}
-                {panelData[relevantKeys[6]] && <p><span>{`${relevantKeys[6].toUpperCase()}: `}</span><span>{panelData[relevantKeys[6]]}</span></p>}
-                {panelData[relevantKeys[7]] && <p><span>{`${relevantKeys[7].toUpperCase()}: `}</span><span>{panelData[relevantKeys[7]]}</span></p>}
+            <div className='text-left'>
+                {panelData[relevantKeys[2]] && <p className='piece__dataWrapper piece__dataWrapper--left'><span className='piece__dataIdentifier'>{`${relevantKeys[2]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[2]])}</span></p>}
+                {panelData[relevantKeys[3]] && <p className='piece__dataWrapper piece__dataWrapper--left'><span className='piece__dataIdentifier'>{`${relevantKeys[3]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[3]])}</span></p>}
+                {panelData[relevantKeys[4]] && <p className='piece__dataWrapper piece__dataWrapper--left'><span className='piece__dataIdentifier'>{`${relevantKeys[4]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[4]])}</span></p>}
+                {panelData[relevantKeys[5]] && <p className='piece__dataWrapper piece__dataWrapper--left'><span className='piece__dataIdentifier'>{`${relevantKeys[5]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[5]])}</span></p>}
+                {panelData[relevantKeys[6]] && <p className='piece__dataWrapper piece__dataWrapper--left'><span className='piece__dataIdentifier'>{`${relevantKeys[6]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[6]])}</span></p>}
+                {panelData[relevantKeys[7]] && <p className='piece__dataWrapper piece__dataWrapper--left'><span className='piece__dataIdentifier'>{`${relevantKeys[7]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[7]])}</span></p>}
             </div>
         </div>
     )
 }
 
-function StatsPiece({ relevantKeys }) {
-    const panelData = useContext(PanelContext);
+function StatsPiece({ relevantKeys, topReferenceValue }) {
+    const { panelData } = useContext(PanelContext);
 
     return (
         <div className='panel__piece'>
@@ -57,11 +61,8 @@ function StatsPiece({ relevantKeys }) {
                 if (typeof panelData[key] !== 'number') return null;
 
                 return (
-                    <div className='piece__dataWrapper'>
-                        <span className='piece__dataIdentifier'>{key}</span>
-                        <div className='piece__dataItem piece__dataItem--bar'>
-                            <div className={`piece__dataProgress piece__dataProgress--${panelData[key]}`}  />
-                        </div>
+                    <div key={key} className='piece__dataWrapper'>
+                        <StatsBar title={key} value={panelData[key]} topReferenceValue={topReferenceValue} />
                     </div>
                 )
             })}
@@ -69,8 +70,31 @@ function StatsPiece({ relevantKeys }) {
     )
 }
 
+function StatsBar({ title, value, topReferenceValue }) {
+    const bar = useRef();
+
+    useEffect(() => {
+        bar.current.style.width = `${(value / topReferenceValue) * 100}%`;
+        if (value < topReferenceValue / 3) {
+            bar.current.style.backgroundColor = '#f59977';
+        }
+        if (value < topReferenceValue / 5) {
+            bar.current.style.backgroundColor = '#FF4500';
+        }
+    }, [value, topReferenceValue])
+    
+    return (
+        <>
+            <span className='piece__dataIdentifier'>{title}</span>
+            <div className='piece__dataItem piece__dataItem--bar' >
+                <div ref={bar} className='piece__dataProgress' />
+            </div>
+        </>
+    )
+}
+
 function StockPiece({ pieceTitle, relevantKeys }) {
-    const panelData = useContext(PanelContext);
+    const { panelData, formatDataOutput } = useContext(PanelContext);
 
     return (
         <div className='panel__piece'>
@@ -80,7 +104,7 @@ function StockPiece({ pieceTitle, relevantKeys }) {
                 if (!panelData[key].length) return <span>Empty</span>
 
                 return panelData[key].map((el) => {
-                    return <span className='piece__dataItem piece__dataItem--piped'>{capitalizeFirst(el)}</span>
+                    return <span key={`stock-${el}`} className='piece__dataItem piece__dataItem--piped'>{formatDataOutput(el)}</span>
                 })
             })}
         </div>

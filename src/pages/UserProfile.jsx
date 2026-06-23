@@ -5,16 +5,15 @@ import ControlPanel from "../components/ui/control-panel/ControlPanel";
 
 function UserProfile() {
     const { activeUser } = useContext(AuthContext);
-    console.log(activeUser)
     const panelComponents = [
-        <ControlPanel.CharacterPiece relevantKeys={['name', 'surname', 'race', 'nationality', 'origin', 'build', 'gender', 'job', 'avatar']} />, 
-        <ControlPanel.StockPiece pieceTitle='Inventory' relevantKeys={['inventory']} />, 
-        <ControlPanel.StatsPiece relevantKeys={['health', 'strength', 'intelligence', 'wisdom', 'dexterity', 'diplomacy']} />,
-        <ControlPanel.StockPiece pieceTitle='Skills' relevantKeys={['skills']} />,
-        <ControlPanel.HistoryPiece pieceTitle='travel history' relevantKeys={['activeFlight', 'flightHistory']} />,
-        <ControlPanel.HistoryPiece pieceTitle='Skills' relevantKeys={['activeQuest', 'questHistory']} />,
-        <ControlPanel.HistoryPiece pieceTitle='message board' relevantKeys={['']} />,
-        <ControlPanel.SettingsPiece relevantKeys={['username', 'password', 'email']} />
+        <ControlPanel.CharacterPiece keyId={1} relevantKeys={['name', 'surname', 'race', 'nationality', 'origin', 'build', 'gender', 'job', 'avatar']} />, 
+        <ControlPanel.StockPiece keyId={2} pieceTitle='Inventory' relevantKeys={['inventory']} />, 
+        <ControlPanel.StatsPiece keyId={3} relevantKeys={['health', 'strength', 'intelligence', 'wisdom', 'dexterity', 'diplomacy']} topReferenceValue={25} />,
+        <ControlPanel.StockPiece keyId={4} pieceTitle='Skills' relevantKeys={['skills']} />,
+        <ControlPanel.HistoryPiece keyId={5} pieceTitle='travel history' relevantKeys={['activeFlight', 'flightHistory']} />,
+        <ControlPanel.HistoryPiece keyId={6} pieceTitle='quest history' relevantKeys={['activeQuest', 'questHistory']} />,
+        <ControlPanel.HistoryPiece keyId={7} pieceTitle='messages' relevantKeys={['']} />,
+        <ControlPanel.SettingsPiece keyId={8} relevantKeys={['username', 'password', 'email']} />
     ];
 
     return (
