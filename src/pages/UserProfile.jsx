@@ -6,14 +6,15 @@ import ControlPanel from "../components/ui/control-panel/ControlPanel";
 function UserProfile() {
     const { activeUser } = useContext(AuthContext);
     const panelComponents = [
-        <ControlPanel.CharacterPiece keyId={1} relevantKeys={['name', 'surname', 'race', 'nationality', 'origin', 'build', 'gender', 'job', 'avatar']} />, 
-        <ControlPanel.StockPiece keyId={2} pieceTitle='Inventory' relevantKeys={['inventory']} />, 
+        <ControlPanel.CharacterPiece keyId={1} relevantKeys={['name', 'surname', 'race', 'nationality', 'origin', 'build', 'gender', 'job', 'avatar']} />,
+        <ControlPanel.StockitemPiece relevantItem='money' unit='AU' />, 
+        <ControlPanel.StockpilePiece keyId={2} pieceTitle='inventory' relevantKeys={['inventory']} />, 
         <ControlPanel.StatsPiece keyId={3} relevantKeys={['health', 'strength', 'intelligence', 'wisdom', 'dexterity', 'diplomacy']} topReferenceValue={25} />,
-        <ControlPanel.StockPiece keyId={4} pieceTitle='Skills' relevantKeys={['skills']} />,
+        <ControlPanel.StockpilePiece keyId={4} pieceTitle='skills' relevantKeys={['skills']} />,
         <ControlPanel.HistoryPiece keyId={5} pieceTitle='travel history' relevantKeys={['activeFlight', 'flightHistory']} />,
         <ControlPanel.HistoryPiece keyId={6} pieceTitle='quest history' relevantKeys={['activeQuest', 'questHistory']} />,
         <ControlPanel.HistoryPiece keyId={7} pieceTitle='messages' relevantKeys={['']} />,
-        <ControlPanel.SettingsPiece keyId={8} relevantKeys={['username', 'password', 'email']} />
+        <ControlPanel.SettingsPiece keyId={8} pieceTitle='settings' relevantKeys={['username', 'password', 'email']} />
     ];
 
     return (

@@ -20,13 +20,13 @@
     }
 
     &--profile {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         grid-template-areas:
-            "usr inv inv inv inv"
-            "usr sks sks sks set"
-            "sts flt flt flt set"
-            "sts qst qst qst set"
-            "sts nts nts nts set"
+            "usr itm inv inv inv inv"
+            "usr sks sks sks sks set"
+            "sts flt flt flt flt set"
+            "sts qst qst qst qst set"
+            "sts nts nts nts nts set"
         ;
 
         .content-section:nth-child(1) {
@@ -34,30 +34,34 @@
         }
 
         .content-section:nth-child(2) {
-            grid-area: inv;
+            grid-area: itm;
         }
 
         .content-section:nth-child(3) {
-            grid-area: sts;
+            grid-area: inv;
         }
 
         .content-section:nth-child(4) {
-            grid-area: sks;
+            grid-area: sts;
         }
 
         .content-section:nth-child(5) {
-            grid-area: flt;
+            grid-area: sks;
         }
 
         .content-section:nth-child(6) {
-            grid-area: qst;
+            grid-area: flt;
         }
 
         .content-section:nth-child(7) {
-            grid-area: nts;
+            grid-area: qst;
         }
 
         .content-section:nth-child(8) {
+            grid-area: nts;
+        }
+
+        .content-section:nth-child(9) {
             grid-area: set;
         }
     }
@@ -109,6 +113,27 @@
                     border: 1px solid $color-text-dark;
                     border-radius: 5px;
                 }
+
+                &--contained {
+                    width: max-content;
+                    font-weight: 900;
+                }
+
+                // COLOR & EMOJI CHANGE
+
+                &--warning {
+                    color: $color-body-error;
+                    &::before {
+                        content: "⚠️ ";
+                    }
+                }
+
+                &--danger {
+                    color: $color-highlight-extreme;
+                    &::before {
+                        content: "🚨 ";
+                    }
+                }
             }
 
             &__dataProgress {
@@ -122,6 +147,12 @@
         .avatar__text {
             text-transform: uppercase;
             font-weight: 900;
+        }
+
+        svg {
+            width: 100%;
+            max-width: 5rem;
+            min-width: 2.5rem;
         }
     }
 }

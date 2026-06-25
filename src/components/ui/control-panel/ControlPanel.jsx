@@ -2,6 +2,7 @@ import { createContext, useContext, useRef, useEffect } from "react";
 
 import ContentSection from "../../../layout/ContentSection";
 import Avatar from "./../../Avatar";
+import SvgIcon from "../../SvgIcon";
 
 import { capitalizeFirst, pruneString } from "../../../utilities/utils";
 
@@ -93,7 +94,7 @@ function StatsBar({ title, value, topReferenceValue }) {
     )
 }
 
-function StockPiece({ pieceTitle, relevantKeys }) {
+function StockpilePiece({ pieceTitle, relevantKeys }) {
     const { panelData, formatDataOutput } = useContext(PanelContext);
 
     return (
@@ -101,12 +102,26 @@ function StockPiece({ pieceTitle, relevantKeys }) {
             <h2 className='piece__title'>{pieceTitle}</h2>
             {relevantKeys.map((key) => {
                 if (!Array.isArray(panelData[key])) return null;
-                if (!panelData[key].length) return <span>Empty</span>
+                if (!panelData[key].length) return <span>⚠️ Empty</span>
 
                 return panelData[key].map((el) => {
                     return <span key={`stock-${el}`} className='piece__dataItem piece__dataItem--piped'>{formatDataOutput(el)}</span>
                 })
             })}
+        </div>
+    )
+}
+
+function StockitemPiece({ relevantItem, unit }) {
+    const { panelData } = useContext(PanelContext);
+    console.log(panelData)
+
+    return (
+        <div className='panel__piece panel__piece--horizontal'>
+            <SvgIcon design={relevantItem} />
+            {panelData[relevantItem] <= 10 && <span className='piece__dataItem piece__dataItem--contained piece__dataItem--warning'>{panelData[relevantItem]} {unit}</span>}
+            {panelData[relevantItem] <= 0 && <span className='piece__dataItem piece__dataItem--contained piece__dataItem--danger'>{panelData[relevantItem]} {unit}</span>}
+            {panelData[relevantItem] > 10 && <span className='piece__dataItem piece__dataItem--contained'>{panelData[relevantItem]} {unit}</span>}
         </div>
     )
 }
@@ -119,10 +134,13 @@ function HistoryPiece({ pieceTitle }) {
     )
 }
 
-function SettingsPiece() {
+function SettingsPiece({ pieceTitle }) {
     return (
         <div className='panel__piece'>
+            <h2 className='piece__title'>{pieceTitle}</h2>
+            <div className='piece__dataWrapper'>
 
+            </div>
         </div>
     )
 }
@@ -131,6 +149,7 @@ ControlPanel.CharacterPiece = CharacterPiece;
 ControlPanel.StatsPiece = StatsPiece;
 ControlPanel.SettingsPiece = SettingsPiece;
 ControlPanel.HistoryPiece = HistoryPiece;
-ControlPanel.StockPiece = StockPiece;
+ControlPanel.StockpilePiece = StockpilePiece;
+ControlPanel.StockitemPiece = StockitemPiece;
 
 export default ControlPanel;
