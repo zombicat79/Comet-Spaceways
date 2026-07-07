@@ -2635,6 +2635,9 @@ p {
       justify-content: center;
       align-items: center;
       gap: 3rem; }
+    .panel__piece--not-centered {
+      top: initial;
+      transform: translateY(0); }
     .panel__piece .piece__title {
       justify-self: flex-start;
       text-transform: uppercase;

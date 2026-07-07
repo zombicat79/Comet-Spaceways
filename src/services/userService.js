@@ -11,7 +11,7 @@ async function createUserAccount(userData) {
         const response = await fetch(`${baseUrl}${route}`, {
             method: "POST",
             headers: {
-                "Content-type": "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(userData)
         });
@@ -24,10 +24,16 @@ async function createUserAccount(userData) {
 
 async function getUserAccount(username) {
     try {
-        const response = await fetch(`${baseUrl}${route}`);
-        const { data } = await response.json();
-        const targetUser = data.users.find((user) => user.username === username);
-        return targetUser;
+        if (import.meta.env.PROD) {
+            const response = await fetch(`${baseUrl}${route}/${username}`);
+            const { data } = await response.json();
+            return data;
+        } else {
+            const response = await fetch(`${baseUrl}${route}`);
+            const { data } = await response.json();
+            const targetUser = data.users.find((user) => user.username === username);
+            return targetUser;
+        }
     } catch(err) {
         return 'ko';
     }

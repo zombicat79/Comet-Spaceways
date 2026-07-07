@@ -13,7 +13,7 @@ import { getUserAccount } from '../../services/userService';
 
 import cometBadge from '/logos/ctsw-logo_dark_badge.png';
 
-function LogIn({ props }) {
+function LogIn() {
     const [formValues, setFormValues] = useState({});
     const [linkText, setLinkText] = useState('I do not have an account yet...');
     const [authenticated, setAuthenticated] = useState(false);

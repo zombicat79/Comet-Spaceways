@@ -76,6 +76,11 @@
             gap: 3rem;
         }
 
+        &--not-centered {
+            top: initial;
+            transform: translateY(0);
+        }
+
         .piece {
             &__title {
                 justify-self: flex-start;

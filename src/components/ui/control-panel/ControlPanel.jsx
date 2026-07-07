@@ -3,6 +3,7 @@ import { createContext, useContext, useRef, useEffect } from "react";
 import ContentSection from "../../../layout/ContentSection";
 import Avatar from "./../../Avatar";
 import SvgIcon from "../../SvgIcon";
+import Button from "../../Button";
 
 import { capitalizeFirst, pruneString } from "../../../utilities/utils";
 
@@ -94,20 +95,24 @@ function StatsBar({ title, value, topReferenceValue }) {
     )
 }
 
-function StockpilePiece({ pieceTitle, relevantKeys }) {
+function StockpilePiece({ pieceTitle, relevantKey }) {
     const { panelData, formatDataOutput } = useContext(PanelContext);
+    let content;
+
+    if (!Array.isArray(panelData[relevantKey])) {
+        content = null;
+    } else if (!panelData[relevantKey].length) {
+        content = <span>⚠️ Empty</span>;
+    } else {
+        content = panelData[relevantKey].map((el) => {
+            return <span key={`stockpile-${el}`} className='piece__dataItem piece__dataItem--piped'>{formatDataOutput(el)}</span>
+        });
+    }
 
     return (
-        <div className='panel__piece'>
+        <div className='panel__piece panel__piece--not-centered'>
             <h2 className='piece__title'>{pieceTitle}</h2>
-            {relevantKeys.map((key) => {
-                if (!Array.isArray(panelData[key])) return null;
-                if (!panelData[key].length) return <span>⚠️ Empty</span>
-
-                return panelData[key].map((el) => {
-                    return <span key={`stock-${el}`} className='piece__dataItem piece__dataItem--piped'>{formatDataOutput(el)}</span>
-                })
-            })}
+            {content}
         </div>
     )
 }
@@ -128,19 +133,35 @@ function StockitemPiece({ relevantItem, unit }) {
 
 function HistoryPiece({ pieceTitle }) {
     return (
-        <div className='panel__piece'>
+        <div className='panel__piece panel__piece--not-centered'>
             <h2 className='piece__title'>{pieceTitle}</h2>
         </div>
     )
 }
 
-function SettingsPiece({ pieceTitle }) {
-    return (
-        <div className='panel__piece'>
-            <h2 className='piece__title'>{pieceTitle}</h2>
-            <div className='piece__dataWrapper'>
+function SettingsPiece({ pieceTitle, relevantKeys, utilityBtns }) {
+    const { panelData } = useContext(PanelContext);
 
+    return (
+        <div className='panel__piece panel__piece--not-centered'>
+            <h2 className='piece__title'>{pieceTitle}</h2>
+            <div className='piece__dataWrapper piece__dataWrapper--left text-left'>
+                {relevantKeys.map((el) => {
+                    return (
+                        <p key={`settings-${el}`}>
+                            <span className='piece__dataIdentifier'>{el}: </span>
+                            <span className='piece__dataItem'>{panelData[el]}</span>
+                        </p>
+                    )
+                })}
             </div>
+            {utilityBtns.map((el) => {
+                return (
+                    <div key={`settings-btn-${el.id}`}>
+                        <Button type='secondary' action={el.action} text={el.name} />
+                    </div>
+                )
+            })}
         </div>
     )
 }
