@@ -1,4 +1,5 @@
 import { createContext, useContext, useRef, useEffect } from "react";
+import { LayoutContext } from "../../../contexts/LayoutContext";
 
 import ContentSection from "../../../layout/ContentSection";
 import Avatar from "./../../Avatar";
@@ -27,8 +28,8 @@ function ControlPanel({ distribution, panelComponents, panelData }) {
     return (
         <PanelProvider panelData={panelData}>
             <div className={`panel panel--${distribution}`}>
-                {panelComponents.map((el) => {
-                    return <ContentSection key={el.keyId}>{el}</ContentSection>
+                {panelComponents.map((el, index) => {
+                    return <ContentSection key={`profile-section-${index}`} >{el}</ContentSection>
                 })}
             </div>
         </PanelProvider>
@@ -43,12 +44,12 @@ function CharacterPiece({ relevantKeys }) {
         <div className='panel__piece panel__piece--horizontal'>
             <Avatar character={panelData[relevantKeys[8]]} text={panelData[relevantKeys[0]] + " " + panelData[relevantKeys[1]]} />
             <div className='text-left'>
-                {panelData[relevantKeys[2]] && <p className='piece__dataWrapper piece__dataWrapper--left'><span className='piece__dataIdentifier'>{`${relevantKeys[2]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[2]])}</span></p>}
-                {panelData[relevantKeys[3]] && <p className='piece__dataWrapper piece__dataWrapper--left'><span className='piece__dataIdentifier'>{`${relevantKeys[3]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[3]])}</span></p>}
-                {panelData[relevantKeys[4]] && <p className='piece__dataWrapper piece__dataWrapper--left'><span className='piece__dataIdentifier'>{`${relevantKeys[4]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[4]])}</span></p>}
-                {panelData[relevantKeys[5]] && <p className='piece__dataWrapper piece__dataWrapper--left'><span className='piece__dataIdentifier'>{`${relevantKeys[5]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[5]])}</span></p>}
-                {panelData[relevantKeys[6]] && <p className='piece__dataWrapper piece__dataWrapper--left'><span className='piece__dataIdentifier'>{`${relevantKeys[6]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[6]])}</span></p>}
-                {panelData[relevantKeys[7]] && <p className='piece__dataWrapper piece__dataWrapper--left'><span className='piece__dataIdentifier'>{`${relevantKeys[7]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[7]])}</span></p>}
+                {panelData[relevantKeys[2]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[2]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[2]])}</span></p>}
+                {panelData[relevantKeys[3]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[3]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[3]])}</span></p>}
+                {panelData[relevantKeys[4]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[4]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[4]])}</span></p>}
+                {panelData[relevantKeys[5]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[5]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[5]])}</span></p>}
+                {panelData[relevantKeys[6]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[6]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[6]])}</span></p>}
+                {panelData[relevantKeys[7]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[7]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[7]])}</span></p>}
             </div>
         </div>
     )
@@ -63,7 +64,7 @@ function StatsPiece({ relevantKeys, topReferenceValue }) {
                 if (typeof panelData[key] !== 'number') return null;
 
                 return (
-                    <div key={key} className='piece__dataWrapper'>
+                    <div key={key} className='piece__dataWrapper piece__dataWrapper--separation-1'>
                         <StatsBar title={key} value={panelData[key]} topReferenceValue={topReferenceValue} />
                     </div>
                 )
@@ -141,17 +142,23 @@ function HistoryPiece({ pieceTitle }) {
 
 function SettingsPiece({ pieceTitle, relevantKeys, utilityBtns }) {
     const { panelData } = useContext(PanelContext);
+    // const { handlePopupLaunch } = useContext(LayoutContext);
 
     return (
         <div className='panel__piece panel__piece--not-centered'>
             <h2 className='piece__title'>{pieceTitle}</h2>
-            <div className='piece__dataWrapper piece__dataWrapper--left text-left'>
+            <div className='text-left mv-2'>
                 {relevantKeys.map((el) => {
                     return (
-                        <p key={`settings-${el}`}>
-                            <span className='piece__dataIdentifier'>{el}: </span>
-                            <span className='piece__dataItem'>{panelData[el]}</span>
-                        </p>
+                        <div key={`settings-${el}`} className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-2' >
+                            <p className='piece__dataIdentifier'>{el}: </p>
+                            <p className='piece__dataItem'>{el === 'password' ? '********' : panelData[el]}</p>
+                            <hr></hr>
+                            <div className='piece__btnWrapper element--clickable'>
+                                <SvgIcon color='#272643' design='edit' />
+                                {el === 'password' && <SvgIcon color='#272643' design='eye' />}
+                            </div>
+                        </div>
                     )
                 })}
             </div>

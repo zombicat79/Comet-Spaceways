@@ -13,7 +13,8 @@ async function createUserAccount(userData) {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(userData)
+            body: JSON.stringify(userData),
+            credentials: 'include'
         });
         const { data } = await response.json();
         return data;
@@ -25,7 +26,9 @@ async function createUserAccount(userData) {
 async function getUserAccount(username) {
     try {
         if (import.meta.env.PROD) {
-            const response = await fetch(`${baseUrl}${route}/${username}`);
+            const response = await fetch(`${baseUrl}${route}/${username}`, {
+                credentials: 'include'
+            });
             const { data } = await response.json();
             return data;
         } else {
