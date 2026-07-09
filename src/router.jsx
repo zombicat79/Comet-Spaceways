@@ -16,6 +16,7 @@ import NheDetail from "./pages/info/nhes/NheDetail";
 import SignUp from "./pages/SignUp";
 import UserProfile from "./pages/UserProfile";
 import NotFound from "./pages/NotFound";
+import LoggedOut from "./pages/LoggedOut";
 
 import { fetchFlights } from "./components/flight/FlightScheduleLoader";
 import { fetchRaces } from "./pages/info/nhes/NheIndex";
@@ -61,7 +62,8 @@ const router = createBrowserRouter([
         Component: MinAppLayout,
         children: [
             { path: '*', Component: NotFound },
-            { path: 'create-account', Component: SignUp }
+            { path: 'create-account', Component: SignUp },
+            { path: 'logged-out', Component: LoggedOut }
         ]
     },
     {

@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router';
+// import { useNavigate } from 'react-router';
 import { useMutation } from '@tanstack/react-query';
 import { Link } from 'react-router';
 import { LayoutContext } from '../contexts/LayoutContext'; 
@@ -26,7 +26,7 @@ function SignUp() {
     const [passengerForms, setPassengerForms] = useState([]);
     const [progressDisabled, setProgressDisabled] = useState(true);
     const { handlePopupLaunch } = useContext(LayoutContext);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const { mutate, isPending } = useMutation({
         mutationFn: () => handleUserCreation(),
         // UNCOMMENT AND ACTIVATE ONCE 'PROFILE-PAGE' IS AVAILABLE !!!

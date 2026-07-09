@@ -3878,10 +3878,37 @@ p {
   position: relative;
   z-index: 3;
   padding: 10rem 0;
-  /*background-image:
-        linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.15)), 
-        url('./../assets/images/milky_way_background.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center; */
   height: 100vh; }
+
+.logged-out-page {
+  position: relative;
+  z-index: 3;
+  height: 100vh; }
+  .logged-out-page .badge {
+    position: absolute;
+    top: 90%; }
+    .logged-out-page .badge:hover .badge__img {
+      transition: all 2s;
+      cursor: pointer;
+      transform: scale(1.2); }
+    .logged-out-page .badge:hover::after {
+      content: 'Jump back in! 🚀';
+      position: absolute;
+      left: -17%;
+      text-align: left;
+      width: max-content;
+      font-family: 'roboto-semibold';
+      font-size: 2.4rem;
+      margin-top: 2rem;
+      animation-name: fadein;
+      animation-timing-function: linear;
+      animation-duration: .75s;
+      animation-fill-mode: forwards;
+      animation-duration: 4s;
+      transition: all 1s;
+      cursor: pointer; }
+    .logged-out-page .badge__img {
+      max-width: 15rem; }
+  @media screen and (min-width: 2800px) {
+    .logged-out-page .banner--full {
+      height: 100vh; } }

@@ -12,8 +12,8 @@ function UserProfile() {
             id: 1,
             name: 'log out',
             action: () => {
-                setIsAuth(false);
-                navigate("/godspeed");
+                navigate("/logged-out");
+                setTimeout(() => setIsAuth(false), 3000);
             }
         }
     ]
