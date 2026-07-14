@@ -408,6 +408,14 @@ p {
       .btn--primary:hover:disabled {
         box-shadow: none;
         transform: scale(1); }
+  .btn--danger {
+    color: #F5F5F5;
+    background-color: #FF4500;
+    border: 3px solid #f59977; }
+    .btn--danger:hover {
+      filter: brightness(1.2);
+      box-shadow: 0 0 15px #f59977;
+      transform: scale(1.05); }
   .btn--link {
     font-family: 'titillium-regular';
     font-size: 1.2rem;
@@ -2658,6 +2666,10 @@ p {
         max-width: initial;
         min-width: initial;
         width: 2rem; }
+      .panel__piece .piece__btnWrapper .btn {
+        width: 100%; }
+        .panel__piece .piece__btnWrapper .btn:not(.last-child) {
+          margin-bottom: 2rem; }
     .panel__piece .piece__dataWrapper {
       display: flex;
       flex-direction: column;

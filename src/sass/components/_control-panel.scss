@@ -97,6 +97,14 @@
                     min-width: initial;
                     width: 2rem;
                 }
+
+                .btn {
+                    width: 100%;
+
+                    &:not(.last-child) {
+                        margin-bottom: 2rem;
+                    }
+                }
             }
 
             &__dataWrapper {

@@ -8,6 +8,7 @@ import ConnectionDetails from './../components/modalpieces/ConnectionDetails';
 import WorkInProgress from './../components/modalpieces/WorkInProgress';
 import GenericPopup from '../components/modalpieces/GenericPopup';
 import ListPopup from '../components/modalpieces/ListPopup';
+import AccountEdit from '../components/modalpieces/AccountEdit';
 
 function Modal({ modalShown, modalClass, content, props, width, height }) {
     const { layoutState, dispatch } = useContext(LayoutContext);
@@ -15,6 +16,9 @@ function Modal({ modalShown, modalClass, content, props, width, height }) {
     switch(content) {
       case 'login':
         modalContent = <LogIn props={{...props}} />;
+        break;
+      case 'account-edit':
+        modalContent = <AccountEdit props={{...props}} />;
         break;
       case 'confirmation':
         modalContent = <Confirmation props={{...props}} />;

@@ -62,33 +62,33 @@ function LogIn() {
       }, 1000);
   }
 
-    return (
-      <main className="modalpiece">
-        <article className="modalpiece__content">
-            <Badge imgSrc={cometBadge}/>
-            <h3 className="modalpiece__heading">Identify yourself, spacefarer!</h3>
-            <Form 
-                id="login-form"
-                display="flex-column"
-                formFields={formConfig.loginFormFields} 
-                defaultValues={formConfig.loginFormDefaultValues} 
-                formRules={formConfig.loginFormRules}
-                onFormCheck={handleCompletion}
-                onFormChange={handleFormChange}
-            />
-            <Button type="primary" action={handleLogin} text={authenticated ? "Ready to launch! 🚀" : "It's a no-go 🙁"} isDisabled={!authenticated} />
-            {errorMsg !== '' && <InfoPanel type="alert">{errorMsg}</InfoPanel>}
-            <div 
-              className="btn-wrapper btn-wrapper--actionable" 
-              onMouseEnter={() => handleLinkText('hover')} 
-              onMouseLeave={() => handleLinkText('leave')}
-              onClick={() => handleNavigation('/create-account')}
-            >
-              <Button type="link" text={linkText} />
-            </div>
-        </article>
-      </main>
-    );
+  return (
+    <main className="modalpiece">
+      <article className="modalpiece__content">
+          <Badge imgSrc={cometBadge}/>
+          <h3 className="modalpiece__heading">Identify yourself, spacefarer!</h3>
+          <Form 
+              id="login-form"
+              display="flex-column"
+              formFields={formConfig.loginFormFields} 
+              defaultValues={formConfig.loginFormDefaultValues} 
+              formRules={formConfig.loginFormRules}
+              onFormCheck={handleCompletion}
+              onFormChange={handleFormChange}
+          />
+          <Button type="primary" action={handleLogin} text={authenticated ? "Ready to launch! 🚀" : "It's a no-go 🙁"} isDisabled={!authenticated} />
+          {errorMsg !== '' && <InfoPanel type="alert">{errorMsg}</InfoPanel>}
+          <div 
+            className="btn-wrapper btn-wrapper--actionable" 
+            onMouseEnter={() => handleLinkText('hover')} 
+            onMouseLeave={() => handleLinkText('leave')}
+            onClick={() => handleNavigation('/create-account')}
+          >
+            <Button type="link" text={linkText} />
+          </div>
+      </article>
+    </main>
+  );
 }
 
 export default LogIn;

@@ -50,6 +50,17 @@
         }
     }
 
+    &--danger {
+        color: $color-text-light;
+        background-color: $color-highlight-extreme;
+        border: 3px solid $color-body-error;
+
+        &:hover {
+            filter: brightness(1.2);
+            @include scary-response;
+        }
+    }
+
     &--link {
         font-family: 'titillium-regular';
         font-size: $size-small;

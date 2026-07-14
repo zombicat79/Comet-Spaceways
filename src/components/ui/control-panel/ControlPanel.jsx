@@ -1,5 +1,4 @@
-import { createContext, useContext, useRef, useEffect } from "react";
-import { LayoutContext } from "../../../contexts/LayoutContext";
+import { createContext, useContext, useRef, useEffect, useState } from "react";
 
 import ContentSection from "../../../layout/ContentSection";
 import Avatar from "./../../Avatar";
@@ -140,9 +139,19 @@ function HistoryPiece({ pieceTitle }) {
     )
 }
 
-function SettingsPiece({ pieceTitle, relevantKeys, utilityBtns }) {
+function SettingsPiece({ pieceTitle, relevantKeys, editBtns, authBtns }) {
     const { panelData } = useContext(PanelContext);
-    // const { handlePopupLaunch } = useContext(LayoutContext);
+    const [pwdVisible, setPwdVisible] = useState(false);
+
+    function handleClick(settingsProp) {
+        editBtns.forEach((el) => {
+            if (el.name.includes(settingsProp)) el.action();
+        });
+    }
+
+    function handleView() {
+        setPwdVisible((curr => !curr));
+    }
 
     return (
         <div className='panel__piece panel__piece--not-centered'>
@@ -152,20 +161,22 @@ function SettingsPiece({ pieceTitle, relevantKeys, utilityBtns }) {
                     return (
                         <div key={`settings-${el}`} className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-2' >
                             <p className='piece__dataIdentifier'>{el}: </p>
-                            <p className='piece__dataItem'>{el === 'password' ? '********' : panelData[el]}</p>
+                            <p className='piece__dataItem'>{el === 'password' ? pwdVisible ? panelData[el] : '********' : panelData[el]}</p>
                             <hr></hr>
-                            <div className='piece__btnWrapper element--clickable'>
-                                <SvgIcon color='#272643' design='edit' />
-                                {el === 'password' && <SvgIcon color='#272643' design='eye' />}
+                            <div className='piece__btnWrapper element--clickable' >
+                                <div onClick={() => handleClick(el)}>
+                                    <SvgIcon color='#272643' design='edit' />
+                                </div>
+                                {el === 'password' && <div onClick={() => handleView(el)}><SvgIcon color='#272643' design={pwdVisible ? 'eye-shut' : 'eye'} /></div>}
                             </div>
                         </div>
                     )
                 })}
             </div>
-            {utilityBtns.map((el) => {
+            {authBtns.map((el) => {
                 return (
-                    <div key={`settings-btn-${el.id}`}>
-                        <Button type='secondary' action={el.action} text={el.name} />
+                    <div key={`settings-btn-${el.id}`} className='piece__btnWrapper element--clickable'>
+                        <Button type={el.name === 'delete account' ? 'danger' : 'secondary'} action={el.action} text={el.name} />
                     </div>
                 )
             })}
