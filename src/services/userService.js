@@ -42,4 +42,8 @@ async function getUserAccount(username) {
     }
 }
 
-export { createUserAccount, getUserAccount };
+async function updateUserAccount() {
+    console.log('updated')
+}
+
+export { createUserAccount, getUserAccount, updateUserAccount };

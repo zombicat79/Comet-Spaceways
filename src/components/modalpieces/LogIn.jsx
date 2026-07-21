@@ -14,52 +14,52 @@ import { getUserAccount } from '../../services/userService';
 import cometBadge from '/logos/ctsw-logo_dark_badge.png';
 
 function LogIn() {
-    const [formValues, setFormValues] = useState({});
-    const [linkText, setLinkText] = useState('I do not have an account yet...');
-    const [authenticated, setAuthenticated] = useState(false);
-    const [errorMsg, setErrorMsg] = useState('');
-    const { dispatch } = useContext(LayoutContext);
-    const { setIsAuth, setActiveUser } = useContext(AuthContext);
-    const navigate = useNavigate();
+  const [formValues, setFormValues] = useState({});
+  const [linkText, setLinkText] = useState('I do not have an account yet...');
+  const [authenticated, setAuthenticated] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+  const { dispatch } = useContext(LayoutContext);
+  const { setIsAuth, setActiveUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-    function handleLinkText(action) {
-      setLinkText(action === 'hover' ? 'Register a new account!' : 'I do not have an account yet...');
+  function handleLinkText(action) {
+    setLinkText(action === 'hover' ? 'Register a new account!' : 'I do not have an account yet...');
+  }
+
+  function handleNavigation(path) {
+    closeModal();
+    navigate(path);
+  }
+
+  function handleFormChange(newFormValues) {
+    setFormValues(newFormValues['login-form']);
+  }
+
+  function handleCompletion(result) {
+    result === 'ok' ? setAuthenticated(true) : setAuthenticated(false);
+  }
+
+  async function handleLogin() {
+    const loginResponse = await getUserAccount(formValues.username);
+    if (loginResponse === 'ko') {
+      setErrorMsg('There was a problem while trying to log you in. Please try again later...');
+      return;
+    } else if (!loginResponse || (loginResponse.password !== formValues.password)) {
+      setErrorMsg('Ooops! Wrong credentials. Please try again...');
+      return;
     }
 
-    function handleNavigation(path) {
-      closeModal();
-      navigate(path);
-    }
+    setIsAuth(true);
+    setActiveUser(loginResponse)
+    handleNavigation('/user-profile');
+  }
 
-    function handleFormChange(newFormValues) {
-      setFormValues(newFormValues['login-form']);
-    }
-
-    function handleCompletion(result) {
-      result === 'ok' ? setAuthenticated(true) : setAuthenticated(false);
-    }
-
-    async function handleLogin() {
-      const loginResponse = await getUserAccount(formValues.username);
-      if (loginResponse === 'ko') {
-        setErrorMsg('There was a problem while trying to log you in. Please try again later...');
-        return;
-      } else if (!loginResponse || (loginResponse.password !== formValues.password)) {
-        setErrorMsg('Ooops! Wrong credentials. Please try again...');
-        return;
-      }
-
-      setIsAuth(true);
-      setActiveUser(loginResponse)
-      handleNavigation('/user-profile');
-    }
-
-    function closeModal() {
-      dispatch({ type: 'toggle/modal' });
-      setTimeout(() => {
-          dispatch({ type: 'set/scroll', payload: true });
-          dispatch({ type: 'fill/modal', payload: { content: null, props: {} }})
-      }, 1000);
+  function closeModal() {
+    dispatch({ type: 'toggle/modal' });
+    setTimeout(() => {
+        dispatch({ type: 'set/scroll', payload: true });
+        dispatch({ type: 'fill/modal', payload: { content: null, props: {} }})
+    }, 1000);
   }
 
   return (

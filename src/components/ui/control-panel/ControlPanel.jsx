@@ -119,7 +119,6 @@ function StockpilePiece({ pieceTitle, relevantKey }) {
 
 function StockitemPiece({ relevantItem, unit }) {
     const { panelData } = useContext(PanelContext);
-    console.log(panelData)
 
     return (
         <div className='panel__piece panel__piece--horizontal'>

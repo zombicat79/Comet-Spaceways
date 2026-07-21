@@ -33,7 +33,7 @@ function UserProfile() {
                 id: 3,
                 name: 'edit username',
                 action: () => {
-                    handlePopupLaunch({ modalClass: 'large', content: 'account-edit', props: { targetAccountProp: 'username' }});
+                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { targetAccountProp: 'username', currentValue: activeUser.username }});
                 }
             },
             {

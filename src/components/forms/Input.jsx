@@ -37,7 +37,7 @@ function Input({ labelled, inputType, valueOutput, name, title, onChange, parent
                     id={inputId}
                     className={`field__value field__value--medium field__value--${valueOutput}`}
                     type={inputMode} 
-                    name={name} 
+                    name={name}
                     onBlur={(e) => handleChange(e)} 
                 />
                 {securedFields.includes(name) && (passwordIconState === 'invisible' 
