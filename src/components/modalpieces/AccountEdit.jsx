@@ -11,6 +11,7 @@ import { updateUserAccount } from '../../services/userService';
 
 function AccountEdit({ props }) {
     const { dispatch } = useContext(LayoutContext);
+    const [updateData, setUpdateData] = useState({});
     const [isFormCompleted, setIsFormCompleted] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
     const accountEditFields = `${props.targetAccountProp}FormFields`;
@@ -18,7 +19,7 @@ function AccountEdit({ props }) {
     const accountEditFormRules = `${props.targetAccountProp}FormRules`;
 
     const { mutate, isPending } = useMutation({
-        mutationFn: () => updateUserAccount(),
+        mutationFn: () => updateUserAccount(props.userId, updateData),
         onSuccess: () => {
             closeModal();
             // navigate(`/user-profile?id=${data.id}&newUser=true`);
@@ -27,6 +28,11 @@ function AccountEdit({ props }) {
             setErrorMsg('Test message')
         }
     });
+
+    function handleFormData(formData) {
+        const extractedData = formData[`edit-${props.targetAccountProp}-form`]
+        setUpdateData(extractedData);
+    }
 
     function handleCompletion(completionCheck) {
         if (completionCheck === 'ok') setIsFormCompleted(true);
@@ -56,6 +62,7 @@ function AccountEdit({ props }) {
                     formFields={formConfig[accountEditFields]} 
                     defaultValues={formConfig[accountEditDefaults]} 
                     formRules={formConfig[accountEditFormRules]}
+                    onFormChange={handleFormData}
                     onFormCheck={handleCompletion}
                 />
                 <Button type="primary" action={handleSubmit} text="Proceed" isDisabled={!isFormCompleted} />

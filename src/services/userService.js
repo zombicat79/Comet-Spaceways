@@ -42,8 +42,21 @@ async function getUserAccount(username) {
     }
 }
 
-async function updateUserAccount() {
-    console.log('updated')
+async function updateUserAccount(id, updateBody) {
+    try {
+        const response = await fetch(`${baseUrl}${route}/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updateBody),
+            credentials: 'include'
+        });
+        const { data } = await response.json();
+        return data;
+    } catch(err) {
+        throw new Error(err);
+    }
 }
 
 export { createUserAccount, getUserAccount, updateUserAccount };

@@ -33,7 +33,7 @@ function UserProfile() {
                 id: 3,
                 name: 'edit username',
                 action: () => {
-                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { targetAccountProp: 'username', currentValue: activeUser.username }});
+                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { userId: activeUser.id, targetAccountProp: 'username', currentValue: activeUser.username }});
                 }
             },
             {
@@ -47,7 +47,7 @@ function UserProfile() {
                 id: 5,
                 name: 'edit email',
                 action: () => {
-                    handlePopupLaunch({ modalClass: 'large', content: 'work-in-progress' });
+                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { userId: activeUser.id, targetAccountProp: 'email', currentValue: activeUser.email } });
                 }
             }
         ]

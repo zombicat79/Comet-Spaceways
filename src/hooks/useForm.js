@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useMemo } from 'react';
 
 function reducer(state, action) {
     const field = action.payload.field;
@@ -14,9 +14,9 @@ function reducer(state, action) {
 
 function useForm(formId, initialState) {
     const [formValues, dispatch] = useReducer(reducer, initialState);
-    const formState = {
-        [formId]: formValues
-    }
+    const formState = useMemo(() => {
+        return { [formId]: formValues };
+    }, [formValues])
 
     return { formState, dispatch };
 }
