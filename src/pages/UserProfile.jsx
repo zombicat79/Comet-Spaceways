@@ -1,15 +1,29 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router";
+import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "../contexts/AuthContext";
 import { LayoutContext } from "../contexts/LayoutContext";
 
 import ControlPanel from "../components/ui/control-panel/ControlPanel";
+import Loader from "../components/Loader";
+
+import { getUserAccountById } from "../services/userService";
 
 function UserProfile() {
     const { setIsAuth, activeUser } = useContext(AuthContext);
+    const { data: userData, isLoading } = useQuery({
+        queryKey: ['active-user'],
+        queryFn: () => getUserAccountById(activeUser.id)
+    });
     const { handlePopupLaunch } = useContext(LayoutContext);
     const navigate = useNavigate();
     
+    if (isLoading) {
+        return (
+            <Loader spinner='spinner_light' />
+        )
+    }
+
     const settingsUtils = {
         auth: [
             {
@@ -33,7 +47,7 @@ function UserProfile() {
                 id: 3,
                 name: 'edit username',
                 action: () => {
-                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { userId: activeUser.id, targetAccountProp: 'username', currentValue: activeUser.username }});
+                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { userId: userData.id, targetAccountProp: 'username', currentValue: userData.username }});
                 }
             },
             {
@@ -47,12 +61,12 @@ function UserProfile() {
                 id: 5,
                 name: 'edit email',
                 action: () => {
-                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { userId: activeUser.id, targetAccountProp: 'email', currentValue: activeUser.email } });
+                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { userId: userData.id, targetAccountProp: 'email', currentValue: userData.email } });
                 }
             }
         ]
     };
-    
+
     const panelComponents = [
         <ControlPanel.CharacterPiece relevantKeys={['name', 'surname', 'race', 'nationality', 'origin', 'build', 'gender', 'job', 'avatar']} />,
         <ControlPanel.StockitemPiece relevantItem='money' unit='AU' />, 
@@ -67,11 +81,9 @@ function UserProfile() {
 
     return (
         <main className="profile">
-            <ControlPanel distribution='profile' panelComponents={panelComponents} panelData={activeUser} />
+            <ControlPanel distribution='profile' panelComponents={panelComponents} panelData={userData} />
         </main>
     )
 }
-
-
 
 export default UserProfile;

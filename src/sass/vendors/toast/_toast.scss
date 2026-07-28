@@ -1,0 +1,19 @@
+.toast {
+    text-align: left;
+
+    p {
+        margin-left: 2rem;
+
+        strong {
+            font-family: 'roboto-bold';
+        }
+    }
+}
+
+.toast--success {
+    border: 3px solid $color-highlight-accent;
+}
+
+.toast--error {
+    border: 3px solid $color-highlight-extreme;
+}

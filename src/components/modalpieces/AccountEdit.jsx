@@ -1,19 +1,19 @@
 import { useState, useContext } from 'react';
-import { useMutation } from '@tanstack/react-query';
+import { useQueryClient, useMutation } from '@tanstack/react-query';
+import toast from 'react-hot-toast';
 import { LayoutContext } from '../../contexts/LayoutContext';
 
 import Form from "../forms/Form";
 import Button from "../Button";
-import InfoPanel from "../InfoPanel";
 
 import * as formConfig from './../../data/form-configs/account-form-config';
 import { updateUserAccount } from '../../services/userService';
 
 function AccountEdit({ props }) {
     const { dispatch } = useContext(LayoutContext);
+    const queryClient = useQueryClient();
     const [updateData, setUpdateData] = useState({});
     const [isFormCompleted, setIsFormCompleted] = useState(false);
-    const [errorMsg, setErrorMsg] = useState('');
     const accountEditFields = `${props.targetAccountProp}FormFields`;
     const accountEditDefaults = `${props.targetAccountProp}FormDefaultValues`;
     const accountEditFormRules = `${props.targetAccountProp}FormRules`;
@@ -21,11 +21,17 @@ function AccountEdit({ props }) {
     const { mutate, isPending } = useMutation({
         mutationFn: () => updateUserAccount(props.userId, updateData),
         onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['active-user'], exact: false, refetchType: 'active' });
             closeModal();
-            // navigate(`/user-profile?id=${data.id}&newUser=true`);
+            setTimeout(() => {
+                toast.success(<p>Your {props.targetAccountProp} has been successfully changed from <strong>{props.currentValue}</strong> to <strong>{updateData[props.targetAccountProp]}</strong></p>);
+            }, 2000);
         },
         onError: () => {
-            setErrorMsg('Test message')
+            closeModal();
+            setTimeout(() => {
+                toast.error(<p>A problem occured while attempting to change your <strong>{props.targetAccountProp}</strong>. Please try again later</p>);
+            }, 2000);
         }
     });
 
@@ -66,7 +72,6 @@ function AccountEdit({ props }) {
                     onFormCheck={handleCompletion}
                 />
                 <Button type="primary" action={handleSubmit} text="Proceed" isDisabled={!isFormCompleted} />
-                {errorMsg !== '' && <InfoPanel type="alert">{errorMsg}</InfoPanel>}
             </article>
         </main>
     )

@@ -9,7 +9,7 @@ import Button from '../Button';
 import InfoPanel from './../InfoPanel';
 import * as formConfig from './../../data/form-configs/login-form-config';
 
-import { getUserAccount } from '../../services/userService';
+import { getUserAccountByUsername } from '../../services/userService';
 
 import cometBadge from '/logos/ctsw-logo_dark_badge.png';
 
@@ -40,7 +40,7 @@ function LogIn() {
   }
 
   async function handleLogin() {
-    const loginResponse = await getUserAccount(formValues.username);
+    const loginResponse = await getUserAccountByUsername(formValues.username);
     if (loginResponse === 'ko') {
       setErrorMsg('There was a problem while trying to log you in. Please try again later...');
       return;

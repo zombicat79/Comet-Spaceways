@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { RouterProvider } from 'react-router';
+import { Toaster } from 'react-hot-toast';
 import router from './router';
 import { LayoutContext } from './contexts/LayoutContext';
 
@@ -51,7 +52,20 @@ function App() {
   })
 
   return (
-    <RouterProvider router={router} />
+    <>
+      <RouterProvider router={router} />
+      <Toaster toastOptions={{ 
+        duration: 6000,
+        className: 'toast',
+        success: {
+          className: 'toast toast--success'
+        },
+        error: {
+          className: 'toast toast--error'
+        }
+      }}
+      />
+    </>
   )
 }
 

@@ -2847,6 +2847,19 @@ p {
   .react-datepicker__month-container {
     background-color: #bae8e8; } }
 
+.toast {
+  text-align: left; }
+  .toast p {
+    margin-left: 2rem; }
+    .toast p strong {
+      font-family: 'roboto-bold'; }
+
+.toast--success {
+  border: 3px solid #32CD32; }
+
+.toast--error {
+  border: 3px solid #FF4500; }
+
 .header {
   position: fixed;
   width: 100%;

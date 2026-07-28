@@ -23,7 +23,7 @@ async function createUserAccount(userData) {
     }
 }
 
-async function getUserAccount(username) {
+async function getUserAccountByUsername(username) {
     try {
         if (import.meta.env.PROD) {
             const response = await fetch(`${baseUrl}${route}/${username}`, {
@@ -35,6 +35,25 @@ async function getUserAccount(username) {
             const response = await fetch(`${baseUrl}${route}`);
             const { data } = await response.json();
             const targetUser = data.users.find((user) => user.username === username);
+            return targetUser;
+        }
+    } catch(err) {
+        return 'ko';
+    }
+}
+
+async function getUserAccountById(id) {
+    try {
+        if (import.meta.env.PROD) {
+            const response = await fetch(`${baseUrl}${route}/${id}`, {
+                credentials: 'include'
+            });
+            const { data } = await response.json();
+            return data;
+        } else {
+            const response = await fetch(`${baseUrl}${route}`);
+            const { data } = await response.json();
+            const targetUser = data.users.find((user) => user.id === id);
             return targetUser;
         }
     } catch(err) {
@@ -59,4 +78,4 @@ async function updateUserAccount(id, updateBody) {
     }
 }
 
-export { createUserAccount, getUserAccount, updateUserAccount };
+export { createUserAccount, getUserAccountByUsername, getUserAccountById, updateUserAccount };
