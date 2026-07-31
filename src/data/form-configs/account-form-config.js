@@ -16,20 +16,12 @@ export const usernameFormRules = [
 
 // PASSWORD EDIT
 export const passwordFormFields = [
-    { type: 'input', props: {labelled: true, inputType: 'text', valueOutput: 'raw', name: 'username', title: 'Username'}},
-    { type: 'input', props: {labelled: true, inputType: 'password', valueOutput: 'raw', name: 'password', title: 'Password'}},
+    { type: 'input', props: {labelled: true, inputType: 'password', valueOutput: 'raw', name: 'password', title: 'New password'}}
 ];
 export const passwordFormDefaultValues = { 
-    username: '',
     password: ''
 }
 export const passwordFormRules = [
-    { field: 'username', rules: [
-            { name: 'minLength', value: 6 }, 
-            { name: 'maxLength', value: 12 }, 
-            { name: 'patternConform-no-space', value: /^\S*$/ }
-        ] 
-    },
     { field: 'password', rules: [
             { name: 'patternConform-pwd', value: /[0-9]+/ },
             { name: 'patternConform-pwd', value: /[a-z]+/ },
@@ -54,4 +46,18 @@ export const emailFormRules = [
         { name: 'patternConform-email', value: /^[\w.+%-]+@[\w.-]+\.[a-zA-Z]{2,}$/ },
         { name: 'minLength', value: 1 }
     ]}
+]
+
+// DELETE ACCOUNT
+export const deleteAccountFormFields = [
+    { type: 'input', props: {labelled: false, inputType: 'text', valueOutput: 'raw', name: 'delete-account', title: ''}},
+];
+export const deleteAccountFormDefaultValues = { 
+    username: ''
+}
+export const deleteAccountFormRules = [
+    { field: 'delete-account', rules: [
+            { name: 'patternConform-literal', value: /^DELETE$/ }
+        ] 
+    }
 ]

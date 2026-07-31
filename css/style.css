@@ -3937,3 +3937,36 @@ p {
   @media screen and (min-width: 2800px) {
     .logged-out-page .banner--full {
       height: 100vh; } }
+
+.farewell-page {
+  position: relative;
+  z-index: 3;
+  height: 100vh; }
+  .farewell-page .badge {
+    position: absolute;
+    top: 90%; }
+    .farewell-page .badge:hover .badge__img {
+      transition: all 2s;
+      cursor: pointer;
+      transform: scale(1.2); }
+    .farewell-page .badge:hover::after {
+      content: 'Any second thoughts? 🤔';
+      position: absolute;
+      left: -17%;
+      text-align: left;
+      width: max-content;
+      font-family: 'roboto-semibold';
+      font-size: 2.4rem;
+      margin-top: 2rem;
+      animation-name: fadein;
+      animation-timing-function: linear;
+      animation-duration: .75s;
+      animation-fill-mode: forwards;
+      animation-duration: 4s;
+      transition: all 1s;
+      cursor: pointer; }
+    .farewell-page .badge__img {
+      max-width: 15rem; }
+  @media screen and (min-width: 2800px) {
+    .farewell-page .banner--full {
+      height: 100vh; } }

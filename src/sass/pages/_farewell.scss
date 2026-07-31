@@ -1,0 +1,45 @@
+.farewell-page {
+    position: relative;
+    z-index: 3;
+    height: 100vh;
+
+    .badge {
+        position: absolute;
+        top: 90%;
+
+        &:hover {
+            .badge__img {
+                transition: all 2s;
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+
+            &::after {
+                content: 'Any second thoughts? 🤔';
+                position: absolute;
+                left: 0;
+                text-align: left;
+                width: max-content;
+                font-family: 'roboto-semibold';
+                font-size: $size-huge;
+                margin-top: 2rem;
+                @include animation-standard(fadein);
+                animation-duration: 4s;
+                transition: all 1s;
+                cursor: pointer;
+            }
+        }
+
+        &__img {
+            max-width: 15rem;
+        }
+    }
+
+    @include respond(huge-screen) {
+        .banner {
+            &--full {
+                height: 100vh;
+            }
+        }
+    }
+}

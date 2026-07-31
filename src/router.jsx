@@ -17,6 +17,7 @@ import SignUp from "./pages/SignUp";
 import UserProfile from "./pages/UserProfile";
 import NotFound from "./pages/NotFound";
 import LoggedOut from "./pages/LoggedOut";
+import Farewell from "./pages/Farewell";
 
 import { fetchFlights } from "./components/flight/FlightScheduleLoader";
 import { fetchRaces } from "./pages/info/nhes/NheIndex";
@@ -63,7 +64,8 @@ const router = createBrowserRouter([
         children: [
             { path: '*', Component: NotFound },
             { path: 'create-account', Component: SignUp },
-            { path: 'logged-out', Component: LoggedOut }
+            { path: 'logged-out', Component: LoggedOut },
+            { path: 'account-terminated', Component: Farewell }
         ]
     },
     {

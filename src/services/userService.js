@@ -78,4 +78,22 @@ async function updateUserAccount(id, updateBody) {
     }
 }
 
-export { createUserAccount, getUserAccountByUsername, getUserAccountById, updateUserAccount };
+async function deleteUserAccount(id) {
+    console.log(`Fucker with ID: ${id} was killed`);
+    /* try {
+        const response = await fetch(`${baseUrl}${route}/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updateBody),
+            credentials: 'include'
+        });
+        const { data } = await response.json();
+        return data;
+    } catch(err) {
+        throw new Error(err);
+    } */
+}
+
+export { createUserAccount, getUserAccountByUsername, getUserAccountById, updateUserAccount, deleteUserAccount };
