@@ -798,6 +798,8 @@ p {
     background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/milky_way_background.webp"); }
   .banner--7 {
     background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/hubble_wallpaper.webp"); }
+  .banner--8 {
+    background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/supernova.webp"); }
   .banner--LUN {
     background-image: linear-gradient(to right, black, rgba(18, 18, 18, 0.55)), url("./../assets/images/destinations/LUN/moon.webp"); }
   .banner--CEL {
@@ -3950,9 +3952,9 @@ p {
       cursor: pointer;
       transform: scale(1.2); }
     .farewell-page .badge:hover::after {
-      content: 'Any second thoughts? 🤔';
-      position: absolute;
-      left: -17%;
+      content: 'Any second thoughts yet? 🤔';
+      position: relative;
+      top: 2rem;
       text-align: left;
       width: max-content;
       font-family: 'roboto-semibold';

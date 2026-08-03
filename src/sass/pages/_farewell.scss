@@ -15,9 +15,9 @@
             }
 
             &::after {
-                content: 'Any second thoughts? 🤔';
-                position: absolute;
-                left: 0;
+                content: 'Any second thoughts yet? 🤔';
+                position: relative;
+                top: 2rem;
                 text-align: left;
                 width: max-content;
                 font-family: 'roboto-semibold';

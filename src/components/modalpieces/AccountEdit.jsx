@@ -25,9 +25,9 @@ function AccountEdit({ props }) {
             props.currentValue ? updateUserAccount(props.userId, updateData) : deleteUserAccount(props.userId);
         },
         onSuccess: () => {
+            closeModal();
             if (props.currentValue) {
                 queryClient.invalidateQueries({ queryKey: ['active-user'], exact: false, refetchType: 'active' });
-                closeModal();
                 setTimeout(() => {
                     toast.success(<p>Your {props.targetAccountProp} has been successfully changed from <strong>{props.currentValue}</strong> to <strong>{updateData[props.targetAccountProp]}</strong></p>);
                 }, 2000);

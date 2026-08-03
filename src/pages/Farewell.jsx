@@ -13,17 +13,17 @@ function Farewell() {
             <Banner
                 textStyle={{ color: 'default', align: 'center' }}
                 textContent={{
-                    heading: 'Godspeed, spacefarer!',
+                    heading: 'Farewell, explorer!',
                     body: 
                         <>
                             <p>
-                                <span>{"You chose to bail out from our wondrous Comet Spaceways space-traveling scheme and all of its entailing amazing adventures, and will now remain stranded God knows where in space and time."}</span>
+                                <span>{"You chose to bail out from our wondrous Comet Spaceways space-traveling scheme and all of its entailing amazing adventures, and will now be left to wander the vast expanses of the Universe on your own 😱"}</span>
                                 <br />
                                 <span>{"No hard feelings. We'll be glad to have you back on board if you ever regret your decision!"}</span>
                             </p>
                         </>
                 }}
-                background={{ img: 'black-hole', height: 'full' }}
+                background={{ img: 'supernova', height: 'full' }}
                 cta={
                     <div className="badge" onClick={() => navigate("/create-account")}>
                         <Badge imgSrc={footerBadge} />

@@ -28,6 +28,9 @@ function Banner({ background, textStyle, textContent, cta, children }) {
         case 'telescope':
             backgroundOption = 7;
             break;
+        case 'supernova':
+            backgroundOption = 8;
+            break;
         default:
             backgroundOption = background.img;
     }

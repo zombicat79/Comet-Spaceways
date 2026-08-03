@@ -75,6 +75,11 @@
       url('./../assets/images/hubble_wallpaper.webp');
     }
 
+    &--8 {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/supernova.webp');
+    }
+
     // DESTINATION BANNER CHOICE
     &--LUN {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
