@@ -1,5 +1,7 @@
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
+import { useSearchParams } from 'react-router';
 import { useQuery } from "@tanstack/react-query";
+import toast from 'react-hot-toast';
 import { AuthContext } from "../contexts/AuthContext";
 import { LayoutContext } from "../contexts/LayoutContext";
 
@@ -12,12 +14,20 @@ import { getUserAccountById } from "../services/userService";
 
 function UserProfile() {
     const { activeUser } = useContext(AuthContext);
+    const [params] = useSearchParams();
+    const formattedId = import.meta.env.PROD ? activeUser._id : activeUser.id;
     const { data: userData, isLoading } = useQuery({
         queryKey: ['active-user'],
-        queryFn: () => getUserAccountById(activeUser.id)
+        queryFn: () => getUserAccountById(formattedId)
     });
     const { handlePopupLaunch, dispatch } = useContext(LayoutContext);
     const { logOut } = useExit();
+
+    useEffect(() => {
+        if (params.get('newUser') === 'true') {
+            toast.success(<p>You have successfully created your Comet Spaceways account ⭐️</p>);
+        }
+    }, [params]);
     
     if (isLoading) {
         return (
@@ -46,7 +56,7 @@ function UserProfile() {
                             question: 'Are you sure to proceed?', 
                             button1: "custom1",
                             customFnBtn1: () => {
-                                dispatch({ type: "fill/modal", payload: { content: 'account-edit', props: { userId: userData.id, targetAccountProp: 'deleteAccount' }}});
+                                dispatch({ type: "fill/modal", payload: { content: 'account-edit', props: { userId: userData._id ?? userData.id, targetAccountProp: 'deleteAccount' }}});
                             },
                             button2: "closeModal" 
                         } 
@@ -59,21 +69,21 @@ function UserProfile() {
                 id: 3,
                 name: 'edit username',
                 action: () => {
-                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { userId: userData.id, targetAccountProp: 'username', currentValue: userData.username }});
+                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { userId: userData._id ?? userData.id, targetAccountProp: 'username', currentValue: userData.username }});
                 }
             },
             {
                 id: 4,
                 name: 'edit password',
                 action: () => {
-                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { userId: userData.id, targetAccountProp: 'password', currentValue: userData.password }});
+                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { userId: userData._id ?? userData.id, targetAccountProp: 'password', currentValue: userData.password }});
                 }
             },
             {
                 id: 5,
                 name: 'edit email',
                 action: () => {
-                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { userId: userData.id, targetAccountProp: 'email', currentValue: userData.email } });
+                    handlePopupLaunch({ modalClass: 'regular', content: 'account-edit', props: { userId: userData._id ?? userData.id, targetAccountProp: 'email', currentValue: userData.email } });
                 }
             }
         ]

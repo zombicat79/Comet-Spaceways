@@ -8,27 +8,54 @@ if (import.meta.env.PROD) {
 
 async function createUserAccount(userData) {
     try {
-        const response = await fetch(`${baseUrl}${route}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(userData),
-            credentials: 'include'
-        });
-        const { data } = await response.json();
-        return data;
+        if (import.meta.env.PROD) {
+            const response = await fetch(`${baseUrl}${route}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(userData),
+                credentials: 'include'
+            });
+            const { data } = await response.json();
+            return data;
+        } else {
+            const response = await fetch(`${baseUrl}${route}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(userData),
+                credentials: 'include'
+            });
+            const { data } = await response.json();
+            return data[data.length - 1];
+        }
     } catch(err) {
         throw new Error(err);
     }
 }
 
-async function getUserAccountByUsername(username) {
+async function getUserAccountByUsername(username, pwd) {
     try {
         if (import.meta.env.PROD) {
-            const response = await fetch(`${baseUrl}${route}/${username}`, {
-                credentials: 'include'
-            });
+            let response;
+            
+            if (pwd) {
+                response = await fetch(`${baseUrl}${route}/${username}`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ password: pwd }),
+                    credentials: 'include'
+                });
+            } else {
+                response = await fetch(`${baseUrl}${route}/${username}`, {
+                    credentials: 'include'
+                });
+            }
+
             const { data } = await response.json();
             return data;
         } else {
@@ -80,17 +107,10 @@ async function updateUserAccount(id, updateBody) {
 
 async function deleteUserAccount(id) {
     try {
-        if (import.meta.env.PROD) {
-            /* const response = await fetch(`${baseUrl}${route}/${id}`, {
-                credentials: 'include'
-            });
-            const { data } = await response.json();
-            return data; */
-        } else {
-            await fetch(`${baseUrl}${route}/${id}`, {
-                method: "DELETE"
-            });
-        }
+        await fetch(`${baseUrl}${route}/${id}`, {
+            method: "DELETE",
+            credentials: 'include'
+        });
     } catch(err) {
         throw new Error(err);
     }

@@ -40,11 +40,11 @@ function LogIn() {
   }
 
   async function handleLogin() {
-    const loginResponse = await getUserAccountByUsername(formValues.username);
+    const loginResponse = await getUserAccountByUsername(formValues.username, formValues.password);
     if (loginResponse === 'ko') {
       setErrorMsg('There was a problem while trying to log you in. Please try again later...');
       return;
-    } else if (!loginResponse || (loginResponse.password !== formValues.password)) {
+    } else if (!loginResponse) {
       setErrorMsg('Ooops! Wrong credentials. Please try again...');
       return;
     }
