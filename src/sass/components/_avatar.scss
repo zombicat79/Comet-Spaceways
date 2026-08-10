@@ -16,11 +16,13 @@
         width: 13.5rem;
         height: 13.5rem;
 
-        &--green_little_man {
+        &--green_little_man,
+        &--green {
             background-image: url('/assets/images/characters/profiles/profile-green.webp');
         }
 
-        &--big_headed_gray {
+        &--big_headed_gray,
+        &--big-headed {
             background-image: url('/assets/images/characters/profiles/profile-gray.webp');
         }
 

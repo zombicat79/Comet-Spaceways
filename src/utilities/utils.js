@@ -201,7 +201,8 @@ function capitalizeFirst(word) {
 function pruneString(string, pruneChars) {
     let newString = string;
     for (const char of pruneChars) {
-        newString = newString.replace(char, " ");
+        const pattern = new RegExp(char, "g");
+        newString = newString.replace(pattern, " ");
     }
     return newString;
 }

@@ -37,6 +37,14 @@
             margin-bottom: 5rem;
         }
 
+        &--warning {
+            border: 5px solid $color-body-error;
+        }
+    
+        &--danger {
+            border: 5px solid $color-highlight-extreme;
+        }
+
         .content-section__heading {
             font-family: 'roboto-extrabold';
             font-size: $size-huge;

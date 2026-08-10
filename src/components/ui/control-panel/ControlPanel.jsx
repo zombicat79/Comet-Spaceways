@@ -1,4 +1,5 @@
 import { createContext, useContext, useRef, useEffect, useState } from "react";
+import { LayoutContext } from "../../../contexts/LayoutContext";
 
 import ContentSection from "../../../layout/ContentSection";
 import Avatar from "./../../Avatar";
@@ -28,7 +29,7 @@ function ControlPanel({ distribution, panelComponents, panelData }) {
         <PanelProvider panelData={panelData}>
             <div className={`panel panel--${distribution}`}>
                 {panelComponents.map((el, index) => {
-                    return <ContentSection key={`profile-section-${index}`} >{el}</ContentSection>
+                    return <ContentSection key={`profile-section-${index}`}>{el}</ContentSection>
                 })}
             </div>
         </PanelProvider>
@@ -97,7 +98,15 @@ function StatsBar({ title, value, topReferenceValue }) {
 
 function StockpilePiece({ pieceTitle, relevantKey }) {
     const { panelData, formatDataOutput } = useContext(PanelContext);
+    const { layoutState } = useContext(LayoutContext);
+    let panelPieceClasses = '';
     let content;
+
+    if (layoutState.viewportWidth >= 1280 || layoutState.viewportWidth <= 600) {
+        panelPieceClasses = 'panel__piece panel__piece--not-centered';
+    } else {
+        panelPieceClasses = 'panel__piece panel__piece--not-centered panel__piece--vertical';
+    }
 
     if (!Array.isArray(panelData[relevantKey])) {
         content = null;
@@ -105,12 +114,18 @@ function StockpilePiece({ pieceTitle, relevantKey }) {
         content = <span>⚠️ Empty</span>;
     } else {
         content = panelData[relevantKey].map((el) => {
-            return <span key={`stockpile-${el}`} className='piece__dataItem piece__dataItem--piped'>{formatDataOutput(el)}</span>
+            let dataItemClasses = '';
+            if (layoutState.viewportWidth >= 1280 || layoutState.viewportWidth <= 600) {
+                dataItemClasses = 'piece__dataItem piece__dataItem--piped';
+            } else {
+                dataItemClasses = 'piece__dataItem';
+            }
+            return <span key={`stockpile-${el}`} className={dataItemClasses}>{formatDataOutput(el)}</span>
         });
     }
 
     return (
-        <div className='panel__piece panel__piece--not-centered'>
+        <div className={panelPieceClasses}>
             <h2 className='piece__title'>{pieceTitle}</h2>
             {content}
         </div>
@@ -119,9 +134,24 @@ function StockpilePiece({ pieceTitle, relevantKey }) {
 
 function StockitemPiece({ relevantItem, unit }) {
     const { panelData } = useContext(PanelContext);
+    const itemPiece = useRef();
+
+    useEffect(() => {
+        const sectionContainer = itemPiece.current.closest(".content-section__body");
+        if (panelData[relevantItem] <= 10) {
+            sectionContainer.classList.remove("content-section__body--danger");
+            sectionContainer.classList.add("content-section__body--warning");
+        } else if (panelData[relevantItem] <= 0) {
+            sectionContainer.classList.remove("content-section__body--warning");
+            sectionContainer.classList.add("content-section__body--danger");
+        } else {
+            sectionContainer.classList.remove("content-section__body--warning");
+            sectionContainer.classList.remove("content-section__body--danger");
+        }
+    }, [panelData, relevantItem])
 
     return (
-        <div className='panel__piece panel__piece--horizontal'>
+        <div ref={itemPiece} className='panel__piece panel__piece--horizontal'>
             <SvgIcon design={relevantItem} />
             {panelData[relevantItem] <= 10 && <span className='piece__dataItem piece__dataItem--contained piece__dataItem--warning'>{panelData[relevantItem]} {unit}</span>}
             {panelData[relevantItem] <= 0 && <span className='piece__dataItem piece__dataItem--contained piece__dataItem--danger'>{panelData[relevantItem]} {unit}</span>}
