@@ -11,7 +11,7 @@ function MinimalHeader() {
     const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
     const { transparency } = useHeader(layoutState);
     const location = useLocation();
-    const popupHeaderPages = ['/create-account', '/user-profile'];
+    const popupHeaderPages = ['/create-account'];
     const headerLogo = <img className="header__logo" src={transparency ? LogoLight : LogoDark} alt="Comet Spaceways" />;
 
     function handlePurchaseInterruption() {
