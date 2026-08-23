@@ -17,7 +17,7 @@ export const loginFormRules = [
             { name: 'patternConform-pwd', value: /[0-9]+/ },
             { name: 'patternConform-pwd', value: /[a-z]+/ },
             { name: 'patternConform-pwd', value: /[A-Z]+/ },
-            { name: 'patternConform-pwd', value: /[ªº\\!|@#$%&/()=?¿¡{}\-.;:*+\[\]\^"]+/ },
+            { name: 'patternConform-pwd', value: /[ªº\\!|@#$%&/()=?¿¡{}\-.;:*+[\]^"]+/ },
             { name: 'minLength', value: 8 }, 
             { name: 'maxLength', value: 15 },
             { name: 'patternConform-no-space', value: /^\S*$/ }

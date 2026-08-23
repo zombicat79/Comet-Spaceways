@@ -58,6 +58,20 @@
 }
 
 // MARGINS
+.m-2 {
+    margin: 2rem;
+}
+
+.mv-2 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 .mb-2 {
     margin-bottom: 2rem;
+}
+
+// TEXT ALIGNMENT
+.text-left {
+    text-align: left;
 }

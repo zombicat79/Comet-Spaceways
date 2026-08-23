@@ -5,29 +5,36 @@ import { LayoutContext } from "../contexts/LayoutContext";
 
 // ARCHITECTURE ISSUE
 import AppLayout from "./AppLayout";
-import { Outlet } from "react-router";
+import MinAppLayout from "./MinAppLayout";
 import ScrollBlocker from './ScrollBlocker';
+import MinimalHeader from "./headers/MinimalHeader";
+import RestrictedPage from "../pages/RestrictedPage";
 
 function ProtectedRoute() {
     const { isAuth } = useContext(AuthContext);
     const { handlePopupLaunch } = useContext(LayoutContext);
 
+    function openLogin() {
+        handlePopupLaunch({ modalClass: 'large', content: 'login' });
+    }
+
     useEffect(() => {
         if (!isAuth) {
-            handlePopupLaunch({ modalClass: 'large', content: 'login' });
+            openLogin();
         }
-    }, [isAuth, handlePopupLaunch])
+    }, [isAuth])
 
     if (!isAuth) {
         return (
             <>
                 <ScrollBlocker />
-                <Outlet />
+                <MinimalHeader />
+                <RestrictedPage onLogin={openLogin} />
             </>
         )
     }
 
-    return <AppLayout />
+    return <MinAppLayout />
 }
 
 export default ProtectedRoute;

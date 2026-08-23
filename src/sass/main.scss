@@ -44,8 +44,10 @@
 @import "components/searchtool";
 @import "components/diptych";
 @import "components/passengers/spacepass";
+@import "components/control-panel";
 
 @import "vendors/datepicker/datepicker";
+@import "vendors/toast/toast";
 
 @import "layout/header";
 @import "layout/footer";
@@ -63,3 +65,7 @@
 @import "pages/allocation";
 @import "pages/signup";
 @import "pages/notfound";
+@import "pages/restricted-page";
+@import "pages/user-profile";
+@import "pages/logged-out";
+@import "pages/farewell";

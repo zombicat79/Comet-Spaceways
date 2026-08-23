@@ -29,6 +29,9 @@ function Confirmation({ props }) {
         case 'closeModal':
           closeModal();
           break;
+        case 'custom1':
+          props.customFnBtn1();
+          break;
         default:
           return null;
       }

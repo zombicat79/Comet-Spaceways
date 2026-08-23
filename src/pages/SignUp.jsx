@@ -2,7 +2,8 @@ import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router';
 import { useMutation } from '@tanstack/react-query';
 import { Link } from 'react-router';
-import { LayoutContext } from '../contexts/LayoutContext'; 
+import { LayoutContext } from '../contexts/LayoutContext';
+import { AuthContext } from '../contexts/AuthContext';
 import useAccount from '../hooks/useAccount';
 
 import FlashOffer from '../components/FlashOffer';
@@ -26,18 +27,17 @@ function SignUp() {
     const [passengerForms, setPassengerForms] = useState([]);
     const [progressDisabled, setProgressDisabled] = useState(true);
     const { handlePopupLaunch } = useContext(LayoutContext);
+    const { setIsAuth, setActiveUser } = useContext(AuthContext);
     const navigate = useNavigate();
     const { mutate, isPending } = useMutation({
         mutationFn: () => handleUserCreation(),
-        // UNCOMMENT AND ACTIVATE ONCE 'PROFILE-PAGE' IS AVAILABLE !!!
-        /* onSuccess: (data) => {
-            navigate(`/user-profile?id=${data.id}&newUser=true`);
-        }, */
-        onSuccess: () => handlePopupLaunch({ 
-            modalClass: 'generic', 
-            content: 'work-in-progress',
-            props: { customContent: errors.processInterruption } 
-        }),
+        onSuccess: (data) => {
+            setIsAuth(true);
+            setActiveUser(data);
+            setTimeout(() => {
+                navigate(`/user-profile?id=${data._id ?? data.id}&newUser=true`);
+            }, 3000);
+        },
         onError: () => handlePopupLaunch({ 
             modalClass: 'generic', 
             content: 'error-notice',

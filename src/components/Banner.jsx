@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router';
 import { LayoutContext } from '../contexts/LayoutContext';
 
-function Banner({ background, textStyle, textContent, children }) {
+function Banner({ background, textStyle, textContent, cta, children }) {
     const { layoutState } = useContext(LayoutContext);
     
     let backgroundOption = 0;
@@ -25,6 +25,12 @@ function Banner({ background, textStyle, textContent, children }) {
         case 'milky':
             backgroundOption = 6;
             break;
+        case 'telescope':
+            backgroundOption = 7;
+            break;
+        case 'supernova':
+            backgroundOption = 8;
+            break;
         default:
             backgroundOption = background.img;
     }
@@ -36,6 +42,7 @@ function Banner({ background, textStyle, textContent, children }) {
             <div className={textStyle.align ? `banner__msg banner__msg--${textStyle.align}`: 'banner__msg'}>
                 <h1 className="banner__heading">{textContent.heading}</h1>
                 <div className="banner__text">{textContent.body}</div>
+                {cta && <div className="banner__cta">{cta}</div>}
             </div>
 
             {layoutState.viewportWidth <= 360 && 

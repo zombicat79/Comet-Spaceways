@@ -70,6 +70,16 @@
       url('./../assets/images/milky_way_background.webp');
     }
 
+    &--7 {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/hubble_wallpaper.webp');
+    }
+
+    &--8 {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
+      url('./../assets/images/supernova.webp');
+    }
+
     // DESTINATION BANNER CHOICE
     &--LUN {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(18, 18, 18, 0.55)),
@@ -143,11 +153,19 @@
         max-width: 50rem;
         margin: 0 auto;
       }
+    }
+
+    // BANNER BUTTONS
+    &__cta {
+      margin-top: 3rem;
+      @include flex-row(center);
+      gap: 3rem;
 
       .btn {
-        margin-top: 3rem;
+        min-width: 15rem;
       }
     }
+
 
     // BANNER SMALL SCREEN LOGO
     @include respond(phone-small) {

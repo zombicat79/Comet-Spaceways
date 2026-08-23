@@ -1,0 +1,28 @@
+.restricted-page {
+    position: relative;
+    z-index: 2;
+
+    .banner {
+        &--7 {
+            @include respond(phone) {
+                background-image: url('./../assets/images/probe_mobile_wallpaper.webp');
+            }
+
+            @include respond(phone-medium) {
+                background-position-x: -12vw;
+            }
+
+            @include respond(phone-small) {
+                background-position-x: -35vw;
+            }
+        }
+
+
+        &--full {
+            @include respond(huge-screen) {
+                height: 100vh;
+            }
+        }
+
+    }
+}

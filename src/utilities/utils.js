@@ -194,10 +194,23 @@ function writeToStorage(storageType, dataKey, dataContent) {
     return 'ok';
 }
 
+function capitalizeFirst(word) {
+    return word.replace(/^\w/, word[0].toUpperCase());
+}
+
+function pruneString(string, pruneChars) {
+    let newString = string;
+    for (const char of pruneChars) {
+        const pattern = new RegExp(char, "g");
+        newString = newString.replace(pattern, " ");
+    }
+    return newString;
+}
+
 export { 
     minimizeDestinations, 
     maximizeDestinations, 
-    formatTimeUnits, 
+    formatTimeUnits,
     getTimeSummaryFromSeconds,
     displayDurationInfo, 
     pickFromNumberRange, 
@@ -205,5 +218,7 @@ export {
     pickUniquesFromArray,
     filterSearch,
     readFromStorage,
-    writeToStorage
+    writeToStorage,
+    capitalizeFirst,
+    pruneString
 };

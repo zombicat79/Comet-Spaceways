@@ -23,10 +23,10 @@ function NotFound() {
                                 <br />
                                 <span>{'Hop on one of our spaceships and get back on track on your voyage to the stars!'}</span>
                             </p>
-                            <Button type="secondary" action={goBook} text="Search Flight" />
                         </>
                 }}
                 background={{ img: 'black-hole', height: 'full' }}
+                cta={<Button type="secondary" action={goBook} text="Search Flight" />}
             />
         </main>
     )
