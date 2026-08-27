@@ -4,6 +4,7 @@ import { CartContext } from '../contexts/CartContext';
 import { Outlet, useLocation, useNavigate } from 'react-router';
 
 import ScrollBlocker from './ScrollBlocker';
+import ProtectedComponent from './ProtectedComponent';
 import Header from './headers/Header';
 import PurchaseHeader from './headers/PurchaseHeader';
 import Footer from './Footer';
@@ -67,7 +68,9 @@ function AppLayout() {
             {renderedHeader === 'purchase' && <PurchaseHeader />}
             <Aside side="left" />
             <Outlet />
-            <Aside side="right" />
+            <ProtectedComponent>
+                <Aside side="right" />
+            </ProtectedComponent>
             <Footer />
             <Subfooter />
             

@@ -29,4 +29,8 @@ const menuLinks = {
     ]
 }
 
-export { menuLinks };
+const loggedAsideLinks = [
+    { id: 1, text: 'Account settings', action: 'link', payload: '/user-profile', decoration: 'underline' }
+]
+
+export { menuLinks, loggedAsideLinks };

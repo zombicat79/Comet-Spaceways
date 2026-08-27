@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { useLocation } from 'react-router';
 import { LayoutContext } from '../../contexts/LayoutContext';
 import useHeader from './../../hooks/useHeader';
@@ -8,7 +8,7 @@ import LogoLight from '/logos/ctsw-logo_light_horizontal.png';
 import LogoDark from '/logos/ctsw-logo_dark_horizontal.png';
 
 function MinimalHeader() {
-    const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
+    const { layoutState, handlePopupLaunch, dispatch } = useContext(LayoutContext);
     const { transparency } = useHeader(layoutState);
     const location = useLocation();
     const popupHeaderPages = ['/create-account'];
@@ -21,6 +21,20 @@ function MinimalHeader() {
             props: { issue: 'You are about to quit your account creation process', question: 'Are you sure to proceed?', button1: 'handleNavigation', button2: 'closeModal' } 
         });
     }
+    
+    function closeAside(side) {
+        dispatch({ type: 'toggle/aside', payload: {
+            side,
+            shown: false,
+            content: null
+        }});
+        dispatch({ type: 'set/scroll', payload: true });
+    }
+
+    useEffect(() => {
+        if (layoutState.asideleft.shown) closeAside('left');
+        if (layoutState.asideright.shown) closeAside('right');
+    }, [location])
     
     return (
         <header className="header header--minimal" data-transparency={transparency} >

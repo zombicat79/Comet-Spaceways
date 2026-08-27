@@ -6,6 +6,16 @@
         @include flex-column(center);
     }
 
+    &--horizontal {
+        @include flex-row(center);
+        gap: 3rem;
+        width: 100%;
+
+        .avatar__text {
+            width: min-content;
+        }
+    }
+
     &__img-wrapper {
         border: 5px solid $color-text-dark;
         border-radius: 50%;

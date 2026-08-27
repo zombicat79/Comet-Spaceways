@@ -7,7 +7,7 @@ function Avatar({ character, link=null, text=null, layout='vertical'}) {
                 ? <Link className={`avatar__img-wrapper avatar__img-wrapper--${character}`} to={link} />
                 : <div className={`avatar__img-wrapper avatar__img-wrapper--${character}`} />
             }
-            {text && <p className={`avatar__text`}>{text}</p>}
+            {text && <h4 className={`avatar__text`}>{text}</h4>}
         </figure>
     )
 }

@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import NavBar from "./NavBar";
 
-function AsideMenu({ links }) {
+function AsideMenuLeft({ links }) {
     const asideAdaptedLinks = useMemo(() => {
         const linksCopy = JSON.parse(JSON.stringify(links));
         for (let key in linksCopy) {
@@ -44,4 +44,4 @@ function AsideMenu({ links }) {
     )
 }
 
-export default AsideMenu;
+export default AsideMenuLeft;
