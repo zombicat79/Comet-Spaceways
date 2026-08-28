@@ -30,7 +30,10 @@ const menuLinks = {
 }
 
 const loggedAsideLinks = [
-    { id: 1, text: 'Account settings', action: 'link', payload: '/user-profile', decoration: 'underline' }
+    { id: 1, text: 'Account settings', action: 'link', payload: '/user-profile', decoration: 'underline' },
+    { id: 2, text: 'Flight history', action: 'hint', payload: 'work-in-progress', decoration: 'underline' },
+    { id: 3, text: 'Quest history', action: 'hint', payload: 'work-in-progress', decoration: 'underline' },
+    { id: 4, text: 'Message center', action: 'hint', payload: 'work-in-progress', decoration: 'underline' },
 ]
 
 export { menuLinks, loggedAsideLinks };

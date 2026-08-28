@@ -21,18 +21,18 @@ function AsideMenuRight({ links }) {
                     <div className="aside__section">
                         <Avatar character={activeUser.avatar} text={(activeUser.name + " " + activeUser.surname)} layout="horizontal" />
                         <ul className="section__list container--column-between mv-2">
-                            <li class="list__item text-left"><p>{pruneString(capitalizeFirst(activeUser.race), ["_", "-"])}</p></li>
-                            <li class="list__item text-left"><p>{pruneString(capitalizeFirst(activeUser.job), ["_", "-"])}</p></li>
+                            <li className="list__item text-left"><p>{pruneString(capitalizeFirst(activeUser.race), ["_", "-"])}</p></li>
+                            <li className="list__item text-left"><p>{pruneString(capitalizeFirst(activeUser.job), ["_", "-"])}</p></li>
                         </ul>
                         <ul className="section__list container--column-between mv-2">
-                            <li class="list__item text-left">
-                                <div class="container--center row--start g-2">
+                            <li className="list__item text-left">
+                                <div className="container--center row--start g-2">
                                     <SvgIcon design='heart' color='#FF4500' />
                                     <p>{capitalizeFirst(activeUser.health.toString())}</p>
                                 </div>
                             </li>
-                            <li class="list__item text-left">
-                                <div class="container--center row--start g-2">
+                            <li className="list__item text-left">
+                                <div className="container--center row--start g-2">
                                     <SvgIcon design='money' />
                                     <p>{capitalizeFirst(activeUser.money.toString())}</p>
                                 </div>
