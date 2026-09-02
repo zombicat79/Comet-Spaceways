@@ -1,7 +1,8 @@
 // GENERIC DATA STRUCTURES
 
 const userVitalsData = {
-    health: 10,
+    maxHealth: 10,
+    actualHealth: 10,
     strength: 10,
     intelligence: 10,
     wisdom: 10,
@@ -201,7 +202,8 @@ export default class User {
     }
 
     addRaceFeatures() {
-        this.health += raceVitalsAdjustment[this.race].health;
+        this.maxHealth += raceVitalsAdjustment[this.race].health;
+        this.actualHealth += raceVitalsAdjustment[this.race].health;
         this.strength += raceVitalsAdjustment[this.race].strength;
         this.intelligence += raceVitalsAdjustment[this.race].intelligence;
         this.wisdom += raceVitalsAdjustment[this.race].wisdom;
@@ -213,7 +215,8 @@ export default class User {
     }
 
     addNationalityFeatures() {
-        this.health += nationalityVitalsAdjustment[this.nationality].health;
+        this.maxHealth += nationalityVitalsAdjustment[this.nationality].health;
+        this.actualHealth += nationalityVitalsAdjustment[this.nationality].health;
         this.strength += nationalityVitalsAdjustment[this.nationality].strength;
         this.intelligence += nationalityVitalsAdjustment[this.nationality].intelligence;
         this.wisdom += nationalityVitalsAdjustment[this.nationality].wisdom;
@@ -225,7 +228,8 @@ export default class User {
     }
 
     addOriginFeatures() {
-        this.health += originVitalsAdjustment[this.origin].health;
+        this.maxHealth += originVitalsAdjustment[this.origin].health;
+        this.actualHealth += originVitalsAdjustment[this.origin].health;
         this.strength += originVitalsAdjustment[this.origin].strength;
         this.intelligence += originVitalsAdjustment[this.origin].intelligence;
         this.wisdom += originVitalsAdjustment[this.origin].wisdom;
@@ -237,7 +241,8 @@ export default class User {
     }
 
     addBuildFeatures() {
-        this.health += buildVitalsAdjustment[this.build].health;
+        this.maxHealth += buildVitalsAdjustment[this.build].health;
+        this.actualHealth += buildVitalsAdjustment[this.build].health;
         this.strength += buildVitalsAdjustment[this.build].strength;
         this.intelligence += buildVitalsAdjustment[this.build].intelligence;
         this.wisdom += buildVitalsAdjustment[this.build].wisdom;
@@ -249,7 +254,8 @@ export default class User {
     }
 
     addGenderFeatures() {
-        this.health += genderVitalsAdjustment[this.gender].health;
+        this.maxHealth += genderVitalsAdjustment[this.gender].health;
+        this.actualHealth += genderVitalsAdjustment[this.gender].health;
         this.strength += genderVitalsAdjustment[this.gender].strength;
         this.intelligence += genderVitalsAdjustment[this.gender].intelligence;
         this.wisdom += genderVitalsAdjustment[this.gender].wisdom;
@@ -261,7 +267,8 @@ export default class User {
     }
 
     addJobFeatures() {
-        this.health += jobVitalsAdjustment[this.job].health;
+        this.maxHealth += jobVitalsAdjustment[this.job].health;
+        this.actualHealth += jobVitalsAdjustment[this.job].health;
         this.strength += jobVitalsAdjustment[this.job].strength;
         this.intelligence += jobVitalsAdjustment[this.job].intelligence;
         this.wisdom += jobVitalsAdjustment[this.job].wisdom;

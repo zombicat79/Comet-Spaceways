@@ -3,6 +3,7 @@ import { AuthContext } from '../contexts/AuthContext';
 
 import useExit from '../hooks/useExit';
 
+import CompletionBar from './ui/CompletionBar';
 import Button from './Button';
 import Avatar from "./Avatar";
 import SvgIcon from './SvgIcon';
@@ -28,7 +29,8 @@ function AsideMenuRight({ links }) {
                             <li className="list__item text-left">
                                 <div className="container--center row--start g-2">
                                     <SvgIcon design='heart' color='#FF4500' />
-                                    <p>{capitalizeFirst(activeUser.health.toString())}</p>
+                                    <p>{activeUser.actualHealth}</p>
+                                    <CompletionBar value={activeUser.actualHealth} topReferenceValue={activeUser.maxHealth} />
                                 </div>
                             </li>
                             <li className="list__item text-left">

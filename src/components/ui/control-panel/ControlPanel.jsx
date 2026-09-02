@@ -5,6 +5,7 @@ import ContentSection from "../../../layout/ContentSection";
 import Avatar from "./../../Avatar";
 import SvgIcon from "../../SvgIcon";
 import Button from "../../Button";
+import CompletionBar from "../CompletionBar";
 
 import { capitalizeFirst, pruneString } from "../../../utilities/utils";
 
@@ -55,44 +56,24 @@ function CharacterPiece({ relevantKeys }) {
     )
 }
 
-function StatsPiece({ relevantKeys, topReferenceValue }) {
+function StatsPiece({ relevantKeys }) {
     const { panelData } = useContext(PanelContext);
 
     return (
         <div className='panel__piece'>
             {relevantKeys.map((key) => {
                 if (typeof panelData[key] !== 'number') return null;
+                
+                const statConcept = key === 'actualHealth' ? 'health' : key;
+                const topReferenceValue = key === 'actualHealth' ? panelData['maxHealth'] : 25;
 
                 return (
                     <div key={key} className='piece__dataWrapper piece__dataWrapper--separation-1'>
-                        <StatsBar title={key} value={panelData[key]} topReferenceValue={topReferenceValue} />
+                        <CompletionBar title={statConcept} value={panelData[key]} topReferenceValue={topReferenceValue} />
                     </div>
                 )
             })}
         </div>
-    )
-}
-
-function StatsBar({ title, value, topReferenceValue }) {
-    const bar = useRef();
-
-    useEffect(() => {
-        bar.current.style.width = `${(value / topReferenceValue) * 100}%`;
-        if (value < topReferenceValue / 3) {
-            bar.current.style.backgroundColor = '#f59977';
-        }
-        if (value < topReferenceValue / 5) {
-            bar.current.style.backgroundColor = '#FF4500';
-        }
-    }, [value, topReferenceValue])
-    
-    return (
-        <>
-            <span className='piece__dataIdentifier'>{title}</span>
-            <div className='piece__dataItem piece__dataItem--bar' >
-                <div ref={bar} className='piece__dataProgress' />
-            </div>
-        </>
     )
 }
 

@@ -93,7 +93,7 @@ function UserProfile() {
         <ControlPanel.CharacterPiece relevantKeys={['name', 'surname', 'race', 'nationality', 'origin', 'build', 'gender', 'job', 'avatar']} />,
         <ControlPanel.StockitemPiece relevantItem='money' unit='AU' />, 
         <ControlPanel.StockpilePiece pieceTitle='inventory' relevantKey={'inventory'} />, 
-        <ControlPanel.StatsPiece relevantKeys={['health', 'strength', 'intelligence', 'wisdom', 'dexterity', 'diplomacy']} topReferenceValue={25} />,
+        <ControlPanel.StatsPiece relevantKeys={['actualHealth', 'strength', 'intelligence', 'wisdom', 'dexterity', 'diplomacy']} />,
         <ControlPanel.StockpilePiece pieceTitle='skills' relevantKey={'skills'} />,
         <ControlPanel.HistoryPiece pieceTitle='travel history' relevantKeys={['activeFlight', 'flightHistory']} />,
         <ControlPanel.HistoryPiece pieceTitle='quest history' relevantKeys={['activeQuest', 'questHistory']} />,
