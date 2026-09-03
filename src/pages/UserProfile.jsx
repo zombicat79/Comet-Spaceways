@@ -10,7 +10,7 @@ import useExit from "../hooks/useExit";
 import ControlPanel from "../components/ui/control-panel/ControlPanel";
 import Loader from "../components/Loader";
 
-import { getUserAccountById } from "../services/userService";
+import { getUserAccountById, getCharacteristicsAvg } from "../services/userService";
 
 function UserProfile() {
     const { activeUser } = useContext(AuthContext);
@@ -18,7 +18,15 @@ function UserProfile() {
     const formattedId = import.meta.env.PROD ? activeUser._id : activeUser.id;
     const { data: userData, isLoading } = useQuery({
         queryKey: ['active-user'],
-        queryFn: () => getUserAccountById(formattedId)
+        queryFn: async () => {
+            if (import.meta.env.PROD) {
+                const rawUser = await getUserAccountById(formattedId);
+                const averages = await getCharacteristicsAvg();
+                return { ...rawUser, ...averages };
+            } else {
+                return await getUserAccountById(formattedId);
+            }
+        }
     });
     const { handlePopupLaunch, dispatch } = useContext(LayoutContext);
     const { logOut } = useExit();

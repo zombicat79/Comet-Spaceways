@@ -88,6 +88,16 @@ async function getUserAccountById(id) {
     }
 }
 
+async function getCharacteristicsAvg() {
+    try {
+        const response = await fetch(`${baseUrl}${route}/average-characteristics`);
+        const { data } = await response.json();
+        return data;
+    } catch(err) {
+        return 'ko';
+    }
+}
+
 async function updateUserAccount(id, updateBody) {
     try {
         const response = await fetch(`${baseUrl}${route}/${id}`, {
@@ -116,4 +126,4 @@ async function deleteUserAccount(id) {
     }
 }
 
-export { createUserAccount, getUserAccountByUsername, getUserAccountById, updateUserAccount, deleteUserAccount };
+export { createUserAccount, getUserAccountByUsername, getUserAccountById, getCharacteristicsAvg, updateUserAccount, deleteUserAccount };

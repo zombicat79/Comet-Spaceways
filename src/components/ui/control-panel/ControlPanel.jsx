@@ -65,11 +65,16 @@ function StatsPiece({ relevantKeys }) {
                 if (typeof panelData[key] !== 'number') return null;
                 
                 const statConcept = key === 'actualHealth' ? 'health' : key;
-                const topReferenceValue = key === 'actualHealth' ? panelData['maxHealth'] : 25;
+                let referenceValue;
+                if (import.meta.env.PROD) {
+                    referenceValue = key === 'actualHealth' ? panelData['maxHealth'] : panelData[`avg_${key}`];
+                } else {
+                    referenceValue = key === 'actualHealth' ? panelData['maxHealth'] : 25;
+                }
 
                 return (
                     <div key={key} className='piece__dataWrapper piece__dataWrapper--separation-1'>
-                        <CompletionBar title={statConcept} value={panelData[key]} topReferenceValue={topReferenceValue} />
+                        <CompletionBar title={statConcept} value={panelData[key]} referenceValue={referenceValue} />
                     </div>
                 )
             })}

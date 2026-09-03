@@ -1,20 +1,26 @@
 import { useEffect, useRef } from 'react';
 
-function CompletionBar({ title, value, topReferenceValue }) {
+function CompletionBar({ title, value, referenceValue }) {
     const bar = useRef();
 
     useEffect(() => {
-        bar.current.style.width = `${(value / topReferenceValue) * 100}%`;
-        if (value < topReferenceValue / 4) {
+        if (title == 'health') {
+            bar.current.style.width = `${(value / referenceValue) * 100}%`;
+        } else {
+            const widthCalculation = (value / referenceValue) / 1.5 * 100;
+            bar.current.style.width = `${widthCalculation < 100 ? widthCalculation : 100}%`;
+        }
+        
+        if (value < referenceValue / 4) {
             bar.current.style.backgroundColor = '#FF4500';
             return;
-        } else if (value < topReferenceValue / 2) {
+        } else if (value < referenceValue / 2) {
             bar.current.style.backgroundColor = '#f59977';
             return;
         } else {
             bar.current.style.backgroundColor = '#32CD32';
         }
-    }, [value, topReferenceValue])
+    }, [title, value, referenceValue])
     
     return (
         <>
