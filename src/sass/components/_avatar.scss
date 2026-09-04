@@ -13,6 +13,13 @@
 
         .avatar__text {
             width: min-content;
+            line-height: 2.5rem;
+            @include respond(phone) {
+                line-height: 3.5rem;
+            }
+            @include respond(phone-small) {
+                font-size: $size-big;
+            }
         }
     }
 

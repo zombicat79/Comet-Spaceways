@@ -1024,7 +1024,14 @@ p {
     gap: 3rem;
     width: 100%; }
     .avatar--horizontal .avatar__text {
-      width: min-content; }
+      width: min-content;
+      line-height: 2.5rem; }
+      @media screen and (max-width: 600px) {
+        .avatar--horizontal .avatar__text {
+          line-height: 3.5rem; } }
+      @media screen and (max-width: 360px) {
+        .avatar--horizontal .avatar__text {
+          font-size: 1.8rem; } }
   .avatar__img-wrapper {
     border: 5px solid #272643;
     border-radius: 50%;
