@@ -61,7 +61,7 @@ function ScrollBlocker() {
             />
             }
             {layoutState.loader &&
-            <Loader spinner="spinner_light" />
+                <Loader spinner="spinner_light" />
             }
         </div>
     )
