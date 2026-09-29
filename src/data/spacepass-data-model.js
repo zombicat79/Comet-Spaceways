@@ -56,7 +56,7 @@ export default class Spacepass {
             numericSection.push(this.#generateRandomChar('numbers'));
         }
 
-        this.passNum = letterSection.concat(numericSection);
+        this.passNum = letterSection.concat(numericSection).join("");
     }
 
     determineCategory() {
@@ -69,18 +69,22 @@ export default class Spacepass {
             case "green_little_man":
                 this.category = "B2";
                 this.expiryDate = add(this.issueDate, { years: 4 });
+                break;
             case "amoebian":
             case "insectoid":
                 this.category = "C";
                 this.expiryDate = add(this.issueDate, { years: 2 });
+                break;
             case "aetherian":
             case "cephalopodian":
                 this.category = "A";
                 this.expiryDate = add(this.issueDate, { years: 5 });
+                break;
             case "polymorphic":
             case "reptilian":
                 this.category = "D";
                 this.expiryDate = add(this.issueDate, { years: 1 });
+                break;
             default: // race == humanoid
                 this.category = "A+";
                 this.expiryDate = "N/A"
@@ -92,7 +96,7 @@ export default class Spacepass {
     }
 
     generateNamePrint() {
-        const printData = `P<SF${this.surname}<${this.name}`;
+        const printData = `P<SF${this.surname.toUpperCase()}<${this.name.toUpperCase()}`;
         const printFilling = this.#determineFilling(53, printData.length);
 
         this.namePrint = printData + printFilling;
@@ -104,6 +108,6 @@ export default class Spacepass {
             serialCore.push(this.#generateRandomChar('mixed'));
         }
 
-        this.serialNum = `${this.passNum}SF${serialCore}${this.#determineFilling(11, 0)}${this.issuePlace}${this.#determineFilling(13, 0)}`;
+        this.serialNum = `${this.passNum}SF${serialCore.join("")}${this.#determineFilling(11, 0)}${this.issuePlace}${this.#determineFilling(13, 0)}`;
     }
 }

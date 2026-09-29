@@ -18,6 +18,7 @@ import { completionChecker } from '../components/forms/error-checker';
 import User from '../data/user-data-model';
 import errors from './../components/modalpieces/errorTypes';
 import { createUserAccount } from './../services/userService';
+import { createSpacepass } from '../services/spacepassService';
 
 import footerBadge from '/logos/ctsw-logo_dark_badge.png';
 
@@ -30,8 +31,14 @@ function SignUp() {
     const { setIsAuth, setActiveUser } = useContext(AuthContext);
     const navigate = useNavigate();
     const { mutate, isPending } = useMutation({
-        mutationFn: () => handleUserCreation(),
+        mutationFn: async () => {
+            const userData = await handleUserCreation();
+            const userSpacepass = await handleSpacepassCreation(userData.name, userData.surname, userData.avatar, userData.race);
+            console.log(userSpacepass);
+            return userData;
+        },
         onSuccess: (data) => {
+            console.log(data)
             setIsAuth(true);
             setActiveUser(data);
             setTimeout(() => {
@@ -72,6 +79,11 @@ function SignUp() {
         }
         newUser.addJobFeatures();
         return createUserAccount(newUser);
+    }
+
+    async function handleSpacepassCreation(name, surname, avatar, race) {
+        const newSpacepass = createSpacepass(name, surname, avatar, race);
+        return newSpacepass;
     }
 
     useEffect(() => {
