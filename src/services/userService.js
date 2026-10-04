@@ -1,3 +1,5 @@
+import supabase from "../../db/supabase-client";
+
 let baseUrl = '';
 const route = '/cometspaceways/api/v1/users';
 if (import.meta.env.PROD) {
@@ -20,7 +22,16 @@ async function createUserAccount(userData) {
             const { data } = await response.json();
             return data;
         } else {
-            const response = await fetch(`${baseUrl}${route}`, {
+            const { data, error } = await supabase
+                .from('Users')
+                .upsert(userData)
+                .select()
+
+            if (error) return error;
+            return data;
+          
+            // FILE SYSTEM VERSION - OBSOLETE
+            /* const response = await fetch(`${baseUrl}${route}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -29,7 +40,7 @@ async function createUserAccount(userData) {
                 credentials: 'include'
             });
             const { data } = await response.json();
-            return data[data.length - 1];
+            return data[data.length - 1]; */
         }
     } catch(err) {
         throw new Error(err);
@@ -59,10 +70,21 @@ async function getUserAccountByUsername(username, pwd) {
             const { data } = await response.json();
             return data;
         } else {
-            const response = await fetch(`${baseUrl}${route}`);
+            const { data, error } = await supabase
+                .from('Users')
+                .select('*')
+                .eq('username', username)
+                .eq('password', pwd)
+                .maybeSingle();
+
+            if (error) return error;
+            return data;
+
+            // FILE SYSTEM VERSION - OBSOLETE
+            /* const response = await fetch(`${baseUrl}${route}`);
             const { data } = await response.json();
             const targetUser = data.users.find((user) => user.username === username);
-            return targetUser;
+            return targetUser; */
         }
     } catch(err) {
         return 'ko';
@@ -78,10 +100,20 @@ async function getUserAccountById(id) {
             const { data } = await response.json();
             return data;
         } else {
-            const response = await fetch(`${baseUrl}${route}`);
+            const { data, error } = await supabase
+                .from('Users')
+                .select('*')
+                .eq('id', id)
+                .maybeSingle();
+
+            if (error) return error;
+            return data;
+
+            // FILE SYSTEM VERSION - OBSOLETE
+            /* const response = await fetch(`${baseUrl}${route}`);
             const { data } = await response.json();
             const targetUser = data.users.find((user) => user.id === id);
-            return targetUser;
+            return targetUser; */
         }
     } catch(err) {
         return 'ko';
@@ -90,9 +122,16 @@ async function getUserAccountById(id) {
 
 async function getCharacteristicsAvg() {
     try {
-        const response = await fetch(`${baseUrl}${route}/average-characteristics`);
-        const { data } = await response.json();
-        return data;
+        if (import.meta.env.PROD) {
+            const response = await fetch(`${baseUrl}${route}/average-characteristics`);
+            const { data } = await response.json();
+            return data;
+        } else {
+            const { data, error } = await supabase.rpc('get_user_averages').maybeSingle();
+
+            if (error) return error;
+            return data;
+        }
     } catch(err) {
         return 'ko';
     }
@@ -100,16 +139,27 @@ async function getCharacteristicsAvg() {
 
 async function updateUserAccount(id, updateBody) {
     try {
-        const response = await fetch(`${baseUrl}${route}/${id}`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(updateBody),
-            credentials: 'include'
-        });
-        const { data } = await response.json();
-        return data;
+        if (import.meta.env.PROD) {
+            const response = await fetch(`${baseUrl}${route}/${id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(updateBody),
+                credentials: 'include'
+            });
+            const { data } = await response.json();
+            return data;
+        } else {
+            const { data, error } = await supabase
+                .from('Users')
+                .update(updateBody)
+                .eq('id', id)
+                .select()
+
+            if (error) return error;
+            return data;
+        }
     } catch(err) {
         throw new Error(err);
     }
@@ -117,10 +167,19 @@ async function updateUserAccount(id, updateBody) {
 
 async function deleteUserAccount(id) {
     try {
-        await fetch(`${baseUrl}${route}/${id}`, {
-            method: "DELETE",
-            credentials: 'include'
-        });
+        if (import.meta.env.PROD) {
+            await fetch(`${baseUrl}${route}/${id}`, {
+                method: "DELETE",
+                credentials: 'include'
+            });
+        } else {
+            const { error } = await supabase
+                .from('Users')
+                .delete()
+                .eq('id', id)
+
+            if (error) return error;
+        }
     } catch(err) {
         throw new Error(err);
     }

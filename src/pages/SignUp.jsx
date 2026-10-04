@@ -33,8 +33,8 @@ function SignUp() {
     const { mutate, isPending } = useMutation({
         mutationFn: async () => {
             const userData = await handleUserCreation();
-            const userSpacepass = await handleSpacepassCreation(userData.name, userData.surname, userData.avatar, userData.race);
-            console.log(userSpacepass);
+            // const userSpacepass = await handleSpacepassCreation(userData.name, userData.surname, userData.avatar, userData.race);
+            // console.log(userSpacepass);
             return userData;
         },
         onSuccess: (data) => {

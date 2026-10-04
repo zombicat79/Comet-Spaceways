@@ -7,7 +7,7 @@ function CompletionBar({ title, value, referenceValue }) {
         if (title == 'health') {
             bar.current.style.width = `${(value / referenceValue) * 100}%`;
         } else {
-            const widthCalculation = (value / referenceValue) / 1.5 * 100;
+            const widthCalculation = (value / referenceValue) / 1.75 * 100;
             bar.current.style.width = `${widthCalculation < 100 ? widthCalculation : 100}%`;
         }
         

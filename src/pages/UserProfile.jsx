@@ -24,7 +24,10 @@ function UserProfile() {
                 const averages = await getCharacteristicsAvg();
                 return { ...rawUser, ...averages };
             } else {
-                return await getUserAccountById(formattedId);
+                const rawUser = await getUserAccountById(formattedId);
+                const averages = await getCharacteristicsAvg();
+                return { ...rawUser, ...averages };
+                // return await getUserAccountById(formattedId);
             }
         }
     });
@@ -64,7 +67,7 @@ function UserProfile() {
                             question: 'Are you sure to proceed?', 
                             button1: "custom1",
                             customFnBtn1: () => {
-                                dispatch({ type: "fill/modal", payload: { content: 'account-edit', props: { userId: userData._id ?? userData.id, targetAccountProp: 'deleteAccount' }}});
+                                dispatch({ type: "fill/modal", payload: { content: 'account-edit', props: { userId: userData.id ?? userData._id, targetAccountProp: 'deleteAccount' }}});
                             },
                             button2: "closeModal" 
                         } 

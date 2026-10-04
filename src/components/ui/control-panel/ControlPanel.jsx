@@ -65,12 +65,7 @@ function StatsPiece({ relevantKeys }) {
                 if (typeof panelData[key] !== 'number') return null;
                 
                 const statConcept = key === 'actualHealth' ? 'health' : key;
-                let referenceValue;
-                if (import.meta.env.PROD) {
-                    referenceValue = key === 'actualHealth' ? panelData['maxHealth'] : panelData[`avg_${key}`];
-                } else {
-                    referenceValue = key === 'actualHealth' ? panelData['maxHealth'] : 25;
-                }
+                const referenceValue = key === 'actualHealth' ? panelData['maxHealth'] : panelData[`avg_${key}`];
 
                 return (
                     <div key={key} className='piece__dataWrapper piece__dataWrapper--separation-1'>
