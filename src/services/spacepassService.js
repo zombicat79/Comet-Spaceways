@@ -12,10 +12,10 @@ async function createSpacepass(id, name, surname, avatar, race) {
     if (import.meta.env.PROD) {
         // TO DO
     } else {
-        const { owner, passNum, issueDate, expiryDate, issuePlace, serialNum, category, status } = newSpacepass;
+        const { owner, passNum, issueDate, expiryDate, issuePlace, namePrint, serialNum, category, status } = newSpacepass;
         const { data, error } = await supabase
             .from('Spacepasses')
-            .upsert({ owner, passNum, issueDate, expiryDate, issuePlace, serialNum, category, status })
+            .upsert({ owner, passNum, issueDate, expiryDate, issuePlace, namePrint, serialNum, category, status })
             .select()
 
         if (error) return error;

@@ -157,6 +157,7 @@ async function updateUserAccount(id, updateBody) {
                 .update(updateBody)
                 .eq('id', id)
                 .select()
+                .maybeSingle()
 
             if (error) return error;
             return data;
