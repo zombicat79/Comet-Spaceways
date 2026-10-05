@@ -26,6 +26,7 @@ async function createUserAccount(userData) {
                 .from('Users')
                 .upsert(userData)
                 .select()
+                .maybeSingle()
 
             if (error) return error;
             return data;

@@ -14,7 +14,8 @@ export default class Spacepass {
     serialNum = "<<<<<";
     picture = "profile-default";
     
-    constructor(name, surname, avatar, race, issuePlace = "EAS", status = "initial") {
+    constructor(owner, name, surname, avatar, race, issuePlace = "EAS", status = "initial") {
+        this.owner = owner;
         this.name = name;
         this.surname = surname;
         this.picture = avatar;

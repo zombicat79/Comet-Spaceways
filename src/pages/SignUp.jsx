@@ -17,8 +17,8 @@ import * as signupFormConfig from '../data/form-configs/signup-form-config';
 import { completionChecker } from '../components/forms/error-checker';
 import User from '../data/user-data-model';
 import errors from './../components/modalpieces/errorTypes';
-import { createUserAccount } from './../services/userService';
-import { createSpacepass } from '../services/spacepassService';
+import { createUserAccount, updateUserAccount } from './../services/userService';
+import { createSpacepass, getPassnumFromId } from '../services/spacepassService';
 
 import footerBadge from '/logos/ctsw-logo_dark_badge.png';
 
@@ -33,12 +33,11 @@ function SignUp() {
     const { mutate, isPending } = useMutation({
         mutationFn: async () => {
             const userData = await handleUserCreation();
-            // const userSpacepass = await handleSpacepassCreation(userData.name, userData.surname, userData.avatar, userData.race);
-            // console.log(userSpacepass);
-            return userData;
+            const userSpacepass = await handleSpacepassCreation(userData.id, userData.name, userData.surname, userData.avatar, userData.race);
+            const boundUser = await handleSpacepassBinding(userData.id);
+            return boundUser;
         },
         onSuccess: (data) => {
-            console.log(data)
             setIsAuth(true);
             setActiveUser(data);
             setTimeout(() => {
@@ -81,9 +80,16 @@ function SignUp() {
         return createUserAccount(newUser);
     }
 
-    async function handleSpacepassCreation(name, surname, avatar, race) {
-        const newSpacepass = createSpacepass(name, surname, avatar, race);
+    async function handleSpacepassCreation(id, name, surname, avatar, race) {
+        const newSpacepass = await createSpacepass(id, name, surname, avatar, race);
         return newSpacepass;
+    }
+
+    async function handleSpacepassBinding(userId) {
+        const passNum = await getPassnumFromId(userId);
+        const bindingData = { spacepass: passNum };
+        const boundUser = await updateUserAccount(userId, bindingData);
+        return boundUser;
     }
 
     useEffect(() => {
