@@ -9,6 +9,7 @@ import WorkInProgress from './../components/modalpieces/WorkInProgress';
 import GenericPopup from '../components/modalpieces/GenericPopup';
 import ListPopup from '../components/modalpieces/ListPopup';
 import AccountEdit from '../components/modalpieces/AccountEdit';
+import Spacepass from '../components/passengers/Spacepass';
 
 function Modal({ modalShown, modalClass, content, props, width, height }) {
     const { layoutState, dispatch } = useContext(LayoutContext);
@@ -34,6 +35,9 @@ function Modal({ modalShown, modalClass, content, props, width, height }) {
         break;
       case 'work-in-progress':
         modalContent = <WorkInProgress props={{...props}} />;
+        break;
+      case 'spacepass':
+        modalContent = <Spacepass props={{...props}} />;
         break;
       default: // Generic presentational popup
         modalContent = <GenericPopup props={{...props}} />;

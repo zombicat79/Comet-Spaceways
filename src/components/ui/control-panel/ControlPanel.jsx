@@ -40,6 +40,7 @@ function ControlPanel({ distribution, panelComponents, panelData }) {
 // CHILD COMPONENTS
 function CharacterPiece({ relevantKeys }) {
     const { panelData, formatDataOutput } = useContext(PanelContext);
+    const { handlePopupLaunch } = useContext(LayoutContext);
 
     return (
         <div className='panel__piece panel__piece--horizontal'>
@@ -52,6 +53,7 @@ function CharacterPiece({ relevantKeys }) {
                 {panelData[relevantKeys[6]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[6]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[6]])}</span></p>}
                 {panelData[relevantKeys[7]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[7]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[7]])}</span></p>}
             </div>
+            <Button type="secondary" text="see spacepass" action={() => handlePopupLaunch({ modalClass: 'presentational', content: 'spacepass' })} />
         </div>
     )
 }
