@@ -88,7 +88,7 @@ export default class Spacepass {
                 break;
             default: // race == humanoid
                 this.category = "A+";
-                this.expiryDate = "N/A"
+                this.expiryDate = add(this.issueDate, { years: 200 })
         }
     }
 
