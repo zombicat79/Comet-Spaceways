@@ -53,6 +53,11 @@ function Modal({ modalShown, modalClass, content, props, width, height }) {
         : `modal__content modal__content--presentational modal__content--${width}-width modal__content--${height}-height`
     }
 
+    function deployOverlayClasses() {
+        return modalShown ? `modal__content modal__content--overlay` 
+        : `modal__content modal__content--overlay`
+    }
+
     function closeModal() {
         dispatch({ type: 'toggle/modal' });
         setTimeout(() => {
@@ -74,7 +79,7 @@ function Modal({ modalShown, modalClass, content, props, width, height }) {
           className={
             modalClass === 'presentational'
               ? deployPresentationalClasses()
-              : deployGenericClasses()
+              : modalClass === 'overlay' ? deployOverlayClasses() : deployGenericClasses()
           }
         >
           {layoutState.viewportWidth <= 600 && (

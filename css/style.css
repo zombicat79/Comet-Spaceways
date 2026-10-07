@@ -3206,6 +3206,10 @@ p {
     width: 100%; }
   .modal--small-height {
     height: 100%; }
+  .modal--fit-height {
+    height: initial; }
+  .modal--fit-width {
+    width: initial; }
   .modal--not-rendered {
     display: none; }
   .modal--appearing {
@@ -3236,6 +3240,8 @@ p {
       background-color: #ffffff;
       border: none;
       color: #121212; }
+    .modal__content--overlay {
+      background-color: transparent; }
     .modal__content--small-width {
       width: 100%; }
     .modal__content--regular-width {

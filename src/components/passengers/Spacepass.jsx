@@ -1,10 +1,35 @@
+import { useQuery } from "@tanstack/react-query";
 import { format, add } from "date-fns";
+import { getSpacepass } from "../../services/spacepassService";
 
-function Spacepass({ spacepassData, orientation="landscape" }) {
+import Loader from "../Loader";
+
+function Spacepass({ props=null, orientation="landscape" }) {
+    const { data: spacepassData, isLoading } = useQuery({
+        queryKey: ['active-spacepass'],
+        queryFn: async () => {
+            if (!props) return null;
+
+            if (import.meta.env.PROD) {
+                // TO DO
+            } else {
+                return await getSpacepass(props.spacepassHolderData.spacepass);
+            }
+        }
+    });
+
     let classesCalculation = 'spacepass';
     if (!spacepassData) classesCalculation = classesCalculation + ' spacepass--generic';
     if (orientation === 'portrait') classesCalculation = classesCalculation + ' spacepass--inverted';
+    
     const defaultPicString = '/assets/images/characters/profiles/profile-default.png';
+    const spacepassHolderPicString = spacepassData ? `/assets/images/characters/profiles/profile-${props?.spacepassHolderData?.avatar}.webp` : null;
+
+    if (isLoading) {
+        return (
+            <Loader spinner='spinner_light' />
+        )
+    }
 
     return (
         <figure className={classesCalculation}>
@@ -13,7 +38,7 @@ function Spacepass({ spacepassData, orientation="landscape" }) {
                 <p className="spacepass__title">spacepass</p>
             </div>
             <div className="spacepass__body">
-                <img className="spacepass__picture" src={spacepassData ? '' : defaultPicString} alt="spacepass holder picture" />
+                <img className="spacepass__picture" src={spacepassData ? spacepassHolderPicString : defaultPicString} alt="spacepass holder picture" />
                 <div className="spacepass__data">
                     <div className="data__row">
                         <div className="data__item">
@@ -32,19 +57,19 @@ function Spacepass({ spacepassData, orientation="landscape" }) {
                     <div className="data__row">
                         <div className="data__item">
                             <p className="data__label">Tribe / Cast / Faction</p>
-                            <p className="data__value">{spacepassData ? spacepassData.surname : 'SAMPLE FACTION'}</p>
+                            <p className="data__value">{spacepassData ? props?.spacepassHolderData?.surname.toUpperCase() : 'SAMPLE FACTION'}</p>
                         </div>
                     </div>
                     <div className="data__row">
                         <div className="data__item">
                             <p className="data__label">Name</p>
-                            <p className="data__value">{spacepassData ? spacepassData.name : 'SAMPLE NAME'}</p>
+                            <p className="data__value">{spacepassData ? props?.spacepassHolderData?.name.toUpperCase() : 'SAMPLE NAME'}</p>
                         </div>
                     </div>
                     <div className="data__row">
                         <div className="data__item">
                             <p className="data__label">Race</p>
-                            <p className="data__value">{spacepassData ? spacepassData.race : 'RACE'}</p>
+                            <p className="data__value">{spacepassData ? props?.spacepassHolderData?.race.toUpperCase() : 'RACE'}</p>
                         </div>
                     </div>
                     <div className="data__row">

@@ -111,7 +111,7 @@ function NheIndex() {
                                 handlePopupLaunch({ 
                                     modalClass: 'presentational', 
                                     content: 'spacepass', 
-                                    props: {body: <Spacepass orientation='portrait' />, contentModifier: 'rotate90'}
+                                    //props: {body: <Spacepass orientation='portrait' />, contentModifier: 'rotate90'}
                                 })}
                             }
                             text="View spacepass" 

@@ -44,7 +44,11 @@ function CharacterPiece({ relevantKeys }) {
 
     return (
         <div className='panel__piece panel__piece--horizontal'>
-            <Avatar character={panelData[relevantKeys[8]]} text={panelData[relevantKeys[0]] + " " + panelData[relevantKeys[1]]} />
+            <Avatar 
+                character={panelData[relevantKeys[8]]} 
+                text={panelData[relevantKeys[0]] + " " + panelData[relevantKeys[1]]}
+                onClick={() => handlePopupLaunch({ modalClass: 'overlay', content: 'spacepass', props: { spacepassHolderData: panelData } })}
+            />
             <div className='text-left'>
                 {panelData[relevantKeys[2]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[2]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[2]])}</span></p>}
                 {panelData[relevantKeys[3]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[3]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[3]])}</span></p>}
@@ -53,7 +57,6 @@ function CharacterPiece({ relevantKeys }) {
                 {panelData[relevantKeys[6]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[6]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[6]])}</span></p>}
                 {panelData[relevantKeys[7]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[7]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[7]])}</span></p>}
             </div>
-            <Button type="secondary" text="see spacepass" action={() => handlePopupLaunch({ modalClass: 'presentational', content: 'spacepass' })} />
         </div>
     )
 }
