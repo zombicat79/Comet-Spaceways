@@ -68,9 +68,9 @@ function AppLayout() {
             {renderedHeader === 'purchase' && <PurchaseHeader />}
             <Aside side="left" />
             <Outlet />
-            <ProtectedComponent>
+            {/* <ProtectedComponent> */ }
                 <Aside side="right" />
-            </ProtectedComponent>
+            {/* </ProtectedComponent> */ }
             <Footer />
             <Subfooter />
             

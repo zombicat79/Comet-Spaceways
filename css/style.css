@@ -3352,6 +3352,19 @@ p {
       animation-timing-function: linear;
       animation-duration: .75s;
       animation-fill-mode: forwards; }
+    .aside--right .avatar__text {
+      text-transform: uppercase;
+      font-family: roboto-bold;
+      font-style: italic; }
+    @media screen and (min-width: 1000px) {
+      .aside--right .avatar:hover {
+        cursor: pointer; }
+        .aside--right .avatar:hover .avatar__img-wrapper {
+          transform: scale(1.05);
+          border: 0.5rem solid #32CD32; }
+        .aside--right .avatar:hover .avatar__text {
+          transform: scale(1.1);
+          color: #0B3D91; } }
     .aside--right .aside__footer {
       left: 0; }
   .aside__header {
@@ -3412,6 +3425,21 @@ p {
       .aside__main .navlink,
       .aside__main h4 {
         font-size: 3.2rem; } }
+  .aside__main a {
+    align-self: flex-start; }
+  .aside__main .list__item--clickable {
+    transition: transform .5s; }
+    @media screen and (max-width: 1000px) {
+      .aside__main .list__item--clickable {
+        text-decoration: underline;
+        text-underline-offset: 3px; } }
+    @media screen and (min-width: 1000px) {
+      .aside__main .list__item--clickable:hover {
+        transform: translateX(1rem);
+        color: #0B3D91;
+        font-weight: 700;
+        text-decoration: underline;
+        cursor: pointer; } }
   .aside__lesser .navbar__list {
     gap: 0; }
     @media screen and (max-width: 600px) {

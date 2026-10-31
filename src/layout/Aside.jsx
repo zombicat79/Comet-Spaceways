@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { LayoutContext } from '../contexts/LayoutContext';
 
 function Aside({ side }) {
-    const { layoutState, dispatch } = useContext(LayoutContext);
+    const { layoutState, closeAside } = useContext(LayoutContext);
 
     let asideClasses = `aside aside--${side}`;
     if (layoutState[`aside${side}`].shown === true) {
@@ -12,21 +12,12 @@ function Aside({ side }) {
         asideClasses += ` aside--${side}--off`;
     }
 
-    function closeAside() {
-        dispatch({ type: 'toggle/aside', payload: {
-            side,
-            shown: false,
-            content: null
-        }});
-        dispatch({ type: 'toggle/scroll' });
-    }
-
     return (
         <aside className={asideClasses}>
             <div className="aside__header">
               <svg
                 className="aside__closer element--clickable"
-                onClick={closeAside}
+                onClick={() => closeAside(side)}
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

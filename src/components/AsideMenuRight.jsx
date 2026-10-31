@@ -1,5 +1,7 @@
 import { useContext } from 'react';
+import { Link } from 'react-router';
 import { AuthContext } from '../contexts/AuthContext';
+import { LayoutContext } from '../contexts/LayoutContext';
 
 import useExit from '../hooks/useExit';
 
@@ -13,6 +15,7 @@ import { capitalizeFirst, pruneString } from '../utilities/utils';
 
 function AsideMenuRight({ links }) {
     const { activeUser } = useContext(AuthContext);
+    const { handlePopupLaunch, closeAside } = useContext(LayoutContext);
     const { logOut } = useExit();
 
     return (
@@ -20,10 +23,32 @@ function AsideMenuRight({ links }) {
             <div className="aside__body">
                 <div className="aside__main">
                     <div className="aside__section">
-                        <Avatar character={activeUser.avatar} text={(activeUser.name + " " + activeUser.surname)} layout="horizontal" />
+                        <Link to='/user-profile'>
+                            <Avatar 
+                                character={activeUser.avatar} 
+                                text={(activeUser.name + " " + activeUser.surname)} 
+                                layout="horizontal" 
+                            />
+                        </Link>
                         <ul className="section__list container--column-between mv-2">
-                            <li className="list__item text-left"><p>{pruneString(capitalizeFirst(activeUser.race), ["_", "-"])}</p></li>
+                            {
+                                activeUser.race === 'humanoid' 
+                                ? <li className='list__item list__item--clickable text-left'><p>{pruneString(capitalizeFirst(activeUser.race), ["_", "-"])}</p></li>
+                                : <Link to={{
+                                    pathname: '/nhes',
+                                    search: `?race=${activeUser.race}`
+                                }} target='_blank' rel='noreferrer'>
+                                    <li className='list__item list__item--clickable text-left'><p>{pruneString(capitalizeFirst(activeUser.race), ["_", "-"])}</p></li>
+                                </Link>
+                            }
                             <li className="list__item text-left"><p>{pruneString(capitalizeFirst(activeUser.job), ["_", "-"])}</p></li>
+                            <li className="list__item list__item--clickable text-left" onClick={() => {
+                                closeAside('right');
+                                handlePopupLaunch({ modalClass: 'overlay', content: 'spacepass', props: { spacepassHolderData: activeUser } });
+                                }
+                            }>
+                                <p>CHECK SPACEPASS</p>
+                            </li>
                         </ul>
                         <ul className="section__list container--column-between mv-2">
                             <li className="list__item text-left">
