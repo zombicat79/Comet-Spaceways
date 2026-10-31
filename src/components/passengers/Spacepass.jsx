@@ -23,7 +23,16 @@ function Spacepass({ props=null, orientation="landscape" }) {
     if (orientation === 'portrait') classesCalculation = classesCalculation + ' spacepass--inverted';
     
     const defaultPicString = '/assets/images/characters/profiles/profile-default.png';
-    const spacepassHolderPicString = spacepassData ? `/assets/images/characters/profiles/profile-${props?.spacepassHolderData?.avatar}.webp` : null;
+    let spacepassHolderPicString = null;
+    if (spacepassData) {
+        if (props?.spacepassHolderData?.avatar === 'big-headed') {
+            spacepassHolderPicString = `/assets/images/characters/profiles/profile-gray.webp`;
+        } else if (props?.spacepassHolderData?.avatar === 'little-man') {
+            spacepassHolderPicString = `/assets/images/characters/profiles/profile-green.webp`;
+        } else {
+            spacepassHolderPicString = `/assets/images/characters/profiles/profile-${props?.spacepassHolderData?.avatar}.webp`;
+        }
+    }
 
     if (isLoading) {
         return (
@@ -69,7 +78,7 @@ function Spacepass({ props=null, orientation="landscape" }) {
                     <div className="data__row">
                         <div className="data__item">
                             <p className="data__label">Race</p>
-                            <p className="data__value">{spacepassData ? props?.spacepassHolderData?.race.toUpperCase() : 'RACE'}</p>
+                            <p className="data__value">{spacepassData ? props?.spacepassHolderData?.race.replace(/[-_]/g, ' ').toUpperCase() : 'RACE'}</p>
                         </div>
                     </div>
                     <div className="data__row">

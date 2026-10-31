@@ -2707,6 +2707,18 @@ p {
     .panel__piece--not-centered {
       top: initial;
       transform: translateY(0); }
+    .panel__piece a {
+      transition: transform .5s; }
+      @media screen and (max-width: 1000px) {
+        .panel__piece a {
+          text-decoration: underline;
+          text-underline-offset: 3px; } }
+      @media screen and (min-width: 1000px) {
+        .panel__piece a:hover {
+          transform: translateX(1rem);
+          color: #0B3D91;
+          font-weight: 700;
+          text-decoration: underline; } }
     .panel__piece .piece__title {
       justify-self: flex-start;
       text-transform: uppercase;
@@ -2774,6 +2786,15 @@ p {
       text-transform: uppercase;
       font-family: roboto-bold;
       font-style: italic; }
+    @media screen and (min-width: 1000px) {
+      .panel__piece .avatar:hover {
+        cursor: pointer; }
+        .panel__piece .avatar:hover .avatar__img-wrapper {
+          transform: scale(1.05);
+          border: 0.5rem solid #32CD32; }
+        .panel__piece .avatar:hover .avatar__text {
+          transform: scale(1.1);
+          color: #0B3D91; } }
     .panel__piece svg {
       width: 100%;
       max-width: 5rem;
