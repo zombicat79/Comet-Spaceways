@@ -70,7 +70,7 @@ function useLayout() {
         }});
         dispatch({ type: 'toggle/scroll' });
     }
-    console.log(layoutState)
+    // console.log(layoutState)
 
     return { layoutState, dispatch, resetPageScroll, closeAside };
 }

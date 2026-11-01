@@ -138,3 +138,11 @@ p {
 .italic {
     font-style: italic;
 }
+
+.font-smaller {
+    font-size: $size-smaller;
+}
+
+.font-smallest {
+    font-size: $size-smallest;
+}
