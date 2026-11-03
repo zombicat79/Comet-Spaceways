@@ -42,14 +42,18 @@ function ControlPanel({ distribution, panelComponents, panelData }) {
 // CHILD COMPONENTS
 function CharacterPiece({ relevantKeys }) {
     const { panelData, formatDataOutput } = useContext(PanelContext);
-    const { handlePopupLaunch } = useContext(LayoutContext);
+    const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
 
     return (
         <div className='panel__piece panel__piece--horizontal'>
             <Avatar 
                 character={panelData[relevantKeys[8]]} 
                 text={panelData[relevantKeys[0]] + " " + panelData[relevantKeys[1]]}
-                onClick={() => handlePopupLaunch({ modalClass: 'overlay', content: 'spacepass', props: { spacepassHolderData: panelData } })}
+                onClick={() => {
+                    if (layoutState.viewportWidth > 600) {
+                        handlePopupLaunch({ modalClass: 'overlay', content: 'spacepass', props: { spacepassHolderData: panelData } });
+                    }
+                }}
             />
             <div className='text-left'>
                 {panelData[relevantKeys[2]] && panelData[relevantKeys[2]] !== 'humanoid' &&

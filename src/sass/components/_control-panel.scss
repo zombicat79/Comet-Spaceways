@@ -140,6 +140,7 @@
             @include respond(tablet-landscape) {
                 text-decoration: underline;
                 text-underline-offset: 3px;
+                color: $color-environmental-deep;
             }
 
             &:hover {
