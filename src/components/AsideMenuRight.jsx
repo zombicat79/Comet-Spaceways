@@ -15,9 +15,8 @@ import { capitalizeFirst, pruneString } from '../utilities/utils';
 
 function AsideMenuRight({ links }) {
     const { activeUser } = useContext(AuthContext);
-    const { handlePopupLaunch, closeAside } = useContext(LayoutContext);
+    const { layoutState, handlePopupLaunch, closeAside } = useContext(LayoutContext);
     const { logOut } = useExit();
-    console.log(activeUser)
 
     return (
         <>
@@ -43,13 +42,13 @@ function AsideMenuRight({ links }) {
                                 </Link>
                             }
                             <li className="list__item text-left"><p>{pruneString(capitalizeFirst(activeUser.job), ["_", "-"])}</p></li>
-                            <li className="list__item list__item--clickable text-left" onClick={() => {
+                            {layoutState.viewportWidth > 600 && <li className="list__item list__item--clickable text-left" onClick={() => {
                                 closeAside('right');
                                 handlePopupLaunch({ modalClass: 'overlay', content: 'spacepass', props: { spacepassHolderData: activeUser, launchOrigin: 'aside-right' } });
                                 }
                             }>
                                 <p>CHECK SPACEPASS</p>
-                            </li>
+                            </li>}
                         </ul>
                         <ul className="section__list container--column-between mv-2">
                             <li className="list__item text-left">

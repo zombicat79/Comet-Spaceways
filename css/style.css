@@ -39,20 +39,20 @@
 
 /* HTML */
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /* @include respond(big-screen) {
+        font-size: 87.5%;
+    } */ }
   @media screen and (max-width: 600px) {
     html {
       font-size: 50%; } }
   @media screen and (max-width: 360px) {
     html {
       font-size: 40%; } }
-  @media screen and (min-width: 2000px) {
-    html {
-      font-size: 87.5%; } }
   @media screen and (min-width: 2800px) {
     html {
       font-size: 100%; } }
-  @media screen and (min-width: 3500px) {
+  @media screen and (min-width: 4000px) {
     html {
       font-size: 150%; } }
 
@@ -1142,7 +1142,7 @@ p {
         height: 95px;
         top: 42%;
         left: 30%; } }
-    @media screen and (min-width: 3500px) {
+    @media screen and (min-width: 4000px) {
       .intersection--cosmic__ellipse {
         width: 1400px;
         height: 110px;
@@ -1170,7 +1170,7 @@ p {
       .intersection--cosmic__star {
         width: 120px;
         height: 120px; } }
-    @media screen and (min-width: 3500px) {
+    @media screen and (min-width: 4000px) {
       .intersection--cosmic__star {
         width: 140px;
         height: 140px; } }
@@ -1194,12 +1194,12 @@ p {
   @media screen and (min-width: 2800px) {
     .promoposter {
       justify-content: center; } }
-  @media screen and (min-width: 3500px) {
+  @media screen and (min-width: 4000px) {
     .promoposter {
       gap: 10rem; } }
   .promoposter__side {
     flex: 1; }
-    @media screen and (min-width: 3500px) {
+    @media screen and (min-width: 4000px) {
       .promoposter__side {
         flex: 0.3; } }
   .promoposter__catch {
@@ -2298,7 +2298,7 @@ p {
       .stellar-map__star {
         width: 120px;
         height: 120px; } }
-    @media screen and (min-width: 3500px) {
+    @media screen and (min-width: 4000px) {
       .stellar-map__star {
         width: 140px;
         height: 140px; } }
@@ -2669,7 +2669,7 @@ p {
       padding-bottom: 0; }
     .panel .content-section > div {
       height: 100%; }
-    @media screen and (min-width: 3500px) {
+    @media screen and (min-width: 4000px) {
       .panel .content-section {
         width: 100%; } }
   .panel--profile {
@@ -3448,6 +3448,7 @@ p {
     transition: transform .5s; }
     @media screen and (max-width: 1000px) {
       .aside__main .list__item--clickable {
+        color: #0B3D91;
         text-decoration: underline;
         text-underline-offset: 3px; } }
     @media screen and (min-width: 1000px) {
@@ -3532,7 +3533,7 @@ p {
   @media screen and (max-width: 1000px) {
     .content-section {
       padding: 5rem 2rem; } }
-  @media screen and (min-width: 3500px) {
+  @media screen and (min-width: 4000px) {
     .content-section {
       width: 75%;
       margin-left: auto;
@@ -3844,7 +3845,7 @@ p {
     padding: 5rem 5rem 10rem; }
     .nhes section:not(.content-section):nth-child(2) {
       padding: 0 5rem; }
-  @media screen and (min-width: 3500px) {
+  @media screen and (min-width: 4000px) {
     .nhes__paragraph {
       width: 50%;
       margin-left: auto;
@@ -4076,7 +4077,7 @@ p {
   z-index: 3;
   padding: 10rem 0;
   height: 100vh; }
-  @media screen and (min-width: 3500px) {
+  @media screen and (min-width: 4000px) {
     .profile {
       width: 75%;
       margin-left: auto;

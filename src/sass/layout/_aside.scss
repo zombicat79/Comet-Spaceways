@@ -149,6 +149,7 @@
         .list__item--clickable {
             transition: transform .5s;
             @include respond(tablet-landscape) {
+                color: $color-environmental-deep;
                 text-decoration: underline;
                 text-underline-offset: 3px;
             }
