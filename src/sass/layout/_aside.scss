@@ -48,6 +48,27 @@
             @include animation-standard(aside-right-out);
         }
 
+        .avatar__text {
+            text-transform: uppercase;
+            font-family: roboto-bold;
+            font-style: italic;
+        }
+
+        @include respond(small-desktop) {
+            .avatar:hover {
+                cursor: pointer;
+
+                .avatar__img-wrapper {
+                    transform: scale(1.05);
+                    border: 0.5rem solid $color-highlight-accent;
+                }
+                .avatar__text {
+                    transform: scale(1.1);
+                    color: $color-environmental-deep;
+                }
+            }
+        }
+
         .aside__footer {
             left: 0;
         }
@@ -117,6 +138,42 @@
         }
         @include respond(phone-small) {
             font-size: 3.2rem;
+        }
+    }
+
+    &__main {
+        a {
+            align-self: flex-start;
+        }
+
+        .list__item--clickable {
+            transition: transform .5s;
+            @include respond(tablet-landscape) {
+                color: $color-environmental-deep;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+
+            &:hover {
+                @include respond(small-desktop) {
+                    transform: translateX(1rem);
+                    color: $color-environmental-deep;
+                    font-weight: 700;
+                    text-decoration: underline;
+                    cursor: pointer;
+
+                    svg {
+                        transition: transform .5s;
+                        transform: scale(1.1);
+                        fill: $color-environmental-deep;
+                    }
+                }
+            }
+        }
+
+        .list__item--blocked {
+            cursor: not-allowed;
+            opacity: 0.4;
         }
     }
 

@@ -3,6 +3,9 @@ import { LayoutContext } from './../contexts/LayoutContext';
 
 import Modal from './Modal';
 import Loader from '../components/Loader';
+import AsideMenuRight from '../components/AsideMenuRight';
+
+import { loggedAsideLinks } from '../data/internal-links';
 
 function ScrollBlocker() {
     const { layoutState, dispatch } = useContext(LayoutContext);
@@ -44,6 +47,14 @@ function ScrollBlocker() {
                             side: 'right',
                             shown: false,
                             content: null
+                        }});
+                        dispatch({ type: 'toggle/scroll' });
+                    }
+                    if (layoutState.modalProps.launchOrigin === 'aside-right') {
+                        dispatch({ type: 'toggle/aside', payload: {
+                            side: 'right',
+                            shown: true,
+                            content: <AsideMenuRight links={loggedAsideLinks} />
                         }});
                         dispatch({ type: 'toggle/scroll' });
                     }

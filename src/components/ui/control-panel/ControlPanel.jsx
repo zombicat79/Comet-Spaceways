@@ -6,7 +6,6 @@ import ContentSection from "../../../layout/ContentSection";
 import Avatar from "./../../Avatar";
 import SvgIcon from "../../SvgIcon";
 import Button from "../../Button";
-import Tooltip from "../../Tooltip";
 import CompletionBar from "../CompletionBar";
 
 import { capitalizeFirst, pruneString } from "../../../utilities/utils";

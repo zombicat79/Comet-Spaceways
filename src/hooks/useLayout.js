@@ -61,9 +61,18 @@ function useLayout() {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth'});
         dispatch({ type: 'set/scrollHeight', payload: 0 });
     }
+
+    function closeAside(side) {
+        dispatch({ type: 'toggle/aside', payload: {
+            side,
+            shown: false,
+            content: null
+        }});
+        dispatch({ type: 'toggle/scroll' });
+    }
     // console.log(layoutState)
 
-    return { layoutState, dispatch, resetPageScroll };
+    return { layoutState, dispatch, resetPageScroll, closeAside };
 }
 
 export default useLayout;
