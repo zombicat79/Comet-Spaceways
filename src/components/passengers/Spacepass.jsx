@@ -11,8 +11,9 @@ function Spacepass({ props=null, orientation="landscape" }) {
             if (!props) return null;
 
             if (import.meta.env.PROD) {
-                // TO DO
+                return await getSpacepass(props.spacepassHolderData.spacepass);
             } else {
+                // TO DO (Transition to MongoDB)
                 return await getSpacepass(props.spacepassHolderData.spacepass);
             }
         }

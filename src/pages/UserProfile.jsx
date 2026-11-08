@@ -15,7 +15,8 @@ import { getUserAccountById, getCharacteristicsAvg } from "../services/userServi
 function UserProfile() {
     const { activeUser } = useContext(AuthContext);
     const [params] = useSearchParams();
-    const formattedId = import.meta.env.PROD ? activeUser._id : activeUser.id;
+    const formattedId = import.meta.env.PROD ? activeUser.id : activeUser.id;
+    // const formattedId = import.meta.env.PROD ? activeUser._id : activeUser.id;
     const { data: userData, isLoading } = useQuery({
         queryKey: ['active-user'],
         queryFn: async () => {
@@ -24,6 +25,7 @@ function UserProfile() {
                 const averages = await getCharacteristicsAvg();
                 return { ...rawUser, ...averages };
             } else {
+                // TO DO (Transition to MongoDB)
                 const rawUser = await getUserAccountById(formattedId);
                 const averages = await getCharacteristicsAvg();
                 return { ...rawUser, ...averages };
