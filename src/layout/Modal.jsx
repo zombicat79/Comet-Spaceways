@@ -9,6 +9,7 @@ import WorkInProgress from './../components/modalpieces/WorkInProgress';
 import GenericPopup from '../components/modalpieces/GenericPopup';
 import ListPopup from '../components/modalpieces/ListPopup';
 import AccountEdit from '../components/modalpieces/AccountEdit';
+import Spacepass from '../components/passengers/Spacepass';
 
 function Modal({ modalShown, modalClass, content, props, width, height }) {
     const { layoutState, dispatch } = useContext(LayoutContext);
@@ -35,6 +36,9 @@ function Modal({ modalShown, modalClass, content, props, width, height }) {
       case 'work-in-progress':
         modalContent = <WorkInProgress props={{...props}} />;
         break;
+      case 'spacepass':
+        modalContent = <Spacepass props={{...props}} />;
+        break;
       default: // Generic presentational popup
         modalContent = <GenericPopup props={{...props}} />;
     }
@@ -47,6 +51,11 @@ function Modal({ modalShown, modalClass, content, props, width, height }) {
     function deployPresentationalClasses() {
         return modalShown ? `modal__content modal__content--presentational modal__content--${width}-width modal__content--${height}-height` 
         : `modal__content modal__content--presentational modal__content--${width}-width modal__content--${height}-height`
+    }
+
+    function deployOverlayClasses() {
+        return modalShown ? `modal__content modal__content--overlay` 
+        : `modal__content modal__content--overlay`
     }
 
     function closeModal() {
@@ -70,7 +79,7 @@ function Modal({ modalShown, modalClass, content, props, width, height }) {
           className={
             modalClass === 'presentational'
               ? deployPresentationalClasses()
-              : deployGenericClasses()
+              : modalClass === 'overlay' ? deployOverlayClasses() : deployGenericClasses()
           }
         >
           {layoutState.viewportWidth <= 600 && (

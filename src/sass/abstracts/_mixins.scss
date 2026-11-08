@@ -72,6 +72,9 @@
     @if $breakpoint == tablet-landscape {
         @media screen and (max-width: $breakpoint-tablet-landscape) { @content };
     }
+    @if $breakpoint == small-desktop {
+        @media screen and (min-width: $breakpoint-tablet-landscape) { @content };
+    }
     @if $breakpoint == desktop {
         @media screen and (min-width: $breakpoint-desktop) { @content };
     }

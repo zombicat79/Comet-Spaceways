@@ -101,7 +101,7 @@ function UserProfile() {
     };
 
     const panelComponents = [
-        <ControlPanel.CharacterPiece relevantKeys={['name', 'surname', 'race', 'nationality', 'origin', 'build', 'gender', 'job', 'avatar']} />,
+        <ControlPanel.CharacterPiece relevantKeys={['name', 'surname', 'race', 'nationality', 'origin', 'build', 'gender', 'job', 'avatar', 'spacepass']} />,
         <ControlPanel.StockitemPiece relevantItem='money' unit='AU' />, 
         <ControlPanel.StockpilePiece pieceTitle='inventory' relevantKey={'inventory'} />, 
         <ControlPanel.StatsPiece relevantKeys={['actualHealth', 'strength', 'intelligence', 'wisdom', 'dexterity', 'diplomacy']} />,

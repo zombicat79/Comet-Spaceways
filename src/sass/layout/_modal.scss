@@ -12,6 +12,14 @@
         height: 100%;
     }
 
+    &--fit-height {
+        height: initial;
+    }
+
+    &--fit-width {
+        width: initial;
+    }
+
     &--not-rendered {
         display: none;
     }
@@ -52,6 +60,10 @@
             background-color: $color-environmental-light;
             border: none;
             color: $color-environmental-pitch;
+        }
+
+        &--overlay {
+            background-color: transparent;
         }
 
         &--small-width {

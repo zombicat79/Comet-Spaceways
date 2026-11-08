@@ -25,6 +25,9 @@ function LayoutProvider({ children }) {
             case data.modalClass === 'presentational' && window.innerWidth > 768:
                 dispatch({ type: 'resize/modal', payload: {width: 'large', height: 'regular'} });
                 break;
+            case data.modalClass === 'overlay':
+                dispatch({ type: 'resize/modal', payload: {width: 'fit', height: 'fit'} });
+                break;
             // INFO & FUNCTIONAL PURPLE POPUP
             case window.innerWidth <= 600:
                 dispatch({ type: 'resize/modal', payload: {width: 'small', height: 'small'} });

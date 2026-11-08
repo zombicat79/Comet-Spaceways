@@ -1,10 +1,44 @@
+import { useQuery } from "@tanstack/react-query";
 import { format, add } from "date-fns";
+import { getSpacepass } from "../../services/spacepassService";
 
-function Spacepass({ userData, orientation="landscape" }) {
+import Loader from "../Loader";
+
+function Spacepass({ props=null, orientation="landscape" }) {
+    const { data: spacepassData, isLoading } = useQuery({
+        queryKey: ['active-spacepass'],
+        queryFn: async () => {
+            if (!props) return null;
+
+            if (import.meta.env.PROD) {
+                // TO DO
+            } else {
+                return await getSpacepass(props.spacepassHolderData.spacepass);
+            }
+        }
+    });
+
     let classesCalculation = 'spacepass';
-    if (!userData) classesCalculation = classesCalculation + ' spacepass--generic';
+    if (!spacepassData) classesCalculation = classesCalculation + ' spacepass--generic';
     if (orientation === 'portrait') classesCalculation = classesCalculation + ' spacepass--inverted';
+    
     const defaultPicString = '/assets/images/characters/profiles/profile-default.png';
+    let spacepassHolderPicString = null;
+    if (spacepassData) {
+        if (props?.spacepassHolderData?.avatar === 'big-headed') {
+            spacepassHolderPicString = `/assets/images/characters/profiles/profile-gray.webp`;
+        } else if (props?.spacepassHolderData?.avatar === 'little-man') {
+            spacepassHolderPicString = `/assets/images/characters/profiles/profile-green.webp`;
+        } else {
+            spacepassHolderPicString = `/assets/images/characters/profiles/profile-${props?.spacepassHolderData?.avatar}.webp`;
+        }
+    }
+
+    if (isLoading) {
+        return (
+            <Loader spinner='spinner_light' />
+        )
+    }
 
     return (
         <figure className={classesCalculation}>
@@ -13,51 +47,51 @@ function Spacepass({ userData, orientation="landscape" }) {
                 <p className="spacepass__title">spacepass</p>
             </div>
             <div className="spacepass__body">
-                <img className="spacepass__picture" src={userData ? '' : defaultPicString} alt="spacepass holder picture" />
+                <img className="spacepass__picture" src={spacepassData ? spacepassHolderPicString : defaultPicString} alt="spacepass holder picture" />
                 <div className="spacepass__data">
                     <div className="data__row">
                         <div className="data__item">
                             <p className="data__label">Type</p>
-                            <p className="data__value">B1</p>
+                            <p className="data__value">{spacepassData ? spacepassData.category : 'B1'}</p>
                         </div>
                         <div className="data__item">
                             <p className="data__label">Authority</p>
-                            <p className="data__value">SF / EEU</p>
+                            <p className="data__value">{spacepassData ? `SF / ${spacepassData.issuePlace}` : 'SF / EEU'}</p>
                         </div>
                         <div className="data__item">
                             <p className="data__label">Spacepass No.</p>
-                            <p className="data__value">AAA000000</p>
+                            <p className="data__value">{spacepassData ? spacepassData.passNum : 'AAA000000'}</p>
                         </div>
                     </div>
                     <div className="data__row">
                         <div className="data__item">
                             <p className="data__label">Tribe / Cast / Faction</p>
-                            <p className="data__value">SAMPLE FACTION</p>
+                            <p className="data__value">{spacepassData ? props?.spacepassHolderData?.surname.toUpperCase() : 'SAMPLE FACTION'}</p>
                         </div>
                     </div>
                     <div className="data__row">
                         <div className="data__item">
                             <p className="data__label">Name</p>
-                            <p className="data__value">SAMPLE NAME</p>
+                            <p className="data__value">{spacepassData ? props?.spacepassHolderData?.name.toUpperCase() : 'SAMPLE NAME'}</p>
                         </div>
                     </div>
                     <div className="data__row">
                         <div className="data__item">
                             <p className="data__label">Race</p>
-                            <p className="data__value">SAMPLE RACE</p>
+                            <p className="data__value">{spacepassData ? props?.spacepassHolderData?.race.replace(/[-_]/g, ' ').toUpperCase() : 'RACE'}</p>
                         </div>
                     </div>
                     <div className="data__row">
                         <div className="data__item">
                             <p className="data__label">Date of issue</p>
                             <p className="data__value">
-                                {format(add(new Date(), { years: 100 }).toDateString(), 'dd-MM-yyyy')}
+                                {spacepassData ? format(spacepassData.issueDate, 'dd-MM-yyyy') : format(add(new Date(), { years: 100 }).toDateString(), 'dd-MM-yyyy')}
                             </p>
                         </div>
                         <div className="data__item">
                             <p className="data__label">Date of expiry</p>
                             <p className="data__value">
-                                {format(add(new Date(), { years: 105 }).toDateString(), 'dd-MM-yyyy')}
+                                {spacepassData ? format(spacepassData.expiryDate, 'dd-MM-yyyy') : format(add(new Date(), { years: 105 }).toDateString(), 'dd-MM-yyyy')}
                             </p>
                         </div>
                     </div>
@@ -65,14 +99,14 @@ function Spacepass({ userData, orientation="landscape" }) {
             </div>
             <div className="spacepass__footer">
                 <p className="spacepass__encoding">
-                    {'P<SFSAMPLEFACTION<SAMPLENAME<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'}
+                    {spacepassData ? spacepassData.namePrint : 'P<SFSAMPLEFACTION<SAMPLENAME<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'}
                 </p>
                 <p className="spacepass__encoding">
-                    {'AAA000000SF743499958HJ744424<<<<<<<<<<<EEU<<<<<<<<<<<<<<<<<<<<<<'}
+                    {spacepassData ? spacepassData.serialNum : 'AAA000000SF743499958HJ744424<<<<<<<<<<<EEU<<<<<<<<<<<<<<<<<<<<<<'}
                 </p>
             </div>
 
-            {!userData && <p className="specimen-tag">*-- SPECIMEN --*</p>}
+            {!spacepassData && <p className="specimen-tag">*-- SPECIMEN --*</p>}
         </figure>
     )
 }

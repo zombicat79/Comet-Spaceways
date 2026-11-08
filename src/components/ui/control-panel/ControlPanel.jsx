@@ -1,10 +1,12 @@
 import { createContext, useContext, useRef, useEffect, useState } from "react";
+import { Link } from 'react-router';
 import { LayoutContext } from "../../../contexts/LayoutContext";
 
 import ContentSection from "../../../layout/ContentSection";
 import Avatar from "./../../Avatar";
 import SvgIcon from "../../SvgIcon";
 import Button from "../../Button";
+import Tooltip from "../../Tooltip";
 import CompletionBar from "../CompletionBar";
 
 import { capitalizeFirst, pruneString } from "../../../utilities/utils";
@@ -40,12 +42,32 @@ function ControlPanel({ distribution, panelComponents, panelData }) {
 // CHILD COMPONENTS
 function CharacterPiece({ relevantKeys }) {
     const { panelData, formatDataOutput } = useContext(PanelContext);
+    const { layoutState, handlePopupLaunch } = useContext(LayoutContext);
 
     return (
         <div className='panel__piece panel__piece--horizontal'>
-            <Avatar character={panelData[relevantKeys[8]]} text={panelData[relevantKeys[0]] + " " + panelData[relevantKeys[1]]} />
+            <Avatar 
+                character={panelData[relevantKeys[8]]} 
+                text={panelData[relevantKeys[0]] + " " + panelData[relevantKeys[1]]}
+                onClick={() => {
+                    if (layoutState.viewportWidth > 600) {
+                        handlePopupLaunch({ modalClass: 'overlay', content: 'spacepass', props: { spacepassHolderData: panelData } });
+                    }
+                }}
+            />
             <div className='text-left'>
-                {panelData[relevantKeys[2]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[2]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[2]])}</span></p>}
+                {panelData[relevantKeys[2]] && panelData[relevantKeys[2]] !== 'humanoid' &&
+                    <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'>
+                        <span className='piece__dataIdentifier'>{`${relevantKeys[2]}: `}</span>
+                        <Link to={{
+                            pathname: "/nhes",
+                            search: `?race=${panelData[relevantKeys[2]]}`
+                        }} target='_blank' rel="noreferrer">
+                            <span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[2]])}</span>
+                        </Link>
+                    </p>
+                }
+                {panelData[relevantKeys[2]] && panelData[relevantKeys[2]] === 'humanoid' && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[2]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[2]])}</span></p>}
                 {panelData[relevantKeys[3]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[3]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[3]])}</span></p>}
                 {panelData[relevantKeys[4]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[4]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[4]])}</span></p>}
                 {panelData[relevantKeys[5]] && <p className='piece__dataWrapper piece__dataWrapper--left piece__dataWrapper--separation-1'><span className='piece__dataIdentifier'>{`${relevantKeys[5]}: `}</span><span className='piece__dataItem'>{formatDataOutput(panelData[relevantKeys[5]])}</span></p>}

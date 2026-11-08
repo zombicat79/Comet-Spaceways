@@ -134,6 +134,25 @@
             transform: translateY(0);
         }
 
+        a {
+            transition: transform .5s;
+
+            @include respond(tablet-landscape) {
+                text-decoration: underline;
+                text-underline-offset: 3px;
+                color: $color-environmental-deep;
+            }
+
+            &:hover {
+                @include respond(small-desktop) {
+                    transform: translateX(1rem);
+                    color: $color-environmental-deep;
+                    font-weight: 700;
+                    text-decoration: underline;
+                }
+            }
+        }
+
         .piece {
             &__title {
                 justify-self: flex-start;
@@ -238,6 +257,21 @@
             text-transform: uppercase;
             font-family: roboto-bold;
             font-style: italic;
+        }
+
+        @include respond(small-desktop) {
+            .avatar:hover {
+                cursor: pointer;
+
+                .avatar__img-wrapper {
+                    transform: scale(1.05);
+                    border: 0.5rem solid $color-highlight-accent;
+                }
+                .avatar__text {
+                    transform: scale(1.1);
+                    color: $color-environmental-deep;
+                }
+            }
         }
 
         svg {

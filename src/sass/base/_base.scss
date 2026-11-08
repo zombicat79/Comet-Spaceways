@@ -25,9 +25,9 @@ html {
         font-size: 40%;
     }
 
-    @include respond(big-screen) {
+    /* @include respond(big-screen) {
         font-size: 87.5%;
-    }
+    } */
     @include respond(huge-screen) {
         font-size: 100%;
     }
