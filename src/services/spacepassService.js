@@ -10,8 +10,16 @@ async function createSpacepass(id, name, surname, avatar, race) {
     newSpacepass.generateSerial();
     
     if (import.meta.env.PROD) {
-        // TO DO
+        const { owner, passNum, issueDate, expiryDate, issuePlace, namePrint, serialNum, category, status } = newSpacepass;
+        const { data, error } = await supabase
+            .from('Spacepasses')
+            .upsert({ owner, passNum, issueDate, expiryDate, issuePlace, namePrint, serialNum, category, status })
+            .select()
+
+        if (error) return error;
+        return data;
     } else {
+        // TO DO (Transition to MongoDB)
         const { owner, passNum, issueDate, expiryDate, issuePlace, namePrint, serialNum, category, status } = newSpacepass;
         const { data, error } = await supabase
             .from('Spacepasses')
@@ -25,8 +33,16 @@ async function createSpacepass(id, name, surname, avatar, race) {
 
 async function getSpacepass(passNum) {
     if (import.meta.env.PROD) {
-        // TO DO
+        const { data, error } = await supabase
+            .from('Spacepasses')
+            .select('*')
+            .eq('passNum', passNum)
+            .maybeSingle()
+
+        if (error) return error;
+        return data;
     } else {
+        // TO DO (Transition to MongoDB)
         const { data, error } = await supabase
             .from('Spacepasses')
             .select('*')
@@ -40,8 +56,16 @@ async function getSpacepass(passNum) {
 
 async function getPassnumFromId(userId) {
     if (import.meta.env.PROD) {
-        // TO DO
+        const { data: spacepass, error } = await supabase
+            .from('Spacepasses')
+            .select('passNum')
+            .eq('owner', userId)
+            .maybeSingle()
+
+        if (error) return error;
+        return spacepass.passNum;
     } else {
+        // TO DO (Transition to MongoDB)
         const { data: spacepass, error } = await supabase
             .from('Spacepasses')
             .select('passNum')
