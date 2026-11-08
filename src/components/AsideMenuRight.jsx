@@ -33,7 +33,7 @@ function AsideMenuRight({ links }) {
                         <ul className="section__list container--column-between mv-2">
                             {
                                 activeUser.race === 'humanoid' 
-                                ? <li className='list__item list__item--clickable text-left'><p>{pruneString(capitalizeFirst(activeUser.race), ["_", "-"])}</p></li>
+                                ? <li className='list__item text-left'><p>{pruneString(capitalizeFirst(activeUser.race), ["_", "-"])}</p></li>
                                 : <Link to={{
                                     pathname: '/nhes',
                                     search: `?race=${activeUser.race}`
