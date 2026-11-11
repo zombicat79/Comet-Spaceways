@@ -1,17 +1,12 @@
 import supabase from "../../db/supabase-client";
 
-// TO DO (Transition to MongoDB)
-/* let baseUrl = '';
-const route = '/cometspaceways/api/v1/users';
-if (import.meta.env.PROD) {
-    baseUrl = 'https://backend.zombiecat.dev'
-} else {
-    baseUrl = 'http://localhost:3000';
-} */
+const baseUrl = import.meta.env.TEST_URL;
+const route = import.meta.env.TEST_USER_ROUTE;
 
 async function createUserAccount(userData) {
     try {
         if (import.meta.env.PROD) {
+            // Connection to Supabase
             const { data, error } = await supabase
                 .from('Users')
                 .upsert(userData)
@@ -21,8 +16,8 @@ async function createUserAccount(userData) {
             if (error) return error;
             return data;
         } else {
-            // TO DO (Transition to MongoDB)
-            /* const response = await fetch(`${baseUrl}${route}`, {
+            // Connection to MongoDB via API REST)
+            const response = await fetch(`${baseUrl}${route}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -31,15 +26,6 @@ async function createUserAccount(userData) {
                 credentials: 'include'
             });
             const { data } = await response.json();
-            return data; */
-
-            const { data, error } = await supabase
-                .from('Users')
-                .upsert(userData)
-                .select()
-                .maybeSingle()
-
-            if (error) return error;
             return data;
           
             // FILE SYSTEM VERSION - OBSOLETE
@@ -62,6 +48,7 @@ async function createUserAccount(userData) {
 async function getUserAccountByUsername(username, pwd) {
     try {
         if (import.meta.env.PROD) {
+            // Connection to Supabase
             const { data, error } = await supabase
                 .from('Users')
                 .select('*')
@@ -72,8 +59,8 @@ async function getUserAccountByUsername(username, pwd) {
             if (error) return error;
             return data;
         } else {
-            // TO DO (Transition to MongoDB)
-            /* let response;
+            // Connection to MongoDB via API REST)
+            let response;
             
             if (pwd) {
                 response = await fetch(`${baseUrl}${route}/${username}`, {
@@ -91,16 +78,6 @@ async function getUserAccountByUsername(username, pwd) {
             }
 
             const { data } = await response.json();
-            return data; */
-
-            const { data, error } = await supabase
-                .from('Users')
-                .select('*')
-                .eq('username', username)
-                .eq('password', pwd)
-                .maybeSingle();
-
-            if (error) return error;
             return data;
 
             // FILE SYSTEM VERSION - OBSOLETE
@@ -117,6 +94,7 @@ async function getUserAccountByUsername(username, pwd) {
 async function getUserAccountById(id) {
     try {
         if (import.meta.env.PROD) {
+            // Connection to Supabase
             const { data, error } = await supabase
                 .from('Users')
                 .select('*')
@@ -126,20 +104,11 @@ async function getUserAccountById(id) {
             if (error) return error;
             return data;
         } else {
-            // TO DO (Transition to MongoDB)
-            /* const response = await fetch(`${baseUrl}${route}/${id}`, {
+            // Connection to MongoDB via API REST)
+            const response = await fetch(`${baseUrl}${route}/${id}`, {
                 credentials: 'include'
             });
             const { data } = await response.json();
-            return data; */
-
-            const { data, error } = await supabase
-                .from('Users')
-                .select('*')
-                .eq('id', id)
-                .maybeSingle();
-
-            if (error) return error;
             return data;
 
             // FILE SYSTEM VERSION - OBSOLETE
@@ -156,19 +125,15 @@ async function getUserAccountById(id) {
 async function getCharacteristicsAvg() {
     try {
         if (import.meta.env.PROD) {
+            // Connection to Supabase
             const { data, error } = await supabase.rpc('get_user_averages').maybeSingle();
 
             if (error) return error;
             return data;
         } else {
-            // TO DO (Transition to MongoDB)
-            /* const response = await fetch(`${baseUrl}${route}/average-characteristics`);
+            // Connection to MongoDB via API REST)
+            const response = await fetch(`${baseUrl}${route}/average-characteristics`);
             const { data } = await response.json();
-            return data; */
-
-            const { data, error } = await supabase.rpc('get_user_averages').maybeSingle();
-
-            if (error) return error;
             return data;
         }
     } catch(err) {
@@ -179,6 +144,7 @@ async function getCharacteristicsAvg() {
 async function updateUserAccount(id, updateBody) {
     try {
         if (import.meta.env.PROD) {
+            // Connection to Supabase
             const { data, error } = await supabase
                 .from('Users')
                 .update(updateBody)
@@ -189,8 +155,8 @@ async function updateUserAccount(id, updateBody) {
             if (error) return error;
             return data;
         } else {
-            // TO DO (Transition to MongoDB)
-            /* const response = await fetch(`${baseUrl}${route}/${id}`, {
+            // Connection to MongoDB via API REST)
+            const response = await fetch(`${baseUrl}${route}/${id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"
@@ -199,16 +165,6 @@ async function updateUserAccount(id, updateBody) {
                 credentials: 'include'
             });
             const { data } = await response.json();
-            return data; */
-
-            const { data, error } = await supabase
-                .from('Users')
-                .update(updateBody)
-                .eq('id', id)
-                .select()
-                .maybeSingle()
-
-            if (error) return error;
             return data;
         }
     } catch(err) {
@@ -219,6 +175,7 @@ async function updateUserAccount(id, updateBody) {
 async function deleteUserAccount(id) {
     try {
         if (import.meta.env.PROD) {
+            // Connection to Supabase
             const { error } = await supabase
                 .from('Users')
                 .delete()
@@ -226,18 +183,11 @@ async function deleteUserAccount(id) {
 
             if (error) return error;
         } else {
-            // TO DO (Transition to MongoDB)
-            /* await fetch(`${baseUrl}${route}/${id}`, {
+            // Connection to MongoDB via API REST)
+            await fetch(`${baseUrl}${route}/${id}`, {
                 method: "DELETE",
                 credentials: 'include'
-            }); */
-
-            const { error } = await supabase
-                .from('Users')
-                .delete()
-                .eq('id', id)
-
-            if (error) return error;
+            });
         }
     } catch(err) {
         throw new Error(err);

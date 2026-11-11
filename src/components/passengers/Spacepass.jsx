@@ -9,13 +9,7 @@ function Spacepass({ props=null, orientation="landscape" }) {
         queryKey: ['active-spacepass'],
         queryFn: async () => {
             if (!props) return null;
-
-            if (import.meta.env.PROD) {
-                return await getSpacepass(props.spacepassHolderData.spacepass);
-            } else {
-                // TO DO (Transition to MongoDB)
-                return await getSpacepass(props.spacepassHolderData.spacepass);
-            }
+            return await getSpacepass(props.spacepassHolderData.spacepass);
         }
     });
 
