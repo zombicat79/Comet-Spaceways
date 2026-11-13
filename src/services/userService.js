@@ -27,18 +27,6 @@ async function createUserAccount(userData) {
             });
             const { data } = await response.json();
             return data;
-          
-            // FILE SYSTEM VERSION - OBSOLETE
-            /* const response = await fetch(`${baseUrl}${route}`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(userData),
-                credentials: 'include'
-            });
-            const { data } = await response.json();
-            return data[data.length - 1]; */
         }
     } catch(err) {
         throw new Error(err);
@@ -79,12 +67,6 @@ async function getUserAccountByUsername(username, pwd) {
 
             const { data } = await response.json();
             return data;
-
-            // FILE SYSTEM VERSION - OBSOLETE
-            /* const response = await fetch(`${baseUrl}${route}`);
-            const { data } = await response.json();
-            const targetUser = data.users.find((user) => user.username === username);
-            return targetUser; */
         }
     } catch(err) {
         return 'ko';
@@ -110,12 +92,6 @@ async function getUserAccountById(id) {
             });
             const { data } = await response.json();
             return data;
-
-            // FILE SYSTEM VERSION - OBSOLETE
-            /* const response = await fetch(`${baseUrl}${route}`);
-            const { data } = await response.json();
-            const targetUser = data.users.find((user) => user.id === id);
-            return targetUser; */
         }
     } catch(err) {
         return 'ko';
